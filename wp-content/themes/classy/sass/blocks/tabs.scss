@@ -1,0 +1,27 @@
+.page-tabs {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 70px 0;
+
+    .page-tabs__item {
+        color: $color-gray;
+        padding: 10px 14px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        
+        &.m_active {
+            display: block;
+            color: $color-light-blue;
+            border-bottom: 2px solid $color-light-blue;
+        }
+    }
+}
+
+.tab {
+    display: none;
+
+    &.m_active {
+        display: block;
+    }
+}

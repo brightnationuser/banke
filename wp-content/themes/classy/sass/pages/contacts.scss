@@ -1,0 +1,61 @@
+//page-id-153 - merge
+.page-id-153, .p-contacts {
+    
+    h3 {
+        margin-top: 40px;
+        margin-bottom: 8px;
+        text-align: left;
+        color: $color-blue;
+    }
+    
+    p {
+        line-height: 22px;
+    }
+    
+    .content {
+        padding-top: 35px;
+    }
+    
+    .contact-info {
+        margin: 6px 0;
+        
+        &::before {
+            font-family: 'icomoon' !important;
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #005CA9;
+            padding-right: 5px;
+        }
+        
+        &.icomoon-icon-phone {
+            &::before {
+                content: "\e90c";
+                font-size: 11px;
+            }
+        }
+        
+        &.icomoon-icon-email {
+            &::before {
+                content: "\e90d";
+                font-size: 11px;
+            }
+        }
+        
+        &.icomoon-icon-clock {
+            &::before {
+                content: "\e90e";
+                font-size: 11px;
+            }
+        }
+    }
+    
+    .contact-us {
+        margin-top: 50px;
+    }
+}

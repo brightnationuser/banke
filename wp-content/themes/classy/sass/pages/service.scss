@@ -1,0 +1,16 @@
+.p-service .content {
+    background-image: url("/wp-content/themes/classy/images/bg/service-bg.jpg");
+    background-size: cover;
+    padding-top: 50px;
+    
+    h3 {
+        margin-top: 20px;
+        margin-bottom: 8px;
+        text-align: left;
+        color: $color-blue;
+    }
+    
+    p {
+        line-height: 22px;
+    }
+}

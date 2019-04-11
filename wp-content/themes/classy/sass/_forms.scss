@@ -1,0 +1,84 @@
+.form-group {
+    margin-top: 20px;
+
+    input, textarea {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 4px;
+        outline: none;
+        background: #F6F6F6;
+        color: rgba(74, 74, 73, 0.9);
+        border: 0;
+        padding: 10px 15px;
+        width: 100%;
+    }
+
+    label {
+        margin-bottom: 5px;
+        display: block;
+        color: #4A4A49;
+    }
+
+    textarea {
+        min-height: 100px;
+    }
+
+    select {
+        outline: none;
+    }
+}
+
+button, input[type=button] {
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.button, .wpcf7-submit {
+    display: inline-block;
+    background: $color-light-blue;
+    text-align: center;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    padding: 12px 30px;
+    cursor: pointer;
+    border: 0;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+
+    &:hover, &:focus {
+        text-decoration: none;
+        background: $color-blue;
+        padding: 14px 32px;
+        margin: -2px -2px -2px -2px;
+
+        &::after, &::after {
+            animation: sheen 0.5s backwards;
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        bottom: -50%;
+        left: -50%;
+        background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+        transform: rotateZ(60deg) translate(0em, 10em);
+    }
+
+    @keyframes sheen {
+        100% {
+            transform: rotateZ(60deg) translate(10em, -10em);
+        }
+    }
+}
