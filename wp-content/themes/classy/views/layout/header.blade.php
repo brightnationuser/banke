@@ -1,6 +1,6 @@
 <header class="header">
     <div class="container">
-        <a href="/" class="header__logo">
+        <a href="https://banke.pro" class="header__logo">
             <img src="{{ content_url('themes/classy/images/logo.png') }}">
         </a>
 
