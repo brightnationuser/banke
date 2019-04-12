@@ -30,7 +30,6 @@
                         @if($key == 1)<i class="icon-earth"></i>@endif
                         @if($key == 2)<i class="icon-design"></i>@endif
                         @if($key == 3)<i class="icon-quality"></i>@endif
-
                     </div>
 
                     <div class="benefit__title">

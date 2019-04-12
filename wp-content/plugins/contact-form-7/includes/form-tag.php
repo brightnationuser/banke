@@ -1,6 +1,6 @@
 <?php
 
-class WPCF7_FormTag implements ArrayAccess {
+class WPCF7_FormTag {
 
 	public $type;
 	public $basetype;
@@ -13,12 +13,10 @@ class WPCF7_FormTag implements ArrayAccess {
 	public $attr = '';
 	public $content = '';
 
-	public function __construct( $tag = array() ) {
-		if ( is_array( $tag ) || $tag instanceof self ) {
-			foreach ( $tag as $key => $value ) {
-				if ( property_exists( __CLASS__, $key ) ) {
-					$this->{$key} = $value;
-				}
+	public function __construct( $tag ) {
+		foreach ( $tag as $key => $value ) {
+			if ( property_exists( __CLASS__, $key ) ) {
+				$this->{$key} = $value;
 			}
 		}
 	}
@@ -204,9 +202,7 @@ class WPCF7_FormTag implements ArrayAccess {
 
 	public function get_default_option( $default = '', $args = '' ) {
 		$args = wp_parse_args( $args, array(
-			'multiple' => false,
-			'shifted' => false,
-		) );
+			'multiple' => false ) );
 
 		$options = (array) $this->get_option( 'default' );
 		$values = array();
@@ -285,22 +281,6 @@ class WPCF7_FormTag implements ArrayAccess {
 						}
 					}
 				}
-
-			} elseif ( preg_match( '/^[0-9_]+$/', $opt ) ) {
-				$nums = explode( '_', $opt );
-
-				foreach ( $nums as $num ) {
-					$num = absint( $num );
-					$num = $args['shifted'] ? $num : $num - 1;
-
-					if ( isset( $this->values[$num] ) ) {
-						if ( $args['multiple'] ) {
-							$values[] = $this->values[$num];
-						} else {
-							return $this->values[$num];
-						}
-					}
-				}
 			}
 		}
 
@@ -338,26 +318,5 @@ class WPCF7_FormTag implements ArrayAccess {
 		}
 
 		return $result;
-	}
-
-	public function offsetSet( $offset, $value ) {
-		if ( property_exists( __CLASS__, $offset ) ) {
-			$this->{$offset} = $value;
-		}
-	}
-
-	public function offsetGet( $offset ) {
-		if ( property_exists( __CLASS__, $offset ) ) {
-			return $this->{$offset};
-		}
-
-		return null;
-	}
-
-	public function offsetExists( $offset ) {
-		return property_exists( __CLASS__, $offset );
-	}
-
-	public function offsetUnset( $offset ) {
 	}
 }

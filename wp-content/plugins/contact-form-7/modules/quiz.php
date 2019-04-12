@@ -9,16 +9,12 @@ add_action( 'wpcf7_init', 'wpcf7_add_form_tag_quiz' );
 
 function wpcf7_add_form_tag_quiz() {
 	wpcf7_add_form_tag( 'quiz',
-		'wpcf7_quiz_form_tag_handler',
-		array(
-			'name-attr' => true,
-			'do-not-store' => true,
-			'not-for-mail' => true,
-		)
-	);
+		'wpcf7_quiz_form_tag_handler', array( 'name-attr' => true ) );
 }
 
 function wpcf7_quiz_form_tag_handler( $tag ) {
+	$tag = new WPCF7_FormTag( $tag );
+
 	if ( empty( $tag->name ) ) {
 		return '';
 	}
@@ -43,7 +39,7 @@ function wpcf7_quiz_form_tag_handler( $tag ) {
 
 	$atts['class'] = $tag->get_class_option( $class );
 	$atts['id'] = $tag->get_id_option();
-	$atts['tabindex'] = $tag->get_option( 'tabindex', 'signed_int', true );
+	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
 	$atts['autocomplete'] = 'off';
 	$atts['aria-required'] = 'true';
 	$atts['aria-invalid'] = $validation_error ? 'true' : 'false';
@@ -82,6 +78,8 @@ function wpcf7_quiz_form_tag_handler( $tag ) {
 add_filter( 'wpcf7_validate_quiz', 'wpcf7_quiz_validation_filter', 10, 2 );
 
 function wpcf7_quiz_validation_filter( $result, $tag ) {
+	$tag = new WPCF7_FormTag( $tag );
+
 	$name = $tag->name;
 
 	$answer = isset( $_POST[$name] ) ? wpcf7_canonicalize( $_POST[$name] ) : '';
@@ -107,15 +105,13 @@ add_filter( 'wpcf7_ajax_onload', 'wpcf7_quiz_ajax_refill' );
 add_filter( 'wpcf7_ajax_json_echo', 'wpcf7_quiz_ajax_refill' );
 
 function wpcf7_quiz_ajax_refill( $items ) {
-	if ( ! is_array( $items ) ) {
+	if ( ! is_array( $items ) )
 		return $items;
-	}
 
 	$fes = wpcf7_scan_form_tags( array( 'type' => 'quiz' ) );
 
-	if ( empty( $fes ) ) {
+	if ( empty( $fes ) )
 		return $items;
-	}
 
 	$refill = array();
 
@@ -123,9 +119,8 @@ function wpcf7_quiz_ajax_refill( $items ) {
 		$name = $fe['name'];
 		$pipes = $fe['pipes'];
 
-		if ( empty( $name ) ) {
+		if ( empty( $name ) )
 			continue;
-		}
 
 		if ( $pipes instanceof WPCF7_Pipes && ! $pipes->zero() ) {
 			$pipe = $pipes->random_pipe();
@@ -142,9 +137,8 @@ function wpcf7_quiz_ajax_refill( $items ) {
 		$refill[$name] = array( $question, wp_hash( $answer, 'wpcf7_quiz' ) );
 	}
 
-	if ( ! empty( $refill ) ) {
+	if ( ! empty( $refill ) )
 		$items['quiz'] = $refill;
-	}
 
 	return $items;
 }
@@ -155,16 +149,10 @@ function wpcf7_quiz_ajax_refill( $items ) {
 add_filter( 'wpcf7_messages', 'wpcf7_quiz_messages' );
 
 function wpcf7_quiz_messages( $messages ) {
-	$messages = array_merge( $messages, array(
-		'quiz_answer_not_correct' => array(
-			'description' =>
-				__( "Sender doesn't enter the correct answer to the quiz", 'contact-form-7' ),
-			'default' =>
-				__( "The answer to the quiz is incorrect.", 'contact-form-7' ),
-		),
-	) );
-
-	return $messages;
+	return array_merge( $messages, array( 'quiz_answer_not_correct' => array(
+		'description' => __( "Sender doesn't enter the correct answer to the quiz", 'contact-form-7' ),
+		'default' => __( "The answer to the quiz is incorrect.", 'contact-form-7' )
+	) ) );
 }
 
 

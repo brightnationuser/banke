@@ -14,8 +14,8 @@
         {{--FAVICON END--}}
 
         <script type="text/javascript">
-            var hostname = "<?php echo constant('HOSTNAME') ?>";
-            var ajaxurl = "<?php echo constant('HOSTNAME') ?>/wp-admin/admin-ajax.php";
+            {{--var hostname = "<?php echo constant('WP_SITEURL') ?>";--}}
+            {{--var ajaxurl = "<?php echo constant('WP_SITEURL') ?>/wp-admin/admin-ajax.php";--}}
         </script>
 
         {{ wp_head() }}

@@ -43,17 +43,20 @@ function wpcf7_akismet( $spam ) {
 	$ignore = array( 'HTTP_COOKIE', 'HTTP_COOKIE2', 'PHP_AUTH_PW' );
 
 	foreach ( $_SERVER as $key => $value ) {
-		if ( ! in_array( $key, (array) $ignore ) ) {
+		if ( ! in_array( $key, (array) $ignore ) )
 			$c["$key"] = $value;
-		}
 	}
 
 	return wpcf7_akismet_comment_check( $c );
 }
 
 function wpcf7_akismet_is_available() {
-	if ( is_callable( array( 'Akismet', 'get_api_key' ) ) ) {
+	if ( is_callable( array( 'Akismet', 'get_api_key' ) ) ) { // Akismet v3.0+
 		return (bool) Akismet::get_api_key();
+	}
+
+	if ( function_exists( 'akismet_get_key' ) ) {
+		return (bool) akismet_get_key();
 	}
 
 	return false;
@@ -64,8 +67,7 @@ function wpcf7_akismet_submitted_params() {
 		'author' => '',
 		'author_email' => '',
 		'author_url' => '',
-		'content' => '',
-	);
+		'content' => '' );
 
 	$has_akismet_option = false;
 
@@ -86,6 +88,7 @@ function wpcf7_akismet_submitted_params() {
 
 		if ( $tags = wpcf7_scan_form_tags( array( 'name' => $key ) ) ) {
 			$tag = $tags[0];
+			$tag = new WPCF7_FormTag( $tag );
 
 			$akismet = $tag->get_option( 'akismet',
 				'(author|author_email|author_url)', true );
@@ -95,10 +98,8 @@ function wpcf7_akismet_submitted_params() {
 
 				if ( 'author' == $akismet ) {
 					$params[$akismet] = trim( $params[$akismet] . ' ' . $val );
-					continue;
 				} elseif ( '' == $params[$akismet] ) {
 					$params[$akismet] = $val;
-					continue;
 				}
 			}
 		}
@@ -116,13 +117,16 @@ function wpcf7_akismet_submitted_params() {
 }
 
 function wpcf7_akismet_comment_check( $comment ) {
+	global $akismet_api_host, $akismet_api_port;
+
 	$spam = false;
 	$query_string = wpcf7_build_query( $comment );
 
-	if ( is_callable( array( 'Akismet', 'http_post' ) ) ) {
+	if ( is_callable( array( 'Akismet', 'http_post' ) ) ) { // Akismet v3.0+
 		$response = Akismet::http_post( $query_string, 'comment-check' );
 	} else {
-		return $spam;
+		$response = akismet_http_post( $query_string, $akismet_api_host,
+			'/1.1/comment-check', $akismet_api_port );
 	}
 
 	if ( 'true' == $response[1] ) {

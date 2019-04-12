@@ -12,7 +12,6 @@ require_once WPCF7_PLUGIN_DIR . '/includes/contact-form-template.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/contact-form.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/contact-form-functions.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/mail.php';
-require_once WPCF7_PLUGIN_DIR . '/includes/special-mail-tags.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/submission.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/upgrade.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/integration.php';
@@ -138,9 +137,7 @@ function wpcf7_install() {
 
 	$contact_form = WPCF7_ContactForm::get_template(
 		array(
-			'title' =>
-				/* translators: title of your first contact form. %d: number fixed to '1' */
-				sprintf( __( 'Contact form %d', 'contact-form-7' ), 1 ),
+			'title' => sprintf( __( 'Contact form %d', 'contact-form-7' ), 1 ),
 		)
 	);
 
