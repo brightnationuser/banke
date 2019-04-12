@@ -2,7 +2,11 @@
 
 @section('content')
 
-    <div class="hero">
+    <div class="hero parallax-container">
+        <div class="parallax">
+            <img src="/wp-content/themes/classy/images/bg/header-bg-2.jpg" data-type="parallax" data-depth="2" data-shift="100">
+        </div>
+
         <div class="container">
             <h1>
                 {{ $post->getAcfByKey('acf_header')['acf_header_title'] }}

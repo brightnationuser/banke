@@ -6,6 +6,7 @@ class App {
     constructor() {
         this.initTabsSwitcher();
         this.initHeaderHamburger();
+        this.initParallax();
 
         if($('.our-products').length > 0) {
             this.initCarSlider();
@@ -38,6 +39,25 @@ class App {
         $('.hamburger').click(function() {
             $(this).toggleClass('is-active');
             $('.header').toggleClass('m_opened');
+        });
+    }
+
+    initParallax() {
+        $('[data-type=parallax]').each(function(index, element) {
+            function parallax() {
+                var depth = parseInt($(element).data('depth'));
+                var shift = parseInt($(element).data('shift'));
+                var parent = $(element).parent();
+                var parentTop = $(parent).offset().top;
+                var scrollTop = $(window).scrollTop();
+                var imgPos = shift + ((scrollTop-parentTop) / depth) + 'px';
+                $(element).css('transform', 'translateY(' + imgPos + ')');
+            }
+
+            $(window).scroll(function() {
+                parallax();
+            });
+            parallax();
         });
     }
 }

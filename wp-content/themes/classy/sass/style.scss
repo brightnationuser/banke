@@ -18,18 +18,11 @@
 @import "mixins";
 @import "additionally";
 
-.qqq {
-  color: #f00;
-}
-
 // BLOCKS
 @import "blocks/**/*.scss";
 
 // PAGES
 @import "pages/**/*.scss";
-
-// MERGE
-@import "merge/**/*.scss";
 
 // LIBS
 @import "~hamburgers/_sass/hamburgers/_base.scss";
