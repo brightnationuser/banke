@@ -112,6 +112,14 @@ header.header {
                 border-radius: 10px;
                 text-align: left;
 
+                a {
+                    color: $color-blue;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+
                 i {
                     margin-left: 5px;
                     font-size: 7px;

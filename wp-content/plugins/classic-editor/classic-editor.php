@@ -2,12 +2,10 @@
 /**
  * Classic Editor
  *
- * Plugin Name: Classic Editor
- * Plugin URI:  https://wordpress.org/plugins/classic-editor/
- * Description: Enables the WordPress classic editor and the old-style Edit Post screen with TinyMCE, Meta Boxes, etc. Supports the older plugins that extend this screen.
+ * Plugin Name: Classic Editor (Dudka.agency custom)
+ * Description: Кнопки 'Block Editor', 'Classic Editor' заменены на обычную
  * Version:     1.4
- * Author:      WordPress Contributors
- * Author URI:  https://github.com/WordPress/classic-editor/
+ * Author:      Torkhov Sergii
  * License:     GPLv2 or later
  * License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * Text Domain: classic-editor
@@ -790,7 +788,7 @@ class Classic_Editor {
 	public static function add_edit_links( $actions, $post ) {
 		// This is in Gutenberg, don't duplicate it.
 		if ( array_key_exists( 'classic', $actions ) ) {
-			unset( $actions['classic'] );
+			//unset( $actions['classic'] );
 		}
 
 		if ( ! array_key_exists( 'edit', $actions ) ) {
@@ -810,34 +808,37 @@ class Classic_Editor {
 			return $actions;
 		}
 
+        //$last_editor = get_post_meta( $post->ID, 'classic-editor-remember', true );
+		//print_r($editors);
+
 		// Forget the previous value when going to a specific editor.
 		$edit_url = add_query_arg( 'classic-editor__forget', '', $edit_url );
 
 		// Build the edit actions. See also: WP_Posts_List_Table::handle_row_actions().
 		$title = _draft_or_post_title( $post->ID );
 
-		// Link to the Block Editor.
-		$url = remove_query_arg( 'classic-editor', $edit_url );
-		$text = _x( 'Edit (Block Editor)', 'Editor Name', 'classic-editor' );
-		/* translators: %s: post title */
-		$label = sprintf( __( 'Edit &#8220;%s&#8221; in the Block Editor', 'classic-editor' ), $title );
-		$edit_block = sprintf( '<a href="%s" aria-label="%s">%s</a>', esc_url( $url ), esc_attr( $label ), $text );
+//		// Link to the Block Editor.
+//		$url = remove_query_arg( 'classic-editor', $edit_url );
+//		$text = _x( 'Edit (Block Editor)', 'Editor Name', 'classic-editor' );
+//		/* translators: %s: post title */
+//		$label = sprintf( __( 'Edit &#8220;%s&#8221; in the Block Editor', 'classic-editor' ), $title );
+//		$edit_block = sprintf( '<a href="%s" aria-label="%s">%s</a>', esc_url( $url ), esc_attr( $label ), $text );
+//
+//		// Link to the Classic Editor.
+//		$url = add_query_arg( 'classic-editor', '', $edit_url );
+//		$text = _x( 'Edit (Classic Editor)', 'Editor Name', 'classic-editor' );
+//		/* translators: %s: post title */
+//		$label = sprintf( __( 'Edit &#8220;%s&#8221; in the Classic Editor', 'classic-editor' ), $title );
+//		$edit_classic = sprintf( '<a href="%s" aria-label="%s">%s</a>', esc_url( $url ), esc_attr( $label ), $text );
 
-		// Link to the Classic Editor.
-		$url = add_query_arg( 'classic-editor', '', $edit_url );
-		$text = _x( 'Edit (Classic Editor)', 'Editor Name', 'classic-editor' );
-		/* translators: %s: post title */
-		$label = sprintf( __( 'Edit &#8220;%s&#8221; in the Classic Editor', 'classic-editor' ), $title );
-		$edit_classic = sprintf( '<a href="%s" aria-label="%s">%s</a>', esc_url( $url ), esc_attr( $label ), $text );
+//		$edit_actions = array(
+//			'classic-editor-block' => $edit_block,
+//			'classic-editor-classic' => $edit_classic,
+//		);
 
-		$edit_actions = array(
-			'classic-editor-block' => $edit_block,
-			'classic-editor-classic' => $edit_classic,
-		);
-
-		// Insert the new Edit actions instead of the Edit action.
-		$edit_offset = array_search( 'edit', array_keys( $actions ), true );
-		array_splice( $actions, $edit_offset, 1, $edit_actions );
+//		// Insert the new Edit actions instead of the Edit action.
+//		$edit_offset = array_search( 'edit', array_keys( $actions ), true );
+//		array_splice( $actions, $edit_offset, 1, $edit_actions );
 
 		return $actions;
 	}

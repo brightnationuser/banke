@@ -1,3 +1,13 @@
+//ширина gutenberg
 .wp-block {
   max-width: 1200px;
+}
+
+//Убрать кнопки " Quick Edit" под постами
+.row-actions {
+  span {
+    &.hide-if-no-js {
+      display: none;
+    }
+  }
 }

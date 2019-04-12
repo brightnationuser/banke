@@ -2,7 +2,7 @@
     <div class="container">
 
         <div class="footer__adress">
-            Alsion 2 | 6400 Sønderborg | Denmark | +45 2372 3579 | <a href="mailto:info@banke-electromotive.com">info@banke-electromotive.com</a>
+            Ormstoft 5 | 6400 Sønderborg | Denmark | +45 7777 1616 | <a href="mailto:marketing@banke.pro">marketing@banke.pro</a>
         </div>
 
         <div class="footer__copyright">

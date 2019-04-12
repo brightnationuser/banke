@@ -27,11 +27,11 @@
 
         <div class="header__lng">
             <div class="lng-w">
-                en
+                <a href="/">en</a>
                 <i class="icon-arrow-down"></i>
 
                 <div class="lng-dropdown">
-                    <a href="">de</a>
+                    <a href="https://banke.pro/de/">de</a>
                 </div>
             </div>
         </div>

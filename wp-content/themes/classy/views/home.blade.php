@@ -5,15 +5,16 @@
     <div class="hero">
         <div class="container">
             <h1>
-                Welcome to Banke
+                {{ $post->getAcfByKey('acf_header')['acf_header_title'] }}
             </h1>
 
             <div class="hero__caption">
-                100% electric. Clean cities. Clean air
+                {{--100% electric. Clean cities. Clean air--}}
+                {{ $post->getAcfByKey('acf_header')['acf_header_caption'] }}
             </div>
 
             <div class="hero__button">
-                <a href="" class="button">
+                <a href="https://banke.pro/products-2/" class="button">
                     Our products
                 </a>
             </div>
@@ -22,61 +23,25 @@
 
     <div class="benefits">
         <div class="container">
-            <div class="benefit">
-                <div class="benefit__image">
-                    <i class="icon-lamp"></i>
-                </div>
+            @foreach($post->getAcfByKey('acf_header')['acf_header_benefits'] as $key => $item)
+                <div class="benefit">
+                    <div class="benefit__image">
+                        @if($key == 0)<i class="icon-lamp"></i>@endif
+                        @if($key == 1)<i class="icon-earth"></i>@endif
+                        @if($key == 2)<i class="icon-design"></i>@endif
+                        @if($key == 3)<i class="icon-quality"></i>@endif
 
-                <div class="benefit__title">
-                    Innovativeness
-                </div>
+                    </div>
 
-                <div class="benefit__caption">
-                    We production and use of new and economically useful knowledge
-                </div>
-            </div>
+                    <div class="benefit__title">
+                        {{ $item['acf_header_benefits_title'] }}
+                    </div>
 
-            <div class="benefit">
-                <div class="benefit__image">
-                    <i class="icon-earth"></i>
+                    <div class="benefit__caption">
+                        {{ $item['acf_header_benefits_text'] }}
+                    </div>
                 </div>
-
-                <div class="benefit__title">
-                    Eco friendly
-                </div>
-
-                <div class="benefit__caption">
-                    Our products designed to do the least possible damage to the environment
-                </div>
-            </div>
-
-            <div class="benefit">
-                <div class="benefit__image">
-                    <i class="icon-design"></i>
-                </div>
-
-                <div class="benefit__title">
-                    Unique design
-                </div>
-
-                <div class="benefit__caption">
-                    We have access to the best technology and can offer the best skills
-                </div>
-            </div>
-
-            <div class="benefit">
-                <div class="benefit__image">
-                    <i class="icon-quality"></i>
-                </div>
-
-                <div class="benefit__title">
-                    High quality
-                </div>
-
-                <div class="benefit__caption">
-                    Our aim is to ensure you receive the  highest quality products and service
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 
@@ -429,17 +394,15 @@
 
             <div class="description-w">
                 <h3>
-                    The eRCV27
+                    {{ $post->getAcfByKey('acf_our_products')['acf_our_products_title'] }}
                 </h3>
 
                 <div class="description__text">
-                    The eRCV27 is unique amongst electric heavy duty vehicles in that it was engineered from scratch rather
-                    than by modifying a commercially available chassis. The design specification features a 40 cm step-in height,
-                    the lowest cabin access available today, together with sliding doors on both the driver and passenger side.
+                    {{ $post->getAcfByKey('acf_our_products')['acf_our_products_text'] }}
                 </div>
 
                 <div class="description__button">
-                    <a href="" class="button">Read more</a>
+                    <a href="https://banke.pro/projects/" class="button">Read more</a>
                 </div>
             </div>
         </div>
@@ -451,17 +414,15 @@
 
             <div class="description-w">
                 <h3>
-                    The E-PTO systems type TM
+                    {{ $post->getAcfByKey('acf_our_products')['acf_our_products_title_2'] }}
                 </h3>
 
                 <div class="description__text">
-                    Like the E-PTO large this system also mounts in between the chassis-cab and the refuse body. It is designed as
-                    a full "plug-in" but is also prepared to recharge with the help of an additional inverter or generator. Due to
-                    a little lower capacity and operating on a lower voltage level, the system is 200 kg lower in weight.
+                    {{ $post->getAcfByKey('acf_our_products')['acf_our_products_text_2'] }}
                 </div>
 
                 <div class="description__button">
-                    <a href="" class="button">Read more</a>
+                    <a href="https://banke.pro/products-2/" class="button">Read more</a>
                 </div>
             </div>
         </div>

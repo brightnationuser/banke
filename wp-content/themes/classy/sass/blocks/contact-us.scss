@@ -12,48 +12,16 @@
             border-radius: 10px;
             padding: 20px 25px 40px 25px;
             box-shadow: 4px 7px 7px rgba(0, 0, 0, 0.04);
-            border-radius: 4px;
 
             form {
-                display: flex;
-                flex-wrap: wrap;
-
-                > p {
-                    margin: 20px 0;
-                    width: 350px;
-
-                    &:first-of-type {
-                        margin-right: 20px;
-                    }
-
-                    &:nth-of-type(3) {
-                        width: 100%;
-                        margin-top: 0;
-                    }
-
-                    &:nth-of-type(4) {
-                        margin: 0;
-                        text-align: center;
-                        width: 100%;
-                    }
-
-                    @media screen and (max-width: $width-l) {
-                        width: 100%;
-                        margin: 0 0 20px 0 !important;
-                    }
+                .row {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-gap: 30px;
                 }
             }
             
             .wpcf7-form-control-wrap {
-                input, textarea {
-                    background: #F6F6F6;
-                    border: none;
-                    padding: 10px 20px;
-                    border-radius: 4px;
-                    margin-top: 6px;
-                    width: 100%;
-                }
-
                 textarea {
                     resize: none;
                 }
@@ -77,8 +45,11 @@
     @media screen and (max-width: $width-s) {
         .container {
             .contact-us__form {
-                .row {
-                    grid-template-columns: auto;
+                form {
+                    .row {
+                        grid-template-columns: auto;
+                        grid-gap: 0;
+                    }
                 }
             }
         }
