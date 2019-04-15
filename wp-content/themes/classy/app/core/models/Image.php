@@ -42,7 +42,7 @@ class Image extends Basis {
 	 */
 	public static function get_default_image() {
 		// You can put here any url.
-		return HOSTNAME . '/wp-content/images/noimage.png';
+		return '/wp-content/themes/classy/images/noimage.png';
 		//return CLASSY_THEME_DIR . '/assets/noimage.png';
 	}
 

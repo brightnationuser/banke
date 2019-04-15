@@ -18,7 +18,7 @@ class General
      *
      * @return string
      */
-    public static function getFormattedDate($date, $format = 'd/m/y')
+    public static function getFormattedDate($date, $format = 'd/m/Y')
     {
         if ($format == 'for_humans') return Carbon::parse($date)->diffForHumans();
 

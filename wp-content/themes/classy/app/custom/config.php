@@ -39,7 +39,7 @@ $minify_html = false;
  * @var array
  */
 $post_types = array(
-    'events' => array(
+    'news' => array(
         'config' => array(
             'public' => true,
             //'exclude_from_search' => true,
@@ -57,8 +57,8 @@ $post_types = array(
             // Все последующие новые post_type аналогично нужно указывать с этим параметром на false
             // Если понадобится здесь же можно и указать параметр 'slug' => 'что-то' если нужно кастомный url для post_type
         ),
-        'singular' => __( 'Event', 'textdomain' ),
-        'multiple' => __( 'Events', 'textdomain' ),
+        'singular' => __( 'News', 'textdomain' ),
+        'multiple' => __( 'News', 'textdomain' ),
     ),
 );
 

@@ -1,9 +1,13 @@
 import Slider from './Slider';
-import Scene from './Scene'
+import Scene from './Scene';
+import Carousel from './Carousel';
 
 class App {
 
     constructor() {
+        // App modules
+        this.initModules();
+
         this.initTabsSwitcher();
         this.initHeaderHamburger();
         this.initParallax();
@@ -59,6 +63,15 @@ class App {
             });
             parallax();
         });
+    }
+
+    initModules() {
+        // Carousel initialization
+        let carousel = new Carousel();
+        carousel.init('News');
+        // if (App.router.single == 'events') {
+        //     carousel.init('Events');
+        // }
     }
 }
 

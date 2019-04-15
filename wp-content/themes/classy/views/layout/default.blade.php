@@ -68,7 +68,8 @@
 
         <link rel="stylesheet" href="{{ \Helpers\General::asset_hash('/wp-content/css/app.css') }}">
     </head>
-    <body {{ body_class(['p-'.$post->post_name]) }}>
+
+    <body {{ body_class($body_additional) }}>
 
         {!! get_field('acf_body_code', 'option') !!}
 
