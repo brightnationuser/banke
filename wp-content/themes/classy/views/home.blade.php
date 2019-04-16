@@ -13,7 +13,6 @@
             </h1>
 
             <div class="hero__caption">
-                {{--100% electric. Clean cities. Clean air--}}
                 {{ $post->getAcfByKey('acf_header')['acf_header_caption'] }}
             </div>
 
@@ -25,7 +24,7 @@
         </div>
     </div>
 
-    <div class="benefits">
+    <div class="benefits m_4">
         <div class="container">
             @foreach($post->getAcfByKey('acf_header')['acf_header_benefits'] as $key => $item)
                 <div class="benefit">

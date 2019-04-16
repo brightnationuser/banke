@@ -1,0 +1,33 @@
+.content-text {
+    display: flex;
+
+    .text-column {
+        margin-right: 30px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        div, p {
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 23px;
+            margin-top: 0;
+            margin-bottom: 14px;
+        }
+    }
+
+    &.m_2 {
+        
+        .text-column {
+            flex-basis: calc(50% - 30px);
+        }
+    }
+
+    &.m_1 {
+
+        .text-column {
+            flex-basis: auto;
+        }
+    }
+}
