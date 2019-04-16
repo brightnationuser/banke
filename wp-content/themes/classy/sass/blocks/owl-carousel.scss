@@ -1,0 +1,62 @@
+// Owl Carousel
+.owl-carousel {
+  opacity: 0;
+  transition: 0.3s ease;
+  overflow: hidden;
+  max-height: 320px;
+
+  &.m_loaded {
+    opacity: 1;
+    overflow: visible;
+    max-height: none;
+  }
+
+  .owl-dots {
+    position: absolute;
+    right: 0;
+    top: -40px;
+
+    .owl-dot {
+      width: 10px;
+      height: 10px;
+      margin-left: 6px;
+      background: #dcdcdc !important;
+      border-radius: 50%;
+
+      &.active {
+        background: #959595 !important;
+      }
+    }
+  }
+
+  .owl-nav {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    height: 0;
+
+    .owl-prev, .owl-next {
+      margin-left: -30px;
+      margin-top: -15px;
+
+      &:before {
+        font-size: 30px;
+        content: "\e900";
+        font-family: 'icomoon' !important;
+      }
+
+      span {
+        display: none;
+      }
+    }
+
+    .owl-next {
+      &:before {
+        content: "\e901";
+      }
+    }
+  }
+}

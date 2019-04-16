@@ -1,6 +1,7 @@
 // Import libs
-// import 'owl.carousel';
 import Blazy from 'blazy';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+require('owl.carousel');
 
 import * as JQuery from "jquery";
 window.$ = JQuery.default;

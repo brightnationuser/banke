@@ -1,0 +1,34 @@
+.single-news {
+
+    .content {
+        .news__date {
+            font-size: 13px;
+            line-height: normal;
+            color: #4A4A49;
+        }
+
+        .news__title {
+            margin-top: 6px;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 30px;
+            color: #003462;
+        }
+
+        .news__content {
+            margin-top: 30px;
+
+            .content__img {
+                float: left;
+                margin-right: 30px;
+                margin-bottom: 20px;
+                max-width: 570px;
+            }
+
+            .content__text {
+
+            }
+        }
+    }
+
+}
