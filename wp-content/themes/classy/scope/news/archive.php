@@ -12,7 +12,7 @@ $query = [
 
 $news = $framework::get_posts([
     'post_type' => 'news',
-    'posts_per_page' => 4,
+    'posts_per_page' => 8,
     'orderby' => 'acf_date',
     'order' => 'DESC',
     'meta_query' => $query,
