@@ -1,0 +1,68 @@
+.p-faq .content {
+    background-image: url("/wp-content/themes/classy/images/bg/service-bg.jpg");
+    background-size: cover;
+    padding-top: 50px;
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+
+        .col {
+        }
+    }
+
+    .questions__section {
+        margin-bottom: 30px;
+
+        .questions__section-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: $color-blue;
+        }
+
+        .questions__items {
+            .questions__item {
+                margin-top: 13px;
+                transition: 0.3s ease;
+
+                .item__q {
+                    font-size: 14px;
+                    line-height: 1.2;
+                    cursor: pointer;
+                    color: #4A4A49;
+                    transition: 0.2s ease;
+                    display: inline;
+                    border-bottom: 1px dashed;
+
+                    &:hover {
+                        color: #005CA9;
+                    }
+
+                    &.m_active {
+                        color: #005CA9;
+                    }
+                }
+
+                .item__a {
+                    display: none;
+                    font-size: 14px;
+                    padding: 10px 0px 20px 0px;
+                    color: #4a4a49;
+                    line-height: 1.5;
+
+                    p {
+                        line-height: 1.5;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: $width-l) {
+        .container {
+            display: block;
+        }
+    }
+}
