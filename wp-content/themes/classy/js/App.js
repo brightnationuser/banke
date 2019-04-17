@@ -6,9 +6,6 @@ import '@fancyapps/fancybox';
 class App {
 
     constructor() {
-        // App modules
-        this.initModules();
-
         this.initTabsSwitcher();
         this.initHeaderHamburger();
         this.initParallax();
@@ -23,6 +20,10 @@ class App {
 
         if($('.p-faq').length > 0) {
             this.initFaq();
+        }
+
+        if($('.owl-carousel').length > 0) {
+            this.initCarousels();
         }
     }
 
@@ -79,10 +80,10 @@ class App {
         });
     }
 
-    initModules() {
-        // Carousel initialization
+    initCarousels() {
         let carousel = new Carousel();
         carousel.init('News');
+        carousel.init('References');
     }
 
     initFaq() {
