@@ -1,0 +1,61 @@
+.p-media {
+
+    .media-wrapper {
+        
+    }
+
+    .media-list {
+        display: flex;
+        flex-wrap: wrap;
+
+        .list__item {
+            width: 270px;
+            height: 270px;
+            margin: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .video-wrapper {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                position: relative;
+                transition: 0.3s ease;
+                
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    background-color: rgba(0,0,0,0.4);
+                    background-image: url('/wp-content/themes/classy/images/icons/play.png');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: 50px;
+                    transition: 0.3s ease;
+                }
+
+                &:hover {
+                    
+                    &::after {
+                        background-size: 60px;
+                    }
+                }
+            }
+
+            video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

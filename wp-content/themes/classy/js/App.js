@@ -1,6 +1,7 @@
 import Slider from './Slider';
 import Scene from './Scene';
 import Carousel from './Carousel';
+import '@fancyapps/fancybox';
 
 class App {
 
@@ -12,8 +13,12 @@ class App {
         this.initHeaderHamburger();
         this.initParallax();
 
-        if($('.our-products').length > 0) {
+        if($('.our-products__car').length > 0) {
             this.initCarSlider();
+        }
+
+        if($('.p-media').length > 0) {
+            this.initMedia();
         }
     }
 
@@ -65,13 +70,15 @@ class App {
         });
     }
 
+    initMedia() {
+        $('[data-fancybox="gallery"]').fancybox({
+        });
+    }
+
     initModules() {
         // Carousel initialization
         let carousel = new Carousel();
         carousel.init('News');
-        // if (App.router.single == 'events') {
-        //     carousel.init('Events');
-        // }
     }
 }
 

@@ -13,10 +13,10 @@
         {{--<link rel="shortcut icon" href="{{ CLASSY_THEME_DIR }}assets/favicon.ico" />--}}
         {{--FAVICON END--}}
 
-        <script type="text/javascript">
-            {{--var hostname = "<?php echo constant('WP_SITEURL') ?>";--}}
-            {{--var ajaxurl = "<?php echo constant('WP_SITEURL') ?>/wp-admin/admin-ajax.php";--}}
-        </script>
+        <!-- <script type="text/javascript">
+            var hostname = "<?php // echo constant('WP_SITEURL') ?>";
+            var ajaxurl = "<?php // echo constant('WP_SITEURL') ?>/wp-admin/admin-ajax.php";
+        </script> -->
 
         {{ wp_head() }}
 
