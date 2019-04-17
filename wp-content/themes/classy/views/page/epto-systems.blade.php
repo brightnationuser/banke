@@ -4,12 +4,16 @@
 
     @include('partials.tabs', ['parent_id' => get_the_ID()])
 
-    <h2>
-        {{ $post->getAcfByKey('acf_title_main') }}
-    </h2>
-
     <div class="container">
-        @include('partials.epto-slider')
+        <div class="concept__main">
+            <h2>
+                {{ $post->getAcfByKey('acf_title_main') }}
+            </h2>
+
+            <div class="container">
+                @include('partials.epto-slider')
+            </div>
+        </div>
     </div>
 
     <div class="container">
@@ -23,7 +27,6 @@
         </article>
     </div>
     
-
     <div class="concept__description">
         <div class="container">
             <h2>
@@ -40,7 +43,7 @@
         </div>
     </div>
 
-    <div class="consept__principles">
+    <div class="concept__principles">
         <h2>
             {{ $post->getAcfByKey('acf_title_principles') }}
         </h2>

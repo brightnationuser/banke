@@ -20,6 +20,10 @@ class App {
         if($('.p-media').length > 0) {
             this.initMedia();
         }
+
+        if($('.p-faq').length > 0) {
+            this.initFaq();
+        }
     }
 
     initCarSlider() {
@@ -79,6 +83,13 @@ class App {
         // Carousel initialization
         let carousel = new Carousel();
         carousel.init('News');
+    }
+
+    initFaq() {
+        $(".questions__item .item__q").click(function () {
+            $('.item__q.m_active').not(this).removeClass('m_active').siblings('.item__a').slideUp();
+            $(this).addClass('m_active').siblings('.item__a').stop(1,0).slideToggle();
+        });
     }
 }
 

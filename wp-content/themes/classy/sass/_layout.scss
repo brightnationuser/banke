@@ -19,7 +19,21 @@ body {
         margin-top: 122px;
 
         &.logged-in {
-        margin-top: 138px;
+            margin-top: 138px;
+        }
+    }
+
+    .content {
+        padding: 80px 0;
+
+        @media screen and (max-width: $width-l) {
+            padding: 40px 0;
+        }
+    }
+
+    &.home, &.p-epto-systems, &.p-media {
+        .content {
+            padding: 0;
         }
     }
 }
@@ -280,11 +294,11 @@ body {
     }
 }
 
-.content, .header {
-    @media screen and (max-width: 1280px) and (min-width: 1024px) {
-        padding: 0 30px;
-    }
-}
+//.content, .header {
+//    @media screen and (max-width: 1280px) and (min-width: 1024px) {
+//        padding: 0 30px;
+//    }
+//}
 
 footer.footer {
     background: $color-blue;
@@ -327,14 +341,15 @@ footer.footer {
 
 .container {
     position: relative;
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
+    padding: 0 40px; //а если так? проще вроде.
 
-    @media screen and (max-width: $width-l) {
-        min-width: auto;
-        width: 100%;
-        padding: 0 40px;
-    }
+    //@media screen and (max-width: $width-l) {
+    //    min-width: auto;
+    //    width: 100%;
+    //    padding: 0 40px;
+    //}
 
     @media screen and (max-width: $width-s) {
         padding: 0 20px;

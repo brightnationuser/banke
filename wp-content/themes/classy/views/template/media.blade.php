@@ -1,5 +1,3 @@
-{{-- Template Name: Media --}}
-
 @extends('layout.default')
 
 @section('content')
