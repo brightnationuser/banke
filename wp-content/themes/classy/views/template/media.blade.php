@@ -33,12 +33,9 @@
             'current' => $current_page,
             'total' => $total_pages,
         ));
-
-        // Родитель определяет меню вкладок
-        $parent_id = wp_get_post_parent_id(get_the_ID());
     @endphp
     
-    @include('partials.tabs', ['parent_id' => $parent_id])
+    @include('partials.tabs', ['parent_id' => wp_get_post_parent_id(get_the_ID())])
 
     <div class="media-wrapper">
 
