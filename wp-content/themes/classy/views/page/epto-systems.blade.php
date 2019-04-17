@@ -2,13 +2,7 @@
 
 @section('content')
 
-    <div class="page-tabs">
-        @foreach ($post->getAcfByKey('acf_tabs') as $key => $tab)
-            <div class="page-tabs__item {{ $key == 0 ? 'm_active' : '' }}" data-id="{{ $key }}">
-                {{ $tab['title'] }}
-            </div>
-        @endforeach
-    </div>
+    @include('partials.tabs', ['parent_id' => get_the_ID()])
 
     <div class="tab tab-concept m_active" data-id="0">
 
