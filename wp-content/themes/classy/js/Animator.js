@@ -14,7 +14,7 @@ export default class Animator {
         let timeline = new TimelineMax();
 
         // Определяем анимации по таймлайну для текущей страницы
-        this.animate(page, timeline);
+        this[`set${page}Timeline`](timeline);
 
         // Анимация первого блока начинается сразу после загрузки страницы
         timeline.play();
@@ -29,16 +29,6 @@ export default class Animator {
                 }
             });
         });
-    }
-
-    animate(page, timeline) {
-
-        switch(page) {
-            // Home page
-            case 'home':           
-                this.setHomeTimeline(timeline);
-            break;
-        }
     }
 
     setHomeTimeline(timeline) {
@@ -72,6 +62,16 @@ export default class Animator {
         timeline.pause();
         
         this.setContactsTimeline(timeline);
+    }
+
+    setNewsTimeline(timeline) {
+        $('.news').each(function(index) {
+            timeline.delay(index * 0.05);
+            timeline.add(TweenMax.fromTo($(this), 0.2, { opacity: 0, y: -30 }, { opacity: 1, y: 0 }));
+        });
+        timeline.delay(0.1);
+        timeline.add(TweenMax.fromTo('.pagination', 0.3, { opacity: 0, y: -30 }, { opacity: 1, y: 0 }));
+        timeline.pause();
     }
 
     setContactsTimeline(timeline) {
