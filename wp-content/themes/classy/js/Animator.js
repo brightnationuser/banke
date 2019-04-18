@@ -3,7 +3,7 @@ import { TimelineMax } from "gsap";
 
 export default class Animator {
 
-    constructor(page, scrollPoints) {       
+    constructor(page, scrollPoints = []) {       
         // За сколько пикселей до блока начинать его анимацию
         const distanceBeforeAnimation = 700;
 
@@ -85,8 +85,8 @@ export default class Animator {
     choreographItems(selector) {
         const self = this;
         $(selector).each(function(index) {
-            self.timeline.delay(index * 0.03);
-            self.timeline.add(TweenMax.fromTo($(this), 0.3, { opacity: 0, y: -30 }, { opacity: 1, y: 0 }));
+            self.timeline.delay(index * 0.01);
+            self.timeline.add(TweenMax.fromTo($(this), 0.2, { opacity: 0, y: -25 }, { opacity: 1, y: 0 }));
         });
         this.timeline.delay(0.1);
     }

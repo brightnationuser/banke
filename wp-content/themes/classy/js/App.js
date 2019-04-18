@@ -111,6 +111,8 @@ class App {
             $('.item__q.m_active').not(this).removeClass('m_active').siblings('.item__a').slideUp();
             $(this).addClass('m_active').siblings('.item__a').stop(1,0).slideToggle();
         });
+
+        new Animator('FAQ');
     }
 }
 
