@@ -83,6 +83,7 @@ class App {
         // Carousel initialization
         let carousel = new Carousel();
         carousel.init('News');
+        carousel.init('Team');
     }
 
     initFaq() {

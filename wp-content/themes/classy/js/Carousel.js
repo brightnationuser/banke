@@ -22,6 +22,30 @@ export default class Carousel {
           }
         });
       },
+
+      initTeamCarousel: function () {
+        $('.team__members.owl-carousel').owlCarousel({
+          loop: false,
+          margin: 30,
+          onInitialized: show,
+          nav: true,
+          dots: false,
+          responsive: {
+            0: {
+              items: 1
+            },
+            500: {
+              items: 2
+            },
+            800: {
+              items: 3
+            },
+            1200: {
+              items: 4
+            }
+          }
+        });
+      },
     }
     
     function show(event) {
