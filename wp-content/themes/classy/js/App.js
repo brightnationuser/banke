@@ -87,10 +87,10 @@ class App {
         }
 
         if($('body.home').length > 0) {
-            const animator = new Animator('Home', ['.our-products', '.epto', '.contact-us']);
+            new Animator('Home', ['.our-products', '.epto', '.contact-us']);
         }
         if($('body.archive-news').length > 0) {
-            const animator = new Animator('News');
+            new Animator('News');
         }
     }
 
