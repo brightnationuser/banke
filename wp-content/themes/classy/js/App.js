@@ -2,16 +2,16 @@ import Slider from './Slider';
 import Scene from './Scene';
 import Carousel from './Carousel';
 import '@fancyapps/fancybox';
+import Animator from './Animator';
 
 class App {
 
     constructor() {
-        this.initTabsSwitcher();
+        
         this.initHeaderHamburger();
-        this.initParallax();
-
-        if($('.our-products__car').length > 0) {
-            this.initCarSlider();
+        
+        if($('body.home').length > 0) {
+            const animator = new Animator('home', ['.our-products', '.epto', '.contact-us']);
         }
 
         if($('.p-media').length > 0) {
@@ -24,6 +24,18 @@ class App {
 
         if($('.owl-carousel').length > 0) {
             this.initCarousels();
+        }
+
+        if($('[data-type=parallax]').length > 0) {
+            this.initParallax();
+        }
+
+        if($('.page-tabs__item').length > 0) {
+            this.initTabsSwitcher();
+        }
+
+        if($('.our-products__car').length > 0) {
+            this.initCarSlider();
         }
     }
 

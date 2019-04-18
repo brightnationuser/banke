@@ -8,6 +8,7 @@
     "dependencies": {
         "@fancyapps/fancybox": "^3.5.7",
         "blazy": "^1.8.2",
+        "gsap": "^2.1.2",
         "hamburgers": "^0.9.3",
         "jquery": "^3.3.1"
     },
