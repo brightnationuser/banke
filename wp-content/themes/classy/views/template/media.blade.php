@@ -33,6 +33,8 @@
         ));
     @endphp
     
+    @include('partials.tabs', ['parent_id' => wp_get_post_parent_id(get_the_ID())])
+
     <div class="media-wrapper">
 
         <div class="container">

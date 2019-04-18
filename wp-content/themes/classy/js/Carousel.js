@@ -46,8 +46,29 @@ export default class Carousel {
           }
         });
       },
+
+        initReferencesCarousel: function () {
+            $('.references.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 30,
+                onInitialized: show,
+                nav: true,
+                dots: false,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    630: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            });
+        },
     }
-    
+
     function show(event) {
       $(event.target).addClass('m_loaded');
     }

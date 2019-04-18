@@ -1,36 +1,29 @@
 .p-epto-systems {
 
-    .content {
-        padding-top: 0 !important;   
+    .concept__main {
+        > h2:first-child {
+            margin-bottom: 112px;
+        }
     }
 
-    .tab {
-        margin-top: 70px;
+    .concept__description {
+        margin-top: 60px;
+        padding: 10px 0 80px 0;
+        background: #F2F6FC;
 
-        &.tab-concept {
+        .description__wrapper {
+            display: flex;
 
-            > h2:first-child {
-                margin-bottom: 112px;
-            }
-
-            .concept__description {
-                margin-top: 60px;
-                padding: 10px 0 80px 0;
-                background: #F2F6FC;
-
-                .description__wrapper {
-                    display: flex;
-
-                    img {
-                        min-width: 367px;
-                        margin: 0 124px;
-                    }
-                }
-            }
-
-            .consept__principles {
-                padding: 10px 0 0 0;
+            img {
+                min-width: 367px;
+                margin: 0 124px;
             }
         }
     }
+
+    .concept__principles {
+        padding: 10px 0 60px 0;
+    }
+        
+    
 }
