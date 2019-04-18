@@ -31,6 +31,8 @@ class App {
         if($('.our-products__car').length > 0) {
             this.initCarSlider();
         }
+
+        $('body').addClass('m_ready');
     }
 
     initCarSlider() {
@@ -82,16 +84,14 @@ class App {
     }
 
     initAnimations() {
-        if($('[data-type=parallax]').length > 0) {
-            this.initParallax();
-        }
+        if($('[data-type=parallax]').length > 0)  this.initParallax();
 
-        if($('body.home').length > 0) {
-            new Animator('Home', ['.our-products', '.epto', '.contact-us']);
-        }
-        if($('body.archive-news').length > 0) {
-            new Animator('News');
-        }
+        if($('body.home').length > 0)             new Animator('Home', ['.our-products', '.epto', '.contact-us']);
+        if($('body.archive-news').length > 0)     new Animator('News');
+        if($('body.p-faq').length > 0)            new Animator('FAQ');
+        if($('body.p-media').length > 0)          new Animator('Media');
+        if($('body.p-products').length > 0)       new Animator('Products');
+        if($('body.p-epto-systems').length > 0)   new Animator('EPTOSystems', ['.concept__description', '.concept__principles']);
     }
 
     initMedia() {
@@ -111,8 +111,6 @@ class App {
             $('.item__q.m_active').not(this).removeClass('m_active').siblings('.item__a').slideUp();
             $(this).addClass('m_active').siblings('.item__a').stop(1,0).slideToggle();
         });
-
-        new Animator('FAQ');
     }
 }
 

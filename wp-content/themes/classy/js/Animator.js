@@ -15,6 +15,7 @@ export default class Animator {
 
         // Определяем анимации по таймлайну для текущей страницы
         this[`set${page}Timeline`]();
+        $('body').addClass('m_ready');
 
         // Анимация начинается сразу после загрузки страницы
         this.timeline.play();
@@ -59,6 +60,42 @@ export default class Animator {
         this.timeline.pause();
         
         this.setContactsTimeline();
+    }
+
+    setEPTOSystemsTimeline() {
+        this.timeline.add(TweenMax.fromTo('.concept__main h2', 0.8, { opacity: 0, y: -30 }, { opacity: 1, y: 0 }));
+        this.timeline.delay(0.1);
+        this.timeline.add(TweenMax.fromTo('.epto__bg', 0.5, { opacity: 0, y: -30 }, { opacity: 1, y: 0 }));
+        this.timeline.delay(0.1);
+        this.timeline.add(TweenMax.fromTo('.epto__image', 0.55, { opacity: 0, y: -40 }, { opacity: 1, y: 0 }));
+        this.timeline.delay(0.05);
+        this.choreographItems('.content-text.m_2 .text-column');
+        this.timeline.pause();
+
+        this.timeline.addLabel('.concept__description');
+        this.timeline.add(TweenMax.fromTo('.concept__description h2', 0.8, { opacity: 0, y: -30 }, { opacity: 1, y: 0 }));
+        this.timeline.delay(0.1);
+        this.timeline.add(TweenMax.fromTo('.concept__description img', 1, { opacity: 0, x: -100 }, { opacity: 1, x: 0 }));
+        this.timeline.delay(0.1);
+        this.choreographItems('.content-text.m_1 .text-column');
+        this.timeline.pause();
+
+        this.timeline.addLabel('.concept__principles');
+        this.timeline.add(TweenMax.fromTo('.concept__principles h2', 0.3, { opacity: 0, y: -30 }, { opacity: 1, y: 0 }));
+        this.timeline.delay(0.1);
+        this.choreographItems('.concept__principles .benefit');
+        this.timeline.pause();
+    }
+
+    setMediaTimeline() {
+        this.choreographItems('.media-list .list__item');
+        this.timeline.add(TweenMax.fromTo('.pagination', 0.3, { opacity: 0, y: -30 }, { opacity: 1, y: 0 }));
+        this.timeline.pause();
+    }
+
+    setProductsTimeline() {
+        this.choreographItems('.products .product__card');
+        this.timeline.pause();
     }
 
     setNewsTimeline() {
