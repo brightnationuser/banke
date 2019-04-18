@@ -96,6 +96,7 @@ class App {
         let carousel = new Carousel();
         carousel.init('News');
         carousel.init('References');
+        carousel.init('Team');
     }
 
     initFaq() {
