@@ -88,9 +88,11 @@ class App {
 
         if($('body.home').length > 0)             new Animator('Home', ['.our-products', '.epto', '.contact-us']);
         if($('body.archive-news').length > 0)     new Animator('News');
+        if($('body.single-news').length > 0)      new Animator('SingleNews');
         if($('body.p-faq').length > 0)            new Animator('FAQ');
         if($('body.p-media').length > 0)          new Animator('Media');
         if($('body.p-products').length > 0)       new Animator('Products');
+        if($('body.p-references').length > 0)     new Animator('References');
         if($('body.p-epto-systems').length > 0)   new Animator('EPTOSystems', ['.concept__description', '.concept__principles']);
     }
 

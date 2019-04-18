@@ -98,9 +98,23 @@ export default class Animator {
         this.timeline.pause();
     }
 
+    setReferencesTimeline() {
+        this.choreographItems('.rederences .references__card');
+        this.timeline.pause();
+    }
+
     setNewsTimeline() {
         this.choreographItems('.news');
         this.timeline.add(TweenMax.fromTo('.pagination', 0.3, { opacity: 0, y: -30 }, { opacity: 1, y: 0 }));
+        this.timeline.pause();
+    }
+
+    setSingleNewsTimeline() {
+        this.timeline.add(TweenMax.fromTo('.news__date', 0.3, { opacity: 0, y: -30 }, { opacity: 1, y: 0 }));
+        this.timeline.delay(0.1);
+        this.timeline.add(TweenMax.fromTo('.news__title', 0.3, { opacity: 0, y: -30 }, { opacity: 1, y: 0 }));
+        this.timeline.delay(0.1);
+        this.choreographItems('.news__content > *');
         this.timeline.pause();
     }
 
