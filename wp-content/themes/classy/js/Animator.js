@@ -114,7 +114,11 @@ export default class Animator {
         this.timeline.delay(0.1);
         this.timeline.add(TweenMax.fromTo('.news__title', 0.3, { opacity: 0, y: -30 }, { opacity: 1, y: 0 }));
         this.timeline.delay(0.1);
-        this.choreographItems('.news__content > *');
+        this.timeline.add(TweenMax.fromTo('.news__content', 0.7, { opacity: 0, scaleX: 0.95, scaleY: 0.95 }, { opacity: 1, scaleX: 1, scaleY: 1 }));
+        this.timeline.pause();
+
+        this.timeline.addLabel('.b-news__carousel');
+        this.choreographItems('.b-news__carousel .carousel__item');
         this.timeline.pause();
     }
 
@@ -136,7 +140,7 @@ export default class Animator {
     choreographItems(selector) {
         const self = this;
         $(selector).each(function(index) {
-            self.timeline.delay(index * 0.01);
+            self.timeline.delay(index * 0.001);
             self.timeline.add(TweenMax.fromTo($(this), 0.2, { opacity: 0, y: -25 }, { opacity: 1, y: 0 }));
         });
         this.timeline.delay(0.1);
