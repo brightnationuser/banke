@@ -98,7 +98,8 @@ export default class Animator {
         this.timeline.addLabel('.team');
         this.timeline.add(TweenMax.fromTo('.team h2', 0.8, { opacity: 0, y: -30 }, { opacity: 1, y: 0 }));
         this.timeline.delay(0.1);
-        this.choreographItems('.team .owl-item');
+        this.timeline.add(TweenMax.fromTo('.team__members', 0.55, { opacity: 0, y: -40 }, { opacity: 1, y: 0 }));
+        this.timeline.delay(0.1);
         this.timeline.pause();
     }
 
