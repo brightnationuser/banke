@@ -89,6 +89,7 @@ class App {
         if($('body.home').length > 0)             new Animator('Home', ['.our-products', '.epto', '.contact-us']);
         if($('body.archive-news').length > 0)     new Animator('News');
         if($('body.single-news').length > 0)      new Animator('SingleNews', ['.b-news__carousel']);
+        if($('body.p-about').length > 0)          new Animator('About', ['.team']);
         if($('body.p-faq').length > 0)            new Animator('FAQ');
         if($('body.p-media').length > 0)          new Animator('Media');
         if($('body.p-products').length > 0)       new Animator('Products');

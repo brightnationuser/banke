@@ -1,12 +1,14 @@
 @extends('layout.default')
 
 @section('content')
-    <h2>
-        History
-    </h2>
+    
+    <div class="history">
+        <div class="container">
 
-    <div class="container">
-        <div class="history">
+            <h2>
+                History
+            </h2>
+            
             <div class="history_img">
                 <div class="img_container">
                     <img src="/wp-content/themes/classy/images/pages/about/history.jpg">
@@ -16,11 +18,13 @@
             <div class="history_text">
                 {!! $post->content() !!}
             </div>
+
         </div>
     </div>
 
     <div class="team">
         <div class="container">
+        
             <h2>
                 Our team
             </h2>
