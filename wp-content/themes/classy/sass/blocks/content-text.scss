@@ -30,4 +30,12 @@
             flex-basis: auto;
         }
     }
+
+    @media screen and (max-width: $width-l) {
+        flex-direction: column;
+
+        .text-column {
+            margin-right: 0 !important;
+        }   
+    }
 }

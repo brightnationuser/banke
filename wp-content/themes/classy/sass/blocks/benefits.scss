@@ -56,4 +56,17 @@
             width: calc(30% + 20px);
         }
     }
+    
+    @media screen and (max-width: $width-l) {
+        
+        .container {
+            flex-direction: column;
+
+            .benefit {
+                width: auto;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+        }
+    }
 }

@@ -7,6 +7,7 @@
     .media-list {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
 
         .list__item {
             width: 270px;
@@ -14,6 +15,11 @@
             margin: 15px;
             border-radius: 10px;
             overflow: hidden;
+
+            &.m_fake {
+                height: 0;
+                margin-bottom: 0;
+            }
 
             img {
                 width: 100%;

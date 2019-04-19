@@ -20,4 +20,13 @@
     background-repeat: no-repeat;
     width: 650px;
     height: 300px;
+
+    @media screen and (max-width: $width-l) {
+        left: 0;
+        right: 0;
+        margin: auto;
+        position: absolute;
+        transform: none !important;
+        width: 100%;
+    }
 }

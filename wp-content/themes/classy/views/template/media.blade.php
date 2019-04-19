@@ -54,6 +54,8 @@
                         </a>
                     @endif
                 @endforeach
+                <div class="list__item m_fake"></div>
+                <div class="list__item m_fake"></div>
             </div>
         </div>
 

@@ -18,6 +18,19 @@
                 min-width: 367px;
                 margin: 0 124px;
             }
+
+            @media screen and (max-width: $width-l) {
+                flex-direction: column;
+                margin: 0 10px 20px 10px;
+                max-width: 100%;
+
+                img {
+                    min-width: auto;
+                    width: 100%;
+                    margin: 0 auto 20px auto;
+                    max-width: 367px;
+                }
+            }
         }
     }
 

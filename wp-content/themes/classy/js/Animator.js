@@ -90,9 +90,9 @@ export default class Animator {
     setAboutTimeline() {
         this.timeline.add(TweenMax.fromTo('.history h2', 0.8, { opacity: 0, y: -30 }, { opacity: 1, y: 0 }));
         this.timeline.delay(0.1);
-        this.timeline.add(TweenMax.fromTo('.history_img', 0.5, { opacity: 0, x: -50 }, { opacity: 1, x: 0 }));
+        this.timeline.add(TweenMax.fromTo('.history__img', 0.5, { opacity: 0, x: -50 }, { opacity: 1, x: 0 }));
         this.timeline.delay(0.1);
-        this.timeline.add(TweenMax.fromTo('.history_text', 0.55, { opacity: 0, y: -40 }, { opacity: 1, y: 0 }));
+        this.timeline.add(TweenMax.fromTo('.history__text', 0.55, { opacity: 0, y: -40 }, { opacity: 1, y: 0 }));
         this.timeline.delay(0.1);
 
         this.timeline.addLabel('.team');
