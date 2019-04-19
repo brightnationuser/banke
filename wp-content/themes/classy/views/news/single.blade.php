@@ -13,7 +13,7 @@
 		<div class="news__content">
 			<img class="content__img" src="{{ $post->getAcfImage()->src('large') }}">
 
-			<div class="content__text">
+			<div class="content__text text__content">
 				{!! $post->content() !!}
 			</div>
 		</div>
