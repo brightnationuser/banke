@@ -9,22 +9,23 @@
                 History
             </h2>
             
-            <div class="history_img">
-                <div class="img_container">
-                    <img src="/wp-content/themes/classy/images/pages/about/history.jpg">
+            <div class="history__wrap">
+                <div class="history__img">
+                    <div class="img__container">
+                        <img src="/wp-content/themes/classy/images/pages/about/history.jpg">
+                    </div>
+                </div>
+
+                <div class="history__text">
+                    {!! $post->content() !!}
                 </div>
             </div>
-
-            <div class="history_text">
-                {!! $post->content() !!}
-            </div>
-
         </div>
     </div>
 
     <div class="team">
         <div class="container">
-        
+
             <h2>
                 Our team
             </h2>
