@@ -37,7 +37,7 @@ class App {
             $('body').addClass('m_ready');
         }, 100);
 
-        $("a").click(function () {
+        $("a:not(.disable_preloader)").click(function () {
             $('body').removeClass('m_ready');
         });
     }

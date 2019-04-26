@@ -95,3 +95,48 @@
         }
     }
 }
+
+.p-reference {
+    .container {
+        display: flex;
+
+        .reference__image {
+            margin-top: 5px;
+            max-width: 570px;
+            margin-right: 30px;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        .reference__content {
+            .reference__title {
+                font-weight: bold;
+                font-size: 18px;
+            }
+
+            .reference__text {
+
+            }
+
+            .reference__selected_text {
+                margin-top: 20px;
+                border-left: 4px solid $color-light-blue;
+                padding-left: 10px;
+            }
+        }
+    }
+
+    @media screen and (max-width: $width-xl) {
+        .container {
+            display: block;
+
+            .reference__image {
+                max-width: 100%;
+            }
+
+            .reference__content {
+                margin-top: 30px;
+            }
+        }
+    }
+}

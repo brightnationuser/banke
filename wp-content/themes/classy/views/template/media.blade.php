@@ -41,7 +41,7 @@
             <div class="media-list">
                 @foreach ($items as $key => $media)
                     @if($media['mime_type'] == 'video/mp4')
-                        <a class="list__item" href="{{ $media['url'] }}" data-fancybox="gallery">
+                        <a class="list__item disable_preloader" href="{{ $media['url'] }}" data-fancybox="gallery">
                             <div class="video-wrapper">
                                 <video>
                                     <source src="{{ $media['url'] }}" type="video/mp4">
@@ -49,7 +49,7 @@
                             </div>
                         </a>
                     @else
-                        <a class="list__item" href="{{ $media['url'] }}" data-fancybox="gallery">
+                        <a class="list__item disable_preloader" href="{{ $media['url'] }}" data-fancybox="gallery">
                             <img src="{{ $media['sizes']['medium'] }}" />
                         </a>
                     @endif
