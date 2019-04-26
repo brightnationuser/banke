@@ -106,6 +106,12 @@
             margin-right: 30px;
             border-radius: 8px;
             flex-shrink: 0;
+            overflow: hidden;
+
+            img {
+                display: block;
+                max-width: 100%;
+            }
         }
 
         .reference__content {

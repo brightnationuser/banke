@@ -6,7 +6,9 @@
 
     <div class="p-reference">
         <div class="container">
-            <img class="reference__image" src="{{ $post->getAcfImage()->src('large') }}">
+            <div class="reference__image">
+                <img src="{{ $post->getAcfImage()->src('large') }}">
+            </div>
 
             <div class="reference__content">
                 <div class="reference__title">
