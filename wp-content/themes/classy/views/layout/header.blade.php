@@ -25,8 +25,8 @@
 
         </div>
 
-        <!--
         <div class="header__lng">
+            <!--
             <div class="lng-w">
                 <a href="/">en</a>
                 <i class="icon-arrow-down"></i>
@@ -35,7 +35,7 @@
                     <a href="https://banke.pro/de/">de</a>
                 </div>
             </div>
+            -->
         </div>
-        -->
     </div>
 </header>
