@@ -11,3 +11,7 @@
 
     </div>
 </footer>
+
+<div class="preloader-container">
+    <div class="cssload-whirlpool"></div>
+</div>

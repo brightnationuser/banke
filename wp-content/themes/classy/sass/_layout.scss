@@ -14,10 +14,20 @@ body {
     color: #333333;
     margin: 0;
     overflow-x: hidden;
-    opacity: 0;
+    //opacity: 0;
 
     &.m_ready {
         opacity: 1;
+
+        .content {
+            overflow: unset;
+            height: auto;
+        }
+
+        .preloader-container {
+            opacity: 0;
+            z-index: -1;
+        }
     }
 
     &.m_margintop {
@@ -87,7 +97,7 @@ header.header {
                             right: 50%;
                             height: 0;
                             top: 30px;
-                            border: 1px solid $color-light-blue;
+                            border-top: 2px solid $color-light-blue;
                             transition: 0.3s;
                             opacity: 0;
                         }
@@ -285,6 +295,9 @@ header.header {
 
 .content {
     flex-grow: 1;
+
+    overflow: hidden;
+    height: 0;
 }
 
 body {
@@ -306,8 +319,10 @@ body {
 //}
 
 footer.footer {
+    position: relative;
     background: $color-blue;
     font-weight: 600;
+    z-index: 10;
 
     .container {
         padding-top: 20px;

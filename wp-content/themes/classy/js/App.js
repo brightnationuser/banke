@@ -32,7 +32,14 @@ class App {
             this.initCarSlider();
         }
 
-        $('body').addClass('m_ready');
+        //$('body').addClass('m_ready');
+        setTimeout(function () {
+            $('body').addClass('m_ready');
+        }, 500);
+
+        $("a").click(function () {
+            $('body').removeClass('m_ready');
+        });
     }
 
     initCarSlider() {
