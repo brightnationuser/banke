@@ -15,7 +15,7 @@ export default class Animator {
 
         // Определяем анимации по таймлайну для текущей страницы
         this[`set${page}Timeline`]();
-        //$('body').addClass('m_ready');
+        $('body').addClass('m_ready');
 
         // Анимация начинается сразу после загрузки страницы
         this.timeline.play();
