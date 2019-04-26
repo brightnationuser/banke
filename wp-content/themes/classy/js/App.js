@@ -35,7 +35,7 @@ class App {
         //$('body').addClass('m_ready');
         setTimeout(function () {
             $('body').addClass('m_ready');
-        }, 500);
+        }, 100);
 
         $("a").click(function () {
             $('body').removeClass('m_ready');

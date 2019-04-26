@@ -20,7 +20,7 @@
 
 		<div class="b-news__carousel owl-carousel">
 			@foreach($news_carousel as $news_item)
-				<div class="carousel__item">
+				<a href="{{ $news_item->permalink() }}" class="carousel__item">
 					<div class="item__img" style="background-image: url('{{ $news_item->getAcfImage()->src('large') }}')">
 					</div>
 
@@ -33,7 +33,7 @@
 							{{ $news_item->title() }}
 						</div>
 					</div>
-				</div>
+				</a>
 			@endforeach
 		</div>
 	</div>

@@ -113,7 +113,25 @@ header.header {
                         }
                     }
 
-                    &.current_page_item {
+                    &.current-menu-item {
+                        &#menu-item-330, &#menu-item-12 {
+                            a {
+                                color: $color-light-blue;
+                            }
+
+                            &:after {
+                                display: none;
+                            }
+
+                            &:hover {
+                                a {
+                                    &:after {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+
                         &:after {
                             content: '';
                             display: block;
