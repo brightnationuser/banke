@@ -25,6 +25,7 @@
 
         </div>
 
+        <!--
         <div class="header__lng">
             <div class="lng-w">
                 <a href="/">en</a>
@@ -35,5 +36,6 @@
                 </div>
             </div>
         </div>
+        -->
     </div>
 </header>
