@@ -3,7 +3,11 @@
 @section('content')
 
     <div class="hero parallax-container">
-        <div class="parallax" id="js_hero_hero">
+        {{--<div class="parallax" id="js_hero_hero">--}}
+            {{--<img src="/wp-content/themes/classy/images/bg/header-bg-2.jpg" data-type="parallax" data-depth="2" data-shift="100">--}}
+        {{--</div>--}}
+
+        <div class="parallax">
             <img src="/wp-content/themes/classy/images/bg/header-bg-2.jpg" data-type="parallax" data-depth="2" data-shift="100">
         </div>
 
