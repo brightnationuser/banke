@@ -12,16 +12,18 @@
 .cssload-whirlpool {
   display: block;
   //background: #2574A9 url(../images/preloader.svg) center center no-repeat;
-  background: url(../images/preloader_blue.svg) center center no-repeat;
-  width: 80px;
-  height: 80px;
+  //background: url(../images/preloader_blue.svg) center center no-repeat;
+  width: 70px;
+  height: 70px;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -40px 0 0 -40px;
+  margin: -35px 0 0 -35px;
   border-radius: 100%;
-  background-size: 60px;
+  background-size: 100%;
   //box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
+
+  background: url(../images/oval.svg) center center no-repeat;
 }
 
 //.cssload-whirlpool,
