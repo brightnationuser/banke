@@ -3,6 +3,7 @@ import Scene from './Scene';
 import Carousel from './Carousel';
 import '@fancyapps/fancybox';
 import Animator from './Animator';
+import Animation from './animation/Animation';
 
 class App {
 
@@ -40,6 +41,10 @@ class App {
         $("a:not(.disable_preloader)").click(function () {
             $('body').removeClass('m_ready');
         });
+
+        if($('#js_hero_hero').length > 0) {
+            new Animation();
+        }
     }
 
     initCarSlider() {
