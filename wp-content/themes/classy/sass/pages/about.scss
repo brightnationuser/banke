@@ -14,6 +14,7 @@
             display: flex;
 
             .history__img {
+                display: none;
                 margin-right: 40px;
                 flex-basis: 50%;
 
@@ -30,9 +31,11 @@
             }
 
             .history__text {
+                max-width: 800px;
+                margin: 0 auto;
                 font-size: 15px;
                 line-height: 23px;
-                flex-basis: 50%;
+                //flex-basis: 50%;
             }
         }
     }
