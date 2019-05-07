@@ -11,7 +11,9 @@
         <div class="products">
             @foreach ($post->getAcfByKey('acf_products') as $product)
                 <div class="product__card">
-                    <div class="card__image" style="background-image: url({{ $product['image'] }});"></div>
+                    <div class="card__image-w">
+                        <div class="card__image" style="background-image: url({{ $product['image'] }});"></div>
+                    </div>
                     <div class="card__info">
                         <div class="card__title">{{ $product['title'] }}</div>
                         <div class="card__text">{{ $product['text'] }}</div>

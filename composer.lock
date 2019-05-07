@@ -590,16 +590,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.36.2",
+            "version": "1.37.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "cd324b98bc30290f233dd0e75e6ce49f7ab2a6c9"
+                "reference": "5be4fdf97076a685b23efdedfc2b73ad0c5eab70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/cd324b98bc30290f233dd0e75e6ce49f7ab2a6c9",
-                "reference": "cd324b98bc30290f233dd0e75e6ce49f7ab2a6c9",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/5be4fdf97076a685b23efdedfc2b73ad0c5eab70",
+                "reference": "5be4fdf97076a685b23efdedfc2b73ad0c5eab70",
                 "shasum": ""
             },
             "require": {
@@ -644,7 +644,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-12-28T10:07:33+00:00"
+            "time": "2019-04-19T10:27:42+00:00"
         },
         {
             "name": "php-http/client-common",
@@ -1320,16 +1320,16 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v4.2.5",
+            "version": "v4.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "43ce8ab34c734dcc8a4af576cb86711daab964c5"
+                "reference": "2d279b6bb1d582dd5740d4d3251ae8c18812ed37"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/43ce8ab34c734dcc8a4af576cb86711daab964c5",
-                "reference": "43ce8ab34c734dcc8a4af576cb86711daab964c5",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/2d279b6bb1d582dd5740d4d3251ae8c18812ed37",
+                "reference": "2d279b6bb1d582dd5740d4d3251ae8c18812ed37",
                 "shasum": ""
             },
             "require": {
@@ -1372,20 +1372,20 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2019-03-10T17:09:50+00:00"
+            "time": "2019-04-11T11:27:41+00:00"
         },
         {
             "name": "symfony/finder",
-            "version": "v4.2.5",
+            "version": "v4.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "267b7002c1b70ea80db0833c3afe05f0fbde580a"
+                "reference": "e45135658bd6c14b61850bf131c4f09a55133f69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/267b7002c1b70ea80db0833c3afe05f0fbde580a",
-                "reference": "267b7002c1b70ea80db0833c3afe05f0fbde580a",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/e45135658bd6c14b61850bf131c4f09a55133f69",
+                "reference": "e45135658bd6c14b61850bf131c4f09a55133f69",
                 "shasum": ""
             },
             "require": {
@@ -1421,20 +1421,20 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2019-02-23T15:42:05+00:00"
+            "time": "2019-04-06T13:51:08+00:00"
         },
         {
             "name": "symfony/options-resolver",
-            "version": "v4.2.5",
+            "version": "v4.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/options-resolver.git",
-                "reference": "3896e5a7d06fd15fa4947694c8dcdd371ff147d1"
+                "reference": "fd4a5f27b7cd085b489247b9890ebca9f3e10044"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/3896e5a7d06fd15fa4947694c8dcdd371ff147d1",
-                "reference": "3896e5a7d06fd15fa4947694c8dcdd371ff147d1",
+                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/fd4a5f27b7cd085b489247b9890ebca9f3e10044",
+                "reference": "fd4a5f27b7cd085b489247b9890ebca9f3e10044",
                 "shasum": ""
             },
             "require": {
@@ -1475,7 +1475,7 @@
                 "configuration",
                 "options"
             ],
-            "time": "2019-02-23T15:17:42+00:00"
+            "time": "2019-04-10T16:20:36+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -1596,16 +1596,16 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v4.2.5",
+            "version": "v4.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "e46933cc31b68f51f7fc5470fb55550407520f56"
+                "reference": "181a426dd129cb496f12d7e7555f6d0b37a7615b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/e46933cc31b68f51f7fc5470fb55550407520f56",
-                "reference": "e46933cc31b68f51f7fc5470fb55550407520f56",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/181a426dd129cb496f12d7e7555f6d0b37a7615b",
+                "reference": "181a426dd129cb496f12d7e7555f6d0b37a7615b",
                 "shasum": ""
             },
             "require": {
@@ -1627,7 +1627,9 @@
                 "symfony/console": "~3.4|~4.0",
                 "symfony/dependency-injection": "~3.4|~4.0",
                 "symfony/finder": "~2.8|~3.0|~4.0",
+                "symfony/http-kernel": "~3.4|~4.0",
                 "symfony/intl": "~3.4|~4.0",
+                "symfony/var-dumper": "~3.4|~4.0",
                 "symfony/yaml": "~3.4|~4.0"
             },
             "suggest": {
@@ -1665,7 +1667,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2019-04-01T14:13:08+00:00"
+            "time": "2019-05-01T12:55:36+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -1777,16 +1779,16 @@
         },
         {
             "name": "windwalker/structure",
-            "version": "3.5.2",
+            "version": "3.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ventoviro/windwalker-structure.git",
-                "reference": "c54090c14f1a9d1bd2a791d64d9aaceaa9440e90"
+                "reference": "271ef82438c20d66d1f42c8c47c9c6365fc5bc9d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ventoviro/windwalker-structure/zipball/c54090c14f1a9d1bd2a791d64d9aaceaa9440e90",
-                "reference": "c54090c14f1a9d1bd2a791d64d9aaceaa9440e90",
+                "url": "https://api.github.com/repos/ventoviro/windwalker-structure/zipball/271ef82438c20d66d1f42c8c47c9c6365fc5bc9d",
+                "reference": "271ef82438c20d66d1f42c8c47c9c6365fc5bc9d",
                 "shasum": ""
             },
             "require": {
@@ -1794,11 +1796,15 @@
             },
             "require-dev": {
                 "ext-json": "*",
+                "laktak/hjson": "^2.1",
                 "symfony/yaml": "3.*",
-                "windwalker/test": "~3.0"
+                "windwalker/test": "~3.0",
+                "yosymfony/toml": "^1.0"
             },
             "suggest": {
-                "symfony/yaml": "Install 3.* if you require YAML support."
+                "laktak/hjson": "Install ~2.0 if you require HJSON support.",
+                "symfony/yaml": "Install 3.* if you require YAML support.",
+                "yosymfony/toml": "Install ~1.0 if you require TOML support."
             },
             "type": "windwalker-package",
             "extra": {
@@ -1822,7 +1828,7 @@
                 "structure",
                 "windwalker"
             ],
-            "time": "2019-02-05T05:54:56+00:00"
+            "time": "2019-04-27T13:12:55+00:00"
         }
     ],
     "packages-dev": [],
