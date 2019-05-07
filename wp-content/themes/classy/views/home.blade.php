@@ -21,7 +21,7 @@
             </div>
 
             <div class="hero__button">
-                <a href="https://banke.pro/products-2/" class="button">
+                <a href="/epto-systems/" class="button">
                     Our products
                 </a>
             </div>
@@ -428,7 +428,7 @@
                 </div>
 
                 <div class="description__button">
-                    <a href="https://banke.pro/products-2/" class="button">Read more</a>
+                    <a href="/epto-systems/" class="button">Read more</a>
                 </div>
             </div>
         </div>
