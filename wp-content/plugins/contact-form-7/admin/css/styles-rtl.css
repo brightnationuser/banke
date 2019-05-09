@@ -61,6 +61,6 @@
 	float: right;
 }
 
-.card .infobox {
+.card .infobox__content {
 	float: left;
 }

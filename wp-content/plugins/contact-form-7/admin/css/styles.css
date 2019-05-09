@@ -394,7 +394,7 @@ ul.config-error li a.external {
 	font-weight: 600;
 }
 
-.card .infobox {
+.card .infobox__content {
 	float: right;
 	font-size: 13px;
 	color: #666;
