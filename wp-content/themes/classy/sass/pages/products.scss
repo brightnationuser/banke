@@ -17,13 +17,16 @@
             margin: 0 15px;
         }
 
+        .card__image-w {
+            background-color: #F9F9F9;
+            padding: 40px;
+        }
+
         .card__image {
-            width: 100%;
-            height: 330px;
+            height: 240px;
             background-position: center;
             background-repeat: no-repeat;
-            background-size: auto;
-            background-color: #F9F9F9;
+            background-size: contain;
         }
 
         .card__info {

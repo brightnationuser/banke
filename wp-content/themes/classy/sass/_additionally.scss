@@ -37,7 +37,7 @@ h2 {
         height: 0;
         left: calc(50% - 50px/2);
         top: 58px;
-        border: 1px solid $color-light-blue;
+        border-top: 2px solid $color-light-blue;
     }
 
     @media screen and (max-width: $width-m) {

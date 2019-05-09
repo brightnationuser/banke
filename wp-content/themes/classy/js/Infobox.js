@@ -5,12 +5,14 @@ export default class Infobox {
   }
 
   show() {
-    this.block.className = 'infobox-w';  
+    this.block.className = 'infobox-w';
+
     return this; 
   }
 
   hide() {
     this.block.className = 'infobox-w hidden';
+
     return this;
   }
     

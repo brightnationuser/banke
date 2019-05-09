@@ -171,7 +171,6 @@
                 }
                 
                 @media screen and (max-width: 1000px) {
-                    
                     main {
                         display: block;
                         
@@ -211,285 +210,6 @@
                         }
                     }
                 }
-                
-                .pulse_main {
-                    box-sizing: content-box;
-                    display: block;
-                    width: 8px;
-                    height: 8px;
-                    border-radius: 50%;
-                    border: 4px solid white;
-                    background: #005CA9;
-                    cursor: pointer;
-                    box-shadow: 0 0 0 rgba(44, 60, 204, 0.9);
-                    animation: pulse_main 2s infinite;
-                }
-                
-                .infobox-w {
-                    position: absolute;
-                    background: white;
-                    z-index: 3;
-                    transition: 0.55s ease;
-                    -webkit-transition: 0.55s ease;
-                    
-                    &#infobox_0 {
-                        left: -150px;
-                        top: 10px;
-                    }
-                    
-                    &#infobox_1 {
-                        left: 200px;
-                        top: 50px;
-                    }
-                    
-                    &#infobox_3 {
-                        left: 70px;
-                        top: 179px;
-                    }
-                    
-                    &#infobox_2 {
-                        left: 151px;
-                        top: 152px;
-                    }
-                    
-                    &#infobox_5 {
-                        left: 229px;
-                        top: 218px;
-                    }
-                    
-                    &#infobox_6 {
-                        left: 24px;
-                        top: 255px;
-                    }
-                    
-                    &#infobox_4 {
-                        left: 150px;
-                        top: 197px;
-                    }
-                    
-                    &#infobox_7 {
-                        left: 289px;
-                        top: 137px;
-                    }
-                    
-                    &#infobox_8 {
-                        left: 100px;
-                        top: 168px;
-                    }
-                    
-                    &#infobox_9 {
-                        top: 255px;
-                        left: 57px;
-                    }
-                    
-                    &#infobox_10 {
-                        top: 255px;
-                        left: 137px;
-                    }
-                    
-                    &#infobox_11 {
-                        left: 348px;
-                        top: 188px;
-                    }
-                    
-                    &#infobox_12 {
-                        left: 221px;
-                        top: 255px;
-                    }
-                    
-                    &#infobox_13 {
-                        left: 133px;
-                        top: 255px;
-                    }
-                    
-                    &#infobox_14 {
-                        left: 294px;
-                        top: 255px;
-                    }
-                    
-                    &#infobox_15 {
-                        left: 144px;
-                        top: 192px;
-                    }
-                    
-                    &#infobox_16 {
-                        left: 362px;
-                        top: 220px;
-                        z-index: 4;
-                    }
-                    
-                    &#infobox_17 {
-                        left: 194px;
-                        top: 39px;
-                        z-index: 4;
-                    }
-                    
-                    &#infobox_18 {
-                        left: 200px;
-                        top: 20px;
-                    }
-                    
-                    &#infobox_19 {
-                        left: 273px;
-                        top: 111px;
-                    }
-                    
-                    &#infobox_20 {
-                        left: 287px;
-                        top: 185px;
-                    }
-                    
-                    &#infobox_21 {
-                        left: 262px;
-                        top: 258px;
-                        z-index: 4;
-                    }
-                    
-                    &#infobox_22 {
-                        left: 131px;
-                        top: 235px;
-                        z-index: 4;
-                    }
-                }
-                
-                .infobox-w:not(.hidden) {
-                    z-index: 10 !important;
-                }
-
-                @media screen and (max-width: 1000px) {
-
-                    .infobox-w {
-                        display: none;
-                    }
-                }
-                
-                @media screen and (min-width: 1000px) {
-
-                    .infobox-w.hidden {
-                        background: transparent;
-                        transition: 0.55s ease;
-                        -webkit-transition: 0.55s ease;
-                        
-                        .infobox {
-                            box-shadow: none;
-                        }
-                        
-                        .infobox__image {
-                            opacity: 0;
-                        }
-                        
-                        .infobox__text {
-                            opacity: 0;
-                        }
-                    }
-                }
-                
-                .infobox {
-                    position: relative;
-                    display: flex;
-                    align-items: center;
-                    padding: 10px 15px;
-                    box-shadow: 0 0 50px 1px rgb(214, 214, 214);
-                    transition: 0.75s ease;
-                    -webkit-transition: 0.75s ease;
-                    
-                    .infobox__dot {
-                        position: absolute;
-                        z-index: 2;
-                        
-                        &.m_left-top {
-                            left: -9px;
-                            top: -9px;
-                        }
-                        
-                        &.m_left-bottom {
-                            left: -9px;
-                            bottom: -9px;
-                        }
-                        
-                        &.m_right-top {
-                            right: -9px;
-                            top: -9px;
-                        }
-                        
-                        &.m_right-bottom {
-                            right: -9px;
-                            bottom: -9px;
-                        }
-                    }
-                    
-                    .infobox__image {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        margin-right: 20px;
-                        transition: 0.75s ease;
-                        -webkit-transition: 0.75s ease;
-                        
-                        img {
-                            border-radius: 50%;
-                        }
-                    }
-                    
-                    .infobox__text {
-                        font-size: 16px;
-                        text-align: left;
-                        transition: 0.75s ease;
-                        -webkit-transition: 0.75s ease;
-                    }
-                }
-                
-                @media screen and (max-width: 1000px) {
-                    .infobox-w {
-                        position: relative;
-                        left: 0 !important;
-                        top: 0 !important;
-                        
-                        .infobox {
-                            box-shadow: 0 0 5px 1px #d6d6d6;
-                            margin: 20px 0px;
-                            
-                            .infobox__dot {
-                                display: none;
-                            }
-                            
-                            .infobox__text {
-                                font-size: 14px;
-                            }
-                        }
-                    }
-                }
-                
-                .pulse_main:hover {
-                    animation: none;
-                }
-                
-                @-webkit-keyframes pulse_main {
-                    0% {
-                        -webkit-box-shadow: 0 0 0 0 rgba(44, 60, 204, 0.8);
-                    }
-                    70% {
-                        -webkit-box-shadow: 0 0 0 10px rgba(44, 60, 204, 0);
-                    }
-                    100% {
-                        -webkit-box-shadow: 0 0 0 0 rgba(44, 60, 204, 0);
-                    }
-                }
-                
-                @keyframes pulse_main {
-                    0% {
-                        -moz-box-shadow: 0 0 0 0 rgba(44, 60, 204, 0.8);
-                        box-shadow: 0 0 0 0 rgba(44, 60, 204, 0.8);
-                    }
-                    70% {
-                        -moz-box-shadow: 0 0 0 10px rgba(44, 60, 204, 0);
-                        box-shadow: 0 0 0 10px rgba(44, 60, 204, 0);
-                    }
-                    100% {
-                        -moz-box-shadow: 0 0 0 0 rgba(44, 60, 204, 0);
-                        box-shadow: 0 0 0 0 rgba(44, 60, 204, 0);
-                    }
-                }
             }
             
             .description-w {
@@ -515,6 +235,101 @@
 
     .epto {
         margin-bottom: 50px;
+
+        .container {
+            .epto__bg {
+                position: absolute;
+                top: -50px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-image: url("/wp-content/themes/classy/images/pages/home/E-PTO.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 650px;
+                height: 300px;
+
+                @media screen and (max-width: $width-l) {
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    position: absolute;
+                    transform: none !important;
+                    width: 100%;
+                }
+            }
+
+            .epto-w {
+                position: relative;
+                margin: 0 auto 20px auto;
+                max-width: 824px;
+                //height: 443px;
+
+                > img {
+                    max-width: 100%;
+                }
+
+                .infobox-w {
+                    &#infobox_epto_0 {
+                        left: 40px;
+                        top: 320px;
+                    }
+
+                    &#infobox_epto_1 {
+                        left: 710px;
+                        top: 250px;
+                        max-width: 330px;
+                    }
+
+                    &#infobox_epto_2 {
+                        left: 405px;
+                        top: 0px;
+                        max-width: 300px;
+                    }
+
+                    &#infobox_epto_3 {
+                        left: 114px;
+                        top: 300px;
+                        max-width: 380px;
+                    }
+
+                    &#infobox_epto_4 {
+                        left: 365px;
+                        top: 156px;
+                        max-width: 300px;
+                    }
+
+                    &#infobox_epto_5 {
+                        left: 344px;
+                        top: 300px;
+                        max-width: 280px;
+                    }
+
+                    &#infobox_epto_6 {
+                        left: 700px;
+                        top: 150px;
+                        max-width: 280px;
+                    }
+
+                    &#infobox_epto_7 {
+                        left: 480px;
+                        top: 270px;
+                        max-width: 300px;
+                    }
+
+                    &#infobox_epto_8 {
+                        left: 42px;
+                        top: 160px;
+                        max-width: 320px;
+                    }
+
+                    &#infobox_epto_9 {
+                        left: 670px;
+                        top: 345px;
+                        max-width: 320px;
+                    }
+                }
+            }
+        }
     }
 
     @media screen and (max-width: $width-l) {

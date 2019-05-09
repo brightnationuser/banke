@@ -33,6 +33,10 @@ class App {
             this.initCarSlider();
         }
 
+        if($('.epto__image').length > 0) {
+            this.initEptoSlider();
+        }
+
         //$('body').addClass('m_ready');
         setTimeout(function () {
             $('body').addClass('m_ready');
@@ -52,6 +56,14 @@ class App {
             new Scene('scene_0', 'car'),
             new Scene('scene_1', 'car'),
             new Scene('scene_2', 'car')
+        ];
+
+        new Slider(scenes);
+    }
+
+    initEptoSlider() {
+        let scenes = [
+            new Scene('scene_4', 'epto'),
         ];
 
         new Slider(scenes);
