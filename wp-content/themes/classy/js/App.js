@@ -1,5 +1,5 @@
-import Slider from './Slider';
-import Scene from './Scene';
+import Slider from './scene/Slider';
+import Scene from './scene/Scene';
 import Carousel from './Carousel';
 import '@fancyapps/fancybox';
 import Animator from './Animator';
@@ -52,21 +52,17 @@ class App {
     }
 
     initCarSlider() {
-        let scenes = [
-            new Scene('scene_0', 'car'),
-            new Scene('scene_1', 'car'),
-            new Scene('scene_2', 'car')
-        ];
-
-        new Slider(scenes);
+        // let scenes = [
+        //     new Scene('scene_0', 'car'),
+        //     new Scene('scene_1', 'car'),
+        //     new Scene('scene_2', 'car')
+        // ];
+        //
+        // new Slider(scenes);
     }
 
     initEptoSlider() {
-        let scenes = [
-            new Scene('scene_4', 'epto'),
-        ];
-
-        new Slider(scenes);
+        new Slider($('.m-epto'));
     }
 
     initTabsSwitcher() {
