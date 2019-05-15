@@ -1,15 +1,16 @@
-import Scene from './Scene';
+// import Scene from '/Scene';
 
 class Slider {
 
-    constructor(scenes) {
-        this.scenes = scenes;
+    constructor(slider) {
+        this.slider = slider;
         this.init();
+        this.initSwitch();
     }
 
     init() {
-        let currentScene = 0;
-        this.scenes[currentScene].show();
+
+        //this.scenes[currentScene].show();
 
         // setTimeout(()=> {
         //     this.scenes.forEach(scene => scene.animate())
@@ -17,11 +18,11 @@ class Slider {
 
         setTimeout(() => {
 
-            this.scenes[currentScene].infoboxes[0].show();
+            //this.scenes[currentScene].infoboxes[0].show();
 
             Array.from(document.getElementsByClassName('infobox__dot')).forEach(element => {
                 element.addEventListener('mouseenter', (e) => {
-                    this.scenes[currentScene].suppress = true;
+                    //this.scenes[currentScene].suppress = true;
                     //this.scenes[currentScene].infoboxes[this.scenes[currentScene].currentInfobox - 1].hide();
                     // e.target.parentElement.className = 'infobox-w';
 
@@ -61,9 +62,36 @@ class Slider {
             //     }
             //     this.scenes[currentScene].show();
             // });
-        }, 1500);
+        }, 100);
     }
 
+    initSwitch() {
+        let self = this;
+
+        $(this.slider).find('.m-left').on('click', function () {
+            let currenIndex = $(self.slider).find('.scene__item.active').index();
+
+            currenIndex --;
+
+            if(currenIndex < 0) {
+                currenIndex = $(self.slider).find('.scene__item').length - 1;
+            }
+
+            $(self.slider).find('.scene__item').removeClass('active').eq(currenIndex).addClass('active');
+        });
+
+        $(this.slider).find('.m-right').on('click', function () {
+            let currenIndex = $(self.slider).find('.scene__item.active').index();
+
+            currenIndex ++;
+
+            if(currenIndex >= $(self.slider).find('.scene__item').length) {
+                currenIndex = 0;
+            }
+
+            $(self.slider).find('.scene__item').removeClass('active').eq(currenIndex).addClass('active');
+        });
+    }
 }
 
 export default Slider;

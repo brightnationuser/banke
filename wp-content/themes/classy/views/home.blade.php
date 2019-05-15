@@ -63,7 +63,7 @@
 
     <div class="epto">
         <div class="container">
-            @include('partials.epto-slider')
+            @include('partials.slider.epto-slider')
 
             <div class="description-w">
                 <h3>
