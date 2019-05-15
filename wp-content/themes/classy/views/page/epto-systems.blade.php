@@ -11,7 +11,7 @@
             </h2>
 
             <div class="container">
-                @include('partials.epto-slider')
+                @include('partials.slider.epto-slider')
             </div>
         </div>
     </div>
