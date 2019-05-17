@@ -18,8 +18,22 @@
                 min-width: 367px;
                 margin: 0 124px;
             }
+        }
+    }
 
-            @media screen and (max-width: $width-l) {
+    .concept__principles {
+        padding: 10px 0 60px 0;
+    }
+
+    @media screen and (max-width: $width-l) {
+        .concept__main {
+            > h2:first-child {
+                margin-bottom: 60px;
+            }
+        }
+
+        .concept__description {
+            .description__wrapper {
                 flex-direction: column;
                 margin: 0 10px 20px 10px;
                 max-width: 100%;
@@ -33,10 +47,4 @@
             }
         }
     }
-
-    .concept__principles {
-        padding: 10px 0 60px 0;
-    }
-        
-    
 }

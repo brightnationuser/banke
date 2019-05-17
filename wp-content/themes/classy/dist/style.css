@@ -684,11 +684,13 @@ h3 {
 .benefits .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .benefits .benefit {
-  margin-right: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 30px;
   background: #FFFFFF;
   box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.04);
   border-radius: 4px;
@@ -734,14 +736,14 @@ h3 {
 }
 
 @media screen and (max-width: 1024px) {
-  .benefits .container {
-    flex-direction: column;
+  .benefits .container .benefit {
+    width: calc(50% - 30px);
   }
+}
 
+@media screen and (max-width: 576px) {
   .benefits .container .benefit {
     width: auto;
-    max-width: 300px;
-    margin: 0 auto;
   }
 }
 
@@ -1166,19 +1168,25 @@ h3 {
 
 @media screen and (max-width: 1000px) {
   .b-scene .scene__item .infobox-w {
-    display: none;
     position: relative;
     left: 0 !important;
     top: 0 !important;
   }
 
+  .b-scene .scene__item .infobox-w .infobox__dot {
+    display: none;
+  }
+
   .b-scene .scene__item .infobox-w .infobox__content {
+    width: auto;
+    position: relative;
+    display: block !important;
     box-shadow: 0 0 5px 1px #d6d6d6;
     margin: 20px 0px;
   }
 
-  .b-scene .scene__item .infobox-w .infobox__content .infobox__dot {
-    display: none;
+  .b-scene .scene__item .infobox-w .infobox__content .content__image {
+    margin-bottom: 10px;
   }
 
   .b-scene .scene__item .infobox-w .infobox__content .infobox__text {
@@ -1188,6 +1196,40 @@ h3 {
 
 .b-scene .scene__item.active {
   display: block;
+}
+
+@media screen and (max-width: 1024px) {
+  .b-scene.m-epto .scene__item > img {
+    display: block;
+    margin: 0 auto;
+    max-width: 70%;
+  }
+
+  .b-scene.m-epto .switch {
+    height: 300px;
+  }
+
+  .b-scene.m-epto .switch.m-left {
+    left: -30px;
+  }
+
+  .b-scene.m-epto .switch.m-right {
+    right: -30px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .b-scene.m-epto .switch {
+    height: 100px;
+  }
+
+  .b-scene.m-epto .switch.m-left {
+    left: -50px;
+  }
+
+  .b-scene.m-epto .switch.m-right {
+    right: -50px;
+  }
 }
 
 @-webkit-keyframes pulse_main {
@@ -1496,7 +1538,15 @@ h3 {
   margin: 0 124px;
 }
 
+.p-epto-systems .concept__principles {
+  padding: 10px 0 60px 0;
+}
+
 @media screen and (max-width: 1024px) {
+  .p-epto-systems .concept__main > h2:first-child {
+    margin-bottom: 60px;
+  }
+
   .p-epto-systems .concept__description .description__wrapper {
     flex-direction: column;
     margin: 0 10px 20px 10px;
@@ -1509,10 +1559,6 @@ h3 {
     margin: 0 auto 20px auto;
     max-width: 367px;
   }
-}
-
-.p-epto-systems .concept__principles {
-  padding: 10px 0 60px 0;
 }
 
 .p-faq .content {
@@ -1616,10 +1662,6 @@ h3 {
           transform: translate3d(0, 0, 0);
   text-align: center;
   opacity: 1;
-}
-
-.home .content .hero #js_hero_hero svg {
-  height: 200% !important;
 }
 
 .home .content .benefits {
@@ -1895,17 +1937,6 @@ h3 {
     padding-top: 30px;
   }
 
-  .home .content .benefits .container {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .home .content .benefits .benefit {
-    width: auto;
-    max-width: 270px;
-    margin: 30px;
-  }
-
   .home .content .our-products__bg {
     width: 90% !important;
     top: 65px !important;
@@ -1917,8 +1948,9 @@ h3 {
 }
 
 @media screen and (max-width: 768px) {
-  .home .content .benefits .benefit {
-    margin: 15px auto;
+  .home .content .our-products,
+  .home .content .epto {
+    margin-bottom: 50px;
   }
 }
 
