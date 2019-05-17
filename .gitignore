@@ -10,5 +10,5 @@ yarn-error.log
 /vendor
 .htaccess
 robots.txt
-/wp-content/themes/classy/dist
+#/wp-content/themes/classy/dist
 /.htpasswd

@@ -278,17 +278,6 @@
         .benefits {
             margin-top: 0;
             padding-top: 30px;
-            
-            .container {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .benefit {
-                width: auto;
-                max-width: 270px;
-                margin: 30px;
-            }
         }
 
         .our-products__bg {
@@ -303,10 +292,8 @@
 
     @media screen and (max-width: $width-m) {
 
-        .benefits {
-            .benefit {
-                margin: 15px auto;
-            }
+        .our-products, .epto {
+            margin-bottom: 50px;
         }
     }
 }

@@ -10,9 +10,7 @@
                 {{ $post->getAcfByKey('acf_title_main') }}
             </h2>
 
-            <div class="container">
-                @include('partials.slider.epto-slider')
-            </div>
+            @include('partials.slider.epto-slider')
         </div>
     </div>
 

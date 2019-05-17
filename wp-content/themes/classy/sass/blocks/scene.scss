@@ -177,39 +177,28 @@
                 }
             }
 
-            //&.fade-out {
-            //    .infobox__content {
-            //        transition: 1s;
-            //        opacity: 0;
-            //    }
-            //}
-            //
-            //&.hidden {
-            //    .infobox__content {
-            //        display: none;
-            //    }
-            //}
-
-            //&:not(.hidden) {
-            //    z-index: 10 !important;
-            //}
-
             &:hover {
                 z-index: 10;
             }
 
             @media screen and (max-width: 1000px) {
-                display: none;
                 position: relative;
                 left: 0 !important;
                 top: 0 !important;
 
+                .infobox__dot {
+                    display: none;
+                }
+
                 .infobox__content {
+                    width: auto;
+                    position: relative;
+                    display: block !important;
                     box-shadow: 0 0 5px 1px #d6d6d6;
                     margin: 20px 0px;
 
-                    .infobox__dot {
-                        display: none;
+                    .content__image {
+                        margin-bottom: 10px;
                     }
 
                     .infobox__text {
@@ -217,30 +206,50 @@
                     }
                 }
             }
-
-            //@media screen and (min-width: 1000px) {
-            //    &.hidden {
-            //        background: transparent;
-            //        transition: 0.55s ease;
-            //        -webkit-transition: 0.55s ease;
-            //
-            //        .infobox__content {
-            //            box-shadow: none;
-            //        }
-            //
-            //        .infobox__image {
-            //            opacity: 0;
-            //        }
-            //
-            //        .infobox__text {
-            //            opacity: 0;
-            //        }
-            //    }
-            //}
         }
 
         &.active {
             display: block;
+        }
+    }
+
+    @media screen and (max-width: $width-l) {
+        &.m-epto {
+            .scene__item {
+                > img {
+                    display: block;
+                    margin: 0 auto;
+                    max-width: 70%;
+                }
+            }
+
+            .switch {
+                height: 300px;
+
+                &.m-left {
+                    left: -30px;
+                }
+
+                &.m-right {
+                    right: -30px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: $width-s) {
+        &.m-epto {
+            .switch {
+                height: 100px;
+
+                &.m-left {
+                    left: -50px;
+                }
+
+                &.m-right {
+                    right: -50px;
+                }
+            }
         }
     }
 }
