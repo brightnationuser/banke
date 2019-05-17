@@ -1,0 +1,10 @@
+.wp-block {
+  max-width: 1200px;
+}
+
+.row-actions span.hide-if-no-js {
+  display: none;
+}
+
+
+/*# sourceMappingURL=admin.css.map*/
