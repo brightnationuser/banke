@@ -66,7 +66,7 @@
 
         {!! get_field('acf_header_code', 'option') !!}
 
-        <link rel="stylesheet" href="{{ \Helpers\General::asset_hash('/wp-content/css/app.css') }}">
+        <?php /* <link rel="stylesheet" href="{{ \Helpers\General::asset_hash('/wp-content/css/app.css') }}"> */ ?>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131150497-2"></script>
@@ -91,6 +91,18 @@
         </div>
 
         {{ get_footer() }}
+
+        @php($cookieconsent = get_field('acf_cookieconsent', 'option'))
+
+        <script>
+            window.trans = {
+                cookieconsent_message: '{!! $cookieconsent['message'] !!}',
+                cookieconsent_dismiss: '{!! $cookieconsent['dismiss'] !!}',
+                cookieconsent_allow: '{!! $cookieconsent['allow'] !!}',
+                cookieconsent_link: '{!! $cookieconsent['link'] !!}',
+                cookieconsent_href: '{!! $cookieconsent['href'] !!}',
+            };
+        </script>
 
         {{ wp_footer() }}
 
