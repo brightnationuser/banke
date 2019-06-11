@@ -633,6 +633,10 @@ h3 {
   margin-right: auto;
 }
 
+.wpcf7-form-control-wrap.qqq {
+  display: none;
+}
+
 .b-news__carousel {
   margin-top: 80px;
 }
