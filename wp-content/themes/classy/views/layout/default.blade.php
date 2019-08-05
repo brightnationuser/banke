@@ -4,7 +4,7 @@
 
         <meta charset="{{ bloginfo( 'charset' ) }}" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
         <link rel="pingback" href="{{ bloginfo('pingback_url') }}" />
         <link rel="alternate" type="application/rss+xml" title="{{ bloginfo('name') }} RSS Feed" href="{{ bloginfo('rss2_url') }}" />

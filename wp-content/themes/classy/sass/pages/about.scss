@@ -65,6 +65,10 @@
                         font-size: 18px;
                         vertical-align: text-top;
                     }
+
+                    @media screen and (max-width: $width-l) {
+                        padding-left: 0;
+                    }
                 }
             }
         }

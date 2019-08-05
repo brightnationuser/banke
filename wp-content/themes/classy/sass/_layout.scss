@@ -15,6 +15,7 @@ body {
     margin: 0;
     overflow-x: hidden;
     //opacity: 0;
+    min-width: 320px;
 
     &.m_ready {
         opacity: 1;
