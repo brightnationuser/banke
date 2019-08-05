@@ -1406,27 +1406,6 @@ h3 {
   vertical-align: text-top;
 }
 
-.p-about .history .history__wrap .history__text .history__button-bg {
-  text-align: center;
-  margin-top: 60px;
-  background-image: url("/wp-content/themes/classy/images/bg/report_bg.jpg");
-  background-position: center;
-  height: 153px;
-  padding: 53px 0 0 400px;
-}
-
-.p-about .history .history__wrap .history__text .history__button-bg i {
-  margin-left: 10px;
-  font-size: 18px;
-  vertical-align: text-top;
-}
-
-@media screen and (max-width: 1024px) {
-  .p-about .history .history__wrap .history__text .history__button-bg {
-    padding-left: 0;
-  }
-}
-
 .p-about .team {
   margin-top: 80px;
   background-color: #F2F6FC;
