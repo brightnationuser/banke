@@ -39160,9 +39160,9 @@ function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\wamp64\www\banke-pro.local\wp-content\themes\classy\js\index.js */"./wp-content/themes/classy/js/index.js");
-__webpack_require__(/*! D:\wamp64\www\banke-pro.local\wp-content\themes\classy\sass\style.scss */"./wp-content/themes/classy/sass/style.scss");
-module.exports = __webpack_require__(/*! D:\wamp64\www\banke-pro.local\wp-content\themes\classy\sass\admin\admin.scss */"./wp-content/themes/classy/sass/admin/admin.scss");
+__webpack_require__(/*! C:\OpenServer\domains\banke-pro.tvr\wp-content\themes\classy\js\index.js */"./wp-content/themes/classy/js/index.js");
+__webpack_require__(/*! C:\OpenServer\domains\banke-pro.tvr\wp-content\themes\classy\sass\style.scss */"./wp-content/themes/classy/sass/style.scss");
+module.exports = __webpack_require__(/*! C:\OpenServer\domains\banke-pro.tvr\wp-content\themes\classy\sass\admin\admin.scss */"./wp-content/themes/classy/sass/admin/admin.scss");
 
 
 /***/ })
