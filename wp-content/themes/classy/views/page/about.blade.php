@@ -21,7 +21,7 @@
                         {!! $post->content() !!}
 
                         <div class="history__button">
-                            <a href="/wp-content/uploads/Årsrapport 2018 Banke ApS.PDF" class="button">annual report 2018 <i class="icon-download"></i></a>
+                            <a href="/wp-content/uploads/Årsrapport 2018 Banke ApS.PDF" class="button" target="_blank" download>annual report 2018 <i class="icon-download"></i></a>
                         </div>
                     </div>
                 @else
@@ -29,7 +29,7 @@
                         {!! $post->content() !!}
 
                         <div class="history__button-bg">
-                            <a href="/wp-content/uploads/Årsrapport 2018 Banke ApS.PDF" class="button">annual report 2018 <i class="icon-download"></i></a>
+                            <a href="/wp-content/uploads/Årsrapport 2018 Banke ApS.PDF" class="button" target="_blank" download>annual report 2018 <i class="icon-download"></i></a>
                         </div>
                     </div>
                 @endif
