@@ -13,6 +13,9 @@ class App {
         
         this.initAnimations();
 
+        // WPCF7 Antispam
+        this.initWPCF7Antispam();
+
         if($('.p-media').length > 0) {
             this.initMedia();
         }
@@ -134,6 +137,13 @@ class App {
             $('.item__q.m_active').not(this).removeClass('m_active').siblings('.item__a').slideUp();
             $(this).addClass('m_active').siblings('.item__a').stop(1,0).slideToggle();
         });
+    }
+
+    //antispam for contact form
+    initWPCF7Antispam() {
+        $('.qqq input').val('745643534543745634532');
+
+        console.log($('.qqq').val());
     }
 }
 
