@@ -349,6 +349,6 @@
     </div>
 
     <div class="description__button">
-        <a href="https://banke.pro/projects/" class="button">Read more</a>
+        <a href="/projects/" class="button">Read more</a>
     </div>
 </div>
