@@ -33,10 +33,10 @@ class SimpleHistoryDonateDropin {
 
 		if ( $file == $this->sh->plugin_basename ) {
 
-			$links = array_merge(
-				$links,
-				array( sprintf( '<a href="https://www.paypal.me/eskapism">%1$s</a>', __('Donate', "simple-history") ) )
-			);
+//			$links = array_merge(
+//				$links,
+//				array( sprintf( '<a href="https://www.paypal.me/eskapism">%1$s</a>', __('Donate', "simple-history") ) )
+//			);
 
 		}
 
@@ -70,10 +70,10 @@ class SimpleHistoryDonateDropin {
 
 	function settings_section_output() {
 
-		printf(
-			__( 'If you find Simple History useful please <a href="%1$s">donate</a>.', "simple-history"),
-			'https://www.paypal.me/eskapism'
-		);
+//		printf(
+//			__( 'If you find Simple History useful please <a href="%1$s">donate</a>.', "simple-history"),
+//			'https://www.paypal.me/eskapism'
+//		);
 
 	}
 

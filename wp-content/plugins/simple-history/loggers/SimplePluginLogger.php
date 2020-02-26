@@ -336,11 +336,11 @@ class SimplePluginLogger extends SimpleLogger {
 
 		$response_body = wp_remote_retrieve_body( $response );
 
-		$repo_info = sprintf(
-			__( '<p>Viewing <code>readme</code> from repository <code><a target="_blank" href="%1$s">%2$s</a></code>.</p>', 'simple-history' ),
+		$repo_info = '<p>' . sprintf(
+			__( 'Viewing <code>readme</code> from repository <code><a target="_blank" href="%1$s">%2$s</a></code>.', 'simple-history' ),
 			esc_url( $repo ),
 			esc_html( $repo )
-		);
+		) . '</p>';
 
 		$github_markdown_css_path = SIMPLE_HISTORY_PATH . '/css/github-markdown.css';
 
@@ -1074,7 +1074,7 @@ class SimplePluginLogger extends SimpleLogger {
 
 						case 'plugin_install_source':
 							if ( ! isset( $context[ $key ] ) ) {
-								continue;
+								break;
 							}
 
 							if ( 'web' == $context[ $key ] ) {
@@ -1092,7 +1092,7 @@ class SimplePluginLogger extends SimpleLogger {
 
 						case 'plugin_install_source_file':
 							if ( ! isset( $context['plugin_upload_name'] ) || ! isset( $context['plugin_install_source'] ) ) {
-								continue;
+								break;
 							}
 
 							if ( 'upload' == $context['plugin_install_source'] ) {
@@ -1102,7 +1102,7 @@ class SimplePluginLogger extends SimpleLogger {
 
 							break;
 
-						default;
+						default:
 							$desc_output = esc_html( $context[ $key ] );
 							break;
 					}// End switch().

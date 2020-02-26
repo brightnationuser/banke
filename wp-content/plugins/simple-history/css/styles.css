@@ -317,12 +317,16 @@ Style different log levels.
 	word-break: break-word;
 }
 
-.SimpleHistoryLogitem__keyValueTable tr > td:first-child {
+.SimpleHistoryLogitem__keyValueTable tbody > tr > td:first-child:not(.diff-deletedline) {
 	text-align: right;
 	/*font-weight: bold;*/
 	padding-right: 1em;
 	color: #aaa;
 	white-space: nowrap;
+	overflow: hidden;
+	width: 200px;
+	text-overflow: ellipsis;
+	max-width: 200px;
 }
 
 .SimpleHistoryLogitem__keyValueTable p {
