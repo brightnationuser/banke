@@ -1689,6 +1689,10 @@ h3 {
   opacity: 1;
 }
 
+.home .content .hero #js_hero_hero svg {
+  height: 200% !important;
+}
+
 .home .content .benefits {
   margin-top: -30px;
 }

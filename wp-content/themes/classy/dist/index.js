@@ -29970,7 +29970,8 @@ function () {
       $('body').removeClass('m_ready');
     });
 
-    if ($('#js_hero_hero').length > 0) {//new Animation();
+    if ($('#js_hero_hero').length > 0) {
+      new _animation_Animation__WEBPACK_IMPORTED_MODULE_5__["default"]();
     }
   }
 
