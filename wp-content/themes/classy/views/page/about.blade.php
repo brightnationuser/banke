@@ -16,23 +16,13 @@
                     </div>
                 </div>
 
-                @if($_GET['v'])
-                    <div class="history__text history__text--center">
-                        {!! $post->content() !!}
+                <div class="history__text history__text--center">
+                    {!! $post->content() !!}
 
-                        <div class="history__button">
-                            <a href="/wp-content/uploads/Årsrapport 2018 Banke ApS.PDF" class="button disable_preloader" target="_blank" download>annual report 2018 <i class="icon-download"></i></a>
-                        </div>
+                    <div class="history__button">
+                        <a href="/wp-content/uploads/Årsrapport 2018 Banke ApS.PDF" class="button disable_preloader" target="_blank" download>annual report 2018 <i class="icon-download"></i></a>
                     </div>
-                @else
-                    <div class="history__text">
-                        {!! $post->content() !!}
-
-                        <div class="history__button-bg">
-                            <a href="/wp-content/uploads/Årsrapport 2018 Banke ApS.PDF" class="button disable_preloader" target="_blank" download>annual report 2018 <i class="icon-download"></i></a>
-                        </div>
-                    </div>
-                @endif
+                </div>
             </div>
         </div>
     </div>

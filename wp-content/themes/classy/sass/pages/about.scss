@@ -52,24 +52,24 @@
                     }
                 }
 
-                .history__button-bg {
-                    text-align: center;
-                    margin-top: 60px;
-                    background-image: url("/wp-content/themes/classy/images/bg/report_bg.jpg");
-                    background-position: center;
-                    height: 153px;
-                    padding: 53px 0 0 400px;
-
-                    i {
-                        margin-left: 10px;
-                        font-size: 18px;
-                        vertical-align: text-top;
-                    }
-
-                    @media screen and (max-width: $width-l) {
-                        padding-left: 0;
-                    }
-                }
+                //.history__button-bg {
+                //    text-align: center;
+                //    margin-top: 60px;
+                //    background-image: url("/wp-content/themes/classy/images/bg/report_bg.jpg");
+                //    background-position: center;
+                //    height: 153px;
+                //    padding: 53px 0 0 400px;
+                //
+                //    i {
+                //        margin-left: 10px;
+                //        font-size: 18px;
+                //        vertical-align: text-top;
+                //    }
+                //
+                //    @media screen and (max-width: $width-l) {
+                //        padding-left: 0;
+                //    }
+                //}
             }
         }
     }
