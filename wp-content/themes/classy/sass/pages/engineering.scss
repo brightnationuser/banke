@@ -161,6 +161,13 @@
             }
           }
 
+          .ajax-loader {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 20px;
+          }
+
           input, textarea {
             font-family: 'Open Sans', sans-serif;
             font-size: 13px;
@@ -189,6 +196,7 @@
 
           textarea {
             height: 80px;
+            min-height: 80px;
           }
         }
       }
