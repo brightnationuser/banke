@@ -9,7 +9,7 @@
 
     &__under-title {
       max-width: 550px;
-      margin: 0 auto 10px auto;
+      margin: 0 auto;
       text-align: center;
     }
 
@@ -23,7 +23,7 @@
     .offer {
       max-width: 50%;
       width: 100%;
-      margin-top: 50px;
+      margin-top: 70px;
       padding-left: 20px;
       padding-right: 20px;
       align-items: center;
@@ -68,10 +68,6 @@
         line-height: 25px;
         text-align: left;
         margin-bottom: 10px;
-      }
-
-      &__content {
-
       }
 
       &__points {
