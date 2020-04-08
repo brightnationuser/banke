@@ -36,3 +36,4 @@ vendor/*
 *.sublime-workspace
 *.komodoproject
 *.idea
+/dist/

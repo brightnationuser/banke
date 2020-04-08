@@ -1,0 +1,270 @@
+.engineering-page {
+  .offers {
+    padding-bottom: 110px;
+
+    &__title {
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+
+    &__under-title {
+      max-width: 550px;
+      margin: 0 auto 10px auto;
+      text-align: center;
+    }
+
+    &__list {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-right: -20px;
+      margin-left: -20px;
+    }
+
+    .offer {
+      max-width: 50%;
+      width: 100%;
+      margin-top: 50px;
+      padding-left: 20px;
+      padding-right: 20px;
+      align-items: center;
+
+      &__image {
+        max-width: 235px;
+        margin-right: 23px;
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+
+      &__icon {
+        width: 39px;
+        height: 39px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: #FFFFFF;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 51%;
+
+        img {
+          width: 21px;
+          height: 21px;
+          object-fit: contain;
+        }
+      }
+
+      &__title {
+        font-size: 18px;
+        line-height: 25px;
+        text-align: left;
+        margin-bottom: 10px;
+      }
+
+      &__content {
+
+      }
+
+      &__points {
+        padding: 0;
+        margin: 0;
+
+        li {
+          list-style-type: none;
+          font-weight: 300;
+          font-size: 13px;
+          line-height: 21px;
+          margin-bottom: 5px;
+          position: relative;
+
+          &::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            width: 4px;
+            height: 4px;
+            background-color: #005CA9;
+            top: 9px;
+            border-radius: 51%;
+          }
+
+        }
+      }
+    }
+  }
+
+  .benefits {
+    background-color: #F2F6FC;
+    padding-top: 26px;
+    padding-bottom: 64px;
+
+    &__list {
+      display: flex;
+      margin-left: -15px;
+      margin-right: -15px;
+
+      .benefit {
+        background: #FFFFFF;
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.04);
+        border-radius: 8px;
+        width: 100%;
+
+        &__title {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+
+  .contact-us {
+    margin-bottom: -80px;
+    padding-bottom: 97px;
+    background-color: #ffffff;
+    background-position: bottom center;
+    position: relative;
+    background-image: url(/wp-content/themes/classy/images/pages/engineering/engineering_fon.jpg);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(255,255,255, .8);
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 880px;
+      position: relative;
+      z-index: 1;
+
+      .contact-us {
+        &__form {
+          padding: 30px 44px 50px 44px;
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+          border-radius: 4px;
+
+          form {
+            .row {
+              grid-gap: 20px;
+            }
+          }
+
+          input, textarea {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 13px;
+            line-height: 18px;
+            font-weight: 300;
+            color: rgba(26, 26, 26, 0.9);
+
+            &::placeholder {
+              transition: all .3s ease;
+              color: rgba(26, 26, 26, 0.9);
+            }
+
+            &[type=submit] {
+              color: #ffffff
+            }
+
+            &:focus, &:active {
+              &::placeholder {
+                opacity: 0;
+              }
+            }
+          }
+
+          textarea {
+            height: 80px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .engineering-page {
+    .offers {
+      .offer {
+        &__image {
+          max-width: 190px;
+        }
+      }
+
+      br {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .engineering-page {
+    .offers {
+      &__list {
+        flex-direction: column;
+        align-items: center;
+
+        .offer {
+          max-width: 600px;
+        }
+      }
+    }
+
+    .benefits {
+      &__list {
+        margin-left: 0;
+        margin-right: 0;
+        flex-direction: column;
+
+        .benefit {
+          margin-left: auto;
+          margin-right: auto;
+          max-width: 768px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .engineering-page {
+    .offers {
+      &__list {
+
+        .offer {
+          flex-direction: column;
+          max-width: 350px;
+          text-align: center;
+
+          &__image {
+            margin-bottom: 15px;
+          }
+
+          &__title {
+            text-align: center;
+          }
+
+          &__points {
+            li {
+              &::before {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

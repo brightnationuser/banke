@@ -12,3 +12,4 @@ yarn-error.log
 robots.txt
 #/wp-content/themes/classy/dist
 /.htpasswd
+/wp-content/themes/classy/dist/

@@ -3,6 +3,7 @@ import Blazy from 'blazy';
 import cookieconsent from 'cookieconsent';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel';
+import AOS from 'aos';
 
 import * as JQuery from "jquery";
 window.$ = JQuery.default;
@@ -10,6 +11,23 @@ window.$ = JQuery.default;
 // Import main scripts
 import App from './App';
 
+
+$(document).ready(function () {
+    setTimeout(function () {
+        let window_height = $(window).height();
+        let offset = window_height / 6;
+
+        console.log(offset);
+
+        $('.aos-animation:not([data-aos])').attr('data-aos', 'fade-up');
+        $('.aos-animation:not([data-aos-anchor-placement])').attr('data-aos-anchor-placement', 'top-bottom');
+        $('.aos-animation:not([data-aos-offset])').attr('data-aos-offset', offset);
+
+        AOS.init({
+            duration: 500,
+        });
+    }, 100);
+});
 // Init main scripts
 $(document).ready(function() {
     new Blazy()
