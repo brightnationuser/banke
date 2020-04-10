@@ -13,3 +13,7 @@ robots.txt
 #/wp-content/themes/classy/dist
 /.htpasswd
 /wp-content/themes/classy/dist/
+/mix-manifest.json
+/package-lock.json
+/yarn.lock
+/wp-content/cache/*
