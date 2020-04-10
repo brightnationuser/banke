@@ -82,7 +82,11 @@
         </section>
         @endif
 
-        @include('partials.contact-us', ['form' => $post->getAcfByKey('contact_form'), 'title' => $post->getAcfByKey('contact_title')])
+        @include('partials.contact-us', [
+            'form' => $post->getAcfByKey('contact_form'),
+            'title' => $post->getAcfByKey('contact_title'),
+            'classes' => 'contact-us--light'
+        ])
 
     </div>
 

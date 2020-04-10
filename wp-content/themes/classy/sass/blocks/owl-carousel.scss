@@ -69,3 +69,46 @@
     }
   }
 }
+
+
+.thin-nav {
+  .owl-carousel {
+    .owl-nav {
+      top: 50%;
+      transform: translateY(-50%);
+
+      @media screen and (max-width: 576px) {
+        max-width: 90%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+
+      .owl-prev, .owl-next{
+
+        &::before {
+          color: #91A8BE;
+          transition: all .3s ease;
+          font-size: 37px;
+        }
+
+        &:hover {
+          &::before {
+            color: #003462;
+          }
+        }
+      }
+
+      .owl-prev {
+        &::before {
+          content: "\e912";
+        }
+      }
+
+      .owl-next {
+        &::before {
+          content: "\e911";
+        }
+      }
+    }
+  }
+}

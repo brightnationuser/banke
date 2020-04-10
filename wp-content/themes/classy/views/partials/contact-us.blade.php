@@ -1,4 +1,4 @@
-<div class="contact-us">
+<div class="contact-us {{ $classes }}">
     <div class="container">
 
         @if(!empty($title))

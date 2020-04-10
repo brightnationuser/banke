@@ -18,6 +18,11 @@
         ])
     </div>
 
-    <div class="switch m-left"><i class="icon-prev"></i></div>
-    <div class="switch m-right"><i class="icon-next"></i></div>
+    @if($nav === 'thin')
+        <div class="switch m-left"><i class="icon-prev-thin"></i></div>
+        <div class="switch m-right"><i class="icon-next-thin"></i></div>
+    @else
+        <div class="switch m-left"><i class="icon-prev"></i></div>
+        <div class="switch m-right"><i class="icon-next"></i></div>
+    @endif
 </div>

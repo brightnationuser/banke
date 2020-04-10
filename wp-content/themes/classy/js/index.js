@@ -10,9 +10,12 @@ window.$ = JQuery.default;
 
 // Import main scripts
 import App from './App';
+import textTrim from './text-trim';
 
 
 $(document).ready(function () {
+    textTrim('.js-trim-text');
+
     setTimeout(function () {
         let window_height = $(window).height();
         let offset = window_height / 6;

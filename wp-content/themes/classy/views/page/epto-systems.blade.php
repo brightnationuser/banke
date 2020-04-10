@@ -2,71 +2,124 @@
 
 @section('content')
 
-    @include('partials.tabs', ['parent_id' => get_the_ID()])
+    <div class="epto-page">
 
-    <div class="container">
-        <div class="concept__main">
-            <h2>
-                {{ $post->getAcfByKey('acf_title_main') }}
-            </h2>
+        @include('partials.tabs', ['parent_id' => get_the_ID()])
 
-            @include('partials.slider.epto-slider')
-        </div>
-    </div>
-
-    <div class="container">
-        <article class="content-text m_2">
-            <div class="text-column">
-                {!! $post->getAcfByKey('acf_description') !!}
-            </div>
-            <div class="text-column">
-                {!! $post->getAcfByKey('acf_description_2') !!}
-            </div>
-        </article>
-    </div>
-    
-    <div class="concept__description">
-        <div class="container">
-            <h2>
-                {{ $post->getAcfByKey('acf_title_concept') }}
-            </h2>
-            <div class="description__wrapper">
-                <img src="/wp-content/themes/classy/images/pages/epto-systems/epto.png">
-                <article class="content-text m_1">
-                    <div class="text-column">
-                        {!! $post->getAcfByKey('acf_concept_description') !!}
-                    </div>
-                </article>
-            </div>
-        </div>
-    </div>
-
-    <div class="concept__principles">
-        <h2>
-            {{ $post->getAcfByKey('acf_title_principles') }}
-        </h2>
-        <div class="benefits m_3">
+        <section class="concept">
             <div class="container">
-                @foreach($post->getAcfByKey('acf_benefits') as $key => $item)
-                    <div class="benefit">
-                        <div class="benefit__image">
-                            @if($key == 0) <img src="/wp-content/themes/classy/images/pages/epto-systems/planet.svg"> @endif
-                            @if($key == 1) <img src="/wp-content/themes/classy/images/pages/epto-systems/solar_panel.svg"> @endif
-                            @if($key == 2) <img src="/wp-content/themes/classy/images/pages/epto-systems/crane.svg"> @endif
-                        </div>
+                <h2 class="concept__title">
+                    {{ $post->getAcfByKey('acf_title_concept') }}
+                </h2>
+                <div class="concept__description d-flex">
 
-                        <div class="benefit__title">
-                            {{ $item['title'] }}
-                        </div>
+                    <div class="concept__image">
+                        <img src="/wp-content/themes/classy/images/pages/epto-systems/epto.png">
+                    </div>
 
-                        <div class="benefit__caption">
-                            {{ $item['text'] }}
+                    <div class="concept__content">
+                        <article class="content-text m_1">
+                            <div class="text-column">
+                                {!! $post->getAcfByKey('acf_concept_description') !!}
+                            </div>
+                        </article>
+                        <div class="concept__benefits d-flex">
+                            @foreach($post->getAcfByKey('acf_benefits') as $key => $item)
+                                <div class="concept-benefit d-flex">
+                                    <div class="concept-benefit__image">
+                                        <img src="{!! $item['image']['url'] !!}" alt="{{ $item['title'] }}">
+                                    </div>
+                                    <div class="concept-benefit__title">
+                                        {!! $item['title'] !!}
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="present">
+            <div class="container">
+                <h2 class="present__title">
+                    {{ $post->getAcfByKey('acf_title_main') }}
+                </h2>
+
+                <div class="present__slider-outer thin-nav">
+                    @include('partials.slider.epto-slider', ['nav' => 'thin'])
+                </div>
+            </div>
+        </section>
+
+        <section class="products">
+            <div class="container">
+                <div class="products__list d-flex">
+                    @foreach ($post->getAcfByKey('acf_products') as $product)
+                        <div class="product-card">
+                            <div class="product-card__image">
+                                <img src="{{ $product['image'] }}" alt="{{ $product['title'] }}">
+                            </div>
+                            <div class="product-card__content">
+                                <div class="product-card__title">{{ $product['title'] }}</div>
+                                <div class="product-card__text js-trim-text"
+                                     data-text-length="147"
+                                     data-text-open="read more"
+                                     data-text-close="less"
+                                >
+                                    <span class="js-text">
+                                        {{ $product['text'] }}
+                                    </span>
+
+                                    <div class="read-more-wrap">
+                                        <div class="read-more-btn">
+                                            read more
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="product-card__links d-flex">
+                                @foreach ($product['links'] as $link)
+                                    <li class="product-card__link d-flex">
+                                        <div class="icon">
+                                            <img src="/wp-content/themes/classy/images/pages/epto-systems/pdf.svg" alt="icon">
+                                        </div>
+                                        <a href="{{ $link['link_url'] }}" class="link">{{ $link['link_text'] }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
                         </div>
                     @endforeach
                 </div>
             </div>
-    </div>
+        </section>
 
+        <section class="references-sect">
+
+            <h2>References</h2>
+
+            <div class="container thin-nav">
+                <div class="references owl-carousel">
+
+                    @foreach ($references as $reference)
+                        <a href="{{ $reference->permalink() }}" class="references__card disable_preloader">
+                            <div class="card__image" style="background-image: url({{ $reference->getAcfImage()->src('large') }});"></div>
+                            <div class="card__info">
+                                <div class="card__title">{{ $reference->get_title() }}</div>
+                                <div class="card__text">{!! $reference->getAcfByKey('acf_references_short_text') !!}</div>
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+
+        @include('partials.contact-us', [
+            'form' => $post->getAcfByKey('contact_form'),
+            'title' => $post->getAcfByKey('contact_title'),
+            'classes' => 'contact-us--light'
+        ])
+
+    </div>
 
 @stop
