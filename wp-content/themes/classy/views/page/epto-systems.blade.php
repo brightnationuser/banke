@@ -63,7 +63,7 @@
                             <div class="product-card__content">
                                 <div class="product-card__title">{{ $product['title'] }}</div>
                                 <div class="product-card__text js-trim-text"
-                                     data-text-length="{{ $product['trim'] }}"
+                                     data-text-length="{{ empty($product['trim']) ? '147' : $product['trim'] }}"
                                      data-text-open="read more"
                                      data-text-close="less"
                                 >
