@@ -102,7 +102,7 @@
                 <div class="references owl-carousel">
 
                     @foreach ($references as $reference)
-                        <a href="{{ $reference->permalink() }}" class="references__card disable_preloader aos-animation" data-aos-delay="{{ 200 * (1 + $loop->index) }}">
+                        <a href="{{ $reference->permalink() }}" class="references__card disable_preloader aos-animation" data-aos="fade-in">
                             <div class="card__image" style="background-image: url({{ $reference->getAcfImage()->src('large') }});"></div>
                             <div class="card__info">
                                 <div class="card__title">{{ $reference->get_title() }}</div>
