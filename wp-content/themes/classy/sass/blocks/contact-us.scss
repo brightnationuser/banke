@@ -111,8 +111,7 @@
             }
         }
 
-        div.wpcf7-validation-errors {
-            border: 2px solid #f7e700;
+        div.wpcf7-mail-sent-ok, div.wpcf7-validation-errors {
             text-align: center;
             position: absolute;
             bottom: 0;

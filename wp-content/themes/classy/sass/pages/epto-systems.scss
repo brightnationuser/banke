@@ -197,6 +197,12 @@
                     color: #005CA9;
                     border-bottom: 1px dotted #005CA9;
                     cursor: pointer;
+                    transition: all .3s ease;
+
+                    &:hover {
+                        color: #00294b;
+                        border-bottom: 1px dotted #00294b;
+                    }
                 }
 
                 &__image {
