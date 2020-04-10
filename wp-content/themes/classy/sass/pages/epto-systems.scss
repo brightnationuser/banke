@@ -1,6 +1,8 @@
 .epto-page {
 
     .concept {
+        padding-bottom: 54px;
+        border-bottom: 1px solid #eeeeee;
 
         .container {
             max-width: 1130px;
@@ -85,6 +87,7 @@
     }
 
     .present {
+        padding-top: 10px;
 
         &__title {
             margin-bottom: 100px;

@@ -84,7 +84,7 @@
                                         <div class="icon">
                                             <img src="/wp-content/themes/classy/images/pages/epto-systems/pdf.svg" alt="icon">
                                         </div>
-                                        <a href="{{ $link['link_url'] }}" class="link" download>{{ $link['link_text'] }}</a>
+                                        <a href="{{ $link['link_url'] }}" class="link disable_preloader" download>{{ $link['link_text'] }}</a>
                                     </li>
                                 @endforeach
                             </ul>
