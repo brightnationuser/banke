@@ -13,17 +13,17 @@
                 </h2>
                 <div class="concept__description d-flex">
 
-                    <div class="concept__image">
+                    <div class="concept__image animated fadeInLeft">
                         <img src="/wp-content/themes/classy/images/pages/epto-systems/epto.png">
                     </div>
 
                     <div class="concept__content">
-                        <article class="content-text m_1">
+                        <article class="content-text m_1 animated fadeInDown">
                             <div class="text-column">
                                 {!! $post->getAcfByKey('acf_concept_description') !!}
                             </div>
                         </article>
-                        <div class="concept__benefits d-flex">
+                        <div class="concept__benefits d-flex animated fadeInUp">
                             @foreach($post->getAcfByKey('acf_benefits') as $key => $item)
                                 <div class="concept-benefit d-flex">
                                     <div class="concept-benefit__image">
@@ -56,7 +56,7 @@
             <div class="container">
                 <div class="products__list d-flex">
                     @foreach ($post->getAcfByKey('acf_products') as $product)
-                        <div class="product-card">
+                        <div class="product-card aos-animation" data-aos-delay="{{ 200 * (1 + $loop->index) }}">
                             <div class="product-card__image">
                                 <img src="{{ $product['image'] }}" alt="{{ $product['title'] }}">
                             </div>
@@ -84,7 +84,7 @@
                                         <div class="icon">
                                             <img src="/wp-content/themes/classy/images/pages/epto-systems/pdf.svg" alt="icon">
                                         </div>
-                                        <a href="{{ $link['link_url'] }}" class="link">{{ $link['link_text'] }}</a>
+                                        <a href="{{ $link['link_url'] }}" class="link" download>{{ $link['link_text'] }}</a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -102,7 +102,7 @@
                 <div class="references owl-carousel">
 
                     @foreach ($references as $reference)
-                        <a href="{{ $reference->permalink() }}" class="references__card disable_preloader">
+                        <a href="{{ $reference->permalink() }}" class="references__card disable_preloader aos-animation" data-aos-delay="{{ 200 * (1 + $loop->index) }}">
                             <div class="card__image" style="background-image: url({{ $reference->getAcfImage()->src('large') }});"></div>
                             <div class="card__info">
                                 <div class="card__title">{{ $reference->get_title() }}</div>

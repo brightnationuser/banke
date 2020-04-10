@@ -6,6 +6,10 @@
             max-width: 1130px;
         }
 
+        * {
+            animation-delay: 1s;
+        }
+
         &__description {
             align-items: center;
             font-weight: 300;
