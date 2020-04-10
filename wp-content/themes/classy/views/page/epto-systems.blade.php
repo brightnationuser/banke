@@ -26,8 +26,10 @@
                         <div class="concept__benefits d-flex animated fadeInUp">
                             @foreach($post->getAcfByKey('acf_benefits') as $key => $item)
                                 <div class="concept-benefit d-flex">
-                                    <div class="concept-benefit__image">
-                                        <img src="{!! $item['image']['url'] !!}" alt="{{ $item['title'] }}">
+                                    <div class="concept-benefit__image-wrap">
+                                        <div class="concept-benefit__image">
+                                            <img src="{!! $item['image']['url'] !!}" alt="{{ $item['title'] }}">
+                                        </div>
                                     </div>
                                     <div class="concept-benefit__title">
                                         {!! $item['title'] !!}
