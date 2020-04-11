@@ -11,7 +11,7 @@
                     {{ $item['acf_item_title'] }}
                 </div>
                 <div class="content__text">
-                    {{ $item['acf_item_description'] }}
+                    {!! $item['acf_item_description'] !!}
                 </div>
             </div>
         </div>
