@@ -2,7 +2,9 @@
 
 @section('content')
 
-    @include('partials.tabs', ['parent_id' => wp_get_post_parent_id(get_the_ID())])
+    @if(!empty(get_field('acf_tabs', wp_get_post_parent_id(get_the_ID()))))
+        @include('partials.tabs', ['parent_id' => wp_get_post_parent_id(get_the_ID())])
+    @endif
 
     <div class="container">
 

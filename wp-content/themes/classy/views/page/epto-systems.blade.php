@@ -4,7 +4,9 @@
 
     <div class="epto-page">
 
-        @include('partials.tabs', ['parent_id' => get_the_ID()])
+        @if(!empty(get_field('acf_tabs', get_the_ID())))
+            @include('partials.tabs', ['parent_id' => get_the_ID()])
+        @endif
 
         <section class="concept">
             <div class="container">
