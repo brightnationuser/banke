@@ -1,0 +1,49 @@
+.sidebar {
+  margin-left: 65px;
+
+  &__item {
+    background: #FFFFFF;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 8px;
+    padding: 40px;
+    text-align: left;
+    min-width: 240px;
+
+    h3 {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 25px;
+      text-transform: capitalize;
+      color: #4A4A49;
+      text-align: left;
+      margin-bottom: 16px;
+    }
+
+    &--download {
+
+      a {
+        font-size: 15px;
+        line-height: 163.42%;
+        color: #005CA9;
+        background-color: transparent;
+        padding: 0 0 0 20px;
+        border: 0;
+        font-weight: 600;
+        position: relative;
+        text-transform: none;
+
+        &::before {
+          content: '';
+          width: 16px;
+          left: 0;
+          top: 2px;
+          height: 16px;
+          display: block;
+          position: absolute;
+          background: url('/wp-content/themes/classy/images/pages/epto-systems/pdf.svg') center no-repeat;
+          background-size: contain;
+        }
+      }
+    }
+  }
+}

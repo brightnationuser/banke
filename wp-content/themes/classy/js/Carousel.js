@@ -23,7 +23,7 @@ export default class Carousel {
                 });
             },
             
-            initTeamCarousel: function () {
+            /*initTeamCarousel: function () {
                 $('.team__members.owl-carousel').owlCarousel({
                     loop: false,
                     margin: 30,
@@ -45,7 +45,7 @@ export default class Carousel {
                         }
                     }
                 });
-            },
+            },*/
             
             initReferencesCarousel: function () {
                 $('.references.owl-carousel').owlCarousel({
