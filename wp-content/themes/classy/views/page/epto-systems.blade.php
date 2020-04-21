@@ -16,7 +16,7 @@
                 <div class="concept__description d-flex">
 
                     <div class="concept__image animated fadeInLeft">
-                        <img src="/wp-content/themes/classy/images/pages/epto-systems/epto.png">
+                        <img src="{!! $post->getAcfByKey('acf_image_concept')['url'] !!}" alt="{!! $post->getAcfByKey('acf_title_concept') !!}">
                     </div>
 
                     <div class="concept__content">
