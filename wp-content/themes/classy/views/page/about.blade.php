@@ -4,23 +4,22 @@
     
     <div class="history">
         <div class="container">
-
-            <h2>
-                History
-            </h2>
             
             <div class="history__wrap">
-                <div class="history__img">
-                    <div class="img__container">
-                        <img src="/wp-content/themes/classy/images/pages/about/history.jpg">
-                    </div>
-                </div>
 
-                <div class="history__text history__text--center">
-                    {!! $post->content() !!}
+                 <div class="history__content">
+                     <h2 class="history__title">
+                         About Banke
+                     </h2>
+                     <div class="history__text">
+                         {!! $post->content() !!}
+                     </div>
+                 </div>
 
-                    <div class="history__button">
-                        <a href="/wp-content/uploads/Årsrapport 2018 Banke ApS.PDF" class="button disable_preloader" target="_blank" download>annual report 2018 <i class="icon-download"></i></a>
+                <div class="history__sidebar sidebar">
+                    <div class="sidebar__item sidebar__item--download">
+                        <h3>Downloads</h3>
+                        <a href="/wp-content/uploads/Årsrapport 2018 Banke ApS.PDF" class="disable_preloader" target="_blank" download>Annual report 2018</a>
                     </div>
                 </div>
             </div>
@@ -34,7 +33,7 @@
                 Our team
             </h2>
 
-            <div class="team__members owl-carousel">
+            <div class="team__members d-flex">
                 @foreach($post->getAcfByKey('acf_team') as $member)
 
                     <div class="member">

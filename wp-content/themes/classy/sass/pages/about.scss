@@ -6,8 +6,18 @@
         
     .history {
 
+        .sidebar {
+            margin-top: 85px;
+        }
+
         h2 {
-            margin-top: 0px;
+            text-align: left;
+            margin-top: 0;
+            margin-bottom: 35px;
+
+            &::after {
+                left: 0;
+            }
         }
 
         .history__wrap {
@@ -52,24 +62,6 @@
                     }
                 }
 
-                //.history__button-bg {
-                //    text-align: center;
-                //    margin-top: 60px;
-                //    background-image: url("/wp-content/themes/classy/images/bg/report_bg.jpg");
-                //    background-position: center;
-                //    height: 153px;
-                //    padding: 53px 0 0 400px;
-                //
-                //    i {
-                //        margin-left: 10px;
-                //        font-size: 18px;
-                //        vertical-align: text-top;
-                //    }
-                //
-                //    @media screen and (max-width: $width-l) {
-                //        padding-left: 0;
-                //    }
-                //}
             }
         }
     }
@@ -77,74 +69,84 @@
     .team {
         margin-top: 80px;
         background-color: $color-bg-light-blue;
-        background-image: url("/wp-content/themes/classy/images/bg/contact-us-bg.png");
+        background-image: url("/wp-content/themes/classy/images/pages/about/fon.png");
         background-size: cover;
         padding: 60px 0 60px 0;
 
-        .container {
+        h2 {
+            margin-top: 0;
+        }
 
-            .team__members {
-                .owl-stage-outer {
-                    .owl-stage {
-                        display: flex;
+        &__members {
+            justify-content: center;
+
+            .member {
+                min-height: 100%;
+                background: #fff;
+                border-radius: 8px;
+                overflow: hidden;
+                max-width: 318px;
+                width: 100%;
+                margin-right: 30px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &__image {
+                    height: 323px;
+                    background-position: center;
+                    background-size: cover;
+                }
+
+                &__content {
+                    padding: 22px 22px 32px 22px;
+                }
+
+                &__name {
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+
+                &__post {
+                    margin-top: 7px;
+                    margin-bottom: 12px;
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 15px;
+                    line-height: 20px;
+                }
+
+                &__phone {
+                    font-weight: 300;
+                    font-size: 15px;
+                    line-height: 20px;
+
+                    i {
+                        font-size: 14px;
+                        color: $color-blue;
                     }
                 }
 
-                .member {
-                    min-height: 100%;
-                    background: #fff;
-                    border-radius: 5px;
+                &__email {
+                    margin-top: 6px;
+                    font-size: 13px;
 
-                    .member__image {
-                        height: 270px;
-                        background-position: center;
-                        background-size: cover;
-                    }
-
-                    .member__content {
-                        padding: 20px 15px 20px 15px;
-
-                        .member__name {
-                            font-weight: bold;
-                            font-size: 18px;
-                        }
-
-                        .member__post {
-                            margin-top: 10px;
-                            margin-bottom: 16px;
-                            font-size: 13px;
-                        }
-
-                        .member__phone {
-                            font-size: 13px;
-
-                            i {
-                                font-size: 12px;
-                                color: $color-blue;
-                            }
-                        }
-
-                        .member__email {
-                            margin-top: 6px;
-                            font-size: 13px;
-
-                            i {
-                                font-size: 12px;
-                                color: $color-blue;
-                            }
-                        }
-
-                        .member__text {
-                            margin-top: 15px;
-                            font-size: 13px;
-                            line-height: 20px;
-                        }
+                    i {
+                        font-size: 12px;
+                        color: $color-blue;
                     }
                 }
 
-                .owl-nav {
-                    top: 130px !important;
+                &__text {
+                    margin-top: 15px;
+                    font-size: 13px;
+                    line-height: 20px;
                 }
+            }
+
+            .owl-nav {
+                top: 130px !important;
             }
         }
     }
@@ -166,6 +168,45 @@
         .team {
             margin-top: 40px;
             padding: 30px 0 30px 0;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .p-about {
+        .team {
+            &__members {
+                flex-direction: column;
+                align-items: center;
+
+                .member {
+                    margin-right: 0;
+                    margin-bottom: 30px;
+
+                    &__image {
+                        background-repeat: no-repeat;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0;
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .p-about {
+        .history__wrap {
+            flex-direction: column;
+
+            .sidebar {
+                margin-top: 40px;
+                margin-left: 0;
+            }
         }
     }
 }
