@@ -50,6 +50,10 @@
                     @endforeach
                 </div>
 
+                <div class="offers__description aos-animation" data-aos-delay="200">
+                    {!! $post->getAcfByKey('offers_description') !!}
+                </div>
+
             </div>
         </section>
         @endif
