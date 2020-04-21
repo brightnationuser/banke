@@ -1,3 +1,4 @@
+{{-- Template Name: Customized Solutions --}}
 @extends('layout.default')
 
 @section('content')
