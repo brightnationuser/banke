@@ -18,7 +18,7 @@
 
             <div class="footer__socials">
                 <div class="social linkedin">
-                    <a href="https://linkedin.com/company/banke" class="d-flex">
+                    <a href="https://linkedin.com/company/banke" class="d-flex disable_preloader" target="_blank" >
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <rect width="20" height="20" rx="4" fill="white" fill-opacity="0.9"/>
                             <g clip-path="url(#clip0)">

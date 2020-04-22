@@ -8,15 +8,15 @@
             <div class="history__wrap">
 
                  <div class="history__content">
-                     <h2 class="history__title">
+                     <h2 class="history__title animated fadeInDown">
                          About Banke
                      </h2>
-                     <div class="history__text">
+                     <div class="history__text animated fadeInUp">
                          {!! $post->content() !!}
                      </div>
                  </div>
 
-                <div class="history__sidebar sidebar">
+                <div class="history__sidebar sidebar animated fadeInRight">
                     <div class="sidebar__item sidebar__item--download">
                         <h3>Downloads</h3>
                         <a href="/wp-content/uploads/Årsrapport 2018 Banke ApS.PDF" class="disable_preloader" target="_blank" download>Annual report 2018</a>
@@ -36,7 +36,7 @@
             <div class="team__members d-flex">
                 @foreach($post->getAcfByKey('acf_team') as $member)
 
-                    <div class="member">
+                    <div class="member aos-animation" data-aos="fade-in" data-aos-delay="{{ 200 * (1 + $loop->index) }}">
                         <div class="member__image" style="background-image: url('{{ $member['acf_team_image']['url'] }}')">
                         </div>
 
