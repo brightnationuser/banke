@@ -33,6 +33,7 @@
                 box-sizing: border-box;
                 position: relative;
                 overflow: visible;
+                z-index: 1;
 
                 &::before {
                     content: '';
@@ -79,219 +80,57 @@
             }
         }
     }
-    
-    .benefits {
-        margin-top: -30px;
-    }
-    
-    .our-products, .epto {
-        margin-bottom: 150px;
-        
-        .container {
-            position: relative;
-            
-            .our-products__bg {
-                position: absolute;
-                top: 100px;
-                left: 50%;
-                transform: translateX(-50%);
-                background-image: url("/wp-content/themes/classy/images/pages/home/eRCV27.png");
-                background-size: contain;
-                background-repeat: no-repeat;
-                width: 900px;
-                height: 300px;
-            }
-            
-            .our-products__car {
-                margin-top: 110px;
-                margin-bottom: 0px;
-                position: relative;
-                text-align: center;
-                
-                .main-car {
-                    .container {
-                        position: relative;
-                        text-align: center;
-                        
-                        @media screen and (max-width: 1280px) {
-                            transform: scale(0.9, 0.9);
-                        }
-                        
-                        @media screen and (max-width: 1000px) {
-                            transform: scale(1, 1);
-                        }
-                        
-                        .switch {
-                            position: absolute;
-                            width: 95px;
-                            height: 300px;
-                            top: 60px;
-                            cursor: pointer;
-                            z-index: 10;
-                            opacity: 0.7;
-                            transition: 0.4s ease;
-                            -webkit-transition: 0.4s ease;
-                            
-                            &:hover {
-                                opacity: 1;
-                            }
-                            
-                            &.m_left {
-                                left: 80px;
-                                background: url('/wp-content/themes/classy/images/icons/Banke_side1.png') left no-repeat;
-                            }
-                            
-                            &.m_right {
-                                right: 80px;
-                                background: url('/wp-content/themes/classy/images/icons/Banke_side2.png') right no-repeat;
-                            }
-                            
-                            @media screen and (max-width: 1000px) {
-                                width: 8vw;
-                                height: 100px;
-                                top: 0px;
 
-                                &.m_left {
-                                    left: -10px;
-                                    background-size: contain;
-                                    background-position: left;
-                                }
-                                
-                                &.m_right {
-                                    right: -10px;
-                                    background-size: contain;
-                                    background-position: right;
-                                }
-                            }
-                        }
-                        
-                        .car {
-                            min-height: 150px;
-                            opacity: 0;
-                            transition: opacity 0.55s ease;
-                            -webkit-transition: opacity 0.55s ease;
-                            position: relative;
-                            z-index: 2;
-                            
-                            &.hidden {
-                                position: absolute;
-                                left: 0;
-                                right: 0;
-                                top: 0;
-                                margin: 0 auto;
-                                opacity: 0;
-                                z-index: -1;
-                                transition: opacity 0.55s ease;
-                                -webkit-transition: opacity 0.55s ease;
-                                overflow: hidden;
-                            }
-                            
-                            .car-w {
-                                position: relative;
-                                margin: 0 auto;
-                                width: 768px;
-                                height: 400px;
+    .what-we-do {
+        &__list {
+            max-width: 960px;
+            margin: 0 auto;
+            justify-content: space-between;
 
-                                @media screen and (max-width: 1000px) {
-                                    width: 100%;
-                                    height: auto;
+            .item {
+                max-width: 430px;
+                margin-right: 40px;
 
-                                    > img {
-                                        width: 85%;
-                                        margin: 0px auto 0px auto;
-                                    }
-                                }
-                            }
-                        }
-                        
+                &__content {
+                    text-align: center;
+                    padding: 0 40px;
+                }
+
+                &__image {
+                    height: 270px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    img {
+                        width: 100%;
                     }
                 }
-                
-                @media screen and (max-width: 1000px) {
-                    main {
-                        display: block;
-                        
-                        .container {
-                            
-                            .switch {
-                                width: 10vw;
-                                height: 122px;
-                                top: 10vw;
-                                
-                                &.m_left {
-                                    left: 3px;
-                                    background-size: contain;
-                                    background-position: left;
-                                }
-                                
-                                &.m_right {
-                                    right: 3px;
-                                    background-size: contain;
-                                    background-position: right;
-                                }
-                            }
-                            
-                            .car {
-                                min-height: 0;
-                                
-                                .car-w {
-                                    width: auto;
-                                    height: auto;
-                                    
-                                    > img {
-                                        width: 80%;
-                                        margin: 30px auto 42px auto;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            
-            .description-w {
-                max-width: 700px;
-                margin: 0 auto;
-                text-align: center;
-                
-                h3 {
-                    margin-bottom: 10px;
-                }
-                
-                .description__text {
-                    font-size: 14px;
-                    line-height: 23px;
-                }
-                
-                .description__button {
-                    margin-top: 15px;
-                }
-            }
-        }
-    }
 
-    .epto {
-        margin-bottom: 50px;
+                &__title {
+                    font-weight: bold;
+                    font-size: 20px;
+                    line-height: 27px;
+                    text-align: center;
+                    margin-bottom: 15px;
+                }
 
-        .container {
-            .epto__bg {
-                position: absolute;
-                top: -50px;
-                left: 50%;
-                transform: translateX(-50%);
-                background-image: url("/wp-content/themes/classy/images/pages/home/E-PTO.png");
-                background-size: contain;
-                background-repeat: no-repeat;
-                width: 650px;
-                height: 300px;
+                &__text {
+                    font-weight: 300;
+                    font-size: 13px;
+                    line-height: 21px;
+                    text-align: center;
+                    color: #4A4A49;
+                    opacity: 0.9;
+                }
 
-                @media screen and (max-width: $width-l) {
-                    left: 0;
-                    right: 0;
-                    margin: auto;
-                    position: absolute;
-                    transform: none !important;
-                    width: 100%;
+                &__read-more {
+                    margin-top: 8px;
+                    display: block;
+                }
+
+                &:last-child {
+                    margin-right: 0;
                 }
             }
         }
@@ -310,27 +149,6 @@
                 font-size: 16px;
                 margin-top: 5px;
             }
-        }
-
-        .benefits {
-            margin-top: 0;
-            padding-top: 30px;
-        }
-
-        .our-products__bg {
-            width: 90% !important;
-            top: 65px !important;
-        }
-
-        .our-products__car {
-            margin-top: 40px !important;
-        }
-    }
-
-    @media screen and (max-width: $width-m) {
-
-        .our-products, .epto {
-            margin-bottom: 50px;
         }
     }
 }
