@@ -115,7 +115,7 @@ header.header {
                     }
 
                     &.current-menu-item {
-                        &#menu-item-330, &#menu-item-12 {
+                        /*&#menu-item-330, &#menu-item-12 {
                             a {
                                 color: $color-light-blue;
                             }
@@ -131,7 +131,7 @@ header.header {
                                     }
                                 }
                             }
-                        }
+                        }*/
 
                         &:after {
                             content: '';
@@ -151,6 +151,7 @@ header.header {
         .header__phone {
             .icon {
                 margin-right: 5px;
+                transform: translateY(2px);
             }
 
             a {

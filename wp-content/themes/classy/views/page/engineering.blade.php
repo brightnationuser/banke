@@ -65,7 +65,7 @@
 
                 <div class="benefits__list">
                     @foreach($benefits as $row)
-                        <div class="benefit aos-animation" data-aos-delay="{{ 200 * (1 + $loop->index) }}">
+                        <div class="benefit aos-animation" data-aos="fade-in">
                             <div class="benefit__image">
                                 <img src="{!! $row['icon']['url'] !!}" alt="{!! $row['title'] !!}">
                             </div>
