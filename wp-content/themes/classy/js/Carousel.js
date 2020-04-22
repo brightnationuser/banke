@@ -23,8 +23,8 @@ export default class Carousel {
                 });
             },
             
-            /*initTeamCarousel: function () {
-                $('.team__members.owl-carousel').owlCarousel({
+            initTeamCarousel: function () {
+                /*$('.team__members.owl-carousel').owlCarousel({
                     loop: false,
                     margin: 30,
                     onInitialized: show,
@@ -44,8 +44,8 @@ export default class Carousel {
                             items: 4
                         }
                     }
-                });
-            },*/
+                });*/
+            },
             
             initReferencesCarousel: function () {
                 $('.references.owl-carousel').owlCarousel({
