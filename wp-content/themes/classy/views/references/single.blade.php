@@ -2,6 +2,7 @@
 
 @section('content')
 	<div class="container">
+		{{ kama_breadcrumbs('>'); }}
 		<div class="news__date">
 			{{ $post->getDate() }}
 		</div>

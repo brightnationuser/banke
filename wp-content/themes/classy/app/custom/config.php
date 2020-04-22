@@ -117,4 +117,5 @@ $include = array(
     'redirects.php',
     're_order_menu.php',
     'spam.php',
+    'functions.php',
 );
