@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="hero parallax-container">
-{{--        <div class="parallax" id="js_hero_hero">
+{{--        <div class="parallax fix" id="js_hero_hero">
         </div>--}}
 
         <div class="parallax">
