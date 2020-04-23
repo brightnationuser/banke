@@ -36,7 +36,7 @@
             <div class="team__members d-flex">
                 @foreach($post->getAcfByKey('acf_team') as $member)
 
-                    <div class="member aos-animation" data-aos="fade-in" data-aos-delay="{{ 200 * (1 + $loop->index) }}">
+                    <div class="member aos-animation" data-aos="fade-up" data-aos-delay="{{ 200 * (1 + $loop->index) }}">
                         <div class="member__image" style="background-image: url('{{ $member['acf_team_image']['url'] }}')">
                         </div>
 

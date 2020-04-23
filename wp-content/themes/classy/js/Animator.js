@@ -33,33 +33,7 @@ export default class Animator {
     }
 
     setHomeTimeline() {
-        this.timeline.add(TweenMax.fromTo('.hero .parallax', 0.5, { opacity: 0, y: -100 }, { opacity: 1, y: 0 }));
-        this.timeline.delay(0.1);
-        this.timeline.add(TweenMax.fromTo('.hero h1', 0.8, { opacity: 0, y: -30 }, { opacity: 1, y: 0 }));
-        this.timeline.delay(0.1);
-        this.timeline.add(TweenMax.fromTo('.hero .hero__button', 0.8, { opacity: 0, y: -30 }, { opacity: 1, y: 0 }));
-        this.choreographItems('.benefit');
-        this.timeline.pause();
 
-        this.timeline.addLabel('.our-products');
-        this.timeline.add(TweenMax.fromTo('.our-products h2', 0.8, { opacity: 0, y: -30 }, { opacity: 1, y: 0 }));
-        this.timeline.delay(0.1);
-        this.timeline.pause();
-
-        this.timeline.addLabel('.epto');
-        this.timeline.add(TweenMax.fromTo('.epto .epto__bg', 0.5, { opacity: 0, y: -30 }, { opacity: 1, y: 0 }));
-        this.timeline.delay(0.1);
-        this.timeline.add(TweenMax.fromTo('.epto .epto__image', 0.55, { opacity: 0, y: -40 }, { opacity: 1, y: 0 }));
-        this.timeline.delay(0.05);
-        this.timeline.add(TweenMax.fromTo('.epto h3', 0.3, { opacity: 0, y: -30 }, { opacity: 1, y: 0 }));
-        this.timeline.delay(0.1);
-        this.timeline.add(TweenMax.fromTo('.epto .description__text', 0.3, { opacity: 0, y: -30 }, { opacity: 1, y: 0 }));
-        this.timeline.delay(0.1);
-        this.timeline.add(TweenMax.fromTo('.epto .description__button', 0.3, { opacity: 0, y: -30 }, { opacity: 1, y: 0 }));
-        this.timeline.delay(0.1);
-        this.timeline.pause();
-        
-        this.setContactsTimeline();
     }
 
     setEPTOSystemsTimeline() {
