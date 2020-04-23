@@ -1,9 +1,9 @@
 .engineering-page {
   .offers {
-    padding-bottom: 110px;
+    padding-bottom: 95px;
 
     &__title {
-      margin-top: 0;
+      margin-top: 10px;
       margin-bottom: 30px;
     }
 
@@ -97,6 +97,15 @@
         }
       }
     }
+
+    &__description {
+      text-align: center;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 21px;
+      max-width: 960px;
+      margin: 75px auto 0 auto;
+    }
   }
 
   .benefits {
@@ -113,10 +122,19 @@
         background: #FFFFFF;
         box-shadow: 0 12px 20px rgba(0, 0, 0, 0.04);
         border-radius: 8px;
+        padding: 45px 40px 52px 40px;
         width: 100%;
 
         &__title {
           margin-bottom: 5px;
+        }
+
+        &__text {
+          font-weight: 300;
+          font-size: 13px;
+          line-height: 21px;
+          text-align: center;
+          color: #4A4A49;
         }
       }
     }

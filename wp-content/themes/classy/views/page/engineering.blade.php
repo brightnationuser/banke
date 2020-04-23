@@ -1,3 +1,4 @@
+{{-- Template Name: Customized Solutions --}}
 @extends('layout.default')
 
 @section('content')
@@ -48,6 +49,10 @@
                             </div>
                         </div>
                     @endforeach
+                </div>
+
+                <div class="offers__description aos-animation" data-aos-delay="200">
+                    {!! $post->getAcfByKey('offers_description') !!}
                 </div>
 
             </div>
