@@ -39,6 +39,10 @@
             if($acf_event_type) {
                 $title = $title.' | '.$acf_date.' | '.$acf_event_type;
             }
+
+            if(empty($title)) {
+                $title = $post->post_title;
+            }
         ?>
 
         @if($acf_og_image)
