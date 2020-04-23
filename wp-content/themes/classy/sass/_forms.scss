@@ -76,6 +76,19 @@ button, input[type=button] {
         transform: rotateZ(60deg) translate(0em, 10em);
     }
 
+    &--primary {
+        box-sizing: border-box;
+
+        &:hover {
+            padding: 12px 30px;
+            margin: 0;
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+
     @keyframes sheen {
         100% {
             transform: rotateZ(60deg) translate(10em, -10em);

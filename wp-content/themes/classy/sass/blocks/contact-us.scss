@@ -137,6 +137,21 @@
             transform: translate(-50%);
         }
     }
+
+    &--blue-bg {
+        padding-bottom: 80px;
+        margin-bottom: 0;
+        background-color: #F2F6FC;
+        background-image: url('/wp-content/themes/classy/images/pages/home/contact-us.png');
+
+        h2 {
+            margin-bottom: 40px;
+        }
+
+        &::before {
+            display: none;
+        }
+    }
     
     @media screen and (max-width: $width-l) {
         .container {
