@@ -47,7 +47,7 @@ export default class Carousel {
                         0: {
                             items: 1
                         },
-                        480: {
+                        576: {
                             items: 2
                         },
                         768: {

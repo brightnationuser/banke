@@ -212,7 +212,7 @@
             &__image {
                 height: 190px;
                 overflow: hidden;
-                transition: all .3s ease;
+                transition: all .1s ease;
 
                 img {
                     display: block;
@@ -311,5 +311,11 @@
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .home .content .home-references .reference-slide__image {
+        border-radius: 15px;
     }
 }
