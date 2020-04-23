@@ -33,50 +33,56 @@
                 What We Do
             </h2>
 
-            <div class="what-we-do__list d-flex">
-                <div class="what-we-do__item item">
-                    <div class="item__image">
-                        <img src="/wp-content/themes/classy/images/pages/home/wwd-1.png" alt="image">
-                    </div>
-                    <div class="item__content">
-                        <h3 class="item__title">
-                            E-PTO Systems
-                        </h3>
-                        <div class="item__text">
-                            Banke offers the broadest range of electric power
-                            take-off (E-PTO) solutions for refuse vehicles and mobile cranes
+            @if(!empty($post->getAcfByKey('what_we_do')))
+                <div class="what-we-do__list d-flex">
+                    @foreach($post->getAcfByKey('what_we_do') as $row)
+                        <div class="what-we-do__item item">
+                            <div class="item__image">
+                                <img src="{!! $row['image']['url'] !!}" alt="{{ $row['title'] }}">
+                            </div>
+                            <div class="item__content">
+                                <h3 class="item__title">
+                                    {!! $row['title'] !!}
+                                </h3>
+                                <div class="item__text">
+                                    {!! $row['text'] !!}
+                                </div>
+                                <a  href="{{ $row['link'] }}" class="item__read-more read-more">
+                                    Read More
+                                </a>
+                            </div>
+
                         </div>
-                        <a  href="#" class="item__read-more read-more">
-                            Read More
+                    @endforeach
+                </div>
+            @endif
+        </div>
+    </div>
+
+    <div class="home-references">
+        <div class="container">
+            <h2>References</h2>
+
+            <div class="references-slider owl-carousel js-references-slider">
+                @foreach($references as $reference)
+                    <div class="reference-slide">
+                        <a href="{!! get_post_permalink($reference->ID) !!}">
+                            <div class="reference-slide__image">
+                                <img src="{!! wp_get_attachment_url($reference->getAcfByKey('acf_image')) !!}" alt="{!! $reference->post_title !!}">
+                            </div>
+                            <div class="reference-slide__title">
+                                {!! $reference->post_title !!}
+                            </div>
                         </a>
                     </div>
-
-                </div>
-
-                <div class="what-we-do__item item">
-                    <div class="item__image">
-                        <img src="/wp-content/themes/classy/images/pages/home/wwd-2.png" alt="image">
-                    </div>
-                    <div class="item__content">
-                        <h3 class="item__title">
-                            Engineering Services
-                        </h3>
-                        <div class="item__text">
-                            Our team of automotive and power-electronics engineers is ready
-                            to begin designing your battery-electric solution now
-                        </div>
-                        <a  href="#" class="item__read-more read-more">
-                            Read More
-                        </a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
 
     @include('partials.contact-us', [
-        'form' => $post->getAcfByKey('contact_form'),
-        'title' => 'Contact Us',
+            'form' => $post->getAcfByKey('contact_form'),
+        'title' => $post->getAcfByKey('form_title'),
         'classes' => 'contact-us--light'
     ])
 

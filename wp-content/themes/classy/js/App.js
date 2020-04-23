@@ -129,7 +129,7 @@ class App {
         let carousel = new Carousel();
         carousel.init('News');
         carousel.init('References');
-        carousel.init('Team');
+        carousel.init('ReferencesThin');
     }
 
     initFaq() {

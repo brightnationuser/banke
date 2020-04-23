@@ -22,31 +22,44 @@ export default class Carousel {
                     }
                 });
             },
-            
-            initTeamCarousel: function () {
-                /*$('.team__members.owl-carousel').owlCarousel({
-                    loop: false,
-                    margin: 30,
+
+            initReferencesThinCarousel: function () {
+                $('.js-references-slider').owlCarousel({
+                    loop: true,
+                    margin: 5,
                     onInitialized: show,
+                    onTranslate: function() {
+                        $('.owl-item').removeClass('rounded-first').removeClass('rounded-last');
+                    },
+                    onChange: function() {
+                        $('.owl-item').removeClass('rounded-first').removeClass('rounded-last');
+                    },
+                    onDrag: function() {
+                        $('.owl-item').removeClass('rounded-first').removeClass('rounded-last');
+                    },
+                    onTranslated: function() {
+                        $('.active:first').addClass('rounded-first');
+                        $('.active:last').addClass('rounded-last');
+                    },
                     nav: true,
                     dots: false,
                     responsive: {
                         0: {
                             items: 1
                         },
-                        500: {
+                        480: {
                             items: 2
                         },
-                        800: {
+                        768: {
                             items: 3
                         },
-                        1200: {
+                        992: {
                             items: 4
                         }
                     }
-                });*/
+                })
             },
-            
+
             initReferencesCarousel: function () {
                 $('.references.owl-carousel').owlCarousel({
                     loop: true,
@@ -78,5 +91,7 @@ export default class Carousel {
     init(carouselName) {
         this.carousels["init" + carouselName + "Carousel"]();
         $('.owl-prev span, .owl-next span').text('');
+        $('.js-references-slider .active:first').addClass('rounded-first');
+        $('.js-references-slider .active:last').addClass('rounded-last');
     }
 }
