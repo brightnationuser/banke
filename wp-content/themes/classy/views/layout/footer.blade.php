@@ -5,7 +5,7 @@
 
                 {{
                      wp_nav_menu([
-                        'menu' => 2,
+                        'menu' => 'Footer',
                         'container' => FALSE,
                         'container_id' => FALSE,
                         'menu_class' => 'menu__nav',
