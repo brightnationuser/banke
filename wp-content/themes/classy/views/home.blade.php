@@ -7,7 +7,7 @@
         </div>--}}
 
         <div class="parallax">
-            <img src="/wp-content/themes/classy/images/bg/header-bg-2.jpg" data-type="parallax" data-depth="2" data-shift="100">
+            <img src="/wp-content/themes/classy/images/bg/header-bg-2.jpg" data-type="parallax" data-depth="2" data-shift="0">
         </div>
 
         <div class="container">
