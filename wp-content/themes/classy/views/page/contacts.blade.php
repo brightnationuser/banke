@@ -14,14 +14,18 @@
                 @endif
                 @if(!empty($row['phone']))
                   <div class="contact__info">
-                    <i class="icon-phone"></i>
-                    <span>{!! $row['phone'] !!}</span>
+                    <a class="disable_preloader" href="tel:{!! $row['phone'] !!}">
+                      <i class="icon-phone"></i>
+                      <span>{!! $row['phone'] !!}</span>
+                    </a>
                   </div>
                 @endif
                 @if(!empty($row['email']))
                   <div class="contact__info">
-                    <i class="icon-email"></i>
-                    <span>{!! $row['email'] !!}</span>
+                    <a class="disable_preloader" href="mailto:{{$row ['email'] }}">
+                      <i class="icon-email"></i>
+                      <span>{!! $row['email'] !!}</span>
+                    </a>
                   </div>
                 @endif
                 @if(!empty($row['work_time']))
@@ -42,14 +46,18 @@
                 @endif
                 @if(!empty($row['phone']))
                   <div class="contact__info">
-                    <i class="icon-phone"></i>
-                    <span>{!! $row['phone'] !!}</span>
+                    <a class="disable_preloader" href="tel:{!! $row['phone'] !!}">
+                      <i class="icon-phone"></i>
+                      <span>{!! $row['phone'] !!}</span>
+                    </a>
                   </div>
                 @endif
                 @if(!empty($row['email']))
                   <div class="contact__info">
-                    <i class="icon-email"></i>
-                    <span>{!! $row['email'] !!}</span>
+                    <a class="disable_preloader" href="mailto:{{$row ['email'] }}">
+                      <i class="icon-email"></i>
+                      <span>{!! $row['email'] !!}</span>
+                    </a>
                   </div>
                 @endif
                 @if(!empty($row['work_time']))

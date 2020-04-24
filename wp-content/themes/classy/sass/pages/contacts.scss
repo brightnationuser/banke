@@ -41,6 +41,14 @@
                 padding-left: 15px;
                 position: relative;
 
+                a {
+                    color: #4A4A49;
+
+                    &:hover {
+                        color: #4A4A49;
+                    }
+                }
+
                 i {
                     position: absolute;
                     top: 5px;
