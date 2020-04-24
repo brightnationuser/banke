@@ -1,60 +1,104 @@
 .p-contacts {
-    
-    h3 {
-        margin-top: 40px;
-        margin-bottom: 8px;
-        text-align: left;
-        color: $color-blue;
-    }
-    
-    p {
-        line-height: 22px;
-    }
-    
-    .content {
-        padding-bottom: 0;
-    }
-    
-    .contact-info {
-        margin: 6px 0;
-        
-        &::before {
-            font-family: 'icomoon' !important;
-            speak: none;
-            font-style: normal;
-            font-weight: normal;
-            font-variant: normal;
-            text-transform: none;
-            line-height: 1;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            color: #005CA9;
-            padding-right: 5px;
+
+    .contacts {
+        padding-bottom: 120px;
+        padding-top: 30px;
+
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
         }
-        
-        &.icomoon-icon-phone {
-            &::before {
-                content: "\e90c";
-                font-size: 11px;
+
+        &__columns {
+            h3 {
+                margin-top: 20px;
+                margin-bottom: 8px;
+                text-align: left;
+                color: $color-blue;
+            }
+
+            p {
+                line-height: 22px;
             }
         }
-        
-        &.icomoon-icon-email {
-            &::before {
-                content: "\e90d";
-                font-size: 11px;
+
+        &__left {
+            margin-right: 70px;
+            max-width: 245px;
+        }
+
+        &__right {
+            max-width: 320px;
+        }
+
+        .contact {
+            &__text {
+                margin-bottom: 12px;
+            }
+
+            &__info {
+                margin-bottom: 6px;
+                padding-left: 15px;
+                position: relative;
+
+                i {
+                    position: absolute;
+                    top: 5px;
+                    left: 0;
+                    color: $color-light-blue;
+                    font-size: 11px;
+                }
+            }
+
+            &:first-child {
+                h3 {
+                    margin-top: 0;
+                }
             }
         }
-        
-        &.icomoon-icon-clock {
-            &::before {
-                content: "\e90e";
-                font-size: 11px;
+
+        .sidebar {
+
+            &__item {
+                min-height: 177px;
             }
         }
     }
-    
+
     .contact-us {
-        margin-top: 50px;
+        margin-bottom: -80px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .p-contacts {
+        .contacts {
+            &__wrap {
+                flex-direction: column;
+
+                .sidebar {
+                    max-width: 320px;
+                    margin-right: 0;
+                    margin-left: 0;
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .p-contacts {
+        .contacts {
+            padding-bottom: 70px;
+
+            &__columns {
+               flex-direction: column;
+            }
+
+            &__left {
+                margin-bottom: 20px;
+            }
+        }
     }
 }
