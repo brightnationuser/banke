@@ -19,7 +19,7 @@
                                 <div class="project__text">
                                     {!! $row['text']; !!}
                                 </div>
-                                <a href="{{ $row['link'] }}" class="read-more project__read-more">
+                                <a href="{{ $row['link'] }}" target="_blank" class="read-more project__read-more">
                                     Read More
                                 </a>
                             </div>
@@ -34,7 +34,7 @@
                 <h2 class="partners__title">{!! $post->getAcfByKey('partners_title') !!}</h2>
 
                 @if(!empty($post->getAcfByKey('partners')))
-                    <div class="partners__list d-flex">
+                    <div class="partners__list d-flex" data-aos="fade-in">
                         @foreach($post->getAcfByKey('partners') as $row)
                             <div class="partner">
                                 <div class="partner__logo">
