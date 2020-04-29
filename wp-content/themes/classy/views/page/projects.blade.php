@@ -19,7 +19,7 @@
                                 <div class="project__text">
                                     {!! $row['text']; !!}
                                 </div>
-                                <a href="{{ $row['link'] }}" target="_blank" class="read-more project__read-more">
+                                <a href="{{ $row['link'] }}" target="_blank" class="read-more project__read-more disable_preloader">
                                     Read More
                                 </a>
                             </div>
