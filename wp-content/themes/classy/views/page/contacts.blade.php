@@ -73,9 +73,9 @@
         <div class="contacts__sidebar sidebar animated fadeInRight">
           <div class="sidebar__item sidebar__item--social">
             <h3>Follow Us</h3>
-            <a href="https://linkedin.com/company/banke" class="disable_preloader" target="_blank">
+            <a href="{!! get_field('linkedin', 'option')['link'] !!}" class="disable_preloader" target="_blank">
               <i class="icon-linkedin"></i>
-              <span>linkedin.com/company/banke/</span>
+              <span>{!! get_field('linkedin', 'option')['text'] !!}</span>
             </a>
           </div>
         </div>
