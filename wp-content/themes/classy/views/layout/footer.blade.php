@@ -18,7 +18,7 @@
 
             <div class="footer__socials">
                 <div class="social linkedin">
-                    <a href="https://linkedin.com/company/banke" class="d-flex disable_preloader" target="_blank" >
+                    <a href="{!! get_field('linkedin', 'option')['link'] !!}" class="d-flex disable_preloader" target="_blank" >
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <rect width="20" height="20" rx="4" fill="white" fill-opacity="0.9"/>
                             <g clip-path="url(#clip0)">
@@ -32,7 +32,7 @@
                                 </clipPath>
                             </defs>
                         </svg>
-                        <span>linkedin.com/company/banke</span>
+                        <span>{!! get_field('linkedin', 'option')['text'] !!}</span>
                     </a>
                 </div>
             </div>
@@ -42,7 +42,7 @@
     <div class="container footer__bottom">
 
         <div class="footer__adress">
-            Ormstoft 5 | 6400 Sønderborg | Denmark | <a href="tel:+4577771616">+45 7777 1616</a> | <a href="mailto:marketing@banke.pro">marketing@banke.pro</a>
+            Ormstoft 5 | 6400 Sønderborg | Denmark | <a href="tel:+4577771616">+45 7777 16 16</a> | <a href="mailto:marketing@banke.pro">marketing@banke.pro</a>
         </div>
 
         <div class="footer__copyright">
