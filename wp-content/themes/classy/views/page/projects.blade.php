@@ -36,14 +36,16 @@
                 @if(!empty($post->getAcfByKey('partners')))
                     <div class="partners__list d-flex" data-aos="fade-in">
                         @foreach($post->getAcfByKey('partners') as $row)
-                            <div class="partner">
-                                <div class="partner__logo">
-                                    <img src="{!! $row['image']['url']; !!}" alt="{!! $row['image']['alt']; !!}">
+                            <a class="partner__link disable_preloader" href="{{ $row['link'] }}" target="_blank">
+                                <div class="partner">
+                                    <div class="partner__logo">
+                                        <img src="{!! $row['image']['url']; !!}" alt="{!! $row['image']['alt']; !!}">
+                                    </div>
+                                    <div class="partner__text">
+                                        {!! $row['text']; !!}
+                                    </div>
                                 </div>
-                                <div class="partner__text">
-                                    {!! $row['text']; !!}
-                                </div>
-                            </div>
+                            </a>
                         @endforeach
                     </div>
                 @endif
