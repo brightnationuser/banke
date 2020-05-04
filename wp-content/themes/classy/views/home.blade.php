@@ -81,7 +81,7 @@
     </div>
 
     @include('partials.contact-us', [
-            'form' => $post->getAcfByKey('contact_form'),
+        'form' => $post->getAcfByKey('contact_form'),
         'title' => $post->getAcfByKey('form_title'),
         'classes' => 'contact-us--light'
     ])
