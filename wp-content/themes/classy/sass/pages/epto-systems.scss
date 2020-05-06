@@ -151,26 +151,6 @@
                 width: 100%;
             }
         }
-
-        .b-scene {
-            .scene__item {
-                .infobox-w {
-                    .infobox__dot {
-                        &:hover {
-                            background: #fff;
-
-                            &::before {
-                                display: block;
-                            }
-
-                            &::after {
-                                display: none;
-                            }
-                        }
-                    }
-                }
-            }
-        }
     }
 
     .products {

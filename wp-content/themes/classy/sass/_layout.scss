@@ -47,7 +47,7 @@ body {
         }
     }
 
-    &.home, &.p-epto-systems, &.p-media {
+    &.home, &.p-epto-systems, &.p-media, &.page-template-classy-powertrains {
         .content {
             padding: 0;
         }
@@ -80,6 +80,10 @@ header.header {
             ul.menu__nav {
                 list-style: none;
                 display: flex;
+
+                .sub-menu {
+                    display: none;
+                }
 
                 li.menu-item {
                     position: relative;
@@ -114,34 +118,29 @@ header.header {
                         }
                     }
 
-                    &.current-menu-item {
-                        /*&#menu-item-330, &#menu-item-12 {
-                            a {
-                                color: $color-light-blue;
-                            }
+                    &.current-menu-item, &.current-menu-parent {
 
+                        &.underline {
+                            &:after {
+                                content: '';
+                                display: block;
+                                position: absolute;
+                                left: -10px;
+                                right: -10px;
+                                height: 0;
+                                top: 30px;
+                                border-top: 2px solid $color-light-blue;
+                            }
+                        }
+
+                        &.no-underline {
                             &:after {
                                 display: none;
                             }
 
-                            &:hover {
-                                a {
-                                    &:after {
-                                        display: none;
-                                    }
-                                }
+                            a {
+                                color: #005CA9;
                             }
-                        }*/
-
-                        &:after {
-                            content: '';
-                            display: block;
-                            position: absolute;
-                            left: -10px;
-                            right: -10px;
-                            height: 0;
-                            top: 30px;
-                            border-top: 2px solid $color-light-blue;
                         }
                     }
                 }

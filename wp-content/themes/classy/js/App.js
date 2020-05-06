@@ -8,6 +8,8 @@ import Animation from './animation/Animation';
 class App {
 
     constructor() {
+
+        this.tabsMenuParent();
         
         this.initHeaderHamburger();
         
@@ -137,6 +139,16 @@ class App {
             $('.item__q.m_active').not(this).removeClass('m_active').siblings('.item__a').slideUp();
             $(this).addClass('m_active').siblings('.item__a').stop(1,0).slideToggle();
         });
+    }
+
+    tabsMenuParent() {
+        const $tabs = $('.page-tabs');
+        if($tabs.length > 0) {
+            $('.current-menu-item, .current-menu-parent').addClass('no-underline');
+        }
+        else {
+            $('.current-menu-item, .current-menu-parent').addClass('underline');
+        }
     }
 
     //antispam for contact form

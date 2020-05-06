@@ -11,10 +11,12 @@ window.$ = JQuery.default;
 // Import main scripts
 import App from './App';
 import textTrim from './text-trim';
+import tipsImage from './blocks/tips-image';
 
 
 $(document).ready(function () {
     textTrim('.js-trim-text');
+    tipsImage('.js-tips-image');
 
     setTimeout(function () {
         let window_height = $(window).height();
