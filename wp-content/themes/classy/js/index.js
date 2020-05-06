@@ -16,6 +16,7 @@ import tipsImage from './blocks/tips-image';
 
 $(document).ready(function () {
     textTrim('.js-trim-text');
+    textTrim('.js-intro-content', {show_block:true});
     tipsImage('.js-tips-image');
 
     setTimeout(function () {

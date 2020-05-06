@@ -30,7 +30,7 @@
 						</div>
 
 						<div class="item__title">
-							{{ $news_item->title() }}
+							{!! strlen($news_item->title()) > 30 ? substr($news_item->title(), 0, 30) . '...' : $news_item->title() !!}
 						</div>
 					</div>
 				</a>

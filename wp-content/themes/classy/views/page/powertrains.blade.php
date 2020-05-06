@@ -17,13 +17,18 @@
                     <div class="intro__image animated fadeInLeft" style="animation-delay: .5s">
                         @include('partials.tips-image', ['image' => $intro['image']])
                     </div>
-                    <div class="intro__content">
+                    <div class="intro__content js-intro-content" data-text-open="read more" data-text-close="show less">
                         <div class="intro__text animated fadeInUp" style="animation-delay: .5s">
                             {!! $intro['text'] !!}
+                            <div class="js-hide-able" style="display:none;">
+                                {!! $intro['hidden_text'] !!}
+                            </div>
                         </div>
-                        <a href="{{ $intro['link'] }}" class="intro__read-more read-more animated fadeInUp" style="animation-delay: .8s">
-                            read more
-                        </a>
+                        @if(!empty($intro['hidden_text']))
+                            <div class="intro__read-more read-more-btn animated fadeInUp" style="animation-delay: .8s">
+                                read more
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
