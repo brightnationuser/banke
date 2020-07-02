@@ -1,10 +1,10 @@
 @extends('layout.default')
 
 @section('content')
-    
+
     <div class="history">
         <div class="container">
-            
+
             <div class="history__wrap">
 
                  <div class="history__content">
@@ -19,7 +19,11 @@
                 <div class="history__sidebar sidebar animated fadeInRight">
                     <div class="sidebar__item sidebar__item--download">
                         <h3>Downloads</h3>
-                        <a href="/wp-content/uploads/Årsrapport 2018 Banke ApS.PDF" class="disable_preloader" target="_blank" download>Annual report 2018</a>
+                        @foreach(get_field('downloads') as $download)
+                            <div>
+                                <a href="{!! $download['link'] !!}" class="disable_preloader" target="_blank" download>{!! $download['text'] !!}</a>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
