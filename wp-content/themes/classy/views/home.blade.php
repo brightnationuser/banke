@@ -38,7 +38,9 @@
                     @foreach($post->getAcfByKey('what_we_do') as $row)
                         <div class="what-we-do__item item">
                             <div class="item__image">
-                                <img src="{!! $row['image']['url'] !!}" alt="{{ $row['title'] }}">
+                                <a  href="{{ $row['link'] }}">
+                                    <img src="{!! $row['image']['url'] !!}" alt="{{ $row['title'] }}">
+                                </a>
                             </div>
                             <div class="item__content">
                                 <h3 class="item__title">
