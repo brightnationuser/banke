@@ -21,7 +21,7 @@
 
         <div class="container">
             <div class="reference__image">
-                <img src="{{ $post->getAcfImage()->src('large') }}">
+                <img src="{{ $post->getAcfImage()->src('large') }}" alt="">
             </div>
 
             <div class="reference__content">

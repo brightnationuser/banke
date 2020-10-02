@@ -11,7 +11,7 @@
 		</div>
 
 		<div class="news__content">
-			<img class="content__img" src="{{ $post->getAcfImage()->src('large') }}">
+			<img class="content__img" src="{{ $post->getAcfImage()->src('large') }}" alt="">
 
 			<div class="content__text text__content">
 				{!! $post->content() !!}

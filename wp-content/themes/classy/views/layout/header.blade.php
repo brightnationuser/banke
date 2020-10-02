@@ -1,7 +1,7 @@
 <header class="header">
     <div class="container">
         <a href="/" class="header__logo">
-            <img src="{{ content_url('themes/classy/images/logo.png') }}">
+            <img src="{{ content_url('themes/classy/images/logo.png') }}" alt="">
         </a>
 
         <div class="header__menu">

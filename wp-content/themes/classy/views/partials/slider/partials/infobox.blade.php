@@ -4,7 +4,7 @@
 
         <div class="infobox__content" style="display: none">
             <div class="content__image">
-                <img src="{{ $item['acf_item_image']['url'] }}" class="preload">
+                <img src="{{ $item['acf_item_image']['url'] }}" class="preload" alt="">
             </div>
             <div class="content__content">
                 <div class="content__title">

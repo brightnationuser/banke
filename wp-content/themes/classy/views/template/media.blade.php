@@ -50,7 +50,7 @@
                         </a>
                     @else
                         <a class="list__item disable_preloader" href="{{ $media['url'] }}" data-fancybox="gallery">
-                            <img src="{{ $media['sizes']['medium'] }}" />
+                            <img src="{{ $media['sizes']['medium'] }}" alt="" />
                         </a>
                     @endif
                 @endforeach

@@ -10,12 +10,12 @@
             <div class="car" id="scene_0">
 
                 <div class="car-w">
-                    <img src="/wp-content/themes/classy/images/pages/home/car_1.png" class="car__image preload">
+                    <img src="/wp-content/themes/classy/images/pages/home/car_1.png" class="car__image preload" alt="">
                     <div class="infobox-w hidden" id="infobox_0">
                         <div class="infobox__content">
                             <div class="infobox__dot pulse_main m_right-top"></div>
                             <div class="infobox__image">
-                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_0.png" class="preload">
+                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_0.png" class="preload" alt="">
                             </div>
                             <div class="infobox__text">
                                 Flashing beacons.
@@ -27,7 +27,7 @@
                         <div class="infobox__content">
                             <div class="infobox__dot pulse_main m_left-top"></div>
                             <div class="infobox__image">
-                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_1.png" class="preload">
+                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_1.png" class="preload" alt="">
                             </div>
                             <div class="infobox__text">
                                 3-way electrically adjustable<br>roof hatch (front side up,<br>rear side up,
@@ -40,7 +40,7 @@
                         <div class="infobox__content">
                             <div class="infobox__dot pulse_main m_left-top"></div>
                             <div class="infobox__image">
-                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_2.png" class="preload">
+                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_2.png" class="preload" alt="">
                             </div>
                             <div class="infobox__text">
                                 Drivers cockpit and steering column<br>are pneumatically adjustable<br>and can
@@ -55,7 +55,7 @@
                         <div class="infobox__content">
                             <div class="infobox__dot pulse_main m_left-top"></div>
                             <div class="infobox__image">
-                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_6.png" class="preload">
+                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_6.png" class="preload" alt="">
                             </div>
                             <div class="infobox__text">
                                 Large glass surfaces give excellent visibility<br>to all directions. Enhanced
@@ -69,7 +69,7 @@
                         <div class="infobox__content">
                             <div class="infobox__dot pulse_main m_left-top"></div>
                             <div class="infobox__image">
-                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_3.png" class="preload">
+                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_3.png" class="preload" alt="">
                             </div>
                             <div class="infobox__text">
                                 3 or 4 seat arrangement<br>for operating crew.
@@ -81,7 +81,7 @@
                         <div class="infobox__content">
                             <div class="infobox__dot pulse_main m_left-top"></div>
                             <div class="infobox__image">
-                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_2.png" class="preload">
+                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_2.png" class="preload" alt="">
                             </div>
                             <div class="infobox__text">
                                 Adjustable steering column.<br>
@@ -97,7 +97,7 @@
                         <div class="infobox__content">
                             <div class="infobox__dot pulse_main m_left-top"></div>
                             <div class="infobox__image">
-                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_4.png" class="preload">
+                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_4.png" class="preload" alt="">
                             </div>
                             <div class="infobox__text">
                                 100% LED<br>lights throughout.
@@ -111,13 +111,13 @@
             <div class="car hidden" id="scene_1">
 
                 <div class="car-w">
-                    <img src="/wp-content/themes/classy/images/pages/home/car_2.png" class="car__image preload">
+                    <img src="/wp-content/themes/classy/images/pages/home/car_2.png" class="car__image preload" alt="">
 
                     <div class="infobox-w hidden" id="infobox_7">
                         <div class="infobox__content">
                             <div class="infobox__dot pulse_main m_left-top"></div>
                             <div class="infobox__image">
-                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_7.png" class="preload">
+                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_7.png" class="preload" alt="">
                             </div>
                             <div class="infobox__text">
                                 Body builder access to<br>drive shaft for hydraulic pump.<br>45kW peak and 30kW
@@ -131,7 +131,7 @@
                         <div class="infobox__content">
                             <div class="infobox__dot pulse_main m_left-top"></div>
                             <div class="infobox__image">
-                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_8.png" class="preload">
+                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_8.png" class="preload" alt="">
                             </div>
                             <div class="infobox__text">
                                 Sliding door protrudes only 90 mm<br>to the outside of the vehicle<br>when
@@ -144,7 +144,7 @@
                         <div class="infobox__content">
                             <div class="infobox__dot pulse_main m_left-top"></div>
                             <div class="infobox__image">
-                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_9.png" class="preload">
+                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_9.png" class="preload" alt="">
                             </div>
                             <div class="infobox__text">
                                 Step in height for driver<br>is only 400 mm and gives immediate<br>access to
@@ -157,7 +157,7 @@
                         <div class="infobox__content">
                             <div class="infobox__dot pulse_main m_left-top"></div>
                             <div class="infobox__image">
-                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_10.png" class="preload">
+                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_10.png" class="preload" alt="">
                             </div>
                             <div class="infobox__text">
                                 Curved sliding door design<br>on driver side allows for driving<br>with open
@@ -170,7 +170,7 @@
                         <div class="infobox__content">
                             <div class="infobox__dot pulse_main m_left-top"></div>
                             <div class="infobox__image">
-                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_11.png" class="preload">
+                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_11.png" class="preload" alt="">
                             </div>
                             <div class="infobox__text">
                                 Body builder electrical interface<br>according to EN1501-1.<br>Can bus and
@@ -183,7 +183,7 @@
                         <div class="infobox__content">
                             <div class="infobox__dot pulse_main m_left-top"></div>
                             <div class="infobox__image">
-                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_12.png" class="preload">
+                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_12.png" class="preload" alt="">
                             </div>
                             <div class="infobox__text">
                                 8 tons front axle made by ZF.<br>53 degrees deflection enables<br>a very small
@@ -196,7 +196,7 @@
                         <div class="infobox__content">
                             <div class="infobox__dot pulse_main m_right-top"></div>
                             <div class="infobox__image">
-                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_12.png" class="preload">
+                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_12.png" class="preload" alt="">
                             </div>
                             <div class="infobox__text">
                                 11,5 tons Driving axle<br>from ZF with two integrated electric motors.<br>220 kW
@@ -209,7 +209,7 @@
                         <div class="infobox__content">
                             <div class="infobox__dot pulse_main m_right-top"></div>
                             <div class="infobox__image">
-                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_12.png" class="preload">
+                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_12.png" class="preload" alt="">
                             </div>
                             <div class="infobox__text">
                                 8 tons rear steer axle<br>made by ZF. 29 degrees deflection enables<br>a very
@@ -226,13 +226,13 @@
 
                 <div class="car-w">
 
-                    <img src="/wp-content/themes/classy/images/pages/home/car_3.png" class="car__image preload">
+                    <img src="/wp-content/themes/classy/images/pages/home/car_3.png" class="car__image preload" alt="">
 
                     <div class="infobox-w hidden" id="infobox_15">
                         <div class="infobox__content">
                             <div class="infobox__dot pulse_main m_left-top"></div>
                             <div class="infobox__image">
-                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_7.png" class="preload">
+                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_7.png" class="preload" alt="">
                             </div>
                             <div class="infobox__text">
                                 Chassis fabricated from<br>automotive grade stainless steel.
@@ -244,7 +244,7 @@
                         <div class="infobox__content">
                             <div class="infobox__dot pulse_main m_left-top"></div>
                             <div class="infobox__image">
-                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_11.png" class="preload">
+                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_11.png" class="preload" alt="">
                             </div>
                             <div class="infobox__text">
                                 1550mm available frame space<br>(on 3600mm wheelbase vehicle)<br>offering 610
@@ -257,7 +257,7 @@
                         <div class="infobox__content">
                             <div class="infobox__dot pulse_main m_right-top"></div>
                             <div class="infobox__image">
-                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_7.png" class="preload">
+                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_7.png" class="preload" alt="">
                             </div>
                             <div class="infobox__text">
                                 Battery system design allows<br>single cell replacement<br>in case of a defect
@@ -270,7 +270,7 @@
                         <div class="infobox__content">
                             <div class="infobox__dot pulse_main m_right-top"></div>
                             <div class="infobox__image">
-                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_7.png" class="preload">
+                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_7.png" class="preload" alt="">
                             </div>
                             <div class="infobox__text">
                                 Battery system placement ensures<br>optimal front-axle load.<br>Gross vehicle
@@ -283,7 +283,7 @@
                         <div class="infobox__content">
                             <div class="infobox__dot pulse_main m_right-top"></div>
                             <div class="infobox__image">
-                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_8.png" class="preload">
+                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_8.png" class="preload" alt="">
                             </div>
                             <div class="infobox__text">
                                 Large glass surfaces gives excellent<br> visibility to all directions.<br>Enhanced
@@ -297,7 +297,7 @@
                         <div class="infobox__content">
                             <div class="infobox__dot pulse_main m_right-top"></div>
                             <div class="infobox__image">
-                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_9.png" class="preload">
+                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_9.png" class="preload" alt="">
                             </div>
                             <div class="infobox__text">
                                 Sliding door protrudes only 90 mm<br>to the outside of the vehicle<br>when
@@ -310,7 +310,7 @@
                         <div class="infobox__content">
                             <div class="infobox__dot pulse_main m_right-top"></div>
                             <div class="infobox__image">
-                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_9.png" class="preload">
+                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_9.png" class="preload" alt="">
                             </div>
                             <div class="infobox__text">
                                 Step-in height for crew is only 400 mm.<br>Cab interior has a flat floor<br>throughout
@@ -323,7 +323,7 @@
                         <div class="infobox__content">
                             <div class="infobox__dot pulse_main m_right-top"></div>
                             <div class="infobox__image">
-                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_10.png" class="preload">
+                                <img src="/wp-content/themes/classy/images/pages/home/infobox/infobox_10.png" class="preload" alt="">
                             </div>
                             <div class="infobox__text">
                                 Curved sliding door design on passenger side<br>allows for driving with open
