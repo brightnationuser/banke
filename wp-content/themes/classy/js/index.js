@@ -11,10 +11,12 @@ window.$ = JQuery.default;
 // Import main scripts
 import App from './App';
 import textTrim from './text-trim';
+import popup from './popup';
 import tipsImage from './blocks/tips-image';
 
 
 $(document).ready(function () {
+    popup();
     textTrim('.js-trim-text');
     textTrim('.js-intro-content', {show_block:true});
     tipsImage('.js-tips-image');

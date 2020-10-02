@@ -12,10 +12,12 @@
     <div class="p-powertrains">
         <section class="intro">
             <h2 class="animated fadeInDown" style="animation-delay: .7s">{{ $post->post_title }}</h2>
-            <a href="" class="button">
-                <img src="data:image/svg+xml;PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxMSAxNCIgZmlsbD0iI2ZmZmZmZiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjUgNi4xMzM5N0MxMS4xNjY3IDYuNTE4ODggMTEuMTY2NyA3LjQ4MTEyIDEwLjUgNy44NjYwMkwxLjUgMTMuMDYyMkMwLjgzMzMzMiAxMy40NDcxIDMuNDMyMDNlLTA3IDEyLjk2NiAzLjc2ODUyZS0wNyAxMi4xOTYyTDguMzExMTRlLTA3IDEuODAzODVDOC42NDc2M2UtMDcgMS4wMzQwNSAwLjgzMzMzNCAwLjU1MjkyMiAxLjUgMC45Mzc4MjJMMTAuNSA2LjEzMzk3WiIvPgo8L3N2Zz4=" alt="play icon">
-                watch video
-            </a>
+            <div class="text-center">
+                <a href="#youtube-video" class="button js-popup-action" target="_blank">
+                    <img src="/wp-content/themes/classy/images/icons/play.svg" alt="Play icon">
+                    watch video
+                </a>
+            </div>
 
             <div class="container">
                 <div class="intro__wrapper d-flex">
@@ -72,6 +74,18 @@
             'title' => $post->getAcfByKey('form_title'),
             'classes' => 'contact-us--light'
         ])
+    </div>
+
+    <div class="popup js-popup" id="youtube-video">
+        <div class="popup__dialog">
+            <div class="popup__overlay js-popup-close"></div>
+
+            <div class="popup__content">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/sDsknFlke9U" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
     </div>
 
 @stop
