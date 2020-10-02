@@ -64,6 +64,7 @@
     <div class="home-references">
         <div class="container">
             <h2>References</h2>
+            <p>Currently more than 400 vehicles in operation all over Europe</p>
 
             <div class="references-slider owl-carousel js-references-slider">
                 @foreach($references as $reference)

@@ -101,6 +101,7 @@
         <section class="references-sect">
 
             <h2>References</h2>
+            <p>Currently more than 400 vehicles in operation all over Europe</p>
 
             <div class="container thin-nav">
                 <div class="references owl-carousel">

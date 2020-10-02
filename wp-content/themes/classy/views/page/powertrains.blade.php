@@ -12,6 +12,11 @@
     <div class="p-powertrains">
         <section class="intro">
             <h2 class="animated fadeInDown" style="animation-delay: .7s">{{ $post->post_title }}</h2>
+            <a href="" class="button">
+                <img src="data:image/svg+xml;PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxMSAxNCIgZmlsbD0iI2ZmZmZmZiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjUgNi4xMzM5N0MxMS4xNjY3IDYuNTE4ODggMTEuMTY2NyA3LjQ4MTEyIDEwLjUgNy44NjYwMkwxLjUgMTMuMDYyMkMwLjgzMzMzMiAxMy40NDcxIDMuNDMyMDNlLTA3IDEyLjk2NiAzLjc2ODUyZS0wNyAxMi4xOTYyTDguMzExMTRlLTA3IDEuODAzODVDOC42NDc2M2UtMDcgMS4wMzQwNSAwLjgzMzMzNCAwLjU1MjkyMiAxLjUgMC45Mzc4MjJMMTAuNSA2LjEzMzk3WiIvPgo8L3N2Zz4=" alt="play icon">
+                watch video
+            </a>
+
             <div class="container">
                 <div class="intro__wrapper d-flex">
                     <div class="intro__image animated fadeInLeft" style="animation-delay: .5s">
