@@ -24,7 +24,7 @@ export default class Animator {
         // Если да, то отжимаем паузу и считаем блок анимированным
         let $w = $(window).scroll(() => {
             scrollPoints.forEach((container) => {
-                if(($w.scrollTop() > $(container).offset().top - distanceBeforeAnimation) && !animated.includes(container)) {
+                if($(container).length && ($w.scrollTop() > $(container).offset().top - distanceBeforeAnimation) && !animated.includes(container)) {
                     animated.push(container);
                     this.timeline.play(container);
                 }

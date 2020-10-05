@@ -25,7 +25,7 @@
                                 {!! $post->getAcfByKey('acf_concept_description') !!}
                             </div>
                         </article>
-                        <div class="concept__benefits d-flex animated fadeInUp">
+                        {{--<div class="concept__benefits d-flex animated fadeInUp">
                             @foreach($post->getAcfByKey('acf_benefits') as $key => $item)
                                 <div class="concept-benefit d-flex">
                                     <div class="concept-benefit__image-wrap">
@@ -38,11 +38,34 @@
                                     </div>
                                 </div>
                             @endforeach
-                        </div>
+                        </div>--}}
                     </div>
                 </div>
             </div>
         </section>
+
+        @php
+            $principles = $post->getAcfByKey('acf_benefits');
+        @endphp
+
+        @if(!empty($principles))
+            <div class="principles animated fadeInUp">
+                <div class="container">
+                    <div class="principles__list">
+                        @foreach($principles as $key => $item)
+                            <div class="principles__item">
+                                <div class="principles__image-wrap">
+                                    <img class="principles__image" src="{!! $item['image']['url'] !!}" alt="{{ $item['title'] }}">
+                                </div>
+                                <div class="principles__title">
+                                    {!! $item['title'] !!}
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        @endif
 
         <section class="present">
             <div class="container">
