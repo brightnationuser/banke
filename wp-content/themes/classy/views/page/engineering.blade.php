@@ -70,7 +70,7 @@
                         @foreach($principles as $key => $item)
                             <div class="principles__item">
                                 <div class="principles__image-wrap">
-                                    <img class="principles__image" src="{!! $item['image']['url'] !!}" alt="{{ $item['title'] }}">
+                                    <img class="principles__image" src="{!! $item['image']['url'] !!}" alt="{{ strip_tags($item['title']) }}">
                                 </div>
                                 <div class="principles__title">
                                     {!! $item['title'] !!}
