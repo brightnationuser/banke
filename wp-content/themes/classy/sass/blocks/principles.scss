@@ -1,7 +1,12 @@
 .principles {
     padding: 40px 0 55px;
 
-    + .present {
+    .offers + & {
+        border-top: 1px solid #eee;
+    }
+
+    + .present,
+    + .benefits {
         border-top: 1px solid #eee;
     }
 
