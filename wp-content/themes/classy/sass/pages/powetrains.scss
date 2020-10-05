@@ -88,6 +88,26 @@
     width: 100%;
     max-width: 870px;
   }
+
+  &__close {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    border: 0;
+    padding: 6px 11px;
+    color: #fff;
+    font-size: 24px;
+    line-height: 1;
+    background-color: rgba(#000, .5);
+    transition: background-color .25s ease-in-out;
+
+    &:hover {
+      color: #fff;
+      background-color: rgba(#000, .75);
+    }
+  }
 }
 
 .p-powertrains {

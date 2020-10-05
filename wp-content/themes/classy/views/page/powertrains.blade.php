@@ -13,7 +13,7 @@
         <section class="intro">
             <h2 class="animated fadeInDown" style="animation-delay: .7s">{{ $post->post_title }}</h2>
             <div class="text-center">
-                <a href="#youtube-video" class="button js-popup-action" target="_blank">
+                <a href="#youtube-video" class="button disable_preloader js-popup-action" target="_blank">
                     <img src="/wp-content/themes/classy/images/icons/play.svg" alt="Play icon">
                     watch video
                 </a>
@@ -84,6 +84,8 @@
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/sDsknFlke9U" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
+
+                <button class="popup__close js-popup-close" type="button">&times;</button>
             </div>
         </div>
     </div>
