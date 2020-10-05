@@ -23,7 +23,17 @@ const popup = () => {
     });
 
     close.on('click', function () {
-        $(this).closest('.js-popup').removeClass(activeClass);
+        const popup = $(this).closest('.js-popup');
+        const iframe = popup.find('iframe');
+
+        popup.removeClass(activeClass);
+
+        if (iframe.length) {
+            let videoSrc = iframe.prop('src');
+
+            iframe.prop('src', '');
+            iframe.prop('src', videoSrc);
+        }
     });
 };
 
