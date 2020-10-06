@@ -12,10 +12,11 @@ window.$ = JQuery.default;
 import App from './App';
 import textTrim from './text-trim';
 import popup from './popup';
+import video from './video';
 import tipsImage from './blocks/tips-image';
 
-
 $(document).ready(function () {
+    video();
     popup();
     textTrim('.js-trim-text');
     textTrim('.js-intro-content', {show_block:true});
