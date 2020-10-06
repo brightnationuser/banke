@@ -6,7 +6,7 @@
             <h2 class="popup__title">Electric refuse collection truck</h2>
 
             <div class="popup__video js-popup-video">
-                <div class="popup__video-overlay" style="background-image: url('/wp-content/themes/classy/dist/images/video-preview.jpg')"></div>
+                <div class="popup__video-overlay" style="background-image: url('/wp-content/themes/classy/images/video-preview.jpg')"></div>
 
                 <button class="popup__video-play js-popup-play" type="button"></button>
 
