@@ -44,7 +44,7 @@ const popup = () => {
     if (body.hasClass('home') && localStorage.getItem('popup-youtube') !== '1') {
         setTimeout(() => {
             $('#youtube-video').addClass(activeClass);
-        }, 3000);
+        }, 2000);
     }
 };
 
