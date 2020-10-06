@@ -81,18 +81,75 @@
   }
 
   &__content {
+    padding: 10px;
     position: relative;
     z-index: 1002;
     width: 100%;
-    max-width: 870px;
-    background-color: #fff;
+    max-width: 815px;
+    background: #fff url('./images/popup-bg.png') no-repeat top center;
+    box-shadow: 0 0 40px rgba(#000, .25);
+    border-radius: 4px;
+  }
+
+  &__title {
+    color: #003462;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.35;
+    text-align: center;
+    margin: 4px 0 10px;
+    padding: 0 15px;
+  }
+
+  &__video {
+    position: relative;
+
+    &.is-play {
+      .popup__video-play,
+      .popup__video-overlay {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    &-play,
+    &-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      z-index: 1;
+      transition: opacity .1s linear, visibility .1s linear;
+    }
+
+    &-overlay {
+      background: #000 none no-repeat center center;
+      background-size: cover;
+    }
+
+    &-play {
+      cursor: pointer;
+      width: 55px;
+      height: 55px;
+      border: 0;
+      padding: 0;
+      background: transparent url('/wp-content/themes/classy/images/icons/play2.svg') no-repeat center center;
+      background-size: cover;
+      transition: transform .2s ease-in-out;
+
+      &:hover {
+        transform: scale(0.95);
+      }
+    }
   }
 
   &__close {
     cursor: pointer;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 10px;
+    right: 10px;
     z-index: 1;
     width: 26px;
     height: 26px;
@@ -101,8 +158,8 @@
     color: #fff;
     font-size: 0;
     line-height: 1;
-    background-color: rgba(#000, .5);
-    transition: background-color .25s ease-in-out;
+    background-color: transparent;
+    transition: opacity .25s ease-in-out;
 
     &::before,
     &::after {
@@ -113,9 +170,10 @@
       right: 0;
       bottom: 0;
       margin: auto;
-      width: 14px;
-      height: 1px;
-      background-color: #fff;
+      width: 20px;
+      height: 2px;
+      background-color: #005CA9;
+      border-radius: 2px;
     }
 
     &::before {
@@ -127,8 +185,7 @@
     }
 
     &:hover {
-      color: #fff;
-      background-color: rgba(#000, .75);
+      opacity: .8;
     }
   }
 }

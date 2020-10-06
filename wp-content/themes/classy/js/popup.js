@@ -8,7 +8,13 @@ const popup = () => {
     const blocks = $('.js-popup');
     const actions = $('.js-popup-action');
     const close = $('.js-popup-close');
+    const video = $('.js-popup-video');
+    const play = $('.js-popup-play');
     const activeClass = 'is-opened';
+
+    play.on('click', function () {
+        $(this).closest('.js-popup-video').addClass('is-play');
+    });
 
     actions.on('click', function (event) {
         const el = $(this);
@@ -34,6 +40,8 @@ const popup = () => {
         popup.removeClass(activeClass);
 
         if (iframe.length) {
+            video.removeClass('is-play');
+
             let videoSrc = iframe.prop('src');
 
             iframe.prop('src', '');
