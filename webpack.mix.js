@@ -12,6 +12,10 @@ mix.setResourceRoot('/wp-content/themes/classy/dist');
 // Для маски - @import "blocks/**/*.scss"
 mix.webpackConfig({ module: { rules: [ { test: /\.scss$/, loader: 'import-glob-loader' }, ] } });
 
+mix.options({
+    processCssUrls: false,
+});
+
 // JS
 mix.js(resources_path + 'js/index.js', resources_path + 'dist').autoload({
     jquery: ['$', 'window.jQuery', 'jQuery']
