@@ -38,9 +38,8 @@
 
     &__image {
         display: block;
-        width: 100%;
-        max-width: 60px;
         max-height: 60px;
+        min-height: 57px;
         margin: 0 auto;
     }
 
@@ -68,8 +67,8 @@
         }
 
         &__image {
-            max-width: 50px;
-            max-height: 50px;
+            max-height: 45px;
+            min-height: 45px;
         }
 
         &__title {
