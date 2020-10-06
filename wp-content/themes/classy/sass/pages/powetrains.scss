@@ -99,6 +99,10 @@
     text-align: center;
     margin: 4px 0 10px;
     padding: 0 15px;
+
+    &::after {
+      content: none;
+    }
   }
 
   &__video {
