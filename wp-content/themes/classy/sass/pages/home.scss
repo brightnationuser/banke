@@ -94,6 +94,12 @@
                 max-width: 430px;
                 margin-right: 20px;
 
+                &:hover {
+                    .item__image img {
+                        transform: translateY(-10px);
+                    }
+                }
+
                 &__content {
                     text-align: center;
                     padding: 0 15px;
@@ -107,6 +113,7 @@
 
                     img {
                         width: 100%;
+                        transition: transform .2s ease-in-out;
                     }
                 }
 
@@ -259,7 +266,7 @@
     }
 
     @media screen and (max-width: $width-l) {
-        
+
         .hero {
             padding: 270px 0 40px 0;
 
