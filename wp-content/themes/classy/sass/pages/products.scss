@@ -1,3 +1,24 @@
+.p-products {
+    .contact-us {
+        margin-bottom: 0;
+        background-image: url('/wp-content/themes/classy/images/bg/contact-us-bg2.png');
+        background-position: bottom center;
+    }
+
+    .content .what-we-do__list {
+        justify-content: center;
+
+        .item {
+            //max-width: 400px;
+            margin-right: 40px;
+
+            @media screen and (max-width: $width-m) {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
 .products {
     display: flex;
     flex-wrap: wrap;
@@ -7,7 +28,7 @@
     .product__card {
         width: 370px;
         min-height: 694px;
-        box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.05);
         border-radius: 8px;
         overflow: hidden;
         margin-right: 30px;
