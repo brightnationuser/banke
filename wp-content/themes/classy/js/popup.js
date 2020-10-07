@@ -9,12 +9,9 @@ const popup = () => {
     const actions = $('.js-popup-action');
     const close = $('.js-popup-close');
     const video = $('.js-popup-video');
-    const play = $('.js-popup-play');
     const activeClass = 'is-opened';
 
-    play.on('click', function () {
-        $(this).closest('.js-popup-video').addClass('is-play');
-    });
+    if (!blocks.length) return;
 
     actions.on('click', function (event) {
         const el = $(this);
@@ -31,7 +28,7 @@ const popup = () => {
 
     close.on('click', function () {
         const popup = $(this).closest('.js-popup');
-        const iframe = popup.find('iframe');
+        //const iframe = popup.find('iframe');
 
         if (popup.attr('id') === 'youtube-video') {
             localStorage.setItem('popup-youtube', '1');
@@ -39,14 +36,12 @@ const popup = () => {
 
         popup.removeClass(activeClass);
 
-        if (iframe.length) {
-            video.removeClass('is-play');
-
+        /*if (iframe.length) {
             let videoSrc = iframe.prop('src');
 
             iframe.prop('src', '');
             iframe.prop('src', videoSrc);
-        }
+        }*/
     });
 
     if (body.hasClass('home') && localStorage.getItem('popup-youtube') !== '1') {
