@@ -10,15 +10,19 @@ $query = [
         'compare' => 'EXISTS'
     ),
 ];
-$news_carousel = $framework::get_posts([
+$related = $framework::get_posts([
     'post_type' => 'news',
-    'posts_per_page' => 10,
+    'post_status' => 'publish',
+    'posts_per_page' => 6,
     'orderby' => 'acf_date',
     'order' => 'DESC',
     'meta_query' => $query,
 ]);
 
+$slider = $post->getAcfByKey('slider');
+
 $data = compact(
     'post',
-    'news_carousel'
+    'related',
+    'slider'
 );

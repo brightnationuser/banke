@@ -14,6 +14,7 @@ import textTrim from './text-trim';
 import popup from './popup';
 import video from './video';
 import tipsImage from './blocks/tips-image';
+import YtApiPlayer from './blocks/yt-api-player';
 
 $(document).ready(function () {
     video();
@@ -21,6 +22,12 @@ $(document).ready(function () {
     textTrim('.js-trim-text');
     textTrim('.js-intro-content', {show_block:true});
     tipsImage('.js-tips-image');
+
+    new YtApiPlayer({
+        player_id: 'product-video',
+        video_id: 'from_data',
+        play_button: '.js-video-play'
+    });
 
     setTimeout(function () {
         let window_height = $(window).height();

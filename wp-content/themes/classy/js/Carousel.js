@@ -5,7 +5,7 @@ export default class Carousel {
             initNewsCarousel: function () {
                 $('.b-news__carousel.owl-carousel').owlCarousel({
                     loop: true,
-                    margin: 30,
+                    margin: 10,
                     onInitialized: show,
                     nav: true,
                     dots: false,
@@ -17,7 +17,7 @@ export default class Carousel {
                             items: 2
                         },
                         1000: {
-                            items: 4
+                            items: 3
                         }
                     }
                 });
