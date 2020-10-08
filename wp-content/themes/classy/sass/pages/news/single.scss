@@ -92,6 +92,10 @@
             max-width: 280px;
             width: 100%;
 
+            &.is-mobile {
+                display: none;
+            }
+
             h3 {
                 font-size: 18px;
                 line-height: 149.8%;
@@ -227,8 +231,21 @@
         .article {
             flex-direction: column;
 
+            &__content {
+                margin-right: 0;
+            }
+
             &__sidebar {
                 max-width: 470px;
+
+                &.is-desktop {
+                    display: none;
+                }
+
+                &.is-mobile {
+                    margin-top: 40px;
+                    display: block;
+                }
             }
 
             &__relateds {
