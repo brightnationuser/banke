@@ -4,7 +4,7 @@
     <div class="page-projects">
         <section class="projects-intro">
             <div class="container">
-                <h2 class="projects-intro__title">{!! $post->getAcfByKey('projects_title'); !!}</h2>
+                <h1 class="projects-intro__title h2">{!! $post->getAcfByKey('projects_title'); !!}</h1>
                 <div class="projects-intro__undertitle">
                     {!! $post->getAcfByKey('projects_under_title'); !!}
                 </div>

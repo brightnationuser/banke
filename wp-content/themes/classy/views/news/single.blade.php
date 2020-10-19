@@ -7,9 +7,9 @@
 				{{ $post->getDate() }}
 			</div>
 
-			<div class="news__title">
+			<h1 class="news__title">
 				{{ $post->title() }}
-			</div>
+			</h1>
 		</div>
 		<div class="article">
 			<div class="article__content">

@@ -2,11 +2,14 @@
     .service-intro {
         padding: 75px 0 120px 0;
 
-        h3 {
+        h3, h1 {
             margin-top: 0;
             margin-bottom: 8px;
             line-height: 1;
+            letter-spacing: normal;
+            font-size: 20px;
             text-align: left;
+            font-weight: 700;
             color: $color-blue;
         }
 

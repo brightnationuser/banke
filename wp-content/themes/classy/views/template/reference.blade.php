@@ -25,9 +25,9 @@
             </div>
 
             <div class="reference__content">
-                <div class="reference__title">
+                <h1 class="reference__title">
                     {{ $post->get_title() }}
-                </div>
+                </h1>
 
                 <div class="reference__text">
                     {!! $post->content() !!}

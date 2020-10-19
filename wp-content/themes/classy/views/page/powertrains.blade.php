@@ -11,7 +11,7 @@
     @php($intro = $post->getAcfByKey('powertrains_intro'))
     <div class="p-powertrains">
         <section class="intro">
-            <h2 class="animated fadeInDown" style="animation-delay: .7s">{{ $post->post_title }}</h2>
+            <h1 class="animated fadeInDown h2" style="animation-delay: .7s">{{ $post->post_title }}</h1>
             <div class="text-center">
                 <a href="#youtube-video" class="button disable_preloader js-popup-action" target="_blank">
                     <img src="/wp-content/themes/classy/images/icons/play.svg" alt="Play icon">

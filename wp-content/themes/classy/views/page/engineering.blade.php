@@ -14,9 +14,9 @@
         <section class="offers">
             <div class="container">
 
-                <h2 class="offers__title">
+                <h1 class="offers__title h2">
                     {!! $post->getAcfByKey('offers_title') !!}
-                </h2>
+                </h1>
 
                 @if(!empty($under_title))
                 <p class="offers__under-title">

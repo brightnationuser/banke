@@ -9,9 +9,9 @@
             <div class="container">
                 <div class="service-intro__wrap d-flex">
                     <div class="service-intro__content">
-                        <h3>
+                        <h1>
                             {!! $post->getAcfByKey('title') !!}
-                        </h3>
+                        </h1>
                         <div class="service-intro__text">
                             {!! $post->getAcfByKey('content') !!}
                         </div>

@@ -8,9 +8,9 @@
             <div class="history__wrap">
 
                  <div class="history__content">
-                     <h2 class="history__title animated fadeInDown">
+                     <h1 class="history__title animated fadeInDown h2">
                          About Banke
-                     </h2>
+                     </h1>
                      <div class="history__text animated fadeInUp">
                          {!! $post->content() !!}
                      </div>
