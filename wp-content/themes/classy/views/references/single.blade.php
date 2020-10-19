@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="container">
-		{{ kama_breadcrumbs('>'); }}
+		{{ kama_breadcrumbs('>') }}
 		<div class="news__date">
 			{{ $post->getDate() }}
 		</div>
@@ -12,7 +12,7 @@
 		</div>
 
 		<div class="news__content">
-			<img class="content__img" src="{{ $post->getAcfImage()->src('large') }}" alt="">
+			<img class="content__img" src="{{ $post->getAcfImage()->src('large') }}" alt="{{ $post->title() }}">
 
 			<div class="content__text text__content">
 				{!! $post->content() !!}
