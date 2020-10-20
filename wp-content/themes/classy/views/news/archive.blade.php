@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="container">
+
+        <h1 class="h2 h2--mt-0">{!! get_field('news_title', 'options') !!}</h1>
+
         <div class="news-list">
             @foreach($news as $news_item)
                 <a href="{{ $news_item->permalink() }}" class="news">

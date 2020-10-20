@@ -3,6 +3,9 @@
 @section('content')
   <section class="contacts">
     <div class="container">
+
+      <h1 class="h2 h2--mt-0 h2--left">{!! $post->getAcfByKey('title') !!}</h1>
+
       <div class="contacts__wrap d-flex">
         <div class="contacts__columns d-flex">
           <div class="contacts__left">

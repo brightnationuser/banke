@@ -2,6 +2,10 @@
 
 @section('content')
     <div class="container">
+        <h1 class="h2 h2--left h2--mt-0">{!! $post->getAcfByKey('title') !!}</h1>
+    </div>
+    <div class="container">
+
         @foreach(array_chunk($post->getAcfByKey('acf_section'), round(count($post->getAcfByKey('acf_section'))/2)) as $chunk)
             <div class="col">
                 @foreach($chunk as $key => $section)
