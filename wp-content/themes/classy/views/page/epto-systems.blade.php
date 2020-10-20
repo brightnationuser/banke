@@ -10,9 +10,9 @@
 
         <section class="concept">
             <div class="container">
-                <h2 class="concept__title">
+                <h1 class="concept__title">
                     {{ $post->getAcfByKey('acf_title_concept') }}
-                </h2>
+                </h1>
                 <div class="concept__description d-flex">
 
                     <div class="concept__image animated fadeInLeft">
