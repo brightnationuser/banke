@@ -11,13 +11,13 @@
         </div>
 
         <div class="container">
-            <h1>
+            <div class="h1">
                 {{ $post->getAcfByKey('acf_header')['acf_header_title'] }}
-            </h1>
-
-            <div class="hero__caption">
-                {{ $post->getAcfByKey('acf_header')['acf_header_caption'] }}
             </div>
+
+            <h1 class="hero__caption">
+                {{ $post->getAcfByKey('acf_header')['acf_header_caption'] }}
+            </h1>
 
             <div class="hero__button">
                 <a href="/epto-systems/" class="button">
