@@ -89,6 +89,9 @@
         'classes' => 'contact-us--light'
     ])
 
-    @include('partials.popup-youtube')
+    @include('partials.popup-youtube', [
+        'title' => 'Electric refuse collection truck',
+        'image' => '/wp-content/themes/classy/images/video-preview.jpg',
+    ])
 
 @stop

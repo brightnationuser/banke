@@ -8,6 +8,7 @@ const video = () => {
     const video = $('.js-video');
     const play = $('.js-video-play');
     const close = $('.js-popup-close');
+    const playerID = $('#player').data('yt-id');
 
     if (!video.length) return;
 
@@ -25,7 +26,7 @@ const video = () => {
         player = new YT.Player('player', {
             height: '360',
             width: '640',
-            videoId: 'sDsknFlke9U',
+            videoId: playerID,
             playerVars: {
                 'rel': 0,
                 'showinfo': 0,

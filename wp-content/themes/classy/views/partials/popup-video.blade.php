@@ -1,4 +1,4 @@
-<div class="popup js-popup" id="youtube-video">
+<div class="popup js-popup" id="mp4-video">
     <div class="popup__dialog">
         <div class="popup__overlay js-popup-close"></div>
 
@@ -11,7 +11,7 @@
                 <button class="popup__video-play js-video-play" type="button"></button>
 
                 <div class="embed-responsive embed-responsive-16by9">
-                    <div class="embed-responsive-item" id="player" data-yt-id="{{ !empty($yt_id) ? $yt_id : 'sDsknFlke9U' }}"></div>
+                    <video src="{{ $video }}"></video>
                 </div>
             </div>
 

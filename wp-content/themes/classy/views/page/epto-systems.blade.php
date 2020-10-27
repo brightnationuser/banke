@@ -13,6 +13,14 @@
                 <h1 class="concept__title h2">
                     {{ $post->getAcfByKey('acf_title_concept') }}
                 </h1>
+
+                <div class="text-center">
+                    <a href="#youtube-video" class="button disable_preloader js-popup-action" target="_blank">
+                        <img src="/wp-content/themes/classy/images/icons/play.svg" alt="Play icon">
+                        {{ $post->getAcfByKey('button_text') }}
+                    </a>
+                </div>
+
                 <div class="concept__description d-flex">
 
                     <div class="concept__image animated fadeInLeft">
@@ -149,5 +157,11 @@
         ])
 
     </div>
+
+    @include('partials.popup-youtube', [
+        'title' => $post->getAcfByKey('video_title'),
+        'image' => $post->getAcfByKey('video_image'),
+        'yt_id' => $post->getAcfByKey('youtube_video_id')
+    ])
 
 @stop
