@@ -76,10 +76,21 @@
         <div class="contacts__sidebar sidebar animated fadeInRight">
           <div class="sidebar__item sidebar__item--social">
             <h3>Follow Us</h3>
-            <a href="{!! get_field('linkedin', 'option')['link'] !!}" class="disable_preloader" target="_blank">
-              <i class="icon-linkedin"></i>
-              <span>{!! get_field('linkedin', 'option')['text'] !!}</span>
-            </a>
+            <div class="d-flex">
+              <a href="{!! get_field('linkedin', 'option')['link'] !!}" class="linkedin disable_preloader" target="_blank">
+                <i class="icon-linkedin"></i>
+              </a>
+              <a href="{!! get_field('youtube', 'option')['link'] !!}" class="youtube disable_preloader" target="_blank">
+                <i class="icon-youtube"></i>
+              </a>
+              <a href="{!! get_field('twitter', 'option')['link'] !!}" class="twitter disable_preloader" target="_blank">
+                <i class="icon-twitter"></i>
+              </a>
+              <a href="{!! get_field('xing', 'option')['link'] !!}" class="xing disable_preloader" target="_blank">
+                <i class="icon-xing"></i>
+              </a>
+            </div>
+
           </div>
         </div>
       </div>

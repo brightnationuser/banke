@@ -47,25 +47,43 @@
     }
 
     &--social {
+      padding: 34px 37px;
+      height: auto;
+      min-height: initial!important;
+
+      h3 {
+        margin-bottom: 10px
+      }
+
       a {
         display: flex;
         align-items: center;
         font-weight: 300;
-        font-size: 14px;
-        line-height: 19px;
         color: #4A4A49;
+        margin-right: 8px;
+        background: #005CA9;
+        border-radius: 4px;
+        padding: 4px;
+        width: 24px;
+        height: 24px;
+        justify-content: center;
+        transition: all .4s ease;
 
         &:hover, &:visited {
-          color: #4A4A49;
+          text-decoration: none;
+          border: 0;
+          background-color: #1A80D6;
         }
 
         i {
-          margin-right: 8px;
-          background: #005CA9;
-          border-radius: 4px;
           color: #ffffff;
-          padding: 4px;
           font-size: 14px;
+        }
+
+        &.twitter {
+          i {
+            font-size: 11px;
+          }
         }
       }
     }

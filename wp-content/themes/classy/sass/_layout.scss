@@ -450,14 +450,34 @@ footer.footer {
         }
 
         &__socials {
+            display: flex;
+
             .social {
-                a {
-                    align-items: center;
-                    color: #ffffff;
+                display: flex;
+                align-items: center;
+                font-weight: 300;
+                color: #4A4A49;
+                margin-right: 10px;
+                background: rgba(255,255,255, .9);
+                border-radius: 4px;
+                padding: 4px;
+                width: 22px;
+                height: 22px;
+                justify-content: center;
+                transition: all .4s ease;
+
+                &:last-child {
+                    margin-right: 0;
                 }
 
-                span {
-                    margin-left: 9px;
+                i {
+                    color: #003462;
+                    font-size: 14px;
+                }
+
+                &:hover {
+                    text-decoration: none;
+                    background-color: #8FBFE8;
                 }
             }
         }
