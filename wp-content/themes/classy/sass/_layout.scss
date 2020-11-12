@@ -450,7 +450,15 @@ footer.footer {
         }
 
         &__socials {
+            display: flex;
+
             .social {
+                margin-right: 10px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
                 a {
                     align-items: center;
                     color: #ffffff;
