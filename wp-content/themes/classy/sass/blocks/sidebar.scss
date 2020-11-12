@@ -67,18 +67,17 @@
         width: 24px;
         height: 24px;
         justify-content: center;
+        transition: all .4s ease;
 
         &:hover, &:visited {
-          color: #4A4A49;
+          text-decoration: none;
+          border: 0;
+          background-color: #1A80D6;
         }
 
         i {
           color: #ffffff;
           font-size: 14px;
-        }
-
-        &.youtube {
-
         }
 
         &.twitter {
