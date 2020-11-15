@@ -31,9 +31,6 @@ vendor/*
 !wp-content/themes/classy/assets/scss/vendor
 !wp-content/themes/classy/assets/js/vendor
 
-!wp-content/themes/uploads
-
-
 # IDE files
 *.sublime-project
 *.sublime-workspace
