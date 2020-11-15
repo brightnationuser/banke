@@ -43,6 +43,11 @@
             </div>
         </section>
 
+        @include ('partials.specification', [
+               'items' => get_field('specification')
+            ])
+
+
         <section class="key-benefits">
             <div class="container">
                 <h2>Key Benefits</h2>
