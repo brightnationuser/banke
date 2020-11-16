@@ -1,15 +1,26 @@
+$max-width-sm: 800px;
+
 .specification {
   &__wrapper {
-    margin: 20px auto;
+    margin: 20px auto 60px;
     width: 80%;
     display: flex;
     align-items: center;
+    @media(max-width: 1000px) {
+      width: 90%;
+    }
+    @media(max-width: $max-width-sm) {
+      flex-direction: column;
+
+    }
   }
 
   &__image {
     min-width: 30%;
     width: 600px;
-
+    @media(max-width: $max-width-sm) {
+      width: auto;
+    }
     img {
       width: 100%;
       max-height: 500px;
@@ -19,6 +30,10 @@
   &__list {
     margin-left: 50px;
     width: 40%;
+    @media(max-width: $max-width-sm) {
+      width: 80%;
+      margin: 20px auto;
+    }
   }
 
   &__elem {
