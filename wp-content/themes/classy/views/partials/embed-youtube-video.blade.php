@@ -10,6 +10,6 @@
     </div>
 
     <div class="embed-responsive embed-responsive-16by9">
-        <div class="embed-responsive-item" id="player" data-yt-id="{{ !empty($yt_id) ? $yt_id : 'sDsknFlke9U' }}"></div>
+        <div class="embed-responsive-item video-player" id="player" data-yt-id="{{ !empty($yt_id) ? $yt_id : 'sDsknFlke9U' }}"></div>
     </div>
 </div>

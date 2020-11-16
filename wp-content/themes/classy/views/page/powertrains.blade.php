@@ -42,6 +42,8 @@
                 </div>
             </div>
         </section>
+        @include('partials.video-gallery')
+
 
         @include ('partials.specification', [
                'items' => get_field('specification')

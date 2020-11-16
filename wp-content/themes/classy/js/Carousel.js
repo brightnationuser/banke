@@ -2,6 +2,17 @@ export default class Carousel {
     constructor(carouselName) {
         
         this.carousels = {
+            initVideoCarousel: function () {
+
+                $('.owl-video_gallery.owl-carousel').owlCarousel({
+                    margin:10,
+                    nav:true,
+                    onInitialized: show,
+                    video:true,
+
+                })
+            },
+
             initNewsCarousel: function () {
                 $('.b-news__carousel.owl-carousel').owlCarousel({
                     loop: true,
