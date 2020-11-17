@@ -21,7 +21,7 @@
     </div>
 
     <div class="embed-responsive embed-responsive-16by9">
-        <div class="embed-responsive-item video-player js-video-iframe"
+        <div class="embed-responsive-item video-player js-video-player"
              id="player{{ $index }}"
              data-index="{{ $index }}"
              data-yt-id="{{ !empty($yt_id) ? $yt_id : 'sDsknFlke9U' }}"

@@ -19,12 +19,6 @@ import YtApiPlayer from './blocks/yt-api-player';
 $(document).ready(function () {
     video();
 
-    new YtApiPlayer({
-        player_id: 'product-video',
-        video_id: 'from_data',
-        play_button: '.js-video-play'
-    });
-
     popup();
     textTrim('.js-trim-text');
     textTrim('.js-intro-content', {show_block:true});
