@@ -5,11 +5,22 @@ export default class Carousel {
             initVideoCarousel: function () {
 
                 $('.owl-video_gallery.owl-carousel').owlCarousel({
-                    margin:10,
                     nav:true,
+                    center: true,
+                    margin: 2,
+                    mouseDrag: false,
+                    touchDrag: false,
                     onInitialized: show,
+                    startPosition: 1,
                     video:true,
-
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        1200: {
+                            items: 3
+                        }
+                    }
                 })
             },
 

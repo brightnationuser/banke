@@ -12,7 +12,7 @@ class YtApiPlayer {
         this.options = Object.assign(defaults, options);
 
         this.player_el = $(document).find(this.options.player_selector);
-        this.player_parent_el = this.player_el.parents('.video');
+        this.player_parent_el = this.player_el.parents('.js-video');
         this.player_image_el = this.player_parent_el.find('.js-video-poster');
         this.height = this.player_parent_el.height();
         this.width = this.player_parent_el.width();
