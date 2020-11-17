@@ -23,6 +23,7 @@ $max-width-sm: 992px;
     @media(max-width: $max-width-sm) {
       width: auto;
     }
+
     img {
       width: 100%;
       max-height: 500px;
@@ -30,8 +31,9 @@ $max-width-sm: 992px;
   }
 
   &__list {
-    margin-left: 50px;
-    width: 40%;
+    margin-left: 20px;
+    width: 100%;
+    max-width: 495px;
     @media(max-width: $max-width-sm) {
       width: 100%;
       margin: 30px auto 0;
@@ -56,7 +58,8 @@ $max-width-sm: 992px;
   &__title {
     font-weight: 600;
     font-size: 14px;
-    width: 320px;
+    width: 100%;
+    max-width: 200px;
     padding-right: 20px;
     color: #4A4A49;
   }
@@ -68,9 +71,10 @@ $max-width-sm: 992px;
   }
 
   &__button {
-    margin-top: 20px;
+    margin-top: 25px;
     position: relative;
     width: 260px;
+
     svg {
       position: absolute;
       top: 50%;
@@ -78,6 +82,7 @@ $max-width-sm: 992px;
       width: 20px;
       height: 20px;
     }
+
     button {
       background: #005CA9;
       border-radius: 4px;
