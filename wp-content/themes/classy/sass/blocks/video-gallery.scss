@@ -138,6 +138,11 @@
         &:before {
           font-size: 19px;
         }
+
+        &.disabled {
+          filter: grayscale(100%);
+          opacity: .7;
+        }
       }
 
       .owl-prev {
