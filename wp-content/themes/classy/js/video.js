@@ -8,7 +8,7 @@ const video = () => {
     const video = $('.js-video');
     const play = $('.js-video-play');
     const close = $('.js-popup-close');
-    const playerID = $('.video-player').data('yt-id');
+    const playerID = $('#player').data('yt-id');
 
     if (!video.length) return;
 
