@@ -1,8 +1,8 @@
-$max-width-sm: 800px;
+$max-width-sm: 992px;
 
 .specification {
   &__wrapper {
-    margin: 20px auto 60px;
+    margin: 60px auto 60px;
     width: 80%;
     display: flex;
     align-items: center;
@@ -31,8 +31,8 @@ $max-width-sm: 800px;
     margin-left: 50px;
     width: 40%;
     @media(max-width: $max-width-sm) {
-      width: 80%;
-      margin: 20px auto;
+      width: 100%;
+      margin: 0 auto;
     }
   }
 
@@ -54,31 +54,37 @@ $max-width-sm: 800px;
     font-weight: 600;
     font-size: 14px;
     width: 320px;
+    padding-right: 20px;
   }
 
   &__info {
     width: 100%;
+    font-weight: 400;
+    color: #4A4A49;
   }
 
   &__button {
     margin-top: 20px;
     position: relative;
+    width: 260px;
     svg {
       position: absolute;
       top: 50%;
       transform: translate(14px, -50%);
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
     }
     button {
       background: #005CA9;
       border-radius: 4px;
       outline: 0;
       border: 0;
-      padding: 16px 14px 16px 50px;
-      font-weight: 600;
+      padding: 10px 14px 10px 40px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
       font-size: 14px;
       color: #FFFFFF;
+      width: 100%;
     }
   }
 }
