@@ -3,7 +3,6 @@ $max-width-sm: 992px;
 .specification {
   &__wrapper {
     margin: 60px auto 60px;
-    width: 80%;
     display: flex;
     align-items: center;
     @media(max-width: 1000px) {
@@ -11,6 +10,9 @@ $max-width-sm: 992px;
     }
     @media(max-width: $max-width-sm) {
       flex-direction: column;
+      width: 100%;
+      max-width: 500px;
+      margin: 20px auto 0;
 
     }
   }
@@ -32,7 +34,7 @@ $max-width-sm: 992px;
     width: 40%;
     @media(max-width: $max-width-sm) {
       width: 100%;
-      margin: 0 auto;
+      margin: 30px auto 0;
     }
   }
 
@@ -40,6 +42,7 @@ $max-width-sm: 992px;
     display: flex;
     justify-content: space-between;
     padding: 6px 10px;
+
 
     &:nth-child(n) {
       background-color: #F2F6FC;
@@ -55,6 +58,7 @@ $max-width-sm: 992px;
     font-size: 14px;
     width: 320px;
     padding-right: 20px;
+    color: #4A4A49;
   }
 
   &__info {
