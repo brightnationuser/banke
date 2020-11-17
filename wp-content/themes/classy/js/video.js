@@ -5,10 +5,12 @@
  */
 const video = () => {
     const doc = document;
-    const video = $('.js-video');
-    const play = $('.js-video-play');
-    const close = $('.js-popup-close');
-    const playerID = $('#player').data('yt-id');
+    const video = $('.js-video')
+    const play = $('.js-video-play')
+    const close = $('.js-popup-close')
+    const playerEl = $('.js-video-player')
+    const playerID = playerEl.data('yt-id')
+    const playerIndex = playerEl.data('index');
 
     if (!video.length) return;
 
@@ -23,7 +25,7 @@ const video = () => {
     let player;
 
     function onYouTubePlayerAPIReady() {
-        player = new YT.Player('player', {
+        player = new YT.Player('player' + playerIndex, {
             height: '360',
             width: '640',
             videoId: playerID,
