@@ -12,12 +12,9 @@
         </div>
     @endif
 
-    <div class="embed-youtube-video__play-wrap js-video-play" type="button">
+    <div class="embed-youtube-video__play-wrap js-video-play {{ $no_btn_text === true ? 'no-text' : '' }} {{ empty($title) ? 'centered' : '' }}" type="button">
         <button class="embed-youtube-video__play"></button>
-
-        @if($no_btn_text === true)
-            <span class="embed-youtube-video__text">Watch video</span>
-        @endif
+        <span class="embed-youtube-video__text">Watch video</span>
     </div>
 
     <div class="embed-responsive embed-responsive-16by9">

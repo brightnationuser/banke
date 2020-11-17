@@ -18,6 +18,7 @@ const video = () => {
         const video = playerEl.parents('.js-video')
         const play = video.find('.js-video-play')
         const close = video.parents('.js-popup').find('.js-popup-close')
+        const owl = video.parents('.owl-carousel')
         const playerID = playerEl.data('yt-id')
         const playerIndex = playerEl.data('index')
 
@@ -34,15 +35,11 @@ const video = () => {
                 const firstScriptTag = document.getElementsByTagName('script')[0];
                 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
                 window.onYouTubeIframeAPIReady = () => {
-                    console.log('onYouTubeIframeAPIReady', playerEl)
                     resolve(window.YT)
                 }
-                console.log('load YT for ', playerEl)
             })
         }
         loadYT.then((YT) => {
-
-            console.log('new player ', 'player' + playerIndex)
 
             player = new YT.Player('player' + playerIndex, {
                 height: '360',
@@ -56,7 +53,7 @@ const video = () => {
                     'showinfo': 0,
                     'autoplay': 0,
                     //'controls': 0,
-                    'modestbranding': 1,
+                    'modestbranding': 0,
                 },
             });
 
@@ -65,6 +62,12 @@ const video = () => {
 
         function onPlayerReady(player_id, index) {
             close.on('click', function () {
+                video.removeClass('is-play');
+                players[index].stopVideo();
+                console.log('click close')
+            });
+
+            owl.on('click', '.owl-prev, .owl-next, .owl-dot',  function () {
                 video.removeClass('is-play');
                 players[index].stopVideo();
                 console.log('click close')
