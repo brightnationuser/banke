@@ -1,4 +1,4 @@
-@if(!empty(!$items))
+@if(!empty($items))
 <div class="specification">
     <h2 class="specification__heading">
         {{ get_field('specification_title') }}
