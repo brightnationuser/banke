@@ -92,6 +92,16 @@
     align-items: center;
     z-index: 2;
 
+    &.no-text {
+      .embed-youtube-video__text {
+        display: none;
+      }
+    }
+
+    &.centered {
+      top: 50%;
+    }
+
     &:hover {
       transform: translate(-50%, -50%) scale(0.9);
     }

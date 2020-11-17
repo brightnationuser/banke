@@ -18,16 +18,11 @@ import YtApiPlayer from './blocks/yt-api-player';
 
 $(document).ready(function () {
     video();
+
     popup();
     textTrim('.js-trim-text');
     textTrim('.js-intro-content', {show_block:true});
     tipsImage('.js-tips-image');
-
-    new YtApiPlayer({
-        player_id: 'product-video',
-        video_id: 'from_data',
-        play_button: '.js-video-play'
-    });
 
     setTimeout(function () {
         let window_height = $(window).height();

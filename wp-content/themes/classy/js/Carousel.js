@@ -4,13 +4,44 @@ export default class Carousel {
         this.carousels = {
             initVideoCarousel: function () {
 
-                $('.owl-video_gallery.owl-carousel').owlCarousel({
-                    margin:10,
+                let owl_gallery = $('.owl-video_gallery.owl-carousel');
+                let owl = owl_gallery.owlCarousel({
                     nav:true,
+                    center: true,
+                    margin: 2,
+                    mouseDrag: false,
+                    touchDrag: false,
                     onInitialized: show,
-                    video:true,
-
+                    startPosition: owl_gallery.data('start'),
+                    // rewind: true,
+                    video: true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        1200: {
+                            items: 3
+                        }
+                    }
                 })
+
+                // owl.on('translate.owl.carousel', function (event) {
+                //     let ths = $(this);
+                //     let item = event.item.index; // Position of the current item
+                //     let items = ths.find('.owl-item');
+                //
+                //     console.log('item', item)
+                //     console.log('items.last()', items.last())
+                //
+                //     if(item === 0) {
+                //         console.log('trigger')
+                //         owl.trigger('add.owl.carousel', items.last(), 0)
+                //     }
+                //
+                //     if(item === items.length - 1) {
+                //         items.first().after(items.last())
+                //     }
+                // })
             },
 
             initNewsCarousel: function () {

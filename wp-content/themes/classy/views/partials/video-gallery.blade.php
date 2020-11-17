@@ -1,50 +1,54 @@
+@php
+    $videos = get_field('video_gallery');
 
-<div class="owl-carousel owl-video_gallery">
-{{--    <div class="item-video">--}}
-{{--        <iframe class="video_gallery__item" src="https://www.youtube.com/embed/napUAIh4UE0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>--}}
-{{--    </div>--}}
-    <div style="position: relative;">
-        <img style="position: absolute; display: none;" src="https://fainaidea.com/wp-content/uploads/2019/06/acastro_190322_1777_apple_streaming_0003.0.jpg" alt="">
-        <iframe class="video_gallery__item" src="https://www.youtube.com/embed/napUAIh4UE0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    if(empty($videos)) {
+        $videos = [
+            [
+                'video_id' => 'LlsAKKd8rrI',
+                'image' => ['url' => '/wp-content/themes/classy/images/pages/powertrains/video-1.jpg'],
+                'text' => 'Step 1'
+            ],
+            [
+                'video_id' => '5n386Sguyz8',
+                'image' => ['url' => '/wp-content/themes/classy/images/pages/powertrains/video-2.jpg'],
+                'text' => 'Step 2'
+            ],
+            [
+                'video_id' => 'LlsAKKd8rrI',
+                'image' => ['url' => '/wp-content/themes/classy/images/pages/powertrains/video-3.jpg'],
+                'text' => 'Step 3'
+            ],
+        ];
+    }
 
+    $videos = array_merge($videos, $videos, $videos);
+
+    foreach($videos as $key => &$item) {
+        $item['player_id'] = $item['video_id'] . $key;
+    }
+
+    $start = get_field('video_gallery_start');
+    $title = get_field('video_gallery_title');
+@endphp
+
+<div class="video-gallery">
+    <div class="container">
+        @if(!empty($title))
+            <h2 class="video-gallery__title">{{ $title }}</h2>
+        @endif
+        <div class="owl-carousel owl-video_gallery" data-start="{{ !empty($start) ? $start : 4 }}">
+            @foreach($videos as $video)
+                <div class="video-gallery__item">
+                    @include ('partials.embed-youtube-video', [
+                        'title' => '',
+                        'image' => $video['image']['url'],
+                        'yt_id' => $video['video_id'],
+                        'index' => $video['player_id'],
+                        'no_btn_text' => true
+                    ])
+                    <div class="item__text">{{ $video['text'] }}</div>
+                </div>
+            @endforeach
+        </div>
     </div>
-    <div style="position: relative;">
-        <img style="position: absolute; display: none;" src="https://fainaidea.com/wp-content/uploads/2019/06/acastro_190322_1777_apple_streaming_0003.0.jpg" alt="">
-        <iframe class="video_gallery__item" src="https://www.youtube.com/embed/napUAIh4UE0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-    </div>
-    <div style="position: relative;">
-        <img style="position: absolute; display: none;" src="https://fainaidea.com/wp-content/uploads/2019/06/acastro_190322_1777_apple_streaming_0003.0.jpg" alt="">
-        <iframe class="video_gallery__item" src="https://www.youtube.com/embed/napUAIh4UE0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-    </div>
-
-{{--    <div class="video_gallery__item">--}}
-{{--        @include ('partials.embed-youtube-video', [--}}
-{{--                    'title' => '',--}}
-{{--                    'image' => 'https://fainaidea.com/wp-content/uploads/2019/06/acastro_190322_1777_apple_streaming_0003.0.jpg',--}}
-{{--                    'yt_id' => 'iKCMVRJGx38'--}}
-{{--                ])--}}
-{{--    </div>--}}
-
-{{--    <iframe class="video_gallery__item" src="https://www.youtube.com/embed/iKCMVRJGx38" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>--}}
-{{--    <iframe class="video_gallery__item" src="https://www.youtube.com/embed/napUAIh4UE0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>--}}
-
-
 </div>
-
-
-
-
-
-<style>
-    .owl-video_gallery {
-        width: 80%;
-        margin: 0 auto;
-    }
-    .video_gallery__item {
-        background-color: red;
-        height: 300px;
-        width: 100%;
-    }
-</style>
