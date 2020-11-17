@@ -112,7 +112,7 @@
                                       fill="white"/>
                             </svg>
 
-                            <button class="btn">Download Full specification</button>
+                            <button class="btn">Download Full Specification</button>
                         </a>
                     </div>
                 @endif
