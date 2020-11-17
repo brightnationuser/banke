@@ -2,10 +2,10 @@
     <h2 class="specification__heading">
         {{ get_field('specification_title') }}
     </h2>
-    @foreach($items as $item)
+    @foreach($items as $key => $item)
         <div class="specification__wrapper">
             <div class="specification__image">
-                <img src="{{$item['image']['url']}}" alt="1234">
+                <img src="{{$item['image']['url']}}" alt="{{ get_field('specification_title') }} - {{ $key + 1 }}">
             </div>
 
             <div class="specification__list">
