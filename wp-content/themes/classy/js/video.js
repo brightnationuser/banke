@@ -61,21 +61,24 @@ const video = () => {
         })
 
         function onPlayerReady(player_id, index) {
+
+            $(doc).on('click', '.js-close-gallery-video', function () {
+                video.removeClass('is-play');
+                players[index].stopVideo();
+            })
+
             close.on('click', function () {
                 video.removeClass('is-play');
                 players[index].stopVideo();
-                console.log('click close')
             });
 
             owl.on('click', '.owl-prev, .owl-next, .owl-dot',  function () {
                 video.removeClass('is-play');
                 players[index].stopVideo();
-                console.log('click close')
             });
 
             play.on('click', function () {
                 $(this).closest('.js-video').addClass('is-play');
-                console.log('click start')
                 players[index].playVideo();
             });
         }
