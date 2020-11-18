@@ -39,13 +39,23 @@
         <div class="owl-carousel owl-video_gallery" data-start="{{ !empty($start) ? $start : 4 }}">
             @foreach($videos as $video)
                 <div class="video-gallery__item">
-                    @include ('partials.embed-youtube-video', [
-                        'title' => '',
-                        'image' => $video['image']['url'],
-                        'yt_id' => $video['video_id'],
-                        'index' => $video['player_id'],
-                        'no_btn_text' => true
-                    ])
+                    <div class="embed-youtube-video js-video">
+                        <button class="popup__close js-close-gallery-video" type="button">&times;</button>
+
+                        <div class="embed-youtube-video__overlay js-video-poster" style="background-image: url({{ $video['image']['url'] }})"></div>
+
+                        <div class="embed-youtube-video__play-wrap js-video-play centered" type="button">
+                            <button class="embed-youtube-video__play"></button>
+                        </div>
+
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <div class="embed-responsive-item video-player js-video-player"
+                                 id="player{{ $video['player_id'] }}"
+                                 data-index="{{ $video['player_id'] }}"
+                                 data-yt-id="{{ !empty($video['video_id']) ? $video['video_id'] : 'sDsknFlke9U' }}"
+                            ></div>
+                        </div>
+                    </div>
                     <div class="item__text">{{ $video['text'] }}</div>
                 </div>
             @endforeach
