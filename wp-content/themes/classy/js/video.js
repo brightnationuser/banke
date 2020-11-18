@@ -18,6 +18,7 @@ const video = () => {
         const video = playerEl.parents('.js-video')
         const play = video.find('.js-video-play')
         const close = video.parents('.js-popup').find('.js-popup-close')
+        const closePopup = $('.js-close-gallery-video');
         const owl = video.parents('.owl-carousel')
         const playerID = playerEl.data('yt-id')
         const playerIndex = playerEl.data('index')
@@ -62,7 +63,7 @@ const video = () => {
 
         function onPlayerReady(player_id, index) {
 
-            $(doc).on('click', '.js-close-gallery-video', function () {
+            closePopup.on('click', function () {
                 video.removeClass('is-play');
                 players[index].stopVideo();
             })

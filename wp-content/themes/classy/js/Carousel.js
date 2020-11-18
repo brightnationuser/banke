@@ -30,7 +30,7 @@ export default class Carousel {
                 items.on('click', function (e) {
                     let ths = $(this);
                     let was_open = false;
-                    console.log('$(e.target).hasClass(\'.js-close-gallery-video\')',$(e.target).hasClass('js-close-gallery-video'))
+
                     if(!ths.hasClass('center') && !$(e.target).hasClass('js-close-gallery-video')) {
 
                         items.each(function () {
