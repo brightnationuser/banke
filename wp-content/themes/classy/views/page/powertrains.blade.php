@@ -12,12 +12,6 @@
     <div class="p-powertrains">
         <section class="intro">
             <h1 class="animated fadeInDown h2" style="animation-delay: .7s">{{ $post->post_title }}</h1>
-            <div class="text-center">
-                <a href="#youtube-video" class="button disable_preloader js-popup-action" target="_blank">
-                    <img src="/wp-content/themes/classy/images/icons/play.svg" alt="Play icon">
-                    watch video
-                </a>
-            </div>
 
             <div class="container">
                 <div class="intro__wrapper d-flex">
@@ -82,10 +76,5 @@
             'classes' => 'contact-us--light'
         ])
     </div>
-
-    @include('partials.popup-youtube', [
-        'title' => 'Electric refuse collection truck',
-        'image' => '/wp-content/themes/classy/images/video-preview.jpg',
-    ])
 
 @stop
