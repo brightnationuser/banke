@@ -51,10 +51,40 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        transform-origin: center;
+
+        @media screen and (min-width: 1200px) {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%) scale(1);
+
+          &.is-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 600px;
+            height: 350px;
+            background: #000;
+            z-index: 2;
+
+            .popup__close {
+              top: -3px;
+              right: -3px;
+              background: #fff;
+              padding: 23px 23px 20px 20px;
+              border-bottom-left-radius: 50%;
+            }
+          }
+        }
 
         @media screen and (max-width: 1200px) {
           width: 600px;
           height: 340px;
+
+          .popup__close {
+            display: none;
+          }
         }
 
         @media only screen and (max-width: 768px) {
@@ -86,10 +116,12 @@
         }
 
         .embed-youtube-video {
-          transform: scale(1.25);
+          &:not(.is-play) {
+            transform: translate(-50%, -50%) scale(1.25);
+          }
 
           @media screen and (max-width: 1200px) {
-            transform: none;
+            transform: scale(1);
           }
 
           &__overlay {
