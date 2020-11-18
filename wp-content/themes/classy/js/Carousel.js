@@ -25,6 +25,18 @@ export default class Carousel {
                     }
                 })
 
+                let items = owl.find('.owl-item');
+
+                items.on('click', function () {
+                    let ths = $(this);
+                    if(!ths.hasClass('center')) {
+                        owl.trigger('to.owl.carousel', ths.index())
+                        setTimeout(function () {
+                            ths.find('.js-video-play').click()
+                        }, 500)
+                    }
+                })
+
                 // owl.on('translate.owl.carousel', function (event) {
                 //     let ths = $(this);
                 //     let item = event.item.index; // Position of the current item
