@@ -27,13 +27,36 @@ export default class Carousel {
 
                 let items = owl.find('.owl-item');
 
-                items.on('click', function () {
+                items.on('click', function (e) {
                     let ths = $(this);
-                    if(!ths.hasClass('center')) {
-                        owl.trigger('to.owl.carousel', ths.index())
-                        setTimeout(function () {
-                            ths.find('.js-video-play').click()
-                        }, 500)
+                    let was_open = false;
+                    console.log('$(e.target).hasClass(\'.js-close-gallery-video\')',$(e.target).hasClass('js-close-gallery-video'))
+                    if(!ths.hasClass('center') && !$(e.target).hasClass('js-close-gallery-video')) {
+
+                        items.each(function () {
+                            let el = $(this);
+                            if(el.find('.js-video').hasClass('is-play')) {
+                                was_open = true
+                                el.find('.js-close-gallery-video').click()
+                            }
+                        })
+
+                        if(!was_open) {
+                            owl.trigger('to.owl.carousel', ths.index())
+
+                            setTimeout(function () {
+                                ths.find('.js-video-play').click()
+                            }, 500)
+                        }
+                        else {
+                            setTimeout(function () {
+                                owl.trigger('to.owl.carousel', ths.index())
+                            }, 500)
+
+                            setTimeout(function () {
+                                ths.find('.js-video-play').click()
+                            }, 1000)
+                        }
                     }
                 })
 
