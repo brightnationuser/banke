@@ -54,6 +54,10 @@
       position: relative;
       z-index: 1;
 
+      &:not(.center) {
+        cursor: pointer;
+      }
+
       .embed-youtube-video {
         width: 316px;
         border-radius: 0;
@@ -69,6 +73,15 @@
           left: 50%;
           top: 50%;
           transform: translate(-50%, -50%) scale(1);
+          z-index: 2;
+
+          .popup__close {
+            top: -3px;
+            right: -3px;
+            background: #fff;
+            padding: 23px 23px 20px 20px;
+            border-bottom-left-radius: 50%;
+          }
 
           &.is-play {
             position: absolute;
@@ -77,15 +90,6 @@
             width: 600px;
             height: 350px;
             background: #000;
-            z-index: 2;
-
-            .popup__close {
-              top: -3px;
-              right: -3px;
-              background: #fff;
-              padding: 23px 23px 20px 20px;
-              border-bottom-left-radius: 50%;
-            }
           }
         }
 
