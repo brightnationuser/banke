@@ -1,17 +1,19 @@
 @php
     $videos = get_field('video_gallery');
 
-    $videos = array_merge($videos, $videos, $videos);
+    if(!empty($videos)) {
+        $videos = array_merge($videos, $videos, $videos);
 
-    foreach($videos as $key => &$item) {
-        $item['player_id'] = $item['video_id'] . $key;
+        foreach($videos as $key => &$item) {
+            $item['player_id'] = $item['video_id'] . $key;
+        }
     }
 
     $start = get_field('video_gallery_start');
     $title = get_field('video_gallery_title');
 @endphp
 
-@if(empty($videos))
+@if(!empty($videos))
 <div class="video-gallery">
     <div class="container">
         @if(!empty($title))
