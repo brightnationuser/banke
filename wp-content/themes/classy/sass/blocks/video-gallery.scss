@@ -1,3 +1,8 @@
+$is_playing_video_width: 600px;
+$is_playing_video_height: 350px;
+$video_width: 316px;
+$video_height: 217px;
+
 .video-gallery {
 
   &__item {
@@ -13,7 +18,7 @@
       left: 0;
       bottom: 25px;
       width: 100%;
-      transition: all .4s ease;
+      transition: all .5s linear;
 
       @media screen and (max-width: 1200px) {
         position: static;
@@ -41,6 +46,11 @@
       height: 350px;
     }
 
+    @media screen and (max-width: 460px) {
+      min-height: 270px;
+      height: 270px;
+    }
+
     .owl-stage-outer, .owl-stage {
       height: 100%;
       z-index: 2;
@@ -54,11 +64,16 @@
       position: relative;
       z-index: 1;
 
+      &:not(.center) {
+        cursor: pointer;
+      }
+
       .embed-youtube-video {
-        width: 316px;
+        width: $video_width;
+        height: $video_height;
         border-radius: 0;
-        height: 217px;
-        transition: all .4s ease;
+        transition: all .5s linear;
+        transition-delay: 0ms;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -68,23 +83,39 @@
           position: absolute;
           left: 50%;
           top: 50%;
-          transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%);
+          zoom: 1;
+          z-index: 2;
+          background: #000;
+
+          .embed-youtube-video__play,
+          .embed-youtube-video__text,
+          .embed-youtube-video__title,
+          .embed-youtube-video__overlay {
+            opacity: 0;
+            visibility: hidden;
+            animation: showOverlay .5s linear forwards;
+          }
+
+          .popup__close {
+            top: -3px;
+            right: -3px;
+            background: #fff;
+            padding: 23px 23px 20px 20px;
+            border-bottom-left-radius: 50%;
+          }
 
           &.is-play {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 600px;
-            height: 350px;
-            background: #000;
-            z-index: 2;
+            width: $is_playing_video_width;
+            height: $is_playing_video_height;
 
-            .popup__close {
-              top: -3px;
-              right: -3px;
-              background: #fff;
-              padding: 23px 23px 20px 20px;
-              border-bottom-left-radius: 50%;
+            .embed-youtube-video__play,
+            .embed-youtube-video__text,
+            .embed-youtube-video__title,
+            .embed-youtube-video__overlay {
+              opacity: 1;
+              visibility: visible;
+              animation: hideOverlay .5s linear forwards;
             }
           }
         }
@@ -107,14 +138,14 @@
 
           &::after {
             opacity: 0;
-            transition: all .4s ease;
+            transition: all .5s linear;
           }
         }
 
         &__play-wrap {
           pointer-events: none;
           visibility: hidden;
-          transition: all .4s ease;
+          transition: all .5s linear;
           opacity: 0;
         }
       }
@@ -128,14 +159,22 @@
         }
 
         .embed-youtube-video {
-          &:not(.is-play) {
-            @media screen and (min-width: 1200px) {
-              transform: translate(-50%, -50%) scale(1.25);
+
+          @media screen and (min-width: 1200px) {
+            &:not(.is-play) {
+              width: $video_width * 1.25;
+              height: $video_height * 1.25;
             }
           }
 
           @media screen and (max-width: 1200px) {
-            transform: none;
+            width: 100%;
+            max-width: $is_playing_video_width;
+            height: $is_playing_video_height;
+          }
+
+          @media screen and (max-width: 460px) {
+            height: $is_playing_video_height / 1.5;
           }
 
           &__overlay {
@@ -145,7 +184,7 @@
           }
 
           &__play-wrap {
-            transition: all .4s ease;
+            transition: all .5s linear;
             opacity: 1;
             visibility: visible;
             pointer-events: all;
@@ -166,7 +205,7 @@
 
       @media screen and (max-width: 576px) {
         top: initial;
-        bottom: -80px;
+        bottom: -100px;
       }
 
       .owl-prev, .owl-next {
@@ -206,6 +245,36 @@
           right: calc(50% - 40px);
         }
       }
+    }
+  }
+
+  @keyframes hideOverlay {
+    0% {
+      opacity: 1;
+      visibility: visible;
+    }
+    80% {
+      opacity: 1;
+      visibility: visible;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @keyframes showOverlay {
+    0% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    30% {
+      opacity: 1;
+      visibility: visible;
+    }
+    100% {
+      opacity: 1;
+      visibility: visible;
     }
   }
 }

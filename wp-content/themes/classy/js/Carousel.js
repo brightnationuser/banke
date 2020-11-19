@@ -25,6 +25,41 @@ export default class Carousel {
                     }
                 })
 
+                let items = owl.find('.owl-item');
+
+                items.on('click', function (e) {
+                    let ths = $(this);
+                    let was_open = false;
+
+                    if(!ths.hasClass('center') && !$(e.target).hasClass('js-close-gallery-video')) {
+
+                        items.each(function () {
+                            let el = $(this);
+                            if(el.find('.js-video').hasClass('is-play')) {
+                                was_open = true
+                                el.find('.js-close-gallery-video').click()
+                            }
+                        })
+
+                        if(!was_open) {
+                            owl.trigger('to.owl.carousel', ths.index())
+
+                            setTimeout(function () {
+                                ths.find('.js-video-play').click()
+                            }, 500)
+                        }
+                        else {
+                            setTimeout(function () {
+                                owl.trigger('to.owl.carousel', ths.index())
+                            }, 500)
+
+                            setTimeout(function () {
+                                ths.find('.js-video-play').click()
+                            }, 1000)
+                        }
+                    }
+                })
+
                 // owl.on('translate.owl.carousel', function (event) {
                 //     let ths = $(this);
                 //     let item = event.item.index; // Position of the current item
