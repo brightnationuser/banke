@@ -46,6 +46,11 @@ $video_height: 217px;
       height: 350px;
     }
 
+    @media screen and (max-width: 460px) {
+      min-height: 270px;
+      height: 270px;
+    }
+
     .owl-stage-outer, .owl-stage {
       height: 100%;
       z-index: 2;
@@ -163,8 +168,13 @@ $video_height: 217px;
           }
 
           @media screen and (max-width: 1200px) {
-            width: $video_width;
-            height: $video_height;
+            width: 100%;
+            max-width: $is_playing_video_width;
+            height: $is_playing_video_height;
+          }
+
+          @media screen and (max-width: 460px) {
+            height: $is_playing_video_height / 1.5;
           }
 
           &__overlay {
@@ -195,7 +205,7 @@ $video_height: 217px;
 
       @media screen and (max-width: 576px) {
         top: initial;
-        bottom: -80px;
+        bottom: -100px;
       }
 
       .owl-prev, .owl-next {

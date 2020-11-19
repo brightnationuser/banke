@@ -10,11 +10,6 @@
 
         <section class="concept">
             <div class="container">
-                @include ('partials.embed-youtube-video', [
-                    'title' => $post->getAcfByKey('video_title'),
-                    'image' => $post->getAcfByKey('video_image'),
-                    'yt_id' => $post->getAcfByKey('youtube_video_id')
-                ])
 
                 <h1 class="concept__title h2">
                     {{ $post->getAcfByKey('acf_title_concept') }}
@@ -80,6 +75,8 @@
                 </div>
             </div>
         @endif
+
+        @include('partials.video-gallery')
 
         <section class="present">
             <div class="container">
