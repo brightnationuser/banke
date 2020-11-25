@@ -59,9 +59,19 @@
                                     <h4 class="benefit__title">
                                         {!! $row['title'] !!}
                                     </h4>
+                                </div>
+                                <div class="benefit__content benefit__content--back">
                                     <div class="benefit__text">
                                         {!! $row['text'] !!}
                                     </div>
+                                    @if($row['add_contact_us']['tf'])
+                                        <div class="benefit__contact">
+                                            <div class="benefit__contact-title">{{ $row['add_contact_us']['text'] }}</div>
+                                            <a class="benefit__contact-link disable_preloader" href="{{ $row['add_contact_us']['url_link'] }}">
+                                                {{ $row['add_contact_us']['text_link'] }}
+                                            </a>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         @endforeach
