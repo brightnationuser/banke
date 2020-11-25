@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?sttuvl');
-  src:  url('fonts/icomoon.eot?sttuvl#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?sttuvl') format('truetype'),
-    url('fonts/icomoon.woff?sttuvl') format('woff'),
-    url('fonts/icomoon.svg?sttuvl#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?tfpwzb');
+  src:  url('fonts/icomoon.eot?tfpwzb#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?tfpwzb') format('truetype'),
+    url('fonts/icomoon.woff?tfpwzb') format('woff'),
+    url('fonts/icomoon.svg?tfpwzb#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-price-euro-down:before {
+  content: "\e91b";
+}
+.icon-truck-electric:before {
+  content: "\e91c";
+}
+.icon-car-chassis:before {
+  content: "\e91d";
+}
+.icon-shifter:before {
+  content: "\e91e";
+}
+.icon-battery-electric:before {
+  content: "\e91f";
+}
 .icon-youtube:before {
   content: "\e918";
 }
