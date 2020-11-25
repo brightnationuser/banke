@@ -172,7 +172,7 @@ class App {
     initJsBenefits() {
         let benefits = $('.js-benefit')
 
-        benefits.on('click', function () {
+        benefits.on('click touch', function () {
             let ths = $(this)
 
             if(ths.hasClass('active')) {
