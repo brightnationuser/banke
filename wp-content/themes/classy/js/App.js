@@ -177,9 +177,9 @@ class App {
 
             if(ths.hasClass('active')) {
                 benefits.removeClass('active')
-                ths.removeClass('active')
             }
             else {
+                benefits.removeClass('active')
                 ths.addClass('active')
             }
         })
