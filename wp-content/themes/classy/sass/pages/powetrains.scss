@@ -181,16 +181,35 @@
           }
         }
 
-        &:hover {
+        @media screen and (min-width: 1200px) {
+          &:hover {
 
-          .benefit {
-            &__content {
-              animation: benefitOut .5s linear forwards;
-              opacity: 0;
+            .benefit {
+              &__content {
+                animation: benefitOut .5s linear forwards;
+                opacity: 0;
 
-              &--back {
-                animation: benefitIn .5s linear forwards;
-                opacity: 1;
+                &--back {
+                  animation: benefitIn .5s linear forwards;
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+
+        @media screen and (max-width: 1200px) {
+          &.active {
+
+            .benefit {
+              &__content {
+                animation: benefitOut .5s linear forwards;
+                opacity: 0;
+
+                &--back {
+                  animation: benefitIn .5s linear forwards;
+                  opacity: 1;
+                }
               }
             }
           }

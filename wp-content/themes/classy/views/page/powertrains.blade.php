@@ -51,7 +51,7 @@
                 @if(!empty($benefits))
                     <div class="key-benefits__list d-flex">
                         @foreach($benefits as $row)
-                            <div class="benefit aos-animation" data-aos-delay="{!! 200 * ($loop->index + 1) !!}">
+                            <div class="benefit js-benefit aos-animation" data-aos-delay="{!! 200 * ($loop->index + 1) !!}">
                                 <div class="benefit__content">
                                     <div class="benefit__icon">
                                         <img src="{{ $row['icon']['url'] }}" alt="{!! $row['title'] !!}">

@@ -42,6 +42,10 @@ class App {
             this.initEptoSlider();
         }
 
+        if($('.js-benefit').length > 0) {
+            this.initJsBenefits();
+        }
+
         //$('body').addClass('m_ready');
         setTimeout(function () {
             $('body').addClass('m_ready');
@@ -163,6 +167,22 @@ class App {
         $('.qqq input').val('745643534543745634532');
 
         console.log($('.qqq').val());
+    }
+
+    initJsBenefits() {
+        let benefits = $('.js-benefit')
+
+        benefits.on('click', function () {
+            let ths = $(this)
+
+            if(ths.hasClass('active')) {
+                benefits.removeClass('active')
+                ths.removeClass('active')
+            }
+            else {
+                ths.addClass('active')
+            }
+        })
     }
 }
 
