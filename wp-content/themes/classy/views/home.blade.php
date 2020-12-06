@@ -29,9 +29,11 @@
 
     <div class="what-we-do">
         <div class="container">
+          @if(!empty(get_field('what_we_do_title')))
             <h2>
-                What We Do
+              {{ get_field('what_we_do_title') }}
             </h2>
+          @endif
 
             @if(!empty($post->getAcfByKey('what_we_do')))
                 <div class="what-we-do__list d-flex">

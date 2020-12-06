@@ -8,9 +8,11 @@
             <div class="history__wrap">
 
                  <div class="history__content">
+                   @if(!empty(get_field('about_title')))
                      <h1 class="history__title animated fadeInDown h2">
                          About
                      </h1>
+                   @endif
                      <div class="history__text animated fadeInUp">
                          {!! $post->content() !!}
                      </div>
@@ -32,10 +34,11 @@
 
     <div class="team">
         <div class="container">
-
-            <h2>
-                Our team
-            </h2>
+            @if(!empty(get_field('our_team_title')))
+              <h2>
+                  {{ get_field('our_team_title') }}
+              </h2>
+            @endif
 
             <div class="team__members d-flex">
                 @foreach($post->getAcfByKey('acf_team') as $member)
