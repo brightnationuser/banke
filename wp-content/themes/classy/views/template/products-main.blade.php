@@ -27,7 +27,7 @@
                                         <div class="item__content">
                                             <h3 class="item__title">{!! $item['title'] !!}</h3>
                                             <div class="item__text">{!! $item['text'] !!}</div>
-                                            <a  href="{{ $item['link'] }}" class="item__read-more read-more">Read More</a>
+                                            <a  href="{{ $item['link'] }}" class="item__read-more read-more">{!! $item['text_link'] !!}</a>
                                         </div>
 
                                     </div>
