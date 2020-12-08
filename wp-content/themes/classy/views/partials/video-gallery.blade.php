@@ -19,9 +19,9 @@
         @if(!empty($title))
             <h2 class="video-gallery__title">{{ $title }}</h2>
         @endif
-        <div class="owl-carousel owl-video_gallery" data-start="{{ !empty($start) ? $start : 4 }}">
+        <div class="owl-carousel owl-video_gallery" data-start="{{ !empty($start) ? $start : 1 }}">
             @foreach($videos as $video)
-                <div class="video-gallery__item">
+                <div class="video-gallery__item item-video">
                     <div class="embed-youtube-video js-video">
                         <button class="popup__close js-close-gallery-video" type="button">&times;</button>
 
