@@ -13,12 +13,15 @@ import App from './App';
 import textTrim from './text-trim';
 import popup from './popup';
 import video from './video';
+import openVideo from './openVideo';
 import tipsImage from './blocks/tips-image';
 import YtApiPlayer from './blocks/yt-api-player';
 
 $(document).ready(function () {
-    video();
 
+    // openVideo();
+
+    // video();
     popup();
     textTrim('.js-trim-text');
     textTrim('.js-intro-content', {show_block:true});
