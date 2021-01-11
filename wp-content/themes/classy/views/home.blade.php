@@ -3,11 +3,12 @@
 @section('content')
 
     <div class="hero parallax-container">
-{{--        <div class="parallax" id="js_hero_hero">
-        </div>--}}
+        {{--        <div class="parallax" id="js_hero_hero">
+                </div>--}}
 
         <div class="parallax">
-            <img src="/wp-content/themes/classy/images/bg/header-bg-2.jpg" alt="Banke bg" data-type="parallax" data-depth="2" data-shift="150">
+            <img src="/wp-content/themes/classy/images/bg/header-bg-2.jpg" alt="Banke bg" data-type="parallax"
+                 data-depth="2" data-shift="150">
         </div>
 
         <div class="container">
@@ -21,7 +22,7 @@
 
             <div class="hero__button">
                 <a href="/epto-systems/" class="button">
-                    Our products
+                    {{ $post->getAcfByKey('acf_header')['acf_header_button'] }}
                 </a>
             </div>
         </div>
@@ -29,18 +30,18 @@
 
     <div class="what-we-do">
         <div class="container">
-          @if(!empty(get_field('what_we_do_title')))
-            <h2>
-              {{ get_field('what_we_do_title') }}
-            </h2>
-          @endif
+            @if(!empty(get_field('what_we_do_title')))
+                <h2>
+                    {{ get_field('what_we_do_title') }}
+                </h2>
+            @endif
 
             @if(!empty($post->getAcfByKey('what_we_do')))
                 <div class="what-we-do__list d-flex">
                     @foreach($post->getAcfByKey('what_we_do') as $row)
                         <div class="what-we-do__item item">
                             <div class="item__image">
-                                <a  href="{{ $row['link'] }}">
+                                <a href="{{ $row['link'] }}">
                                     <img src="{!! $row['image']['url'] !!}" alt="{{ $row['title'] }}">
                                 </a>
                             </div>
@@ -51,8 +52,8 @@
                                 <div class="item__text">
                                     {!! $row['text'] !!}
                                 </div>
-                                <a  href="{{ $row['link'] }}" class="item__read-more read-more">
-                                    Read More
+                                <a href="{{ $row['link'] }}" class="item__read-more read-more">
+                                    {!! get_field('read_more', 'options') !!}
                                 </a>
                             </div>
 
@@ -65,15 +66,22 @@
 
     <div class="home-references">
         <div class="container">
-            <h2>References</h2>
-            <p>Currently more than 400 vehicles in operation all over Europe</p>
+            @if(!empty(get_field('references_title')))
+                <h2>
+                    {{ get_field('references_title') }}
+                </h2>
+                @if(!empty(get_field('references_about')))
+                    <p>{{ get_field('references_about') }}</p>
+                @endif
+            @endif
 
             <div class="references-slider owl-carousel js-references-slider">
                 @foreach($references as $reference)
                     <div class="reference-slide">
                         <a href="{!! get_post_permalink($reference->ID) !!}">
                             <div class="reference-slide__image">
-                                <img src="{!! wp_get_attachment_url($reference->getAcfByKey('acf_image')) !!}" alt="{!! $reference->post_title !!}">
+                                <img src="{!! wp_get_attachment_url($reference->getAcfByKey('acf_image')) !!}"
+                                     alt="{!! $reference->post_title !!}">
                             </div>
                             <div class="reference-slide__title">
                                 {!! $reference->post_title !!}

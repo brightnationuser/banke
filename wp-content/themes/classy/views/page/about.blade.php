@@ -7,23 +7,28 @@
 
             <div class="history__wrap">
 
-                 <div class="history__content">
-                   @if(!empty(get_field('about_title')))
-                     <h1 class="history__title animated fadeInDown h2">
-                         About
-                     </h1>
-                   @endif
-                     <div class="history__text animated fadeInUp">
-                         {!! $post->content() !!}
-                     </div>
-                 </div>
+                <div class="history__content">
+                    @if(!empty(get_field('about_title')))
+                        <h1 class="history__title animated fadeInDown h2">
+                            {{ get_field('about_title') }}
+                        </h1>
+                    @endif
+                    <div class="history__text animated fadeInUp">
+                        {!! $post->content() !!}
+                    </div>
+                </div>
 
                 <div class="history__sidebar sidebar animated fadeInRight">
                     <div class="sidebar__item sidebar__item--download">
-                        <h3>Downloads</h3>
+                        @if(!empty(get_field('downloads_title')))
+                            <h3>{{ get_field('downloads_title') }}</h3>
+                        @endif
+
+
                         @foreach(get_field('downloads') as $download)
                             <div>
-                                <a href="{!! $download['link'] !!}" class="disable_preloader" target="_blank" download>{!! $download['text'] !!}</a>
+                                <a href="{!! $download['link'] !!}" class="disable_preloader" target="_blank"
+                                   download>{!! $download['text'] !!}</a>
                             </div>
                         @endforeach
                     </div>
@@ -35,16 +40,18 @@
     <div class="team">
         <div class="container">
             @if(!empty(get_field('our_team_title')))
-              <h2>
-                  {{ get_field('our_team_title') }}
-              </h2>
+                <h2>
+                    {{ get_field('our_team_title') }}
+                </h2>
             @endif
 
             <div class="team__members d-flex">
                 @foreach($post->getAcfByKey('acf_team') as $member)
 
-                    <div class="member aos-animation" data-aos="fade-up" data-aos-delay="{{ 200 * (1 + $loop->index) }}">
-                        <div class="member__image" style="background-image: url('{{ $member['acf_team_image']['url'] }}')">
+                    <div class="member aos-animation" data-aos="fade-up"
+                         data-aos-delay="{{ 200 * (1 + $loop->index) }}">
+                        <div class="member__image"
+                             style="background-image: url('{{ $member['acf_team_image']['url'] }}')">
                         </div>
 
                         <div class="member__content">

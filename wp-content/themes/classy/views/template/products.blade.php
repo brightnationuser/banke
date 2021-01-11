@@ -9,7 +9,6 @@
     @endif
 
     <div class="container">
-
         <div class="products">
             @foreach ($post->getAcfByKey('acf_products') as $product)
                 <div class="product__card">
@@ -28,8 +27,5 @@
                 </div>
             @endforeach
         </div>
-    
     </div>
-
-
 @stop

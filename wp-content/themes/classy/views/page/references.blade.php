@@ -1,5 +1,5 @@
 @extends('layout.default')
-
+HELLO WORLD
 @section('content')
 
     @if(!empty(get_field('acf_tabs', wp_get_post_parent_id(get_the_ID()))))

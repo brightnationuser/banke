@@ -38,7 +38,8 @@
     <div class="container footer__bottom">
 
         <div class="footer__adress">
-            Ormstoft 5 | 6400 Sønderborg | Denmark | <a href="tel:+4577771616">+45 7777 16 16</a> | <a href="mailto:marketing@banke.pro">marketing@banke.pro</a>
+            {!! get_field('address', 'options') !!} <a href="tel:{!! get_field('number', 'options') !!}">{!! get_field('number', 'options') !!}</a>
+            <a href="mailto:{!! get_field('email', 'options') !!}"> | {!! get_field('email', 'options') !!}</a>
         </div>
 
         <div class="footer__copyright">

@@ -112,7 +112,7 @@
                                       fill="white"/>
                             </svg>
 
-                            <button class="btn">Download Full Specification</button>
+                            <button class="btn">{!! get_field('download_full_specification', 'options') !!}</button>
                         </a>
                     </div>
                 @endif
