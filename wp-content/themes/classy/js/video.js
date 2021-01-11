@@ -6,6 +6,7 @@
 let loadYT;
 
 const video = () => {
+
     const doc = document;
     const playerEl = $('.js-video-player')
     let players = []
