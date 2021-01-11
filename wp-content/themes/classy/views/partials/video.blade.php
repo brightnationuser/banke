@@ -12,6 +12,6 @@
             <iframe src="https://www.youtube.com/embed/{{ $video_url }}?playsinline=1&modestbranding=0&rel=0&showinfo=0&controls=0&autoplay=1&mute=1&loop=1&disablekb=1&playlist={{ $review['video_url'] }}" frameborder="0" allowfullscreen></iframe>
         </div>
 
-        <span class="video__play js-video-play">Play video</span>
+        <span class="video__play js-video-play">{!! get_field('play_video', 'options') !!}</span>
     </div>
 </div>

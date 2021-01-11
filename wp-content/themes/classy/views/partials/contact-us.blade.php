@@ -7,7 +7,7 @@
             </h2>
         @else
             <h2>
-                Contact Us
+                {!! get_field('contact_us', 'options') !!}
             </h2>
         @endif
 
