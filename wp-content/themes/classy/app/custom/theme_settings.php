@@ -20,6 +20,12 @@ function al_theme_setup()
             'redirect' => false
         ));
 
+        acf_add_options_sub_page(array(
+            'page_title' => __('Phrases', preg_replace('/^www\./','',$_SERVER['SERVER_NAME'])),
+            'menu_title' => __('Phrases', preg_replace('/^www\./','',$_SERVER['SERVER_NAME'])),
+            'parent_slug' => 'theme-general-settings',
+        ));
+
 //        acf_add_options_sub_page(array(
 //            'page_title' => __('Header', preg_replace('/^www\./','',$_SERVER['SERVER_NAME'])),
 //            'menu_title' => __('Header', preg_replace('/^www\./','',$_SERVER['SERVER_NAME'])),

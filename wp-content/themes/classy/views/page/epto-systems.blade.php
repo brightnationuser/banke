@@ -15,17 +15,18 @@
                     {{ $post->getAcfByKey('acf_title_concept') }}
                 </h1>
 
-{{--                <div class="text-center">
-                    <a href="#youtube-video" class="button disable_preloader js-popup-action" target="_blank">
-                        <img src="/wp-content/themes/classy/images/icons/play.svg" alt="Play icon">
-                        {{ $post->getAcfByKey('button_text') }}
-                    </a>
-                </div>--}}
+                {{--                <div class="text-center">
+                                    <a href="#youtube-video" class="button disable_preloader js-popup-action" target="_blank">
+                                        <img src="/wp-content/themes/classy/images/icons/play.svg" alt="Play icon">
+                                        {{ $post->getAcfByKey('button_text') }}
+                                    </a>
+                                </div>--}}
 
                 <div class="concept__description d-flex">
 
                     <div class="concept__image animated fadeInLeft">
-                        <img src="{!! $post->getAcfByKey('acf_image_concept')['url'] !!}" alt="{!! $post->getAcfByKey('acf_title_concept') !!}">
+                        <img src="{!! $post->getAcfByKey('acf_image_concept')['url'] !!}"
+                             alt="{!! $post->getAcfByKey('acf_title_concept') !!}">
                     </div>
 
                     <div class="concept__content">
@@ -64,7 +65,8 @@
                         @foreach($principles as $key => $item)
                             <div class="principles__item">
                                 <div class="principles__image-wrap">
-                                    <img class="principles__image {{ pathinfo(basename($item['image']['url']), PATHINFO_FILENAME) }}" src="{!! $item['image']['url'] !!}" alt="{{ strip_tags($item['title']) }}">
+                                    <img class="principles__image {{ pathinfo(basename($item['image']['url']), PATHINFO_FILENAME) }}"
+                                         src="{!! $item['image']['url'] !!}" alt="{{ strip_tags($item['title']) }}">
                                 </div>
                                 <div class="principles__title">
                                     {!! $item['title'] !!}
@@ -120,9 +122,11 @@
                                 @foreach ($product['links'] as $link)
                                     <li class="product-card__link d-flex">
                                         <div class="icon">
-                                            <img src="/wp-content/themes/classy/images/pages/epto-systems/pdf.svg" alt="icon">
+                                            <img src="/wp-content/themes/classy/images/pages/epto-systems/pdf.svg"
+                                                 alt="icon">
                                         </div>
-                                        <a href="{{ $link['link_url'] }}" class="link disable_preloader" download>{{ $link['link_text'] }}</a>
+                                        <a href="{{ $link['link_url'] }}" class="link disable_preloader"
+                                           download>{{ $link['link_text'] }}</a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -133,16 +137,22 @@
         </section>
 
         <section class="references-sect">
-
-            <h2>References</h2>
-            <p>Currently more than 400 vehicles in operation all over Europe</p>
-
+            @if(!empty(get_field('references_title')))
+                <h2>
+                    {{ get_field('references_title') }}
+                </h2>
+                @if(!empty(get_field('references_about')))
+                    <p>{{ get_field('references_about') }}</p>
+                @endif
+            @endif
             <div class="container thin-nav">
                 <div class="references owl-carousel">
 
                     @foreach ($references as $reference)
-                        <a href="{{ $reference->permalink() }}" class="references__card disable_preloader aos-animation" data-aos="fade-in">
-                            <div class="card__image" style="background-image: url({{ $reference->getAcfImage()->src('large') }});"></div>
+                        <a href="{{ $reference->permalink() }}" class="references__card disable_preloader aos-animation"
+                           data-aos="fade-in">
+                            <div class="card__image"
+                                 style="background-image: url({{ $reference->getAcfImage()->src('large') }});"></div>
                             <div class="card__info">
                                 <div class="card__title">{{ $reference->get_title() }}</div>
                                 <div class="card__text">{!! $reference->getAcfByKey('acf_references_short_text') !!}</div>
