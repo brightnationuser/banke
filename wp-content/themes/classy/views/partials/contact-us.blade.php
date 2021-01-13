@@ -16,7 +16,12 @@
             @if(!empty($form))
                 {!! do_shortcode($form) !!}
             @else
-                {!! do_shortcode('[contact-form-7 id="5" title="Send Us A Message"]') !!}
+                @if(ICL_LANGUAGE_CODE === 'en')
+                    {!! do_shortcode('[contact-form-7 id="5" title="Send Us A Message"]') !!}
+                @elseif(ICL_LANGUAGE_CODE === 'de')
+                    {!! do_shortcode('[contact-form-7 id="1296" title="Contact form DE"]') !!}
+                @else
+                @endif
             @endif
         </div>
     </div>
