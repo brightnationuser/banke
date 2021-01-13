@@ -147,6 +147,17 @@ header.header {
             }
         }
 
+        .header__right {
+            display: flex;
+            align-items: center;
+
+            >span {
+                color: #CFCFCF;
+                margin: 0 7px;
+                font-size: 14px;
+            }
+        }
+
         .header__phone {
             .icon {
                 margin-right: 5px;
@@ -183,18 +194,14 @@ header.header {
         }
 
         .header__lng {
-            min-width: 148px;
-            text-align: right;
-
             .lng-w {
-                padding: 3px 10px;
                 position: relative;
                 color: $color-blue;
                 display: inline-flex;
                 align-items: center;
                 cursor: pointer;
-                border-radius: 10px;
                 text-align: left;
+                text-transform: uppercase;
 
                 a {
                     color: $color-blue;
@@ -211,33 +218,24 @@ header.header {
                 }
 
                 .lng-dropdown {
-                    display: none;
+                    opacity: 0;
+                    visibility: hidden;
                     position: absolute;
                     left: 0;
                     right: 0;
                     top: 20px;
-                    padding: 10px 0 0 0;
+                    transition: all .4s ease;
 
                     a {
                         display: block;
-                        padding: 3px 10px;
-                        border-radius: 10px;
-                        background: #ebebeb;
                         color: $color-blue;
-
-                        &:hover {
-                            text-decoration: none;
-                            background: $color-blue;
-                            color: #fff;
-                        }
                     }
                 }
 
                 &:hover {
-                    background: #ebebeb;
-
                     .lng-dropdown {
-                        display: block;
+                        opacity: 1;
+                        visibility: visible;
                     }
 
                     i {
@@ -270,7 +268,7 @@ header.header {
             .header__menu {
                 padding-top: 10px;
 
-                #menu-header {
+                [id^=menu-header] {
                     flex-direction: column;
                     padding: 0;
                     margin: 0;
@@ -301,9 +299,7 @@ header.header {
 
             .header__lng {
                 display: none;
-                position: absolute;
-                right: -9px;
-                top: 44px;
+                position: static;
             }
         }
 
