@@ -33,19 +33,43 @@ export default class Carousel {
 
         function loadPlayer() {
 
+          let stateOpenVideo = false
 
           let closeVideo = $('.js-close-video')
 
+          function showVideoCallback({ attributeOwl,attributeVideoYtId }, callback) {
+            owl.trigger('to.owl.carousel', [attributeOwl, 800])
 
+            setTimeout(() => {
+                player.loadVideoById(attributeVideoYtId)
+                $('.js-video-gallery__window').show()
+                stateOpenVideo = true
+                callback()
+            }, 800)
+
+            // owl.trigger('to.owl.carousel', [ths[0].attributes['data-id'].value, 500])
+          }
 
           $('.js-video-show').on('click', function () {
-            let timeVideoOpen = 500;
-            let ths = $(this)
-            owl.trigger('to.owl.carousel', [ths[0].attributes['data-id'].value, timeVideoOpen])
-            setTimeout(() => {
-              player.loadVideoById(ths[0].attributes['data-yt-id'].value)
-              $('.js-video-gallery__window').fadeIn(500)
-            }, timeVideoOpen + 100)
+            if(!stateOpenVideo) {
+              let ths = $(this)
+              $(ths).attr('style', 'transform: translate(-50%,-50%) scale(1.2)')
+              showVideoCallback({
+                attributeOwl: ths[0].attributes['data-id'].value,
+                attributeVideoYtId: ths[0].attributes['data-yt-id'].value
+              }, function () {
+                $(ths).attr('style', 'transform: translate(-50%,-50%) scale(1)')
+              })
+            }
+
+
+
+
+
+            // setTimeout(() => {
+            //   player.loadVideoById(ths[0].attributes['data-yt-id'].value)
+            //   $('.js-video-gallery__window').fadeIn(500)
+            // }, timeVideoOpen + 100)
 
             // console.log('ths index:', ths[0].attributes['data-id'].value)
 
@@ -54,6 +78,7 @@ export default class Carousel {
           closeVideo.on('click', function () {
             player.stopVideo();
             $('.js-video-gallery__window').fadeOut(500)
+            stateOpenVideo = false
             // player.loadVideoById('8D9d9weVQnI');
             // alert('Hello my friend')
           })
