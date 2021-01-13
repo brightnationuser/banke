@@ -10,7 +10,7 @@ function redirect_with_exit($location, $status = 302) {
 }
 
 $relations = [
-    'de'  => '',
+
 ];
 
 $request = trim($_SERVER['REQUEST_URI'], '/');
