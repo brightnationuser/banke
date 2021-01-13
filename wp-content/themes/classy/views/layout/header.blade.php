@@ -35,18 +35,28 @@
                 <span>
                     + 45 7777 16 16
                 </span>
-            </a>
-        </div>
+                </a>
+            </div>
+            @if(wp_get_current_user()->ID !== 0)
+                <span>|</span>
+                <div class="header__lng">
+                    <div class="lng-w">
+                        @foreach($languages as $language)
+                            @if($language['active'])
+                                <a href="{{ $language['url'] }}">{!! $language['language_code'] !!}</a>
+                            @endif
+                        @endforeach
+                        <i class="icon-arrow-down"></i>
 
-        {{--<div class="header__lng">
-            <div class="lng-w">
-                <a href="/">en</a>
-                <i class="icon-arrow-down"></i>
-
-                <div class="lng-dropdown">
-                    <a href="https://banke.pro/de/">de</a>
+                    <div class="lng-dropdown">
+                        @foreach($languages as $language)
+                            @if(!$language['active'])
+                                <a href="{{ $language['url'] }}">{!! $language['language_code'] !!}</a>
+                            @endif
+                        @endforeach
+                    </div>
                 </div>
             </div>
-        </div>--}}
+        </div>
     </div>
 </header>
