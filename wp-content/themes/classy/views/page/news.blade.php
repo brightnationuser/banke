@@ -1,3 +1,5 @@
+{{-- Template Name: News Archive --}}
+
 @extends('layout.default')
 
 @section('content')
@@ -30,6 +32,6 @@
             <div class="news m_fake"></div>
         </div>
 
-        {{ the_posts_pagination() }}
+        {!! $pagination_layout !!}
     </div>
 @stop
