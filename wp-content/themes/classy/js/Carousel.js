@@ -24,38 +24,82 @@ export default class Carousel {
             }
           }
         })
-        
-        let items = owl.find('.owl-item');
-        
-        items.on('click', function (e) {
-          let ths = $(this);
-          let was_open = false;
-          
-          if(!ths.hasClass('center') && !$(e.target).hasClass('js-close-gallery-video')) {
-            
-            items.each(function () {
-              let el = $(this);
-              if(el.find('.js-video').hasClass('is-play')) {
-                was_open = true
-                el.find('.js-close-gallery-video').click()
-              }
-            })
-            
-            if(!was_open) {
-              owl.trigger('to.owl.carousel', ths.index())
-              
-              setTimeout(function () {
-                ths.find('.js-video-play').click()
-              }, 500)
+
+
+        function loadPlayer() {
+
+          let stateOpenVideo = false
+
+          let closeVideo = $('.js-close-video')
+
+          function showVideoCallback({ attributeOwl,attributeVideoYtId }, callback) {
+            owl.trigger('to.owl.carousel', [attributeOwl, 800])
+
+            setTimeout(() => {
+                player.loadVideoById(attributeVideoYtId)
+                $('.js-video-gallery__window').show()
+                stateOpenVideo = true
+                callback()
+            }, 800)
+
+            // owl.trigger('to.owl.carousel', [ths[0].attributes['data-id'].value, 500])
+          }
+
+          $('.js-video-show').on('click', function () {
+            if(!stateOpenVideo) {
+              let ths = $(this)
+              $(ths).attr('style', 'transform: translate(-50%,-50%) scale(1.2)')
+              showVideoCallback({
+                attributeOwl: ths[0].attributes['data-id'].value,
+                attributeVideoYtId: ths[0].attributes['data-yt-id'].value
+              }, function () {
+                $(ths).attr('style', 'transform: translate(-50%,-50%) scale(1)')
+              })
             }
-            else {
-              setTimeout(function () {
-                owl.trigger('to.owl.carousel', ths.index())
-              }, 500)
-              
-              setTimeout(function () {
-                ths.find('.js-video-play').click()
-              }, 1000)
+
+
+
+
+
+            // setTimeout(() => {
+            //   player.loadVideoById(ths[0].attributes['data-yt-id'].value)
+            //   $('.js-video-gallery__window').fadeIn(500)
+            // }, timeVideoOpen + 100)
+
+            // console.log('ths index:', ths[0].attributes['data-id'].value)
+
+          })
+
+          closeVideo.on('click', function () {
+            player.stopVideo();
+            $('.js-video-gallery__window').fadeOut(500)
+            stateOpenVideo = false
+            // player.loadVideoById('8D9d9weVQnI');
+            // alert('Hello my friend')
+          })
+
+          if (typeof (YT) == 'undefined' || typeof (YT.Player) == 'undefined') {
+            var tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            window.onYouTubePlayerAPIReady = function () {
+              onYouTubePlayer();
+            };
+          }
+        }
+
+        function onYouTubePlayer() {
+
+          player = new YT.Player('open-video', {
+            height: '360',
+            width: '640',
+            videoId: 'dWSqqckKjVM',
+            events: {
+              'onReady': onPlayerReady,
+              'onStop': onPlayerStop
+
             }
           }
         })
