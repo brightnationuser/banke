@@ -75,7 +75,7 @@
         </div>
         <div class="contacts__sidebar sidebar animated fadeInRight">
           <div class="sidebar__item sidebar__item--social">
-            <h3>Follow Us</h3>
+            <h3>{{ !empty(get_field('follow_us', 'option')) ? get_field('follow_us', 'option') : 'Follow Us' }}</h3>
             <div class="d-flex">
               <a href="{!! get_field('linkedin', 'option')['link'] !!}" class="linkedin disable_preloader" target="_blank">
                 <i class="icon-linkedin"></i>
