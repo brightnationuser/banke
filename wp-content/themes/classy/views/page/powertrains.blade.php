@@ -46,7 +46,7 @@
 
         <section class="key-benefits">
             <div class="container">
-                <h2>Key Benefits</h2>
+                <h2>{{ !empty($post->getAcfByKey('benefits_title')) ? $post->getAcfByKey('benefits_title') : 'Key Benefits' }}</h2>
                 @php($benefits = $post->getAcfByKey('benefits'))
                 @if(!empty($benefits))
                     <div class="key-benefits__list d-flex">
