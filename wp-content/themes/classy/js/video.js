@@ -6,15 +6,16 @@
 let loadYT;
 
 const video = () => {
+
     const doc = document;
     const playerEl = $('.js-video-player')
     let players = []
-    
+
     playerEl.each(function (index) {
         let playerEl = $(this)
-        
+
         console.log('check player el ', playerEl)
-        
+
         const video = playerEl.parents('.js-video')
         const play = video.find('.js-video-play')
         const close = video.parents('.js-popup').find('.js-popup-close')
@@ -22,9 +23,9 @@ const video = () => {
         const owl = video.parents('.owl-carousel')
         const playerID = playerEl.data('yt-id')
         const playerIndex = playerEl.data('index')
-        
+
         if (!video.length) return;
-        
+
         /**
          * YT
          */
@@ -41,7 +42,7 @@ const video = () => {
             })
         }
         loadYT.then((YT) => {
-            
+
             player = new YT.Player('player' + playerIndex, {
                 height: '360',
                 width: '640',
@@ -57,33 +58,33 @@ const video = () => {
                     'modestbranding': 0,
                 },
             });
-            
+
             players.push(player);
         })
-        
+
         function onPlayerReady(player_id, index) {
-            
+
             closePopup.on('click', function () {
                 video.removeClass('is-play');
                 players[index].stopVideo();
             })
-            
+
             close.on('click', function () {
                 video.removeClass('is-play');
                 players[index].stopVideo();
             });
-            
+
             owl.on('click', '.owl-prev, .owl-next, .owl-dot',  function () {
                 video.removeClass('is-play');
                 players[index].stopVideo();
             });
-            
+
             play.on('click', function () {
                 $(this).closest('.js-video').addClass('is-play');
                 players[index].playVideo();
             });
         }
-        
+
     })
 };
 
