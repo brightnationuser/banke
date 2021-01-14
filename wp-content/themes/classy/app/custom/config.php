@@ -44,7 +44,7 @@ $post_types = array(
             'public' => true,
             //'exclude_from_search' => true,
             'menu_position' => 6,
-            'has_archive' => true,
+            'has_archive' => false,
             'supports' => array(
                 'title',
                 'editor',

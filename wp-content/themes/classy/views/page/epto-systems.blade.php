@@ -104,7 +104,7 @@
                                 <div class="product-card__title">{{ $product['title'] }}</div>
                                 <div class="product-card__text js-trim-text"
                                      data-text-length="{{ empty($product['trim']) ? '147' : $product['trim'] }}"
-                                     data-text-open="read more"
+                                     data-text-open="{!! strtolower(get_field('read_more', 'option')) !!}"
                                      data-text-close="less"
                                 >
                                     <span class="js-text">
@@ -113,7 +113,7 @@
 
                                     <div class="read-more-wrap">
                                         <div class="read-more-btn">
-                                            read more
+                                            {{ strtolower(get_field('read_more', 'option')) }}
                                         </div>
                                     </div>
                                 </div>

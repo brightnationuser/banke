@@ -13,7 +13,7 @@
                 @if(!empty($item['gross_vehicle_weight']))
                     <div class="specification__elem">
                         <div class="specification__title">
-                            Gross vehicle weight
+                            {{ !empty($item['gross_vehicle_weight_text']) ? $item['gross_vehicle_weight_text'] : 'Gross vehicle weight' }}
                         </div>
                         <div class="specification__info">
                             {{ $item['gross_vehicle_weight'] }}
@@ -24,7 +24,7 @@
                 @if(!empty($item['wheel_arrangement']))
                     <div class="specification__elem">
                         <div class="specification__title">
-                            Wheel arrangement
+                            {{ !empty($item['wheel_arrangement_text']) ? $item['wheel_arrangement_text'] : 'Wheel arrangement' }}
                         </div>
                         <div class="specification__info">
                             {{ $item['wheel_arrangement'] }}
@@ -35,7 +35,7 @@
                 @if(!empty($item['wheel_base']))
                     <div class="specification__elem">
                         <div class="specification__title">
-                            Wheelbase
+                            {{ !empty($item['wheel_base_text']) ? $item['wheel_base_text'] : 'Wheelbase' }}
                         </div>
                         <div class="specification__info">
                             {{ $item['wheel_base'] }}
@@ -46,7 +46,7 @@
                 @if(!empty($item['system_weight_addition']))
                     <div class="specification__elem">
                         <div class="specification__title">
-                            System weight addition
+                            {{ !empty($item['system_weight_addition_text']) ? $item['system_weight_addition_text'] : 'System weight addition' }}
                         </div>
                         <div class="specification__info">
                             {{ $item['system_weight_addition'] }}
@@ -57,7 +57,7 @@
                 @if(!empty($item['front_weight_addition']))
                     <div class="specification__elem">
                         <div class="specification__title">
-                            Front-axle weight addition
+                            {{ !empty($item['front_weight_addition_text']) ? $item['front_weight_addition_text'] : 'Front-axle weight addition' }}
                         </div>
                         <div class="specification__info">
                             {{ $item['front_weight_addition'] }}
@@ -67,7 +67,7 @@
                 @if(!empty($item['rear_weight_addition']))
                     <div class="specification__elem">
                         <div class="specification__title">
-                            Rear-axle weight addition
+                            {{ !empty($item['rear_weight_addition_text']) ? $item['rear_weight_addition_text'] : 'Rear-axle weight addition' }}
                         </div>
                         <div class="specification__info">
                             {{ $item['rear_weight_addition'] }}
@@ -77,7 +77,7 @@
                 @if(!empty($item['maximum_speed']))
                     <div class="specification__elem">
                         <div class="specification__title">
-                            Maximum speed
+                            {{ !empty($item['maximum_speed_text']) ? $item['maximum_speed_text'] : 'Maximum speed' }}
                         </div>
                         <div class="specification__info">
                             {{ $item['maximum_speed'] }}
@@ -88,7 +88,7 @@
                 @if(!empty($item['maximum_gradeability']))
                     <div class="specification__elem">
                         <div class="specification__title">
-                            Maximum gradeability
+                            {{ !empty($item['maximum_gradeability_text']) ? $item['maximum_gradeability_text'] : 'Maximum gradeability' }}
                         </div>
                         <div class="specification__info">
                             {{ $item['maximum_gradeability'] }}
