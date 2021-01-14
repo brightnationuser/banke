@@ -1,12 +1,17 @@
 export default class Carousel {
+  
+  
   constructor(carouselName) {
     
     this.carousels = {
       initVideoCarousel: function () {
         
+        let player;
+        
         let owl_gallery = $('.owl-video_gallery.owl-carousel');
         let owl = owl_gallery.owlCarousel({
-          nav:true,
+          loop: true,
+          nav: true,
           center: true,
           margin: 2,
           mouseDrag: false,
@@ -24,27 +29,27 @@ export default class Carousel {
             }
           }
         })
-
-
+        
+        
         function loadPlayer() {
-
+          
           let stateOpenVideo = false
-
+          
           let closeVideo = $('.js-close-video')
-
+          
           function showVideoCallback({ attributeOwl,attributeVideoYtId }, callback) {
             owl.trigger('to.owl.carousel', [attributeOwl, 800])
-
+            
             setTimeout(() => {
-                player.loadVideoById(attributeVideoYtId)
-                $('.js-video-gallery__window').show()
-                stateOpenVideo = true
-                callback()
+              player.loadVideoById(attributeVideoYtId)
+              $('.js-video-gallery__window').show()
+              stateOpenVideo = true
+              callback()
             }, 800)
-
+            
             // owl.trigger('to.owl.carousel', [ths[0].attributes['data-id'].value, 500])
           }
-
+          
           $('.js-video-show').on('click', function () {
             if(!stateOpenVideo) {
               let ths = $(this)
@@ -56,20 +61,20 @@ export default class Carousel {
                 $(ths).attr('style', 'transform: translate(-50%,-50%) scale(1)')
               })
             }
-
-
-
-
-
+            
+            
+            
+            
+            
             // setTimeout(() => {
             //   player.loadVideoById(ths[0].attributes['data-yt-id'].value)
             //   $('.js-video-gallery__window').fadeIn(500)
             // }, timeVideoOpen + 100)
-
+            
             // console.log('ths index:', ths[0].attributes['data-id'].value)
-
+            
           })
-
+          
           closeVideo.on('click', function () {
             player.stopVideo();
             $('.js-video-gallery__window').fadeOut(500)
@@ -77,21 +82,21 @@ export default class Carousel {
             // player.loadVideoById('8D9d9weVQnI');
             // alert('Hello my friend')
           })
-
+          
           if (typeof (YT) == 'undefined' || typeof (YT.Player) == 'undefined') {
             var tag = document.createElement('script');
             tag.src = "https://www.youtube.com/iframe_api";
             var firstScriptTag = document.getElementsByTagName('script')[0];
             firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
+            
             window.onYouTubePlayerAPIReady = function () {
               onYouTubePlayer();
             };
           }
         }
-
+        
         function onYouTubePlayer() {
-
+          
           player = new YT.Player('open-video', {
             height: '360',
             width: '640',
@@ -99,28 +104,21 @@ export default class Carousel {
             events: {
               'onReady': onPlayerReady,
               'onStop': onPlayerStop
-
+              
             }
-          }
-        })
+          });
+        }
         
-        // owl.on('translate.owl.carousel', function (event) {
-        //     let ths = $(this);
-        //     let item = event.item.index; // Position of the current item
-        //     let items = ths.find('.owl-item');
-        //
-        //     console.log('item', item)
-        //     console.log('items.last()', items.last())
-        //
-        //     if(item === 0) {
-        //         console.log('trigger')
-        //         owl.trigger('add.owl.carousel', items.last(), 0)
-        //     }
-        //
-        //     if(item === items.length - 1) {
-        //         items.first().after(items.last())
-        //     }
-        // })
+        function onPlayerReady() {
+        
+        }
+        
+        function onPlayerStop() {
+        
+        }
+        
+        loadPlayer()
+        
       },
       
       initNewsCarousel: function () {
@@ -149,16 +147,16 @@ export default class Carousel {
           loop: true,
           margin: 5,
           onInitialized: show,
-          onTranslate: function() {
+          onTranslate: function () {
             $('.owl-item').removeClass('rounded-first').removeClass('rounded-last');
           },
-          onChange: function() {
+          onChange: function () {
             $('.owl-item').removeClass('rounded-first').removeClass('rounded-last');
           },
-          onDrag: function() {
+          onDrag: function () {
             $('.owl-item').removeClass('rounded-first').removeClass('rounded-last');
           },
-          onTranslated: function() {
+          onTranslated: function () {
             $('.active:first').addClass('rounded-first');
             $('.active:last').addClass('rounded-last');
           },
