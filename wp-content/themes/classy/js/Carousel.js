@@ -1,17 +1,12 @@
 export default class Carousel {
-
-
   constructor(carouselName) {
-
+    
     this.carousels = {
       initVideoCarousel: function () {
-
-        let player;
-
+        
         let owl_gallery = $('.owl-video_gallery.owl-carousel');
         let owl = owl_gallery.owlCarousel({
-          loop: true,
-          nav: true,
+          nav:true,
           center: true,
           margin: 2,
           mouseDrag: false,
@@ -29,73 +24,61 @@ export default class Carousel {
             }
           }
         })
-
-
-        function loadPlayer() {
-
-
-          let closeVideo = $('.js-close-video')
-
-
-
-          $('.js-video-show').on('click', function () {
-            let timeVideoOpen = 500;
-            let ths = $(this)
-            owl.trigger('to.owl.carousel', [ths[0].attributes['data-id'].value, timeVideoOpen])
-            setTimeout(() => {
-              player.loadVideoById(ths[0].attributes['data-yt-id'].value)
-              $('.js-video-gallery__window').fadeIn(500)
-            }, timeVideoOpen + 100)
-
-            // console.log('ths index:', ths[0].attributes['data-id'].value)
-
-          })
-
-          closeVideo.on('click', function () {
-            player.stopVideo();
-            $('.js-video-gallery__window').fadeOut(500)
-            // player.loadVideoById('8D9d9weVQnI');
-            // alert('Hello my friend')
-          })
-
-          if (typeof (YT) == 'undefined' || typeof (YT.Player) == 'undefined') {
-            var tag = document.createElement('script');
-            tag.src = "https://www.youtube.com/iframe_api";
-            var firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-            window.onYouTubePlayerAPIReady = function () {
-              onYouTubePlayer();
-            };
-          }
-        }
-
-        function onYouTubePlayer() {
-
-          player = new YT.Player('open-video', {
-            height: '360',
-            width: '640',
-            videoId: 'dWSqqckKjVM',
-            events: {
-              'onReady': onPlayerReady,
-              'onStop': onPlayerStop
-
+        
+        let items = owl.find('.owl-item');
+        
+        items.on('click', function (e) {
+          let ths = $(this);
+          let was_open = false;
+          
+          if(!ths.hasClass('center') && !$(e.target).hasClass('js-close-gallery-video')) {
+            
+            items.each(function () {
+              let el = $(this);
+              if(el.find('.js-video').hasClass('is-play')) {
+                was_open = true
+                el.find('.js-close-gallery-video').click()
+              }
+            })
+            
+            if(!was_open) {
+              owl.trigger('to.owl.carousel', ths.index())
+              
+              setTimeout(function () {
+                ths.find('.js-video-play').click()
+              }, 500)
             }
-          });
-        }
-
-        function onPlayerReady() {
-
-        }
-
-        function onPlayerStop() {
-
-        }
-
-        loadPlayer()
-
+            else {
+              setTimeout(function () {
+                owl.trigger('to.owl.carousel', ths.index())
+              }, 500)
+              
+              setTimeout(function () {
+                ths.find('.js-video-play').click()
+              }, 1000)
+            }
+          }
+        })
+        
+        // owl.on('translate.owl.carousel', function (event) {
+        //     let ths = $(this);
+        //     let item = event.item.index; // Position of the current item
+        //     let items = ths.find('.owl-item');
+        //
+        //     console.log('item', item)
+        //     console.log('items.last()', items.last())
+        //
+        //     if(item === 0) {
+        //         console.log('trigger')
+        //         owl.trigger('add.owl.carousel', items.last(), 0)
+        //     }
+        //
+        //     if(item === items.length - 1) {
+        //         items.first().after(items.last())
+        //     }
+        // })
       },
-
+      
       initNewsCarousel: function () {
         $('.b-news__carousel.owl-carousel').owlCarousel({
           loop: true,
@@ -116,22 +99,22 @@ export default class Carousel {
           }
         });
       },
-
+      
       initReferencesThinCarousel: function () {
         $('.js-references-slider').owlCarousel({
           loop: true,
           margin: 5,
           onInitialized: show,
-          onTranslate: function () {
+          onTranslate: function() {
             $('.owl-item').removeClass('rounded-first').removeClass('rounded-last');
           },
-          onChange: function () {
+          onChange: function() {
             $('.owl-item').removeClass('rounded-first').removeClass('rounded-last');
           },
-          onDrag: function () {
+          onDrag: function() {
             $('.owl-item').removeClass('rounded-first').removeClass('rounded-last');
           },
-          onTranslated: function () {
+          onTranslated: function() {
             $('.active:first').addClass('rounded-first');
             $('.active:last').addClass('rounded-last');
           },
@@ -153,7 +136,7 @@ export default class Carousel {
           }
         })
       },
-
+      
       initReferencesCarousel: function () {
         $('.references.owl-carousel').owlCarousel({
           loop: true,
@@ -175,13 +158,13 @@ export default class Carousel {
         });
       },
     }
-
+    
     function show(event) {
       $(event.target).addClass('m_loaded');
     }
-
+    
   }
-
+  
   init(carouselName) {
     this.carousels["init" + carouselName + "Carousel"]();
     $('.owl-prev span, .owl-next span').text('');
