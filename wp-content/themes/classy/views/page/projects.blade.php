@@ -20,7 +20,7 @@
                                     {!! $row['text']; !!}
                                 </div>
                                 <a href="{{ $row['link'] }}" target="_blank" class="read-more project__read-more disable_preloader">
-                                    {{ get_field('read_mode', 'option') }}
+                                    {{ get_field('read_more', 'option') }}
                                 </a>
                             </div>
                         @endforeach

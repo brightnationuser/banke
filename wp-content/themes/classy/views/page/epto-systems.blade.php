@@ -113,7 +113,7 @@
 
                                     <div class="read-more-wrap">
                                         <div class="read-more-btn">
-                                            {{ strtolower(get_field('read_mode', 'option')) }}
+                                            {{ strtolower(get_field('read_more', 'option')) }}
                                         </div>
                                     </div>
                                 </div>
