@@ -33,27 +33,82 @@ export default class Carousel {
 
         function loadPlayer() {
 
+          const closeVideo = $('.js-close-video') // Крестик для закрытия видео
+          const videoGalleryBlock = $('.js-video-show') // Класс отвечает за отображение видео по умолчанию display: none;
+          const getVideoInfoSize = $('.owl-item.active.center .js-video-show') // Узнаем размеры блоков после загрузки под разные размеры
+          // console.log('getVideoInfoSize', getVideoInfoSize)
+          let clickedVideo = null // Состояние, которое отвечает за клик на видео и присвавивает ему данные
 
-          let closeVideo = $('.js-close-video')
+          let freezeClick = false // Заморозка на переключалку, что бы избежать багов
+
+          let getBaseHeight = getVideoInfoSize.height() // Узнаем базовою высоту блока
+          let getBaseWidth = getVideoInfoSize.width() // Узнаем базовою ширину блока
+
+          let getCenterHeight = getVideoInfoSize.height() * 1.25 // Узнаем размер блока, которое увеличинно в центре
+          let getCenterWidth = getVideoInfoSize.width() * 1.25 // Узнаем размер блока, которое увеличинно в центре
+
+          console.log(`getBaseHeight ${getBaseHeight} | getBaseWidth ${getBaseWidth}`)
+          console.log(`getCenterHeight ${getCenterHeight} | getCenterWidth ${getCenterWidth}`)
+
+          videoGalleryBlock.on('click', function () {
+            const ths = $(this)
+
+            const getCenterClicked = ths.parent().parent().hasClass('owl-item active center')
+            // console.log('getCenterClicked: ', getCenterClicked)
+            let dataIdGallery = ths[0].attributes['data-id'].value
+            let dataIdVideo = ths[0].attributes['data-yt-id'].value
+
+            //ths.css('width', getCenterWidth).css('height', getCenterHeight)
+            if(freezeClick) return
+            if (!getCenterClicked) { // Проверка ли не кликнуто по центру
+              freezeClick = true
+              $('.js-video-gallery__window').hide() // Скрываем видео
+              //$('.owl-item.active.center .video-gallery__item .js-video-show').css('width', getBaseWidth).css('height', getBaseHeight)
+              $(clickedVideo).css('width', getCenterWidth).css('height', getCenterHeight) // Устанавливаем размер основнога окна ( Прошлое просм. видео )
+              setTimeout(() => {
+                $(clickedVideo).css('width', getBaseWidth).css('height', getBaseHeight) // Устанавливаем базовый размер прошлого видео
+                owl.trigger('to.owl.carousel', [dataIdGallery, 1000]) // Переключаем на новое видео [ dataIdGallery: На какой Id ссылается, 1000 - Время переключалки триггера]
+                //$(clickedVideo).css('width', getBaseWidth).css('height', getBaseHeight)
+                setTimeout(() => { // Через 500 м.с делаем размер пропопорционально ютубу
+                  // $(clickedVideo).css('width', getBaseWidth).css('height', getBaseHeight)
+                  ths.css('width', '600px').css('height', '320px')
+                  setTimeout(() => { // И уже как повляется картинка для видео, мы через 500 м.с отображаем саом видео
+                    // $(clickedVideo).css('width', getBaseWidth).css('height', getBaseHeight)
+                    player.loadVideoById(dataIdVideo)
+                    $('.js-video-gallery__window').fadeIn(400)
+                    clickedVideo = ths
+                    freezeClick = false
+                  }, 500)
+                }, 500)
+              }, 1000)
 
 
+            } else {
 
-          $('.js-video-show').on('click', function () {
-            let timeVideoOpen = 500;
-            let ths = $(this)
-            owl.trigger('to.owl.carousel', [ths[0].attributes['data-id'].value, timeVideoOpen])
-            setTimeout(() => {
-              player.loadVideoById(ths[0].attributes['data-yt-id'].value)
-              $('.js-video-gallery__window').fadeIn(500)
-            }, timeVideoOpen + 100)
+              ths.css('width', '600px').css('height', '320px')
+              owl.trigger('to.owl.carousel', [dataIdGallery, 1000])
+              clickedVideo = ths
+              freezeClick = true
+              setTimeout(() => {
+                player.loadVideoById(dataIdVideo)
+                $('.js-video-gallery__window').show()
+                freezeClick = false
+              }, 1000)
 
-            // console.log('ths index:', ths[0].attributes['data-id'].value)
+            }
+
+
+            // $('.owl-item.active.center').css('transform', 'scale(1.4, 1.2)')
+            console.log('clickedVideo: ', clickedVideo)
+            console.log('ths index:', ths[0].attributes['data-id'].value)
 
           })
 
           closeVideo.on('click', function () {
             player.stopVideo();
-            $('.js-video-gallery__window').fadeOut(500)
+            $('.js-video-gallery__window').hide()
+            $(clickedVideo).css('width', getCenterWidth).css('height', getCenterHeight)
+            freezeClick = false
             // player.loadVideoById('8D9d9weVQnI');
             // alert('Hello my friend')
           })
@@ -75,7 +130,7 @@ export default class Carousel {
           player = new YT.Player('open-video', {
             height: '360',
             width: '640',
-            videoId: 'dWSqqckKjVM',
+            videoId: '',
             events: {
               'onReady': onPlayerReady,
               'onStop': onPlayerStop
