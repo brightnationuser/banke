@@ -46,6 +46,9 @@ export default class Carousel {
           let getCenterHeight = getVideoInfoSize.height() * 1.25 // Узнаем размер блока, которое увеличинно в центре
           let getCenterWidth = getVideoInfoSize.width() * 1.25 // Узнаем размер блока, которое увеличинно в центре
 
+          $('.owl-nav button').on('click', function() {
+            $(clickedVideo).css('width', getBaseWidth).css('height', getBaseHeight)
+          })
 
           videoGalleryBlock.on('click', function () {
             const ths = $(this)
