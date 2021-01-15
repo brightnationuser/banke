@@ -9,6 +9,7 @@ const textTrim = (selector, opt = {}) => {
     $items.each(function (index, el) {
 
         let ths = $(el);
+        let $parent_to_add_class = ths.parents('.text-trim-add-parent-class')
 
         let $more_button = ths.find('.read-more-btn');
         let text_open = ths.data('text-open');
@@ -48,11 +49,18 @@ const textTrim = (selector, opt = {}) => {
                     text_el.text(text_full);
                     $more_button.text(text_close);
                     ths.removeClass('sliced');
+                    ths.addClass('expanded')
+                    $parent_to_add_class.addClass('children-sliced')
                 }
                 else {
                     text_el.text(text_sliced + '...');
                     $more_button.text(text_open);
                     ths.addClass('sliced');
+                    ths.removeClass('expanded')
+    
+                    if(!$items.hasClass('expanded')) {
+                        $parent_to_add_class.removeClass('children-sliced')
+                    }
                 }
             });
         }
