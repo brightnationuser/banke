@@ -180,7 +180,11 @@
         padding: 55px 0 110px 0;
 
         &__list {
-            align-items: flex-start;
+            align-items: stretch;
+
+            &.children-sliced {
+                align-items: flex-start;
+            }
 
             .product-card {
                 max-width: 270px;
@@ -188,6 +192,8 @@
                 box-shadow: 0 12px 20px rgba(0, 0, 0, 0.04);
                 border-radius: 8px;
                 overflow: hidden;
+                display: flex;
+                flex-direction: column;
 
                 &:last-child {
                     margin-right: 0;
@@ -234,6 +240,7 @@
 
                 &__content {
                     padding: 22px 16px 0 16px;
+                    flex-grow: 1;
                 }
 
                 &__links {

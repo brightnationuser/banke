@@ -18,7 +18,7 @@
                     <div class="intro__image animated fadeInLeft" style="animation-delay: .5s">
                         @include('partials.tips-image', ['image' => $intro['image']])
                     </div>
-                    <div class="intro__content js-intro-content" data-text-open="{{ strtolower(get_field('read_mode', 'option')) }}" data-text-close="show less">
+                    <div class="intro__content js-intro-content" data-text-open="{{ strtolower(get_field('read_more', 'option')) }}" data-text-close="{{ !empty(get_field('show_less')) ? get_field('show_less') : 'show less' }}">
                         <div class="intro__text animated fadeInUp" style="animation-delay: .5s">
                             <div>
                                 {!! $intro['text'] !!}
@@ -29,7 +29,7 @@
                         </div>
                         @if(!empty($intro['hidden_text']))
                             <div class="intro__read-more read-more-btn animated fadeInUp" style="animation-delay: .8s">
-                                {{ strtolower(get_field('read_mode', 'option')) }}
+                                {{ strtolower(get_field('read_more', 'option')) }}
                             </div>
                         @endif
                     </div>

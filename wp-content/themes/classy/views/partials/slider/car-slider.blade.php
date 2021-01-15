@@ -349,6 +349,6 @@
     </div>
 
     <div class="description__button">
-        <a href="/projects/" class="button">{{ get_field('read_mode', 'option') }}</a>
+        <a href="/projects/" class="button">{{ get_field('read_more', 'option') }}</a>
     </div>
 </div>
