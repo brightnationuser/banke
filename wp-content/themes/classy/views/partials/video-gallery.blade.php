@@ -19,25 +19,33 @@
             @if(!empty($title))
                 <h2 class="video-gallery__title">{{ $title }}</h2>
             @endif
+            <div class="video-gallery__window js-video-gallery__window">
+                <button class="video-gallery__close js-close-video" type="button">&times;</button>
+                <div id="open-video"></div>
+            </div>
             <div class="owl-carousel owl-video_gallery" data-start="{{ !empty($start) ? $start : 4 }}">
-                @foreach($videos as $video)
+                @foreach($videos as $key => $video)
                     <div class="video-gallery__item">
-                        <div class="embed-youtube-video js-video">
-                            <button class="popup__close js-close-gallery-video" type="button">&times;</button>
+                        <div class="embed-youtube-video js-video-show"
+                             data-yt-id="{{ !empty($video['video_id']) ? $video['video_id'] : 'sDsknFlke9U' }}"
+                             data-id="{{ $key }}"
+                        >
+                            {{--                            <button class="popup__close js-close-gallery-video" type="button">&times;</button>--}}
 
-                            <div class="embed-youtube-video__overlay js-video-poster" style="background-image: url({{ $video['image']['url'] }})"></div>
+                            <div class="embed-youtube-video__overlay js-video-poster"
+                                 style="background-image: url({{ $video['image']['url'] }})"></div>
 
-                            <div class="embed-youtube-video__play-wrap js-video-play centered" type="button">
+                            <div class="embed-youtube-video__play-wrap centered" type="button">
                                 <button class="embed-youtube-video__play"></button>
                             </div>
 
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <div class="embed-responsive-item video-player js-video-player"
-                                     id="player{{ $video['player_id'] }}"
-                                     data-index="{{ $video['player_id'] }}"
-                                     data-yt-id="{{ !empty($video['video_id']) ? $video['video_id'] : 'sDsknFlke9U' }}"
-                                ></div>
-                            </div>
+                            {{--                            <div class="embed-responsive embed-responsive-16by9">--}}
+                            {{--                                <div class="embed-responsive-item video-player js-video-player"--}}
+                            {{--                                     id="player{{ $video['player_id'] }}"--}}
+                            {{--                                     data-index="{{ $video['player_id'] }}"--}}
+                            {{--                                     data-yt-id="{{ !empty($video['video_id']) ? $video['video_id'] : 'sDsknFlke9U' }}"--}}
+                            {{--                                ></div>--}}
+                            {{--                            </div>--}}
                         </div>
                         <div class="item__text">{{ $video['text'] }}</div>
                     </div>
