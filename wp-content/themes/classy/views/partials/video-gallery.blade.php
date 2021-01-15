@@ -30,7 +30,7 @@
                              data-yt-id="{{ !empty($video['video_id']) ? $video['video_id'] : 'sDsknFlke9U' }}"
                              data-id="{{ $key }}"
                         >
-{{--                            <button class="popup__close js-close-gallery-video" type="button">&times;</button>--}}
+                            {{--                            <button class="popup__close js-close-gallery-video" type="button">&times;</button>--}}
 
                             <div class="embed-youtube-video__overlay js-video-poster"
                                  style="background-image: url({{ $video['image']['url'] }})"></div>
@@ -39,13 +39,13 @@
                                 <button class="embed-youtube-video__play"></button>
                             </div>
 
-{{--                            <div class="embed-responsive embed-responsive-16by9">--}}
-{{--                                <div class="embed-responsive-item video-player js-video-player"--}}
-{{--                                     id="player{{ $video['player_id'] }}"--}}
-{{--                                     data-index="{{ $video['player_id'] }}"--}}
-{{--                                     data-yt-id="{{ !empty($video['video_id']) ? $video['video_id'] : 'sDsknFlke9U' }}"--}}
-{{--                                ></div>--}}
-{{--                            </div>--}}
+                            {{--                            <div class="embed-responsive embed-responsive-16by9">--}}
+                            {{--                                <div class="embed-responsive-item video-player js-video-player"--}}
+                            {{--                                     id="player{{ $video['player_id'] }}"--}}
+                            {{--                                     data-index="{{ $video['player_id'] }}"--}}
+                            {{--                                     data-yt-id="{{ !empty($video['video_id']) ? $video['video_id'] : 'sDsknFlke9U' }}"--}}
+                            {{--                                ></div>--}}
+                            {{--                            </div>--}}
                         </div>
                         <div class="item__text">{{ $video['text'] }}</div>
                     </div>
