@@ -46,11 +46,16 @@ export default class Carousel {
           let getCenterHeight = getVideoInfoSize.height() * 1.25 // Узнаем размер блока, которое увеличинно в центре
           let getCenterWidth = getVideoInfoSize.width() * 1.25 // Узнаем размер блока, которое увеличинно в центре
 
-          $('.owl-nav button').on('click', function() {
+          $('.owl-nav button').on('click', function() { // Если нажимаем на данные, анулируем логику полностью и приводим в дефолтное состояние
             $(clickedVideo).css('width', getBaseWidth).css('height', getBaseHeight)
+            clickedVideo = null
           })
 
           videoGalleryBlock.on('click', function () {
+            if (freezeClick) {
+              console.log('FLOOD')
+              return
+            }
             const ths = $(this)
             const getCenterClicked = ths.parent().parent().hasClass('owl-item active center')
             let dataIdGallery = ths[0].attributes['data-id'].value // Узнаем Id видео
@@ -58,8 +63,10 @@ export default class Carousel {
 
 
             if (window.innerWidth >= 1200) {
-              if (freezeClick) return
+
               if (!getCenterClicked) { // Проверка ли не кликнуто по центру
+
+
                 freezeClick = true
                 $('.js-video-gallery__window').hide() // Скрываем видео
                 $(clickedVideo).css('width', getCenterWidth).css('height', getCenterHeight) // Устанавливаем размер основнога окна ( Прошлое просм. видео )
@@ -67,6 +74,7 @@ export default class Carousel {
                   $(clickedVideo).css('width', getBaseWidth).css('height', getBaseHeight) // Устанавливаем базовый размер прошлого видео
                   owl.trigger('to.owl.carousel', [dataIdGallery, 1000]) // Переключаем на новое видео [ dataIdGallery: На какой Id ссылается, 1000 - Время переключалки триггера]
                   setTimeout(() => { // Через 500 м.с делаем размер пропопорционально ютубу
+                    console.log('Yes')
                     ths.css('width', '600px').css('height', '320px')
                     setTimeout(() => { // И уже как повляется картинка для видео, мы через 500 м.с отображаем саом видео
                       player.loadVideoById(dataIdVideo)
