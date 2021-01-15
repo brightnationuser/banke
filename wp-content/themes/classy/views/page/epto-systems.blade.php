@@ -94,7 +94,7 @@
 
         <section class="products">
             <div class="container">
-                <div class="products__list d-flex">
+                <div class="products__list d-flex text-trim-add-parent-class">
                     @foreach ($post->getAcfByKey('acf_products') as $product)
                         <div class="product-card aos-animation" data-aos-delay="{{ 200 * (1 + $loop->index) }}">
                             <div class="product-card__image">
@@ -105,7 +105,7 @@
                                 <div class="product-card__text js-trim-text"
                                      data-text-length="{{ empty($product['trim']) ? '147' : $product['trim'] }}"
                                      data-text-open="{!! strtolower(get_field('read_more', 'option')) !!}"
-                                     data-text-close="less"
+                                     data-text-close="{{ !empty(get_field('less')) ? get_field('less') : 'less' }}"
                                 >
                                     <span class="js-text">
                                         {{ $product['text'] }}
