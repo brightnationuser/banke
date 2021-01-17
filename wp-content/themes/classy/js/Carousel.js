@@ -46,16 +46,20 @@ export default class Carousel {
           let getCenterHeight = getVideoInfoSize.height() * 1.25 // Узнаем размер блока, которое увеличинно в центре
           let getCenterWidth = getVideoInfoSize.width() * 1.25 // Узнаем размер блока, которое увеличинно в центре
 
+
+
           $('.owl-nav button').on('click', function() { // Если нажимаем на данные, анулируем логику полностью и приводим в дефолтное состояние
             $(clickedVideo).css('width', getBaseWidth).css('height', getBaseHeight)
             clickedVideo = null
           })
 
           videoGalleryBlock.on('click', function () {
+
             if (freezeClick) {
               console.log('FLOOD')
               return
             }
+            player.stopVideo();
             const ths = $(this)
             const getCenterClicked = ths.parent().parent().hasClass('owl-item active center')
             let dataIdGallery = ths[0].attributes['data-id'].value // Узнаем Id видео
