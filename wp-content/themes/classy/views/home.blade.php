@@ -21,7 +21,7 @@
             </h1>
 
             <div class="hero__button">
-                <a href="/epto-systems/" class="button">
+                <a href="{{ $post->getAcfByKey('acf_header')['acf_header_button_link'] }}" class="button">
                     {{ $post->getAcfByKey('acf_header')['acf_header_button'] }}
                 </a>
             </div>
