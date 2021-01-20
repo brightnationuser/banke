@@ -61,7 +61,7 @@
                                     </h4>
                                 </div>
                                 <div class="benefit__content benefit__content--back">
-                                    <div class="benefit__text">
+                                    <div class="benefit__text benefit__text--{{ ICL_LANGUAGE_CODE }}">
                                         {!! $row['text'] !!}
                                     </div>
                                     @if($row['add_contact_us']['tf'])
