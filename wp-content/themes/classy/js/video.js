@@ -6,42 +6,29 @@
 let loadYT;
 
 const video = () => {
+
   const doc = document;
   const playerEl = $('.js-video-player')
   let players = []
 
-
-
-
-
-  // console.log('video-gallery__item', $('.video-gallery__item'))
-  // owlInner.on('click', '.owl-next', function() {
-  //
-  //   console.log('inner')
-  //
-  // })
-
   playerEl.each(function (index) {
     let playerEl = $(this)
-    const playerID = playerEl.data('yt-id')
-    const playerIndex = playerEl.data('index')
-    //console.log('check player el ', playerEl)
+
+    console.log('check player el ', playerEl)
+
     const video = playerEl.parents('.js-video')
     const play = video.find('.js-video-play')
     const close = video.parents('.js-popup').find('.js-popup-close')
     const closePopup = $('.js-close-gallery-video');
     const owl = video.parents('.owl-carousel')
-    if (!video.length) return;
+    const playerID = playerEl.data('yt-id')
+    const playerIndex = playerEl.data('index')
 
-    //console.log('video length', video[index])
+    if (!video.length) return;
 
     /**
      * YT
      */
-    // let getItem =
-
-
-
     let player;
     if (!loadYT) {
       loadYT = new Promise((resolve) => {
@@ -75,7 +62,6 @@ const video = () => {
       players.push(player);
     })
 
-
     function onPlayerReady(player_id, index) {
 
       closePopup.on('click', function () {
@@ -88,9 +74,7 @@ const video = () => {
         players[index].stopVideo();
       });
 
-
-
-      owl.on('click', '.owl-prev, .owl-next, .owl-dot', function () {
+      owl.on('click', '.owl-prev, .owl-next, .owl-dot',  function () {
         video.removeClass('is-play');
         players[index].stopVideo();
       });
