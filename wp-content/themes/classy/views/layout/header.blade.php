@@ -41,27 +41,25 @@
                 </span>
                 </a>
             </div>
-            @if(wp_get_current_user()->ID !== 0)
-                <span>|</span>
-                <div class="header__lng">
-                    <div class="lng-w">
+            <span>|</span>
+            <div class="header__lng">
+                <div class="lng-w">
+                    @foreach($languages as $language)
+                        @if($language['active'])
+                            <a href="{{ $language['url'] }}">{!! $language['language_code'] !!}</a>
+                        @endif
+                    @endforeach
+                    <i class="icon-arrow-down"></i>
+
+                    <div class="lng-dropdown">
                         @foreach($languages as $language)
-                            @if($language['active'])
+                            @if(!$language['active'])
                                 <a href="{{ $language['url'] }}">{!! $language['language_code'] !!}</a>
                             @endif
                         @endforeach
-                        <i class="icon-arrow-down"></i>
-
-                        <div class="lng-dropdown">
-                            @foreach($languages as $language)
-                                @if(!$language['active'])
-                                    <a href="{{ $language['url'] }}">{!! $language['language_code'] !!}</a>
-                                @endif
-                            @endforeach
-                        </div>
                     </div>
                 </div>
-            @endif
+            </div>
         </div>
     </div>
 </header>
