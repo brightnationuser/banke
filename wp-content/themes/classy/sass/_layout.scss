@@ -510,3 +510,43 @@ footer.footer {
         padding: 0 20px;
     }
 }
+
+
+@media screen and (max-width: 1024px) {
+    header.header {
+        .container {
+            .header__lng {
+                .lng-w {
+                    .lng-dropdown {
+                        position: static;
+                        opacity: 1;
+                        visibility: visible;
+
+                        a {
+                            position: relative;
+                            margin-left: 12px;
+
+                            &::before {
+                                content: '|';
+                                position: absolute;
+                                height: 14px;
+                                font-size: 14px;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                left: -12px;
+                                color: #cfcfcf;
+                                line-height: 1;
+                            }
+                        }
+                    }
+
+                    i {
+                        width: 0;
+                        pointer-events: none;
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+}
