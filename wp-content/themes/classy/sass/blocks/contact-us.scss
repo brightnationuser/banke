@@ -118,13 +118,20 @@
             bottom: 0;
             left: 50%;
             transform: translate(-50%);
-            width: 80%;
+            width: 95%;
+            border: 0;
+            font-size: 12px;
+            font-weight: normal;
 
             @media screen and (max-width: 768px) {
                 position: static;
                 width: 100%;
                 transform: none;
             }
+        }
+
+        div.wpcf7-validation-errors {
+            color: #f00;
         }
 
         span.wpcf7-not-valid-tip {
