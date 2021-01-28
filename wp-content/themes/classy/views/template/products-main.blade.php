@@ -42,7 +42,7 @@
     @include('partials.contact-us', [
         'form' => $post->getAcfByKey('contact_form'),
         'title' => $post->getAcfByKey('contact_title'),
-        'classes' => '',
+        'classes' => 'contact-us--light',
     ])
 
 @stop
