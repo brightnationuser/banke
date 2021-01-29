@@ -39,7 +39,7 @@
             <a class="email-template__footer-phone" href="tel:+380630342390" style="margin-top: 3px;">+45 7777 16
                 16</a>
             <span class="divider">|</span>
-            <a class="" href="https://blanche.ua" target="_blank"
+            <a class="email-template__link" href="https://blanche.ua" target="_blank"
                rel="noopener">blanche.ua</a>
 
         </td>

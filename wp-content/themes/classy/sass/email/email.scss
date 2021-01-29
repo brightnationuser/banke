@@ -9,6 +9,7 @@
     margin: 104px auto 0;
     padding: 70px 50px 30px 50px;
     border-radius: 4px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.14);
   }
 
   &__title {
@@ -51,6 +52,11 @@
 
   &__info {
     margin: 51px auto 0;
+    font-size: 14px;
+    font-weight: 400;
   }
 
+  &__link {
+    color: #005CA9;
+  }
 }
