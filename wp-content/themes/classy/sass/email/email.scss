@@ -1,196 +1,56 @@
-$accent-color: rgba(111, 126, 55, 0.67);
-
 .email-template {
-  padding: 0 !important;
-  margin: 0 auto !important;
-  font-size: 14px;
-  font-family: 'Circe', Helvetica, Arial, sans-serif;
-  position: relative;
-  overflow-x: hidden;
-  max-width: 1030px;
-  color: #636363;
-  background-color: #FBFBFB;
-  background-repeat: no-repeat;
-  background-size: cover;
+  &__container {
+    width: 100%;
+  }
 
-  .container {
+  &__container-inner {
     max-width: 600px;
-    width: 100%;
-    background-color: #fff;
-    padding: 40px 15px 60px 15px;
-  }
-
-  .container-inner {
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  &__top {
-    padding-bottom: 40px;
-  }
-
-  &__top-table {
-    width: 100%;
-
-    tr {
-      td {
-        &:nth-child(1) {
-          text-align: left;
-        }
-
-        &:nth-child(2) {
-          table {
-            margin-left: auto;
-
-            td {
-              text-align: right;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  &__logo {
-    text-align: center;
-
-    img {
-      width: 128px;
-    }
-  }
-
-  &__image {
-    color: #686868;
-
-    a {
-      color: $accent-color;
-    }
+    background-color: #FFFFFF;
+    margin: 104px auto 0;
+    padding: 70px 50px 30px 50px;
+    border-radius: 4px;
   }
 
   &__title {
+    font-style: normal;
+    font-weight: bold;
     font-size: 28px;
-    line-height: 106%;
-    margin: 0 0 10px 0;
-    color: #606160;
-    font-weight: 400;
-    text-align: center;
+    color: #005CA9;
   }
 
-  &__text {
-    color: #686868;
+  &__created {
+    margin: 0 auto;
+    width: 452px;
+    color: #4A4A49;
+    opacity: 0.9;
     font-size: 18px;
-    line-height: 120%;
-    margin-bottom: 18px;
     text-align: center;
   }
 
-  .gp-stats {
-    margin-top: 30px;
-
-    &__title {
-      font-size: 16px;
-      line-height: 106.4%;
-      color: #686868;
-      font-weight: 400;
-      text-align: center;
-      margin-bottom: 18px;
-    }
-
-    &__table {
-
-      table {
-        width: 100%;
-
-        tr {
-          border-bottom: 1px solid #ebebeb;
-        }
-
-        th, td {
-          line-height: 21px;
-          font-weight: 300;
-          font-size: 14px;
-        }
-
-        th {
-          text-align: left;
-          font-weight: normal;
-          color: #c4c4c4;
-          padding-bottom: 11px;
-        }
-
-        td {
-          padding: 13px 10px 13px 0;
-        }
-      }
-    }
-
-    &__total {
-      font-size: 18px;
-      line-height: 27px;
-      color: $accent-color;
-      font-weight: 400;
-      text-align: right;
-      margin-right: -3px;
-    }
-
-    &__total-text {
-      font-size: 18px;
-      line-height: 120%;
-      color: #686868;
-      font-weight: 300;
-    }
-
-    &__button {
-      display: block;
-      font-size: 14px;
-      line-height: 102.4%;
-      text-align: center;
-      text-transform: uppercase;
-      color: #fff;
-      width: 239px;
-      background-color: #c28f50;
-      padding: 18px 0;
-      margin: 20px auto 0;
-      transition: background-color .2s ease-in-out;
-    }
+  &__line {
+    margin: 30px auto 39px auto;
+    width: 50px;
+    height: 2px;
+    background-color: #005CA9;
   }
 
-  &__bottom {
-    margin-top: 20px;
-    width: 100%;
+  &__button {
+    display: block;
+    font-size: 16px;
+    line-height: 102.4%;
+    max-width: 190px;
     text-align: center;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 8px;
+    background-color: #005CA9;
+    padding: 12px 40px;
+    margin: 20px auto 0;
+    transition: background-color 0.2s ease-in-out;
   }
 
-  &__footer {
-    color: #f0f0f0;
-    font-size: 14px;
-
-    .container {
-      padding-top: 20px;
-      padding-bottom: 20px;
-      border-top: 1px solid #efefef;
-    }
-
-    &-site {
-      color: #b79c7a;
-      text-decoration: none;
-    }
-
-    &-phone {
-      color: #303030;
-      white-space: nowrap;
-      text-decoration: none;
-    }
-
-    &-table {
-      width: 100%;
-    }
+  &__info {
+    margin: 51px auto 0;
   }
 
-  .divider {
-    color: #f0f0f0;
-    padding-left: 3px;
-    padding-right: 3px;
-  }
 }
