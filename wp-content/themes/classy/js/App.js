@@ -4,6 +4,7 @@ import Carousel from './Carousel';
 import '@fancyapps/fancybox';
 import Animator from './Animator';
 import Animation from './animation/Animation';
+import initVueInstances from './Vue'
 
 class App {
 
@@ -64,6 +65,8 @@ class App {
                 window.location.reload();
             }
         };
+    
+        initVueInstances()
     }
 
     initCarSlider() {

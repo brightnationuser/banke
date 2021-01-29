@@ -80,6 +80,13 @@ class Hierarchy {
 		return self::$current_request;
 	}
 
+    //ser - set custom request
+    public static function set_current_request($request) {
+        if(self::file_exists( 'view', $request )) {
+            self::$current_request = $request;
+            status_header(200);
+        }
+    }
 
 	/**
 	 * Returns file's absolute path.

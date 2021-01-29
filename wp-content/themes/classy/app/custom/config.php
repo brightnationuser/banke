@@ -113,6 +113,7 @@ $sidebars = array();
  * @var array
  */
 $include = array(
+    'routes.php',
     'theme_settings.php',
     'redirects.php',
     're_order_menu.php',

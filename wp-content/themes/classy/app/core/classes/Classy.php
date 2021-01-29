@@ -337,6 +337,11 @@ class Classy {
 
 	}
 
+    //ser - load custom template
+    public static function load_custom_template($template, $data = null) {
+        Hierarchy::set_current_request($template);
+    }
+
 	/**
 	 * @todo: Write description here.
 	 *

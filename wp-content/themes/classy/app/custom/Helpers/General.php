@@ -1,6 +1,7 @@
 <?php namespace Helpers;
 
 use Carbon\Carbon;
+use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
 
 class General
 {
@@ -89,6 +90,33 @@ class General
         $ini += strlen($start);
         $len = strpos($string, $end, $ini) - $ini;
         return substr($string, $ini, $len);
+    }
+
+    /**
+     * @param array $data
+     * @param array $view_path
+     * @param string $css_path
+     * @return string
+     */
+    public static function getEmailHtml($data, $view_path, $css_path = '/wp-content/themes/classy/dist/style.css') {
+
+        $framework = get_theme_framework();
+
+        ob_start();
+
+        $cssToInlineStyles = new CssToInlineStyles();
+
+        $framework::render($view_path[ICL_LANGUAGE_CODE], ['post' => $data]);
+
+        $html_clean = ob_get_clean();
+        $css = file_get_contents(WP_HOME . $css_path);
+
+        $html = $cssToInlineStyles->convert(
+            $html_clean,
+            $css
+        );
+
+        return $html;
     }
 
 }
