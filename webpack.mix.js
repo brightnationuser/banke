@@ -1,5 +1,5 @@
 let mix = require('laravel-mix');
-
+const LiveReloadPlugin = require('webpack-livereload-plugin');
 // Определяем важные пути
 const resources_path = './wp-content/themes/classy/';
 
@@ -10,7 +10,12 @@ mix.setPublicPath(resources_path + 'dist');
 mix.setResourceRoot('/wp-content/themes/classy/dist');
 
 // Для маски - @import "blocks/**/*.scss"
-mix.webpackConfig({ module: { rules: [ { test: /\.scss$/, loader: 'import-glob-loader' }, ] } });
+mix.webpackConfig((options) => {
+    return {
+        module: { rules: [ { test: /\.scss$/, loader: 'import-glob-loader' }, ] },
+        plugins: [new LiveReloadPlugin()]
+    }
+});
 
 mix.options({
     processCssUrls: false,
