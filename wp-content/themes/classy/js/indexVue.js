@@ -4,8 +4,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 import Vue from 'vue';
 import Forms from './components/Forms';
+import App from './App.vue'
 
-//Vue.js is detected on this page - выкл для прода
+//indexVue.js is detected on this page - выкл для прода
 Vue.config.productionTip = true;
 Vue.config.devtools = true;
 
@@ -19,9 +20,10 @@ const initVueInstances = () => {
         if($('#app-forms').length > 0) {
         
             new Vue({
-                el: '#app-forms',
-                components: { Forms }
-            });
+                render: h => h(App)
+                // el: '#app-forms',
+                // components: { Forms }
+            }).$mount('#app-forms');
         }
     })
 }
