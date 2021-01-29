@@ -16,7 +16,7 @@
                     <tr>
                         <td>
                             <div class="email-template__logo">
-                                <img class="no-lazyload" src="{{WP_HOME}}/wp-content/themes/classy/assets/img/pdf/logo.png" alt="logo"
+                                <img class="no-lazyload" src="{{WP_HOME}}/wp-content/themes/classy/images/logo.png" alt="logo"
                                      width="151"
                                 >
                             </div>
