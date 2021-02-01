@@ -1,4 +1,5 @@
 .account-form {
+  position: relative;
   padding: 50px;
   background-image: url(../images/account/account-popup-bg.png);
   background-position: center;
@@ -6,6 +7,7 @@
   background-color: #ffffff;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
+  width: 100%;
 
   &--login, &--forgot {
     max-width: 426px;
