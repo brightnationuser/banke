@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import Forms from './components/Forms/Forms'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -13,7 +15,7 @@ const routes = [
       {
         path: '/profile/test',
         name: 'test',
-        component: () => import('./components/Forms'),
+        component: () => Forms,
       }
     ]
   },
