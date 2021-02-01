@@ -16,7 +16,7 @@
               label="Name"
               placeholder="Enter your name"
               name="user-name"
-              error-text="This field is required"
+              :error-text="name.errorMessage"
               @change="name.valid = true"
             ></TextInput>
           </div>
@@ -54,7 +54,7 @@
                 label="Email"
                 placeholder="Enter your email"
                 name="user-email"
-                error-text="Incorrect email address"
+                :error-text="email.errorMessage"
                 @change="email.valid = true"
             ></EmailInput>
           </div>
@@ -95,6 +95,10 @@
         </div>
       </div>
 
+      <div class="account-form__loader" v-if="showLoader">
+        <img src="../../../images/oval.svg" alt="loader">
+      </div>
+
       <div class="vue-popup__close">
         <i class="icon-close" @click="close()"></i>
       </div>
@@ -125,11 +129,13 @@ export default {
 
   data() {
     return {
+      showLoader: false,
       validated: false,
       validation: false,
       name: {
         val: '',
-        valid: false
+        valid: false,
+        errorMessage: 'This field is required'
       },
       company: {
         val: '',
@@ -141,7 +147,8 @@ export default {
       },
       email: {
         val: '',
-        valid: false
+        valid: false,
+        errorMessage: 'Incorrect email address'
       },
       password: {
         val: '',
@@ -166,6 +173,37 @@ export default {
   methods: {
     submit() {
       this.validated = this.validate()
+
+      let data = new FormData();
+      data.append('action', 'user_account__create');
+      data.append('name', this.name.val);
+      data.append('company', this.company.val);
+      data.append('position', this.position.val);
+      data.append('email', this.email.val);
+      data.append('password', this.password.val);
+
+      if(this.validated) {
+        this.showLoader = true
+
+        axios.post('/wp-admin/admin-ajax.php', data)
+            .then((response) => {
+              this.showLoader = false
+
+              if (response.data.error !== '' && response.data.error.hasOwnProperty('existing_user_login')) {
+                this.name.valid = false
+                this.name.errorMessage = 'This name is already used'
+              }
+
+              if (response.data.error !== '' && response.data.error.hasOwnProperty('existing_user_email')) {
+                this.email.valid = false
+                this.email.errorMessage = 'This email is already used'
+              }
+
+              if (response.data.user_created) {
+                this.switchForm('SignIn')
+              }
+            })
+      }
     },
 
     close() {

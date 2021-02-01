@@ -49,6 +49,10 @@
         </div>
       </div>
 
+      <div class="account-form__loader" v-if="showLoader">
+        <img src="../../../images/oval.svg" alt="loader">
+      </div>
+
       <div class="vue-popup__close">
         <i class="icon-close" @click="close()"></i>
       </div>
@@ -75,6 +79,7 @@ export default {
   },
   data() {
     return {
+      showLoader: false,
       validation: false,
       email: {
         val: '',
@@ -99,6 +104,29 @@ export default {
   methods: {
     submit() {
       this.validation = true
+
+      let data = new FormData();
+
+      data.append('action', 'user_account__login');
+      data.append('email', this.email.val);
+      data.append('password', this.password.val);
+
+      this.showLoader = true
+
+      axios.post('/wp-admin/admin-ajax.php', data)
+          .then((response) => {
+            this.showLoader = false
+
+            console.log('response', response.data)
+
+            if (response.data.success) {
+              this.switchForm(false)
+            }
+            else {
+              this.email.valid = false
+              this.password.valid = false
+            }
+          })
     },
 
     close() {

@@ -119,4 +119,5 @@ $include = array(
     're_order_menu.php',
     'spam.php',
     'functions.php',
+    './api/index.php',
 );
