@@ -117,8 +117,6 @@ export default {
           .then((response) => {
             this.showLoader = false
 
-            console.log('response', response.data)
-
             if (response.data.success) {
               this.switchForm(false)
             }
