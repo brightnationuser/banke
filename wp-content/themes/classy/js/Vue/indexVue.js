@@ -6,8 +6,8 @@ import Vue from 'vue';
 import router from './routerVue'
 
 import App from './App.vue'
-import FormApp from './views/FormApp'
-import ResetApp from "./views/ResetApp";
+import FormApp from './FormApp'
+import ResetApp from "./ResetApp";
 
 //indexVue.js is detected on this page - выкл для прода
 Vue.config.productionTip = true;

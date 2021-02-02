@@ -1,6 +1,6 @@
 <template>
     <div>
-      Account app here
+      Account app here2
     </div>
 </template>
 
