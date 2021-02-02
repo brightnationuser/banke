@@ -3,11 +3,12 @@ window.axios = require('axios');
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 import Vue from 'vue';
-import router from './routerVue'
 
 import App from './App.vue'
 import FormApp from './FormApp'
 import ResetApp from "./ResetApp";
+
+import router from './routerVue'
 
 //indexVue.js is detected on this page - выкл для прода
 Vue.config.productionTip = true;

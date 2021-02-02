@@ -1,27 +1,24 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Forms from './components/Forms/Forms'
+import Specification from './pages/Specification'
+
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    component: {
-      template: "<router-view></router-view>"
-    },
-    children: [
-      {
-        path: '/profile/test',
-        name: 'test',
-        component: () => Forms,
-      }
-    ]
+  },
+  {
+    path: '/specification',
+    name: 'Specification',
+    component: Specification
   },
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 

@@ -1,47 +1,53 @@
 <template>
-    <div>
-      Account app here2
-    </div>
+  <div>
+    Hello world
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
 
-import { mapState } from 'vuex';
+import {mapState} from 'vuex';
 
 export default {
   name: 'App',
-  props: [
+  props: [],
 
-  ],
-
-  components: {
-
-  },
+  components: {},
 
   data() {
-    return {
-
-    }
+    return {}
   },
 
-  mounted () {},
+  mounted() {
+  },
 
-  created () {},
+  created() {
+  },
 
-  updated () {},
+  updated() {
+  },
 
   methods: {},
 
   watch: {},
 
   computed: {
-    ...mapState({
-
-    })
+    ...mapState({})
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.personal {
+  display: flex;
 
+  &-container {
+    background-color: #F2F5F9;
+  }
+
+  &__filter {
+    padding: 59px 0 41px 0;
+  }
+}
 </style>

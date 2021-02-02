@@ -1,0 +1,22 @@
+@import "./fonts.scss";
+@import "./colors.scss";
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.personal {
+  display: flex;
+}
+
+.personal-container {
+  width: 100%;
+  padding: 0 66px;
+  background-color: #F2F5F9;
+}
+
+.personal-main {
+  display: flex;
+}
