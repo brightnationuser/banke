@@ -6,7 +6,7 @@
 
 <script>
 
-import Forms from "./components/Forms/Forms";
+import Forms from "../components/Forms/Forms";
 
 export default {
   name: 'FormApp',

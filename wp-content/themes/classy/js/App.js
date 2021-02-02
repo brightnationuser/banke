@@ -4,7 +4,7 @@ import Carousel from './Carousel';
 import '@fancyapps/fancybox';
 import Animator from './Animator';
 import Animation from './animation/Animation';
-import initVueInstances from './indexVue'
+import initVueInstances from './Vue/indexVue'
 
 class App {
 

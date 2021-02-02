@@ -1,11 +1,14 @@
 <template>
   <VuePopup
-      root-classes="vue-popup--account vue-popup--login"
+      root-classes="vue-popup--account vue-popup--register"
       :is-opened="isOpened"
       @close="close()"
   >
-    <div class="account-form account-form--login">
-      <div class="account-form__title">Sign In</div>
+    <div class="account-form account-form--forgot">
+      <div class="account-form__title">Forgot Password?</div>
+      <div class="account-form__text">
+        Enter your email address and a link to reset your password will be sent to that address
+      </div>
       <div class="account-form__content">
         <div class="account-form__column">
           <div class="account-form__row">
@@ -17,40 +20,23 @@
                 placeholder="Enter your email"
                 name="user-email"
                 error-text="Incorrect email address"
-                @change="email.valid = true"
             ></EmailInput>
-          </div>
-          <div class="account-form__row">
-            <PasswordInput
-                :validation="validation"
-                :valid="password.valid"
-                v-model="password.val"
-                label="Password"
-                placeholder="Enter your password"
-                name="user-password"
-                error-text="Incorrect password"
-                @change="password.valid = true"
-            >
-            </PasswordInput>
           </div>
         </div>
       </div>
       <div class="account-form__row account-form__row--buttons">
         <div class="button button--account account-form__button" @click="submit()">
-          Login
-        </div>
-        <div class="button button--account button--stroke account-form__button" @click="switchForm('SignUp')">
-          Sign up
+          Reset Password
         </div>
       </div>
       <div class="account-form__row account-form__row--text-link">
-        <div class="button button--text" @click="switchForm('ResetPassword')">
-          Forgot password?
+        <div class="button button--text" @click="switchForm('SignIn')">
+          Back to sign in
         </div>
       </div>
 
       <div class="account-form__loader" v-if="showLoader">
-        <img src="../../../images/oval.svg" alt="loader">
+        <img src="../../../../images/oval.svg" alt="loader">
       </div>
 
       <div class="vue-popup__close">
@@ -61,22 +47,23 @@
 </template>
 
 <script>
-import {mapState} from "vuex";
+
+import { mapState } from 'vuex';
 
 import VuePopup from "../Popup/VuePopup";
 import EmailInput from "./Fields/EmailInput";
-import PasswordInput from "./Fields/PasswordInput";
 
 export default {
-  name: 'SignIn',
+  name: 'ResetPassword',
   props: [
     'isOpened'
   ],
+
   components: {
     VuePopup,
-    EmailInput,
-    PasswordInput
+    EmailInput
   },
+
   data() {
     return {
       showLoader: false,
@@ -85,21 +72,14 @@ export default {
         val: '',
         valid: false
       },
-      password: {
-        val: '',
-        valid: false,
-      }
     }
   },
 
-  mounted() {
-  },
+  mounted () {},
 
-  created() {
-  },
+  created () {},
 
-  updated() {
-  },
+  updated () {},
 
   methods: {
     submit() {
@@ -107,9 +87,8 @@ export default {
 
       let data = new FormData();
 
-      data.append('action', 'user_account__login');
+      data.append('action', 'user_account__restore_password');
       data.append('email', this.email.val);
-      data.append('password', this.password.val);
 
       this.showLoader = true
 
@@ -122,7 +101,6 @@ export default {
             }
             else {
               this.email.valid = false
-              this.password.valid = false
             }
           })
     },
@@ -139,7 +117,9 @@ export default {
   watch: {},
 
   computed: {
-    ...mapState({})
+    ...mapState({
+
+    })
   }
 }
 </script>
@@ -147,3 +127,4 @@ export default {
 <style lang="scss" scoped>
 
 </style>
+

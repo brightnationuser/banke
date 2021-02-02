@@ -6,7 +6,7 @@
 
 <script>
 
-import ChangePassword from "./components/Forms/ChangePassword";
+import ChangePassword from "../components/Forms/ChangePassword";
 export default {
   name: 'ResetApp',
 
