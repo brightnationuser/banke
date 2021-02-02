@@ -62,6 +62,7 @@ export default {
 
   data() {
     return {
+      showLoader: false,
       validation: false,
       email: {
         val: '',
@@ -79,6 +80,25 @@ export default {
   methods: {
     submit() {
       this.validation = true
+
+      let data = new FormData();
+
+      data.append('action', 'user_account__restore_password');
+      data.append('email', this.email.val);
+
+      this.showLoader = true
+
+      axios.post('/wp-admin/admin-ajax.php', data)
+          .then((response) => {
+            this.showLoader = false
+
+            if (response.data.success) {
+              this.switchForm(false)
+            }
+            else {
+              this.email.valid = false
+            }
+          })
     },
 
     close() {

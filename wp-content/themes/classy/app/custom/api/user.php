@@ -79,4 +79,23 @@ add_action('wp_ajax_user_account__restore_password', 'user_account__restore_pass
 
 function user_account__restore_password() {
 
+    $email = $_POST['email'];
+
+    $is_error = email_exists($email);
+
+    $data = [
+        'reset_link' => '',
+        'email' => $email
+    ];
+
+    $body = \Helpers\General::getEmailHtml($data, ['en' => 'email.email-sign-up']);
+    $headers[] = 'Content-Type: text/html; charset=UTF-8';
+    $headers[] = 'From: Banke <localhost@banke-pro.loc>';
+
+    if(!$is_error) {
+        $mail_sent = wp_mail($email, 'Registration Banke', $body, $headers);
+    }
+    else {
+        $mail_sent = false;
+    }
 }
