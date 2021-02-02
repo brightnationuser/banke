@@ -1,6 +1,6 @@
 <template>
   <div>
-    Hello world
+    Hello
     {{ test }}
     <Test
         testText="testText"

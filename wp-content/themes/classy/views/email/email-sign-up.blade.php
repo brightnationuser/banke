@@ -22,7 +22,7 @@
                 <div class="email-template__wrapper-line">
                     <div class="email-template__line"></div>
                 </div>
-                <div class="email-template__title">Welcome to Banke!</div>
+                <div class="email-template__title email-template__center">Welcome to Banke!</div>
                 <div class="email-template__created">You created account on banke.pro. Please confirm your email to get access to
                     Banke
                     materials
