@@ -94,4 +94,11 @@ export default {
   }
 }
 
+@media (max-width: 1024px) {
+  .personal-block {
+    max-width: 319px;
+    width: 100%;
+  }
+}
+
 </style>

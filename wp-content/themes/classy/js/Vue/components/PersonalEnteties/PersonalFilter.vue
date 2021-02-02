@@ -63,5 +63,13 @@ export default {
     margin: 0 34px 0 0;
   }
 
+  @media (max-width: 1024px) {
+    .filter {
+      &__left {
+        display: none;
+      }
+    }
+  }
+
 }
 </style>

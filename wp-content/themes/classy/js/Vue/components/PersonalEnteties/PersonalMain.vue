@@ -1,18 +1,22 @@
 <template>
   <div class="personal-entities__container">
-      <div class="personal-entities__container-inner">
-        <PersonalFilter class="personal-entities__filter"/>
-        <div class="personal-entities__list">
-          <PersonalBlock />
-          <PersonalBlock />
-          <PersonalBlock />
-          <PersonalBlock />
-          <PersonalBlock />
-          <PersonalBlock />
-          <PersonalBlock />
-        </div>
+    <div class="personal-entities__container-inner">
+      <PersonalFilter class="personal-entities__filter"/>
+      <div class="personal-entities__title">
+        E-PTO Systems
+      </div>
+
+      <div class="personal-entities__list">
+        <PersonalBlock/>
+        <PersonalBlock/>
+        <PersonalBlock/>
+        <PersonalBlock/>
+        <PersonalBlock/>
+        <PersonalBlock/>
+        <PersonalBlock/>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -32,9 +36,7 @@ export default {
   },
 
   data() {
-    return {
-
-    }
+    return {}
   },
 
   mounted() {
@@ -69,10 +71,29 @@ export default {
     max-width: 1291px;
   }
 
+  &__title {
+    margin: 33px 0 18px 0;
+    font-size: 14px;
+    color: #4A4A49;
+    font-weight: 600;
+  }
+
   &__list {
     display: flex;
     flex-wrap: wrap;
-    margin: 41px -18px 0;
+    margin: 0 -18px 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .personal-entities {
+    &__list {
+      flex-direction: column;
+    }
+
+    &__elem {
+
+    }
   }
 }
 </style>
