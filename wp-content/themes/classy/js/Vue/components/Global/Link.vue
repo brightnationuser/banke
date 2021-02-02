@@ -1,6 +1,6 @@
 <template>
   <div class="link">
-    <img class="link__icon" src="../assets/icons/help.svg" alt="help">
+    <img class="link__icon" src="../../assets/icons/help.svg" alt="help">
     <div class="link__help link__help-circle title fz-14 c-blue">
       Need a Help?
     </div>
@@ -17,7 +17,7 @@ export default {
 .link {
   display: flex;
   align-items: center;
-
+  cursor: pointer;
   &__help {
     position: relative;
     padding-bottom: 4px;

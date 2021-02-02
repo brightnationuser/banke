@@ -54,8 +54,16 @@
 
     &__elem {
       cursor: pointer;
+      font-size: 12px;
+      font-weight: 400;
       margin: 0 8px;
       padding: 6px 8px;
+    }
+
+    &__elem--active {
+      background-color: #005CA9;
+      color: #ffffff;
+      border-radius: 6px;
     }
   }
 </style>

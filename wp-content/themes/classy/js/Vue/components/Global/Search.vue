@@ -1,8 +1,8 @@
 <template>
   <div class="search">
     <div class="search__input">
-      <input class="search__inner-input" type="text">
-      <img class="search__icon" src="../assets/icons/search.svg" alt="Search icon">
+      <input class="search__inner-input" type="text" placeholder="Search files">
+      <img class="search__icon" src="../../assets/icons/search.svg" alt="Search icon">
 
     </div>
   </div>

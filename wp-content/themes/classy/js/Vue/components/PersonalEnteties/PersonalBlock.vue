@@ -58,7 +58,7 @@ export default {
   margin: 9px;
   width: calc(25% - 20px);
   background-color: #fff;
-  border: solid 1px #959595;
+  border: solid 1px #D6D6D6;
   border-radius: 6px;
   cursor: pointer;
   &__inner {
@@ -77,11 +77,14 @@ export default {
   &__title {
     padding-top: 17px;
     font-size: 14px;
+    color: #005CA9;
+    font-weight: bold;
   }
 
   &__subtitle {
     padding-top: 5px;
     font-size: 12px;
+    color: #959595;
   }
 }
 

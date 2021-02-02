@@ -1,12 +1,16 @@
 <template>
-    <div>
-      Manuals
+    <div class="personal-main">
+      <Menu/>
+      <PersonalMain />
     </div>
 </template>
 
 <script>
 
 import { mapState } from 'vuex';
+
+import Menu from "../components/Global/Menu";
+import PersonalMain from "../components/PersonalEnteties/PersonalMain";
 
 export default {
   name: 'Manuals',
@@ -15,7 +19,8 @@ export default {
   ],
 
   components: {
-
+    Menu,
+    PersonalMain
   },
 
   data() {

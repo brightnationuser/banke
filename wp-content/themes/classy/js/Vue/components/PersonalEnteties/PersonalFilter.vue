@@ -1,22 +1,22 @@
 <template>
   <div class="filter">
     <div class="filter__left">
-      <div class="filter__title fz-18 c-dark-blue">
+      <div class="filter__title">
         Search
       </div>
       <div class="filter__line"></div>
       <PersonalFilterList/>
     </div>
     <div class="filter__right">
-      <Link/>
+      <Link class="filter__link"/>
       <Search/>
     </div>
   </div>
 </template>
 
 <script>
-import Link from "../Link";
-import Search from "../../components/Search";
+import Link from "../Global/Link";
+import Search from "../Global/Search";
 import PersonalFilterList from "../../components/PersonalEnteties/PersonalFilterList";
 
 export default {
@@ -29,7 +29,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .filter {
   display: flex;
   align-items: center;
@@ -47,7 +47,9 @@ export default {
   }
 
   &__title {
-
+    font-size: 18px;
+    color: #003462;
+    font-weight: 700;
   }
 
   &__line {
@@ -55,6 +57,10 @@ export default {
     height: 18px;
     width: 1px;
     background-color: #D6D6D6;
+  }
+
+  &__link {
+    margin: 0 34px 0 0;
   }
 
 }

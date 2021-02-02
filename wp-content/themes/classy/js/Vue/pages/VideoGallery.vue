@@ -1,43 +1,45 @@
 <template>
-  <div>
-    Video Gallery
+  <div class="personal-main">
+    <Menu/>
+    <PersonalMain/>
   </div>
 </template>
 
 <script>
 
-import { mapState } from 'vuex';
+import {mapState} from 'vuex';
+
+import Menu from "../components/Global/Menu";
+import PersonalMain from "../components/PersonalEnteties/PersonalMain";
 
 export default {
-  name: 'VideoGallery',
-  props: [
-
-  ],
+  name: 'Video-gallery',
+  props: [],
 
   components: {
-
+    Menu,
+    PersonalMain
   },
 
   data() {
-    return {
-
-    }
+    return {}
   },
 
-  mounted () {},
+  mounted() {
+  },
 
-  created () {},
+  created() {
+  },
 
-  updated () {},
+  updated() {
+  },
 
   methods: {},
 
   watch: {},
 
   computed: {
-    ...mapState({
-
-    })
+    ...mapState({})
   }
 }
 </script>
