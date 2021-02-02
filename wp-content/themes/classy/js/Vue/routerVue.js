@@ -16,23 +16,23 @@ const routes = [
     component: App
   },
   {
-    path: '/account/specification',
-    name: '/account/specification',
+    path: '/specification',
+    name: 'Specification',
     component: Specification
   },
   {
-    path: '/account/three-models',
-    name: '/account/three-models',
+    path: '/three-models',
+    name: 'Three-models',
     component: ThreeModels
   },
   {
-    path: '/account/manuals',
-    name: '/account/manuals',
+    path: '/manuals',
+    name: 'Manuals',
     component: Manuals
   },
   {
-    path: '/account/video-gallery',
-    name: '/account/video-gallery',
+    path: '/video-gallery',
+    name: 'Video-gallery',
     component: VideoGallery
   },
 ]
@@ -40,6 +40,7 @@ const routes = [
 const router = new VueRouter({
   mode: 'history',
   routes,
+  base: '/account'
 })
 
 export default router

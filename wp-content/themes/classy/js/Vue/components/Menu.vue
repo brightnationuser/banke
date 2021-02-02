@@ -17,22 +17,22 @@
       </div>
     </div>
     <div class="menu__list fz-14 c-blue">
-      <router-link to="/account/specification" custom v-slot="{href, navigate}">
+      <router-link :to="{ name: 'Specification' }" custom v-slot="{href, navigate}">
         <a :href="href" @click="navigate">
           Specifications
         </a>
       </router-link>
-      <router-link to="/account/three-models" custom v-slot="{href, navigate}">
+      <router-link :to="{ name: 'Three-models' }" custom v-slot="{href, navigate}">
         <a :href="href" @click="navigate">
           3D Models
         </a>
       </router-link>
-      <router-link to="/account/manuals" custom v-slot="{href, navigate}">
+      <router-link :to="{ name: 'Manuals' }" custom v-slot="{href, navigate}">
         <a :href="href" @click="navigate">
           Manuals
         </a>
       </router-link>
-      <router-link to="/account/video-gallery" custom v-slot="{href, navigate}">
+      <router-link :to="{ name: 'Video-gallery' }" custom v-slot="{href, navigate}">
         <a :href="href" @click="navigate">
           Video Gallery
         </a>
@@ -45,6 +45,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'Menu'
 }
