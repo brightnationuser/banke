@@ -4,4 +4,4 @@ $data = [
     'key' => 'value'
 ]
 @endphp
-{!! \Helpers\General::getEmailHtml($data, ['en' => 'email.email-sign-up']) !!}
+{!! \Helpers\General::getEmailHtml($data, ['en' => 'email.email-reset-password']) !!}

@@ -18,6 +18,18 @@
     width: 100%;
   }
 
+  &__reset-password__wrapper {
+    margin: 26px 0 -10px 0;
+    text-align: center;
+  }
+
+
+  &__reset-password {
+    font-size: 18px;
+    font-weight: normal;
+    color: #005CA9;
+  }
+
   &__logo {
     text-align: center;
     img {
