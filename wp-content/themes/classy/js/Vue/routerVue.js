@@ -3,15 +3,11 @@ import VueRouter from 'vue-router'
 
 import Specification from './pages/Specification'
 
-
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-  },
-  {
-    path: '/specification',
+    path: '/account/specification',
     name: 'Specification',
     component: Specification
   },
@@ -19,7 +15,7 @@ const routes = [
 
 const router = new VueRouter({
   mode: 'history',
-  routes
+  routes,
 })
 
 export default router
