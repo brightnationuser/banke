@@ -1,8 +1,18 @@
 <template>
   <div>
-    <div class="sign-in" @click="setForm('SignIn')">
+    <div class="sign-in" @click="setForm('SignIn')" v-if="!loggedIn">
       <i class="icon-account"></i>
       <span>Sign In</span>
+    </div>
+    <div class="sign-in" v-else>
+      <i class="icon-account"></i>
+      <span>
+        <router-link :to="{ name: 'Specification' }" custom v-slot="{href, navigate}">
+          <a class="menu__elem menu__elem--active" :href="href" @click="navigate">
+            {{ user.username }}
+          </a>
+        </router-link>
+      </span>
     </div>
     <SignIn
         v-if="showForm === 'SignIn'"
@@ -23,6 +33,7 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
 
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
@@ -40,14 +51,32 @@ export default {
   },
   data() {
     return {
+      userData: {
+        username: '',
+        email: '',
+        photo: '',
+        company: '',
+        position: ''
+      },
       showForm: false
     }
   },
 
-  watch: {
-    showForm: function (val) {
-      console.log('val', val)
-    }
+  mounted() {
+
+    let data = new FormData();
+    data.append('action', 'user_account__check');
+
+    axios.post('/wp-admin/admin-ajax.php', data)
+        .then((response) => {
+          if(response.data.success) {
+            this.userData = response.data.user
+            this.logIn()
+          }
+          else {
+            this.$store.commit('setDefault')
+          }
+        })
   },
 
   methods: {
@@ -57,11 +86,21 @@ export default {
 
     switchForm(formName) {
       this.showForm = formName
-    }
+    },
+
+    logIn() {
+      this.$store.commit('setLoggedIn', true)
+      this.$store.commit('setUser', this.userData)
+    },
   },
 
-  computed: {
+  watch: {},
 
+  computed: {
+    ...mapState({
+      loggedIn: 'loggedIn',
+      user: 'user'
+    }),
   }
 }
 </script>

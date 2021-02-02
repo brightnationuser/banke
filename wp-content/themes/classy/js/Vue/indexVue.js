@@ -8,6 +8,7 @@ import App from './App.vue'
 import FormApp from './FormApp'
 import ResetApp from "./ResetApp";
 
+import store from './store/index'
 import router from './routerVue'
 
 import './sass/main.scss'
@@ -21,18 +22,23 @@ const initVueInstances = () => {
     if($('#app-account').length > 0) {
         new Vue({
             router,
+            store,
             render: h => h(App)
         }).$mount('#app-account');
     }
     
     if($('#app-forms').length > 0) {
         new Vue({
+            router,
+            store,
             render: h => h(FormApp)
         }).$mount('#app-forms');
     }
     
     if($('#change-password').length > 0) {
         new Vue({
+            router,
+            store,
             render: h => h(ResetApp)
         }).$mount('#change-password');
     }

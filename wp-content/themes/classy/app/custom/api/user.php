@@ -3,7 +3,7 @@
 require_once ABSPATH . WPINC .'/registration.php';
 
 add_action('wp_ajax_user_account__create', 'user_account__create');
-add_action('wp_ajax_user_account__create', 'user_account__create');
+add_action('wp_ajax_nopriv_user_account__create', 'user_account__create');
 
 function user_account__create() {
 
@@ -48,7 +48,7 @@ function user_account__create() {
 }
 
 add_action('wp_ajax_user_account__login', 'user_account__login');
-add_action('wp_ajax_user_account__login', 'user_account__login');
+add_action('wp_ajax_nopriv_user_account__login', 'user_account__login');
 
 function user_account__login() {
 
@@ -68,8 +68,19 @@ function user_account__login() {
 
     $response = [
         'success' => !is_wp_error($user),
-        'user' => $user->ID
     ];
+
+    if(!is_wp_error($user)) {
+        $user_meta = get_user_meta($user->ID);
+        $response['user'] = [
+            'id' => $user->ID,
+            'username' => $user->user_login,
+            'email' => $user->user_email,
+            'photo' => get_avatar_url($user),
+            'company' => $user_meta['company'],
+            'position' => $user_meta['position']
+        ];
+    }
 
     echo json_encode($response);
 
@@ -77,25 +88,26 @@ function user_account__login() {
 }
 
 add_action('wp_ajax_user_account__restore_password', 'user_account__restore_password');
-add_action('wp_ajax_user_account__restore_password', 'user_account__restore_password');
+add_action('wp_ajax_nopriv_user_account__restore_password', 'user_account__restore_password');
 
 function user_account__restore_password() {
 
     $email = $_POST['email'];
 
     $user_has_email = email_exists($email);
+    $user = get_userdata($user_has_email);
 
     $is_error = $user_has_email === false;
 
     if(!$is_error) {
         $data = [
-            'reset_link' => get_password_reset_key(get_userdata($user_has_email)),
-            'email' => $email
+            'key' => get_password_reset_key($user),
+            'email' => $email,
+            'username' => $user->user_login
         ];
 
 
-//    $body = \Helpers\General::getEmailHtml($data, ['en' => 'email.email-sign-up']);
-        $body = $data['reset_link'];
+        $body = \Helpers\General::getEmailHtml($data, ['en' => 'email.email-reset-password']);
 
         $headers[] = 'Content-Type: text/html; charset=UTF-8';
         $headers[] = 'From: Banke <localhost@banke-pro.loc>';
@@ -115,12 +127,12 @@ function user_account__restore_password() {
 }
 
 add_action('wp_ajax_user_account__set_new_password', 'user_account__set_new_password');
-add_action('wp_ajax_user_account__set_new_password', 'user_account__set_new_password');
+add_action('wp_ajax_nopriv_user_account__set_new_password', 'user_account__set_new_password');
 
 function user_account__set_new_password() {
 
     $password = $_POST['password'];
-    $code = $_POST['code'];
+    $code = $_POST['key'];
     $login = $_POST['username'];
 
     $check_password_result = check_password_reset_key( $code, $login );
@@ -136,6 +148,39 @@ function user_account__set_new_password() {
         'user' => $is_error ? false : $check_password_result,
         'error' => $is_error ? $check_password_result : false
     ];
+
+    echo json_encode($response);
+
+    wp_die();
+}
+
+add_action('wp_ajax_user_account__check', 'user_account__check');
+add_action('wp_ajax_nopriv_user_account__check', 'user_account__check');
+
+function user_account__check() {
+
+    if(is_user_logged_in()) {
+        $user = wp_get_current_user();
+        $user_meta = get_user_meta($user->ID);
+
+        $response = [
+            'success' => true,
+            'user' => [
+                'id' => $user->ID,
+                'username' => $user->user_login,
+                'email' => $user->user_email,
+                'photo' => get_avatar_url($user),
+                'company' => $user_meta['company'],
+                'position' => $user_meta['position']
+            ]
+        ];
+    }
+    else {
+        $response = [
+            'success' => false,
+            'message' => 'The user is not logged in'
+        ];
+    }
 
     echo json_encode($response);
 

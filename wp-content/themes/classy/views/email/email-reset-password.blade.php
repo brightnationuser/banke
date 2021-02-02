@@ -28,10 +28,8 @@
                 </div>
                 <div class="email-template__reset-password__wrapper">
                     <a class="email-template__reset-password" href="https://banke.pro" target="_blank"
-                    >banke.pro/reset_your_password_link</a>
+                    >{{WP_HOME}}/reset-password/?key={{ $post['key'] }}&username={{ $post['username'] }}</a>
                 </div>
-
-
             </td>
         </tr>
     </table>

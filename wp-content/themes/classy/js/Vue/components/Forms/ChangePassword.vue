@@ -69,6 +69,8 @@ export default {
 
   data() {
     return {
+      username: '',
+      key: '',
       showLoader: false,
       validation: false,
       success: false,
@@ -83,7 +85,10 @@ export default {
     }
   },
 
-  mounted () {},
+  mounted () {
+    this.key = this.getParameterByName('key')
+    this.username = this.getParameterByName('username')
+  },
 
   created () {},
 
@@ -95,8 +100,10 @@ export default {
 
       let data = new FormData();
 
-      data.append('action', 'user_account__restore_password');
-      data.append('email', this.email.val);
+      data.append('action', 'user_account__set_new_password');
+      data.append('password', this.password.val);
+      data.append('key', this.key);
+      data.append('username', this.username);
 
       this.showLoader = true
 
@@ -105,7 +112,7 @@ export default {
             this.showLoader = false
 
             if (response.data.success) {
-              this.switchForm('Success')
+              this.success = true
             }
           })
     },
@@ -115,7 +122,16 @@ export default {
     },
 
     closeSuccess() {
+      this.location.href = '/'
+    },
 
+    getParameterByName(name, url = window.location.href) {
+      name = name.replace(/[\[\]]/g, '\\$&');
+      let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, ' '));
     }
   },
 
@@ -130,6 +146,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .account-form {
+    background-image: none;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 8px;
 
+    &__title {
+      font-size: 24px;
+    }
+  }
 </style>
 
