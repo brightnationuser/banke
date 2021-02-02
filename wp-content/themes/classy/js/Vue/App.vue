@@ -1,27 +1,47 @@
 <template>
-  <div>
-    Hello
-    {{ test }}
-    <Test
-        testText="testText"
-    />
-
-  </div>
+    <div>
+      Account app here
+    </div>
 </template>
 
 <script>
-  import Test from './components/Test'
 
-  export default {
-    name: 'App',
+import { mapState } from 'vuex';
 
-    components: {
-      Test
-    },
-    data() {
-      return {
-        test: 'Test'
-      }
+export default {
+  name: 'App',
+  props: [
+
+  ],
+
+  components: {
+
+  },
+
+  data() {
+    return {
+
     }
+  },
+
+  mounted () {},
+
+  created () {},
+
+  updated () {},
+
+  methods: {},
+
+  watch: {},
+
+  computed: {
+    ...mapState({
+
+    })
   }
+}
 </script>
+
+<style lang="scss" scoped>
+
+</style>
