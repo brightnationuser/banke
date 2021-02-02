@@ -7,6 +7,7 @@ import router from './routerVue'
 
 import App from './App.vue'
 import FormApp from './FormApp'
+import ResetApp from "./ResetApp";
 
 //indexVue.js is detected on this page - выкл для прода
 Vue.config.productionTip = true;
@@ -25,6 +26,12 @@ const initVueInstances = () => {
         new Vue({
             render: h => h(FormApp)
         }).$mount('#app-forms');
+    }
+    
+    if($('#change-password').length > 0) {
+        new Vue({
+            render: h => h(ResetApp)
+        }).$mount('#change-password');
     }
 }
 

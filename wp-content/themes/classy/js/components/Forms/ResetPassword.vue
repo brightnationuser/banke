@@ -35,6 +35,10 @@
         </div>
       </div>
 
+      <div class="account-form__loader" v-if="showLoader">
+        <img src="../../../images/oval.svg" alt="loader">
+      </div>
+
       <div class="vue-popup__close">
         <i class="icon-close" @click="close()"></i>
       </div>

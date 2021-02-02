@@ -12,4 +12,9 @@ if(url_parts(0) == 'email-test') {
 
 }
 
+if(url_parts(0) == 'reset-password') {
+
+    $framework::load_custom_template('account/change-password');
+
+}
 
