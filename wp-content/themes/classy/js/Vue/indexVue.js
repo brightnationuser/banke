@@ -10,6 +10,8 @@ import ResetApp from "./ResetApp";
 
 import router from './routerVue'
 
+import './sass/main.scss'
+
 //indexVue.js is detected on this page - выкл для прода
 Vue.config.productionTip = true;
 Vue.config.devtools = true;
