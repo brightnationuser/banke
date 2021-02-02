@@ -22,12 +22,16 @@
                 <div class="email-template__wrapper-line">
                     <div class="email-template__line"></div>
                 </div>
-                <div class="email-template__title email-template__center">Welcome to Banke!</div>
-                <div class="email-template__created">You created account on banke.pro. Please confirm your email to get access to
-                    Banke
-                    materials
+                <div class="email-template__title email-template__center">Reset Password</div>
+                <div class="email-template__created">You're receiving this email because you requested a password reset for your Banke account.
+                    Please click the link below to set a new password:
                 </div>
-                <a href="{{WP_HOME}}" class="email-template__button">Confirm email</a>
+                <div class="email-template__reset-password__wrapper">
+                    <a class="email-template__reset-password" href="https://banke.pro" target="_blank"
+                    >banke.pro/reset_your_password_link</a>
+                </div>
+
+
             </td>
         </tr>
     </table>
@@ -41,7 +45,7 @@
                 <a class="email-template__footer-phone email-template__color-grey" href="tel:+380630342390" style="margin-top: 3px;">+45 7777 16
                     16</a>
                 <span class="divider">|</span>
-                <a class="email-template__link email-template__link" href="https://banke.pro" target="_blank"
+                <a class="email-template__link" href="https://banke.pro" target="_blank"
                    rel="noopener">banke.pro</a>
 
             </td>
