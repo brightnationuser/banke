@@ -138,7 +138,8 @@ export default {
 
     logIn() {
       this.$store.commit('setLoggedIn', true)
-      this.$store.commit('user', this.user)
+      this.$store.commit('setUser', this.userData)
+      // window.location.href = '/account/specification'
     },
 
     close() {

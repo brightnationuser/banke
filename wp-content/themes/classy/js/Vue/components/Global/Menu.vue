@@ -47,11 +47,9 @@
       </div>
     </div>
     <div class="menu__under">
-      <router-link :to="{ name: 'Specification' }" custom v-slot="{href, navigate}">
-        <a class="menu__logout" :href="href" @click="navigate">
-          Log Out
-        </a>
-      </router-link>
+      <div class="menu__logout" @click="logOut">
+        Log Out
+      </div>
     </div>
   </div>
 </template>
@@ -83,7 +81,28 @@ export default {
 
   updated () {},
 
-  methods: {},
+  methods: {
+    logOut(e) {
+      e.preventDefault()
+
+      let data = new FormData();
+
+      data.append('action', 'user_account__log_out');
+
+      axios.post('/wp-admin/admin-ajax.php', data)
+          .then((response) => {
+            this.showLoader = false
+
+            if (response.data.success) {
+              this.$store.commit('setDefault')
+              window.location.href = '/'
+            }
+            else {
+              console.log('error: ', response.data.message)
+            }
+          })
+    }
+  },
 
   watch: {},
 
@@ -107,6 +126,7 @@ export default {
   box-shadow: 4px 0 5px -2px #dedede;
 
   &__info {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     padding: 30px 0 28px 66px;
@@ -131,6 +151,7 @@ export default {
     font-size: 20px;
     color: #003462;
     font-weight: bold;
+    cursor: pointer;
   }
 
   &__email {
@@ -138,6 +159,7 @@ export default {
     font-size: 14px;
     color: #4A4A49;
     opacity: 0.9;
+    cursor: pointer;
   }
 
   &__list {
@@ -160,6 +182,7 @@ export default {
   }
 
   &__logout {
+    cursor: pointer;
     display: block;
     padding: 16px 0 16px 66px;
     border-top: solid 1px #EFEFEF;
