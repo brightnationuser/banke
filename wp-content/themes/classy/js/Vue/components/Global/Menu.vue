@@ -10,11 +10,13 @@
             </div>
           </div>
         </div>
-        <div class="menu__name">
-          John Doe
-        </div>
-        <div class="menu__email">
-          JohnDoe@gmail.com
+        <div class="menu__headline">
+          <div class="menu__name">
+            John Doe
+          </div>
+          <div class="menu__email">
+            JohnDoe@gmail.com
+          </div>
         </div>
       </div>
       <div class="menu__list fz-14 c-blue">
@@ -130,4 +132,34 @@ export default {
     color: #003462;
   }
 }
+
+@media (max-width: 1024px) {
+  .menu {
+    max-width: 100%;
+    &__info {
+      flex-direction: row;
+    }
+
+    &__headline {
+      margin-left: 20px;
+    }
+
+    &__list {
+      margin: 0 auto;
+      padding: 0;
+      max-width: 500px;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    &__elem {
+      padding: 16px 14px;
+    }
+
+    &__logout {
+      display: none;
+    }
+  }
+}
+
 </style>

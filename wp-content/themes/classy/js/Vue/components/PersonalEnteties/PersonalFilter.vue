@@ -1,5 +1,8 @@
 <template>
   <div class="filter">
+    <vSelect
+      :options="options"
+    />
     <div class="filter__left">
       <div class="filter__title">
         Search
@@ -18,13 +21,42 @@
 import Link from "../Global/Link";
 import Search from "../Global/Search";
 import PersonalFilterList from "../../components/PersonalEnteties/PersonalFilterList";
+import vSelect from "../Global/vSelect";
 
 export default {
   name: 'PersonalFilter',
   components: {
     PersonalFilterList,
     Search,
-    Link
+    Link,
+    vSelect
+  },
+
+  data() {
+    return {
+      options: [
+        {
+          name: 'All',
+          value: 1
+        },
+        {
+          name: 'Installation',
+          value: 2
+        },
+        {
+          name: 'Users',
+          value: 3
+        },
+        {
+          name: 'Service',
+          value: 4
+        },
+        {
+          name: 'Specific Repair Instruction',
+          value: 5
+        }
+      ],
+    }
   }
 }
 </script>

@@ -87,8 +87,20 @@ export default {
 
 @media (max-width: 1024px) {
   .personal-entities {
+    &__container {
+
+    }
+
+    &__container-inner {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 700px;
+    }
+
     &__list {
-      flex-direction: column;
+      margin: 0;
+      justify-content: flex-start;
+      flex-wrap: wrap;
     }
 
     &__elem {
