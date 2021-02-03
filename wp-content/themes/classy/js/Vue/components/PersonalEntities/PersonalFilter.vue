@@ -20,7 +20,7 @@
 <script>
 import Link from "../Global/Link";
 import Search from "../Global/Search";
-import PersonalFilterList from "../../components/PersonalEnteties/PersonalFilterList";
+import PersonalFilterList from "../../components/PersonalEntities/PersonalFilterList";
 import vSelect from "../Global/vSelect";
 
 export default {
