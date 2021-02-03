@@ -99,7 +99,7 @@ export default {
 
     &__list {
       margin: 0;
-      justify-content: flex-start;
+      justify-content: space-around;
       flex-wrap: wrap;
     }
 

@@ -79,7 +79,7 @@ export default {
 
 <style lang="scss" scoped>
 .v-select {
-  //display: none;
+  display: none;
   position: relative;
   letter-spacing: 0.01em;
   font-size: 12px;
@@ -117,6 +117,12 @@ export default {
     background-color: #FFFFFF;
     padding: 6px 14px 6px 14px;
 
+  }
+}
+
+@media (max-width: 1024px) {
+  .v-select {
+    display: block;
   }
 }
 </style>
