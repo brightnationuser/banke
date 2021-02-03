@@ -186,8 +186,10 @@ export default {
   .menu {
     max-width: 100%;
     &__info {
+      border-bottom: unset;
       margin: 0 auto;
-      max-width: 500px;
+      max-width: 760px;
+      padding: 20px 30px 26px 30px;
       flex-direction: row;
     }
 
@@ -196,11 +198,12 @@ export default {
     }
 
     &__list {
+      border-top: solid 1px #EFEFEF;
       margin: 0 auto;
       padding: 0;
-      max-width: 500px;
+      max-width: 700px;
       flex-direction: row;
-      justify-content: space-around;
+      justify-content: flex-start;
     }
 
     &__elem {

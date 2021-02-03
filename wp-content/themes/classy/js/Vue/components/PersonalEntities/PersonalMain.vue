@@ -108,4 +108,13 @@ export default {
     }
   }
 }
+
+@media (max-width: 800px) {
+  .personal-entities {
+    &__list {
+      flex-direction: column;
+    }
+  }
+}
+
 </style>

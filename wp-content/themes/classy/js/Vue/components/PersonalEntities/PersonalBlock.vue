@@ -6,11 +6,13 @@
         <img src="../../assets/specifications/test.png" alt="Block">
 
       </div>
-      <div class="personal-block__title">
-        E-PTO Large 70060H
-      </div>
-      <div class="personal-block__subtitle">
-        Installation Manual
+      <div class="personal-block__headline">
+        <div class="personal-block__title">
+          E-PTO Large 70060H
+        </div>
+        <div class="personal-block__subtitle">
+          Installation Manual
+        </div>
       </div>
     </div>
   </div>
@@ -22,9 +24,7 @@ import {mapState} from 'vuex';
 
 export default {
   name: 'PersonalBlock',
-  props: [
-
-  ],
+  props: [],
 
   components: {},
 
@@ -61,6 +61,7 @@ export default {
   border: solid 1px #D6D6D6;
   border-radius: 6px;
   cursor: pointer;
+
   &__inner {
     padding-top: 32px;
     display: flex;
@@ -72,6 +73,10 @@ export default {
     top: 18px;
     right: 18px;
     position: absolute;
+  }
+
+  &__headline {
+    text-align: center;
   }
 
   &__title {
@@ -98,6 +103,30 @@ export default {
   .personal-block {
     max-width: 319px;
     width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .personal-block {
+    margin: 10px 0;
+    padding: 16px 0 17px 0;
+    max-width: 100%;
+    height: auto;
+
+    &__inner {
+      margin-left: 24px;
+      padding: 0;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &__headline {
+      margin-left: 20px;
+    }
+
+    &__title {
+      padding-top: 0;
+    }
   }
 }
 

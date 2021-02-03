@@ -1,10 +1,6 @@
 <template>
   <div class="filter">
-    <vSelect
-      :options="options"
-      :selectedOption="selectedOption"
-      @select="eventSelectedOption"
-    />
+
     <div class="filter__left">
       <div class="filter__title">
         Search
@@ -17,8 +13,18 @@
       />
     </div>
     <div class="filter__right">
-      <Link class="filter__link"/>
-      <Search/>
+      <div class="filter__right__first">
+        <vSelect
+            :options="options"
+            :selectedOption="selectedOption"
+            @select="eventSelectedOption"
+        />
+        <Link class="filter__link"/>
+      </div>
+      <div class="filter__right__second">
+        <Search />
+      </div>
+
     </div>
   </div>
 </template>
@@ -117,8 +123,28 @@ export default {
       &__left {
         display: none;
       }
+
+      &__right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+
+        &__first {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+        }
+
+        &__second {
+          margin-top: 13px;
+          width: 100%;
+        }
+      }
+    }
+    &__link {
+      margin: 0;
     }
   }
-
 }
 </style>

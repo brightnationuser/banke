@@ -23,6 +23,7 @@ export default {
 
   &__inner-input {
     outline: 0;
+    width: 100%;
     padding: 10px 20px 10px 10px;
     background: #FFFFFF;
     border-radius: 4px;
@@ -35,6 +36,7 @@ export default {
     top: 50%;
     transform: translate(0, -50%);
     padding: 6px;
+    background: #ffffff;
     cursor: pointer;
   }
 }
