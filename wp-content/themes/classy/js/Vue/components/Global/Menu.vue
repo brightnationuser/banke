@@ -195,6 +195,10 @@ export default {
     font-weight: 600;
     color: #003462;
   }
+
+  &__logout-mobile {
+    display: none;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -226,6 +230,7 @@ export default {
       display: none;
     }
     &__logout-mobile {
+      display: block;
       border-top: unset;
       margin-left: auto;
       padding: 12px 28px 0 0;
