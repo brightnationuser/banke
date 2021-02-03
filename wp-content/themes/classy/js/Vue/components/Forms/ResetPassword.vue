@@ -83,7 +83,6 @@ export default {
 
   methods: {
     submit() {
-      this.validation = true
 
       let data = new FormData();
 
@@ -101,6 +100,7 @@ export default {
             }
             else {
               this.email.valid = false
+              this.validation = true
             }
           })
     },
