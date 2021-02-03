@@ -127,6 +127,10 @@ export default {
     &__title {
       padding-top: 0;
     }
+
+    &__subtitle {
+      text-align: left;
+    }
   }
 }
 

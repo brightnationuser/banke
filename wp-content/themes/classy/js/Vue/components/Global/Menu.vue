@@ -17,32 +17,35 @@
           </a>
         </router-link>
       </div>
-      <div class="menu__list">
-        <RouterLinkCustom
-            to="Specification"
-            classes="menu__elem"
-        ></RouterLinkCustom>
-        <router-link :to="{ name: 'Specification' }" custom v-slot="{href, navigate, isActive}">
-          <a class="menu__elem" :class="{'menu__elem--active' : isActive}" :href="href" @click="navigate">
-            Specification
-          </a>
-        </router-link>
-        <router-link :to="{ name: 'Three-models' }" custom v-slot="{href, navigate, isActive}">
-          <a class="menu__elem" :class="{'menu__elem--active' : isActive}" :href="href" @click="navigate">
-            3D Models
-          </a>
-        </router-link>
-        <router-link :to="{ name: 'Manuals' }" custom v-slot="{href, navigate, isActive}">
-          <a class="menu__elem" :class="{'menu__elem--active' : isActive}" :href="href" @click="navigate">
-            Manuals
-          </a>
-        </router-link>
-        <router-link :to="{ name: 'Video-gallery' }" custom v-slot="{href, navigate, isActive}">
-          <a class="menu__elem" :class="{'menu__elem--active' : isActive}" :href="href" @click="navigate">
-            Video Gallery
-          </a>
-        </router-link>
+      <div class="menu__list-wrapper">
+        <div class="menu__list">
+          <RouterLinkCustom
+              to="Specification"
+              classes="menu__elem"
+          ></RouterLinkCustom>
+          <router-link :to="{ name: 'Specification' }" custom v-slot="{href, navigate, isActive}">
+            <a class="menu__elem" :class="{'menu__elem--active' : isActive}" :href="href" @click="navigate">
+              Specification
+            </a>
+          </router-link>
+          <router-link :to="{ name: 'Three-models' }" custom v-slot="{href, navigate, isActive}">
+            <a class="menu__elem" :class="{'menu__elem--active' : isActive}" :href="href" @click="navigate">
+              3D Models
+            </a>
+          </router-link>
+          <router-link :to="{ name: 'Manuals' }" custom v-slot="{href, navigate, isActive}">
+            <a class="menu__elem" :class="{'menu__elem--active' : isActive}" :href="href" @click="navigate">
+              Manuals
+            </a>
+          </router-link>
+          <router-link :to="{ name: 'Video-gallery' }" custom v-slot="{href, navigate, isActive}">
+            <a class="menu__elem" :class="{'menu__elem--active' : isActive}" :href="href" @click="navigate">
+              Video Gallery
+            </a>
+          </router-link>
+        </div>
       </div>
+
     </div>
     <div class="menu__under">
       <div class="menu__logout" @click="logOut">
@@ -197,8 +200,11 @@ export default {
       margin-left: 20px;
     }
 
-    &__list {
+    &__list-wrapper {
       border-top: solid 1px #EFEFEF;
+    }
+
+    &__list {
       margin: 0 auto;
       padding: 0;
       max-width: 700px;
@@ -218,6 +224,15 @@ export default {
       border-top: unset;
       margin-left: auto;
       padding: 12px 28px 0 0;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .menu {
+    &__elem {
+      padding: 12px 10px;
+      font-size: 12px;
     }
   }
 }

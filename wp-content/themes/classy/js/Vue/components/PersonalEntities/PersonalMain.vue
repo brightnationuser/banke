@@ -118,4 +118,12 @@ export default {
   }
 }
 
+@media (max-width: 500px) {
+  .personal-entities {
+    &__container {
+      padding: 0 20px 80px 20px;
+    }
+  }
+}
+
 </style>

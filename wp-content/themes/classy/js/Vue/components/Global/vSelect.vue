@@ -5,6 +5,7 @@
         @click="optionsVisible = !optionsVisible"
     >
       {{ selectedOption.name ? selectedOption.name : 'Not found' }}
+      <img class="v-select__arrow" :class="{ 'v-select__arrow--active' : optionsVisible }" src="../../assets/icons/arrow.svg" alt="Arrow">
     </div>
     <div
         v-if="optionsVisible"
@@ -87,6 +88,7 @@ export default {
   cursor: pointer;
 
   &__title {
+    position: relative;
     background-color: #FFFFFF;
     padding: 6px 10px 6px 14px;
     width: 104px;
@@ -94,6 +96,18 @@ export default {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 8px;
+    transition: transform 0.1s linear;
+  }
+
+  &__arrow--active {
+    transform: translate(0, -50%) rotate(180deg);
   }
 
   &__list {
