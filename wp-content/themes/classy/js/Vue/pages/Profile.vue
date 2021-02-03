@@ -1,27 +1,19 @@
 <template>
-    <div class="personal-main">
-      <Menu/>
-      <PersonalMain />
-    </div>
+    <div>Profile</div>
 </template>
 
 <script>
 
 import { mapState } from 'vuex';
-import Menu from "../components/Global/Menu";
-import PersonalMain from "../components/PersonalEntities/PersonalMain";
-
 
 export default {
-
-  name: 'Specification',
+  name: 'Profile',
   props: [
 
   ],
 
   components: {
-    Menu,
-    PersonalMain
+
   },
 
   data() {

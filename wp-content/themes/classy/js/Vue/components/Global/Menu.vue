@@ -1,7 +1,7 @@
 <template>
   <div class="menu">
     <div class="menu__upper">
-      <div class="menu__info">
+      <div class="menu__info" @click="$router.push('/profile')">
         <div class="menu__avatar">
           <div class="menu__avatar-img">
             <img src="../../assets/icons/profile.svg" alt="Profile">

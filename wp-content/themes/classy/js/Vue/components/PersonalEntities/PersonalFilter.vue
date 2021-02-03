@@ -17,7 +17,7 @@
 <script>
 import Link from "../Global/Link";
 import Search from "../Global/Search";
-import PersonalFilterList from "../../components/PersonalEnteties/PersonalFilterList";
+import PersonalFilterList from ".//PersonalFilterList";
 
 export default {
   name: 'PersonalFilter',
