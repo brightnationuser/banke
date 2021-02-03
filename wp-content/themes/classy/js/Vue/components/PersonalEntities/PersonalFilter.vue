@@ -2,13 +2,19 @@
   <div class="filter">
     <vSelect
       :options="options"
+      :selectedOption="selectedOption"
+      @select="eventSelectedOption"
     />
     <div class="filter__left">
       <div class="filter__title">
         Search
       </div>
       <div class="filter__line"></div>
-      <PersonalFilterList/>
+      <PersonalFilterList
+        :filterList="options"
+        :selectedFilterOption="selectedOption"
+        @select="eventSelectedOption"
+      />
     </div>
     <div class="filter__right">
       <Link class="filter__link"/>
@@ -32,8 +38,19 @@ export default {
     vSelect
   },
 
+  methods: {
+    eventSelectedOption(options) {
+      this.selectedOption = options
+      // console.log('eventSelectedOption', options)
+      console.log('selectedOption', this.selectedOption)
+    }
+  },
+
   data() {
     return {
+      selectedOption: {
+        name: 'All'
+      },
       options: [
         {
           name: 'All',

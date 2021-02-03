@@ -1,7 +1,13 @@
 <template>
   <div class="personal-filter-list__list">
-    <div class="personal-filter-list__elem" v-for="(elem, index) in filterList" :key="index">
-      {{ elem.value }}
+    <div
+        :class="{ 'personal-filter-list__elem--active' : selectedFilterOption.name === elem.name  }"
+        class="personal-filter-list__elem"
+        v-for="(elem, index) in filterList"
+        :key="index"
+        @click="eventSelectedOption(elem)"
+    >
+      {{ elem.name }}
     </div>
   </div>
 </template>
@@ -16,32 +22,25 @@ export default {
       return true
     }
   },
+
+  props: {
+    filterList: {
+      type: Array,
+      default() {
+        return []
+      }
+    },
+    selectedFilterOption: Object,
+  },
+
   data() {
-    return {
-      activeList: 'all',
-      filterList: [
-        {
-          name: 'all',
-          value: 'All'
-        },
-        {
-          name: 'installation',
-          value: 'Installation'
-        },
-        {
-          name: 'users',
-          value: 'Users'
-        },
-        {
-          name: 'Service',
-          value: 'Service'
-        },
-        {
-          name: 'specific',
-          value: 'Specific Repair Instruction'
-        }
-      ]
-    }
+    return { }
+  },
+
+  methods: {
+    eventSelectedOption(option) {
+      this.$emit('select', option)
+    },
   }
 }
 </script>
