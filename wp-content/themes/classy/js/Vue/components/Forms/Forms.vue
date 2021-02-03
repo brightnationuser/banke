@@ -7,11 +7,9 @@
     <div class="sign-in" v-else>
       <i class="icon-account"></i>
       <span>
-        <router-link :to="{ name: 'Specification' }" custom v-slot="{href, navigate}">
-          <a class="menu__elem menu__elem--active" :href="href" @click="navigate">
+        <a class="menu__elem menu__elem--active" href="/account/specification">
             {{ user.username }}
           </a>
-        </router-link>
       </span>
     </div>
     <SignIn
