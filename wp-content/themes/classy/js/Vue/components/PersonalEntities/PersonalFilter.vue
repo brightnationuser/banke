@@ -2,6 +2,8 @@
   <div class="filter">
     <vSelect
       :options="options"
+      :selectedOption="selectedOption"
+      @select="eventSelectedOption"
     />
     <div class="filter__left">
       <div class="filter__title">
@@ -32,8 +34,19 @@ export default {
     vSelect
   },
 
+  methods: {
+    eventSelectedOption(options) {
+      this.selectedOption = options
+      // console.log('eventSelectedOption', options)
+      console.log('selectedOption', this.selectedOption)
+    }
+  },
+
   data() {
     return {
+      selectedOption: {
+        name: 'All'
+      },
       options: [
         {
           name: 'All',

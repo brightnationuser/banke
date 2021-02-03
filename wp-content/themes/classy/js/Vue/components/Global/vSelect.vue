@@ -1,13 +1,20 @@
 <template>
   <div class="v-select">
-    <div class="v-select__title">
-      Select
+    <div
+        class="v-select__title"
+        @click="optionsVisible = !optionsVisible"
+    >
+      {{ selectedOption.name ? selectedOption.name : 'Not found' }}
     </div>
-    <div class="v-select__list">
+    <div
+        v-if="optionsVisible"
+        class="v-select__list"
+    >
       <div
           class="v-select__elem"
           v-for="option in options"
           :key="option.value"
+          @click="eventSelectedOption(option)"
       >
         {{ option.name }}
       </div>
@@ -27,16 +34,20 @@ export default {
       default() {
         return []
       }
-    }
+    },
+    selectedOption: Object
   },
 
   components: {},
 
   data() {
-    return {}
+    return {
+      optionsVisible: false
+    }
   },
 
   mounted() {
+    document.addEventListener('click', this.hideSelect.bind(this), true)
   },
 
   created() {
@@ -45,7 +56,18 @@ export default {
   updated() {
   },
 
-  methods: {},
+  beforeDestroy() {
+    document.addEventListener('click', this.hideSelect)
+  },
+
+  methods: {
+    eventSelectedOption(option) {
+      this.$emit('select', option)
+    },
+    hideSelect() {
+      this.optionsVisible = false
+    }
+  },
 
   watch: {},
 
@@ -57,6 +79,7 @@ export default {
 
 <style lang="scss" scoped>
 .v-select {
+  position: relative;
   letter-spacing: 0.01em;
   font-size: 12px;
   font-weight: 400;
@@ -64,20 +87,23 @@ export default {
 
   &__title {
     background-color: #FFFFFF;
-    padding: 6px 0 6px 14px;
-    max-width: 114px;
+    padding: 6px 10px 6px 14px;
+    width: 104px;
     border-radius: 4px;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   &__list {
+    position: absolute;
+    top: 28px;
+    z-index: 10;
     padding: 8px 0;
     margin-top: 4px;
     border-radius: 4px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #FFFFFF;
-    max-width: 177px;
-    width: 100%;
-
+    width: 177px;
   }
 
   &__elem {
