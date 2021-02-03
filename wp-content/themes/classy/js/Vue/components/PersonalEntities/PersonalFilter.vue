@@ -10,7 +10,11 @@
         Search
       </div>
       <div class="filter__line"></div>
-      <PersonalFilterList/>
+      <PersonalFilterList
+        :filterList="options"
+        :selectedFilterOption="selectedOption"
+        @select="eventSelectedOption"
+      />
     </div>
     <div class="filter__right">
       <Link class="filter__link"/>

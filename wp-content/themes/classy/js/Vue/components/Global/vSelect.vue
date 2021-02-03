@@ -79,6 +79,7 @@ export default {
 
 <style lang="scss" scoped>
 .v-select {
+  //display: none;
   position: relative;
   letter-spacing: 0.01em;
   font-size: 12px;
@@ -92,6 +93,7 @@ export default {
     border-radius: 4px;
     text-overflow: ellipsis;
     overflow: hidden;
+    white-space: nowrap;
   }
 
   &__list {
