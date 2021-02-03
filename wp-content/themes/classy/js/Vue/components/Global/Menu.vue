@@ -20,23 +20,27 @@
         </div>
       </div>
       <div class="menu__list fz-14 c-blue">
-        <router-link :to="{ name: 'Specification' }" custom v-slot="{href, navigate}">
-          <a class="menu__elem menu__elem--active" :href="href" @click="navigate">
-            Specifications
+        <RouterLinkCustom
+            to="Specification"
+            classes="menu__elem"
+        ></RouterLinkCustom>
+        <router-link :to="{ name: 'Specification' }" custom v-slot="{href, navigate, isActive}">
+          <a class="menu__elem" :class="{'menu__elem--active' : isActive}" :href="href" @click="navigate">
+            Specification
           </a>
         </router-link>
-        <router-link :to="{ name: 'Three-models' }" custom v-slot="{href, navigate}">
-          <a class="menu__elem" :href="href" @click="navigate">
+        <router-link :to="{ name: 'Three-models' }" custom v-slot="{href, navigate, isActive}">
+          <a class="menu__elem" :class="{'menu__elem--active' : isActive}" :href="href" @click="navigate">
             3D Models
           </a>
         </router-link>
-        <router-link :to="{ name: 'Manuals' }" custom v-slot="{href, navigate}">
-          <a class="menu__elem" :href="href" @click="navigate">
+        <router-link :to="{ name: 'Manuals' }" custom v-slot="{href, navigate, isActive}">
+          <a class="menu__elem" :class="{'menu__elem--active' : isActive}" :href="href" @click="navigate">
             Manuals
           </a>
         </router-link>
-        <router-link :to="{ name: 'Video-gallery' }" custom v-slot="{href, navigate}">
-          <a class="menu__elem" :href="href" @click="navigate">
+        <router-link :to="{ name: 'Video-gallery' }" custom v-slot="{href, navigate, isActive}">
+          <a class="menu__elem" :class="{'menu__elem--active' : isActive}" :href="href" @click="navigate">
             Video Gallery
           </a>
         </router-link>
@@ -53,9 +57,41 @@
 </template>
 
 <script>
+import RouterLinkCustom from "./RouterLinkCustom";
+import {mapState} from "vuex";
 
 export default {
-  name: 'Menu'
+  name: 'Menu',
+
+  props: [
+
+  ],
+
+  components: {
+    RouterLinkCustom
+  },
+
+  data() {
+    return {
+
+    }
+  },
+
+  mounted () {},
+
+  created () {},
+
+  updated () {},
+
+  methods: {},
+
+  watch: {},
+
+  computed: {
+    ...mapState({
+
+    })
+  }
 }
 </script>
 
