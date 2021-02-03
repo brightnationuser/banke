@@ -5,13 +5,14 @@ import Specification from './pages/Specification'
 import ThreeModels from "./pages/ThreeModels";
 import Manuals from "./pages/Manuals";
 import VideoGallery from "./pages/VideoGallery"
+import Profile from "./pages/Profile";
 import App from "../App";
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/account',
+    path: '/',
     name: 'App',
     component: App
   },
@@ -34,6 +35,11 @@ const routes = [
     path: '/video-gallery',
     name: 'Video-gallery',
     component: VideoGallery
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: Profile
   },
 ]
 

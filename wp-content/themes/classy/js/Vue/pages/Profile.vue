@@ -1,22 +1,19 @@
 <template>
-  <div>
-    <Forms></Forms>
-  </div>
+    <div>Profile</div>
 </template>
 
 <script>
 
 import { mapState } from 'vuex';
 
-import Forms from "./components/Forms/Forms";
-
 export default {
-  name: 'FormApp',
+  name: 'Profile',
+  props: [
 
-  props: [],
+  ],
 
   components: {
-    Forms
+
   },
 
   data() {

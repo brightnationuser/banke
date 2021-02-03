@@ -81,6 +81,13 @@ export default {
     return {
       showLoader: false,
       validation: false,
+      userData: {
+        username: '',
+        email: '',
+        photo: '',
+        company: '',
+        position: ''
+      },
       email: {
         val: '',
         valid: false
@@ -119,12 +126,19 @@ export default {
 
             if (response.data.success) {
               this.switchForm(false)
+              this.userData = response.data.user
+              this.logIn()
             }
             else {
               this.email.valid = false
               this.password.valid = false
             }
           })
+    },
+
+    logIn() {
+      this.$store.commit('setLoggedIn', true)
+      this.$store.commit('user', this.user)
     },
 
     close() {
@@ -139,7 +153,10 @@ export default {
   watch: {},
 
   computed: {
-    ...mapState({})
+    ...mapState({
+      loggedIn: state => state.loggedIn,
+      user: state => state.user
+    })
   }
 }
 </script>

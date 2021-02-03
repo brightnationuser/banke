@@ -9,7 +9,7 @@
 
 import { mapState } from 'vuex';
 import Menu from "../components/Global/Menu";
-import PersonalMain from "../components/PersonalEnteties/PersonalMain";
+import PersonalMain from "../components/PersonalEntities/PersonalMain";
 
 
 export default {
