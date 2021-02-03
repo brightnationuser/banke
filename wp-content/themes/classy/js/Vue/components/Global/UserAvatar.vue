@@ -69,6 +69,8 @@ export default {
     &__img-wrap {
       background-color: #ededed;
       border-radius: 50%;
+      width: 70px;
+      height: 70px;
     }
 
     &__icon {
