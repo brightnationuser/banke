@@ -7,9 +7,9 @@
       </div>
       <div class="filter__line"></div>
       <PersonalFilterList
-        :filterList="options"
-        :selectedFilterOption="selectedOption"
-        @select="eventSelectedOption"
+          :filterList="options"
+          :selectedFilterOption="selectedOption"
+          @select="eventSelectedOption"
       />
     </div>
     <div class="filter__right">
@@ -22,7 +22,7 @@
         <Link class="filter__link"/>
       </div>
       <div class="filter__right__second">
-        <Search />
+        <Search/>
       </div>
 
     </div>
@@ -117,29 +117,46 @@ export default {
   &__link {
     margin: 0 34px 0 0;
   }
+}
 
-  @media (max-width: 1024px) {
-    .filter {
-      &__left {
-        display: none;
+@media (max-width: 1320px) and (min-width: 1170px) {
+  .filter {
+    align-items: start;
+    &__right {
+      flex-direction: column;
+      align-items: flex-end;
+      &__first {
+        order: 2;
+      }
+    }
+
+    &__link {
+      margin: 14px 0 0 0;
+    }
+  }
+}
+
+@media (max-width: 1170px) {
+  .filter {
+    &__left {
+      display: none;
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+
+      &__first {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
       }
 
-      &__right {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+      &__second {
+        margin-top: 13px;
         width: 100%;
-
-        &__first {
-          display: flex;
-          justify-content: space-between;
-          width: 100%;
-        }
-
-        &__second {
-          margin-top: 13px;
-          width: 100%;
-        }
       }
     }
     &__link {
@@ -147,4 +164,5 @@ export default {
     }
   }
 }
+
 </style>

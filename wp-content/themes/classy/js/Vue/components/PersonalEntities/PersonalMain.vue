@@ -59,6 +59,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .personal-entities {
   &__container {
     background-color: #F2F5F9;

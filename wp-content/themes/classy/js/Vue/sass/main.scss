@@ -1,6 +1,8 @@
 @import "./fonts.scss";
 @import "./colors.scss";
 
+$max-width-md: 1110px;
+
 body {
   font-family: sans-serif;
   margin: 0;

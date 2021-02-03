@@ -120,7 +120,7 @@ export default {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1170px) {
   .v-select {
     display: block;
   }
