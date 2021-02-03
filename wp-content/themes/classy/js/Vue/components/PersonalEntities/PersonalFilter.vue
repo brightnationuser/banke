@@ -5,16 +5,19 @@
       <div class="filter__title">
         Search
       </div>
-      <div class="filter__line"></div>
-      <PersonalFilterList
-          :filterList="options"
-          :selectedFilterOption="selectedOption"
-          @select="eventSelectedOption"
-      />
+      <template v-if="showFilter">
+        <div class="filter__line"></div>
+        <PersonalFilterList
+            :filterList="options"
+            :selectedFilterOption="selectedOption"
+            @select="eventSelectedOption"
+        />
+      </template>
     </div>
     <div class="filter__right">
       <div class="filter__right__first">
         <vSelect
+            v-if="showFilter"
             :options="options"
             :selectedOption="selectedOption"
             @select="eventSelectedOption"
@@ -24,7 +27,6 @@
       <div class="filter__right__second">
         <Search/>
       </div>
-
     </div>
   </div>
 </template>
@@ -44,11 +46,16 @@ export default {
     vSelect
   },
 
+  props: {
+    showFilter: {
+      type: Boolean,
+      default: false
+    }
+  },
+
   methods: {
     eventSelectedOption(options) {
       this.selectedOption = options
-      // console.log('eventSelectedOption', options)
-      console.log('selectedOption', this.selectedOption)
     }
   },
 
@@ -160,7 +167,7 @@ export default {
       }
     }
     &__link {
-      margin: 0;
+      margin: 0 0 0 auto;
     }
   }
 }

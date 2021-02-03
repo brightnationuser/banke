@@ -1,7 +1,25 @@
 <template>
     <div class="personal-main">
       <Menu/>
-      <PersonalMain />
+      <div class="personal-entities__container">
+        <div class="personal-entities__container-inner">
+          <PersonalFilter class="personal-entities__filter"
+            :showFilter="true"
+          />
+          <div class="personal-entities__title">
+            E-PTO Systems
+          </div>
+          <div class="personal-entities__list">
+            <PersonalBlock />
+            <PersonalBlock />
+            <PersonalBlock />
+            <PersonalBlock />
+            <PersonalBlock />
+            <PersonalBlock />
+            <PersonalBlock />
+          </div>
+        </div>
+      </div>
     </div>
 </template>
 
@@ -10,7 +28,8 @@
 import { mapState } from 'vuex';
 
 import Menu from "../components/Global/Menu";
-import PersonalMain from "../components/PersonalEntities/PersonalMain";
+import PersonalFilter from "../components/PersonalEntities/PersonalFilter";
+import PersonalBlock from "../components/PersonalEntities/PersonalBlock";
 
 export default {
   name: 'Manuals',
@@ -20,13 +39,12 @@ export default {
 
   components: {
     Menu,
-    PersonalMain
+    PersonalFilter,
+    PersonalBlock
   },
 
   data() {
-    return {
-
-    }
+    return { }
   },
 
   mounted () {},
@@ -48,5 +66,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 
 </style>

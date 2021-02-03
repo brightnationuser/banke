@@ -1,7 +1,7 @@
 <template>
   <div class="personal-main">
     <Menu/>
-    <PersonalMain/>
+    Video Gallery
   </div>
 </template>
 

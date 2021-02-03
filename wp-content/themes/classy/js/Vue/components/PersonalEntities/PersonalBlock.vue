@@ -3,15 +3,15 @@
     <img class="personal-block__format" src="../../assets/icons/pdf.svg" alt="Format icon">
     <div class="personal-block__inner">
       <div class="personal-block__image">
-        <img src="../../assets/specifications/test.png" alt="Block">
+        <img src="../../assets/specifications/track@2x.png" alt="Block">
 
       </div>
       <div class="personal-block__headline">
         <div class="personal-block__title">
-          E-PTO Large 70060H
+          {{ title }}
         </div>
         <div class="personal-block__subtitle">
-          Installation Manual
+          {{ subtitle }}
         </div>
       </div>
     </div>
@@ -24,7 +24,16 @@ import {mapState} from 'vuex';
 
 export default {
   name: 'PersonalBlock',
-  props: [],
+  props: {
+    title: {
+      type: String,
+      default: 'Not found'
+    },
+    subtitle: {
+      type: String,
+      default: 'Not found'
+    }
+  },
 
   components: {},
 
@@ -73,6 +82,18 @@ export default {
     top: 18px;
     right: 18px;
     position: absolute;
+  }
+
+  &__image {
+    max-width: 150px;
+    max-height: 66px;
+    img {
+      object-fit: cover;
+      display: block;
+      width: 100%;
+      max-height: 66px;
+
+    }
   }
 
   &__headline {
