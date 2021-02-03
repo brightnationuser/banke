@@ -2,14 +2,7 @@
   <div class="menu">
     <div class="menu__upper">
       <div class="menu__info" @click="$router.push('/profile')">
-        <div class="menu__avatar">
-          <div class="menu__avatar-img">
-            <img src="../../assets/icons/profile.svg" alt="Profile">
-            <div class="menu__avatar-icon">
-              <img src="../../assets/icons/plus.svg" alt="Plus">
-            </div>
-          </div>
-        </div>
+        <UserAvatar></UserAvatar>
         <div class="menu__headline">
           <div class="menu__name">
             John Doe
@@ -62,6 +55,7 @@
 <script>
 import RouterLinkCustom from "./RouterLinkCustom";
 import {mapState} from "vuex";
+import UserAvatar from "./UserAvatar";
 
 export default {
   name: 'Menu',
@@ -71,7 +65,8 @@ export default {
   ],
 
   components: {
-    RouterLinkCustom
+    RouterLinkCustom,
+    UserAvatar
   },
 
   data() {
@@ -131,24 +126,10 @@ export default {
   box-shadow: 4px 0 5px -2px #dedede;
 
   &__info {
-    cursor: pointer;
     display: flex;
     flex-direction: column;
     padding: 30px 0 28px 66px;
     border-bottom: solid 1px #EFEFEF;
-  }
-
-  &__avatar-img {
-    cursor: pointer;
-    max-width: 70px;
-    width: 100%;
-    position: relative;
-  }
-
-  &__avatar-icon {
-    bottom: 0;
-    right: 0;
-    position: absolute;
   }
 
   &__name {
