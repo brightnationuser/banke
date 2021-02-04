@@ -22,7 +22,7 @@
             :selectedOption="selectedOption"
             @select="eventSelectedOption"
         />
-        <Link class="filter__link"/>
+        <NeedHelpLink class="filter__link"/>
       </div>
       <div class="filter__right__second">
         <Search/>
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import Link from "../Global/Link";
+import NeedHelpLink from "../Global/NeedHelpLink";
 import Search from "../Global/Search";
 import PersonalFilterList from "../../components/PersonalEntities/PersonalFilterList";
 import vSelect from "../Global/vSelect";
@@ -42,7 +42,7 @@ export default {
   components: {
     PersonalFilterList,
     Search,
-    Link,
+    NeedHelpLink,
     vSelect
   },
 

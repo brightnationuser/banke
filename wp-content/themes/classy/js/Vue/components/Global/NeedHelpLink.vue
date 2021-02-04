@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'Link'
+  name: 'NeedHelpLink'
 }
 </script>
 

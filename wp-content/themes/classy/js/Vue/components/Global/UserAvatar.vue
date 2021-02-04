@@ -4,9 +4,10 @@
       <div class="user-avatar__img-wrap">
         <img :src="profileImage" alt="Profile">
       </div>
-      <div class="user-avatar__icon">
+      <label for="upload-user-file" class="user-avatar__icon" @click="selectAvatar">
         <i class="icon-plus-bold"></i>
-      </div>
+        <input class="user-avatar__file-input" type="file" ref="uploadFile" id="upload-user-file" @change="requestUploadFile()" />
+      </label>
     </div>
   </div>
 </template>
@@ -44,7 +45,24 @@ export default {
 
   updated () {},
 
-  methods: {},
+  methods: {
+    selectAvatar(e) {
+      e.stopPropagation()
+    },
+
+    requestUploadFile() {
+      let files = this.$refs.uploadFile.files;
+
+      let formData = new FormData();
+      formData.append("image", files[0]);
+
+      axios.post('upload_file', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      })
+    }
+  },
 
   watch: {},
 
@@ -94,6 +112,10 @@ export default {
         color: #effdfd;
         background-color: darken(#005CA9, 10%);
       }
+    }
+
+    &__file-input {
+      display: none;
     }
   }
 </style>
