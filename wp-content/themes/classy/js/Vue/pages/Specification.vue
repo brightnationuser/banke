@@ -18,6 +18,7 @@
                 v-for="(elem,index) in elemEntities.list" :key="index"
                 :title="elem.title"
                 :subtitle="elem.subtitle"
+                :langs="elem.langs"
               />
             </div>
           </div>
@@ -59,7 +60,21 @@ export default {
           list: [
             {
               title: 'Title text',
-              subtitle: 'Subtitle text'
+              subtitle: 'Subtitle text',
+              langs: [
+                {
+                  name: 'EN',
+                  link: 'https://google.com'
+                },
+                {
+                  name: 'DE',
+                  link: 'https://facebook.com'
+                },
+                {
+                  name: 'FR',
+                  link: 'https://linkedin.com'
+                }
+              ]
             },
             {
               title: 'Title text',
@@ -89,11 +104,43 @@ export default {
           list: [
             {
               title: 'Title text',
-              subtitle: 'Subtitle text'
+              subtitle: 'Subtitle text',
+              langs: [
+                {
+                  name: 'EN',
+                  link: 'https://google.com'
+                },
+                {
+                  name: 'DE',
+                  link: 'https://facebook.com'
+                }
+              ]
             },
             {
               title: 'Title text',
-              subtitle: 'Subtitle text'
+              subtitle: 'Subtitle text',
+              langs: [
+                {
+                  name: 'EN',
+                  link: 'https://google.com'
+                },
+                {
+                  name: 'DE',
+                  link: 'https://facebook.com'
+                },
+                {
+                  name: 'EN',
+                  link: 'https://google.com'
+                },
+                {
+                  name: 'DE',
+                  link: 'https://facebook.com'
+                },
+                {
+                  name: 'DE',
+                  link: 'https://facebook.com'
+                }
+              ]
             },
             {
               title: 'Title text',

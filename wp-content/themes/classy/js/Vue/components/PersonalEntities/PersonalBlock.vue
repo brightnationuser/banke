@@ -13,6 +13,16 @@
         <div class="personal-block__subtitle">
           {{ subtitle }}
         </div>
+        <div v-if="langs" class="personal-block__langs">
+          <a
+              :href="elemLang.link"
+              v-for="(elemLang, index) in langs"
+              :key="index"
+              class="personal-block__langs-elem"
+              target="_blank">
+            {{  elemLang.name }}
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -32,7 +42,8 @@ export default {
     subtitle: {
       type: String,
       default: 'Not found'
-    }
+    },
+    langs: Array
   },
 
   components: {},
@@ -91,7 +102,7 @@ export default {
       object-fit: cover;
       display: block;
       width: 100%;
-      max-height: 66px;
+      height: 57px;
 
     }
   }
@@ -101,7 +112,7 @@ export default {
   }
 
   &__title {
-    padding-top: 17px;
+    padding-top: 10px;
     font-size: 14px;
     color: #005CA9;
     font-weight: bold;
@@ -111,6 +122,35 @@ export default {
     padding-top: 5px;
     font-size: 12px;
     color: #959595;
+  }
+
+  &__langs {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__langs-elem {
+    position: relative;
+    margin: 7px 7px 0;
+    font-size: 10px;
+    color: #959595;
+    &:first-child {
+      color: #005CA9;
+    }
+    &:last-child {
+      &::after {
+        content: '';
+      }
+    }
+    &::after {
+      content: "|";
+      position: absolute;
+      right: -10px;
+      top: 0.4px;
+      color: #cac5c5;
+      font-size: 8px;
+    }
+
   }
 }
 
@@ -142,15 +182,21 @@ export default {
     }
 
     &__headline {
+      text-align: left;
       margin-left: 20px;
     }
 
     &__title {
       padding-top: 0;
     }
-
     &__subtitle {
-      text-align: left;
+
+    }
+
+    &__langs-elem {
+      &:first-of-type {
+        margin-left: 0;
+      }
     }
   }
 }
