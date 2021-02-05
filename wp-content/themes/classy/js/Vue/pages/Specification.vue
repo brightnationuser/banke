@@ -4,9 +4,6 @@
     <div class="personal-entities__container">
       <div class="personal-entities__container-inner">
         <PersonalFilter class="personal-entities__filter"/>
-<!--        <div class="personal-entities__title">-->
-<!--          E-PTO Systems-->
-<!--        </div>-->
         <div v-for="(elemEntities, index) in data" :key="index">
           <div class="personal-entities__title">
             {{ elemEntities.name }}
@@ -23,12 +20,6 @@
             </div>
           </div>
         </div>
-<!--        <div class="personal-entities__list">-->
-<!--          <PersonalBlock/>-->
-<!--          <PersonalBlock/>-->
-<!--          <PersonalBlock/>-->
-
-<!--        </div>-->
       </div>
     </div>
   </div>

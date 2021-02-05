@@ -3,7 +3,6 @@
     <div class="search__input">
       <input class="search__inner-input" type="text" placeholder="Search files">
       <img class="search__icon" src="../../assets/icons/search.svg" alt="Search icon">
-
     </div>
   </div>
 </template>
@@ -11,7 +10,10 @@
 <script>
 export default {
   name: 'Search',
-  components: {}
+  components: {},
+  props: {
+    searchFiles: String
+  }
 }
 </script>
 
