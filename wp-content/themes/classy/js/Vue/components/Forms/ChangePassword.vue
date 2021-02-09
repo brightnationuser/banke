@@ -42,7 +42,8 @@
     </div>
 
     <SuccessAlert
-        v-if="success"
+      v-if="success"
+      alert-text="Your password has been successfully changed"
       :is-opened="success"
       @close="closeSuccess()"
     >
@@ -73,7 +74,7 @@ export default {
       key: '',
       showLoader: false,
       validation: false,
-      success: false,
+      success: true,
       password: {
         val: '',
         valid: false,
@@ -88,6 +89,10 @@ export default {
   mounted () {
     this.key = this.getParameterByName('key')
     this.username = this.getParameterByName('username')
+
+    if(this.username === '' || typeof this.username === "undefined") {
+      this.username = this.user.username
+    }
   },
 
   created () {},
@@ -122,7 +127,7 @@ export default {
     },
 
     closeSuccess() {
-      this.location.href = '/'
+      window.location.href = '/'
     },
 
     getParameterByName(name, url = window.location.href) {
@@ -139,7 +144,7 @@ export default {
 
   computed: {
     ...mapState({
-
+      user: state => state.user
     })
   }
 }

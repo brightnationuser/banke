@@ -14,6 +14,7 @@ function user_account__create() {
     $user_id = wp_create_user($name, $password, $email);
     add_user_meta($user_id, 'company', $company);
     add_user_meta($user_id, 'position', $position);
+    add_user_meta($user_id, 'b_user_avatar', '');
     $is_error = is_a($user_id, 'WP_Error');
 
     $data = [

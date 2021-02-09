@@ -14,7 +14,7 @@ function user_account__check() {
                 'id' => $user->ID,
                 'username' => $user->user_login,
                 'email' => $user->user_email,
-                'photo' => get_avatar_url($user),
+                'photo' => $user_meta['b_user_photo'],
                 'company' => $user_meta['company'],
                 'position' => $user_meta['position']
             ]
