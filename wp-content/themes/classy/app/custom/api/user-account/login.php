@@ -29,9 +29,9 @@ function user_account__login() {
             'id' => $user->ID,
             'username' => $user->user_login,
             'email' => $user->user_email,
-            'photo' => get_user_meta($user->ID, 'b_user_photo')[0],
-            'company' => $user_meta['company'],
-            'position' => $user_meta['position']
+            'photo' => $user_meta['b_user_photo'][0],
+            'company' => $user_meta['company'][0],
+            'position' => $user_meta['position'][0]
         ];
     }
 

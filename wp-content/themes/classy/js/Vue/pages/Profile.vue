@@ -231,10 +231,12 @@ export default {
         this.name.valid = false
       }
 
+      console.log('this.company.val', this.company.val)
       if(!this.company.val.trim().length) {
         this.company.valid = false
       }
 
+      console.log('this.position.val', this.position.val)
       if(!this.position.val.trim().length) {
         this.position.valid = false
       }

@@ -74,7 +74,7 @@ export default {
       key: '',
       showLoader: false,
       validation: false,
-      success: true,
+      success: false,
       password: {
         val: '',
         valid: false,
