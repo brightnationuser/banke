@@ -4,7 +4,9 @@
         <div class="user-profile__wrapper">
           <div class="user-profile__info">
             <div class="user-profile__photo">
-              <UserAvatar></UserAvatar>
+              <UserAvatar
+                :image="user.photo"
+              ></UserAvatar>
             </div>
             <div class="user-profile__name">
               {{user.username}}
@@ -32,6 +34,7 @@
                     <TextInput
                         :validation="validation"
                         :valid="name.valid"
+                        :val="name.val"
                         v-model="name.val"
                         label="Name"
                         placeholder="Enter your name"
@@ -44,6 +47,7 @@
                     <EmailInput
                         :validation="validation"
                         :valid="email.valid"
+                        :val="email.val"
                         v-model="email.val"
                         label="Email"
                         placeholder="Enter your email"
@@ -62,6 +66,7 @@
                       <TextInput
                           :validation="validation"
                           :valid="company.valid"
+                          :val="company.val"
                           v-model="company.val"
                           label="Company"
                           placeholder="Enter company name"
@@ -74,6 +79,7 @@
                       <TextInput
                           :validation="validation"
                           :valid="position.valid"
+                          :val="position.val"
                           v-model="position.val"
                           label="Job Position"
                           placeholder="Enter job position"
@@ -130,28 +136,35 @@ export default {
       showLoader: false,
       validated: false,
       validation: false,
+      userData: {},
       name: {
         val: '',
-        valid: false,
+        valid: true,
         errorMessage: 'This field is required'
       },
       company: {
         val: '',
-        valid: false
+        valid: true
       },
       position: {
         val: '',
-        valid: false
+        valid: true
       },
       email: {
         val: '',
-        valid: false,
+        valid: true,
         errorMessage: 'Incorrect email address'
       },
     }
   },
 
-  mounted () {},
+  mounted () {
+    this.userData = this.user
+    this.name.val = this.user.username
+    this.company.val = this.user.company
+    this.position.val = this.user.position
+    this.email.val = this.user.email
+  },
 
   created () {},
 
@@ -159,15 +172,80 @@ export default {
 
   methods: {
     resetPassword() {
-
+      window.location.href = '/reset-password/'
     },
 
     submit() {
+      this.validated = this.validate()
 
+      let data = new FormData();
+      data.append('action', 'user_account__update');
+      data.append('name', this.name.val);
+      data.append('company', this.company.val);
+      data.append('position', this.position.val);
+      data.append('email', this.email.val);
+
+      if(this.validated) {
+        this.showLoader = true
+
+        axios.post('/wp-admin/admin-ajax.php', data)
+            .then((response) => {
+              this.showLoader = false
+
+              if (response.data.error !== '' && response.data.error.hasOwnProperty('existing_user_login')) {
+                this.name.valid = false
+                this.name.errorMessage = 'This name is already used'
+              }
+
+              if (response.data.error !== '' && response.data.error.hasOwnProperty('existing_user_email')) {
+                this.email.valid = false
+                this.email.errorMessage = 'This email is already used'
+              }
+
+              if(response.data.success) {
+                this.userData.username = response.data.user.username
+                this.userData.company = response.data.user.company
+                this.userData.position = response.data.user.position
+                this.userData.email = response.data.user.email
+
+                this.$store.commit('setUser', this.userData)
+              }
+          })
+      }
     },
 
     cancel() {
+      this.name.val = this.user.username
+      this.company.val = this.user.company
+      this.position.val = this.user.position
+      this.email.val = this.user.email
+    },
 
+    validate() {
+      this.validation = true
+
+      console.log('this.name.val', this.name.val)
+      console.log('this.name.val', this.name.val.trim().length)
+
+      if(!this.name.val.trim().length) {
+        this.name.valid = false
+      }
+
+      if(!this.company.val.trim().length) {
+        this.company.valid = false
+      }
+
+      if(!this.position.val.trim().length) {
+        this.position.valid = false
+      }
+
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      this.email.valid = re.test(this.email.val.trim().toLowerCase())
+
+      return this.name.valid &&
+          this.company.valid &&
+          this.position.valid &&
+          this.email.valid
     }
   },
 

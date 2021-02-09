@@ -13,8 +13,10 @@
 </template>
 
 <script>
+import 'cropperjs/dist/cropper.css';
 
 import { mapState } from 'vuex';
+import VueCropper from 'vue-cropperjs';
 
 export default {
   name: 'UserAvatar',
@@ -23,12 +25,13 @@ export default {
   ],
 
   components: {
-
+    VueCropper
   },
 
   data() {
     return {
-      profileImage: ''
+      userData: {},
+      profileImage: '',
     }
   },
 
@@ -39,6 +42,8 @@ export default {
     else {
       this.profileImage = this.image
     }
+
+    this.userData = this.user;
   },
 
   created () {},
@@ -54,12 +59,14 @@ export default {
       let files = this.$refs.uploadFile.files;
 
       let formData = new FormData();
+      formData.append("action", 'user_account__upload_photo');
       formData.append("image", files[0]);
 
-      axios.post('upload_file', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
+      axios.post('/wp-admin/admin-ajax.php', formData).then((response) => {
+
+        this.profileImage = response.data.file_info.path
+        this.userData.photo = response.data.file_info.path
+        this.$store.commit('setUser', this.userData)
       })
     }
   },
@@ -68,7 +75,7 @@ export default {
 
   computed: {
     ...mapState({
-
+      user: state => state.user
     })
   }
 }
@@ -89,6 +96,13 @@ export default {
       border-radius: 50%;
       width: 70px;
       height: 70px;
+      overflow: hidden;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
     }
 
     &__icon {

@@ -1,6 +1,5 @@
 <template>
   <div>
-<!--    <div class="test" @click="$router.push({ name: 'Specification' })">push</div>-->
     <router-view></router-view>
   </div>
 </template>

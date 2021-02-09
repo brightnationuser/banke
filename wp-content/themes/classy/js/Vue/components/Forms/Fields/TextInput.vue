@@ -2,7 +2,7 @@
   <div class="account-form__field" :class="{'account-form__field--has-error' : validation && !valid}">
     <label class="field__label" :for="name">{{ label }}</label>
     <div class="field__input-wrap">
-      <input class="field__input" type="text" :id="name" :name="name" :placeholder="placeholder"
+      <input class="field__input" type="text" :id="name" :name="name" :placeholder="placeholder" :value="val"
              @input="$emit('input', $event.target.value)"
              @change="change()"
       >
