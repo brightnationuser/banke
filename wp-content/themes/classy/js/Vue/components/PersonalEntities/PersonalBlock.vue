@@ -119,6 +119,7 @@ export default {
   }
 
   &__subtitle {
+    font-weight: 400;
     padding-top: 5px;
     font-size: 12px;
     color: #959595;
@@ -134,7 +135,9 @@ export default {
     margin: 7px 7px 0;
     font-size: 10px;
     color: #959595;
-    &:first-child {
+    text-decoration: unset;
+    transition: color 0.4s ease-in;
+    &:hover {
       color: #005CA9;
     }
     &:last-child {
