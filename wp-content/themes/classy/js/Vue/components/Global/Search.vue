@@ -1,7 +1,12 @@
 <template>
   <div class="search">
     <div class="search__input">
-      <input class="search__inner-input" type="text" placeholder="Search files">
+      <input
+          :value="searchFilesValue"
+          @input="$emit('update:searchFilesValue', $event.target.value)"
+          class="search__inner-input"
+          type="text"
+          placeholder="Search files">
       <img class="search__icon" src="../../assets/icons/search.svg" alt="Search icon">
     </div>
   </div>
@@ -10,9 +15,14 @@
 <script>
 export default {
   name: 'Search',
+
   components: {},
+
   props: {
-    searchFiles: String
+    searchFilesValue: String
+  },
+
+  methods: {
   }
 }
 </script>

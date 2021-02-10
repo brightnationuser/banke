@@ -61,6 +61,8 @@ export default {
 
   data() {
     return {
+      searchFilesValue: '',
+
       selectedOption: {
         name: 'All'
       },
