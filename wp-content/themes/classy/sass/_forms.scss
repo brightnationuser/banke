@@ -155,3 +155,24 @@ button, input[type=button] {
         }
     }
 }
+
+@media screen and (max-width: 480px) {
+    .button {
+
+        &--account {
+            padding: 8px 30px;
+        }
+
+        &:hover, &:focus {
+            padding: 8px 30px;
+        }
+
+        &--stroke {
+            padding: 7px 30px;
+
+            &:hover, &:focus {
+                padding: 7px 30px;
+            }
+        }
+    }
+}

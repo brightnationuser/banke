@@ -3,8 +3,7 @@
     <img class="personal-block__format" src="../../assets/icons/pdf.svg" alt="Format icon">
     <div class="personal-block__inner">
       <div class="personal-block__image">
-        <img src="../../assets/specifications/track@2x.png" alt="Block">
-
+        <img :src="image" alt="Block">
       </div>
       <div class="personal-block__headline">
         <div class="personal-block__title">
@@ -13,14 +12,15 @@
         <div class="personal-block__subtitle">
           {{ subtitle }}
         </div>
-        <div v-if="langs" class="personal-block__langs">
+        <div v-if="files && files.length > 1" class="personal-block__files">
           <a
-              :href="elemLang.link"
-              v-for="(elemLang, index) in langs"
+              download
+              :href="elemFile.link"
+              v-for="(elemFile, index) in files"
               :key="index"
-              class="personal-block__langs-elem"
+              class="personal-block__files-elem"
               target="_blank">
-            {{  elemLang.name }}
+            {{ elemFile.lang }}
           </a>
         </div>
       </div>
@@ -35,6 +35,10 @@ import {mapState} from 'vuex';
 export default {
   name: 'PersonalBlock',
   props: {
+    image: {
+      type: String,
+      default: '/wp-content/themes/classy/js/Vue/assets/specifications/track@2x.png'
+    },
     title: {
       type: String,
       default: 'Not found'
@@ -43,7 +47,9 @@ export default {
       type: String,
       default: 'Not found'
     },
-    langs: Array
+    files: {
+      type: Array
+    }
   },
 
   components: {},
@@ -125,12 +131,13 @@ export default {
     color: #959595;
   }
 
-  &__langs {
+  &__files {
     display: flex;
     justify-content: center;
+    text-transform: uppercase;
   }
 
-  &__langs-elem {
+  &__files-elem {
     position: relative;
     margin: 7px 7px 0;
     font-size: 10px;
@@ -196,7 +203,7 @@ export default {
 
     }
 
-    &__langs-elem {
+    &__files-elem {
       &:first-of-type {
         margin-left: 0;
       }

@@ -161,3 +161,31 @@
     z-index: 2;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .account-form {
+    &__content {
+      flex-direction: column;
+    }
+
+    &__column {
+      margin-bottom: 25px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .account-form {
+    padding: 50px 30px;
+
+    .field {
+      &__input {
+        padding: 12px 16px;
+      }
+    }
+  }
+}

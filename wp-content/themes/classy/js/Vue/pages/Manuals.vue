@@ -10,13 +10,14 @@
             E-PTO Systems
           </div>
           <div class="personal-entities__list">
-            <PersonalBlock />
-            <PersonalBlock />
-            <PersonalBlock />
-            <PersonalBlock />
-            <PersonalBlock />
-            <PersonalBlock />
-            <PersonalBlock />
+            <PersonalBlock
+              v-for="manual in manuals"
+              :key="manual.id"
+              :title="manual.title"
+              :subtitle="manual.category.description"
+              :image="manual.image.url"
+              :files="manual.files"
+            />
           </div>
         </div>
       </div>
@@ -44,16 +45,36 @@ export default {
   },
 
   data() {
-    return { }
+    return {
+      manuals: []
+    }
   },
 
-  mounted () {},
+  mounted () {
+    this.getManuals()
+  },
 
   created () {},
 
   updated () {},
 
-  methods: {},
+  methods: {
+    getManuals() {
+      this.validation = true
+
+      let data = new FormData();
+
+      data.append('action', 'user_get__manuals');
+
+      this.showLoader = true
+
+      axios.post('/wp-admin/admin-ajax.php', data)
+          .then((response) => {
+            console.log(response.data)
+            this.manuals = response.data
+          })
+    }
+  },
 
   watch: {},
 

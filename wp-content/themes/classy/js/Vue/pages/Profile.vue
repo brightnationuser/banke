@@ -349,4 +349,43 @@ export default {
       }
     }
   }
+
+  @media screen and (max-width: 992px) {
+    .user-profile {
+      &__wrapper {
+        flex-direction: column;
+      }
+
+      &__info {
+        margin-bottom: 30px;
+        margin-right: 0;
+      }
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .account-form {
+      padding: 50px 30px;
+
+      &__need-help {
+        top: 15px;
+        right: 30px;
+      }
+
+      &__title {
+        font-size: 22px;
+        margin-bottom: 15px;
+      }
+
+      &__row--buttons {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .button + .button {
+          margin-left: 0;
+          margin-top: 15px;
+        }
+      }
+    }
+  }
 </style>

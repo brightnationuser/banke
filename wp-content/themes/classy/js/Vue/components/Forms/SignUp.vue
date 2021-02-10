@@ -258,5 +258,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @media screen and(max-width: 480px) {
+    .account-form {
+      padding: 30px;
 
+      &__row {
+        margin-top: 10px;
+      }
+
+      &__column {
+        margin-bottom: 15px;
+      }
+    }
+  }
 </style>

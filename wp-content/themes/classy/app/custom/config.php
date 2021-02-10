@@ -61,6 +61,53 @@ $post_types = array(
         'singular' => __( 'News', 'textdomain' ),
         'multiple' => __( 'News', 'textdomain' ),
     ),
+    'manuals' => array(
+        'config' => array(
+            'public' => true,
+            'show_in_menu' => false,
+            'has_archive' => false,
+            'supports' => array(
+                'title',
+                'page-attributes',
+            ),
+            'taxonomies' => array('manual-type'),
+            'show_in_nav_menus' => false,
+            'rewrite' => array('with_front' => false),
+        ),
+        'singular' => __( 'Manual', 'textdomain' ),
+        'multiple' => __( 'Manuals', 'textdomain' ),
+    ),
+    'specifications' => array(
+        'config' => array(
+            'public' => true,
+            'has_archive' => false,
+            'supports' => array(
+                'title',
+                'page-attributes',
+            ),
+            'taxonomies' => array('specification-type'),
+            'show_in_menu' => false,
+            'show_in_nav_menus' => false,
+            'rewrite' => array('with_front' => false),
+        ),
+        'singular' => __( 'Specification', 'textdomain' ),
+        'multiple' => __( 'Specifications', 'textdomain' ),
+    ),
+    'models3d' => array(
+        'config' => array(
+            'public' => true,
+            'has_archive' => false,
+            'supports' => array(
+                'title',
+                'page-attributes',
+            ),
+            'show_in_menu' => false,
+            'show_in_nav_menus' => false,
+            'rewrite' => array('with_front' => false),
+        ),
+        'singular' => __( '3D model', 'textdomain' ),
+        'multiple' => __( '3D models', 'textdomain' ),
+    ),
 );
 
 /**
@@ -70,16 +117,26 @@ $post_types = array(
  * @var array
  */
 $taxonomies = array(
-//    'gallery-category' => array(
-//        'for'		=> array( 'post' ),
-//        'config'  	=> array(
-//            'sort' 			=> true,
-//            'args' 			=> array( 'orderby' => 'term_order' ),
-//            'hierarchical' 	=> true,
-//        ),
-//        'singular'	=> 'Category',
-//        'multiple'	=> 'Categories',
-//    ),
+    'manual-type' => array(
+        'for'		=> array( 'manuals' ),
+        'config'  	=> array(
+            'sort' 			=> true,
+            'args' 			=> array( 'orderby' => 'term_order' ),
+            'hierarchical' 	=> false,
+        ),
+        'singular'	=> 'Manual type',
+        'multiple'	=> 'Manual types',
+    ),
+    'specification-type' => array(
+        'for'		=> array( 'specifications' ),
+        'config'  	=> array(
+            'sort' 			=> true,
+            'args' 			=> array( 'orderby' => 'term_order' ),
+            'hierarchical' 	=> false,
+        ),
+        'singular'	=> 'Specification type',
+        'multiple'	=> 'Specification types',
+    ),
 );
 
 /**
@@ -114,6 +171,7 @@ $sidebars = array();
  */
 $include = array(
     'routes.php',
+    'user_flow_config.php',
     'theme_settings.php',
     'redirects.php',
     're_order_menu.php',
