@@ -2,10 +2,13 @@
   <div class="filter">
 
     <div class="filter__left">
-      <div class="filter__title">
+      <div class="filter__title" v-if="!searchInProcess">
         {{title}}
       </div>
-      <template v-if="showFilter">
+      <div class="filter__title" v-else>
+        Search
+      </div>
+      <template v-if="showFilter && !searchInProcess">
         <div class="filter__line"></div>
         <PersonalFilterList
             :filterList="options"
@@ -17,7 +20,7 @@
     <div class="filter__right">
       <div class="filter__right__first">
         <vSelect
-            v-if="showFilter"
+            v-if="showFilter && !searchInProcess"
             :options="options"
             :selectedOption="selectedOption"
             @select="eventSelectedOption"
@@ -25,7 +28,11 @@
         <NeedHelpLink class="filter__link"/>
       </div>
       <div class="filter__right__second">
-        <Search/>
+        <Search
+            :searchFilesValue="search"
+            @update="searchUpdate"
+            @runSearch="runSearch"
+        />
       </div>
     </div>
   </div>
@@ -57,6 +64,8 @@ export default {
   data() {
     return {
       searchFilesValue: '',
+      search: '',
+      searchInProcess: false,
 
       selectedOption: {
         name: 'All'
@@ -97,8 +106,6 @@ export default {
     },
 
     getManuals() {
-      this.validation = true
-
       let data = new FormData();
 
       data.append('action', 'user_get__manuals_tags');
@@ -113,8 +120,35 @@ export default {
               slug: '*'
             })
           })
+    },
+
+    searchUpdate(val) {
+      this.search = val
+
+      if(val.length > 3) {
+        this.runSearch()
+      }
+      else {
+        this.cancelSearch()
+      }
+    },
+
+    cancelSearch() {
+      this.searchInProcess = false
+      this.$emit('cancelSearch')
+    },
+
+    runSearch() {
+      this.searchInProcess = true
+      this.$emit('runSearch', this.search)
     }
   },
+
+  watch: {
+    search: function (val) {
+      console.log('val', val)
+    }
+  }
 }
 </script>
 

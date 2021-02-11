@@ -6,6 +6,7 @@
           <PersonalFilter class="personal-entities__filter"
             :showFilter="true"
             title="Manuals"
+            @runSearch="runSearch"
             @select="getManualsByTerm"
           />
           <div class="personal-entities__title">
@@ -88,6 +89,20 @@ export default {
       axios.post('/wp-admin/admin-ajax.php', data)
           .then((response) => {
             console.log(response.data)
+            this.manuals = response.data
+          })
+    },
+
+    runSearch(val) {
+      let data = new FormData();
+
+      data.append('action', 'user_run_search');
+      data.append('search', val);
+
+      this.showLoader = true
+
+      axios.post('/wp-admin/admin-ajax.php', data)
+          .then((response) => {
             this.manuals = response.data
           })
     }

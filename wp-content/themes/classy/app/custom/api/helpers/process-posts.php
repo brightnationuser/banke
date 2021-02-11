@@ -15,6 +15,19 @@ function process_posts ($posts) {
             }
         }
 
+        if($post->post_type === 'specifications' && (is_null($terms[0]) || empty($terms[0]))) {
+            if(ICL_LANGUAGE_CODE === 'en') {
+                $terms[0] = [
+                    'description' => 'Specification'
+                ];
+            }
+            elseif (ICL_LANGUAGE_CODE === 'de') {
+                $terms[0] = [
+                    'description' => 'Spezifikation'
+                ];
+            }
+        }
+
         $response[] = [
             'id' =>  $post->ID,
             'image' => get_field('image', $post->ID),

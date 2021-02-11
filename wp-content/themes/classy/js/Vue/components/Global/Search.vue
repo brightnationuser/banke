@@ -3,7 +3,8 @@
     <div class="search__input">
       <input
           :value="searchFilesValue"
-          @input="$emit('update:searchFilesValue', $event.target.value)"
+          @input="$emit('update', $event.target.value)"
+          @keyup="emitSearchByKeyup"
           class="search__inner-input"
           type="text"
           placeholder="Search files">
@@ -23,6 +24,11 @@ export default {
   },
 
   methods: {
+    emitSearchByKeyup(e) {
+      if(e.keyCode === 13) {
+        this.$emit('runSearch', this.searchFilesValue)
+      }
+    }
   }
 }
 </script>
