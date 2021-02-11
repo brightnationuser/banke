@@ -3,19 +3,19 @@
     <Menu/>
     <div class="personal-entities__container">
       <div class="personal-entities__container-inner">
-        <PersonalFilter class="personal-entities__filter"/>
+        <PersonalFilter class="personal-entities__filter"
+          title="Specifications"
+        />
         <div v-for="(elemEntities, index) in data" :key="index">
           <div class="personal-entities__title">
-            {{ elemEntities.name }}
-            <div
-                class="personal-entities__list"
-
-            >
+            {{ index }}
+            <div class="personal-entities__list">
               <PersonalBlock
-                v-for="(elem,index) in elemEntities.list" :key="index"
+                v-for="(elem, index) in elemEntities" :key="elem.id"
                 :title="elem.title"
-                :subtitle="elem.subtitle"
-                :langs="elem.langs"
+                subtitle="Specification"
+                :image="elem.image.url"
+                :files="elem.files"
               />
             </div>
           </div>
@@ -47,108 +47,13 @@ export default {
     return {
 
       data: [
-        {
-          name: 'E-PTO Systems',
-          list: [
-            {
-              title: 'Title text',
-              subtitle: 'Subtitle text',
-              langs: [
-                {
-                  name: 'EN',
-                  link: 'https://google.com'
-                },
-                {
-                  name: 'DE',
-                  link: 'https://facebook.com'
-                },
-                {
-                  name: 'FR',
-                  link: 'https://linkedin.com'
-                }
-              ]
-            },
-            {
-              title: 'Title text',
-              subtitle: 'Subtitle text'
-            },
-            {
-              title: 'Title text',
-              subtitle: 'Subtitle text'
-            },
-            {
-              title: 'Title text',
-              subtitle: 'Subtitle text'
-            },
-            {
-              title: 'Title text',
-              subtitle: 'Subtitle text'
-            },
-            {
-              title: 'Title text',
-              subtitle: 'Subtitle text'
-            },
 
-          ]
-        },
-        {
-          name: 'E-PTO Systems',
-          list: [
-            {
-              title: 'Title text',
-              subtitle: 'Subtitle text',
-              langs: [
-                {
-                  name: 'EN',
-                  link: 'https://google.com'
-                },
-                {
-                  name: 'DE',
-                  link: 'https://facebook.com'
-                }
-              ]
-            },
-            {
-              title: 'Title text',
-              subtitle: 'Subtitle text',
-              langs: [
-                {
-                  name: 'EN',
-                  link: 'https://google.com'
-                },
-                {
-                  name: 'DE',
-                  link: 'https://facebook.com'
-                },
-                {
-                  name: 'EN',
-                  link: 'https://google.com'
-                },
-                {
-                  name: 'DE',
-                  link: 'https://facebook.com'
-                },
-                {
-                  name: 'DE',
-                  link: 'https://facebook.com'
-                }
-              ]
-            },
-            {
-              title: 'Title text',
-              subtitle: 'Subtitle text'
-            },
-            {
-              title: 'Title text',
-              subtitle: 'Subtitle text'
-            }
-          ]
-        },
       ]
     }
   },
 
   mounted() {
+    this.getSpecifications()
   },
 
   created() {
@@ -157,7 +62,22 @@ export default {
   updated() {
   },
 
-  methods: {},
+  methods: {
+    getSpecifications() {
+
+      let data = new FormData();
+
+      data.append('action', 'user_get__specifications');
+
+      this.showLoader = true
+
+      axios.post('/wp-admin/admin-ajax.php', data)
+          .then((response) => {
+            console.log(response.data)
+            this.data = response.data
+          })
+    },
+  },
 
   watch: {},
 

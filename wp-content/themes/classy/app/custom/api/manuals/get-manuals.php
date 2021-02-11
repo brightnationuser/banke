@@ -1,4 +1,6 @@
 <?php
+require_once 'get-tags.php';
+
 add_action('wp_ajax_user_get__manuals', 'user_get__manuals');
 add_action('wp_ajax_nopriv_user_get__manuals', 'user_get__manuals');
 
@@ -11,28 +13,42 @@ function user_get__manuals() {
     ]);
 
     $manuals = $query->get_posts();
-    $response = [];
 
-    foreach ($manuals as $manual) {
-        $terms = get_the_terms($manual->ID, 'manual-type');
-        $_files = get_field('download_files', $manual->ID);
-        $files = [];
+    $response = process_posts($manuals);
 
-        foreach ($_files as $key => &$_file) {
-            if($_file !== false) {
-                $_file['lang'] = $key;
-                $files[] = $_file;
-            }
-        }
+    echo json_encode($response);
 
-        $response[] = [
-            'id' =>  $manual->ID,
-            'image' => get_field('image', $manual->ID),
-            'files' => $files,
-            'title' => $manual->post_title,
-            'category' => $terms[0]
+    wp_die();
+}
+
+add_action('wp_ajax_user_get__manuals_by_term', 'user_get__manuals_by_term');
+add_action('wp_ajax_nopriv_user_get__manuals_by_term', 'user_get__manuals_by_term');
+
+function user_get__manuals_by_term() {
+
+    $term_slug = $_POST['term_slug'];
+    $tax_query = [];
+
+    if($term_slug !== '*') {
+        $tax_query = [
+            [
+                'taxonomy' => 'manual-type',
+                'field' => 'slug',
+                'terms' => $term_slug,
+            ]
         ];
     }
+
+    $query = new WP_Query([
+        'post_type' => 'manuals',
+        'post_status' => 'publish',
+        'posts_per_page' => -1,
+        'tax_query' => $tax_query
+    ]);
+
+    $manuals = $query->get_posts();
+
+    $response = process_posts($manuals);
 
     echo json_encode($response);
 

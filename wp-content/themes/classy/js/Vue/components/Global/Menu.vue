@@ -2,13 +2,15 @@
   <div class="menu">
     <div class="menu__upper">
       <div class="menu__info" @click="$router.push('/profile')">
-        <UserAvatar></UserAvatar>
+        <UserAvatar
+            :image="user.photo"
+        ></UserAvatar>
         <div class="menu__headline">
           <div class="menu__name">
-            John Doe
+            {{ user.username }}
           </div>
           <div class="menu__email">
-            JohnDoe@gmail.com
+            {{ user.email }}
           </div>
         </div>
         <router-link :to="{ name: 'Specification' }" custom v-slot="{href, navigate}">
@@ -111,7 +113,7 @@ export default {
 
   computed: {
     ...mapState({
-
+      user: state => state.user
     })
   }
 }

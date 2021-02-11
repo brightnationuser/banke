@@ -3,7 +3,7 @@
 
     <div class="filter__left">
       <div class="filter__title">
-        Search
+        {{title}}
       </div>
       <template v-if="showFilter">
         <div class="filter__line"></div>
@@ -47,15 +47,10 @@ export default {
   },
 
   props: {
+    title: String,
     showFilter: {
       type: Boolean,
       default: false
-    }
-  },
-
-  methods: {
-    eventSelectedOption(options) {
-      this.selectedOption = options
     }
   },
 
@@ -69,27 +64,57 @@ export default {
       options: [
         {
           name: 'All',
-          value: 1
+          slug: 1
         },
         {
           name: 'Installation',
-          value: 2
+          slug: 2
         },
         {
           name: 'Users',
-          value: 3
+          slug: 3
         },
         {
           name: 'Service',
-          value: 4
+          slug: 4
         },
         {
           name: 'Specific Repair Instruction',
-          value: 5
+          slug: 5
         }
       ],
     }
-  }
+  },
+
+  mounted() {
+    this.getManuals()
+  },
+
+  methods: {
+    eventSelectedOption(term) {
+      this.selectedOption = term
+      this.$emit('select', term)
+    },
+
+    getManuals() {
+      this.validation = true
+
+      let data = new FormData();
+
+      data.append('action', 'user_get__manuals_tags');
+
+      this.showLoader = true
+
+      axios.post('/wp-admin/admin-ajax.php', data)
+          .then((response) => {
+            this.options = response.data
+            this.options.unshift({
+              name: 'All',
+              slug: '*'
+            })
+          })
+    }
+  },
 }
 </script>
 

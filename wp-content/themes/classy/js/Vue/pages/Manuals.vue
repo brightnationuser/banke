@@ -5,6 +5,8 @@
         <div class="personal-entities__container-inner">
           <PersonalFilter class="personal-entities__filter"
             :showFilter="true"
+            title="Manuals"
+            @select="getManualsByTerm"
           />
           <div class="personal-entities__title">
             E-PTO Systems
@@ -60,11 +62,26 @@ export default {
 
   methods: {
     getManuals() {
-      this.validation = true
 
       let data = new FormData();
 
       data.append('action', 'user_get__manuals');
+
+      this.showLoader = true
+
+      axios.post('/wp-admin/admin-ajax.php', data)
+          .then((response) => {
+            console.log(response.data)
+            this.manuals = response.data
+          })
+    },
+
+    getManualsByTerm(term) {
+
+      let data = new FormData();
+
+      data.append('action', 'user_get__manuals_by_term');
+      data.append('term_slug', term.slug);
 
       this.showLoader = true
 

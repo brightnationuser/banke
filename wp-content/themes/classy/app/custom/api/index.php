@@ -1,4 +1,5 @@
 <?php
+require_once 'helpers/process-posts.php';
 require_once 'user-account/index.php';
 require_once 'manuals/get-manuals.php';
 require_once 'specifications/get-specifications.php';
