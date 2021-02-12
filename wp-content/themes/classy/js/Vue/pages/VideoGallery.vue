@@ -2,10 +2,6 @@
   <div class="personal-main">
     <Menu/>
     <PersonalVideo />
-    Video Gallery
-<!--    <youtube  :video-id="videoId" ref="youtube" @playing="playing" />-->
-<!--    <button @click="playVideo">play</button>-->
-    <!--    <youtube video-id="1231231" player-vars="1234" ></youtube>-->
   </div>
 </template>
 

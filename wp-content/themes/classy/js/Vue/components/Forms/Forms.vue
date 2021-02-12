@@ -11,6 +11,10 @@
             {{ user.username }}
           </a>
       </span>
+      <i class="icon-arrow-down"></i>
+      <div class="sign-in__dropdown">
+        <DropDownCard></DropDownCard>
+      </div>
     </div>
     <SignIn
         v-if="showForm === 'SignIn'"
@@ -36,6 +40,7 @@ import {mapState} from "vuex";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import ResetPassword from "./ResetPassword";
+import DropDownCard from "./DropDownCard"
 
 export default {
   name: 'Forms',
@@ -45,7 +50,8 @@ export default {
   components: {
     SignIn,
     SignUp,
-    ResetPassword
+    ResetPassword,
+    DropDownCard
   },
   data() {
     return {
@@ -110,10 +116,53 @@ export default {
     align-items: center;
     color: #003462;
     margin-bottom: -3px;
+    position: relative;
 
     i {
       margin-right: 4px;
       color: #005ca9;
+    }
+
+    .menu__elem {
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:visited {
+        color: #003462;
+      }
+    }
+
+    .icon-arrow-down {
+      font-size: 7px;
+      margin-left: 5px;
+      margin-bottom: -2px;
+      color: #18466e;
+      transition: all .3s ease;
+    }
+
+    &__dropdown {
+      position: absolute;
+      top: calc(100% + 11px);
+      right: 0;
+      max-width: 238px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all .3s ease;
+    }
+
+    &:hover {
+      .icon-arrow-down {
+        transform: rotate(-180deg);
+      }
+
+      .sign-in {
+        &__dropdown {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
     }
   }
 </style>

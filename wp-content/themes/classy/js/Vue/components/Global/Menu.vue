@@ -30,11 +30,11 @@
               Specification
             </a>
           </router-link>
-          <router-link :to="{ name: 'Three-models' }" custom v-slot="{href, navigate, isActive}">
-            <a class="menu__elem" :class="{'menu__elem--active' : isActive}" :href="href" @click="navigate">
+<!--          <router-link :to="{ name: 'Three-models' }" custom v-slot="{href, navigate, isActive}">
+            <a class="menu__elem" :class="{'menu__elem&#45;&#45;active' : isActive}" :href="href" @click="navigate">
               3D Models
             </a>
-          </router-link>
+          </router-link>-->
           <router-link :to="{ name: 'Manuals' }" custom v-slot="{href, navigate, isActive}">
             <a class="menu__elem" :class="{'menu__elem--active' : isActive}" :href="href" @click="navigate">
               Manuals

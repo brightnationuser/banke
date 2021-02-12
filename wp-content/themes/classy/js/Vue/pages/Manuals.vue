@@ -7,6 +7,7 @@
             :showFilter="true"
             title="Manuals"
             @runSearch="runSearch"
+            @cancelSearch="getManuals"
             @select="getManualsByTerm"
           />
           <div class="personal-entities__title">

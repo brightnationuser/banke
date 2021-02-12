@@ -1,10 +1,10 @@
 <template>
-  <div class="user-avatar">
+  <div class="user-avatar" :class="classes">
     <div class="user-avatar__img">
       <div class="user-avatar__img-wrap">
         <img :src="profileImage" alt="Profile">
       </div>
-      <label for="upload-user-file" class="user-avatar__icon" @click="selectAvatar">
+      <label for="upload-user-file" v-if="addIcon" class="user-avatar__icon" @click="selectAvatar">
         <i class="icon-plus-bold"></i>
         <input class="user-avatar__file-input" type="file" ref="uploadFile" id="upload-user-file" @change="requestUploadFile()" />
       </label>
@@ -20,9 +20,18 @@ import VueCropper from 'vue-cropperjs';
 
 export default {
   name: 'UserAvatar',
-  props: [
-    'image'
-  ],
+  props: {
+    image: {
+      type: String,
+    },
+    addIcon: {
+      type: Boolean,
+      default: true
+    },
+    classes: {
+      type: String
+    }
+  },
 
   components: {
     VueCropper
@@ -130,6 +139,19 @@ export default {
 
     &__file-input {
       display: none;
+    }
+
+    &--small {
+      .user-avatar {
+        &__img {
+          max-width: 42px;
+        }
+
+        &__img-wrap {
+          width: 42px;
+          height: 42px;
+        }
+      }
     }
   }
 </style>
