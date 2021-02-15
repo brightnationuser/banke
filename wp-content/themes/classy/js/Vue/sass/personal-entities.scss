@@ -69,8 +69,20 @@
 
 @media (max-width: 800px) {
   .personal-entities {
+    &__container {
+      padding: 0 28px 20px 28px;
+    }
+
     &__list {
       flex-direction: column;
+    }
+
+    &__list-specification {
+      margin-top: 10px;
+    }
+
+    &__list-manuals {
+      margin-top: 7px;
     }
   }
 }
@@ -78,7 +90,7 @@
 @media (max-width: 500px) {
   .personal-entities {
     &__container {
-      padding: 0 20px 80px 20px;
+      padding: 0 20px 20px 20px;
     }
   }
 }
