@@ -8,18 +8,18 @@
           @runSearch="runSearch"
           @cancelSearch="cancelSearch"
         />
-        <div v-if="!searchInProcess" v-for="(elemEntities, index) in data" :key="index">
+        <div class="personal-entities__list-specification" v-if="!searchInProcess" v-for="(elemEntities, index) in data" :key="index">
           <div class="personal-entities__title">
             {{ index }}
-            <div class="personal-entities__list">
-              <PersonalBlock
+          </div>
+          <div class="personal-entities__list">
+            <PersonalBlock
                 v-for="(elem, index) in elemEntities" :key="elem.id"
                 :title="elem.title"
                 subtitle="Specification"
                 :image="elem.image.url"
                 :files="elem.files"
-              />
-            </div>
+            />
           </div>
         </div>
         <div class="personal-entities__list rrr" v-if="searchInProcess">

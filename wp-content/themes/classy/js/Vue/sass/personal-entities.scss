@@ -1,7 +1,7 @@
 .personal-entities {
   &__container {
     background-color: #F2F5F9;
-    padding: 0 64px 80px 64px;
+    padding: 0 48px 80px 64px;
     width: 100%;
   }
 
@@ -10,8 +10,16 @@
     max-width: 1291px;
   }
 
+  &__list-specification {
+    margin-top: 33px;
+  }
+
+  &__list-manuals {
+    margin-top: calc(41px - 9px);
+  }
+
   &__title {
-    margin: 33px 0 18px 0;
+    margin-bottom: 9px;
     font-size: 14px;
     color: #4A4A49;
     font-weight: 600;
@@ -20,8 +28,21 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -18px 0;
+    justify-content: flex-start;
+
   }
+}
+
+@media (max-width: 1400px) {
+  .personal-entities {
+    &__container {
+      padding: 0 26px 80px 44px;
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  
 }
 
 @media (max-width: 1024px) {
@@ -33,12 +54,11 @@
     &__container-inner {
       margin: 0 auto;
       width: 100%;
-      max-width: 700px;
+      max-width: 874px;
     }
 
     &__list {
       margin: 0;
-      justify-content: space-around;
       flex-wrap: wrap;
     }
 

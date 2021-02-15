@@ -13,28 +13,26 @@
             {{ user.email }}
           </div>
         </div>
-        <router-link :to="{ name: 'Specification' }" custom v-slot="{href, navigate}">
-          <a class="menu__logout-mobile" :href="href" @click="navigate">
-            Log Out
-          </a>
-        </router-link>
+        <div class="menu__logout-mobile" :href="href" @click="logOut">
+          Log Out
+        </div>
       </div>
       <div class="menu__list-wrapper">
         <div class="menu__list">
-          <RouterLinkCustom
-              to="Specification"
-              classes="menu__elem"
-          ></RouterLinkCustom>
+<!--          <RouterLinkCustom-->
+<!--              to="Specification"-->
+<!--              classes="menu__elem"-->
+<!--          ></RouterLinkCustom>-->
           <router-link :to="{ name: 'Specification' }" custom v-slot="{href, navigate, isActive}">
             <a class="menu__elem" :class="{'menu__elem--active' : isActive}" :href="href" @click="navigate">
               Specification
             </a>
           </router-link>
-<!--          <router-link :to="{ name: 'Three-models' }" custom v-slot="{href, navigate, isActive}">
-            <a class="menu__elem" :class="{'menu__elem&#45;&#45;active' : isActive}" :href="href" @click="navigate">
-              3D Models
-            </a>
-          </router-link>-->
+          <!--          <router-link :to="{ name: 'Three-models' }" custom v-slot="{href, navigate, isActive}">
+                      <a class="menu__elem" :class="{'menu__elem&#45;&#45;active' : isActive}" :href="href" @click="navigate">
+                        3D Models
+                      </a>
+                    </router-link>-->
           <router-link :to="{ name: 'Manuals' }" custom v-slot="{href, navigate, isActive}">
             <a class="menu__elem" :class="{'menu__elem--active' : isActive}" :href="href" @click="navigate">
               Manuals
@@ -65,9 +63,7 @@ import UserAvatar from "./UserAvatar";
 export default {
   name: 'Menu',
 
-  props: [
-
-  ],
+  props: [],
 
   components: {
     RouterLinkCustom,
@@ -75,16 +71,17 @@ export default {
   },
 
   data() {
-    return {
-
-    }
+    return {}
   },
 
-  mounted () {},
+  mounted() {
+  },
 
-  created () {},
+  created() {
+  },
 
-  updated () {},
+  updated() {
+  },
 
   methods: {
     logOut(e) {
@@ -101,8 +98,7 @@ export default {
             if (response.data.success) {
               this.$store.commit('setDefault')
               window.location.href = '/'
-            }
-            else {
+            } else {
               console.log('error: ', response.data.message)
             }
           })
@@ -190,11 +186,12 @@ export default {
 @media (max-width: 1024px) {
   .menu {
     max-width: 100%;
+
     &__info {
       border-bottom: unset;
       margin: 0 auto;
       max-width: 760px;
-      padding: 20px 30px 26px 30px;
+      padding: 56px 30px 26px 30px;
       flex-direction: row;
     }
 
@@ -208,7 +205,7 @@ export default {
 
     &__list {
       margin: 0 auto;
-      padding: 0;
+      padding: 0px 20px;
       max-width: 700px;
       flex-direction: row;
       justify-content: flex-start;
@@ -221,6 +218,7 @@ export default {
     &__logout {
       display: none;
     }
+
     &__logout-mobile {
       display: block;
       border-top: unset;
@@ -236,6 +234,19 @@ export default {
       padding: 12px 10px;
       font-size: 12px;
     }
+
+    &__name {
+      font-size: 16px;
+    }
+
+    &__email {
+      font-size: 12px;
+    }
+
+    &__logout-mobile {
+      padding: 12px 0 0 0;
+    }
+
   }
 }
 
