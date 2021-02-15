@@ -22,7 +22,7 @@
             </div>
           </div>
         </div>
-        <div class="personal-entities__list rrr" v-if="searchInProcess">
+        <div class="personal-entities__list" v-if="searchInProcess">
           <PersonalBlock
               v-for="(elem, index) in data" :key="elem.id"
               :title="elem.title"
@@ -118,6 +118,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 
 </style>
