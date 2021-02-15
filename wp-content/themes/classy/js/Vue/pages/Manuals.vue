@@ -10,18 +10,17 @@
             @cancelSearch="getManuals"
             @select="getManualsByTerm"
           />
-          <div class="personal-entities__title">
-            E-PTO Systems
+          <div class="personal-entities__list-manuals">
+            <div class="personal-entities__list">
+              <PersonalBlock
+                v-for="manual in manuals"
+                :key="manual.id"
+                :title="manual.title"
+                :subtitle="manual.category.description"
+                :image="manual.image.url"
+                :files="manual.files"
+              />
           </div>
-          <div class="personal-entities__list">
-            <PersonalBlock
-              v-for="manual in manuals"
-              :key="manual.id"
-              :title="manual.title"
-              :subtitle="manual.category.description"
-              :image="manual.image.url"
-              :files="manual.files"
-            />
           </div>
         </div>
       </div>

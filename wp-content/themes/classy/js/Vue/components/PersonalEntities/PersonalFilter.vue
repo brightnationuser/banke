@@ -167,6 +167,7 @@ export default {
   &__right {
     display: flex;
     align-items: center;
+    margin-right: 18px;
   }
 
   &__title {
@@ -229,6 +230,18 @@ export default {
     }
     &__link {
       margin: 0 0 0 auto;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 800px) {
+  .filter {
+    &__right {
+      margin-right: 0;
     }
   }
 }

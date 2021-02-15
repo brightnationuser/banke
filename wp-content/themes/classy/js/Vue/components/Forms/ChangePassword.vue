@@ -101,7 +101,7 @@ export default {
 
   methods: {
     submit() {
-      this.validation = true
+      this.validated = this.validate()
 
       let data = new FormData();
 
@@ -110,16 +110,32 @@ export default {
       data.append('key', this.key);
       data.append('username', this.username);
 
-      this.showLoader = true
+      if(this.validated) {
+        this.showLoader = true
+        axios.post('/wp-admin/admin-ajax.php', data)
+            .then((response) => {
+              this.showLoader = false
 
-      axios.post('/wp-admin/admin-ajax.php', data)
-          .then((response) => {
-            this.showLoader = false
+              if (response.data.success) {
+                this.success = true
+              }
+            })
+      }
 
-            if (response.data.success) {
-              this.success = true
-            }
-          })
+    },
+
+    validate() {
+      this.validation = true
+
+      if (!this.password.val.trim().length) {
+        this.password.valid = false
+      }
+
+      if (!this.confirmPassword.val.trim().length) {
+        this.confirmPassword.valid = false
+      }
+      return this.password.valid && this.confirmPassword.valid
+
     },
 
     switchForm(formName) {

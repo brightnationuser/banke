@@ -25,7 +25,7 @@ export default {
 
   methods: {
     emitSearchByKeyup(e) {
-      if(e.keyCode === 13) {
+      if (e.keyCode === 13) {
         this.$emit('runSearch', this.searchFilesValue)
       }
     }
@@ -37,6 +37,45 @@ export default {
 .search {
   &__input {
     position: relative;
+  }
+
+  &__inner-input::-webkit-input-placeholder {
+    color: gray;
+    -webkit-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+
+  &__inner-input::-moz-placeholder {
+    color: gray;
+    -webkit-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+
+  &__inner-input:-moz-placeholder {
+    color: gray;
+    -webkit-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+
+  &__inner-input:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+
+  &__inner-input:focus::-moz-placeholder {
+    color: transparent;
+  }
+
+  &__inner-input:-moz-placeholder {
+    color: transparent;
   }
 
   &__inner-input {

@@ -101,13 +101,13 @@ export default {
   &__arrow {
     position: absolute;
     top: 50%;
-    transform: translate(0, -50%);
+    transform: translate(0, -50%) rotate(180deg);
     right: 8px;
     transition: transform 0.1s linear;
   }
 
   &__arrow--active {
-    transform: translate(0, -50%) rotate(180deg);
+    transform: translate(0, -50%);
   }
 
   &__list {
