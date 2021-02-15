@@ -84,7 +84,7 @@ The source code for this plugin is available on [GitHub](https://github.com/Vipe
 
 = Version 3.0.0 =
 
-* Complete rewrite from scratch using Vue.js and the WordPress REST API.
+* Complete rewrite from scratch using indexVue.js and the WordPress REST API.
 
 = Version 2.2.4 =
 

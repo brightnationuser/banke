@@ -26,6 +26,18 @@ function al_theme_setup()
             'parent_slug' => 'theme-general-settings',
         ));
 
+        acf_add_options_sub_page(array(
+            'page_title' => __('Account Translate', preg_replace('/^www\./','',$_SERVER['SERVER_NAME'])),
+            'menu_title' => __('Account Translate', preg_replace('/^www\./','',$_SERVER['SERVER_NAME'])),
+            'parent_slug' => '/edit.php?post_type=manuals',
+        ));
+
+        acf_add_options_sub_page(array(
+            'page_title' => __('Video Gallery', preg_replace('/^www\./','',$_SERVER['SERVER_NAME'])),
+            'menu_title' => __('Video Gallery', preg_replace('/^www\./','',$_SERVER['SERVER_NAME'])),
+            'parent_slug' => '/edit.php?post_type=manuals',
+        ));
+
 //        acf_add_options_sub_page(array(
 //            'page_title' => __('Header', preg_replace('/^www\./','',$_SERVER['SERVER_NAME'])),
 //            'menu_title' => __('Header', preg_replace('/^www\./','',$_SERVER['SERVER_NAME'])),

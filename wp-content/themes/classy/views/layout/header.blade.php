@@ -61,6 +61,11 @@
                     </div>
                 </div>
             </div>
+            <span>|</span>
+            <div id="app-forms"></div>
         </div>
     </div>
+{{--    @include('partials.account-forms.popup-login')--}}
+{{--    @include('partials.account-forms.popup-forgot')--}}
+{{--    @include('partials.account-forms.popup-register')--}}
 </header>

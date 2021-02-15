@@ -1,0 +1,30 @@
+@import "./fonts.scss";
+@import "./colors.scss";
+@import "./personal-entities";
+
+$max-width-md: 1110px;
+
+.app-account {
+  margin: -40px 0 -80px 0
+}
+
+.personal {
+  display: flex;
+}
+
+.personal-container {
+  width: 100%;
+  padding: 0 66px;
+  background-color: #F2F5F9;
+}
+
+.personal-main {
+  display: flex;
+  border-top: solid 1px #EFEFEF;
+}
+
+@media (max-width: 1024px) {
+  .personal-main {
+    flex-direction: column;
+  }
+}

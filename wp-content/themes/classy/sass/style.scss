@@ -24,6 +24,12 @@
 // PAGES
 @import "pages/**/*.scss";
 
+//Vue Components
+@import "vue-components/**/*.scss";
+
+//EMAIL
+@import "email/**/*.scss";
+
 // LIBS
 @import "~hamburgers/_sass/hamburgers/_base.scss";
 @import "~hamburgers/_sass/hamburgers/types/_3dxy.scss";
