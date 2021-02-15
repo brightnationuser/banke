@@ -1,6 +1,5 @@
 <template>
-  <a class="personal-block">
-    {{ files }}
+  <a :href=files[0].link class="personal-block" download>
     <img class="personal-block__format" src="../../assets/icons/pdf.svg" alt="Format icon">
     <div class="personal-block__inner">
       <div class="personal-block__image">
@@ -80,6 +79,7 @@ export default {
 <style lang="scss" scoped>
 .personal-block {
   position: relative;
+  text-decoration: unset;
   height: 190px;
   margin: 9px 18px 9px 0;
   width: calc(25% - 18px);

@@ -19,10 +19,7 @@
       </div>
       <div class="menu__list-wrapper">
         <div class="menu__list">
-<!--          <RouterLinkCustom-->
-<!--              to="Specification"-->
-<!--              classes="menu__elem"-->
-<!--          ></RouterLinkCustom>-->
+
           <router-link :to="{ name: 'Specification' }" custom v-slot="{href, navigate, isActive}">
             <a class="menu__elem" :class="{'menu__elem--active' : isActive}" :href="href" @click="navigate">
               Specification
@@ -56,7 +53,7 @@
 </template>
 
 <script>
-import RouterLinkCustom from "./RouterLinkCustom";
+
 import {mapState} from "vuex";
 import UserAvatar from "./UserAvatar";
 
@@ -66,7 +63,6 @@ export default {
   props: [],
 
   components: {
-    RouterLinkCustom,
     UserAvatar
   },
 
@@ -205,7 +201,7 @@ export default {
 
     &__list {
       margin: 0 auto;
-      padding: 0px 20px;
+      padding: 0;
       max-width: 700px;
       flex-direction: row;
       justify-content: flex-start;
