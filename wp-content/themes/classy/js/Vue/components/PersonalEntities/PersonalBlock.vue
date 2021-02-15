@@ -81,8 +81,8 @@ export default {
 .personal-block {
   position: relative;
   height: 190px;
-  margin: 9px;
-  width: calc(25% - 20px);
+  margin: 9px 18px 9px 0;
+  width: calc(25% - 18px);
   background-color: #fff;
   border: solid 1px #D6D6D6;
   border-radius: 6px;
@@ -104,8 +104,9 @@ export default {
   &__image {
     max-width: 150px;
     max-height: 66px;
+
     img {
-      object-fit: cover;
+      object-fit: contain;
       display: block;
       width: 100%;
       height: 57px;
@@ -139,24 +140,27 @@ export default {
 
   &__files-elem {
     position: relative;
-    margin: 7px 7px 0;
+    padding: 7px 7px 0;
     font-size: 10px;
     color: #959595;
     text-decoration: unset;
     transition: color 0.4s ease-in;
+
     &:hover {
       color: #005CA9;
     }
+
     &:last-child {
       &::after {
         content: '';
       }
     }
+
     &::after {
       content: "|";
       position: absolute;
-      right: -10px;
-      top: 0.4px;
+      right: -3px;
+      top: 8px;
       color: #cac5c5;
       font-size: 8px;
     }
@@ -166,24 +170,22 @@ export default {
 
 @media (max-width: 1300px) {
   .personal-block {
-    width: calc(33% - 20px);
+    width: calc(33% - 16px);
   }
 }
 
-@media (max-width: 1024px) {
-  .personal-block {
-    max-width: 319px;
-    width: 100%;
-  }
-}
+//@media (max-width: 1024px) {
+//  .personal-block {
+//    width: calc(33% - 18px)
+//  }
+//}
 
 @media (max-width: 800px) {
   .personal-block {
     margin: 10px 0;
     padding: 16px 0 17px 0;
-    max-width: 100%;
+    width: 100%;
     height: auto;
-
     &__inner {
       margin-left: 24px;
       padding: 0;
@@ -199,14 +201,44 @@ export default {
     &__title {
       padding-top: 0;
     }
+
     &__subtitle {
 
+    }
+
+    &__image {
+      max-width: 70px;
+    }
+
+    &__files {
+      justify-content: flex-start;
+      margin-left: -7px;
     }
 
     &__files-elem {
       &:first-of-type {
         margin-left: 0;
       }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .personal-block {
+    &__inner {
+      margin-left: 10px;
+    }
+
+    &__headline {
+      margin-left: 10px;
+    }
+
+    &__title {
+      font-size: 12px;
+    }
+
+    &__subtitle {
+      font-size: 11px;
     }
   }
 }
