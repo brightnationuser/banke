@@ -1,7 +1,10 @@
 <template>
   <div class="personal-main">
     <Menu/>
-    <div class="personal-entities__container">
+    <div v-if="vShowLoader">
+      <vLoader />
+    </div>
+    <div v-else class="personal-entities__container">
       <div class="personal-entities__container-inner">
         <PersonalFilter class="personal-entities__filter"
           :title="translations.titles.video_gallery"
@@ -38,6 +41,7 @@ import Menu from "../components/Global/Menu";
 import PersonalFilter from "../components/PersonalEntities/PersonalFilter";
 import PersonalVideo from "../components/PersonalEntities/PersonalVideo";
 import PersonalBlock from "../components/PersonalEntities/PersonalBlock";
+import vLoader from '../components/Global/vLoader'
 
 export default {
   name: 'Video-gallery',
@@ -47,12 +51,14 @@ export default {
     PersonalVideo,
     Menu,
     PersonalFilter,
-    PersonalBlock
+    PersonalBlock,
+    vLoader
   },
 
   data() {
     return {
       searchInProcess: false,
+      vShowLoader: true,
       videos: []
     }
   },
@@ -79,6 +85,7 @@ export default {
           .then((response) => {
             this.searchInProcess = false
             this.videos = response.data
+            this.vShowLoader = false
           })
     },
 

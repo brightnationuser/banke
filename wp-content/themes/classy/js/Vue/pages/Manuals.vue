@@ -1,7 +1,10 @@
 <template>
     <div class="personal-main">
       <Menu/>
-      <div class="personal-entities__container">
+      <div v-if="vShowLoader">
+        <vLoader />
+      </div>
+      <div v-else class="personal-entities__container">
         <div class="personal-entities__container-inner">
           <PersonalFilter class="personal-entities__filter"
             :showFilter="true"
@@ -34,6 +37,7 @@ import { mapState } from 'vuex';
 import Menu from "../components/Global/Menu";
 import PersonalFilter from "../components/PersonalEntities/PersonalFilter";
 import PersonalBlock from "../components/PersonalEntities/PersonalBlock";
+import vLoader from '../components/Global/vLoader'
 
 export default {
   name: 'Manuals',
@@ -44,11 +48,13 @@ export default {
   components: {
     Menu,
     PersonalFilter,
-    PersonalBlock
+    PersonalBlock,
+    vLoader
   },
 
   data() {
     return {
+      vShowLoader: true,
       manuals: []
     }
   },
@@ -74,6 +80,7 @@ export default {
           .then((response) => {
             console.log(response.data)
             this.manuals = response.data
+            this.vShowLoader = false
           })
     },
 
@@ -90,6 +97,7 @@ export default {
           .then((response) => {
             console.log(response.data)
             this.manuals = response.data
+            this.vShowLoader = false
           })
     },
 

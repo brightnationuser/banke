@@ -21,6 +21,7 @@ $max-width-md: 1110px;
 .personal-main {
   display: flex;
   border-top: solid 1px #EFEFEF;
+  min-height: 720px;
 }
 
 @media (max-width: 1024px) {
