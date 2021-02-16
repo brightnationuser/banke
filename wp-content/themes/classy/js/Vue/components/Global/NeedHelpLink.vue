@@ -71,7 +71,7 @@ export default {
 
   data() {
     return {
-      isOpened: true,
+      isOpened: false,
       validation: true,
       help: {
         val: '',
