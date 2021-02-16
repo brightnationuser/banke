@@ -51,7 +51,6 @@ export default {
   components: {
     vTextArea,
     VuePopup
-    //NeedHelpPopup
   },
 
   methods: {
