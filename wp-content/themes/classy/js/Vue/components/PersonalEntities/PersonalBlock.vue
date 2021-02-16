@@ -1,5 +1,5 @@
 <template>
-  <div class="personal-block">
+  <a :href=files[0].link class="personal-block" download>
     <img class="personal-block__format" src="../../assets/icons/pdf.svg" alt="Format icon">
     <div class="personal-block__inner">
       <div class="personal-block__image">
@@ -18,14 +18,13 @@
               :href="elemFile.link"
               v-for="(elemFile, index) in files"
               :key="index"
-              class="personal-block__files-elem"
-              target="_blank">
+              class="personal-block__files-elem">
             {{ elemFile.lang }}
           </a>
         </div>
       </div>
     </div>
-  </div>
+  </a>
 </template>
 
 <script>
@@ -80,6 +79,7 @@ export default {
 <style lang="scss" scoped>
 .personal-block {
   position: relative;
+  text-decoration: unset;
   height: 190px;
   margin: 9px 18px 9px 0;
   width: calc(25% - 18px);
@@ -174,15 +174,9 @@ export default {
   }
 }
 
-//@media (max-width: 1024px) {
-//  .personal-block {
-//    width: calc(33% - 18px)
-//  }
-//}
-
 @media (max-width: 800px) {
   .personal-block {
-    margin: 10px 0;
+    margin: 4px 0;
     padding: 16px 0 17px 0;
     width: 100%;
     height: auto;

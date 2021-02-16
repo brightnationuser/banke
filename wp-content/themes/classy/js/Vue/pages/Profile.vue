@@ -15,7 +15,7 @@
               {{user.email}}
             </div>
             <div class="user-profile__change-password button button--account" @click="resetPassword">
-              Change Password
+              {{translations.buttons.change_password}}
             </div>
           </div>
 
@@ -24,11 +24,11 @@
               <div class="account-form__need-help">
                 <NeedHelpLink></NeedHelpLink>
               </div>
-              <div class="account-form__title">Edit Profile</div>
+              <div class="account-form__title">{{translations.titles.edit_profile}}</div>
               <div class="account-form__content">
                 <div class="account-form__column">
                   <div class="account-form__column-title">
-                    Personal Information
+                    {{translations.titles.personal_information}}
                   </div>
                   <div class="account-form__row">
                     <TextInput
@@ -36,8 +36,8 @@
                         :valid="name.valid"
                         :val="name.val"
                         v-model="name.val"
-                        label="Name"
-                        placeholder="Enter your name"
+                        :label="translations.fields.name"
+                        :placeholder="translations.fields.enter_your_name"
                         name="user-name"
                         :error-text="name.errorMessage"
                         @change="name.valid = true"
@@ -49,8 +49,8 @@
                         :valid="email.valid"
                         :val="email.val"
                         v-model="email.val"
-                        label="Email"
-                        placeholder="Enter your email"
+                        :label="translations.fields.email"
+                        :placeholder="translations.fields.enter_your_email"
                         name="user-email"
                         :error-text="email.errorMessage"
                         @change="email.valid = true"
@@ -59,7 +59,7 @@
                 </div>
                 <div class="account-form__column">
                   <div class="account-form__column-title">
-                    Company Information
+                    {{translations.titles.company_information}}
                   </div>
                   <div class="account-form__row">
                     <div class="account-form__row">
@@ -68,10 +68,10 @@
                           :valid="company.valid"
                           :val="company.val"
                           v-model="company.val"
-                          label="Company"
-                          placeholder="Enter company name"
+                          :label="translations.fields.company"
+                          :placeholder="translations.fields.enter_company_name"
                           name="user-company"
-                          error-text="This field is required"
+                          :error-text="translations.errors.required_field"
                           @change="company.valid = true"
                       ></TextInput>
                     </div>
@@ -81,10 +81,10 @@
                           :valid="position.valid"
                           :val="position.val"
                           v-model="position.val"
-                          label="Job Position"
-                          placeholder="Enter job position"
+                          :label="translations.fields.job_position"
+                          :placeholder="translations.fields.enter_job_position"
                           name="user-position"
-                          error-text="This field is required"
+                          :error-text="translations.errors.required_field"
                           @change="position.valid = true"
                       ></TextInput>
                     </div>
@@ -97,10 +97,10 @@
 
               <div class="account-form__row account-form__row--buttons">
                 <div class="button button--account button--stroke account-form__button" @click="cancel()">
-                  Cancel
+                  {{translations.buttons.cancel}}
                 </div>
                 <div class="button button--account account-form__button" @click="submit()">
-                  Save Changes
+                  {{translations.buttons.save_changes}}
                 </div>
               </div>
             </div>
@@ -166,7 +166,10 @@ export default {
     this.email.val = this.user.email
   },
 
-  created () {},
+  created () {
+    this.email.errorMessage = this.translations.errors.email_already_used
+    this.name.errorMessage = this.translations.errors.name_already_used
+  },
 
   updated () {},
 
@@ -194,12 +197,12 @@ export default {
 
               if (response.data.error !== '' && response.data.error.hasOwnProperty('existing_user_login')) {
                 this.name.valid = false
-                this.name.errorMessage = 'This name is already used'
+                this.name.errorMessage = this.translations.errors.name_already_used
               }
 
               if (response.data.error !== '' && response.data.error.hasOwnProperty('existing_user_email')) {
                 this.email.valid = false
-                this.email.errorMessage = 'This email is already used'
+                this.email.errorMessage = this.translations.errors.email_already_used
               }
 
               if(response.data.success) {

@@ -5,7 +5,7 @@
       @close="close()"
   >
     <div class="account-form account-form--login">
-      <div class="account-form__title">Sign In</div>
+      <div class="account-form__title">{{translations.titles.sign_in}}</div>
       <div class="account-form__content">
         <div class="account-form__column">
           <div class="account-form__row">
@@ -13,10 +13,10 @@
                 :validation="validation"
                 :valid="email.valid"
                 v-model="email.val"
-                label="Email"
-                placeholder="Enter your email"
+                :label="translations.fields.email"
+                :placeholder="translations.fields.enter_your_email"
                 name="user-email"
-                error-text="Incorrect email address"
+                :error-text="translations.errors.incorrect_email"
                 @change="email.valid = true"
             ></EmailInput>
           </div>
@@ -25,10 +25,10 @@
                 :validation="validation"
                 :valid="password.valid"
                 v-model="password.val"
-                label="Password"
-                placeholder="Enter your password"
+                :label="translations.fields.password"
+                :placeholder="translations.fields.enter_your_password"
                 name="user-password"
-                error-text="Incorrect password"
+                :error-text="translations.errors.incorrect_password"
                 @change="password.valid = true"
             >
             </PasswordInput>
@@ -37,15 +37,15 @@
       </div>
       <div class="account-form__row account-form__row--buttons">
         <div class="button button--account account-form__button" @click="submit()">
-          Login
+          {{translations.buttons.login}}
         </div>
         <div class="button button--account button--stroke account-form__button" @click="switchForm('SignUp')">
-          Sign up
+          {{translations.buttons.sign_up}}
         </div>
       </div>
       <div class="account-form__row account-form__row--text-link">
         <div class="button button--text" @click="switchForm('ResetPassword')">
-          Forgot password?
+          {{translations.titles.forgot_password}}
         </div>
       </div>
 

@@ -6,7 +6,7 @@
         {{title}}
       </div>
       <div class="filter__title" v-else>
-        Search
+        {{translations.titles.search}}
       </div>
       <template v-if="showFilter && !searchInProcess">
         <div class="filter__line"></div>

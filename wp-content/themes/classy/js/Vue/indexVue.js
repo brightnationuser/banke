@@ -1,4 +1,6 @@
 // Requests to our Laravel back-end
+import {mapState} from "vuex";
+
 window.axios = require('axios');
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -10,6 +12,7 @@ import ResetApp from "./ResetApp";
 
 import store from './store/index'
 import router from './routerVue'
+import getTranslations from "./helpers/getTranslations";
 
 import './sass/main.scss'
 
@@ -19,6 +22,16 @@ Vue.use(VueYoutube)
 //indexVue.js is detected on this page - выкл для прода
 Vue.config.productionTip = true;
 Vue.config.devtools = true;
+
+Vue.mixin({
+    computed: {
+        ...mapState({
+            translations: state => state.translations
+        })
+    }
+})
+
+getTranslations()
 
 // Init Vue instances
 const initVueInstances = () => {

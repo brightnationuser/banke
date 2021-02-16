@@ -1,6 +1,6 @@
 <template>
   <div class="account-form account-form--forgot">
-    <div class="account-form__title">Reset Password</div>
+    <div class="account-form__title">{{translations.titles.reset_password}}</div>
     <div class="account-form__content">
       <div class="account-form__column">
         <div class="account-form__row">
@@ -8,10 +8,10 @@
               :validation="validation"
               :valid="password.valid"
               v-model="password.val"
-              label="Password"
-              placeholder="Enter your password"
+              :label="translations.fields.password"
+              :placeholder="translations.fields.enter_your_password"
               name="user-password"
-              error-text="Incorrect password"
+              :error-text="translations.errors.incorrect_password"
               @change="password.valid = true"
           >
           </PasswordInput>
@@ -21,10 +21,10 @@
               :validation="validation"
               :valid="confirmPassword.valid"
               v-model="confirmPassword.val"
-              label="Confirm password"
-              placeholder="Confirm your password"
+              :label="translations.fields.confirm_password"
+              :placeholder="translations.fields.confirm_your_password"
               name="user-password-repeat"
-              error-text="Passwords dont match"
+              :error-text="translations.errors.passwords_dont_match"
               @change="confirmPassword.valid = true"
           >
           </PasswordInput>
@@ -33,7 +33,7 @@
     </div>
     <div class="account-form__row account-form__row--buttons">
       <div class="button button--account account-form__button" @click="submit()">
-        Save Password
+        {{translations.buttons.save_password}}
       </div>
     </div>
 
@@ -43,7 +43,7 @@
 
     <SuccessAlert
       v-if="success"
-      alert-text="Your password has been successfully changed"
+      :alert-text="translations.texts.reset_password_complete"
       :is-opened="success"
       @close="closeSuccess()"
     >
@@ -101,7 +101,7 @@ export default {
 
   methods: {
     submit() {
-      this.validation = true
+      this.validated = this.validate()
 
       let data = new FormData();
 
@@ -110,16 +110,32 @@ export default {
       data.append('key', this.key);
       data.append('username', this.username);
 
-      this.showLoader = true
+      if(this.validated) {
+        this.showLoader = true
+        axios.post('/wp-admin/admin-ajax.php', data)
+            .then((response) => {
+              this.showLoader = false
 
-      axios.post('/wp-admin/admin-ajax.php', data)
-          .then((response) => {
-            this.showLoader = false
+              if (response.data.success) {
+                this.success = true
+              }
+            })
+      }
 
-            if (response.data.success) {
-              this.success = true
-            }
-          })
+    },
+
+    validate() {
+      this.validation = true
+
+      if (!this.password.val.trim().length) {
+        this.password.valid = false
+      }
+
+      if (!this.confirmPassword.val.trim().length) {
+        this.confirmPassword.valid = false
+      }
+      return this.password.valid && this.confirmPassword.valid
+
     },
 
     switchForm(formName) {

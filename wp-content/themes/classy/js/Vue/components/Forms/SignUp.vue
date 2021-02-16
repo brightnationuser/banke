@@ -5,7 +5,7 @@
       @close="close()"
   >
     <div class="account-form account-form--register">
-      <div class="account-form__title">Sign In</div>
+      <div class="account-form__title">{{translations.titles.sign_up}}</div>
       <div class="account-form__content">
         <div class="account-form__column">
           <div class="account-form__row">
@@ -13,8 +13,8 @@
               :validation="validation"
               :valid="name.valid"
               v-model="name.val"
-              label="Name"
-              placeholder="Enter your name"
+              :label="translations.fields.name"
+              :placeholder="translations.fields.enter_your_name"
               name="user-name"
               :error-text="name.errorMessage"
               @change="name.valid = true"
@@ -25,10 +25,10 @@
                 :validation="validation"
                 :valid="company.valid"
                 v-model="company.val"
-                label="Company"
-                placeholder="Enter company name"
+                :label="translations.fields.company"
+                :placeholder="translations.fields.enter_company_name"
                 name="user-company"
-                error-text="This field is required"
+                :error-text="translations.errors.required_field"
                 @change="company.valid = true"
             ></TextInput>
           </div>
@@ -37,10 +37,10 @@
                 :validation="validation"
                 :valid="position.valid"
                 v-model="position.val"
-                label="Job Position"
-                placeholder="Enter job position"
+                :label="translations.fields.job_position"
+                :placeholder="translations.fields.enter_job_position"
                 name="user-position"
-                error-text="This field is required"
+                :error-text="translations.errors.required_field"
                 @change="position.valid = true"
             ></TextInput>
           </div>
@@ -51,8 +51,8 @@
                 :validation="validation"
                 :valid="email.valid"
                 v-model="email.val"
-                label="Email"
-                placeholder="Enter your email"
+                :label="translations.fields.email"
+                :placeholder="translations.fields.enter_your_email"
                 name="user-email"
                 :error-text="email.errorMessage"
                 @change="email.valid = true"
@@ -63,10 +63,10 @@
                 :validation="validation"
                 :valid="password.valid"
                 v-model="password.val"
-                label="Password"
-                placeholder="Enter your password"
+                :label="translations.fields.password"
+                :placeholder="translations.fields.enter_your_password"
                 name="user-password"
-                error-text="Incorrect password"
+                :error-text="translations.errors.incorrect_password"
                 @change="password.valid = true"
             >
             </PasswordInput>
@@ -76,10 +76,10 @@
                 :validation="validation"
                 :valid="confirmPassword.valid"
                 v-model="confirmPassword.val"
-                label="Confirm password"
-                placeholder="Confirm your password"
+                :label="translations.fields.confirm_password"
+                :placeholder="translations.fields.confirm_your_password"
                 name="user-password-repeat"
-                error-text="Passwords dont match"
+                :error-text="translations.errors.passwords_dont_match"
                 @change="confirmPassword.valid = true"
             >
             </PasswordInput>
@@ -88,10 +88,10 @@
       </div>
       <div class="account-form__row account-form__row--buttons">
         <div class="button button--account account-form__button" @click="submit()">
-          Create account
+          {{translations.buttons.create_account}}
         </div>
         <div class="button button--account button--stroke account-form__button" @click="switchForm('SignIn')">
-          Sign In
+          {{translations.buttons.sign_in}}
         </div>
       </div>
 
@@ -113,6 +113,7 @@ import VuePopup from "../Popup/VuePopup";
 import TextInput from "./Fields/TextInput";
 import EmailInput from "./Fields/EmailInput";
 import PasswordInput from "./Fields/PasswordInput";
+import store from "../../store";
 
 export default {
   name: 'SignUp',
@@ -161,10 +162,11 @@ export default {
     }
   },
 
-  mounted() {
-  },
+  mounted() {},
 
   created() {
+    this.email.errorMessage = this.translations.errors.email_already_used
+    this.name.errorMessage = this.translations.errors.name_already_used
   },
 
   updated() {
@@ -174,13 +176,13 @@ export default {
     submit() {
       this.validated = this.validate()
 
-      let data = new FormData();
-      data.append('action', 'user_account__create');
-      data.append('name', this.name.val);
-      data.append('company', this.company.val);
-      data.append('position', this.position.val);
-      data.append('email', this.email.val);
-      data.append('password', this.password.val);
+      let data = new FormData()
+      data.append('action', 'user_account__create')
+      data.append('name', this.name.val)
+      data.append('company', this.company.val)
+      data.append('position', this.position.val)
+      data.append('email', this.email.val)
+      data.append('password', this.password.val)
 
       if(this.validated) {
         this.showLoader = true
@@ -191,12 +193,12 @@ export default {
 
               if (response.data.error !== '' && response.data.error.hasOwnProperty('existing_user_login')) {
                 this.name.valid = false
-                this.name.errorMessage = 'This name is already used'
+                this.name.errorMessage = this.translations.errors.name_already_used
               }
 
               if (response.data.error !== '' && response.data.error.hasOwnProperty('existing_user_email')) {
                 this.email.valid = false
-                this.email.errorMessage = 'This email is already used'
+                this.email.errorMessage = this.translations.errors.email_already_used
               }
 
               if (response.data.user_created) {

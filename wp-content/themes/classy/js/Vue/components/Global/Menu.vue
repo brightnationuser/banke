@@ -14,33 +14,29 @@
           </div>
         </div>
         <div class="menu__logout-mobile" :href="href" @click="logOut">
-          Log Out
+          {{translations.buttons.log_out}}
         </div>
       </div>
       <div class="menu__list-wrapper">
         <div class="menu__list">
-<!--          <RouterLinkCustom-->
-<!--              to="Specification"-->
-<!--              classes="menu__elem"-->
-<!--          ></RouterLinkCustom>-->
           <router-link :to="{ name: 'Specification' }" custom v-slot="{href, navigate, isActive}">
             <a class="menu__elem" :class="{'menu__elem--active' : isActive}" :href="href" @click="navigate">
-              Specification
+              {{translations.titles.specifications}}
             </a>
           </router-link>
           <!--          <router-link :to="{ name: 'Three-models' }" custom v-slot="{href, navigate, isActive}">
                       <a class="menu__elem" :class="{'menu__elem&#45;&#45;active' : isActive}" :href="href" @click="navigate">
-                        3D Models
+                        {{translations.titles.models_3d}}
                       </a>
                     </router-link>-->
           <router-link :to="{ name: 'Manuals' }" custom v-slot="{href, navigate, isActive}">
             <a class="menu__elem" :class="{'menu__elem--active' : isActive}" :href="href" @click="navigate">
-              Manuals
+              {{translations.titles.manuals}}
             </a>
           </router-link>
           <router-link :to="{ name: 'Video-gallery' }" custom v-slot="{href, navigate, isActive}">
             <a class="menu__elem" :class="{'menu__elem--active' : isActive}" :href="href" @click="navigate">
-              Video Gallery
+              {{translations.titles.video_gallery}}
             </a>
           </router-link>
         </div>
@@ -49,14 +45,14 @@
     </div>
     <div class="menu__under">
       <div class="menu__logout" @click="logOut">
-        Log Out
+        {{translations.buttons.log_out}}
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import RouterLinkCustom from "./RouterLinkCustom";
+
 import {mapState} from "vuex";
 import UserAvatar from "./UserAvatar";
 
@@ -66,7 +62,6 @@ export default {
   props: [],
 
   components: {
-    RouterLinkCustom,
     UserAvatar
   },
 
@@ -205,7 +200,7 @@ export default {
 
     &__list {
       margin: 0 auto;
-      padding: 0px 20px;
+      padding: 0;
       max-width: 700px;
       flex-direction: row;
       justify-content: flex-start;
