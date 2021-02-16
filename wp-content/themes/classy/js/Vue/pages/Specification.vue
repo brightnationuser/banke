@@ -96,7 +96,7 @@ export default {
     },
 
     runSearch(val) {
-      this.vShowLoader = true
+
       let data = new FormData();
 
       data.append('action', 'user_run_search');
@@ -107,7 +107,7 @@ export default {
             console.log('response.data', response.data)
             this.data = response.data
             this.searchInProcess = true
-            this.vShowLoader = false
+
           })
     },
 
