@@ -11,26 +11,26 @@
             {{user.username}}
           </div>
           <a href="/account/profile" class="drop-down-card__user-edit">
-            edit profile
+            {{translations.buttons.edit_profile}}
           </a>
         </div>
       </div>
       <div class="drop-down-card__categories">
         <a href="/account/specification/" class="drop-down-card__link">
-          Specifications
+          {{translations.titles.specifications}}
         </a>
 <!--        <a href="/account/three-models" class="drop-down-card__link">
-          3D Models
+          {{translations.titles.models_3d}}
         </a>-->
         <a href="/account/manuals" class="drop-down-card__link">
-          Manuals
+          {{translations.titles.manuals}}
         </a>
         <a href="/account/video-gallery" class="drop-down-card__link">
-          Video Gallery
+          {{translations.titles.video_gallery}}
         </a>
       </div>
       <div class="drop-down-card__actions" @click="logOut">
-        Log Out
+        {{translations.buttons.log_out}}
       </div>
     </div>
 </template>

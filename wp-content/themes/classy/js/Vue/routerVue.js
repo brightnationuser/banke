@@ -7,6 +7,7 @@ import Manuals from "./pages/Manuals";
 import VideoGallery from "./pages/VideoGallery"
 import Profile from "./pages/Profile";
 import App from "../App";
+import store from "./store/index"
 
 Vue.use(VueRouter)
 
@@ -43,10 +44,12 @@ const routes = [
   },
 ]
 
+let base = icl_lang === 'en' ? '/account' : '/' + icl_lang + '/account'
+
 const router = new VueRouter({
   mode: 'history',
   routes,
-  base: '/account'
+  base: base,
 })
 
 export default router

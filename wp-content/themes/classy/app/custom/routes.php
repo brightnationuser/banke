@@ -10,7 +10,7 @@ if(url_parts(0) == 'email-test') {
     }
 }
 
-if(url_parts(0) == 'account') {
+if(url_parts(0) == 'account' || (url_parts(0) == 'de' && url_parts(1) == 'account')) {
     if(is_user_logged_in()) {
         $framework::load_custom_template('account/account');
     }

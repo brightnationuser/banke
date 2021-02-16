@@ -4,7 +4,7 @@
     <div class="personal-entities__container">
       <div class="personal-entities__container-inner">
         <PersonalFilter class="personal-entities__filter"
-          title="Video Gallery"
+          :title="translations.titles.video_gallery"
           @runSearch="runSearch"
           @cancelSearch="cancelSearch"
         />
@@ -92,7 +92,6 @@ export default {
 
       axios.post('/wp-admin/admin-ajax.php', data)
           .then((response) => {
-            console.log('response.data', response.data)
             this.data = response.data
             this.searchInProcess = true
           })

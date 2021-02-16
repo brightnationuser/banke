@@ -4,7 +4,7 @@
     <div class="personal-entities__container">
       <div class="personal-entities__container-inner">
         <PersonalFilter class="personal-entities__filter"
-          title="Specifications"
+          :title="translations.titles.specifications"
           @runSearch="runSearch"
           @cancelSearch="cancelSearch"
         />

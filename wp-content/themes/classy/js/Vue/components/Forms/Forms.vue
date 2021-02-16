@@ -2,7 +2,7 @@
   <div>
     <div class="sign-in" @click="setForm('SignIn')" v-if="!loggedIn">
       <i class="icon-account"></i>
-      <span>Sign In</span>
+      <span>{{translations.titles.sign_in}}</span>
     </div>
     <div class="sign-in" v-else>
       <i class="icon-account"></i>

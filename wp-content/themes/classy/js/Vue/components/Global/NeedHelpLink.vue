@@ -34,7 +34,7 @@
     <div class="link" @click="showPopupNeedHelp">
       <img class="link__icon" src="../../assets/icons/help.svg" alt="help">
       <div class="link__help link__help-circle c-blue">
-        Need a Help?
+        {{ translations.buttons.need_a_help }}
       </div>
     </div>
   </div>

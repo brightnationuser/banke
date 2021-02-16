@@ -5,7 +5,7 @@
         <div class="personal-entities__container-inner">
           <PersonalFilter class="personal-entities__filter"
             :showFilter="true"
-            title="Manuals"
+            :title="translations.titles.manuals"
             @runSearch="runSearch"
             @cancelSearch="getManuals"
             @select="getManualsByTerm"

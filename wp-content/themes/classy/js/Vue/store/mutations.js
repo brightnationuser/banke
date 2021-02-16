@@ -12,6 +12,10 @@ const mutations = {
     state.user = value
   },
   
+  setTranslations (state, value) {
+    state.translations = value
+  },
+  
   setDefault (state) {
     state.loggedIn = false
     state.user = {

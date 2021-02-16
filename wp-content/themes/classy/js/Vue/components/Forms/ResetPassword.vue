@@ -5,9 +5,9 @@
       @close="close()"
   >
     <div class="account-form account-form--forgot">
-      <div class="account-form__title">Forgot Password?</div>
+      <div class="account-form__title">{{translations.titles.forgot_password}}</div>
       <div class="account-form__text">
-        Enter your email address and a link to reset your password will be sent to that address
+        {{translations.texts.forgot_password_form}}
       </div>
       <div class="account-form__content">
         <div class="account-form__column">
@@ -16,22 +16,22 @@
                 :validation="validation"
                 :valid="email.valid"
                 v-model="email.val"
-                label="Email"
-                placeholder="Enter your email"
+                :label="translations.fields.email"
+                :placeholder="translations.fields.enter_your_email"
                 name="user-email"
-                error-text="Incorrect email address"
+                :error-text="translations.errors.incorrect_email"
             ></EmailInput>
           </div>
         </div>
       </div>
       <div class="account-form__row account-form__row--buttons">
         <div class="button button--account account-form__button" @click="submit()">
-          Reset Password
+          {{translations.buttons.reset_password}}
         </div>
       </div>
       <div class="account-form__row account-form__row--text-link">
         <div class="button button--text" @click="switchForm('SignIn')">
-          Back to sign in
+          {{translations.buttons.back_to_sign_in}}
         </div>
       </div>
 
