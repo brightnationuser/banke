@@ -11,17 +11,18 @@
           <img src="../../assets/icons/close-blue.svg" alt="Close">
         </div>
         <div class="need-help__headline">
-          <div class="need-help__title">Need a help?</div>
-          <div class="need-help__subtitle">Write your question and we answer you shortly on email address</div>
+          <div class="need-help__title">{{translations.buttons.need_a_help}}</div>
+          <div class="need-help__subtitle">{{ translations.texts.need_heelp_text }}</div>
           <div class="need-help__question">
             <vTextArea
                 class="need-help__question-textarea"
                 :validation="validation"
                 :valid="help.valid"
                 v-model="help.val"
-                placeholder="Enter your email"
+                :label="translations.fields.your_question"
+                :placeholder="translations.fields.write_your_question_here"
                 name="question"
-                error-text="Field is required"
+                :error-text="translations.errors.required_field"
             />
             <div class="need-help__buttons">
               <div class="need-help__button need-help__button-send button" @click="submitPopupNeedHelp">Send</div>
@@ -31,6 +32,13 @@
         </div>
       </div>
     </VuePopup>
+    <SuccessAlert
+        v-if="success"
+        alert-text=""
+        :is-opened="success"
+        @close="closeSuccess()"
+    >
+    </SuccessAlert>
     <div class="link" @click="showPopupNeedHelp">
       <img class="link__icon" src="../../assets/icons/help.svg" alt="help">
       <div class="link__help link__help-circle c-blue">
@@ -44,13 +52,27 @@
 
 import VuePopup from "../Popup/VuePopup";
 import vTextArea from "../Forms/Fields/vTextArea";
+import SuccessAlert from "../SuccessAlert";
 
 export default {
   name: 'NeedHelpLink',
 
   components: {
     vTextArea,
-    VuePopup
+    VuePopup,
+    SuccessAlert
+  },
+
+  data() {
+    return {
+      success: false,
+      isOpened: false,
+      validation: true,
+      help: {
+        val: '',
+        valid: true,
+      }
+    }
   },
 
   methods: {
@@ -67,19 +89,37 @@ export default {
       if (!this.help.val.trim().length) {
         this.help.valid = false
       }
-    }
+      else {
+        let data = new FormData();
+
+        data.append('action', 'user_account__help_request');
+        data.append('message', this.help.val);
+
+        this.showLoader = true
+
+        axios.post('/wp-admin/admin-ajax.php', data)
+            .then((response) => {
+              this.showLoader = false
+
+              if(response.data.success) {
+                this.closePopupNeedHelp()
+                this.success = true
+              }
+              else {
+                this.help.valid = false
+              }
+
+            })
+      }
+    },
+
+    closeSuccess() {
+      this.success = false
+    },
+
   },
 
-  data() {
-    return {
-      isOpened: false,
-      validation: true,
-      help: {
-        val: '',
-        valid: true,
-      }
-    }
-  }
+
 }
 </script>
 

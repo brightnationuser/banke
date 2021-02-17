@@ -1,11 +1,11 @@
 <template>
   <div class="account-form__field" :class="{'account-form__field--has-error' : validation && !valid}">
     <div class="textarea__label">
-      Your question
+      {{label}}
     </div>
     <div class="field__input-wrap">
-    <textarea class="field__textarea textarea-inner" :id="name" :name="name" :placeholder="placeholder" :value="val" 
-              placeholder="Write your question here"
+    <textarea class="field__textarea textarea-inner" :id="name" :name="name" :value="val"
+              :placeholder="placeholder"
               @input="$emit('input', $event.target.value)"
               @change="change()"
     >
