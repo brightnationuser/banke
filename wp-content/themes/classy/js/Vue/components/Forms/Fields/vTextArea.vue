@@ -4,7 +4,7 @@
       Your question
     </div>
     <div class="field__input-wrap">
-    <textarea class="field__textarea textarea-inner" :id="name" :name="name" :placeholder="placeholder" :value="val"
+    <textarea class="field__textarea textarea-inner" :id="name" :name="name" :placeholder="placeholder" :value="val" 
               placeholder="Write your question here"
               @input="$emit('input', $event.target.value)"
               @change="change()"

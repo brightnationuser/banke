@@ -6,7 +6,7 @@
         @close="closePopupNeedHelp"
     >
       <div class="need-help-wrapper"></div>
-      <div class="need-help-inner">
+      <div class="need-help-inner account-form">
         <div class="need-help__close" @click="closePopupNeedHelp">
           <img src="../../assets/icons/close-blue.svg" alt="Close">
         </div>
@@ -60,6 +60,7 @@ export default {
 
     closePopupNeedHelp() {
       this.isOpened = false
+      this.help.valid = true
     },
 
     submitPopupNeedHelp() {

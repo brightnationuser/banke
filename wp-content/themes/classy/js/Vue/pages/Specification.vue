@@ -1,14 +1,17 @@
 <template>
-  <div class="personal-main">
+  <div class="personal-main account-form__v-loader">
     <Menu/>
-    <div class="personal-entities__container">
+    <div v-if="vShowLoader">
+      <vLoader />
+    </div>
+    <div v-else class="personal-entities__container">
       <div class="personal-entities__container-inner">
         <PersonalFilter class="personal-entities__filter"
           :title="translations.titles.specifications"
           @runSearch="runSearch"
           @cancelSearch="cancelSearch"
         />
-        <div class="personal-entities__list-specification" v-if="!searchInProcess" v-for="(elemEntities, index) in data" :key="index">
+        <div class="personal-entities__list-specification " v-if="!searchInProcess" v-for="(elemEntities, index) in data" :key="index">
           <div class="personal-entities__title">
             {{ index }}
           </div>
@@ -43,12 +46,14 @@ import {mapState} from 'vuex';
 import Menu from "../components/Global/Menu";
 import PersonalFilter from "../components/PersonalEntities/PersonalFilter";
 import PersonalBlock from "../components/PersonalEntities/PersonalBlock";
+import vLoader from "../components/Global/vLoader";
 
 export default {
   name: 'Specification',
   props: [],
 
   components: {
+    vLoader,
     Menu,
     PersonalFilter,
     PersonalBlock
@@ -56,6 +61,7 @@ export default {
 
   data() {
     return {
+      vShowLoader: true,
       data: [],
       searchInProcess: false,
     }
@@ -85,22 +91,23 @@ export default {
             console.log(response.data)
             this.searchInProcess = false
             this.data = response.data
+            this.vShowLoader = false
           })
     },
 
     runSearch(val) {
+
       let data = new FormData();
 
       data.append('action', 'user_run_search');
       data.append('search', val);
-
-      this.showLoader = true
 
       axios.post('/wp-admin/admin-ajax.php', data)
           .then((response) => {
             console.log('response.data', response.data)
             this.data = response.data
             this.searchInProcess = true
+
           })
     },
 

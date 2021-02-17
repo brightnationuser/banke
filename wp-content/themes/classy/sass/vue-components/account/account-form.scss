@@ -6,6 +6,7 @@
   background-size: cover;
   background-color: #ffffff;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
   width: 100%;
 
@@ -185,31 +186,19 @@
   }
 
   &__loader {
-    max-width: 40px;
-    width: 100%;
+    width: 68px;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .account-form {
-    &__content {
-      flex-direction: column;
-    }
-
-    &__column {
-      margin-bottom: 25px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
+    img {
+      width: 100%;
     }
   }
 }
+
+
 
 @media screen and (max-width: 480px) {
   .account-form {
