@@ -31,10 +31,10 @@ Vue.mixin({
     }
 })
 
-getTranslations()
-
 // Init Vue instances
 const initVueInstances = () => {
+    getTranslations()
+    
     if($('#app-account').length > 0) {
         new Vue({
             router,
