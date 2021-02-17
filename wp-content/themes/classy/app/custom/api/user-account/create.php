@@ -26,7 +26,6 @@ function user_account__create() {
 
     $body = \Helpers\General::getEmailHtml($data, ['en' => 'email.email-sign-up']);
     $headers[] = 'Content-Type: text/html; charset=UTF-8';
-    $headers[] = 'From: Banke <localhost@banke-pro.loc>';
 
     if(!$is_error) {
         $mail_sent = wp_mail($email, 'Registration Banke', $body, $headers);
