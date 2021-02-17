@@ -13,7 +13,7 @@
             {{ user.email }}
           </div>
         </div>
-        <div class="menu__logout-mobile" :href="href" @click="logOut">
+        <div class="menu__logout-mobile" @click="logOut">
           {{translations.buttons.log_out}}
         </div>
       </div>

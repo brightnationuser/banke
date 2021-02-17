@@ -6,8 +6,6 @@ add_action('wp_ajax_nopriv_user_get__manuals', 'user_get__manuals');
 
 function user_get__manuals() {
 
-    $my_current_lang = apply_filters( 'wpml_current_language', NULL );
-
     $query = new WP_Query([
         'post_type' => 'manuals',
         'suppress_filters' => false,
