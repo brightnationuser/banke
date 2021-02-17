@@ -27,6 +27,7 @@ const defaultState = () => {
       fields: {
         email: '',
         enter_your_email: '',
+        your_question: '',
         password: '',
         enter_your_password: '',
         confirm_password: '',
@@ -40,7 +41,6 @@ const defaultState = () => {
         job_position: '',
         enter_job_position: '',
         search_files: '',
-        your_question: '',
         write_your_question_here: '',
       },
       texts: {
