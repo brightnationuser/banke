@@ -5,7 +5,7 @@
       @close="close()"
   >
     <div class="account-form account-form--login">
-      <div class="account-form__title">{{translations.titles.sign_in}}</div>
+      <div class="account-form__title">{{ translations.titles.sign_in }}</div>
       <div class="account-form__content">
         <div class="account-form__column">
           <div class="account-form__row">
@@ -18,6 +18,8 @@
                 name="user-email"
                 :error-text="translations.errors.incorrect_email"
                 @change="email.valid = true"
+                @keyupenter="submit()"
+
             ></EmailInput>
           </div>
           <div class="account-form__row">
@@ -30,6 +32,7 @@
                 name="user-password"
                 :error-text="translations.errors.incorrect_password"
                 @change="password.valid = true"
+                @keyupenter="submit()"
             >
             </PasswordInput>
           </div>
@@ -37,15 +40,15 @@
       </div>
       <div class="account-form__row account-form__row--buttons">
         <div class="button button--account account-form__button" @click="submit()">
-          {{translations.buttons.login}}
+          {{ translations.buttons.login }}
         </div>
         <div class="button button--account button--stroke account-form__button" @click="switchForm('SignUp')">
-          {{translations.buttons.sign_up}}
+          {{ translations.buttons.sign_up }}
         </div>
       </div>
       <div class="account-form__row account-form__row--text-link">
         <div class="button button--text" @click="switchForm('ResetPassword')">
-          {{translations.titles.forgot_password}}
+          {{ translations.titles.forgot_password }}
         </div>
       </div>
 
@@ -110,9 +113,11 @@ export default {
 
   methods: {
     submit() {
+
       this.validation = true
 
       let data = new FormData();
+
 
       data.append('action', 'user_account__login');
       data.append('email', this.email.val);
@@ -128,8 +133,7 @@ export default {
               this.switchForm(false)
               this.userData = response.data.user
               this.logIn()
-            }
-            else {
+            } else {
               this.email.valid = false
               this.password.valid = false
             }

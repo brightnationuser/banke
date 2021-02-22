@@ -20,6 +20,7 @@
                 :placeholder="translations.fields.enter_your_email"
                 name="user-email"
                 :error-text="translations.errors.incorrect_email"
+                @keyupenter="submit()"
             ></EmailInput>
           </div>
         </div>
