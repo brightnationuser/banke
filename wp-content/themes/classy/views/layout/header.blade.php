@@ -62,7 +62,9 @@
                 </div>
             </div>
             <span>|</span>
-            <div id="app-forms"></div>
+            <div id="app-forms">
+                <div style="color: #003462;">Sign in</div>
+            </div>
         </div>
     </div>
 {{--    @include('partials.account-forms.popup-login')--}}

@@ -5,19 +5,19 @@
       @close="close()"
   >
     <div class="account-form account-form--register">
-      <div class="account-form__title">{{translations.titles.sign_up}}</div>
+      <div class="account-form__title">{{ translations.titles.sign_up }}</div>
       <div class="account-form__content">
         <div class="account-form__column">
           <div class="account-form__row">
             <TextInput
-              :validation="validation"
-              :valid="name.valid"
-              v-model="name.val"
-              :label="translations.fields.name"
-              :placeholder="translations.fields.enter_your_name"
-              name="user-name"
-              :error-text="name.errorMessage"
-              @change="name.valid = true"
+                :validation="validation"
+                :valid="name.valid"
+                v-model="name.val"
+                :label="translations.fields.name"
+                :placeholder="translations.fields.enter_your_name"
+                name="user-name"
+                :error-text="name.errorMessage"
+                @change="name.valid = true"
             ></TextInput>
           </div>
           <div class="account-form__row">
@@ -68,6 +68,7 @@
                 name="user-password"
                 :error-text="translations.errors.incorrect_password"
                 @change="password.valid = true"
+                @keyupenter="submit()"
             >
             </PasswordInput>
           </div>
@@ -81,6 +82,7 @@
                 name="user-password-repeat"
                 :error-text="translations.errors.passwords_dont_match"
                 @change="confirmPassword.valid = true"
+                @keyupenter="submit()"
             >
             </PasswordInput>
           </div>
@@ -88,10 +90,10 @@
       </div>
       <div class="account-form__row account-form__row--buttons">
         <div class="button button--account account-form__button" @click="submit()">
-          {{translations.buttons.create_account}}
+          {{ translations.buttons.create_account }}
         </div>
         <div class="button button--account button--stroke account-form__button" @click="switchForm('SignIn')">
-          {{translations.buttons.sign_in}}
+          {{ translations.buttons.sign_in }}
         </div>
       </div>
 
@@ -162,7 +164,8 @@ export default {
     }
   },
 
-  mounted() {},
+  mounted() {
+  },
 
   created() {
     this.email.errorMessage = this.translations.errors.email_already_used
@@ -184,7 +187,7 @@ export default {
       data.append('email', this.email.val)
       data.append('password', this.password.val)
 
-      if(this.validated) {
+      if (this.validated) {
         this.showLoader = true
 
         axios.post('/wp-admin/admin-ajax.php', data)
@@ -219,26 +222,26 @@ export default {
     validate() {
       this.validation = true
 
-      if(!this.name.val.trim().length) {
+      if (!this.name.val.trim().length) {
         this.name.valid = false
       }
 
-      if(!this.company.val.trim().length) {
+      if (!this.company.val.trim().length) {
         this.company.valid = false
       }
 
-      if(!this.position.val.trim().length) {
+      if (!this.position.val.trim().length) {
         this.position.valid = false
       }
 
       const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       this.email.valid = re.test(this.email.val.trim().toLowerCase())
 
-      if(this.password.val.trim().length < 4) {
+      if (this.password.val.trim().length < 4) {
         this.password.valid = false
       }
 
-      if(this.password.val.trim() !== this.confirmPassword.val.trim()) {
+      if (this.password.val.trim() !== this.confirmPassword.val.trim()) {
         this.confirmPassword.valid = false
       }
 
@@ -260,17 +263,42 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @media screen and(max-width: 480px) {
-    .account-form {
-      padding: 30px;
-
-      &__row {
-        margin-top: 10px;
-      }
-
-      &__column {
-        margin-bottom: 15px;
-      }
+@media screen and(max-width: 767px) {
+  .account-form {
+    max-width: 400px;
+    &__content {
+      flex-direction: column;
     }
   }
+}
+
+@media screen and(max-width: 480px) {
+  .account-form {
+    padding: 30px;
+
+    &__row {
+      margin-top: 10px;
+    }
+
+    &__column {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@media screen and(max-width: 350px) {
+
+  .account-form {
+    &__column {
+      margin-bottom: 0;
+    }
+    &__button {
+      padding: 8px 14px;
+      button {
+
+       }
+    }
+  }
+}
+
 </style>

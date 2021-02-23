@@ -8,13 +8,17 @@ function user_account__check() {
         $user = wp_get_current_user();
         $user_meta = get_user_meta($user->ID);
 
+        $image_exists = !empty($user_meta['b_user_photo'][0]) && file_exists($user_meta['b_user_photo'][0]);
+
+        $photo = $image_exists ? $user_meta['b_user_photo'][0] : '/wp-content/themes/classy/images/account/profile.svg';
+
         $response = [
             'success' => true,
             'user' => [
                 'id' => $user->ID,
                 'username' => $user->user_login,
                 'email' => $user->user_email,
-                'photo' => $user_meta['b_user_photo'][0],
+                'photo' => $photo,
                 'company' => $user_meta['company'][0],
                 'position' => $user_meta['position'][0]
             ]

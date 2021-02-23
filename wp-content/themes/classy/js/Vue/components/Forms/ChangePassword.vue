@@ -143,7 +143,9 @@ export default {
     },
 
     closeSuccess() {
-      window.location.href = '/'
+
+      //this.success = true
+      // window.location.href = '/'
     },
 
     getParameterByName(name, url = window.location.href) {

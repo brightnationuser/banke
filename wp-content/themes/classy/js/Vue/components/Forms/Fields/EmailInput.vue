@@ -5,6 +5,7 @@
       <input class="field__input" type="email" :id="name" :name="name" :placeholder="placeholder" :value="val"
              @input="$emit('input', $event.target.value)"
              @change="change()"
+             @keyup.enter="keyupEnter()"
       >
       <i class="field__input-action field__input-action--error icon-warning"
          v-if="validation && !valid"
@@ -46,6 +47,9 @@ export default {
   },
 
   methods: {
+    keyupEnter() {
+      this.$emit('keyupenter')
+    },
     change() {
       this.$emit('change')
     }

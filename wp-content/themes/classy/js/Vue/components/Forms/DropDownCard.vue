@@ -120,6 +120,10 @@ export default {
       text-align: center;
       text-transform: capitalize;
       color: #003462;
+      max-width: 140px;
+      width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
 
     &__user-edit {
