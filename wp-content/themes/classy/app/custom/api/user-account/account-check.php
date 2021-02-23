@@ -8,7 +8,9 @@ function user_account__check() {
         $user = wp_get_current_user();
         $user_meta = get_user_meta($user->ID);
 
-        $photo = !empty($user_meta['b_user_photo'][0]) ? $user_meta['b_user_photo'][0] : '/wp-content/themes/classy/images/account/profile.svg';
+        $image_exists = !empty($user_meta['b_user_photo'][0]) && file_exists($user_meta['b_user_photo'][0]);
+
+        $photo = $image_exists ? $user_meta['b_user_photo'][0] : '/wp-content/themes/classy/images/account/profile.svg';
 
         $response = [
             'success' => true,
