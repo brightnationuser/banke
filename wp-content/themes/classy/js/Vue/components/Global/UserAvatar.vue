@@ -46,8 +46,11 @@ export default {
   },
 
   mounted() {
-    if (this.image === '' || typeof this.image === "undefined") {
-      this.profileImage = require('../../assets/icons/profile.svg')
+    console.log('this.image', this.image)
+    if (this.image === '' || typeof this.image === "undefined" || this.image === null) {
+      this.profileImage = '/wp-content/themes/classy/images/account/profile.svg'
+
+      console.log('this.image', this.profileImage)
     } else {
       this.profileImage = this.image
     }

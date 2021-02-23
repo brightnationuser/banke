@@ -117,9 +117,11 @@ export default {
     color: #003462;
     margin-bottom: -3px;
     position: relative;
+
     span {
       color: #003462;
     }
+
     i {
       margin-right: 4px;
       color: #005ca9;
@@ -148,7 +150,7 @@ export default {
       position: absolute;
       top: calc(100% + 11px);
       right: 0;
-      max-width: 238px;
+      width: 200px;
       opacity: 0;
       visibility: hidden;
       transition: all .3s ease;
