@@ -30,6 +30,13 @@ const routes = [
   {
     path: '/manuals',
     name: 'Manuals',
+    beforeEnter(to, from, next) {
+      if (store.state.user.approved) {
+        next()
+      } else {
+        next('/specification');
+      }
+    },
     component: Manuals
   },
   {

@@ -2,6 +2,7 @@ const defaultState = () => {
   return {
     loggedIn: false,
     user: {
+      approved: false,
       username: '',
       email: '',
       photo: '',

@@ -7,8 +7,18 @@ function user_run_search() {
 
     $search = $_POST['search'];
 
+    $user = wp_get_current_user();
+    $approved = get_field('user_approved', $user);
+
+    if($approved) {
+        $categories = ['manuals', 'specifications', 'models3d'];
+    }
+    else {
+        $categories = ['specifications', 'models3d'];
+    }
+
     $query = new WP_Query([
-        'post_type' => ['manuals', 'specifications', 'models3d'],
+        'post_type' => $categories,
         'post_status' => 'publish',
         'posts_per_page' => -1,
         's' => $search
