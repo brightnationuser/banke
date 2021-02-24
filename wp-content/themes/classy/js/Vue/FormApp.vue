@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="form-app-wrapper">
     <Forms></Forms>
   </div>
 </template>
@@ -44,5 +44,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+  @media screen and (max-width: 1200px) {
+    .form-app-wrapper {
+      width: 100%;
+    }
+  }
 </style>
