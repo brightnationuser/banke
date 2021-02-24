@@ -66,7 +66,7 @@
                 :label="translations.fields.password"
                 :placeholder="translations.fields.enter_your_password"
                 name="user-password"
-                :error-text="translations.errors.incorrect_password"
+                :error-text="password.errorMessage"
                 @change="password.valid = true"
                 @keyupenter="submit()"
             >
@@ -156,6 +156,7 @@ export default {
       password: {
         val: '',
         valid: false,
+        errorMessage: 'Incorrect password'
       },
       confirmPassword: {
         val: '',
@@ -170,6 +171,7 @@ export default {
   created() {
     this.email.errorMessage = this.translations.errors.email_already_used
     this.name.errorMessage = this.translations.errors.name_already_used
+    this.password.errorMessage = this.translations.errors.password_too_short
   },
 
   updated() {
@@ -239,6 +241,7 @@ export default {
 
       if (this.password.val.trim().length < 4) {
         this.password.valid = false
+        this.password.errorMessage = this.translations.errors.password_too_short
       }
 
       if (this.password.val.trim() !== this.confirmPassword.val.trim()) {

@@ -10,7 +10,7 @@ const defaultState = () => {
     },
     translations: {
       titles: {
-        sign_in: '',
+        sign_in: 'Sign In',
         forgot_password: '',
         sign_up: '',
         welcome_to_banke: '',
@@ -73,6 +73,7 @@ const defaultState = () => {
         required_field: '',
         incorrect_email: '',
         incorrect_password: '',
+        password_too_short: '',
         passwords_dont_match: '',
         name_already_used: '',
         email_already_used: '',
