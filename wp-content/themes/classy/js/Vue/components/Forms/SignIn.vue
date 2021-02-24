@@ -5,7 +5,7 @@
       @close="close()"
   >
     <div class="account-form account-form--login">
-      <div v-if="creationSuccess" class="user-create-success">Your account has been successfully created</div>
+<!--      <div v-if="creationSuccess" class="user-create-success">Your account has been successfully created</div>-->
       <div class="account-form__title">{{ translations.titles.sign_in }}</div>
       <div class="account-form__content">
         <div class="account-form__column">

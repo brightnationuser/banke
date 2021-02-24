@@ -1,117 +1,127 @@
 <template>
-  <VuePopup
-      root-classes="vue-popup--account vue-popup--register"
-      :is-opened="isOpened"
-      @close="close()"
-  >
-    <div class="account-form account-form--register">
-      <div class="account-form__title">{{ translations.titles.sign_up }}</div>
-      <div class="account-form__content">
-        <div class="account-form__column">
-          <div class="account-form__row">
-            <TextInput
-                :validation="validation"
-                :valid="name.valid"
-                :val="name.val"
-                :label="translations.fields.name"
-                :placeholder="translations.fields.enter_your_name"
-                name="user-name"
-                :error-text="name.errorMessage"
-                @change="name.valid = true"
-                @input="name.val = $event"
-            ></TextInput>
+  <div class="sign-up-outer">
+    <VuePopup
+        v-if="!success"
+        root-classes="vue-popup--account vue-popup--register"
+        :is-opened="isOpened"
+        @close="close()"
+    >
+      <div class="account-form account-form--register">
+        <div class="account-form__title">{{ translations.titles.sign_up }}</div>
+        <div class="account-form__content">
+          <div class="account-form__column">
+            <div class="account-form__row">
+              <TextInput
+                  :validation="validation"
+                  :valid="name.valid"
+                  :val="name.val"
+                  :label="translations.fields.name"
+                  :placeholder="translations.fields.enter_your_name"
+                  name="user-name"
+                  :error-text="name.errorMessage"
+                  @change="name.valid = true"
+                  @input="name.val = $event"
+              ></TextInput>
+            </div>
+            <div class="account-form__row">
+              <TextInput
+                  :validation="validation"
+                  :valid="company.valid"
+                  :val="company.val"
+                  :label="translations.fields.company"
+                  :placeholder="translations.fields.enter_company_name"
+                  name="user-company"
+                  :error-text="translations.errors.required_field"
+                  @change="company.valid = true"
+                  @input="company.val = $event"
+              ></TextInput>
+            </div>
+            <div class="account-form__row">
+              <TextInput
+                  :validation="validation"
+                  :valid="position.valid"
+                  :val="position.val"
+                  :label="translations.fields.job_position"
+                  :placeholder="translations.fields.enter_job_position"
+                  name="user-position"
+                  :error-text="translations.errors.required_field"
+                  @change="position.valid = true"
+                  @input="position.val = $event"
+              ></TextInput>
+            </div>
           </div>
-          <div class="account-form__row">
-            <TextInput
-                :validation="validation"
-                :valid="company.valid"
-                :val="company.val"
-                :label="translations.fields.company"
-                :placeholder="translations.fields.enter_company_name"
-                name="user-company"
-                :error-text="translations.errors.required_field"
-                @change="company.valid = true"
-                @input="company.val = $event"
-            ></TextInput>
-          </div>
-          <div class="account-form__row">
-            <TextInput
-                :validation="validation"
-                :valid="position.valid"
-                :val="position.val"
-                :label="translations.fields.job_position"
-                :placeholder="translations.fields.enter_job_position"
-                name="user-position"
-                :error-text="translations.errors.required_field"
-                @change="position.valid = true"
-                @input="position.val = $event"
-            ></TextInput>
+          <div class="account-form__column">
+            <div class="account-form__row">
+              <EmailInput
+                  :validation="validation"
+                  :valid="email.valid"
+                  :val="email.val"
+                  :label="translations.fields.email"
+                  :placeholder="translations.fields.enter_your_email"
+                  name="user-email"
+                  :error-text="email.errorMessage"
+                  @change="email.valid = true"
+                  @input="email.val = $event"
+              ></EmailInput>
+            </div>
+            <div class="account-form__row">
+              <PasswordInput
+                  :validation="validation"
+                  :valid="password.valid"
+                  :val="password.val"
+                  :label="translations.fields.password"
+                  :placeholder="translations.fields.enter_your_password"
+                  name="user-password"
+                  :error-text="password.errorMessage"
+                  @change="password.valid = true"
+                  @input="password.val = $event"
+                  @keyupenter="submit()"
+              >
+              </PasswordInput>
+            </div>
+            <div class="account-form__row">
+              <PasswordInput
+                  :validation="validation"
+                  :valid="confirmPassword.valid"
+                  :val="confirmPassword.val"
+                  :label="translations.fields.confirm_password"
+                  :placeholder="translations.fields.confirm_your_password"
+                  name="user-password-repeat"
+                  :error-text="translations.errors.passwords_dont_match"
+                  @change="confirmPassword.valid = true"
+                  @input="confirmPassword.val = $event"
+                  @keyupenter="submit()"
+              >
+              </PasswordInput>
+            </div>
           </div>
         </div>
-        <div class="account-form__column">
-          <div class="account-form__row">
-            <EmailInput
-                :validation="validation"
-                :valid="email.valid"
-                :val="email.val"
-                :label="translations.fields.email"
-                :placeholder="translations.fields.enter_your_email"
-                name="user-email"
-                :error-text="email.errorMessage"
-                @change="email.valid = true"
-                @input="email.val = $event"
-            ></EmailInput>
+        <div class="account-form__row account-form__row--buttons">
+          <div class="button button--account account-form__button" @click="submit()">
+            {{ translations.buttons.create_account }}
           </div>
-          <div class="account-form__row">
-            <PasswordInput
-                :validation="validation"
-                :valid="password.valid"
-                :val="password.val"
-                :label="translations.fields.password"
-                :placeholder="translations.fields.enter_your_password"
-                name="user-password"
-                :error-text="password.errorMessage"
-                @change="password.valid = true"
-                @input="password.val = $event"
-                @keyupenter="submit()"
-            >
-            </PasswordInput>
-          </div>
-          <div class="account-form__row">
-            <PasswordInput
-                :validation="validation"
-                :valid="confirmPassword.valid"
-                :val="confirmPassword.val"
-                :label="translations.fields.confirm_password"
-                :placeholder="translations.fields.confirm_your_password"
-                name="user-password-repeat"
-                :error-text="translations.errors.passwords_dont_match"
-                @change="confirmPassword.valid = true"
-                @input="confirmPassword.val = $event"
-                @keyupenter="submit()"
-            >
-            </PasswordInput>
+          <div class="button button--account button--stroke account-form__button" @click="switchForm('SignIn')">
+            {{ translations.buttons.sign_in }}
           </div>
         </div>
-      </div>
-      <div class="account-form__row account-form__row--buttons">
-        <div class="button button--account account-form__button" @click="submit()">
-          {{ translations.buttons.create_account }}
-        </div>
-        <div class="button button--account button--stroke account-form__button" @click="switchForm('SignIn')">
-          {{ translations.buttons.sign_in }}
-        </div>
-      </div>
 
-      <div class="account-form__loader" v-if="showLoader">
-        <img src="../../../../images/oval.svg" alt="loader">
-      </div>
+        <div class="account-form__loader" v-if="showLoader">
+          <img src="../../../../images/oval.svg" alt="loader">
+        </div>
 
-      <div class="vue-popup__close">
-        <i class="icon-close" @click="close()"></i>
+        <div class="vue-popup__close">
+          <i class="icon-close" @click="close()"></i>
+        </div>
       </div>
-    </div>
-  </VuePopup>
+    </VuePopup>
+    <SuccessAlert
+        v-if="success"
+        :alert-text="translations.texts.account_successfully_created"
+        :is-opened="success"
+        @close="closeSuccess"
+    >
+    </SuccessAlert>
+  </div>
 </template>
 
 <script>
@@ -121,6 +131,7 @@ import VuePopup from "../Popup/VuePopup";
 import TextInput from "./Fields/TextInput";
 import EmailInput from "./Fields/EmailInput";
 import PasswordInput from "./Fields/PasswordInput";
+import SuccessAlert from  "../SuccessAlert"
 import store from "../../store";
 
 export default {
@@ -133,14 +144,23 @@ export default {
     VuePopup,
     TextInput,
     EmailInput,
-    PasswordInput
+    PasswordInput,
+    SuccessAlert
   },
 
   data() {
     return {
+      success: false,
       showLoader: false,
       validated: false,
       validation: false,
+      userData: {
+        username: '',
+        email: '',
+        photo: '',
+        company: '',
+        position: ''
+      },
       name: {
         val: '',
         valid: false,
@@ -213,7 +233,10 @@ export default {
               }
 
               if (response.data.user_created) {
-                this.switchForm('SignIn', true)
+                this.success = true
+                this.userData = response.data.user
+                this.logIn()
+                // this.switchForm('SignIn', true)
               }
             })
       }
@@ -260,6 +283,17 @@ export default {
           this.email.valid &&
           this.password.valid &&
           this.confirmPassword.valid
+    },
+
+    logIn() {
+      this.$store.commit('setLoggedIn', true)
+      this.$store.commit('setUser', this.userData)
+      // window.location.href = '/account/specification'
+    },
+
+    closeSuccess() {
+      this.success = false
+      this.$emit('close')
     }
   },
 
@@ -272,6 +306,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.sign-up-outer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and(max-width: 767px) {
   .account-form {
     max-width: 400px;
