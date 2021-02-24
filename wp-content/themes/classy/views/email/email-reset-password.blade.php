@@ -10,7 +10,7 @@
 </head>
 
 <body class="email-template__container">
-<div class="email-template__wrapper" style="background-image: url('/wp-content/themes/classy/images/email/bg.jpg')">
+<div class="email-template__wrapper">
     <div class="email-template__container-inner">
         <table class="email-template__table-top">
             <tr>
