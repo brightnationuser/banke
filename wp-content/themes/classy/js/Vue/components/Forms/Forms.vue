@@ -23,6 +23,7 @@
     </div>
     <SignIn
         v-if="showForm === 'SignIn'"
+        :creationSuccess="creationSuccess"
         @close="setForm(false)"
         @switchForm="switchForm"
     ></SignIn>
@@ -60,6 +61,7 @@ export default {
   },
   data() {
     return {
+      creationSuccess: false,
       userData: {
         username: '',
         email: '',
@@ -93,7 +95,8 @@ export default {
       this.showForm = formName
     },
 
-    switchForm(formName) {
+    switchForm(formName, additionalParam = false) {
+      this.creationSuccess = additionalParam
       this.showForm = formName
     },
 

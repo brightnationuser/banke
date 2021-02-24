@@ -5,6 +5,7 @@
       @close="close()"
   >
     <div class="account-form account-form--login">
+      <div v-if="creationSuccess" class="user-create-success">Your account has been successfully created</div>
       <div class="account-form__title">{{ translations.titles.sign_in }}</div>
       <div class="account-form__content">
         <div class="account-form__column">
@@ -75,7 +76,8 @@ import PasswordInput from "./Fields/PasswordInput";
 export default {
   name: 'SignIn',
   props: [
-    'isOpened'
+    'isOpened',
+    'creationSuccess'
   ],
   components: {
     VuePopup,
@@ -169,5 +171,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+  .user-create-success {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 140%;
+    color: #005CA9;
+    margin-bottom: 10px;
+  }
 </style>

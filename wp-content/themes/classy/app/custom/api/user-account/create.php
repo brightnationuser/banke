@@ -25,6 +25,7 @@ function user_account__create() {
     ];
 
     $body = \Helpers\General::getEmailHtml($data, ['en' => 'email.email-sign-up']);
+    $headers[] = 'From: Banke';
     $headers[] = 'Content-Type: text/html; charset=UTF-8';
 
     if(!$is_error) {
