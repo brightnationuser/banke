@@ -253,7 +253,7 @@ header.header {
         }
     }
 
-    @media screen and (max-width: $width-l) {
+    @media screen and (max-width: $width-xl) {
         background: white;
         position: fixed;
         top: 0;
@@ -545,7 +545,7 @@ footer.footer {
 }
 
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
     header.header {
         .container {
             .header__lng {

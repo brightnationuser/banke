@@ -178,7 +178,7 @@ export default {
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1200px) {
     .sign-in {
       margin-top: 16px;
 

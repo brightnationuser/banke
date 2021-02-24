@@ -44,7 +44,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .form-app-wrapper {
-    width: 100%;
+  @media screen and (max-width: 1200px) {
+    .form-app-wrapper {
+      width: 100%;
+    }
   }
 </style>
