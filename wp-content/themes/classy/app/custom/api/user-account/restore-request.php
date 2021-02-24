@@ -21,6 +21,7 @@ function user_account__restore_password() {
 
         $body = \Helpers\General::getEmailHtml($data, ['en' => 'email.email-reset-password']);
 
+        $headers[] = 'From: Banke';
         $headers[] = 'Content-Type: text/html; charset=UTF-8';
         $mail_sent = wp_mail($email, 'Restore password Banke', $body, $headers);
     }

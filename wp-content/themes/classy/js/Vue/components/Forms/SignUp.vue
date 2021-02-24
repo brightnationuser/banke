@@ -213,7 +213,7 @@ export default {
               }
 
               if (response.data.user_created) {
-                this.switchForm('SignIn')
+                this.switchForm('SignIn', true)
               }
             })
       }
@@ -223,8 +223,8 @@ export default {
       this.$emit('close')
     },
 
-    switchForm(formName) {
-      this.$emit('switchForm', formName)
+    switchForm(formName, additionalParam = false) {
+      this.$emit('switchForm', formName, additionalParam)
     },
 
     validate() {
