@@ -15,7 +15,7 @@
             <EmailInput
                 :validation="validation"
                 :valid="email.valid"
-                v-model="email.val"
+                :val="email.val"
                 :label="translations.fields.email"
                 :placeholder="translations.fields.enter_your_email"
                 name="user-email"

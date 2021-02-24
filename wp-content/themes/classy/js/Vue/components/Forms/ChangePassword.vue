@@ -8,11 +8,12 @@
             <PasswordInput
                 :validation="validation"
                 :valid="password.valid"
-                v-model="password.val"
+                :val="password.val"
                 :label="translations.fields.password"
                 :placeholder="translations.fields.enter_your_password"
                 name="user-password"
                 :error-text="translations.errors.incorrect_password"
+                @input="password.val = $event"
                 @change="password.valid = true"
             >
             </PasswordInput>
@@ -21,12 +22,13 @@
             <PasswordInput
                 :validation="validation"
                 :valid="confirmPassword.valid"
-                v-model="confirmPassword.val"
+                :val="confirmPassword.val"
                 :label="translations.fields.confirm_password"
                 :placeholder="translations.fields.confirm_your_password"
                 name="user-password-repeat"
                 :error-text="translations.errors.passwords_dont_match"
                 @change="confirmPassword.valid = true"
+                @input="confirmPassword.val = $event"
             >
             </PasswordInput>
           </div>

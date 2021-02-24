@@ -18,7 +18,7 @@
                 class="need-help__question-textarea"
                 :validation="validation"
                 :valid="help.valid"
-                v-model="help.val"
+                :val="help.val"
                 :label="translations.fields.your_question"
                 :placeholder="translations.fields.write_your_question_here"
                 name="question"

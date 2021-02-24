@@ -12,12 +12,13 @@
             <EmailInput
                 :validation="validation"
                 :valid="email.valid"
-                v-model="email.val"
+                :val="email.val"
                 :label="translations.fields.email"
                 :placeholder="translations.fields.enter_your_email"
                 name="user-email"
                 :error-text="translations.errors.incorrect_email"
                 @change="email.valid = true"
+                @input="email.val = $event"
                 @keyupenter="submit()"
 
             ></EmailInput>
@@ -26,12 +27,13 @@
             <PasswordInput
                 :validation="validation"
                 :valid="password.valid"
-                v-model="password.val"
+                :val="password.val"
                 :label="translations.fields.password"
                 :placeholder="translations.fields.enter_your_password"
                 name="user-password"
                 :error-text="translations.errors.incorrect_password"
                 @change="password.valid = true"
+                @input="password.val = $event"
                 @keyupenter="submit()"
             >
             </PasswordInput>
