@@ -27,7 +27,7 @@
                     Banke
                     materials
                 </div>
-                <a href="{{WP_HOME}}" class="email-template__button">Confirm email</a>
+                <a href="{{WP_HOME}}" class="email-template__button email-template__button-sign">Confirm Email</a>
             </td>
         </tr>
     </table>

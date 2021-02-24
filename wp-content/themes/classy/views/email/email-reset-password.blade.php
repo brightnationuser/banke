@@ -23,7 +23,9 @@
                         <div class="email-template__line"></div>
                     </div>
                     <div class="email-template__title email-template__center">Reset Password</div>
-                    <div class="email-template__created">You're receiving this email because you requested a password reset for your Banke account.
+                    <div class="email-template__created">You're receiving this email because you requested a password reset for your Banke account.</div>
+                    <br />
+                    <div class="email-template__created-subtitle">
                         Please click the link below to set a new password:
                     </div>
                     <div class="email-template__reset-password__wrapper">
