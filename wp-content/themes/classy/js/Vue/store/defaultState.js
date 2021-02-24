@@ -45,6 +45,7 @@ const defaultState = () => {
         write_your_question_here: '',
       },
       texts: {
+        account_successfully_created: '',
         forgot_password_form: '',
         reset_email_success: '',
         reset_password_email_1: '',
