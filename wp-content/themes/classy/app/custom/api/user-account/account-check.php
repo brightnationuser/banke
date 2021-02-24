@@ -16,6 +16,7 @@ function user_account__check() {
         $response = [
             'success' => true,
             'user' => [
+                'approved' => get_field('user_approved', $user),
                 'id' => $user->ID,
                 'username' => $user->user_login,
                 'email' => $user->user_email,

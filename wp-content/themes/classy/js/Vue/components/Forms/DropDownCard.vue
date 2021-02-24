@@ -22,7 +22,7 @@
       <!--        <a href="/account/three-models" class="drop-down-card__link">
                 {{translations.titles.models_3d}}
               </a>-->
-      <a href="/account/manuals" class="drop-down-card__link">
+      <a v-if="user.approved" href="/account/manuals" class="drop-down-card__link">
         {{ translations.titles.manuals }}
       </a>
       <a href="/account/video-gallery" class="drop-down-card__link">

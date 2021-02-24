@@ -29,7 +29,7 @@
                         {{translations.titles.models_3d}}
                       </a>
                     </router-link>-->
-          <router-link :to="{ name: 'Manuals' }" custom v-slot="{href, navigate, isActive}">
+          <router-link v-if="user.approved" :to="{ name: 'Manuals' }" custom v-slot="{href, navigate, isActive}">
             <a class="menu__elem" :class="{'menu__elem--active' : isActive}" :href="href" @click="navigate">
               {{translations.titles.manuals}}
             </a>
@@ -120,6 +120,7 @@ export default {
   max-width: 300px;
   width: 100%;
   box-shadow: 4px 0 5px -2px #dedede;
+  z-index: 5;
 
   &__info {
     display: flex;
