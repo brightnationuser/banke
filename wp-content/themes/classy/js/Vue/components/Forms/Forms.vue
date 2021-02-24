@@ -180,17 +180,21 @@ export default {
 
   @media (max-width: 1024px) {
     .sign-in {
-      width: calc(100% + 36px);
-      margin-left: -36px;
       margin-top: 16px;
+
       &-profile__wrapper {
         display: none;
       }
+
       &__dropdown {
         width: 100%;
         position: static;
         opacity: 1;
         visibility: visible;
+      }
+
+      .icon-arrow-down {
+        display: none;
       }
     }
   }

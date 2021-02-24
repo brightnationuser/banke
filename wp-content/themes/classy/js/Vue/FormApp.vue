@@ -45,7 +45,6 @@ export default {
 
 <style lang="scss" scoped>
   .form-app-wrapper {
-
-    width: calc(100% + 36px);
+    width: 100%;
   }
 </style>

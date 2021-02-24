@@ -172,9 +172,13 @@ export default {
 
   .drop-down-card {
     border-top: 1px solid #EAEAEA;
+    box-shadow: none;
+    margin: 0 -16px;
+
     &__link, &__actions {
       color: #153661 !important;
     }
+
     &__link {
       margin-top: 12px;
       &:first-of-type {
