@@ -18,7 +18,7 @@ function user_account__help_request() {
     ]);
     $to = get_field('admin_help_email', 'options');
     $subject = 'Help Request from ' . $user->user_email;
-    $headers[] = 'From: Banke';
+    $headers['From'] = 'Banke <noreply@banke-pro>';
     $headers[] = 'Content-Type: text/html; charset=UTF-8';
 
     $mail_sent = wp_mail($to, $subject, $body, $headers);
