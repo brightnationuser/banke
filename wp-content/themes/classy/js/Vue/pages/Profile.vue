@@ -40,6 +40,7 @@
                       name="user-name"
                       :error-text="name.errorMessage"
                       @change="name.valid = true"
+                      @input="name.val = $event"
                   ></TextInput>
                 </div>
                 <div class="account-form__row">
@@ -52,6 +53,7 @@
                       name="user-email"
                       :error-text="email.errorMessage"
                       @change="email.valid = true"
+                      @input="email.val = $event"
                   ></EmailInput>
                 </div>
               </div>
@@ -70,6 +72,7 @@
                         name="user-company"
                         :error-text="translations.errors.required_field"
                         @change="company.valid = true"
+                        @input="company.val = $event"
                     ></TextInput>
                   </div>
                   <div class="account-form__row">
@@ -82,6 +85,7 @@
                         name="user-position"
                         :error-text="translations.errors.required_field"
                         @change="position.valid = true"
+                        @input="position.val = $event"
                     ></TextInput>
                   </div>
                 </div>
