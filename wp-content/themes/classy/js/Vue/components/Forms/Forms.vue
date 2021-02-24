@@ -1,16 +1,21 @@
 <template>
-  <div>
+  <div  class="sign-in-wrappernp">
     <div class="sign-in" @click="setForm('SignIn')" v-if="!loggedIn">
       <i class="icon-account"></i>
       <span>{{ translations.titles.sign_in }}</span>
     </div>
     <div class="sign-in" v-else>
-      <i class="icon-account"></i>
-      <span>
+      <div class="sign-in-profile__wrapper">
+        <i class="icon-account"></i>
+        <span>
         <a class="menu__elem menu__elem--active" href="/account/specification">
+          <div class="menu__elem menu__elem--active">
             {{ user.username }}
-          </a>
+          </div>
+        </a>
       </span>
+      </div>
+
       <i class="icon-arrow-down"></i>
       <div class="sign-in__dropdown">
         <DropDownCard></DropDownCard>
@@ -117,7 +122,10 @@ export default {
     color: #003462;
     margin-bottom: -3px;
     position: relative;
-
+    &-profile__wrapper {
+      display: flex;
+      align-items: center;
+    }
     span, a {
       color: #003462;
     }
@@ -166,6 +174,23 @@ export default {
           opacity: 1;
           visibility: visible;
         }
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .sign-in {
+      width: 1024px;
+      margin-left: -30px;
+      margin-top: 16px;
+      &-profile__wrapper {
+        display: none;
+      }
+      &__dropdown {
+        width: 100%;
+        position: static;
+        opacity: 1;
+        visibility: visible;
       }
     }
   }
