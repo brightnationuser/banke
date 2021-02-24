@@ -21,6 +21,7 @@
                 name="user-email"
                 :error-text="translations.errors.incorrect_email"
                 @keyupenter="submit()"
+                @input="email.val = $event"
             ></EmailInput>
           </div>
         </div>
