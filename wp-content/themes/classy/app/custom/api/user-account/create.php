@@ -30,12 +30,28 @@ function user_account__create() {
 
     if(!$is_error) {
         $mail_sent = wp_mail($email, 'Registration Banke', $body, $headers);
+
+        $credentials = [
+            'user_login' => $_POST['email'],
+            'user_password' => $_POST['password'],
+            'remember' => true
+        ];
+
+        wp_signon($credentials);
     }
     else {
         $mail_sent = false;
     }
 
     $response = [
+        'user' => [
+            'id' => $user_id,
+            'username' => $_POST['name'],
+            'email' => $_POST['email'],
+            'photo' => '',
+            'company' => $_POST['company'],
+            'position' => $_POST['position']
+        ],
         'mail_sent' => $mail_sent,
         'user_created' => !$is_error,
         'error' => $is_error ? $user_id->errors : ''
