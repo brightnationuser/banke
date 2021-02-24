@@ -12,36 +12,39 @@
             <TextInput
                 :validation="validation"
                 :valid="name.valid"
-                v-model="name.val"
+                :val="name.val"
                 :label="translations.fields.name"
                 :placeholder="translations.fields.enter_your_name"
                 name="user-name"
                 :error-text="name.errorMessage"
                 @change="name.valid = true"
+                @input="name.val = $event"
             ></TextInput>
           </div>
           <div class="account-form__row">
             <TextInput
                 :validation="validation"
                 :valid="company.valid"
-                v-model="company.val"
+                :val="company.val"
                 :label="translations.fields.company"
                 :placeholder="translations.fields.enter_company_name"
                 name="user-company"
                 :error-text="translations.errors.required_field"
                 @change="company.valid = true"
+                @input="company.val = $event"
             ></TextInput>
           </div>
           <div class="account-form__row">
             <TextInput
                 :validation="validation"
                 :valid="position.valid"
-                v-model="position.val"
+                :val="position.val"
                 :label="translations.fields.job_position"
                 :placeholder="translations.fields.enter_job_position"
                 name="user-position"
                 :error-text="translations.errors.required_field"
                 @change="position.valid = true"
+                @input="position.val = $event"
             ></TextInput>
           </div>
         </div>
@@ -50,24 +53,26 @@
             <EmailInput
                 :validation="validation"
                 :valid="email.valid"
-                v-model="email.val"
+                :val="email.val"
                 :label="translations.fields.email"
                 :placeholder="translations.fields.enter_your_email"
                 name="user-email"
                 :error-text="email.errorMessage"
                 @change="email.valid = true"
+                @input="email.val = $event"
             ></EmailInput>
           </div>
           <div class="account-form__row">
             <PasswordInput
                 :validation="validation"
                 :valid="password.valid"
-                v-model="password.val"
+                :val="password.val"
                 :label="translations.fields.password"
                 :placeholder="translations.fields.enter_your_password"
                 name="user-password"
                 :error-text="password.errorMessage"
                 @change="password.valid = true"
+                @input="password.val = $event"
                 @keyupenter="submit()"
             >
             </PasswordInput>
@@ -76,12 +81,13 @@
             <PasswordInput
                 :validation="validation"
                 :valid="confirmPassword.valid"
-                v-model="confirmPassword.val"
+                :val="confirmPassword.val"
                 :label="translations.fields.confirm_password"
                 :placeholder="translations.fields.confirm_your_password"
                 name="user-password-repeat"
                 :error-text="translations.errors.passwords_dont_match"
                 @change="confirmPassword.valid = true"
+                @input="confirmPassword.val = $event"
                 @keyupenter="submit()"
             >
             </PasswordInput>
