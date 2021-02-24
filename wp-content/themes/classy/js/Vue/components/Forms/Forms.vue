@@ -2,7 +2,7 @@
   <div>
     <div class="sign-in" @click="setForm('SignIn')" v-if="!loggedIn">
       <i class="icon-account"></i>
-      <span>{{translations.titles.sign_in}}</span>
+      <span>{{ translations.titles.sign_in }}</span>
     </div>
     <div class="sign-in" v-else>
       <i class="icon-account"></i>
@@ -118,7 +118,7 @@ export default {
     margin-bottom: -3px;
     position: relative;
 
-    span {
+    span, a {
       color: #003462;
     }
 
