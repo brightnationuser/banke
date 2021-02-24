@@ -1,51 +1,52 @@
 <template>
-  <div class="account-form account-form--forgot">
-    <div class="account-form__title">{{translations.titles.reset_password}}</div>
-    <div class="account-form__content">
-      <div class="account-form__column">
-        <div class="account-form__row">
-          <PasswordInput
-              :validation="validation"
-              :valid="password.valid"
-              v-model="password.val"
-              :label="translations.fields.password"
-              :placeholder="translations.fields.enter_your_password"
-              name="user-password"
-              :error-text="translations.errors.incorrect_password"
-              @change="password.valid = true"
-          >
-          </PasswordInput>
-        </div>
-        <div class="account-form__row">
-          <PasswordInput
-              :validation="validation"
-              :valid="confirmPassword.valid"
-              v-model="confirmPassword.val"
-              :label="translations.fields.confirm_password"
-              :placeholder="translations.fields.confirm_your_password"
-              name="user-password-repeat"
-              :error-text="translations.errors.passwords_dont_match"
-              @change="confirmPassword.valid = true"
-          >
-          </PasswordInput>
+  <div class="change-password-form">
+    <div class="account-form account-form--forgot" v-if="!success">
+      <div class="account-form__title">{{translations.titles.reset_password}}</div>
+      <div class="account-form__content">
+        <div class="account-form__column">
+          <div class="account-form__row">
+            <PasswordInput
+                :validation="validation"
+                :valid="password.valid"
+                v-model="password.val"
+                :label="translations.fields.password"
+                :placeholder="translations.fields.enter_your_password"
+                name="user-password"
+                :error-text="translations.errors.incorrect_password"
+                @change="password.valid = true"
+            >
+            </PasswordInput>
+          </div>
+          <div class="account-form__row">
+            <PasswordInput
+                :validation="validation"
+                :valid="confirmPassword.valid"
+                v-model="confirmPassword.val"
+                :label="translations.fields.confirm_password"
+                :placeholder="translations.fields.confirm_your_password"
+                name="user-password-repeat"
+                :error-text="translations.errors.passwords_dont_match"
+                @change="confirmPassword.valid = true"
+            >
+            </PasswordInput>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="account-form__row account-form__row--buttons">
-      <div class="button button--account account-form__button" @click="submit()">
-        {{translations.buttons.save_password}}
+      <div class="account-form__row account-form__row--buttons">
+        <div class="button button--account account-form__button" @click="submit()">
+          {{translations.buttons.save_password}}
+        </div>
+      </div>
+
+      <div class="account-form__loader" v-if="showLoader">
+        <img src="../../../../images/oval.svg" alt="loader">
       </div>
     </div>
-
-    <div class="account-form__loader" v-if="showLoader">
-      <img src="../../../../images/oval.svg" alt="loader">
-    </div>
-
     <SuccessAlert
-      v-if="success"
-      :alert-text="translations.texts.reset_password_complete"
-      :is-opened="success"
-      @close="closeSuccess()"
+        v-if="success"
+        :alert-text="translations.texts.reset_password_complete"
+        :is-opened="success"
+        @close="closeSuccess()"
     >
     </SuccessAlert>
   </div>
@@ -143,9 +144,8 @@ export default {
     },
 
     closeSuccess() {
-
-      //this.success = true
-      // window.location.href = '/'
+      this.success = false
+      window.location.href = '/'
     },
 
     getParameterByName(name, url = window.location.href) {
@@ -169,6 +169,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .change-password-form {
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
   .account-form {
     background-image: none;
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.04);
