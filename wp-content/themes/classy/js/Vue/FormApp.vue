@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="form-app-wrapper">
     <Forms></Forms>
   </div>
 </template>
@@ -44,5 +44,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .form-app-wrapper {
 
+    width: calc(100% + 36px);
+  }
 </style>

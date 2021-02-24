@@ -1,5 +1,5 @@
 <template>
-  <div  class="sign-in-wrappernp">
+  <div  class="sign-in-wrapper">
     <div class="sign-in" @click="setForm('SignIn')" v-if="!loggedIn">
       <i class="icon-account"></i>
       <span>{{ translations.titles.sign_in }}</span>
@@ -180,8 +180,8 @@ export default {
 
   @media (max-width: 1024px) {
     .sign-in {
-      width: 1024px;
-      margin-left: -30px;
+      width: calc(100% + 36px);
+      margin-left: -36px;
       margin-top: 16px;
       &-profile__wrapper {
         display: none;
