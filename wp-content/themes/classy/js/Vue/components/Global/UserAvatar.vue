@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       userData: {},
-      profileImage: '',
+      profileImage: '/wp-content/themes/classy/images/account/profile.svg',
     }
   },
 
