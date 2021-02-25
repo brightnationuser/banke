@@ -21,7 +21,6 @@
                 @change="email.valid = true"
                 @input="email.val = $event"
                 @keyupenter="submit()"
-
             ></EmailInput>
           </div>
           <div class="account-form__row">

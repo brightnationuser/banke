@@ -156,6 +156,7 @@ export default {
       background-image: url(../../../../images/account/account-popup-bg.png);
       background-position: center;
       background-size: cover;
+      position: relative;
     }
 
     &__popup-title {

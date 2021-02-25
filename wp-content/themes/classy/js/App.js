@@ -49,6 +49,7 @@ class App {
 
         //$('body').addClass('m_ready');
         setTimeout(function () {
+            $('.js-disabled').removeClass('js-disabled')
             $('body').addClass('m_ready');
         }, 100);
 
