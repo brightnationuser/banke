@@ -8,12 +8,12 @@
       <div class="sign-in-profile__wrapper">
         <i class="icon-account"></i>
         <span>
-        <a class="menu__elem menu__elem--active" href="/account/specification">
-          <div class="menu__elem menu__elem--active">
-            {{ user.username }}
-          </div>
-        </a>
-      </span>
+          <a class="menu__elem menu__elem--active" href="/account/specification">
+            <div class="menu__elem menu__elem--active">
+              {{ user.username }}
+            </div>
+          </a>
+        </span>
       </div>
 
       <i class="icon-arrow-down"></i>
@@ -117,7 +117,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .sign-in {
     cursor: pointer;
     display: flex;
@@ -125,6 +125,7 @@ export default {
     color: #003462;
     margin-bottom: -3px;
     position: relative;
+
     &-profile__wrapper {
       display: flex;
       align-items: center;

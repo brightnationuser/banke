@@ -66,8 +66,26 @@
                 </div>
                 <span>|</span>
             </div>
-            <div id="app-forms">
+            <div class="app-forms-wrapper js-disabled">
+                <div id="app-forms"></div>
+            </div>
 
+            <div class="app-forms-placeholder ">
+                <div class="sign-in">
+                    <div class="sign-in-profile__wrapper">
+
+                    </div>
+                    <i class="icon-account"></i>
+                    @if(is_user_logged_in())
+                        <a class="menu__elem menu__elem--active" href="#">
+                            <div class="menu__elem menu__elem--active">
+                                <span>{{ wp_get_current_user()->user_login }}</span>
+                            </div>
+                        </a>
+                    @else
+                        <span>{{ get_field('account_titles', 'option')['sign_in'] }}</span>
+                    @endif
+                </div>
             </div>
         </div>
     </div>

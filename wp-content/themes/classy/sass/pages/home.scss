@@ -1,4 +1,5 @@
 .home .content {
+
     .hero {
         margin-top: -150px;
         background-color: #f9f9f9;
@@ -335,5 +336,25 @@
 @media screen and (max-width: 576px) {
     .home .content .home-references .reference-slide__image {
         border-radius: 15px;
+    }
+}
+
+.app-forms-placeholder {
+    display: none;
+
+    &.js-disabled {
+        display: block;
+    }
+}
+
+.app-forms-wrapper {
+    display: block;
+
+    &.js-disabled {
+        display: none;
+    }
+
+    @media screen and (max-width: 1200px) {
+        width: 100%;
     }
 }

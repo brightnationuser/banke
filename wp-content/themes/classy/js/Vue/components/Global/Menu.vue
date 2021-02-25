@@ -120,7 +120,6 @@ export default {
   max-width: 300px;
   width: 100%;
   box-shadow: 4px 0 5px -2px #dedede;
-  z-index: 5;
 
   &__info {
     display: flex;

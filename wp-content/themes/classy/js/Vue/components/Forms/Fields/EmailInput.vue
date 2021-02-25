@@ -50,6 +50,7 @@ export default {
     keyupEnter() {
       this.$emit('keyupenter')
     },
+
     change() {
       this.$emit('change')
     }
