@@ -316,7 +316,8 @@ export default {
 
 @media screen and(max-width: 767px) {
   .account-form {
-    max-width: 400px;
+    max-width: 500px;
+
     &__content {
       flex-direction: column;
     }

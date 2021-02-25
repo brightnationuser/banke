@@ -356,7 +356,7 @@ export default {
   .user-profile {
     &__wrapper {
       margin: 0 auto;
-      max-width: 400px;
+      max-width: 600px;
       width: 100%;
       flex-direction: column;
     }
@@ -377,6 +377,10 @@ export default {
         justify-content: flex-start;
         align-items: baseline;
 
+      }
+
+      .account-form__column + .account-form__column {
+        margin-top: 15px;
       }
 
       .button--account {
@@ -406,6 +410,10 @@ export default {
     &__row--buttons {
       //flex-direction: column;
       //align-items: flex-start;
+
+      .button {
+        font-size: 12px;
+      }
 
       .button + .button {
         margin-left: 0;

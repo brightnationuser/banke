@@ -193,6 +193,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
+
     img {
       width: 100%;
     }
@@ -200,6 +201,21 @@
 }
 
 
+@media screen and (max-width: 768px) {
+  .account-form {
+    &__content {
+      flex-direction: column;
+    }
+
+    &__column {
+      margin-bottom: 25px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
 
 @media screen and (max-width: 480px) {
   .account-form {
@@ -212,3 +228,4 @@
     }
   }
 }
+
