@@ -175,6 +175,7 @@ export default {
 
       iframe {
         max-width: 100%;
+        min-height: 180px;
       }
     }
 
