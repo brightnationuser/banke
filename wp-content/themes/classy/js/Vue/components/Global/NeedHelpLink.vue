@@ -23,6 +23,7 @@
                 :placeholder="translations.fields.write_your_question_here"
                 name="question"
                 :error-text="translations.errors.required_field"
+                @input="help.val = $event"
             />
             <div class="need-help__buttons">
               <div class="need-help__button need-help__button-send button" @click="submitPopupNeedHelp">Send</div>
