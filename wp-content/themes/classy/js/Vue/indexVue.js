@@ -5,7 +5,7 @@ window.axios = require('axios');
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 import Vue from 'vue';
-import VueYoutube from 'vue-youtube'
+import VueYoutube from 'vue-youtube-embed'
 import App from './App.vue'
 import FormApp from './FormApp'
 import ResetApp from "./ResetApp";

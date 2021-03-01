@@ -2,7 +2,7 @@
   <div class="personal-video">
     <div class="personal-video__card">
       <div class="personal-video__preview">
-        <img :src="'http://img.youtube.com/vi/' + id + '/0.jpg'" alt="">
+        <img :src="'https://img.youtube.com/vi/' + id + '/0.jpg'" alt="">
       </div>
       <div class="personal-video__button" @click="playVideo()">
         <img src="/wp-content/themes/classy/images/icons/play-news.svg" alt="play">
@@ -26,8 +26,8 @@
               :video-id="id"
               ref="youtube"
               :resize="true"
-              :width="iframeWidth"
-              :height="iframeHeight"
+              :player-width="iframeWidth"
+              :player-height="iframeHeight"
           ></youtube>
         </div>
 

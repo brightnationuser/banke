@@ -40,6 +40,7 @@
         "sass-loader": "7.*",
         "vue-loader": "^15.7.0",
         "vue-template-compiler": "2.6.8",
+        "vue-youtube-embed": "^2.2.2",
         "webpack-livereload-plugin": "^2.3.0"
     }
 }
