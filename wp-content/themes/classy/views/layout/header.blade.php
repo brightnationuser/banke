@@ -70,7 +70,7 @@
                 <div id="app-forms"></div>
             </div>
 
-            <div class="app-forms-placeholder ">
+            <div class="app-forms-placeholder js-disabled">
                 <div class="sign-in">
                     <div class="sign-in-profile__wrapper">
 
