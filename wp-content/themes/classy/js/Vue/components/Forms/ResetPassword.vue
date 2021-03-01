@@ -1,51 +1,62 @@
 <template>
-  <VuePopup
-      root-classes="vue-popup--account vue-popup--register"
-      :is-opened="isOpened"
-      @close="close()"
-  >
-    <div class="account-form account-form--forgot">
-      <div class="account-form__title">{{translations.titles.forgot_password}}</div>
-      <div class="account-form__text">
-        {{translations.texts.forgot_password_form}}
-      </div>
-      <div class="account-form__content">
-        <div class="account-form__column">
-          <div class="account-form__row">
-            <EmailInput
-                :validation="validation"
-                :valid="email.valid"
-                :val="email.val"
-                :label="translations.fields.email"
-                :placeholder="translations.fields.enter_your_email"
-                name="user-email"
-                :error-text="translations.errors.incorrect_email"
-                @keyupenter="submit()"
-                @input="email.val = $event"
-            ></EmailInput>
+  <div class="reset-password-from-outer">
+    <VuePopup
+        v-if="!success"
+        root-classes="vue-popup--account vue-popup--register"
+        :is-opened="isOpened"
+        @close="close()"
+    >
+      <div class="account-form account-form--forgot">
+        <div class="account-form__title">{{translations.titles.forgot_password}}</div>
+        <div class="account-form__text">
+          {{translations.texts.forgot_password_form}}
+        </div>
+        <div class="account-form__content">
+          <div class="account-form__column">
+            <div class="account-form__row">
+              <EmailInput
+                  :validation="validation"
+                  :valid="email.valid"
+                  :val="email.val"
+                  :label="translations.fields.email"
+                  :placeholder="translations.fields.enter_your_email"
+                  name="user-email"
+                  :error-text="translations.errors.incorrect_email"
+                  @keyupenter="submit()"
+                  @input="email.val = $event"
+              ></EmailInput>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="account-form__row account-form__row--buttons">
-        <div class="button button--account account-form__button" @click="submit()">
-          {{translations.buttons.reset_password}}
+        <div class="account-form__row account-form__row--buttons">
+          <div class="button button--account account-form__button" @click="submit()">
+            {{translations.buttons.reset_password}}
+          </div>
+        </div>
+        <div class="account-form__row account-form__row--text-link">
+          <div class="button button--text" @click="switchForm('SignIn')">
+            {{translations.buttons.back_to_sign_in}}
+          </div>
+        </div>
+
+        <div class="account-form__loader" v-if="showLoader">
+          <img src="../../../../images/oval.svg" alt="loader">
+        </div>
+
+        <div class="vue-popup__close">
+          <i class="icon-close" @click="close()"></i>
         </div>
       </div>
-      <div class="account-form__row account-form__row--text-link">
-        <div class="button button--text" @click="switchForm('SignIn')">
-          {{translations.buttons.back_to_sign_in}}
-        </div>
-      </div>
-
-      <div class="account-form__loader" v-if="showLoader">
-        <img src="../../../../images/oval.svg" alt="loader">
-      </div>
-
-      <div class="vue-popup__close">
-        <i class="icon-close" @click="close()"></i>
-      </div>
-    </div>
-  </VuePopup>
+    </VuePopup>
+    <SuccessAlert
+        classes="success-alert--text-small"
+        v-if="success"
+        :alert-text="translations.texts.reset_email_success"
+        :is-opened="success"
+        @close="closeSuccess()"
+    >
+    </SuccessAlert>
+  </div>
 </template>
 
 <script>
@@ -54,6 +65,7 @@ import { mapState } from 'vuex';
 
 import VuePopup from "../Popup/VuePopup";
 import EmailInput from "./Fields/EmailInput";
+import SuccessAlert from "../SuccessAlert";
 
 export default {
   name: 'ResetPassword',
@@ -63,11 +75,13 @@ export default {
 
   components: {
     VuePopup,
-    EmailInput
+    EmailInput,
+    SuccessAlert
   },
 
   data() {
     return {
+      success: false,
       showLoader: false,
       validation: false,
       email: {
@@ -98,7 +112,7 @@ export default {
             this.showLoader = false
 
             if (response.data.success) {
-              this.switchForm(false)
+              this.success = true
             }
             else {
               this.email.valid = false
@@ -114,6 +128,11 @@ export default {
     switchForm(formName) {
       this.$emit('switchForm', formName)
     },
+
+    closeSuccess() {
+      this.success = false
+      this.switchForm(false)
+    }
   },
 
   watch: {},
@@ -127,6 +146,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+  .reset-password-from-outer {
+    width: 100%;
+  }
 </style>
 

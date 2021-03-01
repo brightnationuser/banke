@@ -4,7 +4,7 @@
       :is-opened="isOpened"
       @close="close()"
   >
-    <div class="success-alert">
+    <div class="success-alert" :class="classes">
       <div class="success-alert__icon">
         <i class="icon-verified"></i>
       </div>
@@ -28,7 +28,8 @@ export default {
   name: 'SuccessAlert',
   props: [
     'isOpened',
-    'alertText'
+    'alertText',
+    'classes'
   ],
 
   components: {
@@ -100,6 +101,17 @@ export default {
       i {
         font-size: 84px;
         color: #005ca9;
+      }
+    }
+
+    &--text-small {
+
+      .success-alert {
+        &__text {
+          font-size: 20px;
+          line-height: 27px;
+          max-width: 300px;
+        }
       }
     }
   }
