@@ -23,8 +23,8 @@ function user_account__check() {
                 'photo' => $photo,
                 'photo_file_exists' => file_exists($photo_abspath),
                 'photo_file_meta' => $user_meta['b_user_photo'][0],
-                'company' => $user_meta['company'][0],
-                'position' => $user_meta['position'][0]
+                'company' => get_field('user_company', $user),
+                'position' =>  get_field('user_position', $user)
             ]
         ];
     }

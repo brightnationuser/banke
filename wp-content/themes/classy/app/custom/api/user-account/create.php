@@ -12,9 +12,12 @@ function user_account__create() {
     $password = $_POST['password'];
 
     $user_id = wp_create_user($name, $password, $email);
-    add_user_meta($user_id, 'company', $company);
-    add_user_meta($user_id, 'position', $position);
     add_user_meta($user_id, 'b_user_avatar', '');
+
+    $user = get_user_by('id', $user_id);
+    update_field('user_company', $company, $user);
+    update_field('user_position', $position, $user);
+
     $is_error = is_a($user_id, 'WP_Error');
 
     $data = [
@@ -32,7 +35,7 @@ function user_account__create() {
     if(!$is_error) {
         $admin_email = get_option('admin_email');
         $mail_sent = wp_mail($email, 'Registration Banke', $body, $headers);
-        $mail_sent_admin = wp_mail($admin_email, 'New User Banke', $admin_body, $headers);
+        $mail_sent_admin = wp_mail($admin_email, 'Banke - New User', $admin_body, $headers);
 
         $credentials = [
             'user_login' => $_POST['email'],

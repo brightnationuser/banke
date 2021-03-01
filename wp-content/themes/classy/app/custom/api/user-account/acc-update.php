@@ -11,6 +11,8 @@ function user_account__update() {
     $company = $_POST['company'];
     $position = $_POST['position'];
     $email = $_POST['email'];
+    $message = '';
+    $company_changed = false;
 
     $userdata = [
         'ID' => $user_id,
@@ -27,8 +29,35 @@ function user_account__update() {
         $error = $update_result->errors;
     }
     else {
-        update_user_meta($user_id, 'company', $company);
-        update_user_meta($user_id, 'position', $position);
+        $user = get_user_by('id', $user_id);
+        $old_company = get_field('user_company', $user);
+
+        if($_POST['company'] !== $old_company) {
+            update_field('user_approved', false, $user);
+            $company_changed = true;
+            $message = 'user changed his company';
+
+            $data = [
+                'name' => $name,
+                'new_company' => $company,
+                'old_company' => $old_company,
+                'position' => $position,
+                'email' => $email
+            ];
+            $admin_email = get_option('admin_email');
+            $headers['From'] = 'Banke <noreply@banke-pro>';
+            $headers[] = 'Content-Type: text/html; charset=UTF-8';
+
+            $admin_body = \Helpers\General::getEmailHtml($data, [
+                'en' => 'email.email-user-change-company-admin',
+                'de' => 'email.email-user-change-company-admin'
+            ]);
+
+            $mail_sent_admin = wp_mail($admin_email, 'Banke - User Changed Company', $admin_body, $headers);
+        }
+
+        update_field('user_company', $company, $user);
+        update_field('user_position', $position, $user);
         $success = true;
     }
 
@@ -36,6 +65,8 @@ function user_account__update() {
         'user_updated' => !$is_error,
         'error' => $error,
         'success' => $success,
+        'message' => $message,
+        'company_changed' => $company_changed,
         'user' => [
             'username' => $name,
             'company' => $company,

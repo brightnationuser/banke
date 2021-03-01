@@ -30,8 +30,8 @@ function user_account__login() {
             'username' => $user->user_login,
             'email' => $user->user_email,
             'photo' => $user_meta['b_user_photo'][0],
-            'company' => $user_meta['company'][0],
-            'position' => $user_meta['position'][0]
+            'company' => get_field('user_company', $user),
+            'position' =>  get_field('user_position', $user)
         ];
     }
 
