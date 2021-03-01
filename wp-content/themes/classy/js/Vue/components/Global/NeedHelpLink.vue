@@ -30,6 +30,10 @@
               <div class="need-help__button need-help__button-cancel button button--stroke" @click="closePopupNeedHelp">Cancel</div>
             </div>
           </div>
+
+          <div class="account-form__loader" v-if="showLoader">
+            <img src="../../../../images/oval.svg" alt="loader">
+          </div>
         </div>
       </div>
     </VuePopup>
@@ -66,6 +70,7 @@ export default {
 
   data() {
     return {
+      showLoader: false,
       success: false,
       isOpened: false,
       validation: true,
