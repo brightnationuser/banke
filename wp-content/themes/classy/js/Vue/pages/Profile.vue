@@ -1,6 +1,11 @@
 <template>
   <div class="user-profile">
     <div class="container">
+      <router-link :to="{ name: 'Specification' }" custom v-slot="{href, navigate, isActive}">
+        <a class="back-link" :href="href" @click="navigate">
+          <i class="icon-arrow-down back-link__icon"></i> <span>Specifications</span>
+        </a>
+      </router-link>
       <div class="user-profile__wrapper">
         <div class="user-profile__info">
           <div class="user-profile__photo">
@@ -264,6 +269,35 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.back-link {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-bottom: 15px;
+  color: #003462;
+
+  &__icon {
+    display: inline-block;
+    transform: rotate(90deg);
+    font-size: 7px;
+    margin-right: 5px;
+    transition: all .3s ease;
+  }
+
+  &:hover, &:active, &:visited {
+    color: #003462;
+  }
+
+  &:hover {
+    .back-link {
+      &__icon {
+        margin-right: 7px;
+      }
+    }
+  }
+}
 
 .user-profile {
   margin: -50px 0 -80px 0;
