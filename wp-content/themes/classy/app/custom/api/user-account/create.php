@@ -24,12 +24,15 @@ function user_account__create() {
         'email' => $email
     ];
 
-    $body = \Helpers\General::getEmailHtml($data, ['en' => 'email.email-sign-up']);
+    $body = \Helpers\General::getEmailHtml($data, ['en' => 'email.email-sign-up', 'de' => 'email.email-sign-up']);
+    $admin_body = \Helpers\General::getEmailHtml($data, ['en' => 'email.email-sign-up-admin', 'de' => 'email.email-sign-up-admin']);
     $headers['From'] = 'Banke <noreply@banke-pro>';
     $headers[] = 'Content-Type: text/html; charset=UTF-8';
 
     if(!$is_error) {
+        $admin_email = get_option('admin_email');
         $mail_sent = wp_mail($email, 'Registration Banke', $body, $headers);
+        $mail_sent_admin = wp_mail($admin_email, 'New User Banke', $admin_body, $headers);
 
         $credentials = [
             'user_login' => $_POST['email'],
