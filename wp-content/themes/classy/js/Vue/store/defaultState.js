@@ -48,6 +48,7 @@ const defaultState = () => {
         account_successfully_created: '',
         forgot_password_form: '',
         reset_email_success: '',
+        help_email_success: '',
         reset_password_email_1: '',
         reset_password_email_2: '',
         reset_password_complete: '',

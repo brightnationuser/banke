@@ -39,7 +39,7 @@
     </VuePopup>
     <SuccessAlert
         v-if="success"
-        alert-text=""
+        :alert-text="translations.texts.help_email_success"
         :is-opened="success"
         @close="closeSuccess()"
     >
