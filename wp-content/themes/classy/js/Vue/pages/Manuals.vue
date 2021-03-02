@@ -17,12 +17,21 @@
             <div class="personal-entities__list">
               <PersonalBlock
                 v-for="manual in manuals"
+                v-if="manual.type !== 'video'"
                 :key="manual.id"
                 :title="manual.title"
                 :subtitle="manual.category.description"
                 :image="manual.image.url"
                 :files="manual.files"
               />
+              <PersonalVideo
+                  classes="personal-video--search"
+                  v-for="(elem, index) in manuals"
+                  v-if="elem.type === 'video'"
+                  :key="elem.video.youtube_id + index"
+                  :id="elem.video.youtube_id"
+                  :video-title="elem.video.title"
+              ></PersonalVideo>
           </div>
           </div>
         </div>
@@ -37,6 +46,7 @@ import { mapState } from 'vuex';
 import Menu from "../components/Global/Menu";
 import PersonalFilter from "../components/PersonalEntities/PersonalFilter";
 import PersonalBlock from "../components/PersonalEntities/PersonalBlock";
+import PersonalVideo from "../components/PersonalEntities/PersonalVideo";
 import vLoader from '../components/Global/vLoader'
 
 export default {
@@ -49,7 +59,8 @@ export default {
     Menu,
     PersonalFilter,
     PersonalBlock,
-    vLoader
+    vLoader,
+    PersonalVideo
   },
 
   data() {

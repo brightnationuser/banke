@@ -29,6 +29,7 @@ function process_posts ($posts) {
         }
 
         $response[] = [
+            'type' => $post->post_type,
             'id' =>  $post->ID,
             'image' => get_field('image', $post->ID),
             'files' => $files,

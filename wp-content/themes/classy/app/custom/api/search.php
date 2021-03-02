@@ -28,7 +28,27 @@ function user_run_search() {
 
     $response = process_posts($manuals);
 
+    $videos = search_videos($search, $response);
+
     echo json_encode($response);
 
     wp_die();
+}
+
+
+function search_videos($s, &$response) {
+    $videos = get_field('account_video_gallery', 'options');
+    $video_found = [];
+
+    foreach ($videos as $video) {
+        if(strripos($video['title'], $s) !== false) {
+            $video_found[] = $video;
+            $response[] = [
+                'type' => 'video',
+                'video' => $video,
+            ];
+        }
+    }
+
+    return $video_found;
 }
