@@ -11,26 +11,26 @@
           {{ user.username }}
         </div>
         <a href="/account/profile" class="drop-down-card__user-edit">
-          {{ translations.buttons.edit_profile }}
+          <span>{{ translations.buttons.edit_profile }}</span>
         </a>
       </div>
     </div>
     <div class="drop-down-card__categories">
       <a href="/account/specification/" class="drop-down-card__link">
-        {{ translations.titles.specifications }}
+        <span>{{ translations.titles.specifications }}</span>
       </a>
       <!--        <a href="/account/three-models" class="drop-down-card__link">
                 {{translations.titles.models_3d}}
               </a>-->
       <a v-if="user.approved" href="/account/manuals" class="drop-down-card__link">
-        {{ translations.titles.manuals }}
+        <span>{{ translations.titles.manuals }}</span>
       </a>
       <a href="/account/video-gallery" class="drop-down-card__link">
-        {{ translations.titles.video_gallery }}
+        <span>{{ translations.titles.video_gallery }}</span>
       </a>
     </div>
     <div class="drop-down-card__actions" @click="logOut">
-      {{ translations.buttons.log_out }}
+      <span>{{ translations.buttons.log_out }}</span>
     </div>
   </div>
 </template>
@@ -118,7 +118,8 @@ export default {
     text-align: center;
     text-transform: capitalize;
     color: #003462;
-    max-width: 140px;
+    max-width: 90px;
+    white-space: nowrap;
     width: 100%;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -193,6 +194,18 @@ export default {
     }
     &__actions {
       margin-top: 3px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .drop-down-card {
+    &__link {
+      cursor: default;
+
+      span {
+        cursor: pointer;
+      }
     }
   }
 }

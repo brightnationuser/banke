@@ -335,6 +335,7 @@ export default {
     color: #003462;
     font-weight: bold;
     cursor: pointer;
+    text-align: center;
   }
 
   &__email {
