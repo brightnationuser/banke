@@ -96,6 +96,11 @@ export default {
     padding: 6px;
     background: #ffffff;
     cursor: pointer;
+    transition: all .3s ease;
+
+    &:hover {
+      opacity: .7;
+    }
   }
 }
 </style>
