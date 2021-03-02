@@ -171,6 +171,11 @@ export default {
     font-size: 14px;
     font-weight: 600;
     color: #003462;
+    transition: all .3s ease;
+
+    &:hover {
+      color: #005CA8;
+    }
   }
 
   &__logout-mobile {
