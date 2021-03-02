@@ -9,7 +9,7 @@
           type="text"
           :placeholder="translations.fields.search_files"
       >
-      <img class="search__icon" src="../../assets/icons/search.svg" alt="Search icon">
+      <img class="search__icon" src="../../assets/icons/search.svg" alt="Search icon" @click="$emit('runSearch', searchFilesValue)">
     </div>
   </div>
 </template>
