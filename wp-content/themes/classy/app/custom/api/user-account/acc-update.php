@@ -46,7 +46,6 @@ function user_account__update() {
             ];
             $admin_email = get_option('admin_email');
             $headers['From'] = 'Banke <noreply@banke-pro>';
-            $headers[] = 'Content-Type: text/html; charset=UTF-8';
 
             $admin_body = \Helpers\General::getEmailHtml($data, [
                 'en' => 'email.email-user-change-company-admin',
