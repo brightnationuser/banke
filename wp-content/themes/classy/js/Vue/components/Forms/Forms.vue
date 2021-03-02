@@ -130,6 +130,7 @@ export default {
       display: flex;
       align-items: center;
     }
+
     span, a {
       color: #003462;
     }
@@ -200,6 +201,12 @@ export default {
       .icon-arrow-down {
         display: none;
       }
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .sign-in {
+      cursor: default;
     }
   }
 </style>
