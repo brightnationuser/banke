@@ -36,6 +36,7 @@ function user_account__create() {
         'de' => 'email.email-sign-up-admin'
     ]);
     $headers['From'] = 'Banke <noreply@banke-pro>';
+    $headers[] = 'Content-Type: text/html; charset=UTF-8';
 
     if(!$is_error) {
         $admin_email = get_option('admin_email');
