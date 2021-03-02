@@ -141,6 +141,10 @@ export default {
     }
 
     .menu__elem {
+      max-width: 90px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
 
       &:hover {
         text-decoration: none;

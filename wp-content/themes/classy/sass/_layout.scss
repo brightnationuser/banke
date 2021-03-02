@@ -279,6 +279,7 @@ header.header {
                 opacity: 0;
                 visibility: hidden;
                 transition: all .2s ease;
+                pointer-events: none;
                 transition-delay: 0s;
             }
 
@@ -337,6 +338,7 @@ header.header {
                     transition: all .2s ease;
                     transition-delay: .3s;
                     opacity: 1;
+                    pointer-events: auto;
                     visibility: visible;
                 }
 
