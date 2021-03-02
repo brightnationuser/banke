@@ -7,6 +7,7 @@ html {
 }
   
 body {
+    font-family: "Open Sans", sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100%;
@@ -67,7 +68,7 @@ header.header {
 
         .header__logo {
             img {
-                width: 148px;
+                width: 128px;
             }
         }
 
@@ -80,6 +81,7 @@ header.header {
             ul.menu__nav {
                 list-style: none;
                 display: flex;
+                padding: 0 0 0 10px;
 
                 .sub-menu {
                     display: none;
@@ -88,7 +90,7 @@ header.header {
                 li.menu-item {
                     position: relative;
                     font-weight: 600;
-                    margin: 0 15px;
+                    margin: 0 13px;
 
                     a {
                         color: $color-blue;
@@ -150,13 +152,18 @@ header.header {
         .header__right {
             display: flex;
             align-items: center;
-
-            >span {
-                color: #CFCFCF;
-                margin: 0 7px;
-                font-size: 14px;
+            &-text {
+                display: flex;
+                >span {
+                    color: #CFCFCF;
+                    margin: 0 7px;
+                    font-size: 14px;
+                }
             }
+
         }
+
+
 
         .header__phone {
             .icon {
@@ -246,32 +253,48 @@ header.header {
         }
     }
 
-    @media screen and (max-width: $width-l) {
+    @media screen and (max-width: $width-xl) {
         background: white;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         z-index: 5;
+        //overflow: hidden;
         padding: 20px;
-        overflow: hidden;
         max-height: 68px;
         transition: 0.3s ease;
         box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.07);
 
         .container {
+            max-height: inherit;
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
             padding: 0;
 
+            .header__right {
+                width: 100%;
+                flex-direction: column;
+                opacity: 0;
+                visibility: hidden;
+                transition: all .2s ease;
+                pointer-events: none;
+                transition-delay: 0s;
+            }
+
             .header__menu {
+                max-height: inherit;
                 padding-top: 10px;
 
                 [id^=menu-header] {
                     flex-direction: column;
                     padding: 0;
                     margin: 0;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all .2s ease;
+                    transition-delay: 0s;
 
                     li {
                         margin: 0;
@@ -304,14 +327,29 @@ header.header {
         }
 
         &.m_opened {
-            max-height: 500px;
+            max-height: 600px;
 
             .container {
+
+                .header__right {
+                    align-items: start;
+
+                    width: 100%;
+                    transition: all .2s ease;
+                    transition-delay: .3s;
+                    opacity: 1;
+                    pointer-events: auto;
+                    visibility: visible;
+                }
 
                 .header__menu {
 
                     #menu-header {
                         align-items: flex-start;
+                        opacity: 1;
+                        visibility: visible;
+                        transition: all .2s ease;
+                        transition-delay: .3s;
 
                         li {
                             a {
@@ -512,7 +550,7 @@ footer.footer {
 }
 
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
     header.header {
         .container {
             .header__lng {

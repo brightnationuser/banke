@@ -8,14 +8,24 @@
         "start-dev": "git pull origin dev && npm run dev"
     },
     "dependencies": {
+        "@babel/plugin-syntax-dynamic-import": "^7.8.3",
         "@fancyapps/fancybox": "^3.5.7",
         "animate.css": "^3.7.2",
         "aos": "^2.3.4",
+        "axios": "^0.21.1",
         "blazy": "^1.8.2",
         "cookieconsent": "^3.1.1",
         "gsap": "^2.1.2",
         "hamburgers": "^0.9.3",
-        "jquery": "^3.3.1"
+        "jquery": "^3.3.1",
+        "vue": "2.6.8",
+        "vue-cropperjs": "^5.0.0",
+        "vue-loading-overlay": "^3.2.0",
+        "vue-router": "^3.5.1",
+        "vue-select": "^2.6.0",
+        "vue-youtube": "^1.4.0",
+        "vuex": "^3.1.0",
+        "vuex-persistedstate": "^2.5.4"
     },
     "devDependencies": {
         "acorn": "^6.1.1",
@@ -29,6 +39,8 @@
         "sass": "^1.17.2",
         "sass-loader": "7.*",
         "vue-loader": "^15.7.0",
-        "vue-template-compiler": "^2.6.8"
+        "vue-template-compiler": "2.6.8",
+        "vue-youtube-embed": "^2.2.2",
+        "webpack-livereload-plugin": "^2.3.0"
     }
 }

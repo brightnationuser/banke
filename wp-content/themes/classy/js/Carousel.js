@@ -1,12 +1,17 @@
 export default class Carousel {
+
+
   constructor(carouselName) {
-    
+
     this.carousels = {
       initVideoCarousel: function () {
-        
+
+        let player;
+
         let owl_gallery = $('.owl-video_gallery.owl-carousel');
         let owl = owl_gallery.owlCarousel({
-          nav:true,
+          loop: true,
+          nav: true,
           center: true,
           margin: 2,
           mouseDrag: false,
@@ -24,61 +29,132 @@ export default class Carousel {
             }
           }
         })
-        
-        let items = owl.find('.owl-item');
-        
-        items.on('click', function (e) {
-          let ths = $(this);
-          let was_open = false;
-          
-          if(!ths.hasClass('center') && !$(e.target).hasClass('js-close-gallery-video')) {
-            
-            items.each(function () {
-              let el = $(this);
-              if(el.find('.js-video').hasClass('is-play')) {
-                was_open = true
-                el.find('.js-close-gallery-video').click()
+
+
+        function loadPlayer() {
+
+          const closeVideo = $('.js-close-video') // Крестик для закрытия видео
+          const videoGalleryBlock = $('.js-video-show') // Класс отвечает за отображение видео по умолчанию display: none;
+          const getVideoInfoSize = $('.owl-item.active.center .js-video-show') // Узнаем размеры блоков после загрузки под разные размеры
+          let clickedVideo = null // Состояние, которое отвечает за клик на видео и присвавивает ему данные
+
+          let freezeClick = false // Заморозка на переключалку, что бы избежать багов
+
+          let getBaseHeight = getVideoInfoSize.height() // Узнаем базовою высоту блока
+          let getBaseWidth = getVideoInfoSize.width() // Узнаем базовою ширину блока
+
+          let getCenterHeight = getVideoInfoSize.height() * 1.25 // Узнаем размер блока, которое увеличинно в центре
+          let getCenterWidth = getVideoInfoSize.width() * 1.25 // Узнаем размер блока, которое увеличинно в центре
+
+
+
+          $('.owl-nav button').on('click', function() { // Если нажимаем на данные, анулируем логику полностью и приводим в дефолтное состояние
+            $(clickedVideo).css('width', getBaseWidth).css('height', getBaseHeight)
+            clickedVideo = null
+          })
+
+          videoGalleryBlock.on('click', function () {
+
+            if (freezeClick) {
+              console.log('FLOOD')
+              return
+            }
+            player.stopVideo();
+            const ths = $(this)
+            const getCenterClicked = ths.parent().parent().hasClass('owl-item active center')
+            let dataIdGallery = ths[0].attributes['data-id'].value // Узнаем Id видео
+            let dataIdVideo = ths[0].attributes['data-yt-id'].value // Узнаем линку на Ютуб
+
+
+            if (window.innerWidth >= 1200) {
+
+              if (!getCenterClicked) { // Проверка ли не кликнуто по центру
+
+
+                freezeClick = true
+                $('.js-video-gallery__window').hide() // Скрываем видео
+                $(clickedVideo).css('width', getCenterWidth).css('height', getCenterHeight) // Устанавливаем размер основнога окна ( Прошлое просм. видео )
+                setTimeout(() => {
+                  $(clickedVideo).css('width', getBaseWidth).css('height', getBaseHeight) // Устанавливаем базовый размер прошлого видео
+                  owl.trigger('to.owl.carousel', [dataIdGallery, 1000]) // Переключаем на новое видео [ dataIdGallery: На какой Id ссылается, 1000 - Время переключалки триггера]
+                  setTimeout(() => { // Через 500 м.с делаем размер пропопорционально ютубу
+                    console.log('Yes')
+                    ths.css('width', '600px').css('height', '320px')
+                    setTimeout(() => { // И уже как повляется картинка для видео, мы через 500 м.с отображаем саом видео
+                      player.loadVideoById(dataIdVideo)
+                      $('.js-video-gallery__window').fadeIn(500)
+                      clickedVideo = ths
+                      freezeClick = false
+                    }, 500)
+                  }, 500)
+                }, 1000)
+
+
+              } else {
+
+                ths.css('width', '600px').css('height', '320px')
+                owl.trigger('to.owl.carousel', [dataIdGallery, 1000])
+                clickedVideo = ths
+                freezeClick = true
+                setTimeout(() => {
+                  player.loadVideoById(dataIdVideo)
+                  $('.js-video-gallery__window').show()
+                  freezeClick = false
+                }, 1000)
               }
-            })
-            
-            if(!was_open) {
-              owl.trigger('to.owl.carousel', ths.index())
-              
-              setTimeout(function () {
-                ths.find('.js-video-play').click()
-              }, 500)
+            } else {
+              player.loadVideoById(dataIdVideo)
+              $('.js-video-gallery__window').fadeIn(500)
             }
-            else {
-              setTimeout(function () {
-                owl.trigger('to.owl.carousel', ths.index())
-              }, 500)
-              
-              setTimeout(function () {
-                ths.find('.js-video-play').click()
-              }, 1000)
-            }
+          })
+
+          closeVideo.on('click', function () {
+            player.stopVideo();
+            $('.js-video-gallery__window').hide()
+            $(clickedVideo).css('width', getCenterWidth).css('height', getCenterHeight)
+            freezeClick = false
+            // player.loadVideoById('8D9d9weVQnI');
+            // alert('Hello my friend')
+          })
+
+          if (typeof (YT) == 'undefined' || typeof (YT.Player) == 'undefined') {
+            var tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            window.onYouTubePlayerAPIReady = function () {
+              onYouTubePlayer();
+            };
           }
-        })
-        
-        // owl.on('translate.owl.carousel', function (event) {
-        //     let ths = $(this);
-        //     let item = event.item.index; // Position of the current item
-        //     let items = ths.find('.owl-item');
-        //
-        //     console.log('item', item)
-        //     console.log('items.last()', items.last())
-        //
-        //     if(item === 0) {
-        //         console.log('trigger')
-        //         owl.trigger('add.owl.carousel', items.last(), 0)
-        //     }
-        //
-        //     if(item === items.length - 1) {
-        //         items.first().after(items.last())
-        //     }
-        // })
+        }
+
+        function onYouTubePlayer() {
+
+          player = new YT.Player('open-video', {
+            height: '360',
+            width: '640',
+            videoId: '',
+            events: {
+              'onReady': onPlayerReady,
+              'onStop': onPlayerStop
+
+            }
+          });
+        }
+
+        function onPlayerReady() {
+
+        }
+
+        function onPlayerStop() {
+
+        }
+
+        loadPlayer()
+
       },
-      
+
       initNewsCarousel: function () {
         $('.b-news__carousel.owl-carousel').owlCarousel({
           loop: true,
@@ -99,22 +175,22 @@ export default class Carousel {
           }
         });
       },
-      
+
       initReferencesThinCarousel: function () {
         $('.js-references-slider').owlCarousel({
           loop: true,
           margin: 5,
           onInitialized: show,
-          onTranslate: function() {
+          onTranslate: function () {
             $('.owl-item').removeClass('rounded-first').removeClass('rounded-last');
           },
-          onChange: function() {
+          onChange: function () {
             $('.owl-item').removeClass('rounded-first').removeClass('rounded-last');
           },
-          onDrag: function() {
+          onDrag: function () {
             $('.owl-item').removeClass('rounded-first').removeClass('rounded-last');
           },
-          onTranslated: function() {
+          onTranslated: function () {
             $('.active:first').addClass('rounded-first');
             $('.active:last').addClass('rounded-last');
           },
@@ -136,7 +212,7 @@ export default class Carousel {
           }
         })
       },
-      
+
       initReferencesCarousel: function () {
         $('.references.owl-carousel').owlCarousel({
           loop: true,
@@ -158,13 +234,13 @@ export default class Carousel {
         });
       },
     }
-    
+
     function show(event) {
       $(event.target).addClass('m_loaded');
     }
-    
+
   }
-  
+
   init(carouselName) {
     this.carousels["init" + carouselName + "Carousel"]();
     $('.owl-prev span, .owl-next span').text('');

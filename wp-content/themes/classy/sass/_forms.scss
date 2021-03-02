@@ -96,3 +96,83 @@ button, input[type=button] {
         }
     }
 }
+
+.button {
+    &--account {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 24px;
+        border-radius: 8px;
+        text-transform: none;
+        padding: 8px 40px;
+    }
+
+    &:hover, &:focus {
+        text-decoration: none;
+        background: $color-blue;
+        padding: 8px 40px;
+        margin: 0;
+
+        &::after, &::after {
+            animation: sheen 0.5s backwards;
+        }
+    }
+
+    &--stroke {
+        padding: 7px 40px;
+        border: 1px solid $color-light-blue;
+        background: #ffffff;
+        color: $color-light-blue;
+
+        &:hover, &:focus {
+            padding: 7px 40px;
+            background: $color-blue;
+            color: #ffffff;
+        }
+    }
+
+    &--text {
+        font-size: 14px;
+        line-height: 16px;
+        color: #005CA9;
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
+        text-transform: none;
+        font-style: normal;
+        font-weight: normal;
+        font-family: Roboto, sans-serif;
+
+        &::before, &::after {
+            display: none;
+        }
+
+        &:hover, &:focus {
+            padding: 0;
+            margin: 0;
+            background-color: transparent;
+            color: $color-blue;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .button {
+
+        &--account {
+            padding: 8px 30px;
+        }
+
+        &:hover, &:focus {
+            padding: 8px 30px;
+        }
+
+        &--stroke {
+            padding: 7px 30px;
+
+            &:hover, &:focus {
+                padding: 7px 30px;
+            }
+        }
+    }
+}

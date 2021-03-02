@@ -50,3 +50,15 @@ function custom_meta( $desc ){
 
     return $desc;
 }
+
+function url_parts($n = null) {
+    $url = $_SERVER["REQUEST_URI"];
+    $path = parse_url($url, PHP_URL_PATH);
+    $url_parts = explode("/", trim($path, "/"));
+
+    if($n !== null) {
+        return $url_parts[$n];
+    }
+
+    return $url_parts;
+}

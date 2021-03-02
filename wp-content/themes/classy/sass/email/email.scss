@@ -1,0 +1,131 @@
+.email-template {
+  &__container {
+    width: 100%;
+    min-height: 700px;
+  }
+
+  &__wrapper {
+    background-image: url(http://banke.pro/wp-content/uploads/2021/02/Mask-Group.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    padding: 104px 0 132px 0;
+  }
+
+  &__container-inner {
+    max-width: 600px;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    padding: 70px 50px 30px 50px;
+    border-radius: 4px;
+    border: solid 1px #d9d9d9;
+    max-height: 500px;
+    height: auto;
+    //box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+  }
+
+  &__table-top {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  &__reset-password__wrapper {
+    margin: 26px 0 -10px 0;
+    text-align: center;
+  }
+
+
+  &__reset-password {
+    font-size: 18px;
+    font-weight: normal;
+    color: #005CA9;
+  }
+
+  &__logo {
+    text-align: center;
+    img {
+      display: inline;
+    }
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    color: #005CA9;
+  }
+
+  &__center {
+    text-align: center;
+  }
+
+  &__created,  &__created-subtitle {
+    font-weight: 400;
+    margin: 18px auto 0;
+    width: 431px;
+    color: #4A4A49;
+    opacity: 0.9;
+    font-size: 18px;
+    line-height: 163.42%;
+    text-align: center;
+  }
+  &__created-subtitle {
+    margin-top: 0;
+  }
+
+  &__line {
+    margin: 30px auto 39px auto;
+    width: 50px;
+    height: 2px;
+    background-color: #005CA9;
+  }
+
+  &__button {
+    display: block;
+    font-size: 16px;
+    line-height: 102.4%;
+    max-width: 190px;
+    text-align: center;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 8px;
+    background-color: #005CA9;
+    padding: 12px 40px;
+    margin: 20px auto 0;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  &__button-sign {
+    font-weight: 600;
+    margin: 30px auto 0;
+    padding: 16px 40px;
+  }
+
+  &__info {
+    font-weight: 400;
+    margin: 51px auto 0;
+    font-size: 14px;
+
+  }
+
+  &__color-grey {
+    color: #303030;
+  }
+
+  &__link {
+    color: #005CA9;
+  }
+
+  &__user-info {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+
+  .user-info {
+    &__user-email {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}

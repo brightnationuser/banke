@@ -4,6 +4,7 @@ import Carousel from './Carousel';
 import '@fancyapps/fancybox';
 import Animator from './Animator';
 import Animation from './animation/Animation';
+import initVueInstances from './Vue/indexVue'
 
 class App {
 
@@ -48,6 +49,7 @@ class App {
 
         //$('body').addClass('m_ready');
         setTimeout(function () {
+            $('.js-disabled').removeClass('js-disabled')
             $('body').addClass('m_ready');
         }, 100);
 
@@ -64,6 +66,8 @@ class App {
                 window.location.reload();
             }
         };
+    
+        initVueInstances()
     }
 
     initCarSlider() {

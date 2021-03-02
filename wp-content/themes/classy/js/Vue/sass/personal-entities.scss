@@ -1,0 +1,99 @@
+.personal-entities {
+
+  &__container {
+    background-color: #F2F5F9;
+    padding: 0 48px 80px 64px;
+    width: 100%;
+
+  }
+
+  &__container-inner {
+    margin: 0 auto;
+    max-width: 1391px;
+  }
+
+  &__list-specification {
+    margin-top: 33px;
+  }
+
+  &__list-manuals {
+    margin-top: calc(41px - 9px);
+  }
+
+  &__title {
+    margin-bottom: 9px;
+    font-size: 14px;
+    color: #4A4A49;
+    font-weight: 600;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+  }
+}
+
+@media (max-width: 1400px) {
+  .personal-entities {
+    &__container {
+      padding: 0 26px 80px 44px;
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+
+}
+
+@media (max-width: 1024px) {
+  .personal-entities {
+    &__container {
+
+    }
+
+    &__container-inner {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 874px;
+    }
+
+    &__list {
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    &__elem {
+
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .personal-entities {
+    &__container {
+      padding: 0 28px 20px 28px;
+    }
+
+    &__list {
+      flex-direction: column;
+    }
+
+    &__list-specification {
+      margin-top: 10px;
+    }
+
+    &__list-manuals {
+      margin-top: 7px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .personal-entities {
+    &__container {
+      padding: 0 20px 20px 20px;
+    }
+  }
+}
