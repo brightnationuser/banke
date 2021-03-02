@@ -6,7 +6,7 @@
       </div>
       <label for="upload-user-file" v-if="addIcon" class="user-avatar__icon" @click="selectAvatar">
         <i class="icon-plus-bold"></i>
-        <input class="user-avatar__file-input" type="file" ref="uploadFile" id="upload-user-file"
+        <input class="user-avatar__file-input" type="file" accept="image/jpeg,image/png" ref="uploadFile" id="upload-user-file"
                @change="requestUploadFile()"/>
       </label>
     </div>
@@ -77,10 +77,14 @@ export default {
       formData.append("image", files[0]);
 
       axios.post('/wp-admin/admin-ajax.php', formData).then((response) => {
-
-        this.profileImage = response.data.file_info.path
-        this.userData.photo = response.data.file_info.path
-        this.$store.commit('setUser', this.userData)
+        if(response.data.errors.length) {
+          alert('File size is too large')
+        }
+        else {
+          this.profileImage = response.data.file_info.path
+          this.userData.photo = response.data.file_info.path
+          this.$store.commit('setUser', this.userData)
+        }
       })
     }
   },
