@@ -22,11 +22,20 @@
         <div class="personal-entities__list" v-if="searchInProcess">
           <PersonalBlock
               v-for="(elem, index) in data" :key="elem.id"
+              v-if="elem.type !== 'video'"
               :title="elem.title"
               :subtitle="elem.category.description"
               :image="elem.image.url"
               :files="elem.files"
           />
+          <PersonalVideo
+              classes="personal-video--search"
+              v-for="(elem, index) in data"
+              v-if="elem.type === 'video'"
+              :key="elem.video.youtube_id + index"
+              :id="elem.video.youtube_id"
+              :video-title="elem.video.title"
+          ></PersonalVideo>
         </div>
       </div>
     </div>

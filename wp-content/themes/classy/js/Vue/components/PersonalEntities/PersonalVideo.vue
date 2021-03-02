@@ -1,5 +1,5 @@
 <template>
-  <div class="personal-video">
+  <div class="personal-video" :class="classes">
     <div class="personal-video__card">
       <div class="personal-video__preview">
         <img :src="'https://img.youtube.com/vi/' + id + '/0.jpg'" alt="">
@@ -52,7 +52,8 @@ export default {
     },
     id: {
       type: String
-    }
+    },
+    classes: String
   },
 
   components: {
@@ -108,6 +109,16 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.personal-video {
+  &__popup-frame {
+    iframe {
+      max-width: 100%;
+    }
+  }
+}
+</style>
 
 <style lang="scss" scoped>
   .personal-video {
@@ -192,12 +203,44 @@ export default {
       top: 16px;
       right: 16px;
     }
+
+    &--search {
+      height: 190px;
+      margin: 9px 18px 9px 0;
+      width: calc(25% - 18px);
+
+      .personal-video {
+        &__button {
+          border-radius: 6px;
+          opacity: 1;
+          visibility: visible;
+        }
+
+        &__preview {
+          border-radius: 6px;
+          height: 190px;
+        }
+      }
+    }
   }
 
   @media screen and (max-width: 800px) {
     .personal-video {
       margin: 0 0 18px 0;
       max-width: 500px;
+
+      &--search {
+        height: 180px;
+        width: 100%;
+        margin: 4px 0;
+
+        .personal-video {
+          &__preview {
+            border-radius: 6px;
+            height: 180px;
+          }
+        }
+      }
     }
   }
 
