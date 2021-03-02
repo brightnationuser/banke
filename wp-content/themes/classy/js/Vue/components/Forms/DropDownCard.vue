@@ -165,6 +165,11 @@ export default {
     line-height: 16px;
     color: #4A4A49;
     padding: 10px 24px 15px 24px;
+    transition: all .3s ease;
+
+    &:hover {
+      color: #005CA8;
+    }
   }
 }
 
