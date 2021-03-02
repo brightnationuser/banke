@@ -82,6 +82,7 @@
                                 <span>{{ wp_get_current_user()->user_login }}</span>
                             </div>
                         </a>
+                        <i class="icon-arrow-down"></i>
                     @else
                         <span>{{ get_field('account_titles', 'option')['sign_in'] }}</span>
                     @endif
