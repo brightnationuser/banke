@@ -101,9 +101,6 @@
             </div>
 
             <div class="account-form__row account-form__row--buttons">
-              <div class="button button--account button--stroke account-form__button" @click="cancel()">
-                {{ translations.buttons.cancel }}
-              </div>
               <div class="button button--account account-form__button" @click="submit()">
                 {{ translations.buttons.save_changes }}
               </div>
