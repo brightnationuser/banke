@@ -66,10 +66,15 @@ export default {
   },
 
   data() {
-    return {}
+    return {
+      lang: ''
+    }
   },
 
   mounted() {
+    if(icl_lang !== 'en') {
+      this.lang = '/' + icl_lang
+    }
   },
 
   created() {
@@ -92,7 +97,7 @@ export default {
 
             if (response.data.success) {
               this.$store.commit('setDefault')
-              window.location.href = '/'
+              window.location.href = this.lang + '/'
             } else {
               console.log('error: ', response.data.message)
             }
