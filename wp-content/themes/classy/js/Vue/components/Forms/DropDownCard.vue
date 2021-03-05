@@ -10,22 +10,22 @@
         <div class="drop-down-card__user-name">
           {{ user.username }}
         </div>
-        <a href="/account/profile" class="drop-down-card__user-edit">
+        <a :href="lang + '/account/profile'" class="drop-down-card__user-edit">
           <span>{{ translations.buttons.edit_profile }}</span>
         </a>
       </div>
     </div>
     <div class="drop-down-card__categories">
-      <a href="/account/specification/" class="drop-down-card__link">
+      <a :href="lang + '/account/specification'" class="drop-down-card__link">
         <span>{{ translations.titles.specifications }}</span>
       </a>
-      <!--        <a href="/account/three-models" class="drop-down-card__link">
+      <!--        <a :href="lang + '/account/three-models'" class="drop-down-card__link">
                 {{translations.titles.models_3d}}
               </a>-->
-      <a v-if="user.approved" href="/account/manuals" class="drop-down-card__link">
+      <a v-if="user.approved" :href="lang + '/account/manuals'" class="drop-down-card__link">
         <span>{{ translations.titles.manuals }}</span>
       </a>
-      <a href="/account/video-gallery" class="drop-down-card__link">
+      <a :href="lang + '/account/video-gallery'" class="drop-down-card__link">
         <span>{{ translations.titles.video_gallery }}</span>
       </a>
     </div>
@@ -49,10 +49,15 @@ export default {
   },
 
   data() {
-    return {}
+    return {
+      lang: ''
+    }
   },
 
   mounted() {
+    if(icl_lang !== 'en') {
+      this.lang = '/' + icl_lang
+    }
   },
 
   created() {
