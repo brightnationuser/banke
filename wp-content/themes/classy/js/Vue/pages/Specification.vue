@@ -19,7 +19,7 @@
             <PersonalBlock
                 v-for="(elem, index) in elemEntities" :key="elem.id"
                 :title="elem.title"
-                subtitle="Specification"
+                :subtitle="translations.titles.specification"
                 :image="elem.image.url"
                 :files="elem.files"
             />
