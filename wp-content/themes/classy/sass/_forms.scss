@@ -154,6 +154,13 @@ button, input[type=button] {
             color: $color-blue;
         }
     }
+
+    &--primary {
+        &:hover, &:focus {
+            padding: 12px 30px;
+        }
+
+    }
 }
 
 @media screen and (max-width: 480px) {
