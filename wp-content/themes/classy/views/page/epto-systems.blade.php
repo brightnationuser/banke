@@ -136,6 +136,15 @@
             </div>
         </section>
 
+        @php($brochure = get_field('brochure'))
+        @include('partials.brochure', [
+            'image' => $brochure['image'],
+            'title' => $brochure['title'],
+            'text' => $brochure['text'],
+            'file' => $brochure['file'],
+            'button_text' => $brochure['button_text']
+        ])
+
         <section class="references-sect">
             @if(!empty(get_field('references_title')))
                 <h2>

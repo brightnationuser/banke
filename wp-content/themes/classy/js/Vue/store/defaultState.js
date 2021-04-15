@@ -17,6 +17,7 @@ const defaultState = () => {
         welcome_to_banke: '',
         reset_password: '',
         specifications: '',
+        specification: '',
         manuals: '',
         video_gallery: '',
         models_3d : '',
