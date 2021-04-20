@@ -12,7 +12,7 @@
                     {{$text}}
                 </p>
                 <div class="brochure__button aos-animation" data-aos-delay="400" data-aos="fade-in">
-                    <a href="{{$file['url']}}" class="button button--primary disable_preloader" target="_blank" download="">
+                    <a href="{{$file['url']}}" class="button button--primary disable_preloader" target="_blank">
                         {{$button_text}} <i class="icon-down-arrow"></i>
                     </a>
                 </div>
