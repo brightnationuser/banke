@@ -55,3 +55,16 @@ function register_specification_type_submenu_page() {
         ''
     );
 }
+
+add_action('admin_menu', 'register_model_type_submenu_page');
+
+function register_model_type_submenu_page() {
+    add_submenu_page(
+        '/edit.php?post_type=manuals',
+        'Models types',
+        'Models types',
+        'manage_options',
+        '/edit-tags.php?taxonomy=model-type&post_type=models3d',
+        ''
+    );
+}

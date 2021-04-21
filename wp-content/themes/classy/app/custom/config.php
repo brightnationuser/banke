@@ -101,6 +101,7 @@ $post_types = array(
                 'title',
                 'page-attributes',
             ),
+            'taxonomies' => array('model-type'),
             'show_in_menu' => false,
             'show_in_nav_menus' => false,
             'rewrite' => array('with_front' => false),
@@ -136,6 +137,16 @@ $taxonomies = array(
         ),
         'singular'	=> 'Specification type',
         'multiple'	=> 'Specification types',
+    ),
+    'model-type' => array(
+        'for'		=> array( 'models3d' ),
+        'config'  	=> array(
+            'sort' 			=> true,
+            'args' 			=> array( 'orderby' => 'term_order' ),
+            'hierarchical' 	=> false,
+        ),
+        'singular'	=> 'Models type',
+        'multiple'	=> 'Models types',
     ),
 );
 
