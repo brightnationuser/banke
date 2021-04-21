@@ -19,9 +19,9 @@
       <a :href="lang + '/account/specification'" class="drop-down-card__link">
         <span>{{ translations.titles.specifications }}</span>
       </a>
-      <!--        <a :href="lang + '/account/three-models'" class="drop-down-card__link">
-                {{translations.titles.models_3d}}
-              </a>-->
+      <a v-if="user.approved" :href="lang + '/account/three-models'" class="drop-down-card__link">
+        <span>{{translations.titles.models_3d}}</span>
+      </a>
       <a v-if="user.approved" :href="lang + '/account/manuals'" class="drop-down-card__link">
         <span>{{ translations.titles.manuals }}</span>
       </a>

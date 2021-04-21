@@ -1,6 +1,7 @@
 <template>
   <a :href=files[0].link class="personal-block" download>
-    <img class="personal-block__format" src="../../assets/icons/pdf.svg" alt="Format icon">
+    <img class="personal-block__format" src="../../assets/icons/pdf.svg" alt="Format icon" v-if="!model">
+    <img class="personal-block__format" src="../../assets/icons/stp.svg" alt="Format icon" v-if="model">
     <div class="personal-block__inner">
       <div class="personal-block__image">
         <img :src="image" alt="Block">
@@ -37,6 +38,10 @@ export default {
     image: {
       type: String,
       default: '/wp-content/themes/classy/js/Vue/assets/specifications/track@2x.png'
+    },
+    model: {
+      type: Boolean,
+      default: false
     },
     title: {
       type: String,

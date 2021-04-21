@@ -24,11 +24,11 @@
               {{translations.titles.specifications}}
             </a>
           </router-link>
-          <!--          <router-link :to="{ name: 'Three-models' }" custom v-slot="{href, navigate, isActive}">
-                      <a class="menu__elem" :class="{'menu__elem&#45;&#45;active' : isActive}" :href="href" @click="navigate">
-                        {{translations.titles.models_3d}}
-                      </a>
-                    </router-link>-->
+          <router-link v-if="user.approved" :to="{ name: 'Three-models' }" custom v-slot="{href, navigate, isActive}">
+            <a class="menu__elem" :class="{'menu__elem--active' : isActive}" :href="href" @click="navigate">
+              {{translations.titles.models_3d}}
+            </a>
+          </router-link>
           <router-link v-if="user.approved" :to="{ name: 'Manuals' }" custom v-slot="{href, navigate, isActive}">
             <a class="menu__elem" :class="{'menu__elem--active' : isActive}" :href="href" @click="navigate">
               {{translations.titles.manuals}}

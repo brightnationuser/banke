@@ -27,6 +27,18 @@ function process_posts ($posts) {
                 ];
             }
         }
+        else if($post->post_type === 'models3d' && (is_null($terms[0]) || empty($terms[0]))) {
+            if(ICL_LANGUAGE_CODE === 'en') {
+                $terms[0] = [
+                    'description' => '3D Model'
+                ];
+            }
+            elseif (ICL_LANGUAGE_CODE === 'de') {
+                $terms[0] = [
+                    'description' => '3D Modell'
+                ];
+            }
+        }
 
         $response[] = [
             'type' => $post->post_type,
