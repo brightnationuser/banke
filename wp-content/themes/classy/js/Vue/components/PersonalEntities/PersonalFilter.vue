@@ -10,11 +10,14 @@
       </div>
       <template v-if="showFilter && !searchInProcess">
         <div class="filter__line"></div>
-        <PersonalFilterList
-            :filterList="options"
-            :selectedFilterOption="selectedOption"
-            @select="eventSelectedOption"
-        />
+        <transition name="fade-fast">
+          <PersonalFilterList
+              v-if="options.length > 0"
+              :filterList="options"
+              :selectedFilterOption="selectedOption"
+              @select="eventSelectedOption"
+          />
+        </transition>
       </template>
     </div>
     <div class="filter__right">
@@ -70,28 +73,7 @@ export default {
       selectedOption: {
         name: 'All'
       },
-      options: [
-        {
-          name: 'All',
-          slug: 1
-        },
-        {
-          name: 'Installation',
-          slug: 2
-        },
-        {
-          name: 'Users',
-          slug: 3
-        },
-        {
-          name: 'Service',
-          slug: 4
-        },
-        {
-          name: 'Specific Repair Instruction',
-          slug: 5
-        }
-      ],
+      options: [],
     }
   },
 

@@ -16,13 +16,14 @@
           <div class="personal-entities__list-manuals">
             <div class="personal-entities__list">
               <PersonalBlock
-                v-for="manual in manuals"
-                v-if="manual.type !== 'video'"
-                :key="manual.id"
-                :title="manual.title"
-                :subtitle="manual.category.description"
-                :image="manual.image.url"
-                :files="manual.files"
+                v-for="elem in manuals"
+                v-if="elem.type !== 'video'"
+                :key="elem.id"
+                :title="elem.title"
+                :model="elem.type === 'models3d'"
+                :subtitle="elem.category.description"
+                :image="elem.image.url"
+                :files="elem.files"
               />
               <PersonalVideo
                   classes="personal-video--search"
