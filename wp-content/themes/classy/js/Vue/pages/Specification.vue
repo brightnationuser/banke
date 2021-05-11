@@ -30,6 +30,7 @@
               v-for="(elem, index) in data" :key="elem.id"
               v-if="elem.type !== 'video'"
               :title="elem.title"
+              :model="elem.type === 'models3d'"
               :subtitle="elem.category.description"
               :image="elem.image.url"
               :files="elem.files"

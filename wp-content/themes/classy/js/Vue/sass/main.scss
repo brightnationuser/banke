@@ -24,6 +24,17 @@ $max-width-md: 1110px;
   min-height: 720px;
 }
 
+// Fast Fade
+.fade-fast-enter-active,
+.fade-fast-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-fast-enter,
+.fade-fast-leave-to {
+  opacity: 0;
+}
+
 @media (max-width: 1024px) {
   .personal-main {
     flex-direction: column;
