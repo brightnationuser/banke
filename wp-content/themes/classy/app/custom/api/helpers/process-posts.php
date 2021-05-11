@@ -40,13 +40,28 @@ function process_posts ($posts) {
             }
         }
 
+        if(is_null($terms) || empty($terms)) {
+            if(ICL_LANGUAGE_CODE === 'en') {
+                $category = ['description' => 'Uncategorized'];
+            }
+            elseif (ICL_LANGUAGE_CODE === 'de') {
+                $category = ['description' => 'Nicht Kategorisiert'];
+            }
+            else {
+                $category = ['description' => 'Uncategorized'];
+            }
+        }
+        else {
+            $category = $terms[0];
+        }
+
         $response[] = [
             'type' => $post->post_type,
             'id' =>  $post->ID,
             'image' => get_field('image', $post->ID),
             'files' => $files,
             'title' => $post->post_title,
-            'category' => $terms[0]
+            'category' => $category
         ];
     }
 

@@ -90,7 +90,7 @@ export default {
 
       axios.post('/wp-admin/admin-ajax.php', data)
           .then((response) => {
-            console.log(response.data)
+            console.log('user_get__manuals', response.data)
             this.manuals = response.data
             this.vShowLoader = false
           })
