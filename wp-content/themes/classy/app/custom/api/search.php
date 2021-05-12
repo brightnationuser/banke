@@ -11,10 +11,10 @@ function user_run_search() {
     $approved = get_field('user_approved', $user);
 
     if($approved) {
-        $categories = ['manuals', 'specifications', 'models3d'];
+        $categories = ['manuals', 'specifications'];
     }
     else {
-        $categories = ['specifications', 'models3d'];
+        $categories = ['specifications'];
     }
 
     $query = new WP_Query([
@@ -26,10 +26,24 @@ function user_run_search() {
 
     $manuals = $query->get_posts();
 
-    $response = process_posts($manuals);
+    $search_3d = $search;
 
-    $videos = search_videos($search, $response);
+    if(strpos($search, 'E-PTO') === 0) {
+        $search_3d = str_replace('E-PTO', '', $search);
+    }
 
+    $query_3d = new WP_Query([
+        'post_type' => 'models3d',
+        'post_status' => 'publish',
+        'posts_per_page' => -1,
+        's' => $search_3d
+    ]);
+
+    $models3d = $query_3d->get_posts();
+
+    $posts = array_merge($manuals, $models3d);
+
+    $response = process_posts($posts);
     echo json_encode($response);
 
     wp_die();
