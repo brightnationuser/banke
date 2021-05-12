@@ -44,6 +44,9 @@ function user_run_search() {
     $posts = array_merge($manuals, $models3d);
 
     $response = process_posts($posts);
+
+    search_videos($search, $response);
+
     echo json_encode($response);
 
     wp_die();
