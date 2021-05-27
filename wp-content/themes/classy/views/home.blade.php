@@ -57,6 +57,24 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="what-we-do__item item">
+                            <div class="item__image">
+                                <a href="{{ $row['link'] }}">
+                                    <img src="{!! $row['image']['url'] !!}" alt="{{ $row['title'] }}">
+                                </a>
+                            </div>
+                            <div class="item__content">
+                                <h3 class="item__title">
+                                    {!! $row['title'] !!}
+                                </h3>
+                                <div class="item__text">
+                                    {!! $row['text'] !!}
+                                </div>
+                                <a href="{{ $row['link'] }}" class="item__read-more read-more">
+                                    {!! get_field('read_more', 'options') !!}
+                                </a>
+                            </div>
+                        </div>
 
                     @endforeach
                 </div>
