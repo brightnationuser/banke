@@ -1,406 +1,407 @@
-.epto-page {
+.product-template {
 
-    .text-center {
-        .button {
-            padding: 9px 17px;
-            border-radius: 4px;
-            margin-bottom: 15px;
+  .text-center {
+    .button {
+      padding: 9px 17px;
+      border-radius: 4px;
+      margin-bottom: 15px;
 
-            img {
-                margin-right: 5px;
-                vertical-align: -2px;
-            }
-        }
+      img {
+        margin-right: 5px;
+        vertical-align: -2px;
+      }
+    }
+  }
+
+  .video-gallery {
+    padding: 60px 0 70px 0;
+    border-top: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+
+    h2 {
+      margin-top: 0;
+    }
+  }
+
+  .concept {
+    padding-bottom: 54px;
+    border-bottom: 1px solid #eeeeee;
+
+    .container {
+      max-width: 1180px;
     }
 
-    .video-gallery {
-        padding: 60px 0 70px 0;
-        border-top: 1px solid #EEEEEE;
-        border-bottom: 1px solid #EEEEEE;
-
-        h2 {
-            margin-top: 0;
-        }
+    * {
+      animation-delay: 1s;
     }
 
-    .concept {
-        padding-bottom: 54px;
-        border-bottom: 1px solid #eeeeee;
+    &__description {
+      align-items: center;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 23px;
+      color: #4A4A49;
 
-        .container {
-            max-width: 1180px;
+      p {
+        margin-bottom: 10px;
+      }
+    }
+
+    &__image {
+      max-width: 495px;
+      margin-right: 40px;
+      width: 100%;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__content {
+      max-width: 555px;
+      width: 100%;
+    }
+
+    &__benefits {
+      margin-top: 14px;
+    }
+
+    .concept-benefit {
+      align-items: center;
+      margin-right: 30px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &__title {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.3;
+      }
+
+      &__image-wrap {
+        margin-right: 14px;
+        max-width: 45px;
+        width: 100%;
+
+        @media screen and (max-width: 768px) {
+          min-width: 45px;
+          max-width: initial !important;
+          width: auto;
+        }
+      }
+
+      &__image {
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      &:nth-child(1) {
+        .concept-benefit__image, .concept-benefit__image-wrap {
+          max-width: 40px;
+        }
+      }
+
+      &:nth-child(2) {
+        .concept-benefit__image, .concept-benefit__image-wrap {
+          max-width: 35px;
+        }
+      }
+
+      &:nth-child(3) {
+        .concept-benefit__image, .concept-benefit__image-wrap {
+          max-width: 46px;
+        }
+      }
+    }
+  }
+
+  .present {
+    padding-top: 10px;
+
+    &__title {
+      margin-bottom: 100px;
+    }
+
+    &__slider-outer {
+      position: relative;
+    }
+
+    .switch {
+
+      i {
+        &::before {
+          color: #91A8BE;
+          transition: all .3s ease;
+        }
+      }
+
+      &:hover {
+        i {
+          &::before {
+            color: #003462;
+          }
+        }
+      }
+    }
+
+    .epto__bg {
+      position: absolute;
+      top: -125px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-image: url("/wp-content/themes/classy/images/pages/epto-systems/e-pto-bg.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 741px;
+      height: 327px;
+      background-position: center;
+
+      @media screen and (max-width: $width-l) {
+        left: 0;
+        right: 0;
+        margin: auto;
+        position: absolute;
+        transform: none !important;
+        width: 100%;
+      }
+    }
+  }
+
+  .products {
+    padding: 55px 0 110px 0;
+
+    &__list {
+      align-items: stretch;
+
+      &.children-sliced {
+        align-items: flex-start;
+      }
+
+      .product-card {
+        max-width: 270px;
+        margin-right: 30px;
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.04);
+        border-radius: 8px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+
+        &:last-child {
+          margin-right: 0;
         }
 
-        * {
-            animation-delay: 1s;
+        &__title {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 22px;
+          margin-bottom: 5px;
         }
 
-        &__description {
-            align-items: center;
-            font-weight: 300;
-            font-size: 14px;
-            line-height: 23px;
-            color: #4A4A49;
+        &__text {
+          font-weight: 300;
+          font-size: 13px;
+          line-height: 21px;
+        }
 
-            p {
-                margin-bottom: 10px;
-            }
+        .read-more-btn {
+          font-weight: 300;
+          display: inline-block;
+          font-size: 13px;
+          line-height: 21px;
+          color: #005CA9;
+          border-bottom: 1px dotted #005CA9;
+          cursor: pointer;
+          transition: all .3s ease;
+
+          &:hover {
+            color: #00294b;
+            border-bottom: 1px dotted #00294b;
+          }
         }
 
         &__image {
-            max-width: 495px;
-            margin-right: 40px;
-            width: 100%;
+          background-color: #f9f9f9;
 
-            img {
-                width: 100%;
-                height: auto;
-            }
+          img {
+            max-width: 100%;
+            height: auto;
+          }
         }
 
         &__content {
-            max-width: 555px;
-            width: 100%;
+          padding: 22px 16px 0 16px;
+          flex-grow: 1;
         }
 
-        &__benefits {
-            margin-top: 14px;
+        &__links {
+          border-top: 1px solid #E9E9E9;
+          justify-content: space-between;
+          padding: 0;
+          margin-bottom: 0;
         }
 
-        .concept-benefit {
-            align-items: center;
-            margin-right: 30px;
+        &__link {
+          border-right: 1px solid #E9E9E9;
+          list-style-type: none;
+          width: 100%;
+          padding: 17px 12px;
+          align-items: center;
 
-            &:last-child {
-                margin-right: 0;
+          .icon {
+            margin-right: 6px;
+          }
+
+          a {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 23px;
+            color: #005CA9;
+
+            &:hover, &:visited, &:active, &:focus {
+              color: #005CA9;
             }
+          }
 
-            &__title {
-                font-size: 16px;
-                font-weight: 300;
-                line-height: 1.3;
-            }
-
-            &__image-wrap {
-                margin-right: 14px;
-                max-width: 45px;
-                width: 100%;
-
-                @media screen and (max-width: 768px){
-                    min-width: 45px;
-                    max-width: initial!important;
-                    width: auto;
-                }
-            }
-
-            &__image {
-                width: 100%;
-                display: flex;
-                align-items: center;
-
-                img {
-                    width: 100%;
-                    height: auto;
-                }
-            }
-
-            &:nth-child(1) {
-                .concept-benefit__image, .concept-benefit__image-wrap {
-                    max-width: 40px;
-                }
-            }
-
-            &:nth-child(2) {
-                .concept-benefit__image, .concept-benefit__image-wrap {
-                    max-width: 35px;
-                }
-            }
-
-            &:nth-child(3) {
-                .concept-benefit__image, .concept-benefit__image-wrap {
-                    max-width: 46px;
-                }
-            }
+          &:last-child {
+            border-right: 0;
+          }
         }
+      }
+    }
+  }
+
+  .references-sect {
+    background-color: #F2F6FC;
+    padding: 10px 0 85px 0;
+
+    .container {
+      max-width: 1250px;
     }
 
-    .present {
-        padding-top: 10px;
-
-        &__title {
-            margin-bottom: 100px;
-        }
-
-        &__slider-outer {
-            position: relative;
-        }
-
-        .switch {
-
-            i {
-                &::before {
-                    color: #91A8BE;
-                    transition: all .3s ease;
-                }
-            }
-
-            &:hover {
-                i {
-                    &::before {
-                        color: #003462;
-                    }
-                }
-            }
-        }
-
-        .epto__bg {
-            position: absolute;
-            top: -125px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-image: url("/wp-content/themes/classy/images/pages/epto-systems/e-pto-bg.png");
-            background-size: contain;
-            background-repeat: no-repeat;
-            width: 741px;
-            height: 327px;
-            background-position: center;
-
-            @media screen and (max-width: $width-l) {
-                left: 0;
-                right: 0;
-                margin: auto;
-                position: absolute;
-                transform: none !important;
-                width: 100%;
-            }
-        }
+    h2 {
+      margin-bottom: 35px;
     }
 
-    .products {
-        padding: 55px 0 110px 0;
-
-        &__list {
-            align-items: stretch;
-
-            &.children-sliced {
-                align-items: flex-start;
-            }
-
-            .product-card {
-                max-width: 270px;
-                margin-right: 30px;
-                box-shadow: 0 12px 20px rgba(0, 0, 0, 0.04);
-                border-radius: 8px;
-                overflow: hidden;
-                display: flex;
-                flex-direction: column;
-
-                &:last-child {
-                    margin-right: 0;
-                }
-
-                &__title {
-                    font-style: normal;
-                    font-weight: bold;
-                    font-size: 16px;
-                    line-height: 22px;
-                    margin-bottom: 5px;
-                }
-
-                &__text {
-                    font-weight: 300;
-                    font-size: 13px;
-                    line-height: 21px;
-                }
-
-                .read-more-btn {
-                    font-weight: 300;
-                    display: inline-block;
-                    font-size: 13px;
-                    line-height: 21px;
-                    color: #005CA9;
-                    border-bottom: 1px dotted #005CA9;
-                    cursor: pointer;
-                    transition: all .3s ease;
-
-                    &:hover {
-                        color: #00294b;
-                        border-bottom: 1px dotted #00294b;
-                    }
-                }
-
-                &__image {
-                    background-color: #f9f9f9;
-
-                    img {
-                        max-width: 100%;
-                        height: auto;
-                    }
-                }
-
-                &__content {
-                    padding: 22px 16px 0 16px;
-                    flex-grow: 1;
-                }
-
-                &__links {
-                    border-top: 1px solid #E9E9E9;
-                    justify-content: space-between;
-                    padding: 0;
-                    margin-bottom: 0;
-                }
-
-                &__link {
-                    border-right: 1px solid #E9E9E9;
-                    list-style-type: none;
-                    width: 100%;
-                    padding: 17px 12px;
-                    align-items: center;
-
-                    .icon {
-                        margin-right: 6px;
-                    }
-
-                    a {
-                        font-weight: 600;
-                        font-size: 14px;
-                        line-height: 23px;
-                        color: #005CA9;
-
-                        &:hover, &:visited, &:active, &:focus {
-                            color: #005CA9;
-                        }
-                    }
-
-                    &:last-child {
-                        border-right: 0;
-                    }
-                }
-            }
-        }
+    > p {
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 40px;
     }
 
-    .references-sect {
-        background-color: #F2F6FC;
-        padding: 10px 0 85px 0;
-
-        .container {
-            max-width: 1250px;
-        }
-
-        h2 {
-            margin-bottom: 35px;
-        }
-
-        > p {
-            font-size: 18px;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .owl-stage-outer {
-            padding: 15px 0 0 0;
-            margin-top: -15px;
-        }
-
-        .references {
-            &__card {
-                background-color: #ffffff;
-                box-shadow: 0 12px 20px rgba(0, 0, 0, 0.04);
-            }
-        }
+    .owl-stage-outer {
+      padding: 15px 0 0 0;
+      margin-top: -15px;
     }
 
-    .contact-us {
-        &--light {
-            margin-bottom: 0;
-        }
+    .references {
+      &__card {
+        background-color: #ffffff;
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.04);
+      }
     }
+  }
+
+  .contact-us {
+    &--light {
+      margin-bottom: 0;
+    }
+  }
 }
 
 @media screen and (max-width: 1200px) {
-    .epto-page {
-        .products {
-            padding: 25px 0 80px 0;
+  .product-template {
+    .products {
+      padding: 25px 0 80px 0;
 
-            &__list {
-                align-items: flex-start;
-                max-width: 600px;
-                flex-wrap: wrap;
-                justify-content: center;
+      &__list {
+        align-items: flex-start;
+        max-width: 600px;
+        flex-wrap: wrap;
+        justify-content: center;
 
-                .product-card {
-                    margin-top: 30px;
+        .product-card {
+          margin-top: 30px;
 
-                    &:nth-child(even) {
-                        margin-right: 0;
-                    }
-                }
-            }
+          &:nth-child(even) {
+            margin-right: 0;
+          }
         }
+      }
     }
+  }
 }
 
 @media screen and (max-width: 992px) {
-    .epto-page {
-        .concept {
+  .product-template {
+    .concept {
 
-            &__title {
-                margin-top: 90px;
-            }
+      &__title {
+        margin-top: 90px;
+      }
 
-            &__description {
-                flex-direction: column;
-            }
-        }
+      &__description {
+        flex-direction: column;
+      }
     }
+  }
 
-    .logged-in {
-        .epto-page {
-            .concept {
-                &__title {
-                    margin-top: 60px;
-                }
-            }
+  .logged-in {
+    .product-template {
+      .concept {
+        &__title {
+          margin-top: 60px;
         }
+      }
     }
+  }
 }
 
 
 @media screen and (max-width: 670px) {
-    .epto-page {
-        .products {
-            &__list {
-                max-width: 400px;
-                .product-card {
-                    margin-right: 0;
-                }
-            }
-        }
+  .product-template {
+    .products {
+      &__list {
+        max-width: 400px;
 
-        .references {
-            .references {
-                &__card {
-                    width: 90%;
-                }
-            }
+        .product-card {
+          margin-right: 0;
         }
+      }
     }
+
+    .references {
+      .references {
+        &__card {
+          width: 90%;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 576px) {
-    .epto-page {
-        .concept {
-            &__benefits {
-                flex-direction: column;
-                margin-top: 5px;
+  .product-template {
+    .concept {
+      &__benefits {
+        flex-direction: column;
+        margin-top: 5px;
 
-                .concept-benefit {
-                    margin-right: 0;
-                    margin-top: 10px;
-                }
-            }
+        .concept-benefit {
+          margin-right: 0;
+          margin-top: 10px;
         }
+      }
     }
+  }
 }
 

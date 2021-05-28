@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="epto-page">
+    <div class="epto-page product-template">
 
         @if(!empty(get_field('acf_tabs', get_the_ID())))
             @include('partials.tabs', ['parent_id' => get_the_ID()])
@@ -14,13 +14,6 @@
                 <h1 class="concept__title h2">
                     {{ $post->getAcfByKey('acf_title_concept') }}
                 </h1>
-
-                {{--                <div class="text-center">
-                                    <a href="#youtube-video" class="button disable_preloader js-popup-action" target="_blank">
-                                        <img src="/wp-content/themes/classy/images/icons/play.svg" alt="Play icon">
-                                        {{ $post->getAcfByKey('button_text') }}
-                                    </a>
-                                </div>--}}
 
                 <div class="concept__description d-flex">
 
@@ -35,20 +28,6 @@
                                 {!! $post->getAcfByKey('acf_concept_description') !!}
                             </div>
                         </article>
-                        {{--<div class="concept__benefits d-flex animated fadeInUp">
-                            @foreach($post->getAcfByKey('acf_benefits') as $key => $item)
-                                <div class="concept-benefit d-flex">
-                                    <div class="concept-benefit__image-wrap">
-                                        <div class="concept-benefit__image">
-                                            <img src="{!! $item['image']['url'] !!}" alt="{{ $item['title'] }}">
-                                        </div>
-                                    </div>
-                                    <div class="concept-benefit__title">
-                                        {!! $item['title'] !!}
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>--}}
                     </div>
                 </div>
             </div>
