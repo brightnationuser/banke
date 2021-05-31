@@ -96,6 +96,11 @@
     }
 
     .owl-carousel .owl-nav .owl-prev, .owl-next {
+      &.disabled {
+        &::before {
+          opacity: 0.3;
+        }
+      }
       transition: all 0.3s ease;
       &::before {
         color: #91A8BE;
