@@ -146,7 +146,8 @@ class App {
         carousel.init('News');
         carousel.init('References');
         carousel.init('ReferencesThin');
-        carousel.init('Video') 
+        carousel.init('Video')
+        carousel.init('WhatWeDo')
     }
 
     initFaq() {

@@ -11,3 +11,15 @@
     }
   }
 }
+
+.template-sections-select {
+  ul {
+    display: flex !important;
+    flex-direction: column;
+
+    li {
+      display: block;
+      padding: 8px !important;
+    }
+  }
+}

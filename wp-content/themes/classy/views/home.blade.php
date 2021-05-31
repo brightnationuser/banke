@@ -37,7 +37,7 @@
             @endif
 
             @if(!empty($post->getAcfByKey('what_we_do')))
-                <div class="what-we-do__list d-flex">
+                <div class="owl-carousel js-what-we-do-slider what-we-do__list">
                     @foreach($post->getAcfByKey('what_we_do') as $row)
                         <div class="what-we-do__item item">
                             <div class="item__image">
@@ -56,8 +56,8 @@
                                     {!! get_field('read_more', 'options') !!}
                                 </a>
                             </div>
-
                         </div>
+
                     @endforeach
                 </div>
             @endif
