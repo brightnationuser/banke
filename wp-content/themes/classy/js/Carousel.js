@@ -235,7 +235,7 @@ export default class Carousel {
 
             initWhatWeDoCarousel: function () {
                 $('.js-what-we-do-slider.owl-carousel').owlCarousel({
-                    loop: true,
+                    loop: false,
                     margin: 30,
                     onInitialized: show,
 
