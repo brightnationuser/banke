@@ -16,6 +16,7 @@ import video from './video';
 import openVideo from './openVideo';
 import tipsImage from './blocks/tips-image';
 import YtApiPlayer from './blocks/yt-api-player';
+import blockToggle from "./blocks/block-toggle";
 
 $(document).ready(function () {
 
@@ -26,6 +27,7 @@ $(document).ready(function () {
     textTrim('.js-trim-text');
     textTrim('.js-intro-content', {show_block:true});
     tipsImage('.js-tips-image');
+    blockToggle();
 
     setTimeout(function () {
         let window_height = $(window).height();

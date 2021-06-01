@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="epto-page">
+    <div class="epto-page product-template">
 
         @if(!empty(get_field('acf_tabs', get_the_ID())))
             @include('partials.tabs', ['parent_id' => get_the_ID()])
@@ -14,13 +14,6 @@
                 <h1 class="concept__title h2">
                     {{ $post->getAcfByKey('acf_title_concept') }}
                 </h1>
-
-                {{--                <div class="text-center">
-                                    <a href="#youtube-video" class="button disable_preloader js-popup-action" target="_blank">
-                                        <img src="/wp-content/themes/classy/images/icons/play.svg" alt="Play icon">
-                                        {{ $post->getAcfByKey('button_text') }}
-                                    </a>
-                                </div>--}}
 
                 <div class="concept__description d-flex">
 
@@ -35,20 +28,6 @@
                                 {!! $post->getAcfByKey('acf_concept_description') !!}
                             </div>
                         </article>
-                        {{--<div class="concept__benefits d-flex animated fadeInUp">
-                            @foreach($post->getAcfByKey('acf_benefits') as $key => $item)
-                                <div class="concept-benefit d-flex">
-                                    <div class="concept-benefit__image-wrap">
-                                        <div class="concept-benefit__image">
-                                            <img src="{!! $item['image']['url'] !!}" alt="{{ $item['title'] }}">
-                                        </div>
-                                    </div>
-                                    <div class="concept-benefit__title">
-                                        {!! $item['title'] !!}
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>--}}
                     </div>
                 </div>
             </div>
@@ -92,49 +71,7 @@
             </div>
         </section>
 
-        <section class="products">
-            <div class="container">
-                <div class="products__list d-flex text-trim-add-parent-class">
-                    @foreach ($post->getAcfByKey('acf_products') as $product)
-                        <div class="product-card aos-animation" data-aos-delay="{{ 200 * (1 + $loop->index) }}">
-                            <div class="product-card__image">
-                                <img src="{{ $product['image'] }}" alt="{{ $product['title'] }}">
-                            </div>
-                            <div class="product-card__content">
-                                <div class="product-card__title">{{ $product['title'] }}</div>
-                                <div class="product-card__text js-trim-text"
-                                     data-text-length="{{ empty($product['trim']) ? '147' : $product['trim'] }}"
-                                     data-text-open="{!! strtolower(get_field('read_more', 'option')) !!}"
-                                     data-text-close="{{ !empty(get_field('less')) ? get_field('less') : 'less' }}"
-                                >
-                                    <span class="js-text">
-                                        {{ $product['text'] }}
-                                    </span>
-
-                                    <div class="read-more-wrap">
-                                        <div class="read-more-btn">
-                                            {{ strtolower(get_field('read_more', 'option')) }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <ul class="product-card__links d-flex">
-                                @foreach ($product['links'] as $link)
-                                    <li class="product-card__link d-flex">
-                                        <div class="icon">
-                                            <img src="/wp-content/themes/classy/images/pages/epto-systems/pdf.svg"
-                                                 alt="icon">
-                                        </div>
-                                        <a href="{{ $link['link_url'] }}" class="link disable_preloader"
-                                           download>{{ $link['link_text'] }}</a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
+        @include('template.product-page.products')
 
         @php($brochure = get_field('brochure'))
         @include('partials.brochure', [
