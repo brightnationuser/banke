@@ -7,10 +7,16 @@
 
         <div class="concept__description d-flex">
 
-            <div class="concept__image animated fadeInLeft">
-                <img src="{!! $post->getAcfByKey('acf_image_concept')['url'] !!}"
-                     alt="{!! $post->getAcfByKey('acf_title_concept') !!}">
-            </div>
+            @if($post->getAcfByKey('is_acf_concept_image'))
+                <div class="concept__image animated fadeInLeft">
+                    <img src="{!! $post->getAcfByKey('acf_image_concept')['url'] !!}"
+                         alt="{!! $post->getAcfByKey('acf_title_concept') !!}">
+                </div>
+            @else
+                <div class="concept__video animated fadeInLeft">
+                    <video src="{!! $post->getAcfByKey('acf_video_concept')['url'] !!}" autoplay muted></video>
+                </div>
+            @endif
 
             <div class="concept__content">
                 <article class="content-text m_1 animated fadeInDown">
