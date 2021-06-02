@@ -47,14 +47,18 @@
       }
     }
 
-    &__image {
+    &__image, &__video {
       max-width: 495px;
       margin-right: 40px;
       width: 100%;
 
-      img {
+      img, video {
         width: 100%;
         height: auto;
+      }
+
+      video {
+        background-color: #fff
       }
     }
 
