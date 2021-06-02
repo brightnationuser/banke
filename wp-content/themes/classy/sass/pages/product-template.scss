@@ -428,6 +428,10 @@
 @media screen and (max-width: 576px) {
   .product-template {
     .concept {
+      &__video {
+        margin-right: 0;
+      }
+
       &__benefits {
         flex-direction: column;
         margin-top: 5px;
