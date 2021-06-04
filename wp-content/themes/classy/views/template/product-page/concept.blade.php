@@ -14,7 +14,7 @@
                 </div>
             @else
                 <div class="concept__video animated fadeInLeft">
-                    <video src="{!! $post->getAcfByKey('acf_video_concept')['url'] !!}" autoplay muted></video>
+                    <video class="product-template-concept-video" src="{!! $post->getAcfByKey('acf_video_concept')['url'] !!}" muted></video>
                 </div>
             @endif
 
