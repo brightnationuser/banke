@@ -4,17 +4,17 @@
 	<div class="container">
 		<div class="article__heading">
 			<div class="news__date">
-				{{ $post->getDate() }}
+				{!! $post->getDate() !!}
 			</div>
 
 			<h1 class="news__title">
-				{{ $post->title() }}
+				{!! $post->title() !!}
 			</h1>
 		</div>
 		<div class="article">
 			<div class="article__content">
 				<div class="news__content">
-					<img class="content__img" src="{{ $post->getAcfImage()->src('large') }}" alt="{{ $post->title() }}">
+					<img class="content__img" src="{{ $post->getAcfImage()->src('large') }}" alt="{!! $post->title() !!}">
 
 					<div class="content__text text__content">
 						{!! $post->content() !!}
