@@ -21,7 +21,7 @@
                         </div>
 
                         <div class="news__title">
-                            {{ $news_item->title() }}
+                            {!! $news_item->title() !!}
                         </div>
                     </div>
                 </a>
