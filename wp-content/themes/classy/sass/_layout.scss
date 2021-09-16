@@ -504,6 +504,10 @@ footer.footer {
                 justify-content: center;
                 transition: all .4s ease;
 
+                &.facebook i {
+                    font-size: 13px;
+                }
+
                 &:last-child {
                     margin-right: 0;
                 }
