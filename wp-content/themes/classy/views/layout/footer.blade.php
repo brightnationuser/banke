@@ -21,6 +21,9 @@
                     <a href="{!! get_field('linkedin', 'option')['link'] !!}" class="social linkedin disable_preloader" target="_blank">
                         <i class="icon-linkedin"></i>
                     </a>
+                    <a href="{!! get_field('facebook', 'option')['link'] !!}" class="social facebook disable_preloader" target="_blank">
+                        <i class="icon-facebook"></i>
+                    </a>
                     <a href="{!! get_field('youtube', 'option')['link'] !!}" class="social youtube disable_preloader" target="_blank">
                         <i class="icon-youtube"></i>
                     </a>
