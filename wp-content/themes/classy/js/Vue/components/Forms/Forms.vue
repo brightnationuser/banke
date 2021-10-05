@@ -187,6 +187,12 @@ export default {
     }
   }
 
+  @media (max-width: 1366px) and (min-width: 1200px) {
+    .sign-in {
+      font-size: 13px;
+    }
+  }
+
   @media (max-width: 1200px) {
     .sign-in {
       margin-top: 16px;
