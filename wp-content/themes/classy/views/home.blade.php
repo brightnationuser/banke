@@ -97,10 +97,10 @@
         'title' => $post->getAcfByKey('form_title'),
         'classes' => 'contact-us--light'
     ])
-
+{{--
     @include('partials.popup-youtube', [
         'title' => get_field('video_top_text', 'option'),
         'image' => '/wp-content/themes/classy/images/video-preview.jpg',
-    ])
+    ])--}}
 
 @stop
