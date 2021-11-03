@@ -33,6 +33,10 @@ const popup = () => {
         if (popup.attr('id') === 'youtube-video') {
             localStorage.setItem('popup-youtube', '1');
         }
+        
+        if (popup.attr('id') === 'popup-vacancy') {
+            localStorage.setItem('popup-vacancy', '1');
+        }
 
         popup.removeClass(activeClass);
 
@@ -49,6 +53,12 @@ const popup = () => {
             $('#youtube-video').addClass(activeClass);
         }, 2000);
     }*/
+    
+    if (body.hasClass('home') && localStorage.getItem('popup-vacancy') !== '1') {
+        setTimeout(() => {
+            $('#popup-vacancy').addClass(activeClass);
+        }, 2000);
+    }
 };
 
 export default popup;

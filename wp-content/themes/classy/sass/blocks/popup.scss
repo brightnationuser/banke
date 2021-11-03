@@ -145,4 +145,84 @@
       opacity: .8;
     }
   }
+
+  &--vacancy {
+    .popup {
+      &__content {
+        min-height: 390px;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-image: url('/wp-content/themes/classy/images/pages/home/popup-bg.jpg');
+
+        @media (max-width: 576px) {
+          background-image: url('/wp-content/themes/classy/images/pages/home/popup-bg-m.jpg');
+          justify-content: center;
+          min-height: 330px;
+        }
+      }
+
+      &__content-inner {
+        text-align: left;
+        max-width: 325px;
+        margin-left: 47%;
+        width: 100%;
+        padding-right: 20px;
+
+        @media (max-width: 576px) {
+          padding-right: 0;
+          margin-left: 0;
+          text-align: center;
+        }
+      }
+
+      &__title {
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 44px;
+        color: #003462;
+        text-align: left;
+        padding: 0;
+
+        @media (max-width: 576px) {
+          text-align: center;
+          font-size: 28px;
+        }
+      }
+
+      &__text {
+        font-family: "Open Sans", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 155%;
+        margin-bottom: 25px;
+
+        @media (max-width: 576px) {
+          font-size: 14px;
+        }
+      }
+
+      &__button {
+        padding: 11px 34px;
+
+        &:hover {
+          padding: 11px 34px;
+        }
+      }
+
+      &__close {
+        right: 20px;
+        top: 20px;
+
+        &::before,
+        &::after {
+          width: 21px;
+          background-color: #4A4A49;
+        }
+      }
+    }
+  }
 }
