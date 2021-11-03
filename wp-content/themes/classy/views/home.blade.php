@@ -102,5 +102,17 @@
         'title' => get_field('video_top_text', 'option'),
         'image' => '/wp-content/themes/classy/images/video-preview.jpg',
     ])--}}
+    @php
+      $vacancy_popup = get_field('vacancy_popup')
+    @endphp
+
+    @if(!empty($vacancy_popup) && $vacancy_popup['show'])
+        @include('partials.popup-vacancy', [
+            'title' => $vacancy_popup['title'],
+            'text' => $vacancy_popup['text'],
+            'button_link' => $vacancy_popup['button_link'],
+            'button_text' => $vacancy_popup['button_text']
+        ])
+    @endif
 
 @stop
