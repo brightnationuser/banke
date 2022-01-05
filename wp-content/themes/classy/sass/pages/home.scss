@@ -12,9 +12,14 @@
 
     .h1 {
       font-weight: bold;
-      font-size: 60px;
-      line-height: 82px;
+      font-size: 45px;
+      line-height: 50px;
       color: $color-light-blue;
+
+      @media (min-width: 768px) {
+        font-size: 60px;
+        line-height: 82px;
+      }
     }
 
     &__caption {
