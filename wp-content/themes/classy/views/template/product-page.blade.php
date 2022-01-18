@@ -27,6 +27,7 @@
         'template.product-page.products' => [],
         'partials.brochure' => $brochure_data,
         'template.product-page.references' => [],
+        'template.product-page.specification' => [],
     ];
 
     $render_array = [];
