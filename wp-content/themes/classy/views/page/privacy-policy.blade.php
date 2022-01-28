@@ -8,7 +8,7 @@
             @endif
 
             @if(!empty(get_field('opening')))
-                <div class="page-privacy-policy__quick-summary">
+                <div class="page-privacy-policy__opening">
                     {{ get_field('opening') }}
                 </div>
             @endif
