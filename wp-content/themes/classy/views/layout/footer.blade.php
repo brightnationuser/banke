@@ -42,7 +42,8 @@
 
         <div class="footer__adress">
             {!! get_field('address', 'options') !!} <a href="tel:{!! get_field('number', 'options') !!}">{!! get_field('number', 'options') !!}</a>
-            <a href="mailto:{!! get_field('email', 'options') !!}"> | {!! get_field('email', 'options') !!}</a>
+            <span> | </span>
+            <a href="mailto:{!! get_field('email', 'options') !!}">{!! get_field('email', 'options') !!}</a>
         </div>
 
         <div class="footer__copyright">
