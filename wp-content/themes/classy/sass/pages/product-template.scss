@@ -212,6 +212,12 @@
           font-weight: 300;
           font-size: 13px;
           line-height: 21px;
+
+          .js-text {
+            display: block;
+            margin-bottom: 6px;
+            overflow: hidden;
+          }
         }
 
         .read-more-btn {
