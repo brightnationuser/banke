@@ -88,7 +88,7 @@
         <!-- End Google Tag Manager -->
     </head>
 
-    <body {{ body_class($body_additional) }}>
+    <body {{ body_class(array($body_additional, 'm_ready')) }}>
 
         {!! get_field('acf_body_code', 'option') !!}
 
