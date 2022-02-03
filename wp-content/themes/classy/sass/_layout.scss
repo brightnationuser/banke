@@ -368,13 +368,13 @@ header.header {
                 padding: 0;
               }
 
-              &.current_page_item a {
-                border-bottom: 1px solid $color-light-blue;
-
-                &::after {
-                  content: none;
-                }
-              }
+              //&.current_page_item a {
+              //  border-bottom: 1px solid $color-light-blue;
+              //
+              //  &::after {
+              //    content: none;
+              //  }
+              //}
 
               &::after {
                 content: none;
