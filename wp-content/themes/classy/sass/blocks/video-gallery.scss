@@ -235,17 +235,15 @@ $video_height: 217px;
             }
           }
 
-          @media screen and (max-width: 1200px) {
-            width: 100%;
-            max-width: $is_playing_video_width - 60px;
-            height: $is_playing_video_height - 60px;
-          }
-
-
-
-          @media screen and (max-width: 460px) {
-            height: $is_playing_video_height / 1.6;
-          }
+          //@media screen and (max-width: 1200px) {
+          //  width: 100%;
+          //  max-width: $is_playing_video_width - 60px;
+          //  height: $is_playing_video_height - 60px;
+          //}
+          //
+          //@media screen and (max-width: 460px) {
+          //  height: $is_playing_video_height / 1.6;
+          //}
 
           &__overlay {
             &::after {
