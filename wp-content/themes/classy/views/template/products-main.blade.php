@@ -18,7 +18,7 @@
                         @if(!empty($products = $post->getAcfByKey('acf_products')))
                             <div class="what-we-do__list d-flex">
                                 @foreach($products as $item)
-                                    <div class="what-we-do__item item">
+                                    <div class="what-we-do__item item item--not-carousel">
                                         <div class="item__image">
                                             <a href="{{ $item['link'] }}">
                                                 <img src="{!! $item['image']['url'] !!}" alt="{{ $item['title'] }}">

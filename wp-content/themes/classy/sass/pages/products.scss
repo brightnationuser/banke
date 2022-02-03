@@ -11,9 +11,18 @@
         flex-wrap: wrap;
 
         .item {
-            width: 50%;
+
             padding: 15px;
             margin-right: 0;
+            width: 50%;
+
+            @media screen and (max-width: $width-m) {
+                width: 100%;
+            }
+
+            &--not-carousel {
+                margin-left: 0 !important;
+            }
         }
     }
 }
