@@ -158,13 +158,15 @@ class App {
     }
 
     tabsMenuParent() {
-        const $tabs = $('.page-tabs');
-        if($tabs.length > 0) {
-            $('.current-menu-item, .current-menu-parent').addClass('no-underline');
-        }
-        else {
-            $('.current-menu-item, .current-menu-parent').addClass('underline');
-        }
+        // const $tabs = $('.page-tabs');
+        // if($tabs.length > 0) {
+        //     $('.current-menu-item, .current-menu-parent').addClass('no-underline');
+        // }
+        // else {
+        //     $('.current-menu-item, .current-menu-parent').addClass('underline');
+        // }
+
+        $('.current-menu-item, .current-menu-parent').addClass('underline');
     }
 
     //antispam for contact form
