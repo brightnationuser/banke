@@ -158,6 +158,14 @@
         border-radius: 8px;
         overflow: hidden;
 
+        &__icon {
+          height: 50px;
+
+          img {
+            height: 100%;
+          }
+        }
+
         &__content {
           padding: 50px 10px;
           text-align: center;
