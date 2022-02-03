@@ -54,7 +54,7 @@ class App {
         }, 100);
 
         $("a:not(.disable_preloader)").click(function () {
-            $('body').removeClass('m_ready');
+            //$('body').removeClass('m_ready');
         });
 
         if($('#js_hero_hero').length > 0) {
