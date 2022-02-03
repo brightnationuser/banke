@@ -37,6 +37,10 @@ const textTrim = (selector, opt = {}) => {
         else {
             let slice_len = ths.data('text-length');
             let text_el = ths.find('.js-text');
+
+            let initialFullHeightTextElHeight = $(text_el).height();
+            let slicedHeightTextElHeight;
+
             let text_full = text_el.text();
             let text_sliced = text_full.slice(0, slice_len);
 
@@ -44,21 +48,35 @@ const textTrim = (selector, opt = {}) => {
             $more_button.text(text_open);
             ths.addClass('sliced');
 
+            setTimeout(function () {
+                slicedHeightTextElHeight = $(text_el).height();
+
+                text_el.css({
+                    'height' : slicedHeightTextElHeight,
+                });
+            }, 0);
+
             $more_button.on('click', function () {
-                if(ths.hasClass('sliced')) {
+
+                if (ths.hasClass('sliced')) {
                     text_el.text(text_full);
                     $more_button.text(text_close);
                     ths.removeClass('sliced');
                     ths.addClass('expanded')
                     $parent_to_add_class.addClass('children-sliced')
+
+                    text_el.animate({height: initialFullHeightTextElHeight}, 750)
                 }
                 else {
-                    text_el.text(text_sliced + '...');
                     $more_button.text(text_open);
                     ths.addClass('sliced');
                     ths.removeClass('expanded')
-    
-                    if(!$items.hasClass('expanded')) {
+
+                    text_el.animate({height: slicedHeightTextElHeight}, 750, function () {
+                        text_el.text(text_sliced + '...');
+                    })
+
+                    if (!$items.hasClass('expanded')) {
                         $parent_to_add_class.removeClass('children-sliced')
                     }
                 }
