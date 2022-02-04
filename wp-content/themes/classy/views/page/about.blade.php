@@ -65,13 +65,15 @@
 
                             @if($member['acf_team_phone'])
                                 <div class="member__phone">
-                                    <i class="icon-phone"></i> {{ $member['acf_team_phone'] }}
+                                    <i class="icon-phone"></i>
+                                    <a href="tel:{{ str_replace(' ', '', $member['acf_team_phone']) }}">{{ $member['acf_team_phone'] }}</a>
                                 </div>
                             @endif
 
                             @if($member['acf_team_email'])
                                 <div class="member__email">
-                                    <i class="icon-email"></i> {{ $member['acf_team_email'] }}
+                                    <i class="icon-email"></i>
+                                    <a href="mailto:{{ $member['acf_team_email'] }}">{{ $member['acf_team_email'] }}</a>
                                 </div>
                             @endif
 
