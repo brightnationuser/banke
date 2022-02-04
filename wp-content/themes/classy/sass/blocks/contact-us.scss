@@ -60,9 +60,13 @@
 
             .contact-us {
                 &__form {
-                    padding: 30px 44px 50px 44px;
+                    padding: 30px 44px 30px 44px;
                     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
                     border-radius: 4px;
+
+                    @media (min-width: 768px) {
+                        padding: 30px 44px 50px 44px;
+                    }
 
                     form {
                         .row {
