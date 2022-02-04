@@ -126,6 +126,28 @@ export default {
     margin-bottom: -3px;
     position: relative;
 
+    @media (min-width: 1201px) {
+      &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        border-top: 2px solid #005CA9;
+        top: 30px;
+        display: block;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: all 0.35s ease;
+      }
+
+      &:hover {
+        &:after {
+          opacity: 1;
+          width: 100%;
+        }
+      }
+    }
+    
     &-profile__wrapper {
       display: flex;
       align-items: center;
