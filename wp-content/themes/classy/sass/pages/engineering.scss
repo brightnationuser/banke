@@ -109,13 +109,14 @@
     &__description {
       text-align: center;
       font-weight: 300;
-      font-size: 13px;
+      font-size: 16px;
       line-height: 21px;
       max-width: 960px;
       margin: 35px auto 0 auto;
 
       @media (min-width: 768px) {
         margin: 75px auto 0 auto;
+        font-size: 13px;
       }
     }
   }
