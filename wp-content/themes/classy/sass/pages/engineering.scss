@@ -30,10 +30,11 @@
       margin-top: 35px;
       padding-left: 20px;
       padding-right: 20px;
-      //align-items: center;
+      align-items: center;
 
-      @media (min-width: 768px) {
+      @media (min-width: 993px) {
         margin-top: 70px;
+        align-items: flex-start;
       }
 
       &__image {
