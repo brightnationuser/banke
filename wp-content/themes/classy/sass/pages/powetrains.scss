@@ -139,10 +139,19 @@
 
   .key-benefits {
     background-color: #F2F6FC;
-    padding: 90px 0;
+    padding: 45px 0 90px 0;
+
+    @media (min-width: 768px) {
+      padding: 90px 0;
+    }
 
     h2 {
       margin-top: 0;
+      margin-bottom: 25px;
+
+      @media (min-width: 768px) {
+        margin-bottom: 50px;
+      }
     }
 
     &__list {
