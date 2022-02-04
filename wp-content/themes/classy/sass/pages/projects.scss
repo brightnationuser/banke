@@ -1,6 +1,10 @@
 .page-projects {
   .projects-intro {
-    padding-bottom: 80px;
+    padding-bottom: 40px;
+
+    @media (min-width: 768px) {
+      padding-bottom: 80px;
+    }
 
     &__title {
       margin-bottom: 30px;
@@ -54,8 +58,12 @@
   .partners {
     background-color: #F2F6FC;
     margin-bottom: -80px;
-    padding-top: 80px;
+    padding-top: 40px;
     padding-bottom: 95px;
+
+    @media (min-width: 768px) {
+      padding-top: 80px;
+    }
 
     &__title {
       margin-top: 0;

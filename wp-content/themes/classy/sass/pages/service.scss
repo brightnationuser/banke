@@ -74,14 +74,22 @@
 @media screen and (max-width: 768px) {
     .service-page {
         .service-intro {
-            padding: 50px 0 85px 0;
+            padding: 50px 0 40px 0;
+
+            @media (min-width: 768px) {
+                padding: 50px 0 85px 0;
+            }
         }
     }
 
     .logged-in {
         .service-page {
             .service-intro {
-                padding: 0 0 85px 0;
+                padding: 0 0 40px 0;
+
+                @media (min-width: 768px) {
+                    padding: 0 0 85px 0;
+                }
             }
         }
 
