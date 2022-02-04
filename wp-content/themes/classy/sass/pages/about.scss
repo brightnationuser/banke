@@ -47,6 +47,12 @@
                 line-height: 23px;
                 //flex-basis: 50%;
 
+                sub {
+                    font-size: 75%;
+                    line-height: 0;
+                    position: relative;
+                }
+
                 &--center {
                     text-align: center;
 
