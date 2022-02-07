@@ -1,5 +1,5 @@
 @php
-    $languages = apply_filters( 'wpml_active_languages', NULL, 'orderby=id&order=desc' );
+    //$languages = apply_filters( 'wpml_active_languages', NULL, 'orderby=id&order=desc' );
 @endphp
 <header class="header">
     <div class="container">
@@ -53,15 +53,16 @@
                                 <a href="{{ $language['url'] }}">{!! $language['language_code'] !!}</a>
                             @endif
                         @endforeach
-                        <i class="icon-arrow-down"></i>
-
-                        <div class="lng-dropdown">
-                            @foreach($languages as $language)
-                                @if(!$language['active'])
-                                    <a href="{{ $language['url'] }}">{!! $language['language_code'] !!}</a>
-                                @endif
-                            @endforeach
-                        </div>
+                        @if(count($languages) > 1)
+                            <i class="icon-arrow-down"></i>
+                            <div class="lng-dropdown">
+                                @foreach($languages as $language)
+                                    @if(!$language['active'])
+                                        <a href="{{ $language['url'] }}">{!! $language['language_code'] !!}</a>
+                                    @endif
+                                @endforeach
+                            </div>
+                        @endif
                     </div>
                 </div>
                 <span>|</span>
