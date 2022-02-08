@@ -4,7 +4,7 @@
 
         <div class="popup__content">
             <div class="popup__content-inner">
-                <h2 class="popup__title">{{ $title }}</h2>
+                <h2 class="popup__title">{!! $title !!}</h2>
 
                 <div class="popup__text">
                     {!! $text !!}

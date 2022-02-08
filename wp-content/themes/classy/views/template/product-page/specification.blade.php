@@ -1,3 +1,7 @@
+@php
+    $items = get_field('specification');
+@endphp
+
 @if(!empty($items))
 <div class="specification container">
     <h2 class="specification__heading">

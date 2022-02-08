@@ -39,9 +39,7 @@
         @include('partials.video-gallery')
 
 
-        @include ('partials.specification', [
-               'items' => get_field('specification')
-            ])
+        @include ('template.product-page.specification')
 
 
         <section class="key-benefits">

@@ -10,13 +10,11 @@
       >
       <i class="field__input-action field__input-action--error icon-warning"
          v-if="validation && !valid"
-         @mousedown="visible = true"
-         @mouseup="visible = false"
+         @click="togglePasswordVisibility"
       ></i>
       <i class="field__input-action icon-eye js-password-toggle"
          v-if="!(validation && !valid)"
-         @mousedown="visible = true"
-         @mouseup="visible = false"
+         @click="togglePasswordVisibility"
       ></i>
     </div>
     <div class="field__error">{{ errorText }}</div>
@@ -63,6 +61,10 @@ export default {
 
     change() {
       this.$emit('change')
+    },
+
+    togglePasswordVisibility() {
+      this.visible = !this.visible
     }
   },
 
