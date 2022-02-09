@@ -42,7 +42,7 @@
 
                             <div class="product-card__links">
                                 <div class="product-card__links-trigger d-flex js-block-toggle-trigger">
-                                    <span>{{ get_field('account_titles', 'option')['specifications'] }}</span>
+                                    <span>{{ (count($show_links) > 1) ? get_field('account_titles', 'option')['specifications'] : get_field('account_titles', 'option')['specification']  }}</span>
 
                                     @unless(empty($toggle_links))
                                         <i class="icon-arrow-down"></i>
@@ -56,14 +56,20 @@
                                                      alt="icon">
                                             </div>
 
-                                            <a href="{{ $link['link_url'] }}" class="link disable_preloader"
-                                               download>{{ $link['link_text'] }}</a>
+                                            <a
+                                                href="{{ $link['link_url'] }}"
+                                                class="link disable_preloader"
+                                                target="_blank"
+                                            >
+                                                {{ $link['link_text'] }}
+                                            </a>
                                         </li>
                                     @endforeach
                                 </ul>
                                 @unless(empty($toggle_links))
                                     @foreach($toggle_links as $item)
-                                        <ul class="product-card__links-list product-card__links-list--toggling d-flex js-block-toggle-block" style="display:flex;">
+                                        <ul class="product-card__links-list product-card__links-list--toggling d-flex js-block-toggle-block"
+                                            style="display:flex;">
                                             @foreach ($item as $link)
                                                 <li class="product-card__link product-card__link--toggle d-flex">
                                                     <div class="icon">
