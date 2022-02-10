@@ -167,8 +167,8 @@ export default {
   },
 
   created() {
-    this.email.errorMessage = this.translations.errors.email_already_used
-    this.name.errorMessage = this.translations.errors.name_already_used
+    this.email.errorMessage = this.translations.errors.required_field
+    this.name.errorMessage = this.translations.errors.required_field
   },
 
   updated() {
