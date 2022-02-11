@@ -143,7 +143,8 @@ export default class Carousel {
                 }
 
                 function onPlayerReady() {
-
+                    //remove preloader
+                    $('.embed-youtube-video').removeClass('is-loading');
                 }
 
                 function onPlayerStop() {

@@ -129,7 +129,9 @@ $video_height: 217px;
       z-index: 1;
 
       &:not(.center) {
-        cursor: pointer;
+        .embed-youtube-video:not(.is-loading) {
+          cursor: pointer;
+        }
       }
 
       .embed-youtube-video {
@@ -142,6 +144,30 @@ $video_height: 217px;
         justify-content: center;
         align-items: center;
         transform-origin: center;
+        position: relative;
+        
+        &.is-loading {
+          pointer-events: none;
+          cursor: default;
+
+          &:before {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            content: '';
+            background: url(./../images/oval.svg) center center / 50px 50px no-repeat, rgba(2, 49, 89, 0.7);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 20;
+          }
+
+          .embed-youtube-video__play-wrap {
+            display: none;
+          }
+        }
 
         &__overlay {
           background-size: cover;
