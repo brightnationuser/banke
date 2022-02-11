@@ -212,6 +212,12 @@
           font-weight: 300;
           font-size: 13px;
           line-height: 21px;
+
+          .js-text {
+            display: block;
+            margin-bottom: 6px;
+            overflow: hidden;
+          }
         }
 
         .read-more-btn {
@@ -331,6 +337,9 @@
       font-size: 18px;
       text-align: center;
       margin-bottom: 40px;
+      padding-left: 15px;
+      padding-right: 15px;
+      
     }
 
     .owl-stage-outer {
@@ -382,7 +391,7 @@
     .concept {
 
       &__title {
-        margin-top: 90px;
+        margin-top: 30px;
       }
 
       &__description {
@@ -395,7 +404,7 @@
     .product-template {
       .concept {
         &__title {
-          margin-top: 60px;
+          margin-top: 30px;
         }
       }
     }

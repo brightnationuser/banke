@@ -42,7 +42,11 @@
   }
 
   .intro {
-    padding: 20px 0 90px 0;
+    padding: 20px 0 45px 0;
+
+    @media screen and (min-width: 768px) {
+      padding: 20px 0 90px 0;
+    }
 
     .h2 {
       margin-top: 0;
@@ -135,10 +139,19 @@
 
   .key-benefits {
     background-color: #F2F6FC;
-    padding: 90px 0;
+    padding: 45px 0 90px 0;
+
+    @media (min-width: 768px) {
+      padding: 90px 0;
+    }
 
     h2 {
       margin-top: 0;
+      margin-bottom: 25px;
+
+      @media (min-width: 768px) {
+        margin-bottom: 50px;
+      }
     }
 
     &__list {
@@ -153,6 +166,14 @@
         box-shadow: 0 12px 20px rgba(0, 0, 0, 0.04);
         border-radius: 8px;
         overflow: hidden;
+
+        &__icon {
+          height: 50px;
+
+          img {
+            height: 100%;
+          }
+        }
 
         &__content {
           padding: 50px 10px;

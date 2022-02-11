@@ -73,6 +73,11 @@ header.header {
     .header__logo {
       img {
         width: 128px;
+        image-rendering: -moz-crisp-edges; /* Firefox */
+        image-rendering: -o-crisp-edges; /* Opera */
+        image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+        image-rendering: crisp-edges;
+        -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
       }
     }
 
@@ -264,19 +269,20 @@ header.header {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 5;
+    z-index: 20;
     //overflow: hidden;
-    padding: 20px;
+    //padding: 20px;
     max-height: 68px;
     transition: 0.3s ease;
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.07);
+    padding-top: 0;
 
     .container {
       max-height: inherit;
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
-      padding: 0;
+      padding: 20px;
 
       .header__right {
         width: 100%;
@@ -286,11 +292,14 @@ header.header {
         transition: all .2s ease;
         pointer-events: none;
         transition-delay: 0s;
+        padding-left: 23px;
       }
 
       .header__menu {
         max-height: inherit;
         padding-top: 20px;
+        pointer-events: none;
+
 
         .menu__nav {
           flex-direction: column;
@@ -320,8 +329,9 @@ header.header {
         .hamburger {
           display: block;
           position: absolute;
-          top: 2px;
-          right: 0;
+          top: 22px;
+          right: 20px;
+          pointer-events: all;
         }
       }
 
@@ -349,6 +359,8 @@ header.header {
 
         .header__menu {
 
+          pointer-events: all;
+
           .menu__nav {
             align-items: flex-start;
             opacity: 1;
@@ -362,13 +374,13 @@ header.header {
                 padding: 0;
               }
 
-              &.current_page_item a {
-                border-bottom: 1px solid $color-light-blue;
-
-                &::after {
-                  content: none;
-                }
-              }
+              //&.current_page_item a {
+              //  border-bottom: 1px solid $color-light-blue;
+              //
+              //  &::after {
+              //    content: none;
+              //  }
+              //}
 
               &::after {
                 content: none;

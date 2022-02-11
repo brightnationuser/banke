@@ -93,6 +93,11 @@ $max-width-sm: 992px;
       font-size: 14px;
       color: #FFFFFF;
       width: 100%;
+      transition: .3s;
+
+      &:hover {
+        background: #003462;
+      }
     }
   }
 }

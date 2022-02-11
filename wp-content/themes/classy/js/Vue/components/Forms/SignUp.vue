@@ -195,9 +195,9 @@ export default {
   },
 
   created() {
-    this.email.errorMessage = this.translations.errors.email_already_used
-    this.name.errorMessage = this.translations.errors.name_already_used
-    this.password.errorMessage = this.translations.errors.password_too_short
+    this.email.errorMessage = this.translations.errors.required_field
+    this.name.errorMessage = this.translations.errors.required_field
+    this.password.errorMessage = this.translations.errors.required_field
   },
 
   updated() {

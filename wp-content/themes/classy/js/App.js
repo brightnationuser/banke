@@ -54,7 +54,7 @@ class App {
         }, 100);
 
         $("a:not(.disable_preloader)").click(function () {
-            $('body').removeClass('m_ready');
+            //$('body').removeClass('m_ready');
         });
 
         if($('#js_hero_hero').length > 0) {
@@ -158,13 +158,15 @@ class App {
     }
 
     tabsMenuParent() {
-        const $tabs = $('.page-tabs');
-        if($tabs.length > 0) {
-            $('.current-menu-item, .current-menu-parent').addClass('no-underline');
-        }
-        else {
-            $('.current-menu-item, .current-menu-parent').addClass('underline');
-        }
+        // const $tabs = $('.page-tabs');
+        // if($tabs.length > 0) {
+        //     $('.current-menu-item, .current-menu-parent').addClass('no-underline');
+        // }
+        // else {
+        //     $('.current-menu-item, .current-menu-parent').addClass('underline');
+        // }
+
+        $('.current-menu-item, .current-menu-parent').addClass('underline');
     }
 
     //antispam for contact form
