@@ -113,6 +113,8 @@
         </script>
 
         {{ wp_footer() }}
+        @if(defined("WP_ENVIRONMENT_TYPE") && constant("WP_ENVIRONMENT_TYPE") === 'development')
         <script src="http://localhost:35729/livereload.js"></script>
+        @endif
     </body>
 </html>
