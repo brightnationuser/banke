@@ -133,7 +133,7 @@ export default class Carousel {
                     var firstScriptTag = document.getElementsByTagName('script')[0];
                     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
                 } else {
-                    onPlayerReady()
+                    onYouTubePlayer()
                 }
 
                 function onYouTubePlayer() {
