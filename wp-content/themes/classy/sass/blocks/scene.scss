@@ -78,7 +78,8 @@
                     left: 3px;
                     top: 6px;
                     width: 7px;
-                    border-top: 1px solid #005CA9;
+                    height: 1px;
+                    background-color: #005CA9;
                 }
 
                 &:after {
@@ -88,7 +89,8 @@
                     left: 6px;
                     top: 3px;
                     height: 7px;
-                    border-right: 1px solid #005CA9;
+                    width: 1px;
+                    background-color: #005CA9;
                 }
 
                 span {
