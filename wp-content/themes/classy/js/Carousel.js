@@ -125,6 +125,8 @@ export default class Carousel {
                         window.onYouTubePlayerAPIReady = function () {
                             onYouTubePlayer();
                         };
+                    } else {
+                        $('.embed-youtube-video').removeClass('is-loading');
                     }
                 }
 
