@@ -47,7 +47,7 @@ export default class Carousel {
 
 
                     $('.owl-nav button').on('click', function () { // Если нажимаем на данные, анулируем логику полностью и приводим в дефолтное состояние
-                        $(clickedVideo).css('width', getBaseWidth).css('height', getBaseHeight)
+                        //$(clickedVideo).css('width', getBaseWidth).css('height', getBaseHeight)
                         clickedVideo = null
                     })
 
@@ -109,7 +109,8 @@ export default class Carousel {
                     closeVideo.on('click', function () {
                         player.stopVideo();
                         $('.js-video-gallery__window').hide()
-                        $(clickedVideo).css('width', getCenterWidth).css('height', getCenterHeight)
+                        //$(clickedVideo).css('width', getCenterWidth).css('height', getCenterHeight)
+                        $(clickedVideo).css('width', '').css('height', '');
                         freezeClick = false
                         // player.loadVideoById('8D9d9weVQnI');
                         // alert('Hello my friend')
