@@ -30,7 +30,6 @@ export default class Carousel {
                     }
                 })
 
-
                 function loadPlayer() {
 
                     const closeVideo = $('.js-close-video') // Крестик для закрытия видео
@@ -115,19 +114,26 @@ export default class Carousel {
                         // player.loadVideoById('8D9d9weVQnI');
                         // alert('Hello my friend')
                     })
+                }
 
-                    if (typeof (YT) == 'undefined' || typeof (YT.Player) == 'undefined') {
-                        var tag = document.createElement('script');
-                        tag.src = "https://www.youtube.com/iframe_api";
-                        var firstScriptTag = document.getElementsByTagName('script')[0];
-                        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+                function onPlayerReady() {
+                    //remove preloader
+                    loadPlayer()
+                    $('.embed-youtube-video').removeClass('is-loading');
+                }
 
-                        window.onYouTubePlayerAPIReady = function () {
-                            onYouTubePlayer();
-                        };
-                    } else {
-                        $('.embed-youtube-video').removeClass('is-loading');
-                    }
+                if (typeof (YT) == 'undefined' || typeof (YT.Player) == 'undefined') {
+
+                    window.onYouTubePlayerAPIReady = function () {
+                        onYouTubePlayer();
+                    };
+
+                    var tag = document.createElement('script');
+                    tag.src = "https://www.youtube.com/iframe_api";
+                    var firstScriptTag = document.getElementsByTagName('script')[0];
+                    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+                } else {
+                    onPlayerReady()
                 }
 
                 function onYouTubePlayer() {
@@ -139,22 +145,13 @@ export default class Carousel {
                         events: {
                             'onReady': onPlayerReady,
                             'onStop': onPlayerStop
-
                         }
                     });
-                }
-
-                function onPlayerReady() {
-                    //remove preloader
-                    $('.embed-youtube-video').removeClass('is-loading');
                 }
 
                 function onPlayerStop() {
 
                 }
-
-                loadPlayer()
-
             },
 
             initNewsCarousel: function () {
