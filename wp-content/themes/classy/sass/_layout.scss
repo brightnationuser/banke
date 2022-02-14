@@ -131,28 +131,30 @@ header.header {
 
           &.current-menu-item, &.current-menu-parent {
 
-            &.underline {
-              &:after {
-                content: '';
-                display: block;
-                position: absolute;
-                left: -10px;
-                right: -10px;
-                height: 0;
-                top: 30px;
-                border-top: 2px solid $color-light-blue;
-              }
+            &:after {
+              content: '';
+              display: block;
+              position: absolute;
+              left: -10px;
+              right: -10px;
+              height: 0;
+              top: 30px;
+              border-top: 2px solid $color-light-blue;
             }
 
-            &.no-underline {
-              &:after {
-                display: none;
-              }
+            //&.underline {
+            //
+            //}
 
-              a {
-                color: #005CA9;
-              }
-            }
+            //&.no-underline {
+            //  &:after {
+            //    display: none;
+            //  }
+            //
+            //  a {
+            //    color: #005CA9;
+            //  }
+            //}
           }
         }
       }
