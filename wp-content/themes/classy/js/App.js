@@ -10,7 +10,7 @@ class App {
 
     constructor() {
 
-        this.tabsMenuParent();
+        //this.tabsMenuParent();
         
         this.initHeaderHamburger();
         
