@@ -64,44 +64,22 @@
                 z-index: 2;
 
                 display: block;
-                width: 15px;
-                height: 15px;
+                width: 21px;
+                height: 21px;
                 border-radius: 50%;
                 cursor: pointer;
-                background: #fff;
-                border: 1px solid #005CA9;
-
-                &:before {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    left: 3px;
-                    top: 6px;
-                    width: 7px;
-                    height: 1px;
-                    background-color: #005CA9;
-                }
-
-                &:after {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    left: 6px;
-                    top: 3px;
-                    height: 7px;
-                    width: 1px;
-                    background-color: #005CA9;
-                }
+                background: #fff url(../images/icons/infobox-posetive.svg) center center no-repeat;
 
                 span {
                     animation: pulse2 3s infinite;
                     position: absolute;
-                    border-radius: 50%;
-                    border: 1px solid #005CA9;
-                    left: -1px;
-                    top: -1px;
-                    width: 15px;
-                    height: 15px;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    width: 21px;
+                    height: 21px;
+                    background: transparent url(../images/icons/infobox-circle.svg) center center no-repeat;
 
                     &:nth-child(1) {
                     }
@@ -117,15 +95,7 @@
                 }
 
                 &:hover {
-                    background: #fff;
-
-                    &::before {
-                        display: block;
-                    }
-
-                    &::after {
-                        display: none;
-                    }
+                    background: #fff url(../images/icons/infobox-negative.svg) center center no-repeat;
                 }
             }
 
