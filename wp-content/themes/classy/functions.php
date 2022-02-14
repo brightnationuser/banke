@@ -14,7 +14,7 @@ function special_nav_class($classes, $item)
 
     if (
         in_array($item->title, array('Produkte', 'Products'))
-        && (is_page('epto-systems') || is_page('the-full-electric-powertrains') || is_page('electric-chassis-pto'))
+        && (is_page('epto-systems') || is_page('the-full-electric-powertrains') || is_page('electric_chassis_pto'))
     ) {
         $classes[] = "current-menu-item";
     }
