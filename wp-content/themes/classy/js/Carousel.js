@@ -47,7 +47,8 @@ export default class Carousel {
 
 
                     $('.owl-nav button').on('click', function () { // Если нажимаем на данные, анулируем логику полностью и приводим в дефолтное состояние
-                        //$(clickedVideo).css('width', getBaseWidth).css('height', getBaseHeight)
+                        $(clickedVideo).css('width', '').css('height', '')
+                        closeVideo.trigger( "click" )
                         clickedVideo = null
                     })
 
@@ -71,9 +72,9 @@ export default class Carousel {
 
                                 freezeClick = true
                                 $('.js-video-gallery__window').hide() // Скрываем видео
-                                $(clickedVideo).css('width', getCenterWidth).css('height', getCenterHeight) // Устанавливаем размер основнога окна ( Прошлое просм. видео )
+                                $(clickedVideo).css('width', '').css('height', '') // Устанавливаем размер основнога окна ( Прошлое просм. видео )
                                 setTimeout(() => {
-                                    $(clickedVideo).css('width', getBaseWidth).css('height', getBaseHeight) // Устанавливаем базовый размер прошлого видео
+                                    $(clickedVideo).css('width', '').css('height', '') // Устанавливаем базовый размер прошлого видео
                                     owl.trigger('to.owl.carousel', [dataIdGallery, 1000]) // Переключаем на новое видео [ dataIdGallery: На какой Id ссылается, 1000 - Время переключалки триггера]
                                     setTimeout(() => { // Через 500 м.с делаем размер пропопорционально ютубу
                                         console.log('Yes')
