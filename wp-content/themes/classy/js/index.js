@@ -164,3 +164,51 @@ $(document).ready(function(){
     initCookieconsent();
 });
 
+// document.querySelector('.modal-team__btn .files').addEventListener('click', function () {
+//     this.parentNode.querySelector('[type="file"]').click();
+// });
+//
+// document.querySelector('.modal-team__btn [type="file"]').addEventListener('input', function () {
+//     if (this.value && this.value.trim())
+//     {
+//         const file_name = this.value.split(/(\\|\/)/g).pop();
+//
+//         const span_elem = document.createElement('span');
+//
+//         span_elem.innerHTML=`${file_name} <img class="file_remove" width="16" height="16" src="${document.querySelector('#remove_btn_src').value}" alt="close">`;
+//
+//         document.querySelector('.modal-team__files').appendChild(span_elem);
+//
+//         document.querySelector('.modal-team__btn').classList.add('has');
+//
+//         document.querySelector('.modal-team__files').classList.add('active');
+//     }
+// });
+//
+// document.addEventListener('click', function (e) {
+//    if (e.target.classList.contains('file_remove'))
+//    {
+//        document.querySelector('.modal-team__btn [type="file"]').value="";
+//
+//        document.querySelector('.modal-team__btn').classList.remove('has');
+//
+//        document.querySelector('.modal-team__files').classList.remove('active');
+//
+//        document.querySelector('.modal-team__files').innerHTML="";
+//    }
+// });
+//
+// document.addEventListener( 'wpcf7submit', function( event ) {
+//     console.log(event?.detail?.apiResponse?.message);
+// }, false );
+//
+//
+// document.addEventListener( 'wpcf7invalid', function( event ) {
+//     // for (let i=0; i<event.detail.apiResponse.invalid_fields.length; i++)
+//     // {
+//     //     let item = event.detail.apiResponse.invalid_fields[i];
+//     //     $(item.into).parent().addClass('error');
+//     // }
+//
+//     console.log(event?.detail?.apiResponse?.message);
+// }, false );

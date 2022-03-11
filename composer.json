@@ -15,5 +15,11 @@
             "Classy\\Models\\": "wp-content/themes/classy/app/core/models",
             "Helpers\\": "wp-content/themes/classy/app/custom/Helpers"
         }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "kylekatarnls/update-helper": true
+        }
     }
 }

@@ -61,6 +61,23 @@ $post_types = array(
         'singular' => __( 'News', 'textdomain' ),
         'multiple' => __( 'News', 'textdomain' ),
     ),
+    'vacancies' => array(
+        'config' => array(
+            'public' => true,
+            'has_archive' => false,
+            'supports' => array(
+                'title',
+                'thumbnail',
+                'editor',
+                'page-attributes',
+            ),
+            'show_in_nav_menus' => true,
+            'rewrite' => array('with_front' => false),
+            'show_in_rest' => true,
+        ),
+        'singular' => __( 'Vacancies', 'textdomain' ),
+        'multiple' => __( 'Vacancies', 'textdomain' )
+    ),
     'manuals' => array(
         'config' => array(
             'public' => true,
