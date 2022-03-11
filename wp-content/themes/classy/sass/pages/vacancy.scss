@@ -320,6 +320,28 @@
         padding: 40px 24px;
     }
 
+    .fancybox-close-small {
+        opacity: .3;
+    }
+
+    span.wpcf7-not-valid-tip {
+        margin-top: 4px;
+    }
+
+    div.wpcf7-validation-errors {
+        border: none;
+        margin: 12px 0 0;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 16px;
+        color: #FF0000;
+        opacity: 0.9;
+    }
+
+    div.wpcf7-mail-sent-ok {
+        display: none !important;
+    }
+
     * {
         margin: 0;
     }
@@ -371,6 +393,10 @@
                 color: #4A4A49;
                 opacity: 0.9;
                 font-family: inherit;
+
+                &.wpcf7-not-valid {
+                    border: 1px solid rgba(255, 26, 26, 0.4);
+                }
 
                 &::placeholder {
                     font-family: inherit;
@@ -501,5 +527,36 @@
                 cursor: pointer;
             }
         }
+    }
+}
+
+.modal-thank {
+    display: none;
+    text-align: center;
+    max-width: 350px;
+    margin: 0 auto;
+
+    * {
+        margin: 0;
+    }
+
+    img {
+
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 33px;
+        color: #003462;
+        margin-top: 15px;
+    }
+
+    &__descr {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 150%;
+        color: #4A4A49;
+        margin-top: 12px;
     }
 }

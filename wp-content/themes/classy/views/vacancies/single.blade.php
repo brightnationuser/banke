@@ -57,8 +57,15 @@
 
     @if(!$acf_group['our_team_link'] && !$acf_group['vacancy_closed'])
         <div id="our_team_form" class="modal-team" style="display: none;">
-{{--            @php echo do_shortcode('[contact-form-7 id="2493" title="Join Our Team EN"]'); @endphp--}}
-            @php echo do_shortcode('[contact-form-7 id="2494" title="Untitled"]'); @endphp
+            {!! do_shortcode('[contact-form-7 id="2493" title="Join Our Team EN"]') !!}
+
+            <div class="modal-thank">
+                <img width="55" src="{{get_template_directory_uri()}}/images/icons/icon_email_big.svg" alt="email sent">
+
+                <h3 class="modal-thank__title">Your job application has been sent successfully</h3>
+
+                <p class="modal-thank__descr">We will contact you soon</p>
+            </div>
         </div>
     @endif
 @stop
