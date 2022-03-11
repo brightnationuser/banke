@@ -15,21 +15,22 @@
                         </div>
                     </div>
 
-                    <div class="news__content">
-                        <div class="news__date">
-                            {{ $news_item->getDate() }}
-                        </div>
+                        <div class="news__content">
+                            <div class="news__date">
+                                {{ $news_item->getDate() }}
+                            </div>
 
-                        <div class="news__title">
-                            {!! $news_item->title() !!}
+                            <div class="news__title">
+                                {!! $news_item->title() !!}
+                            </div>
                         </div>
-                    </div>
-                </a>
-            @endforeach
+                    </a>
+                @endforeach
 
-            <div class="news m_fake"></div>
-            <div class="news m_fake"></div>
-            <div class="news m_fake"></div>
+                <div class="news m_fake"></div>
+                <div class="news m_fake"></div>
+                <div class="news m_fake"></div>
+            </div>
         </div>
 
         {!! $pagination_layout !!}
