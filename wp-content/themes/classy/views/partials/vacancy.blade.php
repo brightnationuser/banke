@@ -3,6 +3,7 @@
 @endphp
 
 <div class="vacancies-card">
+    <a href="{{get_permalink($post->ID)}}" class="vacancies-card__link"></a>
     <div class="vacancies-card__body">
         @if($acf_group['vacancy_closed'])
             <p class="vacancies-card__block">Closed</p>
