@@ -166,11 +166,11 @@ $(document).ready(function(){
     initCookieconsent();
 });
 
-document.querySelector('.modal-team__btn .files').addEventListener('click', function () {
+document.querySelector('.modal-team__btn .files')?.addEventListener('click', function () {
     this.parentNode.querySelector('[type="file"]').click();
 });
 
-document.querySelector('.modal-team__btn [type="file"]').addEventListener('input', function () {
+document.querySelector('.modal-team__btn [type="file"]')?.addEventListener('input', function () {
     if (this.value && this.value.trim())
     {
         const file_name = this.value.split(/(\\|\/)/g).pop();
