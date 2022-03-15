@@ -166,26 +166,32 @@ $(document).ready(function(){
     initCookieconsent();
 });
 
-document.querySelector('.modal-team__btn .files')?.addEventListener('click', function () {
-    this.parentNode.querySelector('[type="file"]').click();
-});
+if (document.querySelector('.modal-team__btn .files'))
+{
+    document.querySelector('.modal-team__btn .files').addEventListener('click', function () {
+        this.parentNode.querySelector('[type="file"]').click();
+    });
+}
 
-document.querySelector('.modal-team__btn [type="file"]')?.addEventListener('input', function () {
-    if (this.value && this.value.trim())
-    {
-        const file_name = this.value.split(/(\\|\/)/g).pop();
+if (document.querySelector('.modal-team__btn [type="file"]'))
+{
+    document.querySelector('.modal-team__btn [type="file"]').addEventListener('input', function () {
+        if (this.value && this.value.trim())
+        {
+            const file_name = this.value.split(/(\\|\/)/g).pop();
 
-        const span_elem = document.createElement('span');
+            const span_elem = document.createElement('span');
 
-        span_elem.innerHTML=`${file_name} <img class="file_remove" width="16" height="16" src="${document.querySelector('#remove_btn_src').value}" alt="close">`;
+            span_elem.innerHTML=`${file_name} <img class="file_remove" width="16" height="16" src="${document.querySelector('#remove_btn_src').value}" alt="close">`;
 
-        document.querySelector('.modal-team__files').appendChild(span_elem);
+            document.querySelector('.modal-team__files').appendChild(span_elem);
 
-        document.querySelector('.modal-team__btn').classList.add('has');
+            document.querySelector('.modal-team__btn').classList.add('has');
 
-        document.querySelector('.modal-team__files').classList.add('active');
-    }
-});
+            document.querySelector('.modal-team__files').classList.add('active');
+        }
+    });
+}
 
 document.addEventListener('click', function (e) {
    if (e.target.classList.contains('file_remove'))
