@@ -195,6 +195,10 @@
             line-height: 27px;
             color: #003462;
             text-decoration: none !important;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            -webkit-line-clamp: 1;
 
             &.closed {
                 color: rgba(39, 39, 39, 0.6);
