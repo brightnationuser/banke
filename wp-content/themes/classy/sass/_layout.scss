@@ -96,6 +96,7 @@ header.header {
           display: none;
           position: absolute;
           z-index: 1;
+          left: -30px;
           list-style: none;
           background: #FFFFFF;
           box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
@@ -106,6 +107,7 @@ header.header {
           @media screen and (max-width: 1200px) {
             position: relative;
             top: unset;
+            left: unset;
             order: 1;
             width: 100%;
           }
@@ -143,48 +145,60 @@ header.header {
         }
 
         &>li.menu-item-has-children {
-          padding-right: 18px;
 
           @media screen and (max-width: 1200px) {
             display: flex;
-            flex-flow: row wrap;
+            flex-flow: row-reverse wrap;
             justify-content: space-between;
             align-items: center;
             row-gap: 10px;
-            padding-right: 0;
+            padding-right: 0 !important;
           }
 
-          &::after {
-            position: absolute;
-            top: 50%;
-            right: 0;
-            width: 14px;
-            height: 14px;
-            transform: translateY(-50%) rotate(0);
+          &::before {
+            display: none;
+            width: 20px;
+            height: 20px;
             content: '';
             background: url('../images/icons/icon_dropdown.svg') center no-repeat;
             background-size: contain;
             transition: all ease .4s;
 
             @media screen and (max-width: 1200px) {
-              transform: rotate(0);
-              top: unset;
-              right: unset;
-              position: relative;
-              width: 20px;
-              height: 20px;
+              display: block;
             }
           }
 
-          &>a::after {
-            display: none !important;
+          &:hover {
+            @media screen and (min-width: 1201px) {
+              &>a::before {
+                transform: rotate(-180deg);
+              }
+            }
           }
 
-          &:hover {
+          &>a {
+            padding-right: 18px !important;
+            position: relative;
 
-            @media screen and (min-width: 1201px) {
-              &::after {
-                transform: translateY(-50%) rotate(-180deg);
+            &::after {
+              display: none !important;
+            }
+
+            &::before {
+              position: absolute;
+              top: 4px;
+              right: 0;
+              width: 14px;
+              height: 14px;
+              transform: rotate(0);
+              content: '';
+              background: url('../images/icons/icon_dropdown.svg') center no-repeat;
+              background-size: contain;
+              transition: all ease .4s;
+
+              @media screen and (max-width: 1200px) {
+                display: none;
               }
             }
           }
