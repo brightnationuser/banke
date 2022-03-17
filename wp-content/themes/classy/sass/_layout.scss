@@ -110,6 +110,8 @@ header.header {
             left: unset;
             order: 1;
             width: 100%;
+            box-shadow: unset;
+            padding: 0;
           }
 
           * {
@@ -153,6 +155,16 @@ header.header {
             align-items: center;
             row-gap: 10px;
             padding-right: 0 !important;
+          }
+          
+          &.active {
+            .sub-menu {
+              display: block;
+            }
+
+            &::before {
+              transform: rotate(180deg);
+            }
           }
 
           &::before {
@@ -214,8 +226,10 @@ header.header {
           }
 
           &:hover {
-            ul.sub-menu {
-              display: block;
+            @media screen and (min-width: 1201px) {
+              ul.sub-menu {
+                display: block;
+              }
             }
           }
 
@@ -417,7 +431,8 @@ header.header {
         transition: all .2s ease;
         pointer-events: none;
         transition-delay: 0s;
-        padding-left: 23px;
+        padding-top: 20px;
+        margin-left: -13px;
       }
 
       .header__menu {

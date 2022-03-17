@@ -56,6 +56,18 @@ $(document).ready(function() {
 $(document).ready(function(){
     var GaInited = false;
 
+    // $('li::after').click(function () {
+    //     console.log('work');
+    // })
+
+    if (window.innerWidth <= 1200)
+    {
+        document.querySelectorAll('.menu-item-has-children').forEach(item => item.addEventListener('click', function (e) {
+            // console.log(this, e.offsetX, this.offsetWidth);
+            this.offsetWidth - 20 <= e.offsetX ? this.classList.toggle('active') : this.classList.remove('active');
+        }));
+    }
+
     function delete_all_cookie( name ) {
         var arrSplit = document.cookie.split(";");
         for(var i = 0; i < arrSplit.length; i++)
