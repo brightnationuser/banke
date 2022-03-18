@@ -63,8 +63,9 @@ $(document).ready(function(){
     if (window.innerWidth <= 1200)
     {
         document.querySelectorAll('.menu-item-has-children').forEach(item => item.addEventListener('click', function (e) {
+            e.preventDefault();
             document.querySelectorAll('.menu-item-has-children.active').forEach(subitem => subitem !== item ? subitem.classList.remove('active') : null);
-            this.offsetWidth - 20 <= e.offsetX ? this.classList.toggle('active') : this.classList.remove('active');
+            this.classList.toggle('active');
         }));
     }
 
