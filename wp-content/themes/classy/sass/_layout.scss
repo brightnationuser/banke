@@ -139,9 +139,11 @@ header.header {
             }
 
             &:hover {
-              color: #005CA8;
-              font-weight: 600;
-              background: rgba(0, 92, 168, .05);
+              @media screen and (min-width: 1201px) {
+                color: #005CA8;
+                font-weight: 600;
+                background: rgba(0, 92, 168, .05);
+              }
             }
           }
         }
