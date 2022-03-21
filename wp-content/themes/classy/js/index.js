@@ -65,6 +65,13 @@ $(document).ready(function(){
             document.querySelectorAll('.menu-item-has-children.active').forEach(subitem => subitem !== item ? subitem.classList.remove('active') : null);
             this.classList.toggle('active');
         }));
+
+        document.querySelectorAll('.sub-menu a').forEach(item => item.addEventListener('click', function (e) {
+            if (!e) e = event || window.event;
+            {
+                e.cancelBubble = true;
+            }
+        }))
     }
 
     function delete_all_cookie( name ) {
