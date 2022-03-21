@@ -50,7 +50,7 @@
 
                 <a href="mailto:{{$email}}" class="vacancy__link email {{$acf_group['vacancy_closed'] ? 'closed' : ''}}">{{$email}}</a>
 
-                <a class="vacancy__link phone">{{$phone}}</a>
+                <a class="vacancy__link phone" href="tel+{{str_replace(" ", "", $phone)}}">{{$phone}}</a>
             </div>
         </div>
     </article>

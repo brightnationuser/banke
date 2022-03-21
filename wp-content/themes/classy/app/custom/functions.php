@@ -62,3 +62,11 @@ function url_parts($n = null) {
 
     return $url_parts;
 }
+
+function admin_scripts() {
+
+    wp_enqueue_script('admin_jq_mask', get_template_directory_uri() . '/js/admin/jquery.mask.min.js');
+    wp_enqueue_script('admin_jq_input', get_template_directory_uri() . '/js/admin/admin_js.js');
+}
+
+add_action('admin_footer', 'admin_scripts');
