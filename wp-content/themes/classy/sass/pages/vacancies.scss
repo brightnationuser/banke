@@ -10,6 +10,7 @@
     &__content {
         margin-top: 30px;
         font-weight: 300;
+        font-size: 16px;
         color: #4A4A49;
 
         p:last-child {
@@ -42,7 +43,10 @@
         box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
         overflow: hidden;
+        height: 299px;
         position: relative;
+        display: flex;
+        flex-direction: column;
 
         &:hover {
             .vacancies-card__footer a {
@@ -62,11 +66,15 @@
             height: 100%;
             content: '';
             z-index: 1;
+            display: none;
         }
 
         &__body {
             padding: 40px 32px;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
 
             @media screen and (max-width: 1199px) {
                 padding: 40px 24px;
@@ -198,7 +206,7 @@
             display: -webkit-box;
             -webkit-box-orient: vertical;
             overflow: hidden;
-            -webkit-line-clamp: 1;
+            -webkit-line-clamp: 2;
 
             &.closed {
                 color: rgba(39, 39, 39, 0.6);
@@ -210,7 +218,7 @@
             font-size: 14px;
             line-height: 163%;
             color: #272727;
-            margin-top: 16px;
+            margin-top: auto;
             display: -webkit-box;
             -webkit-box-orient: vertical;
             overflow: hidden;
