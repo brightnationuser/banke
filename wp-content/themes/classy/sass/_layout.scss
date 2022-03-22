@@ -89,6 +89,7 @@ header.header {
 
       .hamburger {
         display: none;
+        -webkit-tap-highlight-color: transparent;
       }
 
       ul.menu__nav {
