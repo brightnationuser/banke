@@ -222,6 +222,7 @@
             display: -webkit-box;
             -webkit-box-orient: vertical;
             overflow: hidden;
+            height: 69px;
             -webkit-line-clamp: 3;
 
             p:not(:last-child) {
