@@ -6,6 +6,10 @@ html {
   color: $color-gray;
 }
 
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   display: flex;
