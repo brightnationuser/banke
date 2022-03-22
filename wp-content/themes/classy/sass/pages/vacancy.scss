@@ -30,6 +30,7 @@
         justify-content: flex-start;
         align-items: center;
         column-gap: 16px;
+        row-gap: 15px;
 
         @media screen and (max-width: 767px) {
             margin-top: 16px;
@@ -51,6 +52,25 @@
 
                 @media screen and (max-width: 767px) {
                     font-size: 14px;
+                    width: 100%;
+                    justify-content: flex-start;
+                    background: none;
+                    border-radius: 0;
+                    position: relative;
+                    z-index: 1;
+                    padding-left: 30px;
+
+                    &::before {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        content: '';
+                        width: 154px;
+                        height: 100%;
+                        background: #F2F6FC;
+                        border-radius: 2px;
+                        z-index: -1;
+                    }
                 }
             }
 
