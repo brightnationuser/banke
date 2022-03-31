@@ -1,5 +1,10 @@
 .page-template-classy-anniversary {
     min-width: 375px;
+    
+    .content {
+        position: relative;
+        overflow: hidden;
+    }
 
     h2::after {
         display: none;
