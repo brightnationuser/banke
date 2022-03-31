@@ -25,9 +25,9 @@
             <h2 class="pretitle event__title">About Event</h2>
 
             <div class="event__content">
-                <p>In 2021 Banke ApS celebrated the 10th anniversary. Unfortunately, COVID-19 prevented us from celebrating a decade in business in the style we would have liked to. We would therefore like to invite you to our 10+1 anniversary event which will be held on 29th of June at our new location at Mellemvej 20, 6430 Nordborg, Denmark. We have prepared a number of different Q&A sessions and other activities you can participate in covering various topics related to the business of electrifying working vehicle applications.</p>
+                <p>In 2021 Banke ApS celebrated it’s 10th anniversary. Unfortunately COVID-19 prevented us from celebrating a decade in business in the style we would have liked to. We would therefore like to invite you to our 10+1 anniversary event which will be held on the 29th of June at our new location at Mellemvej 20, 6430 Nordborg, Denmark. We have prepared a number of different Q&A sessions and other activities you can participate in covering various topics related to the business of electrifying working vehicle applications. </p>
 
-                <p>In parallel we will hold an Open House reception, where you can in an informal setting communicate with our team and other guests. You will also have the opportunity to look round our new production facilities, see our solutions in action and have all your questions answered by our expert engineers and technicians in an informal setting. Check out the program below and let us know which sessions you’d like to attend. </p>
+                <p>In parallel we will hold an Open House reception, where you can, in an informal setting, meet with our team and other guests. You will also have the opportunity to look round our new production facilities, see our solutions in action and have all your questions answered by our expert engineers and technicians. Check out the program below and let us know which sessions you’d like to attend.</p>
             </div>
         </div>
     </section>
@@ -214,9 +214,7 @@
                         <a class="nope">Nørherredhus Hotel</a>
 
                         <p>
-                            Located conveniently close to our factory.
-                            The hotel has only 20 rooms so if you want to book
-                            a room please let us know and will try to help.
+                            Located conveniently close to our factory. The hotel has only 20 rooms so if you want to book a room please let us know and we will try to help.
                         </p>
                     </div>
                 </div>
