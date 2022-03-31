@@ -11,6 +11,10 @@
     .content {
         padding: 0;
     }
+
+    sup {
+        font-size: 14px;
+    }
 }
 
 .btn {
@@ -562,14 +566,14 @@
                 border-bottom: 0.6px solid rgba(0, 92, 169, 0.7);
                 font-size: 18px;
                 line-height: 149%;
-                color: #005CA9;
+                text-decoration: none !important;
                 white-space: nowrap;
                 font-weight: 400;
+                color: #005CA9;
                 width: max-content;
 
-                &:hover {
+                &:not(.nope):hover {
                     color: #003670;
-                    text-decoration: none !important;
                     border-bottom: none;
                 }
 
@@ -590,7 +594,7 @@
     }
 }
 
-.contact {
+.contact-section {
     padding: 80px 0 85px;
     text-align: center;
     background: url('../images/bg/contact_bg.jpg') center no-repeat;

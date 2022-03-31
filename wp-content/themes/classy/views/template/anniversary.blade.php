@@ -9,7 +9,7 @@
             <h1 class="head__title">10+1 Anniversary</h1>
 
             <div class="head__row">
-                <p class="head__item"><img src="{{get_template_directory_uri()}}/images/icons/icon_calendar_blue.svg" alt="calendar"> 29TH of June, 2022</p>
+                <p class="head__item"><img src="{{get_template_directory_uri()}}/images/icons/icon_calendar_blue.svg" alt="calendar"> 29<sup>TH</sup> of June, 2022</p>
 
                 <p class="head__item"><img src="{{get_template_directory_uri()}}/images/icons/icon_clock_blue.svg" alt="clock"> 09:30</p>
 
@@ -36,7 +36,7 @@
         <div class="container">
             <h2 class="pretitle agenda__title">Agenda</h2>
 
-            <h3 class="agenda__subtitle">WEDNESDAY 29TH OF JUNE, 2022</h3>
+            <h3 class="agenda__subtitle">WEDNESDAY 29<sup>TH</sup> OF JUNE, 2022</h3>
 
             <div class="agenda__block">
                 <div class="agenda__item">
@@ -46,67 +46,67 @@
                 </div>
 
                 <div class="agenda__item">
-                    <p>10.00 – 10.30</p>
+                    <p>10:00 – 10:30</p>
 
                     <p>Rasmus BANKE “10 Years on the Rollercoaster”</p>
                 </div>
 
                 <div class="agenda__item">
-                    <p>10.30 - 11.15</p>
+                    <p>10:30 – 11:15</p>
 
                     <p>Tour of the Factory</p>
                 </div>
 
                 <div class="agenda__item">
-                    <p>11.15 - 12.15</p>
+                    <p>11:15 – 12:15</p>
 
                     <p>Q&A About Power Take-offs</p>
                 </div>
 
                 <div class="agenda__item">
-                    <p>12.15 - 13.15</p>
+                    <p>12:15 – 13:15</p>
 
                     <p>Lunch</p>
                 </div>
 
                 <div class="agenda__item">
-                    <p>13.15 - 14.15</p>
+                    <p>13:15 – 14:15</p>
 
                     <p>Q&A About Full-electric Powertrains</p>
                 </div>
 
                 <div class="agenda__item">
-                    <p>14.15 - 14.30</p>
+                    <p>14:15 – 14:30</p>
 
                     <p>Short Break</p>
                 </div>
 
                 <div class="agenda__item">
-                    <p>14.30 - 15.30</p>
+                    <p>14:30 – 15:30</p>
 
                     <p>Q&A About Hydrogen Fuel-cell Technology for Heavy Vehicles</p>
                 </div>
 
                 <div class="agenda__item">
-                    <p>15.30 - 15.45</p>
+                    <p>15:30 – 15:45</p>
 
                     <p>Short Break</p>
                 </div>
 
                 <div class="agenda__item">
-                    <p>15.45 - 16.00</p>
+                    <p>15:45 – 16:00</p>
 
                     <p>Rasmus BANKE Closing Remarks</p>
                 </div>
 
                 <div class="agenda__item">
-                    <p>16.00 - 18.00</p>
+                    <p>16:00 – 18:00</p>
 
                     <p>Networking/Customer Meetings</p>
                 </div>
 
                 <div class="agenda__item">
-                    <p>18.00</p>
+                    <p>18:00</p>
 
                     <p>Dinner</p>
                 </div>
@@ -211,7 +211,7 @@
                     <h3 class="accommodation-item__title">NORDBORG</h3>
 
                     <div class="accommodation-item__block">
-                        <a>Nørherredhus Hotel</a>
+                        <a class="nope">Nørherredhus Hotel</a>
 
                         <p>
                             Located conveniently close to our factory.
@@ -224,15 +224,15 @@
         </div>
     </section>
 
-    <section class="contact" id="contact_us">
+    <section class="contact-section" id="contact_us">
         <div class="container">
-            <h2 class="pretitle contact__title">Contact Us</h2>
+            <h2 class="pretitle contact-section__title">Contact Us</h2>
 
-            <div class="contact__descr">
+            <div class="contact-section__descr">
                 <p>For further information about the event, please contact Tetiana Gregersen</p>
             </div>
 
-            <ul class="contact__row">
+            <ul class="contact-section__row">
                 <li>
                     <a href="mailto:tg@banke.pro"><img src="{{get_template_directory_uri()}}/images/icons/icon_mail.svg" alt="mail"> tg@banke.pro</a>
                 </li>
