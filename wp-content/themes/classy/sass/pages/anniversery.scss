@@ -1,4 +1,5 @@
 .page-template-classy-anniversary {
+    min-width: 375px;
 
     h2::after {
         display: none;
@@ -78,7 +79,7 @@
     color: #003462;
 
     @media screen and (max-width: 991px) {
-        font-size: clamp(24px, 3.027vw, 30px);
+        font-size: 24px;
         line-height: 33px;
     }
 }
@@ -104,6 +105,10 @@
         content: '';
         background: url('../images/bg/anniversary_bg.jpg') center no-repeat;
         background-size: cover;
+
+        @media screen and (max-width: 375px) {
+            width: 200vw;
+        }
     }
 
     &__title {
@@ -116,7 +121,7 @@
         margin: 0;
 
         @media screen and (max-width: 1200px) {
-            font-size: clamp(36px, 3.750vw, 45px);
+            font-size: 36px;
             line-height: 145%;
         }
     }
@@ -150,7 +155,7 @@
         margin: 0;
 
         @media screen and (max-width: 1200px) {
-            font-size: clamp(16px, 1.500vw, 18px);
+            font-size: 16px;
             line-height: 22px;
         }
 
@@ -185,7 +190,7 @@
         max-width: 900px;
 
         @media screen and (max-width: 991px) {
-            font-size: clamp(16px, 1.816vw, 18px);
+            font-size: 16px;
             margin-top: 24px;
             line-height: 150%;
         }
@@ -259,11 +264,12 @@
         column-gap: 40px;
 
         @media screen and (max-width: 991px) {
-            column-gap: clamp(24px, 4.036vw, 40px);
+            column-gap: 32px;
         }
 
         @media screen and (max-width: 767px) {
             align-items: flex-start;
+            column-gap: 24px;
         }
 
         p {
@@ -505,7 +511,7 @@
 
         @media screen and (max-width: 991px) {
             padding-left: 0;
-            column-gap: clamp(30px, 11.100vw, 110px);
+            column-gap: 30px;
         }
 
         @media screen and (max-width: 767px) {
