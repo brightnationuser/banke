@@ -116,66 +116,66 @@
         </div>
     </section>
 
-    <section class="getting">
-        <div class="container">
-            <h2 class="pretitle getting__title">Getting to Nordborg by</h2>
+{{--    <section class="getting">--}}
+{{--        <div class="container">--}}
+{{--            <h2 class="pretitle getting__title">Getting to Nordborg by</h2>--}}
 
-            <div class="getting__row">
-                <div class="getting-item">
-                    <img src="{{get_template_directory_uri()}}/images/icons/icon_car.svg" alt="car">
+{{--            <div class="getting__row">--}}
+{{--                <div class="getting-item">--}}
+{{--                    <img src="{{get_template_directory_uri()}}/images/icons/icon_car.svg" alt="car">--}}
 
-                    <h3 class="getting-item__title">CAR</h3>
+{{--                    <h3 class="getting-item__title">CAR</h3>--}}
 
-                    <div class="getting-item__content">
-                        <ul>
-                            <li>
-                                Turn to Sønderborg
-                                direction (Kliplev exit) from
-                                the motorway A45
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+{{--                    <div class="getting-item__content">--}}
+{{--                        <ul>--}}
+{{--                            <li>--}}
+{{--                                Turn to Sønderborg--}}
+{{--                                direction (Kliplev exit) from--}}
+{{--                                the motorway A45--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="getting-item">
-                    <img src="{{get_template_directory_uri()}}/images/icons/icon_plane.svg" alt="plane">
+{{--                <div class="getting-item">--}}
+{{--                    <img src="{{get_template_directory_uri()}}/images/icons/icon_plane.svg" alt="plane">--}}
 
-                    <h3 class="getting-item__title">PLANE</h3>
+{{--                    <h3 class="getting-item__title">PLANE</h3>--}}
 
-                    <div class="getting-item__content">
-                        <ul>
-                            <li>
-                                From Copenhagen Airport –
-                                direct flight to Sønderborg
-                                <a href="https://alsieexpress.dk/en/" target="_blank" rel="nofollow noopener noreferrer">Frontpage - Alsie Express</a>
-                            </li>
+{{--                    <div class="getting-item__content">--}}
+{{--                        <ul>--}}
+{{--                            <li>--}}
+{{--                                From Copenhagen Airport –--}}
+{{--                                direct flight to Sønderborg--}}
+{{--                                <a href="https://alsieexpress.dk/en/" target="_blank" rel="nofollow noopener noreferrer">Frontpage - Alsie Express</a>--}}
+{{--                            </li>--}}
 
-                            <li>
-                                From Hamburg or Billund
-                                Airport – to rent a car
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+{{--                            <li>--}}
+{{--                                From Hamburg or Billund--}}
+{{--                                Airport – to rent a car--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="getting-item">
-                    <img src="{{get_template_directory_uri()}}/images/icons/icon_train.svg" alt="train">
+{{--                <div class="getting-item">--}}
+{{--                    <img src="{{get_template_directory_uri()}}/images/icons/icon_train.svg" alt="train">--}}
 
-                    <h3 class="getting-item__title">TRAIN</h3>
+{{--                    <h3 class="getting-item__title">TRAIN</h3>--}}
 
-                    <div class="getting-item__content">
-                        <ul>
-                            <li>
-                                Check railway services how to reach Sønderborg station
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+{{--                    <div class="getting-item__content">--}}
+{{--                        <ul>--}}
+{{--                            <li>--}}
+{{--                                Check railway services how to reach Sønderborg station--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <p class="getting__after">You are always welcome <br> to <a href="#contact_us">contact us</a> for more details</p>
-        </div>
-    </section>
+{{--            <p class="getting__after">You are always welcome <br> to <a href="#contact_us">contact us</a> for more details</p>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
     <section class="accommodation">
         <div class="container">
