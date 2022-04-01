@@ -477,10 +477,10 @@
 }
 
 .accommodation {
-    padding: 40px 0 95px;
+    padding: 60px 0 95px;
 
     @media screen and (max-width: 991px) {
-        padding: 0 0 55px;
+        padding: 55px 0;
     }
 
     &__title {
