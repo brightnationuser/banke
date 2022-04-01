@@ -201,12 +201,16 @@
         line-height: 170%;
         color: #4A4A49;
         margin: 30px auto 0;
-        max-width: 900px;
+        max-width: 930px;
 
         @media screen and (max-width: 991px) {
             font-size: 16px;
             margin-top: 24px;
             line-height: 150%;
+            
+            br {
+                display: none;
+            }
         }
 
         @media screen and (max-width: 767px) {
