@@ -112,7 +112,7 @@
                 </div>
             </div>
 
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSedU3fuugqiPRed8ZXsabILbVg_52UdDshncz98BEW4rEjItA/viewform" target="_blank" rel="nofollow noopener noreferrer" class="btn--anniversary btn--agenda">REGISTRY NOW</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSedU3fuugqiPRed8ZXsabILbVg_52UdDshncz98BEW4rEjItA/viewform" target="_blank" rel="nofollow noopener noreferrer" class="btn--anniversary btn--agenda">REGISTER NOW</a>
         </div>
     </section>
 
