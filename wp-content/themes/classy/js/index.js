@@ -23,6 +23,8 @@ $(document).ready(function () {
     // openVideo();
 
     // video();
+    $('[name="vacancy-name"]').val($('.vacancy__title').text());
+
     popup();
     textTrim('.js-trim-text');
     textTrim('.js-intro-content', {show_block:true});
