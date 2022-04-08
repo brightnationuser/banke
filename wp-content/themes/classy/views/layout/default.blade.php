@@ -66,7 +66,7 @@
         <meta property="og:type" content="article" />
 
         @if($acf_og_description)
-            <meta name="description" content="{{ $acf_og_description }}">
+{{--            <meta name="description" content="{{ $acf_og_description }}">--}}
             <meta property="og:description" content="{{ $acf_og_description }}" />
         @endif
 
