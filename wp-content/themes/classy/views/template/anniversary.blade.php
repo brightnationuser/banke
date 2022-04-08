@@ -13,7 +13,7 @@
 
                 <p class="head__item"><img src="{{get_template_directory_uri()}}/images/icons/icon_clock_blue.svg" alt="clock"> 09:30</p>
 
-                <p class="head__item"><img src="{{get_template_directory_uri()}}/images/icons/icon_mark.svg" alt="mark"> Mellemvej 20, 6430 Nordborg, Denmark</p>
+                <a target="_blank" rel="noopener nofollow noreferrer" href="https://www.google.com/maps/place/Mellemvej+20,+6430+Nordborg,+%D0%94%D0%B0%D0%BD%D1%96%D1%8F/@55.0509199,9.7482639,16.25z/data=!4m5!3m4!1s0x47b335874c090157:0xb892b049cd1eaf63!8m2!3d55.0508862!4d9.750637" class="head__item"><img src="{{get_template_directory_uri()}}/images/icons/icon_mark.svg" alt="mark"> Mellemvej 20, 6430 Nordborg, Denmark</a>
             </div>
 
             <a href="#agenda" class="btn--anniversary btn--head">More Information</a>
@@ -112,70 +112,70 @@
                 </div>
             </div>
 
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSedU3fuugqiPRed8ZXsabILbVg_52UdDshncz98BEW4rEjItA/viewform" target="_blank" rel="nofollow noopener noreferrer" class="btn--anniversary btn--agenda">REGISTRY NOW</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSedU3fuugqiPRed8ZXsabILbVg_52UdDshncz98BEW4rEjItA/viewform" target="_blank" rel="nofollow noopener noreferrer" class="btn--anniversary btn--agenda">REGISTER NOW</a>
         </div>
     </section>
 
-    <section class="getting">
-        <div class="container">
-            <h2 class="pretitle getting__title">Getting to Nordborg by</h2>
+{{--    <section class="getting">--}}
+{{--        <div class="container">--}}
+{{--            <h2 class="pretitle getting__title">Getting to Nordborg by</h2>--}}
 
-            <div class="getting__row">
-                <div class="getting-item">
-                    <img src="{{get_template_directory_uri()}}/images/icons/icon_car.svg" alt="car">
+{{--            <div class="getting__row">--}}
+{{--                <div class="getting-item">--}}
+{{--                    <img src="{{get_template_directory_uri()}}/images/icons/icon_car.svg" alt="car">--}}
 
-                    <h3 class="getting-item__title">CAR</h3>
+{{--                    <h3 class="getting-item__title">CAR</h3>--}}
 
-                    <div class="getting-item__content">
-                        <ul>
-                            <li>
-                                Turn to Sønderborg
-                                direction (Kliplev exit) from
-                                the motorway A45
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+{{--                    <div class="getting-item__content">--}}
+{{--                        <ul>--}}
+{{--                            <li>--}}
+{{--                                Turn to Sønderborg--}}
+{{--                                direction (Kliplev exit) from--}}
+{{--                                the motorway A45--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="getting-item">
-                    <img src="{{get_template_directory_uri()}}/images/icons/icon_plane.svg" alt="plane">
+{{--                <div class="getting-item">--}}
+{{--                    <img src="{{get_template_directory_uri()}}/images/icons/icon_plane.svg" alt="plane">--}}
 
-                    <h3 class="getting-item__title">PLANE</h3>
+{{--                    <h3 class="getting-item__title">PLANE</h3>--}}
 
-                    <div class="getting-item__content">
-                        <ul>
-                            <li>
-                                From Copenhagen Airport –
-                                direct flight to Sønderborg
-                                <a href="https://alsieexpress.dk/en/" target="_blank" rel="nofollow noopener noreferrer">Frontpage - Alsie Express</a>
-                            </li>
+{{--                    <div class="getting-item__content">--}}
+{{--                        <ul>--}}
+{{--                            <li>--}}
+{{--                                From Copenhagen Airport –--}}
+{{--                                direct flight to Sønderborg--}}
+{{--                                <a href="https://alsieexpress.dk/en/" target="_blank" rel="nofollow noopener noreferrer">Frontpage - Alsie Express</a>--}}
+{{--                            </li>--}}
 
-                            <li>
-                                From Hamburg or Billund
-                                Airport – to rent a car
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+{{--                            <li>--}}
+{{--                                From Hamburg or Billund--}}
+{{--                                Airport – to rent a car--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="getting-item">
-                    <img src="{{get_template_directory_uri()}}/images/icons/icon_train.svg" alt="train">
+{{--                <div class="getting-item">--}}
+{{--                    <img src="{{get_template_directory_uri()}}/images/icons/icon_train.svg" alt="train">--}}
 
-                    <h3 class="getting-item__title">TRAIN</h3>
+{{--                    <h3 class="getting-item__title">TRAIN</h3>--}}
 
-                    <div class="getting-item__content">
-                        <ul>
-                            <li>
-                                Check railway services how to reach Sønderborg station
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+{{--                    <div class="getting-item__content">--}}
+{{--                        <ul>--}}
+{{--                            <li>--}}
+{{--                                Check railway services how to reach Sønderborg station--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <p class="getting__after">You are always welcome <br> to <a href="#contact_us">contact us</a> for more details</p>
-        </div>
-    </section>
+{{--            <p class="getting__after">You are always welcome <br> to <a href="#contact_us">contact us</a> for more details</p>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
     <section class="accommodation">
         <div class="container">
@@ -240,7 +240,7 @@
                 </li>
             </ul>
 
-            <a href="{{get_permalink(get_page_by_path('contacts')->ID)}}" class="btn--anniversary btn--contact">Contact us</a>
+{{--            <a href="{{get_permalink(get_page_by_path('contacts')->ID)}}" class="btn--anniversary btn--contact">Contact us</a>--}}
         </div>
     </section>
 @stop

@@ -19,11 +19,20 @@ import YtApiPlayer from './blocks/yt-api-player';
 import blockToggle from "./blocks/block-toggle";
 import playHtmlVideo from "./helpers/play-html-video";
 
+document.addEventListener( 'wpcf7invalid', function( e ) {
+    if (document.querySelector('.modal-team__btn .wpcf7-not-valid-tip'))
+    {
+        document.querySelector('.wpcf7-validation-errors').textContent = document.querySelector('.modal-team__btn .wpcf7-not-valid-tip').textContent;
+    }
+}, false );
+
 $(document).ready(function () {
 
     // openVideo();
 
     // video();
+    $('[name="vacancy-name"]').val($('.vacancy__title').text());
+
     popup();
     textTrim('.js-trim-text');
     textTrim('.js-intro-content', {show_block:true});

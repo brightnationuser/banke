@@ -13,7 +13,7 @@
     }
 
     sup {
-        font-size: 14px;
+        font-size: 10px;
     }
 }
 
@@ -104,10 +104,6 @@
         content: '';
         background: url('../images/bg/anniversary_bg.jpg') center no-repeat;
         background-size: cover;
-
-        @media screen and (max-width: 375px) {
-            width: 200vw;
-        }
     }
 
     &__title {
@@ -215,7 +211,7 @@
             margin: 0;
 
             @media screen and (max-width: 767px) {
-                font-weight: 300;
+                font-weight: 300 !important;
             }
 
             &:not(:last-child) {
@@ -316,13 +312,14 @@
         &:not(:last-child) {
 
             p:last-child {
-                border-bottom: 1px solid #4A4A49;
+                border-bottom: 1px solid rgba(74, 74, 73, .2);
             }
         }
     }
 }
 
 .getting {
+    display: none;
     padding: 80px 0 40px;
 
     @media screen and (max-width: 991px) {
@@ -347,6 +344,10 @@
         @media screen and (max-width: 991px) {
             margin-top: 45px;
             grid-template-columns: minmax(0, 327px);
+        }
+
+        @media screen and (max-width: 767px) {
+            justify-content: flex-start;
         }
     }
 
@@ -434,7 +435,7 @@
     }
 
     &__after {
-        font-weight: 600;
+        font-weight: 600 !important;
         font-size: 24px;
         line-height: 170%;
         text-align: center;
@@ -448,6 +449,10 @@
 
         @media screen and (max-width: 767px) {
             text-align: left;
+        }
+
+        @media screen and (max-width: 575px) {
+            text-align: center;
         }
 
         br {
@@ -472,10 +477,10 @@
 }
 
 .accommodation {
-    padding: 40px 0 95px;
+    padding: 60px 0 95px;
 
     @media screen and (max-width: 991px) {
-        padding: 0 0 55px;
+        padding: 60px 0 55px;
     }
 
     &__title {
@@ -506,7 +511,7 @@
             margin: 0;
 
             @media screen and (max-width: 767px) {
-                font-weight: 300;
+                font-weight: 300 !important;
             }
         }
     }
@@ -554,7 +559,7 @@
                 content: '';
                 top: 50%;
                 left: 0;
-                background: url('../images/icons/icon_mark.svg') center no-repeat;
+                background: url('../images/icons/icon_mark_blue.svg') center no-repeat;
                 background-size: contain;
                 width: 19px;
                 height: 24px;
