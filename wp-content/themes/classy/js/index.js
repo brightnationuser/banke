@@ -18,6 +18,13 @@ import tipsImage from './blocks/tips-image';
 import YtApiPlayer from './blocks/yt-api-player';
 import blockToggle from "./blocks/block-toggle";
 
+document.addEventListener( 'wpcf7invalid', function( e ) {
+    if (document.querySelector('.modal-team__btn .wpcf7-not-valid-tip'))
+    {
+        document.querySelector('.wpcf7-validation-errors').textContent = document.querySelector('.modal-team__btn .wpcf7-not-valid-tip').textContent;
+    }
+}, false );
+
 $(document).ready(function () {
 
     // openVideo();
