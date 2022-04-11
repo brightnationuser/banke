@@ -3,6 +3,10 @@
 }
 
 .vacancies {
+    @media screen and (max-width: 575px) {
+        padding-top: 20px;
+    }
+
     &__title {
         margin: 0;
     }
