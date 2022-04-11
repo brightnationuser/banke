@@ -5,7 +5,7 @@
 @section('content')
     <section class="vacancies">
         <div class="container">
-            <h2 class="vacancies__title">{{get_the_title()}}</h2>
+            <h1 class="h2 vacancies__title">{{get_the_title()}}</h1>
 
             @if(get_the_content())
                 <div class="vacancies__content">{!! apply_filters('the_content', get_the_content()) !!}</div>
