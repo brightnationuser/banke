@@ -35,21 +35,23 @@ function insert_video($atts) {
     return $html;
 }
 
-add_filter('wpseo_metadesc','custom_meta');
-function custom_meta( $desc ){
+add_filter('wpseo_opengraph_desc', '__return_false' );
 
-    global $post;
-
-    $stripped_content = preg_replace('/\[[A-Za-z_\s="0-9]*\]/', '', strip_tags($post->post_content));
-    $stripped_content = preg_replace('/\n/', ' ', $stripped_content);
-    $stripped_content = preg_replace('/\t/', '', $stripped_content);
-
-    if(empty($desc)) {
-        $desc = substr(preg_replace('/\s\s+/', ' ', $stripped_content), 0, 130) . '...';
-    }
-
-    return $desc;
-}
+//add_filter('wpseo_metadesc','custom_meta');
+//function custom_meta( $desc ){
+//
+//    global $post;
+//
+//    $stripped_content = preg_replace('/\[[A-Za-z_\s="0-9]*\]/', '', strip_tags($post->post_content));
+//    $stripped_content = preg_replace('/\n/', ' ', $stripped_content);
+//    $stripped_content = preg_replace('/\t/', '', $stripped_content);
+//
+//    if(empty($desc)) {
+//        $desc = substr(preg_replace('/\s\s+/', ' ', $stripped_content), 0, 130) . '...';
+//    }
+//
+//    return $desc;
+//}
 
 function url_parts($n = null) {
     $url = $_SERVER["REQUEST_URI"];
