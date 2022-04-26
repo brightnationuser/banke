@@ -44,7 +44,7 @@
                                 <div>
                                     @php
                                         echo "<pre>";
-                                        print_r($row['image']['url']);
+                                        print_r($row);
                                         echo "</pre>";
                                     @endphp
                                 </div>
