@@ -41,6 +41,14 @@
                     @foreach($post->getAcfByKey('what_we_do') as $row)
                         <div class="what-we-do__item item">
                             <div class="item__image">
+                                <div>
+                                    @php
+                                        echo "<pre>";
+                                        print_r($row['image']['url']);
+                                        echo "</pre>";
+                                    @endphp
+                                </div>
+
                                 <a href="{{ $row['link'] }}">
                                     <img src="{!! $row['image']['url'] !!}" alt="{{ $row['title'] }}">
                                 </a>
