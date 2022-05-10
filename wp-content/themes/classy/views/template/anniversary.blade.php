@@ -16,7 +16,7 @@
                 <a target="_blank" rel="noopener nofollow noreferrer" href="https://www.google.com/maps/place/Mellemvej+20,+6430+Nordborg,+%D0%94%D0%B0%D0%BD%D1%96%D1%8F/@55.0509199,9.7482639,16.25z/data=!4m5!3m4!1s0x47b335874c090157:0xb892b049cd1eaf63!8m2!3d55.0508862!4d9.750637" class="head__item"><img src="{{get_template_directory_uri()}}/images/icons/icon_mark.svg" alt="mark"> Mellemvej 20, 6430 Nordborg, Denmark</a>
             </div>
 
-            <a href="#agenda" class="btn--anniversary btn--head">More Information</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSedU3fuugqiPRed8ZXsabILbVg_52UdDshncz98BEW4rEjItA/viewform" target="_blank" rel="nofollow noopener noreferrer" class="btn--anniversary btn--head">REGISTER Now</a>
         </div>
     </section>
 
