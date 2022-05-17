@@ -3,6 +3,8 @@
  *
  * @returns {void}
  */
+import Cookies from 'js-cookie';
+
 const popup = () => {
     const body = $('body');
     const blocks = $('.js-popup');
@@ -38,6 +40,10 @@ const popup = () => {
             localStorage.setItem('popup-vacancy', '1');
         }
 
+        if (popup.attr('id') === 'popup-anniversary') {
+            Cookies.set('popup-anniversary', 'closed', { expires: 7 })
+        }
+
         popup.removeClass(activeClass);
 
         /*if (iframe.length) {
@@ -57,6 +63,12 @@ const popup = () => {
     if (body.hasClass('home') && localStorage.getItem('popup-vacancy') !== '1') {
         setTimeout(() => {
             $('#popup-vacancy').addClass(activeClass);
+        }, 2000);
+    }
+
+    if (body.hasClass('home') && Cookies?.get('popup-anniversary') !== 'closed') {
+        setTimeout(() => {
+            $('#popup-anniversary').addClass(activeClass);
         }, 2000);
     }
 };

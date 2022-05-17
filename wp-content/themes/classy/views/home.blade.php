@@ -103,7 +103,8 @@
         'image' => '/wp-content/themes/classy/images/video-preview.jpg',
     ])--}}
     @php
-      $vacancy_popup = get_field('vacancy_popup')
+        $vacancy_popup = get_field('vacancy_popup');
+        $anniversary_popup = get_field('anniversary_popup');
     @endphp
 
     @if(!empty($vacancy_popup) && $vacancy_popup['show'])
@@ -112,6 +113,16 @@
             'text' => $vacancy_popup['text'],
             'button_link' => $vacancy_popup['button_link'],
             'button_text' => $vacancy_popup['button_text']
+        ])
+    @endif
+
+    @if(!empty($anniversary_popup) && $anniversary_popup['show'])
+        @include('partials.popup-anniversary', [
+            'title' => $anniversary_popup['title'],
+            'date' => $anniversary_popup['date'],
+            'time' => $anniversary_popup['time'],
+            'address' => $anniversary_popup['address'],
+            'link' => $anniversary_popup['link']
         ])
     @endif
 
