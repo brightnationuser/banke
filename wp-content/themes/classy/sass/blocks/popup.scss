@@ -162,6 +162,8 @@
 
       &__content {
         background-image: url('/wp-content/themes/classy/images/pages/home/anniversary_popup_bg.jpg');
+        background-position: center;
+        background-size: cover;
         color: #fff;
         min-height: 390px;
         display: flex;
@@ -265,7 +267,8 @@
         cursor: pointer;
         position: relative;
         overflow: hidden;
-        background: linear-gradient(90deg, #005CA9 0%, #003462 122.6%), #FFFFFF;
+        //background: linear-gradient(90deg, #005CA9 0%, #003462 122.6%), #FFFFFF;
+        background-color: #005CA9;
         color: transparent;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -285,7 +288,6 @@
           width: 100%;
           height: 100%;
           content: '';
-          //background: linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(92.19deg, #005CA9 0%, #013663 100%);
           background-color: #fff;
           position: absolute;
           transition: all ease .7s;
@@ -295,13 +297,10 @@
         }
 
         &:hover {
-          color: #fff;
-          -webkit-background-clip: revert;
-          -webkit-text-fill-color: revert;
+          background-color: #fff;
 
           &::before {
             background-color: #005CA9;
-            //background: linear-gradient(90deg, #005CA9 0%, #003462 122.6%);
           }
         }
       }
