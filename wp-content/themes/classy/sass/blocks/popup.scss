@@ -210,6 +210,10 @@
           line-height: 22px;
         }
 
+        sup {
+          font-size: 10px;
+        }
+
         p {
           margin: 0;
           padding-left: 30px;
@@ -253,6 +257,7 @@
         width: 161px;
         height: 46px;
         align-items: center;
+        transition: all ease .4s;
         justify-content: center;
         outline: none;
         cursor: pointer;
@@ -279,6 +284,7 @@
           content: '';
           background: linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(92.19deg, #005CA9 0%, #013663 100%);
           position: absolute;
+          transition: all ease .4s;
           top: 0;
           z-index: -1;
           left: 0;
@@ -372,6 +378,7 @@
         &::after {
           width: 21px;
           background-color: #4A4A49;
+          transition: all ease .4s;
         }
       }
     }

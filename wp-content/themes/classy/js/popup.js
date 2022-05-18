@@ -71,6 +71,11 @@ const popup = () => {
             $('#popup-anniversary').addClass(activeClass);
         }, 2000);
     }
+
+    $('.popup__link').click(function () {
+        Cookies.set('popup-anniversary', 'closed', { expires: 7 });
+        window.location.href = $(this).data('link');
+    });
 };
 
 export default popup;
