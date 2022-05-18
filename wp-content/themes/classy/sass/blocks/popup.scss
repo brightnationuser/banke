@@ -160,7 +160,7 @@
       }
 
       &__content {
-        background-image: url('/wp-content/themes/classy/images/pages/home/anniversary_popup_bg.png');
+        background-image: url('/wp-content/themes/classy/images/pages/home/anniversary_popup_bg.jpg');
         color: #fff;
         min-height: 390px;
         display: flex;
@@ -169,6 +169,7 @@
 
         @media screen and (max-width: 575px) {
           min-height: 383px;
+          background-image: url('/wp-content/themes/classy/images/pages/home/anniversary_popup_bg_m.jpg');
         }
       }
 
