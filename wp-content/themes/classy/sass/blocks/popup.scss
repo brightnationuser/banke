@@ -236,13 +236,17 @@
             height: 18px;
 
             @media screen and (max-width: 575px) {
-              top: 0;
+              top: 1px;
               transform: unset;
             }
           }
 
           &.date::before {
             background-image: url('/wp-content/themes/classy/images/icons/icon_calendar_white.svg');
+
+            @media screen and (max-width: 575px) {
+              top: 5px;
+            }
           }
 
           &.time::before {
@@ -251,6 +255,10 @@
 
           &.address::before {
             background-image: url('/wp-content/themes/classy/images/icons/icon_location_white.svg');
+
+            @media screen and (max-width: 575px) {
+              top: 3px;
+            }
           }
         }
       }
