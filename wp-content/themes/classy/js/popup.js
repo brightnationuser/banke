@@ -66,7 +66,7 @@ const popup = () => {
         }, 2000);
     }
 
-    if (body.hasClass('home') && Cookies?.get('popup-anniversary') !== 'closed') {
+    if (body.hasClass('home') && Cookies.get('popup-anniversary') !== 'closed') {
         setTimeout(() => {
             $('#popup-anniversary').addClass(activeClass);
         }, 2000);
