@@ -262,6 +262,14 @@
 }
 
 .single-stories {
+    .news {
+        &__title {
+            @media screen and (max-width: 575px) {
+                font-size: 24px;
+            }
+        }
+    }
+
     .content {
         &__img {
             @media screen and (max-width: 767px) {
@@ -283,6 +291,8 @@
         }
 
         &__content {
+            margin-right: 45px;
+
             @media screen and (max-width: 767px) {
                 margin-right: 0;
             }
@@ -307,9 +317,9 @@
                 justify-content: flex-start;
                 align-items: center;
                 column-gap: 10px;
+                max-width: 100%;
 
                 @media screen and (max-width: 767px) {
-                    max-width: 100%;
                     margin: 0;
                 }
 

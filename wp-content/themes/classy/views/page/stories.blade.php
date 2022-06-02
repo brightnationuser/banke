@@ -27,10 +27,6 @@
                         </div>
                     </a>
                 @endforeach
-
-                <div class="news m_fake"></div>
-                <div class="news m_fake"></div>
-                <div class="news m_fake"></div>
             </div>
         </div>
 
