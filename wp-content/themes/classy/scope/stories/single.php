@@ -8,6 +8,7 @@ $related = $framework::get_posts([
     'post_type' => 'stories',
     'post_status' => 'publish',
     'posts_per_page' => 5,
+    'post__not_in' => [$post->ID],
     'orderby' => 'date',
     'order' => 'DESC',
 ]);
