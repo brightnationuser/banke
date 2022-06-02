@@ -59,6 +59,10 @@
                         font-size: 14px;
                         line-height: 19px;
                         color: #4A4A49;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
                     }
                 }
 
@@ -104,4 +108,12 @@
             }
         }
     }
+}
+
+.page-template-classy-stories .content .news-list .news .news__content .news__title {
+    font-size: 14px;
+}
+
+.page-template-classy-stories .content .news-list-wrapper {
+    overflow: revert;
 }
