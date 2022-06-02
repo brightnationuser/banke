@@ -17,13 +17,13 @@
                         </div>
 
                         <div class="news__content">
-                            <div class="news__date">
-                                {{ $news_item->getDate() }}
-                            </div>
-
                             <div class="news__title">
                                 {!! $news_item->title() !!}
                             </div>
+
+                            @if(get_field('mini_description', $news_item->ID))
+                                <p class="news__descr">{{get_field('mini_description', $news_item->ID)}}</p>
+                            @endif
                         </div>
                     </a>
                 @endforeach

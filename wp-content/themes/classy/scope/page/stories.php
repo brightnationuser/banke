@@ -5,20 +5,12 @@ $page = $framework::get_post();
 
 $current_page = $_GET['cpage'];
 
-$query = [
-    'acf_date' => array(
-        'key' => 'acf_date',
-        'compare' => 'EXISTS'
-    ),
-];
-
 $_news = new WP_Query([
     'post_type' => 'stories',
     'posts_per_page' => 8,
     'paged' => $current_page,
-    'orderby' => 'acf_date',
+    'orderby' => 'date',
     'order' => 'DESC',
-    'meta_query' => $query,
 ]);
 
 $news = [];
