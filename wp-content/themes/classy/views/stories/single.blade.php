@@ -3,10 +3,6 @@
 @section('content')
     <div class="container">
         <div class="article__heading">
-            <div class="news__date">
-                {!! $post->getDate() !!}
-            </div>
-
             <h1 class="news__title">
                 {!! $post->title() !!}
             </h1>
@@ -29,17 +25,11 @@
                             <div class="article__related">
 
                                 <a href="{{ $news_item->permalink() }}" class="item">
-                                    <div class="item__img" style="background-image: url('{{ $news_item->getAcfImage()->src('large') }}')"></div>
+                                    @if(get_field('acf_image', $news_item->ID))
+                                        <div class="item__img" style="background-image: url('{{ wp_get_attachment_image_url(get_field('acf_image', $news_item->ID), 'large') }}')"></div>
+                                    @endif
 
-                                    <div class="item__content">
-                                        <div class="item__date">
-                                            {{ $news_item->getDate() }}
-                                        </div>
-
-                                        <div class="item__title">
-                                            {!! strlen($news_item->title()) > 150 ? substr($news_item->title(), 0, 150) . '...' : $news_item->title() !!}
-                                        </div>
-                                    </div>
+                                    <div class="item__title">{{$news_item->title()}}</div>
                                 </a>
                             </div>
                         @endforeach

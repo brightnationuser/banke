@@ -52,6 +52,14 @@
                         line-height: 21px;
                         color: #4A4A49;
                     }
+
+                    .news__descr {
+                        margin-bottom: 0;
+                        font-weight: 300;
+                        font-size: 14px;
+                        line-height: 19px;
+                        color: #4A4A49;
+                    }
                 }
 
                 &:hover {
@@ -75,4 +83,25 @@
         }
     }
 
+}
+
+.page-template-classy-stories {
+    .content {
+        .news {
+            &-list {
+                @media screen and (max-width: 575px) {
+                    flex-direction: column;
+                    row-gap: 30px;
+                    max-width: 100%;
+                }
+
+                .news {
+                    @media screen and (max-width: 575px) {
+                        width: 100%;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
 }

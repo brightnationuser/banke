@@ -1,4 +1,4 @@
-.single-news {
+.single-news, .single-stories {
 
     .product-review {
         color: #373737;
@@ -255,6 +255,93 @@
 
                 .item {
                     margin-right: 30px;
+                }
+            }
+        }
+    }
+}
+
+.single-stories {
+    .content {
+        &__img {
+            @media screen and (max-width: 767px) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .article {
+        @media screen and (max-width: 767px) {
+            flex-direction: column;
+            row-gap: 40px;
+        }
+
+        &__sidebar {
+            @media screen and (max-width: 767px) {
+                max-width: 100%;
+            }
+        }
+
+        &__content {
+            @media screen and (max-width: 767px) {
+                margin-right: 0;
+            }
+        }
+
+        &__relateds {
+            @media screen and (max-width: 767px) {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 270px));
+                column-gap: 24px;
+                row-gap: 20px;
+            }
+
+            @media screen and (max-width: 575px) {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        &__related {
+            .item {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                column-gap: 10px;
+
+                @media screen and (max-width: 767px) {
+                    max-width: 100%;
+                    margin: 0;
+                }
+
+                &:hover {
+                    .item__img {
+                        background-size: 110% 110%;
+                    }
+                }
+
+                &__img {
+                    height: 80px;
+                    border-radius: 6px;
+                    min-width: 99px;
+                    width: 100%;
+                    max-width: 99px;
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                    background-position: center;
+                    overflow: hidden;
+                    transition: all ease .4s;
+                }
+
+                &__title {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    font-size: 14px;
+
+                    @media screen and (max-width: 575px) {
+                        -webkit-line-clamp: 2;
+                    }
                 }
             }
         }

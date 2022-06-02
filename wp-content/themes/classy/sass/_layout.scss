@@ -224,6 +224,28 @@ header.header {
           }
         }
 
+        &>li.menu-item--gradient {
+          &>a {
+            background: linear-gradient(90deg, #0575E6 0.01%, #005CA8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
+          &.menu-item-has-children {
+            @media screen and (max-width: 1200px) {
+              &::before {
+                background: url('../images/icons/icon-dropdown-blue.svg') center no-repeat;
+                background-size: contain;
+              }
+            }
+
+            &>a::before {
+              background: url('../images/icons/icon-dropdown-blue.svg') center no-repeat;
+              background-size: contain;
+            }
+          }
+        }
+
         &>li.menu-item {
           position: relative;
           font-weight: 600;
@@ -244,6 +266,7 @@ header.header {
           &>a {
             color: $color-blue;
             padding: 0 0 15px 0;
+            font-weight: inherit;
 
             @media screen and (max-width: 1200px) {
               padding: 0;
