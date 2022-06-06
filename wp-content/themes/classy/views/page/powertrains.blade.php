@@ -8,7 +8,9 @@
         @include('partials.tabs', ['parent_id' => get_the_ID()])
     @endif
 
-    @php($intro = $post->getAcfByKey('powertrains_intro'))
+    @php
+        $intro = $post->getAcfByKey('powertrains_intro');
+    @endphp
     <div class="p-powertrains">
         <section class="intro">
             <h1 class="animated fadeInDown h2" style="animation-delay: .7s">{{ $post->post_title }}</h1>
@@ -45,7 +47,10 @@
         <section class="key-benefits">
             <div class="container">
                 <h2>{{ !empty($post->getAcfByKey('benefits_title')) ? $post->getAcfByKey('benefits_title') : 'Key Benefits' }}</h2>
-                @php($benefits = $post->getAcfByKey('benefits'))
+                @php
+                    $benefits = $post->getAcfByKey('benefits')
+                @endphp
+
                 @if(!empty($benefits))
                     <div class="key-benefits__list d-flex">
                         @foreach($benefits as $row)
@@ -85,4 +90,15 @@
         ])
     </div>
 
+    @php
+        $youtube_popup = get_field('video_popup_group');
+    @endphp
+
+    @if(!empty($youtube_popup) && $youtube_popup['show'])
+        @include('partials.popup-youtube', [
+            'title' => $youtube_popup['title'],
+            'image' => $youtube_popup['video_preview'] ? $youtube_popup['video_preview']['sizes']['large'] : '/wp-content/themes/classy/images/video-preview.jpg',
+            'video_id' => $youtube_popup['video_id']
+        ])
+    @endif
 @stop

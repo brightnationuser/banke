@@ -31,10 +31,6 @@ const popup = () => {
     close.on('click', function () {
         const popup = $(this).closest('.js-popup');
         //const iframe = popup.find('iframe');
-
-        if (popup.attr('id') === 'youtube-video') {
-            Cookies.set('popup-youtube', 'closed', { expires: 1 })
-        }
         
         if (popup.attr('id') === 'popup-vacancy') {
             localStorage.setItem('popup-vacancy', '1');
@@ -54,7 +50,7 @@ const popup = () => {
         }*/
     });
 
-    if (body.hasClass('home') && Cookies.get('popup-youtube') !== 'closed') {
+    if (body.hasClass('page-template-classy-powertrains')) {
         setTimeout(() => {
             $('#youtube-video').addClass(activeClass);
         }, 2000);
