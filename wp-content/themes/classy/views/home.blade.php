@@ -100,16 +100,7 @@
     @php
         $vacancy_popup = get_field('vacancy_popup');
         $anniversary_popup = get_field('anniversary_popup');
-        $youtube_popup = get_field('video_popup_group');
     @endphp
-
-    @if(!empty($youtube_popup) && $youtube_popup['show'])
-        @include('partials.popup-youtube', [
-            'title' => $youtube_popup['title'],
-            'image' => $youtube_popup['video_preview'] ? $youtube_popup['video_preview']['sizes']['large'] : '/wp-content/themes/classy/images/video-preview.jpg',
-            'video_id' => $youtube_popup['video_id']
-        ])
-    @endif
 
     @if(!empty($vacancy_popup) && $vacancy_popup['show'])
         @include('partials.popup-vacancy', [
