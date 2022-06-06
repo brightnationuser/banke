@@ -29,7 +29,7 @@ $(document).ready(function () {
 
     // openVideo();
 
-    // video();
+    video();
     $('[name="vacancy-name"]').val($('.vacancy__title').text());
 
     popup();

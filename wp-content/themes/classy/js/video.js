@@ -14,8 +14,6 @@ const video = () => {
   playerEl.each(function (index) {
     let playerEl = $(this)
 
-    console.log('check player el ', playerEl)
-
     const video = playerEl.parents('.js-video')
     const play = video.find('.js-video-play')
     const close = video.parents('.js-popup').find('.js-popup-close')
