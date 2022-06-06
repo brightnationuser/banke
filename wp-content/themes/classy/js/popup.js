@@ -33,7 +33,7 @@ const popup = () => {
         //const iframe = popup.find('iframe');
 
         if (popup.attr('id') === 'youtube-video') {
-            localStorage.setItem('popup-youtube', '1');
+            Cookies.set('popup-youtube', 'closed', { expires: 1 })
         }
         
         if (popup.attr('id') === 'popup-vacancy') {
@@ -54,11 +54,11 @@ const popup = () => {
         }*/
     });
 
-    /*if (body.hasClass('home') && localStorage.getItem('popup-youtube') !== '1') {
+    if (body.hasClass('home') && Cookies.get('popup-youtube') !== 'closed') {
         setTimeout(() => {
             $('#youtube-video').addClass(activeClass);
         }, 2000);
-    }*/
+    }
     
     if (body.hasClass('home') && localStorage.getItem('popup-vacancy') !== '1') {
         setTimeout(() => {
