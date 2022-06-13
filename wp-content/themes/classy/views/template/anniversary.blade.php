@@ -46,61 +46,55 @@
                 </div>
 
                 <div class="agenda__item">
-                    <p>10:00 – 10:30</p>
+                    <p>10:00 – 11:00</p>
 
-                    <p>Rasmus BANKE “10 Years on the Rollercoaster”</p>
+                    <p>Welcome and Tour of the Factory</p>
                 </div>
 
                 <div class="agenda__item">
-                    <p>10:30 – 11:15</p>
-
-                    <p>Tour of the Factory</p>
-                </div>
-
-                <div class="agenda__item">
-                    <p>11:15 – 12:15</p>
+                    <p>11:00 – 12:00</p>
 
                     <p>Q&A About Power Take-offs</p>
                 </div>
 
                 <div class="agenda__item">
-                    <p>12:15 – 13:15</p>
+                    <p>12:00 – 12:30</p>
+
+                    <p>Future of the Chargers</p>
+                </div>
+
+                <div class="agenda__item">
+                    <p>12:30 – 13:30</p>
 
                     <p>Lunch</p>
                 </div>
 
                 <div class="agenda__item">
-                    <p>13:15 – 14:15</p>
+                    <p>13:30 – 14:30</p>
 
                     <p>Q&A About Full-electric Powertrains</p>
                 </div>
 
                 <div class="agenda__item">
-                    <p>14:15 – 14:30</p>
+                    <p>14:30 – 14:45</p>
 
                     <p>Short Break</p>
                 </div>
 
                 <div class="agenda__item">
-                    <p>14:30 – 15:30</p>
+                    <p>14:45 – 16:45</p>
 
                     <p>Q&A About Hydrogen Fuel-cell Technology for Heavy Vehicles</p>
                 </div>
 
                 <div class="agenda__item">
-                    <p>15:30 – 15:45</p>
-
-                    <p>Short Break</p>
-                </div>
-
-                <div class="agenda__item">
-                    <p>15:45 – 16:00</p>
+                    <p>16:45 – 17:00</p>
 
                     <p>Rasmus BANKE Closing Remarks</p>
                 </div>
 
                 <div class="agenda__item">
-                    <p>16:00 – 18:00</p>
+                    <p>17:00 – 18:00</p>
 
                     <p>Networking/Customer Meetings</p>
                 </div>
