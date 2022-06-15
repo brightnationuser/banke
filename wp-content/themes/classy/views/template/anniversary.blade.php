@@ -82,9 +82,15 @@
                 </div>
 
                 <div class="agenda__item">
-                    <p>14:45 – 16:45</p>
+                    <p>14:45 – 15:30</p>
 
                     <p>Q&A About Hydrogen Fuel-cell Technology for Heavy Vehicles</p>
+                </div>
+
+                <div class="agenda__item">
+                    <p>15:30 – 16:30</p>
+
+                    <p>"Hydrogen as a fuel". Panel debate with Uffe Borup (Everfuel), Søren Have (Concito), Søren Büchmann Petersen (DTL), and Brian Vad Mathiesen (Aalborg University)</p>
                 </div>
 
                 <div class="agenda__item">
