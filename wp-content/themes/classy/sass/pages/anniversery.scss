@@ -54,6 +54,14 @@
     &--agenda {
         width: 188px;
         margin: 0;
+
+        @media screen and (max-width: 575px) {
+            width: 210px;
+        }
+    }
+
+    &--zoom {
+        width: 210px;
     }
 
     &--contact {
