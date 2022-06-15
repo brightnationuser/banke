@@ -94,7 +94,7 @@
                 </div>
 
                 <div class="agenda__item">
-                    <p>16:45 – 17:00</p>
+                    <p>16:30 – 17:00</p>
 
                     <p>Rasmus BANKE Closing Remarks</p>
                 </div>
