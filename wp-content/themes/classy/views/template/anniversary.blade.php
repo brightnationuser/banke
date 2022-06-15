@@ -106,7 +106,11 @@
                 </div>
             </div>
 
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSedU3fuugqiPRed8ZXsabILbVg_52UdDshncz98BEW4rEjItA/viewform" target="_blank" rel="nofollow noopener noreferrer" class="btn--anniversary btn--agenda">REGISTER NOW</a>
+            <div class="agenda__btns">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSedU3fuugqiPRed8ZXsabILbVg_52UdDshncz98BEW4rEjItA/viewform" target="_blank" rel="nofollow noopener noreferrer" class="btn--anniversary btn--agenda">REGISTER NOW</a>
+
+                <a href="https://zoom.us/j/95364685706" target="_blank" rel="nofollow noopener noreferrer" class="btn--anniversary btn--agenda">Participate Online</a>
+            </div>
         </div>
     </section>
 
