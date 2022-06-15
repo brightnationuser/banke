@@ -58,37 +58,31 @@
                 </div>
 
                 <div class="agenda__item">
-                    <p>12:00 – 12:30</p>
+                    <p>12:00 – 12:45</p>
 
                     <p>Future of the Chargers</p>
                 </div>
 
                 <div class="agenda__item">
-                    <p>12:30 – 13:30</p>
+                    <p>12:45 – 13:45</p>
 
                     <p>Lunch</p>
                 </div>
 
                 <div class="agenda__item">
-                    <p>13:30 – 14:30</p>
+                    <p>13:45 – 15:00</p>
 
-                    <p>Q&A About Full-electric Powertrains</p>
+                    <p>Q&A About Battery-electric and Fuel-cell Powertrains for Heavy Vehicles.</p>
                 </div>
 
                 <div class="agenda__item">
-                    <p>14:30 – 14:45</p>
+                    <p>15:00 – 15:15</p>
 
                     <p>Short Break</p>
                 </div>
 
                 <div class="agenda__item">
-                    <p>14:45 – 15:30</p>
-
-                    <p>Q&A About Hydrogen Fuel-cell Technology for Heavy Vehicles</p>
-                </div>
-
-                <div class="agenda__item">
-                    <p>15:30 – 16:30</p>
+                    <p>15:15 – 16:30</p>
 
                     <p>"Hydrogen as a fuel". Panel debate with Uffe Borup (Everfuel), Søren Have (Concito), Søren Büchmann Petersen (DTL), and Brian Vad Mathiesen (Aalborg University)</p>
                 </div>
