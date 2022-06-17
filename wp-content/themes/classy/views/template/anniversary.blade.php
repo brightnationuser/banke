@@ -209,7 +209,7 @@
                     <h3 class="accommodation-item__title">NORDBORG</h3>
 
                     <div class="accommodation-item__block">
-                        <a class="nope">Nørherredhus Hotel</a>
+                        <a href="https://www.nhhus.dk" target="_blank" rel="nofollow noopener noreferrer">Nørherredhus Hotel</a>
 
                         <p>
                             Located conveniently close to our factory. The hotel has only 20 rooms so if you want to book a room please let us know and we will try to help.
