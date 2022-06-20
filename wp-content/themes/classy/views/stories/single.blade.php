@@ -29,7 +29,7 @@
                                         <div class="item__img" style="background-image: url('{{ wp_get_attachment_image_url(get_field('acf_image', $news_item->ID), 'large') }}')"></div>
                                     @endif
 
-                                    <div class="item__title">{{$news_item->title()}}</div>
+                                    <div class="item__title">{{html_entity_decode($news_item->title())}}</div>
                                 </a>
                             </div>
                         @endforeach
