@@ -4,6 +4,7 @@ import cookieconsent from 'cookieconsent';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel';
 import AOS from 'aos';
+import '@fancyapps/fancybox';
 
 import * as JQuery from "jquery";
 window.$ = JQuery.default;
@@ -29,6 +30,20 @@ document.addEventListener( 'wpcf7invalid', function( e ) {
 $(document).ready(function () {
 
     // openVideo();
+
+    const stories_gallery = document.querySelectorAll('.stories-template-default .wp-block-gallery .blocks-gallery-item');
+    const stories_gallery_data = [];
+
+    stories_gallery.forEach((item, i) => {
+        stories_gallery_data.push({
+            src: item.querySelector('img').getAttribute('src') ?? '',
+            type: 'image'
+        });
+
+        item.addEventListener('click', function () {
+            $.fancybox.open(stories_gallery_data, {}, i);
+        })
+    });
 
     video();
     $('[name="vacancy-name"]').val($('.vacancy__title').text());
