@@ -18,6 +18,14 @@
 @import "mixins";
 @import "additionally";
 
+// LIBS
+@import "~hamburgers/_sass/hamburgers/_base.scss";
+@import "~hamburgers/_sass/hamburgers/types/_3dxy.scss";
+@import "~@fancyapps/fancybox/dist/jquery.fancybox.min.css";
+@import '~aos/dist/aos.css';
+@import '~animate.css';
+@import '~owl.carousel/dist/assets/owl.carousel.css';
+
 // BLOCKS
 @import "blocks/**/*.scss";
 
@@ -30,13 +38,8 @@
 //EMAIL
 @import "email/**/*.scss";
 
-// LIBS
-@import "~hamburgers/_sass/hamburgers/_base.scss";
-@import "~hamburgers/_sass/hamburgers/types/_3dxy.scss";
-@import "~@fancyapps/fancybox/dist/jquery.fancybox.min.css";
-@import '~aos/dist/aos.css';
-@import '~animate.css';
-
 // ICOMOON
 @import "vendor/icomoon/style.css";
 @import "vendor/cookieconsent";
+
+@import "vendor/owl.theme.banke";
