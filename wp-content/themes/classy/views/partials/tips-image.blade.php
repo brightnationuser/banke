@@ -5,9 +5,9 @@
                 <img src="{{ $slide['image']['url'] }}" class="tips-image__image preload"
                      alt="{{ $slide['image']['alt'] }}">
 
-                @include ('partials.slider.partials.infobox', [
-                   'items' => $slide['features']
-                ])
+                @if($slide['features'])
+                    @include ('partials.slider.partials.infobox', ['items' => $slide['features']]);
+                @endif
             </div>
         </div>
     </div>
