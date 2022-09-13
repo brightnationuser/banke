@@ -80,23 +80,32 @@
     }
 
     &__image {
-      margin-right: 16px;
       width: 100%;
       min-width: 650px;
       max-width: 650px;
       position: relative;
       z-index: 1;
       margin-bottom: 30px;
+      margin-left: auto;
+      margin-right: auto;
 
-      @media (min-width: 1025px) {
+      @media (min-width: 1201px) {
+        margin-left: unset;
+        margin-right: 16px;
         margin-bottom: 0;
       }
 
       img {
-        max-width: 120%;
-        margin-left: -10%;
+        max-width: 100%;
         display: block;
         width: auto !important;
+      }
+
+      @media (min-width: 1201px) {
+        img {
+          max-width: 120%;
+          margin-left: -10%;
+        }
       }
     }
 
