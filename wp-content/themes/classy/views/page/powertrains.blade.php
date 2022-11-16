@@ -9,7 +9,7 @@
     @endif
 
     @php
-        $intro = $post->getAcfByKey('powertrains_intro');
+        $powertrains_intro = $post->getAcfByKey('powertrains_intro');
     @endphp
     <div class="p-powertrains">
         <section class="intro">
@@ -17,19 +17,24 @@
 
             <div class="container">
                 <div class="intro__wrapper d-flex">
-                    <div class="intro__image animated fadeInLeft" style="animation-delay: .5s">
-                        @include('partials.tips-image', ['image' => $intro['image']])
+                    <div class=" intro__image animated fadeInLeft"
+                         style="animation-delay: .5s">
+                        <div class="tips-carousel owl-carousel owl-theme-banke">
+                            @include('partials.tips-image', ['slider' => $powertrains_intro['slider']])
+                        </div>
                     </div>
-                    <div class="intro__content js-intro-content" data-text-open="{{ strtolower(get_field('read_more', 'option')) }}" data-text-close="{{ !empty(get_field('show_less')) ? get_field('show_less') : 'show less' }}">
+                    <div class="intro__content js-intro-content"
+                         data-text-open="{{ strtolower(get_field('read_more', 'option')) }}"
+                         data-text-close="{{ !empty(get_field('show_less')) ? get_field('show_less') : 'show less' }}">
                         <div class="intro__text animated fadeInUp" style="animation-delay: .5s">
                             <div>
-                                {!! $intro['text'] !!}
+                                {!! $powertrains_intro['text'] !!}
                             </div>
                             <div class="js-hide-able intro__text-hidden" style="display:none;">
-                                {!! $intro['hidden_text'] !!}
+                                {!! $powertrains_intro['hidden_text'] !!}
                             </div>
                         </div>
-                        @if(!empty($intro['hidden_text']))
+                        @if(!empty($powertrains_intro['hidden_text']))
                             <div class="intro__read-more read-more-btn animated fadeInUp" style="animation-delay: .8s">
                                 {{ strtolower(get_field('read_more', 'option')) }}
                             </div>
@@ -54,7 +59,8 @@
                 @if(!empty($benefits))
                     <div class="key-benefits__list d-flex">
                         @foreach($benefits as $row)
-                            <div class="benefit js-benefit aos-animation" data-aos-delay="{!! 200 * ($loop->index + 1) !!}">
+                            <div class="benefit js-benefit aos-animation"
+                                 data-aos-delay="{!! 200 * ($loop->index + 1) !!}">
                                 <div class="benefit__content">
                                     <div class="benefit__icon">
                                         <img src="{{ $row['icon']['url'] }}" alt="{!! $row['title'] !!}">
@@ -70,7 +76,8 @@
                                     @if($row['add_contact_us']['tf'])
                                         <div class="benefit__contact">
                                             <div class="benefit__contact-title">{{ $row['add_contact_us']['text'] }}</div>
-                                            <a class="benefit__contact-link disable_preloader" href="{{ $row['add_contact_us']['url_link'] }}">
+                                            <a class="benefit__contact-link disable_preloader"
+                                               href="{{ $row['add_contact_us']['url_link'] }}">
                                                 {{ $row['add_contact_us']['text_link'] }}
                                             </a>
                                         </div>
@@ -96,6 +103,7 @@
 
     @if(!empty($youtube_popup) && $youtube_popup['show'])
         @include('partials.popup-youtube', [
+            'class' => 'js-powertrains-popup',
             'title' => $youtube_popup['title'],
             'image' => $youtube_popup['video_preview'] ? $youtube_popup['video_preview']['sizes']['large'] : '/wp-content/themes/classy/images/video-preview.jpg',
             'video_id' => $youtube_popup['video_id']

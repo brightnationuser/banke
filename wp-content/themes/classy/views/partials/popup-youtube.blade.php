@@ -1,4 +1,4 @@
-<div class="popup js-popup" id="youtube-video">
+<div class="popup js-popup {{ $class }}" id="youtube-video">
     <div class="popup__dialog">
         <div class="popup__overlay js-popup-close"></div>
 

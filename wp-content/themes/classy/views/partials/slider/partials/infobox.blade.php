@@ -1,5 +1,5 @@
 @foreach($items as $item)
-    <div class="infobox-w" style="left: {{ $item['acf_item_left'] }}px; top: {{ $item['acf_item_top'] }}px">
+    <div class="infobox-w" style="left: {{ $item['left'] }}px; top: {{ $item['top'] }}px">
         <div class="infobox__dot"><span></span><span></span><span></span></div>
 
         <div class="infobox__content" style="display: none">
@@ -8,7 +8,7 @@
             </div>
             <div class="content__content">
                 <div class="content__title">
-                    {{ $item['acf_item_title'] }}
+                    {{ $item['content'] }}
                 </div>
                 <div class="content__text">
                     {!! $item['acf_item_description'] !!}

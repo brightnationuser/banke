@@ -49,8 +49,13 @@
 
     &__image, &__video {
       max-width: 495px;
-      margin-right: 40px;
       width: 100%;
+      margin-bottom: 24px;
+
+      @media (min-width: 1025px) {
+        margin-bottom: 0px;
+        margin-right: 40px;
+      }
 
       img, video {
         width: 100%;
@@ -339,7 +344,7 @@
       margin-bottom: 40px;
       padding-left: 15px;
       padding-right: 15px;
-      
+
     }
 
     .owl-stage-outer {

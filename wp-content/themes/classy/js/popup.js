@@ -50,7 +50,7 @@ const popup = () => {
         }*/
     });
 
-    if (body.hasClass('page-template-classy-powertrains')) {
+    if (body.hasClass('page-template-classy-powertrains') && Cookies.get('popup-powertrains') !== 'closed') {
         setTimeout(() => {
             $('#youtube-video').addClass(activeClass);
         }, 2000);
@@ -72,6 +72,10 @@ const popup = () => {
         Cookies.set('popup-anniversary', 'closed', { expires: 7 });
         window.location.href = $(this).data('link');
     });
+
+    $('.js-powertrains-popup .js-popup-close').click( function () {
+        Cookies.set('popup-powertrains', 'closed', { expires: 7 });
+    })
 };
 
 export default popup;

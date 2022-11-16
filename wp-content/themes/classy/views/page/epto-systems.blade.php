@@ -17,10 +17,20 @@
 
                 <div class="concept__description d-flex">
 
-                    <div class="concept__image animated fadeInLeft">
-                        <img src="{!! $post->getAcfByKey('acf_image_concept')['url'] !!}"
-                             alt="{!! $post->getAcfByKey('acf_title_concept') !!}">
-                    </div>
+                    @php
+                        $slider = $post->getAcfByKey('slider');
+                    @endphp
+
+                    @if(!empty($slider))
+                        <div class="concept__image animated fadeInLeft">
+                            <div class="epto-systems-carousel owl-carousel owl-theme-banke">
+                                @foreach($slider as $slide)
+                                    <img src="{!! $slide['image']['url'] !!}"
+                                         alt="{!! $slide['image']['alt'] !!}">
+                                @endforeach
+                            </div>
+                        </div>
+                    @endif
 
                     <div class="concept__content">
                         <article class="content-text m_1 animated fadeInDown">

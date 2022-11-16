@@ -1,5 +1,5 @@
 // Owl Carousel
-.owl-carousel {
+.owl-carousel:not(.owl-theme-banke) {
   opacity: 0;
   transition: 0.3s ease;
   overflow: hidden;
@@ -80,10 +80,10 @@
       @media screen and (max-width: 576px) {
         max-width: 90%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
       }
 
-      .owl-prev, .owl-next{
+      .owl-prev, .owl-next {
 
         &::before {
           color: #91A8BE;

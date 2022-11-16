@@ -7,16 +7,26 @@
 
         <div class="concept__description d-flex">
 
-            @if($post->getAcfByKey('is_acf_concept_image'))
+            @php
+                $slider = $post->getAcfByKey('slider');
+            @endphp
+
+            @if(!empty($slider))
                 <div class="concept__image animated fadeInLeft">
-                    <img src="{!! $post->getAcfByKey('acf_image_concept')['url'] !!}"
-                         alt="{!! $post->getAcfByKey('acf_title_concept') !!}">
-                </div>
-            @else
-                <div class="concept__video animated fadeInLeft">
-                    <video class="product-template-concept-video" src="{!! $post->getAcfByKey('acf_video_concept')['url'] !!}" muted></video>
+                    <div class="concept-carousel owl-carousel owl-theme-banke">
+                        @foreach($slider as $slide)
+                            @if($slide['type_of_media'] === 'image')
+                                <img src="{!! $slide['image']['url'] !!}"
+                                     alt="{!! $slide['image']['alt'] !!}">
+                            @endif
+                            @if($slide['type_of_media'] === 'video')
+                                <video src="{!! $slide['video']['url'] !!}" muted controls></video>
+                            @endif
+                        @endforeach
+                    </div>
                 </div>
             @endif
+
 
             <div class="concept__content">
                 <article class="content-text m_1 animated fadeInDown">

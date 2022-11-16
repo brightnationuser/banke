@@ -42,7 +42,7 @@
             <div class="vacancy__bottom">
                 @if(!$acf_group['vacancy_closed'])
                     @if($acf_group['our_team_link'])
-                        <a href="{{$acf_group['our_team_link']}}" class="vacancy__btn">Join Our Team</a>
+                        <a target="{{$acf_group['our_team_link']['target']}}" href="{{$acf_group['our_team_link']['url']}}" class="vacancy__btn">{{$acf_group['our_team_link']['title']}}</a>
                     @else
                         <a data-fancybox href="#our_team_form" class="vacancy__btn">Join Our Team</a>
                     @endif
