@@ -72,3 +72,20 @@ function admin_scripts() {
 }
 
 add_action('admin_footer', 'admin_scripts');
+
+add_filter( 'wpseo_metadesc', 'custom_wpseo_metadesc_filter', 10, 2 );
+
+function custom_wpseo_metadesc_filter( $meta_description ){
+    global $post;
+
+    if(!empty($meta_description)) {
+        return $meta_description;
+    }
+    else {
+        if(!empty($post->post_content)) {
+            return esc_attr(substr(strip_tags($post->post_content), 0, 200)) . '...';
+        }
+    }
+
+    return "";
+}
