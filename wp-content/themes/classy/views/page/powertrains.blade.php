@@ -103,6 +103,7 @@
 
     @if(!empty($youtube_popup) && $youtube_popup['show'])
         @include('partials.popup-youtube', [
+            'class' => 'js-powertrains-popup',
             'title' => $youtube_popup['title'],
             'image' => $youtube_popup['video_preview'] ? $youtube_popup['video_preview']['sizes']['large'] : '/wp-content/themes/classy/images/video-preview.jpg',
             'video_id' => $youtube_popup['video_id']
