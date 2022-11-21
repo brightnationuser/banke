@@ -42,7 +42,11 @@
                         <div class="what-we-do__item item">
                             <div class="item__image">
                                 <a href="{{ $row['link'] }}">
-                                    <img src="{!! $row['image']['url'] !!}" alt="{{ $row['title'] }}">
+                                    <picture>
+                                        <source srcset="{!! \Helpers\General::getFlyWebpImage($row['image']['id'], [700, 700]); !!}" type="image/webp">
+                                        <source srcset="{!! \Helpers\General::getFlyImage($row['image']['id'], [700, 700]); !!}" type="image/jpeg">
+                                        <img src="{!! \Helpers\General::getFlyImage($row['image']['id'], [700, 700]); !!}" alt="{{ $row['title'] }}"/>
+                                    </picture>
                                 </a>
                             </div>
                             <div class="item__content">
@@ -79,8 +83,11 @@
                     <div class="reference-slide">
                         <a href="{!! get_post_permalink($reference->ID) !!}">
                             <div class="reference-slide__image">
-                                <img src="{!! wp_get_attachment_url($reference->getAcfByKey('acf_image')) !!}"
-                                     alt="{!! $reference->post_title !!}">
+                                <picture>
+                                    <source srcset="{!! \Helpers\General::getFlyWebpImage($reference->getAcfByKey('acf_image'), [600, 400]); !!}" type="image/webp">
+                                    <source srcset="{!! \Helpers\General::getFlyImage($reference->getAcfByKey('acf_image'), [600, 400]); !!}" type="image/jpeg">
+                                    <img src="{!! \Helpers\General::getFlyImage($reference->getAcfByKey('acf_image'), [600, 400]); !!}" alt="{!! $reference->post_title !!}"/>
+                                </picture>
                             </div>
                             <div class="reference-slide__title">
                                 {!! $reference->post_title !!}
