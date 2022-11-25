@@ -190,7 +190,7 @@ class General
     public static function getFlyImage($attachment_id = 0, $size = '', $crop = null)
     {
         if(!function_exists('fly_get_attachment_image_src')) {
-            echo 'Please activate "Fly Dynamic Image Resizer" plugin';
+            return wp_get_attachment_url($attachment_id);
         }
 
         $scale = defined('FLY_IMAGE_SCALE') ? FLY_IMAGE_SCALE : 1;
