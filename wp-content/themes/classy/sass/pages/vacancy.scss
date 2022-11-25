@@ -51,7 +51,7 @@
                 border-radius: 2px;
 
                 @media screen and (max-width: 767px) {
-                    font-size: 14px;
+                    font-size: 16px;
                     width: 100%;
                     justify-content: flex-start;
                     background: none;
@@ -103,7 +103,7 @@
                 color: #003462;
 
                 @media screen and (max-width: 767px) {
-                    font-size: 14px;
+                    font-size: 16px;
                     line-height: 19px;
                 }
             }
@@ -124,7 +124,7 @@
                 color: #272727;
 
                 @media screen and (max-width: 767px) {
-                    font-size: 14px;
+                    font-size: 16px;
                     line-height: 19px;
                 }
 
@@ -162,7 +162,7 @@
     &__content {
         margin-top: 40px;
         font-weight: 300;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 21px;
         color: #4A4A49;
 
@@ -257,7 +257,7 @@
         letter-spacing: 0.02em;
         text-transform: uppercase;
         font-weight: 700;
-        font-size: 14px;
+        font-size: 16px;
         color: #FFFFFF;
         height: 36px;
         display: flex;
@@ -362,7 +362,7 @@
         border: none;
         margin: 12px 0 0;
         font-weight: 300;
-        font-size: 12px;
+        font-size: 16px;
         line-height: 16px;
         color: #FF0000;
         opacity: 0.9;
@@ -386,7 +386,7 @@
 
     &__descr {
         font-weight: 300;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 150%;
         text-align: center;
         color: #4A4A49;
@@ -418,7 +418,7 @@
                 border: 1px solid rgba(74, 74, 73, 0.1);
                 border-radius: 4px;
                 font-weight: 300;
-                font-size: 14px;
+                font-size: 16px;
                 line-height: 19px;
                 color: #4A4A49;
                 opacity: 0.9;
@@ -450,7 +450,7 @@
 
     &__btn {
         font-weight: 300;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 19px;
         color: #005CA9;
         opacity: 0.9;
@@ -508,7 +508,7 @@
         height: 40px;
         font-weight: 700;
         padding: 0;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 19px;
         letter-spacing: 0.02em;
         text-transform: uppercase;
@@ -541,7 +541,7 @@
         span {
             position: relative;
             padding: 8px 35px 8px 12px;
-            font-size: 14px;
+            font-size: 16px;
             line-height: 19px;
             color: #005CA9;
             opacity: 0.9;
