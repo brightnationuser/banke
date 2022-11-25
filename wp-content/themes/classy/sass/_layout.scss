@@ -609,10 +609,13 @@ footer.footer {
     justify-content: space-between;
   }
   .right{
-    margin-left: 10px;
+    margin-left: 60px;
+    @media (max-width: 1140px) {
+      margin-left: 10px;
+    }
     @media (max-width: 868px) {
       margin-left: 0px;
-      margin-top: 10px;
+      margin-top: 40px;
       ul{
         flex-direction: column;
       }
@@ -623,7 +626,7 @@ footer.footer {
     li{
       max-width: 180px;
       width: 100%;
-      @media (max-width: 110px) {
+      @media (max-width: 1110px) {
         max-width: 170px;
       }
     }
@@ -633,7 +636,9 @@ footer.footer {
   .footer {
     &__adress {
       color: #fff;
-
+      @media (max-width: 1140px) {
+        margin-bottom: 20px;
+      }
       a {
         color: #fff;
       }
@@ -651,6 +656,9 @@ footer.footer {
     &__copyright {
       color: #fff;
       margin-right: 30px;
+      @media (max-width: 1140px) {
+        margin-bottom: 20px;
+      }
     }
     &__madeby {
       margin-left: auto;
@@ -692,12 +700,13 @@ footer.footer {
         margin: 0;
         @media (max-width: 868px) {
           justify-content: space-between;
+          flex-direction: row;
         }
         &.menu__nav{
 
           &>li{
             margin-right: 56px;
-            @media (max-width: 1100px) {
+            @media (max-width: 1140px) {
               margin-right: 10px;
             }
             @media (max-width: 868px) {
@@ -718,8 +727,13 @@ footer.footer {
           flex-direction: column;
           &:last-child {
             margin-right: 0;
-          }
 
+          }
+          @media (max-width: 868px) {
+            margin-right: 0!important;
+            max-width: 188px;
+            width: 100%;
+          }
           a {
             color: #ffffff;
             font-weight: 600;
@@ -765,7 +779,7 @@ footer.footer {
       align-items: flex-end;
       @media (max-width: 1100px) {
         order: 1;
-        margin-bottom: 20px;
+        margin-bottom: 50px;
         align-items: flex-start;
       }
       .social {
