@@ -73,14 +73,14 @@
         }
 
         &__body {
-            padding: 40px 32px;
+            padding: 40px 32px 30px;
             position: relative;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
 
             @media screen and (max-width: 1199px) {
-                padding: 40px 24px;
+                padding: 40px 24px 30px;
             }
         }
 
