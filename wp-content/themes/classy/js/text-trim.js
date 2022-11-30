@@ -17,9 +17,7 @@ const textTrim = (selector, opt = {}) => {
 
         if(options.show_block) {
             let $hide_able_block = ths.find('.js-hide-able');
-
-            console.log($hide_able_block);
-
+            
             $more_button.on('click', function () {
 
                 if($hide_able_block.hasClass('opened')) {

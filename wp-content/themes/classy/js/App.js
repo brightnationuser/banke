@@ -5,6 +5,7 @@ import '@fancyapps/fancybox';
 import Animator from './Animator';
 import Animation from './animation/Animation';
 import initVueInstances from './Vue/indexVue'
+import textTrimSimple from "./text-trim-simple";
 
 class App {
 
@@ -45,6 +46,11 @@ class App {
 
         if($('.js-benefit').length > 0) {
             this.initJsBenefits();
+        }
+        
+        let vacanciesCards = $('.js-vacancies-card-description')
+        if(vacanciesCards.length > 0) {
+            textTrimSimple(vacanciesCards, 3, 200)
         }
 
         //$('body').addClass('m_ready');

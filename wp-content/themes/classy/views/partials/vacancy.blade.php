@@ -23,7 +23,7 @@
             </div>
         @endif
 
-        <div class="vacancies-card__descr">{!! preg_replace('/^(.{1,130}\w)\W.*$/u', '$1...', $acf_group['mini_description'])!!}</div>
+        <div class="vacancies-card__descr js-vacancies-card-description">{!! $acf_group['mini_description'] !!}</div>
     </div>
 
     <div class="vacancies-card__footer">

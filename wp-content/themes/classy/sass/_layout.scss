@@ -1,7 +1,7 @@
 html {
   height: 100%;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 16px;
   font-family: 'Open Sans', sans-serif;
   color: $color-gray;
   scroll-behavior: smooth;
@@ -135,7 +135,7 @@ header.header {
             line-height: 19px;
 
             @media screen and (max-width: 1200px) {
-              font-size: 14px;
+              font-size: 16px;
               line-height: 135%;
               padding: 10px 20px;
             }
@@ -338,7 +338,7 @@ header.header {
         > span {
           color: #CFCFCF;
           margin: 0 7px;
-          font-size: 14px;
+          font-size: 16px;
         }
       }
 
@@ -674,7 +674,7 @@ footer.footer {
 
       .container {
         padding-bottom: 0;
-        padding-top: 40px;
+        padding-top: 50px;
         @media (max-width: 1100px) {
          flex-direction: column;
         }
@@ -758,7 +758,7 @@ footer.footer {
         &.sub-menu{
           li a{
             font-weight: 300;
-            font-size: 14px;
+            font-size: 16px;
             margin-bottom: 8px;
           }
         }
@@ -799,7 +799,7 @@ footer.footer {
         transition: all .4s ease;
 
         &.facebook i {
-          font-size: 13px;
+          font-size: 16px;
         }
 
         &:last-child {
@@ -808,7 +808,7 @@ footer.footer {
 
         i {
           color: #003462;
-          font-size: 14px;
+          font-size: 16px;
         }
 
         &:hover {
@@ -865,7 +865,7 @@ footer.footer {
         &__menu {
           ul.menu__nav {
             li.menu-item {
-              font-size: 13px;
+              font-size: 16px;
             }
           }
         }
@@ -873,7 +873,7 @@ footer.footer {
         &__lng {
           .lng-w {
             a {
-              font-size: 13px;
+              font-size: 16px;
             }
           }
         }
@@ -900,7 +900,7 @@ footer.footer {
                 content: '|';
                 position: absolute;
                 height: 14px;
-                font-size: 14px;
+                font-size: 16px;
                 top: 50%;
                 transform: translateY(-50%);
                 left: -12px;
