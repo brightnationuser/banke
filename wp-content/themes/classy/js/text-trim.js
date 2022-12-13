@@ -49,7 +49,7 @@ const textTrim = (selector, opt = {}) => {
             ths.addClass('sliced');
 
             setTimeout(function () {
-                slicedHeightTextElHeight = $(text_el).height();
+                slicedHeightTextElHeight = 84;
 
                 text_el.css({
                     'height' : slicedHeightTextElHeight,
