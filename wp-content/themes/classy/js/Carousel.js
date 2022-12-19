@@ -47,8 +47,7 @@ export default class Carousel {
 
 
                     $('.owl-nav button').on('click', function () { // Если нажимаем на данные, анулируем логику полностью и приводим в дефолтное состояние
-                        $(clickedVideo).css('width', '').css('height', '')
-                        closeVideo.trigger( "click" )
+                        //$(clickedVideo).css('width', getBaseWidth).css('height', getBaseHeight)
                         clickedVideo = null
                     })
 

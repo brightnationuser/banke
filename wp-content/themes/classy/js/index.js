@@ -18,6 +18,7 @@ import openVideo from './openVideo';
 import tipsImage from './blocks/tips-image';
 import YtApiPlayer from './blocks/yt-api-player';
 import blockToggle from "./blocks/block-toggle";
+import playHtmlVideo from "./helpers/play-html-video";
 
 document.addEventListener('wpcf7invalid', function (e) {
     if (document.querySelector('.modal-team__btn .wpcf7-not-valid-tip')) {
@@ -51,6 +52,7 @@ $(document).ready(function () {
     textTrim('.js-intro-content', {show_block: true});
     tipsImage('.js-tips-image');
     blockToggle();
+    playHtmlVideo('.product-template-concept-video',  1000)
 
     setTimeout(function () {
         let window_height = $(window).height();
