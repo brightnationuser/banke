@@ -7,13 +7,14 @@
 
         <h1 class="h2 h2--mt-0">{!! get_field('news_title', 'options') !!}</h1>
 
-        <div class="news-list">
-            @foreach($news as $news_item)
-                <a href="{{ apply_filters('wpml_permalink', $news_item->permalink(), 'en') }}" class="news">
-                    <div class="news__img">
-                        <div class="img__inner b-lazy" data-src="{{ $news_item->getAcfImage()->src('large') }}">
+        <div class="news-list-wrapper">
+            <div class="news-list">
+                @foreach($news as $news_item)
+                    <a href="{{ apply_filters('wpml_permalink', $news_item->permalink(), 'en') }}" class="news">
+                        <div class="news__img">
+                            <div class="img__inner b-lazy" data-src="{{ $news_item->getAcfImage()->src('large') }}">
+                            </div>
                         </div>
-                    </div>
 
                         <div class="news__content">
                             <div class="news__date">

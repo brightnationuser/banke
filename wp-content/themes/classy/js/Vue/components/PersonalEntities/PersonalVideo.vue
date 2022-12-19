@@ -24,7 +24,7 @@
         <div class="personal-video__popup-frame">
           <youtube
               :video-id="id"
-              :ref="'youtube-' + id"
+              ref="youtube"
               :resize="true"
               :player-width="iframeWidth"
               :player-height="iframeHeight"
@@ -100,7 +100,7 @@ export default {
 
   computed: {
     player() {
-      return this.$refs['youtube-' + this.id].player
+      return this.$refs.youtube.player
     },
 
     ...mapState({
@@ -186,7 +186,6 @@ export default {
 
       iframe {
         max-width: 100%;
-        min-height: 180px;
       }
     }
 
