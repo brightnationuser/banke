@@ -1,0 +1,99 @@
+.related {
+  background-color: #F2F6FC;
+  padding-top: 16px;
+  padding-bottom: 64px;
+
+  &__title {
+    margin-bottom: 64px;
+  }
+
+  a, a:hover {
+    text-decoration: none;
+  }
+
+  .item {
+    width: 100%;
+
+    &__image {
+      height: 200px;
+      background: #F8F8F8;
+      border-radius: 4px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &__date {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 22px;
+      color: #4A4A49;
+    }
+
+    &__title {
+      text-align: left;
+      font-size: 18px;
+      margin: 18px 0 8px;
+    }
+  }
+
+  &__slider {
+    margin: 40px auto 0 auto;
+    max-width: 1170px;
+
+    &.owl-carousel {
+      .owl-nav {
+        .owl-prev {
+          &::before {
+            content: '\e912';
+          }
+        }
+
+        .owl-next {
+          &::before {
+            content: '\e911';
+          }
+        }
+      }
+
+      .owl-nav {
+        .owl-prev, .owl-next {
+          height: 30px;
+          margin-left: -19px;
+          margin-top: -40px;
+          opacity: 0.4;
+          transition: all .3s ease;
+
+          &::before, &::after {
+            font-size: 38px;
+            color: #003462;
+          }
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+
+        .owl-prev {
+          left: -20px;
+          position: relative;
+        }
+
+        .owl-next {
+          right: -10px;
+          position: relative;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 576px) {
+  .related {
+    padding-bottom: 30px;
+
+    &__slider {
+      max-width: 85%;
+    }
+  }
+}
