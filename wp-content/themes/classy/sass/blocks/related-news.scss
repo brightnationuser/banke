@@ -13,6 +13,16 @@
 
   .item {
     width: 100%;
+    transition: all .3s ease;
+
+    &:hover {
+      cursor: pointer;
+      transform: translateY(-5px);
+
+      .item__title {
+        color: #003462;
+      }
+    }
 
     &__image {
       height: 200px;
@@ -33,12 +43,17 @@
       text-align: left;
       font-size: 18px;
       margin: 18px 0 8px;
+      transition: all .3s ease;
     }
   }
 
   &__slider {
-    margin: 40px auto 0 auto;
+    margin: 35px auto 0 auto;
     max-width: 1170px;
+
+    .owl-stage {
+      padding-top: 5px;
+    }
 
     &.owl-carousel {
       .owl-nav {
