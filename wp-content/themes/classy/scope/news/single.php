@@ -10,6 +10,9 @@ $query = [
         'compare' => 'EXISTS'
     ),
 ];
+
+$two_columns_layout = $post->getAcfByKey('two_columns_layout');
+
 $related = $framework::get_posts([
     'post_type' => 'news',
     'post_status' => 'publish',
@@ -24,5 +27,6 @@ $slider = $post->getAcfByKey('slider');
 $data = compact(
     'post',
     'related',
-    'slider'
+    'slider',
+    'two_columns_layout'
 );
