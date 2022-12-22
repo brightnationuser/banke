@@ -157,9 +157,9 @@ export default class Carousel {
             },
 
             initNewsCarousel: function () {
-                $('.b-news__carousel.owl-carousel').owlCarousel({
+                $('.b-news__carousel.owl-carousel, .js-related-slider.owl-carousel').owlCarousel({
                     loop: true,
-                    margin: 10,
+                    margin: 30,
                     onInitialized: show,
                     nav: true,
                     dots: false,
