@@ -27,7 +27,7 @@
 				</div>
 
 				@if($two_columns_layout)
-					<img class="content__img" src="{{ $post->getAcfImage()->src('large') }}" alt="{!! $post->title() !!}">
+					<img class="content__img" src="{{ $post->getAcfImage()->src('large', 'vertical') }}" alt="{!! $post->title() !!}">
 				@endif
 			</div>
 		</div>

@@ -40,9 +40,13 @@ class Image extends Basis {
 	 *
 	 * @return string
 	 */
-	public static function get_default_image() {
+	public static function get_default_image($direction = 'horizontal') {
 		// You can put here any url.
-		return '/wp-content/themes/classy/images/noimage.jpg';
+        if($direction === 'vertical') {
+            return '/wp-content/themes/classy/images/noimage-vertical.png';
+        }
+
+		return '/wp-content/themes/classy/images/noimage.png';
 		//return CLASSY_THEME_DIR . '/assets/noimage.png';
 	}
 
@@ -53,13 +57,13 @@ class Image extends Basis {
 	 *
 	 * @return string
 	 */
-	public function src( $size = 'medium' ) {
+	public function src( $size = 'medium', $direction = 'horizontal' ) {
 		if ( $this->ID ) {
 			$thumb = wp_get_attachment_image_src( $this->ID, $size );
 
 			return $thumb[0];
 		}
 
-		return self::get_default_image();
+		return self::get_default_image($direction);
 	}
 }
