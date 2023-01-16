@@ -86,6 +86,18 @@
           })(window,document,'script','dataLayer','GTM-MVNHP8D');
         </script>
         <!-- End Google Tag Manager -->
+
+        <!-- Mouseflow Tracking Code -->
+        <script type="text/javascript">
+            window._mfq = window._mfq || [];
+            (function() {
+                var mf = document.createElement("script");
+                mf.type = "text/javascript"; mf.defer = true;
+                mf.src = "//cdn.mouseflow.com/projects/d724304f-84a2-4fb4-8f96-e4780815de13.js";
+                document.getElementsByTagName("head")[0].appendChild(mf);
+            })();
+        </script>
+        <!-- End Mouseflow Tracking Code -->
     </head>
 
     <body {{ body_class(array($body_additional, 'm_ready')) }}>
