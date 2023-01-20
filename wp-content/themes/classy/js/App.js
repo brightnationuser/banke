@@ -154,6 +154,7 @@ class App {
         carousel.init('ReferencesThin');
         carousel.init('Video')
         carousel.init('WhatWeDo')
+        carousel.init('RelatedInsights')
     }
 
     initFaq() {

@@ -1137,7 +1137,8 @@
                 "template.product-page.products": "Products",
                 "partials.brochure": "Brochure",
                 "template.product-page.references": "References",
-                "template.product-page.specification": "Specification"
+                "template.product-page.specification": "Specification",
+                "partials.related-insights": "Related insights"
             },
             "default_value": [
                 "template.product-page.concept",
@@ -1172,5 +1173,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1662069937
+    "modified": 1674216206
 }

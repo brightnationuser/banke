@@ -43,6 +43,8 @@
             </div>
         </section>
 
+        @include('partials.related-insights', $related_insights)
+
         @php
             $principles = $post->getAcfByKey('acf_benefits');
         @endphp

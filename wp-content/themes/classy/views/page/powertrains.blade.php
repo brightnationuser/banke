@@ -43,8 +43,10 @@
                 </div>
             </div>
         </section>
-        @include('partials.video-gallery')
 
+        @include('partials.related-insights', $related_insights)
+
+        @include('partials.video-gallery')
 
         @include ('template.product-page.specification')
 

@@ -1,0 +1,82 @@
+.related-insights {
+  padding-top: 40px;
+  padding-bottom: 48px;
+  background-color: #F2F6FC;
+
+  &__title {
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #003462;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  &__carousel-wrapper {
+
+    @media (min-width: 769px) {
+      //padding-left: 46px;
+      //padding-right: 46px;
+    }
+
+    @media (min-width: 1441px) {
+      padding-left: 67px;
+      padding-right: 67px;
+    }
+  }
+
+  &__carousel {
+
+  }
+}
+
+.related-insights-carousel {
+  &__slide {
+
+  }
+}
+
+.related-insights-carousel-slide {
+
+  @media (min-width: 426px) {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__picture-wrapper {
+    margin-bottom: 15px;
+
+    @media (min-width: 426px) {
+      flex: 0 0 128px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__picture {
+    padding-top: 68.75%;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__content {
+    @media (min-width: 426px) {
+      flex: 1 1 0;
+    }
+
+    @media (min-width: 769px) {
+      padding-top: 10px;
+    }
+  }
+
+  &__title {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #005CA9;
+  }
+}

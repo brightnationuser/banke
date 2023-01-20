@@ -11,7 +11,31 @@ $references = $framework::get_posts([
     'posts_per_page' => -1,
 ]);
 
+//Related insights
+
+$related_insights_title = get_field("related_insights_title", $post->post_id);
+$related_insights_insights = get_field("related_insights_insights", $post->post_id);
+
+$related_insights_posts = get_posts(array(
+    'post_type' => 'news',
+    'post__in' => $related_insights_insights,
+));
+
+$related_insights_formatted = array_map(function ($post) {
+    return array(
+        'title' => $post->post_title,
+        'url' => get_permalink(),
+        'image' => wp_get_attachment_url(get_field('acf_image', $post->ID))
+    );
+}, $related_insights_posts);
+
+$related_insights = array(
+    'title' => $related_insights_title,
+    'insights' => $related_insights_formatted
+);
+
 $data = compact(
     'post',
-    'references'
+    'references',
+    'related_insights'
 );

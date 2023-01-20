@@ -21,6 +21,7 @@
 
     $_render_array = [
         'template.product-page.concept' => [],
+        'partials.related-insights' => $related_insights,
         'template.product-page.benefits' => [],
         'partials.video-gallery' => [],
         'template.product-page.present' => [],

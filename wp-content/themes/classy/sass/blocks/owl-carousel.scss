@@ -1,5 +1,5 @@
 // Owl Carousel
-.owl-carousel:not(.owl-theme-banke) {
+.owl-carousel:not(.owl-theme-banke):not(.owl-theme-related-insights) {
   opacity: 0;
   transition: 0.3s ease;
   overflow: hidden;

@@ -1,0 +1,126 @@
+/*
+ * 	Banke theme - Owl Carousel CSS File
+ */
+
+//nav
+
+$nav-color: #005CA9;
+$nav-color-hover: #005CA9;
+$nav-font-size: 40px !default;
+$nav-rounded: 3px !default;
+$nav-margin: 5px !default;
+$nav-padding: 4px 7px !default;
+$nav-background: #005CA9;
+$nav-background-hover: #005CA9;
+$nav-disabled-opacity: 0.5 !default;
+
+//dots
+
+$dot-width: 10px !default;
+$dot-height: 10px !default;
+$dot-rounded: 9999px !default;
+$dot-margin: 0px 6px !default;
+$dot-background: rgba(0, 92, 169, 0.15);
+$dot-background-active: #005CA9;
+
+
+.owl-theme-related-insights {
+  // Styling Next and Prev buttons
+  position: relative;
+
+  .owl-nav {
+    [class*='owl-'] {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 37px;
+      border-radius: 9999px;
+      color: $nav-color !important;
+      font-size: 40px !important;
+      margin: 0px;
+      padding: 0px;
+      background: transparent !important;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      [class*='icon-'] {
+        position: relative;
+      }
+
+      &.owl-prev,
+      &.owl-next {
+        &:before {
+          content: none;
+        }
+      }
+
+      &.owl-prev {
+        left: -29px;
+
+        @media (min-width: 1441px) {
+          left: -46px;
+        }
+      }
+
+      &.owl-next {
+        right: -29px;
+
+        @media (min-width: 1441px) {
+          right: -46px;
+        }
+      }
+
+      &:hover {
+        background: $nav-background-hover;
+        color: $nav-color-hover;
+        text-decoration: none;
+      }
+    }
+
+    .disabled {
+      opacity: $nav-disabled-opacity;
+      cursor: default;
+    }
+  }
+
+  // Styling dots
+
+  .owl-dots {
+    margin-top: 15px;
+    position: static !important;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+
+    @media (min-width: 769px) {
+      margin-top: 20px;
+    }
+
+    .owl-dot {
+      display: inline-block;
+      zoom: 1;
+      *display: inline;
+
+      span {
+        width: $dot-width;
+        height: $dot-height;
+        margin: $dot-margin;
+        background: $dot-background;
+        display: block;
+        -webkit-backface-visibility: visible;
+        transition: opacity 200ms ease;
+        border-radius: $dot-rounded;
+      }
+
+      &.active,
+      &:hover {
+        span {
+          background: $dot-background-active;
+        }
+      }
+    }
+  }
+}
+

@@ -257,6 +257,30 @@ export default class Carousel {
                     }
                 });
             },
+
+            initRelatedInsightsCarousel: function () {
+                $('.js-related-insights-carousel').owlCarousel({
+                    loop: false,
+                    margin: 32,
+                    onInitialized: show,
+                    nav: false,
+                    dots: true,
+                    navText: ["<i class=\"icon-prev-thin\"></i>","<i class=\"icon-next-thin\"></i>"],
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        769: {
+                            items: 2,
+                        },
+                        1025: {
+                            items: 3,
+                            nav: true,
+                            dots: false
+                        }
+                    }
+                });
+            }
         }
 
 

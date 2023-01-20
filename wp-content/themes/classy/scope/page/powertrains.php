@@ -4,13 +4,6 @@ $framework = get_theme_framework();
 
 $post = $framework::get_post();
 
-$references = $framework::get_posts([
-    'post_type' => 'page',
-    'post_parent' => 214,
-    'orderby' => 'rand',
-    'posts_per_page' => -1,
-]);
-
 //Related insights
 
 $related_insights_title = get_field("related_insights_title", $post->post_id);
@@ -36,6 +29,5 @@ $related_insights = array(
 
 $data = compact(
     'post',
-    'references',
     'related_insights'
 );
