@@ -9,10 +9,10 @@ $post = $framework::get_post();
 $related_insights_title = get_field("related_insights_title", $post->post_id);
 $related_insights_insights = get_field("related_insights_insights", $post->post_id);
 
-$related_insights_posts = get_posts(array(
+$related_insights_posts = $related_insights_insights ? get_posts(array(
     'post_type' => 'news',
     'post__in' => $related_insights_insights,
-));
+)) : array(); //if there are insights - get them, otherwise return an empty array
 
 $related_insights_formatted = array_map(function ($post) {
     return array(
