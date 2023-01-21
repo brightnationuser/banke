@@ -17,7 +17,7 @@ $related_insights_posts = $related_insights_insights ? get_posts(array(
 $related_insights_formatted = array_map(function ($post) {
     return array(
         'title' => $post->post_title,
-        'url' => get_permalink(),
+        'url' => get_permalink($post->ID),
         'image' => wp_get_attachment_url(get_field('acf_image', $post->ID))
     );
 }, $related_insights_posts);
