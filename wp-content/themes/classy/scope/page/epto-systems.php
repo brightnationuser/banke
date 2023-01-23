@@ -19,6 +19,7 @@ $related_insights_insights = get_field("related_insights_insights", $post->post_
 $related_insights_posts = $related_insights_insights ? get_posts(array(
     'post_type' => 'news',
     'post__in' => $related_insights_insights,
+    'posts_per_page' => -1
 )) : array(); //if there are insights - get them, otherwise return an empty array
 
 $related_insights_formatted = array_map(function ($post) {

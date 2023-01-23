@@ -20,3 +20,10 @@ function special_nav_class($classes, $item)
     }
     return $classes;
 }
+
+//return all posts selected through ACF field type post object
+add_filter('acf/fields/post_object/query', 'my_acf_fields_post_object_query', 10, 3);
+function my_acf_fields_post_object_query( $args, $field, $post_id ) {
+    $args['posts_per_page'] = -1;
+    return $args;
+}
