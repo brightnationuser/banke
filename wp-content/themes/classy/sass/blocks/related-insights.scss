@@ -72,11 +72,19 @@
   }
 
   &__title {
+    --lh: 1.4rem;
+    --max-lines: 3;
+    display: block;
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
-    line-height: 22px;
+    line-height: var(--lh);
     color: #005CA9;
+
+    @media (min-width: 769px) {
+      max-height: calc(var(--lh) * var(--max-lines));
+      overflow: hidden;
+    }
   }
 }

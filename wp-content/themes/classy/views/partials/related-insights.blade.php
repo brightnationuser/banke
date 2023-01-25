@@ -13,7 +13,7 @@
                                      style="background-image: url('{{ $insight['image'] }}')"></div>
                             </div>
                             <div class="related-insights-carousel-slide__content">
-                                <a href="{{ $insight['url'] }}"
+                                <a title="{{ $insight['title'] }}" href="{{ $insight['url'] }}"
                                    class="related-insights-carousel-slide__title">{{ $insight['title'] }}
                                 </a>
                             </div>
