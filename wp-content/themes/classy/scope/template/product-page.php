@@ -26,7 +26,7 @@ $related_insights_formatted = array_map(function ($post) {
     return array(
         'title' => $post->post_title,
         'url' => get_permalink($post->ID),
-        'image' => wp_get_attachment_url(get_field('acf_image', $post->ID))
+        'image' => wp_get_attachment_image_url(get_field('acf_image', $post->ID), 'large')
     );
 }, $related_insights_posts);
 
