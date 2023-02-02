@@ -1,9 +1,65 @@
 .p-contacts {
-
+    #map{
+        height: 430px;
+    }
+    .content{
+        background-color: rgba(242, 246, 252, 1);
+        padding-top: 39px;
+        padding-bottom: 0;
+    }
     .contacts {
         padding-bottom: 120px;
         padding-top: 30px;
-
+        &__wrap{
+            justify-content: center;
+            .contact-us{
+                background: none;
+                padding: 0;
+                margin-bottom: 0;
+                margin-top: 40px;
+                max-width: 482px;
+                width: 100%;
+                .container{
+                    padding: 0;
+                }
+                .wpcf7-submit{
+                    display: block;
+                    width: 100%;
+                }
+                h3{
+                    font-weight: 700;
+                    font-size: 24px;
+                    line-height: 33px;
+                    text-align: center;
+                    color: #003462;
+                    margin-bottom: 4px;
+                }
+                &__form{
+                    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+                    padding: 56px 48px 56px 48px;
+                    border-radius: 4px;
+                }
+                form{
+                    .row{
+                        display: block;
+                    }
+                }
+                div.wpcf7-validation-errors{
+                    display: none!important;
+                }
+                textarea
+                {
+                    font-family: "Open Sans", sans-serif;
+                    font-size: 14px!important;
+                    padding-top: 12px 14px;
+                    height: 165px;
+                }
+                input{
+                    font-size: 14px!important;
+                    padding-top: 11px 14px;
+                }
+            }
+        }
         .container {
             max-width: 1150px;
             margin: 0 auto;
@@ -18,9 +74,11 @@
         }
 
         &__columns {
+            flex-direction: column;
+            margin-right: 113px;
             h3 {
                 margin-top: 20px;
-                margin-bottom: 8px;
+                margin-bottom: 7px;
                 text-align: left;
                 color: $color-blue;
             }
@@ -31,8 +89,8 @@
         }
 
         &__left {
-            margin-right: 70px;
-            max-width: 245px;
+            max-width: 373px;
+
         }
 
         &__right {
@@ -42,20 +100,27 @@
         .contact {
             &__text {
                 margin-bottom: 12px;
-                font-size: 16px;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 149.8%;
+                color: #4A4A49;
             }
 
             &__info {
-                margin-bottom: 6px;
-                padding-left: 21px;
+                margin-bottom: 8px;
+                padding-left: 17px;
                 position: relative;
-                font-size: 16px;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 149.8%;
+                color: #4A4A49;
 
                 a {
-                    color: #4A4A49;
-
+                    color: rgba(0, 92, 169, 1);
+                    transition: all .5s ease;
                     &:hover {
-                        color: #4A4A49;
+                        color: rgba(74, 74, 73, 1);
+                        text-decoration: none;
                     }
                 }
 
@@ -64,7 +129,7 @@
                     top: 5px;
                     left: 0;
                     color: $color-light-blue;
-                    font-size: 16px;
+                    font-size: 11px;
                 }
             }
 
@@ -76,10 +141,14 @@
         }
 
         .sidebar {
-
+            margin-left: 0;
+            margin-top: 30px;
             &__item {
                 min-height: 177px;
                 min-width: 200px;
+                background-color: rgba(0,0,0,0);
+                box-shadow: none;
+                padding: 0;
             }
         }
     }
@@ -92,8 +161,13 @@
 @media screen and (max-width: 992px) {
     .p-contacts {
         .contacts {
+            .contact-us{
+                margin-top: 0;
+            }
+
             &__wrap {
                 flex-direction: column;
+                align-items: center;
 
                 .sidebar {
                     max-width: 320px;
