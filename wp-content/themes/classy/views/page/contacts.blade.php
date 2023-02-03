@@ -130,6 +130,10 @@
       // Получаем данные для карты из пхп55.05135327352421, 9.748866740590023
       locations[0] = [
         'Mellemvej 20, 6430 Nordborg, Denmark',
+        '55.05083489983951',
+        '9.750879922549528',
+        '0',
+        '',
       ];
 
       var average = function average(nums) {
@@ -155,7 +159,7 @@
           maxZoom: 30,
           zoomControlOptions: {style: google.maps.ZoomControlStyle.LARGE},
           //center: new google.maps.LatLng(locations[1][1], locations[1][2]),
-          center: new google.maps.LatLng(center[0], center[1]),
+          center: new google.maps.LatLng(center[0]+0.001, center[1]+0.006),
 
           // How you would like to style the map.
           // This is where you would paste any style found on Snazzy Maps.
