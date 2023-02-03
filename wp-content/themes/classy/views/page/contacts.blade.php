@@ -104,9 +104,9 @@
                 {!! do_shortcode($form) !!}
               @else
                 @if(ICL_LANGUAGE_CODE === 'en')
-                  {!! do_shortcode('[contact-form-7 id="3139" title="Send Us A Message"]') !!}
+                  {!! do_shortcode('[contact-form-7 id="2993" title="Send Us A Message"]') !!}
                 @elseif(ICL_LANGUAGE_CODE === 'de')
-                  {!! do_shortcode('[contact-form-7 id="3138" title="Contact form DE"]') !!}
+                  {!! do_shortcode('[contact-form-7 id="2992" title="Contact form DE"]') !!}
                 @else
                 @endif
               @endif
@@ -130,10 +130,6 @@
       // Получаем данные для карты из пхп55.05135327352421, 9.748866740590023
       locations[0] = [
         'Mellemvej 20, 6430 Nordborg, Denmark',
-        '55.05095651085995',
-        '9.751274867157493',
-        '0',
-        '',
       ];
 
       var average = function average(nums) {
