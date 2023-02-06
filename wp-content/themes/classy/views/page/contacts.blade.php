@@ -104,9 +104,9 @@
                 {!! do_shortcode($form) !!}
               @else
                 @if(ICL_LANGUAGE_CODE === 'en')
-                  {!! do_shortcode('[contact-form-7 id="2993" title="Send Us A Message"]') !!}
+                  {!! do_shortcode('[contact-form-7 id="3267" title="Send Us A Message"]') !!}
                 @elseif(ICL_LANGUAGE_CODE === 'de')
-                  {!! do_shortcode('[contact-form-7 id="2992" title="Contact form DE"]') !!}
+                  {!! do_shortcode('[contact-form-7 id="3268" title="Contact form DE"]') !!}
                 @else
                 @endif
               @endif
