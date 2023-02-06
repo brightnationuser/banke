@@ -1,4 +1,4 @@
-<?php
+@php
 global $wp,$sitepress;
 $default_language = $sitepress->get_default_language();
 $languages = apply_filters('wpml_active_languages', NULL, 'skip_missing=0&orderby=id&order=desc') ?: array(
@@ -13,7 +13,7 @@ if((strripos($_SERVER['HTTP_ACCEPT_LANGUAGE'],"de")!==false || strripos($_SERVER
     setcookie('language_checked',true);
     header('Location: '.$languages['de']['url']);
 }
-?>
+@endphp
 <!DOCTYPE html>
 <html>
     <head>
