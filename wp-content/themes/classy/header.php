@@ -11,7 +11,7 @@ $languages = apply_filters('wpml_active_languages', NULL, 'skip_missing=0&orderb
         'language_code' => $default_language
     )
 );
-var_dump($_SERVER['HTTP_ACCEPT_LANGUAGE']);
+
 if((strripos($_SERVER['HTTP_ACCEPT_LANGUAGE'],"de")!==false || strripos($_SERVER['HTTP_ACCEPT_LANGUAGE'],"de_DE")!==false) && strripos($_SERVER["REQUEST_URI"],"/de/") === false && !isset($_COOKIE['language_checked']) ){
     setcookie('language_checked',true);
     header('Location: '.$languages['de']['url']);
