@@ -144,8 +144,11 @@
       var longitudes = locations.map(item => +item[2]);
       var center = [average(latitudes), average(longitudes)];
 
+      var api_center_param = new google.maps.LatLng(center[0]+0.001, center[1]+0.006);
       var myOptions = {};
-
+      if (window.innerWidth <= 992) {
+        api_center_param = new google.maps.LatLng(center[0], center[1]);
+      }
       function initialize_map() {
         //console.log('initialize_map');
 
@@ -159,7 +162,7 @@
           maxZoom: 30,
           zoomControlOptions: {style: google.maps.ZoomControlStyle.LARGE},
           //center: new google.maps.LatLng(locations[1][1], locations[1][2]),
-          center: new google.maps.LatLng(center[0]+0.001, center[1]+0.006),
+          center:  api_center_param ,
 
           // How you would like to style the map.
           // This is where you would paste any style found on Snazzy Maps.
