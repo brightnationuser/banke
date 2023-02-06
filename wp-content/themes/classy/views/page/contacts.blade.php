@@ -104,9 +104,9 @@
                 {!! do_shortcode($form) !!}
               @else
                 @if(ICL_LANGUAGE_CODE === 'en')
-                  {!! do_shortcode('[contact-form-7 id="3267" title="Send Us A Message"]') !!}
+                  {!! do_shortcode('[contact-form-7 id="3267" title="Contact page form EN with placeholders"]') !!}
                 @elseif(ICL_LANGUAGE_CODE === 'de')
-                  {!! do_shortcode('[contact-form-7 id="3268" title="Contact form DE"]') !!}
+                  {!! do_shortcode('[contact-form-7 id="3285" title="Contact page form DE with placeholders"]') !!}
                 @else
                 @endif
               @endif
@@ -118,7 +118,7 @@
     </div>
   </section>
   <div id="map"></div>
-  <div id="bmap"></div>
+
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgemEnSDgHmYiG0c3RHFD1s5h16yfS2ZE&amp;language=en"></script>
   <script>
     jQuery(document).ready(function(){
