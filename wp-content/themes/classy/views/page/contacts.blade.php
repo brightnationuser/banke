@@ -119,7 +119,7 @@
   </section>
   <div id="map"></div>
   <div id="bmap"></div>
-  <script src="https://maps.googleapis.com/maps/api/js?key=&amp;language=en"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgemEnSDgHmYiG0c3RHFD1s5h16yfS2ZE&amp;language=en"></script>
   <script>
     jQuery(document).ready(function(){
       var map; // Global declaration of the map
@@ -166,11 +166,11 @@
           styles: [{
             "featureType": "all",
             "elementType": "labels.text.fill",
-            "stylers": [{"saturation": 36}, {"color": "#000000"}, {"lightness": 40}]
+            "stylers": [ {"color": "#6c6c6c"}]
           }, {
             "featureType": "all",
             "elementType": "labels.text.stroke",
-            "stylers": [{"visibility": "on"}, {"color": "#000000"}, {"lightness": 16}]
+            "stylers": [{"visibility": "on"}, {"color": "#ffffff"}, {"lightness": 16}]
           }, {
             "featureType": "all",
             "elementType": "labels.icon",
@@ -178,43 +178,43 @@
           }, {
             "featureType": "administrative",
             "elementType": "geometry.fill",
-            "stylers": [{"color": "#000000"}, {"lightness": 20}]
+            "stylers": [{"color": "#aaa"}, {"lightness": 20}]
           }, {
             "featureType": "administrative",
             "elementType": "geometry.stroke",
-            "stylers": [{"color": "#000000"}, {"lightness": 17}, {"weight": 1.2}]
+            "stylers": [{"color": "#aaa"}, {"lightness": 17}, {"weight": 1.2}]
           }, {
             "featureType": "landscape",
             "elementType": "geometry",
-            "stylers": [{"color": "#000000"}, {"lightness": 20}]
+            "stylers": [{"color": "#f0f0f0"}]
           }, {
             "featureType": "poi",
             "elementType": "geometry",
-            "stylers": [{"color": "#000000"}, {"lightness": 21}]
+            "stylers": [{"color": "#f0f0f0"}]
           }, {
             "featureType": "road.highway",
             "elementType": "geometry.fill",
-            "stylers": [{"color": "#000000"}, {"lightness": 17}]
+            "stylers": [{"color": "#ffffff"}]
           }, {
             "featureType": "road.highway",
             "elementType": "geometry.stroke",
-            "stylers": [{"color": "#000000"}, {"lightness": 29}, {"weight": 0.2}]
+            "stylers": [{"color": "#ffffff"},  {"weight": 0.2}]
           }, {
             "featureType": "road.arterial",
             "elementType": "geometry",
-            "stylers": [{"color": "#000000"}, {"lightness": 18}]
+            "stylers": [{"color": "#ffffff"}]
           }, {
             "featureType": "road.local",
             "elementType": "geometry",
-            "stylers": [{"color": "#000000"}, {"lightness": 16}]
+            "stylers": [{"color": "#ffffff"}]
           }, {
             "featureType": "transit",
             "elementType": "geometry",
-            "stylers": [{"color": "#000000"}, {"lightness": 19}]
+            "stylers": [{"color": "#ffffff"}]
           }, {
             "featureType": "water",
             "elementType": "geometry",
-            "stylers": [{"color": "#000000"}, {"lightness": 17}]
+            "stylers": [{"color": "#e1e1e1"}, {"lightness": 17}]
           }]
         };
 
