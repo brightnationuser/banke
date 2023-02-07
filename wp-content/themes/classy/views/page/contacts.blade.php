@@ -82,11 +82,9 @@
                 <a href="{!! get_field('youtube', 'option')['link'] !!}" class="youtube disable_preloader" target="_blank">
                   <i class="icon-youtube"></i>
                 </a>
-                <a href="{!! get_field('twitter', 'option')['link'] !!}" class="twitter disable_preloader" target="_blank">
-                  <i class="icon-twitter"></i>
-                </a>
-                <a href="{!! get_field('xing', 'option')['link'] !!}" class="xing disable_preloader" target="_blank">
-                  <i class="icon-xing"></i>
+                <a href="{!! get_field('facebook', 'option')['link'] !!}" class="facebook disable_preloader"
+                   target="_blank">
+                  <i class="icon-facebook"></i>
                 </a>
               </div>
 
