@@ -1,188 +1,257 @@
 .contact-us {
-    background-color: $color-bg-light-blue;
-    background-image: url("/wp-content/themes/classy/images/bg/contact-us-bg.png");
-    background-size: cover;
-    padding: 1px 0 80px 0;
-    
+  background-color: $color-bg-light-blue;
+  background-image: url("/wp-content/themes/classy/images/bg/contact-us-bg.png");
+  background-size: cover;
+  padding: 1px 0 80px 0;
+
+  .container {
+    max-width: 770px;
+
+    .contact-us__form {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px 25px 40px 25px;
+      box-shadow: 4px 7px 7px rgba(0, 0, 0, 0.04);
+
+      form {
+        .row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 30px;
+        }
+      }
+
+      .wpcf7-form-control-wrap {
+        textarea {
+          resize: none;
+        }
+      }
+
+      .form__button {
+        text-align: center;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &--light {
+    margin-bottom: -80px;
+    padding-bottom: 97px;
+    background-color: #ffffff;
+    background-position: bottom center;
+    position: relative;
+    background-image: url(/wp-content/themes/classy/images/pages/engineering/engineering_fon.jpg);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(255, 255, 255, .8);
+      z-index: 0;
+    }
+
     .container {
-        max-width: 770px;
-        
-        .contact-us__form {
-            background: #fff;
-            border-radius: 10px;
-            padding: 20px 25px 40px 25px;
-            box-shadow: 4px 7px 7px rgba(0, 0, 0, 0.04);
+      max-width: 880px;
+      position: relative;
+      z-index: 1;
 
-            form {
-                .row {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    grid-gap: 30px;
-                }
-            }
-            
-            .wpcf7-form-control-wrap {
-                textarea {
-                    resize: none;
-                }
-            }
-            
-            .form__button {
-                text-align: center;
-                margin-top: 20px;
-            }
-        }
-    }
+      .contact-us {
+        &__form {
+          padding: 30px 44px 30px 44px;
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+          border-radius: 4px;
 
-    &--light {
-        margin-bottom: -80px;
-        padding-bottom: 97px;
-        background-color: #ffffff;
-        background-position: bottom center;
-        position: relative;
-        background-image: url(/wp-content/themes/classy/images/pages/engineering/engineering_fon.jpg);
+          @media (min-width: 768px) {
+            padding: 30px 44px 50px 44px;
+          }
 
-        &::before {
-            content: '';
+          form {
+            .row {
+              grid-gap: 20px;
+            }
+          }
+
+          .ajax-loader {
             position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background-color: rgba(255,255,255, .8);
-            z-index: 0;
-        }
-
-        .container {
-            max-width: 880px;
-            position: relative;
-            z-index: 1;
-
-            .contact-us {
-                &__form {
-                    padding: 30px 44px 30px 44px;
-                    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-                    border-radius: 4px;
-
-                    @media (min-width: 768px) {
-                        padding: 30px 44px 50px 44px;
-                    }
-
-                    form {
-                        .row {
-                            grid-gap: 20px;
-                        }
-                    }
-
-                    .ajax-loader {
-                        position: absolute;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        bottom: 20px;
-                    }
-
-                    input, textarea {
-                        font-family: 'Open Sans', sans-serif;
-                        font-size: 16px;
-                        line-height: 18px;
-                        font-weight: 300;
-                        color: rgba(26, 26, 26, 0.9);
-
-                        &::placeholder {
-                            transition: all .3s ease;
-                            color: rgba(26, 26, 26, 0.9);
-                        }
-
-                        &[type=submit] {
-                            color: #ffffff;
-                            font-weight: bold;
-                            font-size: 16px;
-                            line-height: 19px;
-                            -webkit-appearance: none;
-                        }
-
-                        &:focus, &:active {
-                            &::placeholder {
-                                opacity: 0;
-                            }
-                        }
-                    }
-
-                    textarea {
-                        height: 80px;
-                        min-height: 80px;
-                    }
-                }
-            }
-        }
-
-        div.wpcf7-mail-sent-ok, div.wpcf7-validation-errors {
-            text-align: center;
-            position: absolute;
-            bottom: 0;
             left: 50%;
-            transform: translate(-50%);
-            width: 95%;
-            border: 0;
+            transform: translateX(-50%);
+            bottom: 20px;
+          }
+
+          input, textarea {
+            font-family: 'Open Sans', sans-serif;
             font-size: 16px;
-            font-weight: normal;
+            line-height: 18px;
+            font-weight: 300;
+            color: rgba(26, 26, 26, 0.9);
 
-            @media screen and (max-width: 768px) {
-                position: static;
-                width: 100%;
-                transform: none;
+            &::placeholder {
+              transition: all .3s ease;
+              color: rgba(26, 26, 26, 0.9);
             }
-        }
 
-        div.wpcf7-validation-errors {
-            color: #f00;
-        }
-
-        span.wpcf7-not-valid-tip {
-            color: #f00;
-            text-align: center;
-            font-weight: normal;
-            display: block;
-            position: absolute;
-            font-size: 16px;
-            left: 50%;
-            transform: translate(-50%);
-        }
-    }
-
-    &--blue-bg {
-        padding-bottom: 80px;
-        margin-bottom: 0;
-        background-color: #F2F6FC;
-        background-image: url('/wp-content/themes/classy/images/pages/home/contact-us.png');
-
-        h2 {
-            margin-bottom: 40px;
-        }
-
-        &::before {
-            display: none;
-        }
-    }
-    
-    @media screen and (max-width: $width-l) {
-        .container {
-            .contact-us__form {
-                margin-top: 40px;
+            &[type=submit] {
+              color: #ffffff;
+              font-weight: bold;
+              font-size: 16px;
+              line-height: 19px;
+              -webkit-appearance: none;
             }
-        }
-    }
-    
-    @media screen and (max-width: $width-s) {
-        .container {
-            .contact-us__form {
-                form {
-                    .row {
-                        grid-template-columns: auto;
-                        grid-gap: 0;
-                    }
-                }
+
+            &:focus, &:active {
+              &::placeholder {
+                opacity: 0;
+              }
             }
+          }
+
+          textarea {
+            height: 80px;
+            min-height: 80px;
+          }
         }
+      }
     }
+
+    div.wpcf7-mail-sent-ok, div.wpcf7-validation-errors {
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%);
+      width: 95%;
+      border: 0;
+      font-size: 16px;
+      font-weight: normal;
+
+      @media screen and (max-width: 768px) {
+        position: static;
+        width: 100%;
+        transform: none;
+      }
+    }
+
+    div.wpcf7-validation-errors {
+      color: #f00;
+    }
+
+    span.wpcf7-not-valid-tip {
+      color: #f00;
+      text-align: center;
+      font-weight: normal;
+      display: block;
+      position: absolute;
+      font-size: 16px;
+      left: 50%;
+      transform: translate(-50%);
+    }
+  }
+
+  &--blue-bg {
+    padding-bottom: 80px;
+    margin-bottom: 0;
+    background-color: #F2F6FC;
+    background-image: url('/wp-content/themes/classy/images/pages/home/contact-us.png');
+
+    h2 {
+      margin-bottom: 40px;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: $width-l) {
+    .container {
+      .contact-us__form {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  @media screen and (max-width: $width-s) {
+    .container {
+      .contact-us__form {
+        form {
+          .row {
+            grid-template-columns: auto;
+            grid-gap: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.contact-us-new {
+  padding-top: 80px;
+  background-size: cover;
+  background-position: center;
+  @media screen and (max-width: 992px) {
+    padding-top: 20px;
+    margin-bottom: -40px;
+  }
+  h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 49px;
+    text-align: center;
+    color: #003462;
+    margin-top: 0;
+    &:after {
+      display: none;
+    }
+  }
+
+  .contact-us__form {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 170%;
+    text-align: center;
+    color: #4A4A49;
+    margin: 24px auto;
+  }
+  .contacts_list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .item{
+      display: flex;
+      align-items: center;
+      svg{
+        display: block;
+      }
+      a{
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 25px;
+        color: #005CA9;
+        margin-left: 8px;
+      }
+      &+.item::before{
+        content: "";
+        height: 16px;
+        width: 1px;
+        opacity: .2;
+        display: block;
+        background-color: #4A4A49;
+        margin: 0 16px;
+      }
+
+    }
+  }
+  .button {
+    background: linear-gradient(90deg, #005CA9 0%, #003462 122.6%);
+    transition: all .5s ease;
+    margin-top: 52px;
+
+    &:hover {
+      filter: brightness(1.2);
+    }
+  }
 }

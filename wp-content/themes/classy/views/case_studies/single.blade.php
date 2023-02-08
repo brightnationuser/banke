@@ -1,11 +1,3 @@
-@php
-    $acf_group = get_field('vacancies_group');
-    $acf_options = get_field('vacancies', 'options');
-
-    $email = $acf_group['email'] ? $acf_group['email'] : $acf_options['email'];
-    $phone = $acf_group['phone'] ? $acf_group['phone'] : $acf_options['phone_link'];
-@endphp
-
 @extends('layout.default')
 
 @section('content')
@@ -13,83 +5,85 @@
 
     <article class="case case-{{apply_filters('the_id', get_the_ID())}}">
 
-            <h2 class="case__title">Case Study</h2>
-            <h1 class="case__item__title">{!!  get_the_title() !!}</h1>
-            <a class="case__download" href="http://banke/wp-content/uploads/2020/04/Banke-Service-Training-Certificate.jpg" target="_blank"
-               download="http://banke/wp-content/uploads/2020/04/Banke-Service-Training-Certificate.jpg">
-                <i class="icon-down-arrow"></i> Download Certificate </a>
+        <h2 class="case__title">{!! get_field('case_study_title', 'option') !!}</h2>
+        <h1 class="case__item__title">{!!  get_the_title() !!}</h1>
+        <a class="case__download" href="{!! get_field('file')['url'] !!}" target="_blank"
+           download="{!! get_field('file')['url'] !!}">
+            <i class="icon-down-arrow"></i> Download Certificate </a>
 
 
-            <div class="case__content">{!!  get_the_content() !!}</div>
-
-
+        <div class="case__content">{!!  get_the_content() !!}</div>
 
 
     </article>
     <div class="case__solution" style="background-image: url(/wp-content/themes/classy/images/case-solutions-bg.jpg)">
         <div class="container">
             <h2 class="case__solution__title">Solution</h2>
-            <p class="case__solution__text">Banke ApS has developed and built a solution that is both highly compact and
-                has a component architecture that allows individual cells to be exchanged in the unlikely event that one
-                fails. This enables rapid servicing of the unit and maximizes up-time for the unit.</p>
-            <a href="#" class="case__solution__button">Learn more about the product</a>
+            <p class="case__solution__text">{!! get_field('solution') !!}</p>
+            <a href="#" class="case__solution__button">{!! get_field('case_studies_learn_more_button', 'option') !!}</a>
         </div>
     </div>
-    <div class="case__specifications">
-        <div class="case__specifications__container">
-            <h2 class="case__solution__title">Main Specification Facts</h2>
-            <div class="wrapper">
-                <div class="left">
-                    <table>
-                        <tr>
-                            <td>Lorem ipsum.</td>
-                            <td>Distinctio, dolore.</td>
-                        </tr>
-                        <tr>
-                            <td>Lorem ipsum.</td>
-                            <td>Minus, officia.</td>
-                        </tr>
-                        <tr>
-                            <td>Lorem ipsum.</td>
-                            <td>Accusamus, modi.</td>
-                        </tr>
-                        <tr>
-                            <td>Lorem ipsum.</td>
-                            <td>Error, illum.</td>
-                        </tr>
-                        <tr>
-                            <td>Lorem ipsum.</td>
-                            <td>Accusantium, eos.</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="right">
-                    <div class="image">
-                        <img src="/wp-content/themes/classy/images/case-icon.jpg" alt="case icon">
+
+    @if(!empty(get_field('specifications')))
+        <div class="case__specifications">
+            <div class="case__specifications__container">
+                <h2 class="case__solution__title">Main Specification Facts</h2>
+                <div class="wrapper">
+                    <div class="left">
+                        <table>
+                            @foreach(get_field('specifications') as $item)
+                                <tr>
+                                    <td>{!! $item['title'] !!}</td>
+                                    <td>{!! $item['text'] !!}</td>
+                                </tr>
+                            @endforeach
+                        </table>
                     </div>
-                    <a class="case__download" href="http://banke/wp-content/uploads/2020/04/Banke-Service-Training-Certificate.jpg" target="_blank"
-                       download="http://banke/wp-content/uploads/2020/04/Banke-Service-Training-Certificate.jpg">
-                        <i class="icon-down-arrow"></i> Download PDF </a>
+                    <div class="right">
+                        <div class="image">
+                            <img src="/wp-content/themes/classy/images/case-icon.jpg" alt="case icon">
+                        </div>
+                        <a class="case__download" href="{!! get_field('file')['url'] !!}" target="_blank"
+                           download="{!! get_field('file')['url'] !!}">
+                            <i class="icon-down-arrow"></i> Download PDF </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    @endif
     <div class="case__product">
         <div class="case__specifications__container">
-        <div class="wrapper">
-            <div class="image">
-                <img src="/wp-content/themes/classy/images/case-test-image.png" alt="case icon">
+            <div class="wrapper">
+                <div class="image">
+                    @if(get_field('product') == 0)
+                        <img src="/wp-content/themes/classy/images/case-test-image.png" alt="case icon">
+                    @elseif(get_field('product') == 1)
+                        <img src="/wp-content/themes/classy/images/case-test-image-2.png" alt="case icon">
+                    @else
+                        <img src="/wp-content/themes/classy/images/case-test-image-3.png" alt="case icon">
+                    @endif
+                </div>
+                <div class="text">
+                    @if(get_field('product') == 0)
+                        @php($id = 115)
+                    @elseif(get_field('product') == 1)
+                        @php($id = 2301)
+                    @else
+                        @php($id = 809)
+                    @endif
+
+                    <h2 class="case__solution__title">
+                        {!!  get_the_title($id) !!}
+                    </h2>
+                    <p class="case__solution__text">{!!  get_field('case_studies_info',$id) !!}</p>
+                    <a href="{!! get_permalink( $id ) !!}" class="button button--primary disable_preloader">{!! get_field('case_studies_learn_more_button', 'option') !!}</a>
+
+
+                </div>
             </div>
-            <div class="text">
-                <h2 class="case__solution__title">Main Specification Facts</h2>
-                <p class="case__solution__text">Banke ApS has developed and built a solution that is both highly compact and
-                    has a component architecture that allows individual cells to be exchanged in the unlikely event that one
-                    fails. This enables rapid servicing of the unit and maximizes up-time for the unit.</p>
-                <div class="button button--primary disable_preloader">Learn more about the product</div>
-            </div>
-        </div>
         </div>
     </div>
+
     @include('partials.related-cases')
     @include('partials.case-contact-us')
 @stop

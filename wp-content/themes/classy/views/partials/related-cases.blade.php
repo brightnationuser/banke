@@ -1,7 +1,7 @@
 
     <section class="related">
         <div class="container">
-            <h2 class="related__title">{{ get_field('latest_news', 'options') }}</h2>
+            <h2 class="related__title">{{ get_field('related_case_title', 'options') }}</h2>
 
             <div class="related__content">
                 <div class="related__slider js-related-slider owl-carousel">
@@ -14,8 +14,12 @@
 
                                     <div class="item__content">
                                         <h3 class="item__title">
+                                            {!!  get_field('subtitle',$item->ID) !!}
+                                        </h3>
+                                        <h3 class="item__title">
                                             {!! strlen(get_the_title($item->ID)) > 150 ? substr(get_the_title($item->ID), 0, 150) . '...' : get_the_title($item->ID) !!}
                                         </h3>
+
 
                                     </div>
                                 </a>
