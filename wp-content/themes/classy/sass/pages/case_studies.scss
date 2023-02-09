@@ -33,7 +33,9 @@
     text-decoration: none !important;
     color: #005CA9;
     transition: all .5s ease;
-
+    span{
+      text-decoration: underline;
+    }
     &:hover {
       color: #003462;
     }
@@ -93,12 +95,12 @@
 
   &__solution {
     padding: 80px 0;
-    margin: 80px 0;
+    margin: 20px 0 80px;
     background-position: center;
     background-size: cover;
     @media screen and (max-width: 992px) {
       padding: 20px 0;
-      margin: 20px 0;
+      margin: 50px 0 20px;
       text-align: center;
     }
     .container {
@@ -152,8 +154,12 @@
       position: relative;
       overflow: visible;
       margin: 40px 0 10px;
+      transition: all .5s ease;
       @media screen and (max-width: 992px) {
         margin: 20px auto 10px;
+        &:hover {
+          filter: brightness(1.2);
+        }
       }
       &:before {
         content: "";
@@ -168,6 +174,9 @@
         top: 50%;
         transform: translateY(-50%) scaleY(1.35) scaleX(1.04);
         transition: all .5s ease;
+        @media screen and (max-width: 992px) {
+          display: none;
+        }
       }
 
       &:after {
@@ -183,6 +192,9 @@
         top: 50%;
         transform: translateY(-50%) scaleY(1.7) scaleX(1.09);
         transition: all .5s ease;
+        @media screen and (max-width: 992px) {
+          display: none;
+        }
       }
 
       &:hover {
@@ -226,11 +238,17 @@
       table {
         display: block;
         width: 100%;
+        @media screen and (max-width: 992px) {
 
+          max-width: 100%;
+          overflow: auto;
+        }
         tbody {
           display: flex;
           flex-direction: column;
-
+          @media screen and (max-width: 992px) {
+            width: fit-content;
+          }
           tr {
             display: flex;
             padding: 15px 24px;
@@ -245,7 +263,9 @@
               font-size: 18px;
               line-height: 150%;
               color: #005CA9;
-
+              @media screen and (max-width: 992px) {
+                white-space: nowrap;
+              }
               &:first-of-type {
                 max-width: 190px;
                 width: 100%;
@@ -253,6 +273,9 @@
                 font-size: 18px;
                 line-height: 150%;
                 color: #4A4A49;
+                @media screen and (max-width: 992px) {
+                  min-width: 190px;
+                }
               }
             }
           }
@@ -299,7 +322,7 @@
     margin-bottom: 106px;
     @media screen and (max-width: 992px) {
       margin-top: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 50px;
       .text{
         text-align: center;
       }
@@ -318,7 +341,11 @@
         margin-right: 123px;
         @media screen and (max-width: 992px) {
           margin-right: 0;
+          max-width: 90%;
+          width: 100%;
+          margin: auto;
         }
+
       }
 
       .case__solution__text {

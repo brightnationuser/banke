@@ -10,7 +10,7 @@
                       <div class="carousel__item">
                             <div class="item">
                                 <a href="{{ get_permalink($item->ID)  }}" class="item">
-                                    <img class="item__image" src="{{ get_the_post_thumbnail_url($item->ID) }}" alt="{{ get_the_title($item->ID) }}"/>
+                                    <img class="item__image" src="{{ get_the_post_thumbnail_url($item->ID,'medium_large') }}" alt="{{ get_the_title($item->ID) }}"/>
 
                                     <div class="item__content">
                                         <h3 class="item__title">

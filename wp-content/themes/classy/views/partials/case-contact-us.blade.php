@@ -24,7 +24,7 @@
                     <a href="tel:{!! get_field('number', 'options') !!}" class="text">{!! get_field('number', 'options') !!}</a>
                 </div>
             </div>
-            <div class="button button--primary disable_preloader">{!! get_field('contact_us', 'option') !!}</div>
+            <a href="{!! get_permalink( 24 ) !!}" class="button button--primary disable_preloader">{!! get_field('contact_us', 'option') !!}</a>
         </div>
     </div>
 </div>
