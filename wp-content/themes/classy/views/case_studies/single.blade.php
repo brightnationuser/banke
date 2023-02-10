@@ -52,7 +52,7 @@
                         </div>
                         <a class="case__download" href="{!! get_field('file')['url'] !!}" target="_blank"
                            download="{!! get_field('file')['url'] !!}">
-                            <i class="icon-down-arrow"></i> Download PDF </a>
+                            <i class="icon-down-arrow"></i> <span>Download PDF</span> </a>
                     </div>
                 </div>
             </div>

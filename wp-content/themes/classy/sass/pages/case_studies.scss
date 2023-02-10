@@ -34,10 +34,26 @@
     color: #005CA9;
     transition: all .5s ease;
     span{
-      text-decoration: underline;
+     position: relative;
+      &::before{
+        content: "";
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: #005CA9;
+        transition: all .5s ease;
+      }
     }
     &:hover {
       color: #003462;
+      span{
+        &::before{
+          content: "";
+          opacity: 0;
+        }
+      }
     }
 
     i {
@@ -311,6 +327,28 @@
         line-height: 25px;
         margin-top: 22px;
         letter-spacing: 0.04em;
+        span{
+          position: relative;
+          &::before{
+            content: "";
+            height: 1px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-color: #005CA9;
+            transition: all .5s ease;
+          }
+        }
+        &:hover {
+          color: #003462;
+          span{
+            &::before{
+              content: "";
+              opacity: 0;
+            }
+          }
+        }
       }
     }
 
@@ -321,7 +359,7 @@
     margin-top: 186px;
     margin-bottom: 106px;
     @media screen and (max-width: 992px) {
-      margin-top: 20px;
+      margin-top: 50px;
       margin-bottom: 50px;
       .text{
         text-align: center;
