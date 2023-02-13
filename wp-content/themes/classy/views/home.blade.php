@@ -69,9 +69,9 @@
 
     <div class="home-references">
         <div class="container">
-            @if(!empty(get_field('case_study_title')))
+            @if(!empty(get_field('case_study_title', 'options')))
                 <h2>
-                    {{ get_field('case_study_title') }}
+                    {{ get_field('case_study_title', 'options') }}
                 </h2>
                 @if(!empty(get_field('references_about')))
                     <p>{{ get_field('references_about') }}</p>
