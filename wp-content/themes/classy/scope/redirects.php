@@ -1,5 +1,5 @@
 <?php
-global $wp,$sitepress;
+global $wp, $sitepress;
 $default_language = $sitepress->get_default_language();
 $languages = apply_filters('wpml_active_languages', NULL, 'skip_missing=0&orderby=id&order=desc') ?: array(
     array(
@@ -9,9 +9,9 @@ $languages = apply_filters('wpml_active_languages', NULL, 'skip_missing=0&orderb
     )
 );
 
-if((strripos($_SERVER['HTTP_ACCEPT_LANGUAGE'],"de")!==false || strripos($_SERVER['HTTP_ACCEPT_LANGUAGE'],"de_DE")!==false) && strripos($_SERVER["REQUEST_URI"],"/de/") === false && !isset($_COOKIE['language_checked']) ){
-    setcookie('language_checked',true);
-    header('Location: '.$languages['de']['url']);
+if ((strripos($_SERVER['HTTP_ACCEPT_LANGUAGE'], "de") !== false || strripos($_SERVER['HTTP_ACCEPT_LANGUAGE'], "de_DE") !== false) && strripos($_SERVER["REQUEST_URI"], "/de/") === false && !isset($_COOKIE['language_checked'])) {
+    setcookie('language_checked', true);
+    header('Location: ' . $languages['de']['url']);
 }
 $relations = [
     'epto-systems/references' => 'epto-systems/',
@@ -21,10 +21,10 @@ $relations = [
 
 $request = trim($_SERVER['REQUEST_URI'], '/');
 
-foreach($relations as $key => $val){
-    if($key == $request){
+foreach ($relations as $key => $val) {
+    if ($key == $request) {
         header("HTTP/1.1 301 Moved Permanently");
-        header("Location: http://". $_SERVER['SERVER_NAME'] . '/' . $val);
+        header("Location: http://" . $_SERVER['SERVER_NAME'] . '/' . $val);
         exit();
     }
 }
