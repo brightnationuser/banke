@@ -69,9 +69,9 @@
 
     <div class="home-references">
         <div class="container">
-            @if(!empty(get_field('references_title')))
+            @if(!empty(get_field('case_study_title', 'options')))
                 <h2>
-                    {{ get_field('references_title') }}
+                    {{ get_field('case_study_title', 'options') }}
                 </h2>
                 @if(!empty(get_field('references_about')))
                     <p>{{ get_field('references_about') }}</p>
@@ -79,22 +79,32 @@
             @endif
 
             <div class="references-slider owl-carousel js-references-slider">
-                @foreach($references as $reference)
+
+                @foreach($case_studies as $case_study)
                     <div class="reference-slide">
-                        <a href="{!! get_post_permalink($reference->ID) !!}">
+                        <a href="{!! get_post_permalink($case_study->ID) !!}">
+                            @if($case_study->post_type=="page")
+                                <div class="reference-slide__image">
+                                    <picture>
+                                        <source srcset="{!! \Helpers\General::getFlyWebpImage($case_study->getAcfByKey('acf_image'), [600, 400]); !!}" type="image/webp">
+                                        <source srcset="{!! \Helpers\General::getFlyImage($case_study->getAcfByKey('acf_image'), [600, 400]); !!}" type="image/jpeg">
+                                        <img src="{!! \Helpers\General::getFlyImage($case_study->getAcfByKey('acf_image'), [600, 400]); !!}" alt="{!! $case_study->post_title !!}"/>
+                                    </picture>
+                                </div>
+                            @else
                             <div class="reference-slide__image">
                                 <picture>
-                                    <source srcset="{!! \Helpers\General::getFlyWebpImage($reference->getAcfByKey('acf_image'), [600, 400]); !!}" type="image/webp">
-                                    <source srcset="{!! \Helpers\General::getFlyImage($reference->getAcfByKey('acf_image'), [600, 400]); !!}" type="image/jpeg">
-                                    <img src="{!! \Helpers\General::getFlyImage($reference->getAcfByKey('acf_image'), [600, 400]); !!}" alt="{!! $reference->post_title !!}"/>
+                                    <img class="item__image" src="{{ get_the_post_thumbnail_url($case_study->ID,'medium_large') }}" alt="{{ get_the_title($case_study->ID) }}"/>
                                 </picture>
                             </div>
+                            @endif
                             <div class="reference-slide__title">
-                                {!! $reference->post_title !!}
+                                {!! $case_study->post_title !!}
                             </div>
                         </a>
                     </div>
                 @endforeach
+
             </div>
         </div>
     </div>

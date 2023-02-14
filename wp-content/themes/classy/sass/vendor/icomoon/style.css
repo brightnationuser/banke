@@ -28,6 +28,9 @@
 .icon-facebook:before {
   content: "\e92a";
 }
+.icon-envelop:before {
+  content: "\e040";
+}
 .icon-close:before {
   content: "\e929";
 }
