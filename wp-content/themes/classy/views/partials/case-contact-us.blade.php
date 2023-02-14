@@ -1,12 +1,8 @@
 <div class="contact-us-new" style="background-image: url(/wp-content/themes/classy/images/new-contacts-bg.jpg)">
     <div class="container">
-
-            <h2>
-                {!! get_field('contact_us', 'option') !!}
-            </h2>
-
-
-
+        <h2>
+            {!! get_field('contact_us', 'option') !!}
+        </h2>
         <div class="contact-us__form aos-animation">
             <p> {!! get_field('new_contacts_description', 'option') !!}</p>
             <div class="contacts_list">
@@ -17,14 +13,17 @@
                                   fill="#4A4A49"/>
                         </svg>
                     </div>
-                    <a href="mailto:{!! get_field('email', 'options') !!}" class="text">{!! get_field('email', 'options') !!}</a>
+                    <a href="mailto:{!! get_field('email', 'options') !!}"
+                       class="text">{!! get_field('email', 'options') !!}</a>
                 </div>
                 <div class="item">
                     <div class="icon"><i class="icon-phone"></i></div>
-                    <a href="tel:{!! get_field('number', 'options') !!}" class="text">{!! get_field('number', 'options') !!}</a>
+                    <a href="tel:{!! get_field('number', 'options') !!}"
+                       class="text">{!! get_field('number', 'options') !!}</a>
                 </div>
             </div>
-            <a href="{!! get_permalink( 24 ) !!}" class="button button--primary disable_preloader">{!! get_field('contact_us', 'option') !!}</a>
+            <a href="{!! get_permalink( 24 ) !!}"
+               class="button button--primary disable_preloader">{!! get_field('contact_us', 'option') !!}</a>
         </div>
     </div>
 </div>
