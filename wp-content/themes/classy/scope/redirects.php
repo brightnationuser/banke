@@ -1,5 +1,7 @@
 <?php
 global $wp, $sitepress;
+session_start();
+
 $default_language = $sitepress->get_default_language();
 $languages = apply_filters('wpml_active_languages', NULL, 'skip_missing=0&orderby=id&order=desc') ?: array(
     array(
@@ -9,8 +11,8 @@ $languages = apply_filters('wpml_active_languages', NULL, 'skip_missing=0&orderb
     )
 );
 
-if ((strripos($_SERVER['HTTP_ACCEPT_LANGUAGE'], "de") !== false || strripos($_SERVER['HTTP_ACCEPT_LANGUAGE'], "de_DE") !== false) && strripos($_SERVER["REQUEST_URI"], "/de/") === false && !isset($_COOKIE['language_checked'])) {
-    setcookie('language_checked', true);
+if ((strripos($_SERVER['HTTP_ACCEPT_LANGUAGE'], "de") !== false || strripos($_SERVER['HTTP_ACCEPT_LANGUAGE'], "de_DE") !== false) && strripos($_SERVER["REQUEST_URI"], "/de/") === false && !isset( $_SESSION["language_checked"])) {
+    $_SESSION["language_checked"]=true;
     header('Location: ' . $languages['de']['url']);
 }
 $relations = [
