@@ -4,8 +4,26 @@
 
         <div class="related__content">
             <div class="related__slider js-related-slider owl-carousel">
+                @php
+                    $framework = get_theme_framework();
 
-                @foreach(get_posts(array('post_type' => 'case_studies',)) as $key => $item)
+                    $case_studies = $framework::get_posts([
+                        'post_type' => 'case_studies',
+                        'posts_per_page' => -1,
+                    ]);
+
+                    if (count($case_studies) < 4) {
+                        $references_filling = $framework::get_posts([
+                            'post_type' => 'page',
+                            'post_parent' => 214,
+                            'posts_per_page' => 4 - count($case_studies),
+                        ]);
+                        $case_studies = array_merge($case_studies, $references_filling);
+
+                    }
+                @endphp
+
+                @foreach($case_studies as $key => $item)
                     <div class="carousel__item">
                         <div class="item">
                             <a href="{{ get_permalink($item->ID)  }}" class="item">
