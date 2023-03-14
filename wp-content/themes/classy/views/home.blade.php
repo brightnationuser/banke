@@ -1,33 +1,66 @@
-@extends('layout.default')
+@extends('layout.main-page')
 
 @section('content')
+    <div class="first_screen">
+        <div class="left" style="background-image: url({{ content_url('themes/classy/images/main-page-fs-bg.png') }})">
 
-    <div class="hero parallax-container">
-        {{--        <div class="parallax" id="js_hero_hero">
-                </div>--}}
-
-        <div class="parallax">
-            <img src="/wp-content/themes/classy/images/bg/header-bg-2.jpg" alt="Banke bg" data-type="parallax"
-                 data-depth="2" data-shift="150">
         </div>
-
-        <div class="container">
-            <div class="h1">
-                {{ $post->getAcfByKey('acf_header')['acf_header_title'] }}
+        <div class="carousel owl-carouse">
+            <div class="item"  style="background-image: url({{ content_url('themes/classy/images/main-page-fs-slide-1.jpg') }})">
+                <a href="#">E-PTO Systems: Learn More</a>
             </div>
-
-            <h1 class="hero__caption">
-                {{ $post->getAcfByKey('acf_header')['acf_header_caption'] }}
-            </h1>
-
-            <div class="hero__button">
-                <a href="{{ $post->getAcfByKey('acf_header')['acf_header_button_link'] }}" class="button">
-                    {{ $post->getAcfByKey('acf_header')['acf_header_button'] }}
-                </a>
+        </div>
+        <div class="static_content">
+            <div class="container">
+                <div class="logo">
+                    <img src="{{ content_url('themes/classy/images/main-page-logo.png') }}" alt="Banke logo">
+                </div>
+                <div class="subtitle">Electrifying Heavy Vehicles</div>
+                <div class="caption">We provide sustainable solutions <br> that improve the performance <br> of heavy-duty vehicles while <br> reducing their environmental impact</div>
+                <a href="#">Learn More</a>
+            </div>
+        </div>
+    </div>
+    <div class="numbers">
+        <div class="container">
+            <div class="wrapper">
+                <div class="item">
+                    <div class="number">12</div>
+                    <div class="text">years <br>  of experience
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="number">18</div>
+                    <div class="text">European <br> countries</div>
+                </div>
+                <div class="item">
+                    <div class="number">500+</div>
+                    <div class="text">units <br> of products</div>
+                </div>
             </div>
         </div>
     </div>
 
+    <div class="other_products" style="background-image: url({{ content_url('themes/classy/images/other-products-bg.jpg') }})">
+        <div class="container">
+            <h2 class="title">Other Products</h2>
+            <div class="wrapper">
+
+                <a href="#" class="item">
+                    <div class="image" style="background-image: url({{ content_url('themes/classy/images/main-page-our-products.jpg') }})" class="image"></div>
+                    <div class="title">Full-electric Powertrains</div>
+                    <div class="description">Banke can rebuild your used diesel/CNG vehicles for a second tour of duty with full-electric operation</div>
+                    <div class="read_more">Read More</div>
+                </a>
+                <a href="#" class="item">
+                    <div class="image" style="background-image: url({{ content_url('themes/classy/images/main-page-our-products.jpg') }})" class="image"></div>
+                    <div class="title">Electric chassis PTO</div>
+                    <div class="description">Banke offers first-generation electric chassis PTO (eC-PTO) solutions for battery-electric vehicles</div>
+                    <div class="read_more">Read More</div>
+                </a>
+             </div>
+        </div>
+    </div>
     <div class="what-we-do">
         <div class="container">
             @if(!empty(get_field('what_we_do_title')))
