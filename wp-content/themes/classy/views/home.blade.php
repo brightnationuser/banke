@@ -61,55 +61,10 @@
              </div>
         </div>
     </div>
-    <div class="what-we-do">
-        <div class="container">
-            @if(!empty(get_field('what_we_do_title')))
-                <h2>
-                    {{ get_field('what_we_do_title') }}
-                </h2>
-            @endif
 
-            @if(!empty($post->getAcfByKey('what_we_do')))
-                <div class="owl-carousel js-what-we-do-slider what-we-do__list">
-                    @foreach($post->getAcfByKey('what_we_do') as $row)
-                        <div class="what-we-do__item item">
-                            <div class="item__image">
-                                <a href="{{ $row['link'] }}">
-                                    <picture>
-                                        <source srcset="{!! \Helpers\General::getFlyWebpImage($row['image']['id'], [700, 700]); !!}" type="image/webp">
-                                        <source srcset="{!! \Helpers\General::getFlyImage($row['image']['id'], [700, 700]); !!}" type="image/jpeg">
-                                        <img src="{!! \Helpers\General::getFlyImage($row['image']['id'], [700, 700]); !!}" alt="{{ $row['title'] }}"/>
-                                    </picture>
-                                </a>
-                            </div>
-                            <div class="item__content">
-                                <h3 class="item__title">
-                                    {!! $row['title'] !!}
-                                </h3>
-                                <div class="item__text">
-                                    {!! $row['text'] !!}
-                                </div>
-                                <a href="{{ $row['link'] }}" class="item__read-more read-more">
-                                    {!! get_field('read_more', 'options') !!}
-                                </a>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            @endif
-        </div>
-    </div>
 
     <div class="home-references">
         <div class="container">
-            @if(!empty(get_field('case_study_title', 'options')))
-                <h2>
-                    {{ get_field('case_study_title', 'options') }}
-                </h2>
-                @if(!empty(get_field('references_about')))
-                    <p>{{ get_field('references_about') }}</p>
-                @endif
-            @endif
 
             <div class="references-slider owl-carousel js-references-slider">
 
@@ -119,8 +74,6 @@
                             @if($case_study->post_type=="page")
                                 <div class="reference-slide__image">
                                     <picture>
-                                        <source srcset="{!! \Helpers\General::getFlyWebpImage($case_study->getAcfByKey('acf_image'), [600, 400]); !!}" type="image/webp">
-                                        <source srcset="{!! \Helpers\General::getFlyImage($case_study->getAcfByKey('acf_image'), [600, 400]); !!}" type="image/jpeg">
                                         <img src="{!! \Helpers\General::getFlyImage($case_study->getAcfByKey('acf_image'), [600, 400]); !!}" alt="{!! $case_study->post_title !!}"/>
                                     </picture>
                                 </div>
@@ -130,6 +83,7 @@
                                     <img class="item__image" src="{{ get_the_post_thumbnail_url($case_study->ID,'medium_large') }}" alt="{{ get_the_title($case_study->ID) }}"/>
                                 </picture>
                             </div>
+                                {!!  get_field('subtitle',$item->ID) !!}
                             @endif
                             <div class="reference-slide__title">
                                 {!! $case_study->post_title !!}
@@ -141,8 +95,26 @@
             </div>
         </div>
     </div>
+    <div class="video-carousel">
+        <div class="container">
+                <h2>
+                    Video Gallery
+                </h2>
+                <div class="owl-carousel js-main-page-video-carousel">
+                        <div class="item">
+                            <div class="item__image">
+                                <a href="#">
+                                    <picture>
+                                        <img src="#" alt="{{ $row['title'] }}"/>
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
 
-    @include('partials.contact-us', [
+                </div>
+        </div>
+    </div>
+    @include('partials.new-contact-us', [
         'form' => $post->getAcfByKey('contact_form'),
         'title' => $post->getAcfByKey('form_title'),
         'classes' => 'contact-us--light'
