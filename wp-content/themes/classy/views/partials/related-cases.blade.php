@@ -28,7 +28,7 @@
                         <div class="item">
                             <a href="{{ get_permalink($item->ID)  }}" class="item">
                                 <img class="item__image"
-                                     src="{{ get_the_post_thumbnail_url($item->ID,'medium_large') }}"
+                                     src="{!! \Helpers\General::getFlyImage(get_field('acf_image',$item->ID), [600, 400]); !!}"
                                      alt="{{ get_the_title($item->ID) }}"/>
                                 <div class="item__content">
                                     <h3 class="item__title">
