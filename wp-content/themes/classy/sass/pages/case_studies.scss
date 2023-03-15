@@ -22,7 +22,7 @@
 
   &__item__title {
     font-weight: 600;
-    font-size: 38px;
+    font-size: 40px;
     line-height: 130%;
     color: #4A4949;
   }
@@ -31,7 +31,7 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 22px;
-    margin-top: 40px;
+    margin-top: 32px;
 
     display: flex;
     align-items: center;
@@ -74,7 +74,7 @@
 
   &__title {
     font-weight: 600;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 33px;
     /* identical to box height */
 
@@ -94,8 +94,16 @@
     font-size: 18px;
     line-height: 150%;
     color: #4A4A49;
-    margin-top: 30px;
-
+    margin-top: 48px;
+    h2{
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 130%;
+      color: #003462;
+      text-align: left;
+      margin-bottom: 12px;
+      margin-top: 0;
+    }
     strong {
       font-weight: 600;
       font-size: 32px;
@@ -116,7 +124,7 @@
       display: block;
       max-width: 100%;
       height: auto;
-      margin: 50px auto 80px;
+      margin: 50px auto 0px;
     }
   }
 
@@ -125,6 +133,9 @@
     margin: 20px 0 80px;
     background-position: center;
     background-size: cover;
+    h2{
+      margin-top: 0;
+    }
     @media screen and (max-width: 992px) {
       padding: 20px 0;
       margin: 50px 0 20px;
@@ -345,6 +356,7 @@
         line-height: 25px;
         margin-top: 22px;
         letter-spacing: 0.04em;
+        display: block;
 
         span {
           position: relative;
