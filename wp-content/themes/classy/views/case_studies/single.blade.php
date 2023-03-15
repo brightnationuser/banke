@@ -1,7 +1,6 @@
 @extends('layout.default')
 
 @section('content')
-
     @if(get_field('product') == 0)
         @php($id = 115)
     @elseif(get_field('product') == 1)
@@ -14,9 +13,15 @@
     <article class="case case-{{apply_filters('the_id', get_the_ID())}}">
         <h2 class="case__title">{!! get_field('case_study_title', 'option') !!}</h2>
         <h1 class="case__item__title">{!!  get_the_title() !!}</h1>
-        <a class="case__download" href="{!! get_field('file')['url'] !!}" target="_blank"
-           download="{!! get_field('file')['url'] !!}">
-            <i class="icon-down-arrow"></i> <span>Download PDF</span> </a>
+        @if(get_field('file')['url'] != "")
+            <a class="case__download" href="{!! get_field('file')['url'] !!}" target="_blank"
+               download="{!! get_field('file')['url'] !!}">
+                <i class="icon-down-arrow"></i> <span>Download PDF</span> </a>
+        @else
+            <a class="case__download" href="#">
+                <i class="icon-down-arrow"></i> <span>Download PDF</span> </a>
+        @endif
+
         <div class="case__content">{!!  get_the_content() !!}</div>
     </article>
     <div class="case__solution" style="background-image: url(/wp-content/themes/classy/images/case-solutions-bg.jpg)">
@@ -49,9 +54,14 @@
                         <div class="image">
                             <img src="/wp-content/themes/classy/images/case-icon.jpg" alt="case icon">
                         </div>
-                        <a class="case__download" href="{!! get_field('file')['url'] !!}" target="_blank"
-                           download="{!! get_field('file')['url'] !!}">
-                            <i class="icon-down-arrow"></i> <span>Download PDF</span> </a>
+                        @if(get_field('file')['url'] != "")
+                            <a class="case__download" href="{!! get_field('file')['url']  !!}" target="_blank"
+                               download="{!! get_field('file')['url']  !!}">
+                                <i class="icon-down-arrow"></i> <span>Download PDF</span> </a>
+                        @else
+                            <a class="case__download" href="#" style="pointer-events: none">
+                                <i class="icon-down-arrow"></i> <span>Download PDF</span> </a>
+                        @endif
                     </div>
                 </div>
             </div>
