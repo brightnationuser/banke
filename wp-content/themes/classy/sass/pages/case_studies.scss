@@ -94,7 +94,6 @@
     font-size: 18px;
     line-height: 150%;
     color: #4A4A49;
-    margin-top: 48px;
     h2{
       font-weight: 600;
       font-size: 32px;
@@ -102,7 +101,7 @@
       color: #003462;
       text-align: left;
       margin-bottom: 12px;
-      margin-top: 0;
+      margin-top: 48px;
       &::after{
         display: none!important;
       }
@@ -198,6 +197,23 @@
       overflow: visible;
       margin: 40px 0 10px;
       transition: all .5s ease;
+
+      @keyframes pulseAccentButton {
+        0% {
+          transform: translateY(-25%) scaleY(1) scaleX(1);
+          opacity: 1
+        }
+
+        50% {
+          opacity: .192
+        }
+
+        to {
+          transform: translateY(-25%) scaleY(1.5) scaleX(1.17);
+          opacity: 0
+        }
+      }
+
       @media screen and (max-width: 992px) {
         margin: 20px auto 10px;
         &:hover {
@@ -215,9 +231,10 @@
         height: 100%;
         z-index: -1;
         left: 0;
-        top: 50%;
-        transform: translateY(-50%) scaleY(1.35) scaleX(1.04);
+      /*  transform: translateY(-50%) scaleY(1.35) scaleX(1.04);*/
         transition: all .5s ease;
+        animation: pulseAccentButton 3s linear infinite;
+        animation-delay: 1.5s;
         @media screen and (max-width: 992px) {
           display: none;
         }
@@ -233,9 +250,9 @@
         height: 100%;
         z-index: -1;
         left: 0;
-        top: 50%;
-        transform: translateY(-50%) scaleY(1.7) scaleX(1.09);
+        transform: translateY(-25%);
         transition: all .5s ease;
+        animation: pulseAccentButton 3s linear infinite;
         @media screen and (max-width: 992px) {
           display: none;
         }
