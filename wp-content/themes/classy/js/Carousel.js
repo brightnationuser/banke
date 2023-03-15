@@ -156,6 +156,29 @@ export default class Carousel {
                 }
             },
 
+            initMainPageVideoCarousel: function () {
+                $('.js-main-page-video-carousel').owlCarousel({
+                    loop: false,
+                    margin: 32,
+                    onInitialized: show,
+                    nav: false,
+                    dots: true,
+                    navText: ["<i class=\"icon-prev-thin\"></i>","<i class=\"icon-next-thin\"></i>"],
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        769: {
+                            items: 2,
+                        },
+                        1025: {
+                            items: 3,
+                            nav: true,
+                            dots: false
+                        }
+                    }
+                });
+            },
             initNewsCarousel: function () {
                 $('.b-news__carousel.owl-carousel, .js-related-slider.owl-carousel').owlCarousel({
                     loop: true,
@@ -279,29 +302,7 @@ export default class Carousel {
                 });
             },
 
-            initMainPageVideoCarousel: function () {
-                $('.js-main-page-video-carousel').owlCarousel({
-                    loop: false,
-                    margin: 32,
-                    onInitialized: show,
-                    nav: false,
-                    dots: true,
-                    navText: ["<i class=\"icon-prev-thin\"></i>","<i class=\"icon-next-thin\"></i>"],
-                    responsive: {
-                        0: {
-                            items: 1
-                        },
-                        769: {
-                            items: 2,
-                        },
-                        1025: {
-                            items: 3,
-                            nav: true,
-                            dots: false
-                        }
-                    }
-                });
-            },
+
         }
 
 

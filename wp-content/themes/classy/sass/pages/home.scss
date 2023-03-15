@@ -242,7 +242,7 @@
           display: none;
         }
         &:hover{
-          background-position:-320px;
+          background-position:320px;
         }
       }
     }
@@ -492,6 +492,8 @@
 
     .home-references {
       padding-bottom: 80px;
+      padding-top: 72px;
+      border-top: 1px solid #eee;
 
       h2 {
         margin-top: 50px;
@@ -517,14 +519,12 @@
         display: block;
 
         .owl-prev, .owl-next {
-          background: #F2F6FC;
           position: absolute;
           width: 63px;
           height: 63px;
           display: flex;
           justify-content: center;
           align-items: center;
-          border-radius: 51%;
 
           &::before {
             font-size: 19px;
@@ -543,7 +543,7 @@
 
       .rounded-first {
         .reference-slide {
-          &__image {
+          &__image, .manufacturer {
             border-bottom-left-radius: 15px;
           }
         }
@@ -551,7 +551,7 @@
 
       .rounded-last {
         .reference-slide {
-          &__image {
+          &__image, .manufacturer {
             border-bottom-right-radius: 15px;
           }
         }
@@ -565,7 +565,22 @@
           img {
             transition: 0.5s all ease-in-out;
           }
-
+          .manufacturer{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(90.33deg, rgba(74, 74, 73, 0.2) 0.22%, rgba(255, 255, 255, 0.2) 100%);
+            box-shadow: inset 0px 4px 4px rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 19px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 8px 16px;
+            color: #FFFFFF;
+          }
           &:hover {
             text-decoration: none;
 
@@ -579,6 +594,7 @@
           height: 190px;
           overflow: hidden;
           transition: all .1s ease;
+          position: relative;
 
           img {
             display: block;
@@ -590,14 +606,15 @@
         }
 
         &__title {
-          margin-top: 10px;
+          margin-top: 12px;
           font-weight: 600;
-          font-size: 16px;
-          line-height: 163.42%;
-          text-align: center;
-          color: #005CA9;
-          opacity: 0.9;
-          text-decoration: none;
+          font-size: 18px;
+          line-height: 25px;
+          color: #4A4A49;
+          text-align: left;
+          &:hover{
+            color: #005CA9;
+          }
         }
       }
     }
