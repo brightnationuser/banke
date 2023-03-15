@@ -16,10 +16,10 @@
         @if(get_field('file')['url'] != "")
             <a class="case__download" href="{!! get_field('file')['url'] !!}" target="_blank"
                download="{!! get_field('file')['url'] !!}">
-                <i class="icon-down-arrow"></i> <span>Download PDF</span> </a>
+                <i class="icon-down-arrow"></i> <span>Specification</span> </a>
         @else
             <a class="case__download" href="#">
-                <i class="icon-down-arrow"></i> <span>Download PDF</span> </a>
+                <i class="icon-down-arrow"></i> <span>Specification</span> </a>
         @endif
 
         <div class="case__content">{!!  get_the_content() !!}</div>
