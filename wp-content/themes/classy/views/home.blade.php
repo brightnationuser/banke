@@ -40,7 +40,132 @@
             </div>
         </div>
     </div>
-
+    <div class="our_products" style="background-image: url({{ content_url('themes/classy/images/product/our_products_bg.jpg') }})">
+        <div class="container">
+            <div class="subtitle">Our Products</div>
+            <div class="title">E-PTO Systems</div>
+            <div class="caption">Power the on-board hydraulic systems on heavy vehicles such as refuse collection vehicles <br> (RCVs) and cranes using electric power from a Banke E-PTO instead of diesel power</div>
+            <div class="product" style="background-image: url({{ content_url('themes/classy/images/product/our_products_bg.jpg') }})">
+                <div class="info">
+                    <div class="plus"> <img src="{{ content_url('themes/classy/images/product/plus.svg') }}" ></div>
+                    <div class="text">Available in 18, 36, 54 and 72 kWh capacity</div>
+                </div>
+                <div class="info">
+                    <div class="plus"> <img src="{{ content_url('themes/classy/images/product/plus.svg') }}" ></div>
+                    <div class="text">Lithium Ion batteries ensure low weight of <br> the E-PTO. The chemistry used (LiFePO4) <br> ensures a slow aging of the batteries when <br> these are deeply discharged on a daily basis</div>
+                </div>
+                <div class="info">
+                    <div class="plus"> <img src="{{ content_url('themes/classy/images/product/plus.svg') }}" ></div>
+                    <div class="text">Banke E-PTO systems have a generic design <br> and can be used with all body manufacturers</div>
+                </div>
+                <div class="info">
+                    <div class="plus"> <img src="{{ content_url('themes/classy/images/product/plus.svg') }}" ></div>
+                    <div class="text">The battery pack is constructed in such way <br> that each cell can be individually exchanged</div>
+                </div>
+                <div class="info">
+                    <div class="plus"> <img src="{{ content_url('themes/classy/images/product/plus.svg') }}" ></div>
+                    <div class="text">15-30 kW continuous30 - 60 kW peak</div>
+                </div>
+                <div class="info">
+                    <div class="plus"> <img src="{{ content_url('themes/classy/images/product/plus.svg') }}" ></div>
+                    <div class="text">Available with CAN-bus or Analog <br> control interface</div>
+                </div>
+                <div class="info">
+                    <div class="plus"> <img src="{{ content_url('themes/classy/images/product/plus.svg') }}" ></div>
+                    <div class="text">One package that contains all components. <br> No external high voltage cables</div>
+                </div>
+                <div class="info">
+                    <div class="plus"> <img src="{{ content_url('themes/classy/images/product/plus.svg') }}" ></div>
+                    <div class="text">Powder coated aluminium outer structure<br> in RAL 9010 white. Can be delivered in RAL<br> colour code if this colour is available <br>as powder coat. Please consult the factory</div>
+                </div>
+                <div class="info">
+                    <div class="plus"> <img src="{{ content_url('themes/classy/images/product/plus.svg') }}" ></div>
+                    <div class="text">Every E-PTO can be delivered with a Load-Sense <br>variable piston pump or alternatively a single <br>or dual gear pump. Our gear pumps <br>are noiseless continuum pumps.</div>
+                </div>
+                <div class="info">
+                    <div class="plus"> <img src="{{ content_url('themes/classy/images/product/plus.svg') }}" ></div>
+                    <div class="text">The on-board charger is connected to the mains <br> using an industrial standard CEE-16A connector. <br> You can recharge on any location where 400 Volt <br> 3 phase (16 Amp group) is available.</div>
+                </div>
+            </div>
+            <div class="principles animated fadeInUp">
+                <div class="container">
+                    <div class="principles__list">
+                            <div class="principles__item">
+                                <div class="principles__image-wrap">
+                                    <img class="principles__image"
+                                         src="{{ content_url('themes/classy/images/product/1.svg') }}" >
+                                </div>
+                                <div class="principles__title">
+                                    Less noise <br>
+                                    and emissions
+                                </div>
+                            </div>
+                        <div class="principles__item">
+                            <div class="principles__image-wrap">
+                                <img class="principles__image"
+                                     src="{{ content_url('themes/classy/images/product/2.svg') }}" >
+                            </div>
+                            <div class="principles__title">
+                                A full plug-in <br>
+                                system
+                            </div>
+                        </div>
+                        <div class="principles__item">
+                            <div class="principles__image-wrap">
+                                <img class="principles__image"
+                                     src="{{ content_url('themes/classy/images/product/3.svg') }}" >
+                            </div>
+                            <div class="principles__title">
+                                Electrical<br>
+                                Cranes
+                            </div>
+                        </div>
+                        <div class="principles__item">
+                            <div class="principles__image-wrap">
+                                <img class="principles__image"
+                                     src="{{ content_url('themes/classy/images/product/4.svg') }}" >
+                            </div>
+                            <div class="principles__title">
+                                Refrigeration <br>
+                                Vehicles
+                            </div>
+                        </div>
+                        <div class="principles__item">
+                            <div class="principles__image-wrap">
+                                <img class="principles__image"
+                                     src="{{ content_url('themes/classy/images/product/5.svg') }}" >
+                            </div>
+                            <div class="principles__title">
+                                Concrete <br>
+                                Mixers
+                            </div>
+                        </div>
+                        <div class="principles__item">
+                            <div class="principles__image-wrap">
+                                <img class="principles__image"
+                                     src="{{ content_url('themes/classy/images/product/6.svg') }}" >
+                            </div>
+                            <div class="principles__title">
+                                City <br>
+                                Distribution
+                            </div>
+                        </div>
+                        <div class="principles__item">
+                            <div class="principles__image-wrap">
+                                <img class="principles__image"
+                                     src="{{ content_url('themes/classy/images/product/7.svg') }}" >
+                            </div>
+                            <div class="principles__title">
+                                Other <br>
+                                Applications
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="button">Learn more about product</a>
+        </div>
+    </div>
     <div class="other_products" style="background-image: url({{ content_url('themes/classy/images/other-products-bg.jpg') }})">
         <div class="container">
             <h2 class="title">Other Products</h2>

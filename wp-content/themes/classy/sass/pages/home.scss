@@ -140,6 +140,63 @@
       }
 
     }
+    .our_products{
+      background-size: cover;
+      background-position: center;
+      .subtitle{
+        text-align: center;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 130%;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #4A4A49;
+      }
+      .title{
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 130%;
+        text-align: center;
+        color: #003462;
+      }
+      .caption{
+        max-width: 800px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+        text-align: center;
+        color: #4A4A49;
+      }
+      .product{
+        max-width: 630px;
+        width: 100%;
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        min-height: 352px;
+        .info{
+          .plus{
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 25px;
+            border: 1px solid #005CA9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            img{
+              max-width: 10px
+            }
+          }
+          .text{
+            display: none;
+          }
+        }
+      }
+    }
     .other_products{
       padding: 72px 0;
       .title{
