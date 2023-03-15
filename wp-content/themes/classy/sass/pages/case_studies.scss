@@ -103,6 +103,9 @@
       text-align: left;
       margin-bottom: 12px;
       margin-top: 0;
+      &::after{
+        display: none!important;
+      }
     }
     strong {
       font-weight: 600;
