@@ -72,7 +72,36 @@ class App {
                 window.location.reload();
             }
         };
-    
+
+        $(".home .numbers .number").each(function(){
+            const animate = () => {
+                const value = +parseInt($(this).data("number"));
+                var data = +parseInt($(this).text());
+                const not_numbers = $(this).data("number").toString().replace(/[0-9]/g, '');
+                const time = value / 200;
+
+                if (data < value) {
+                    $(this).text(Math.ceil(data + time)+not_numbers);
+                    setTimeout(animate, 1);
+                } else {
+                    $(this).text(value+not_numbers);
+                }
+            }
+            animate()
+        })
+
+        $(window).scroll(function() {
+            var scroll = $(window).scrollTop();
+            if (scroll >= 1) {
+                $("header").addClass("white");
+            } else {
+                $("header").removeClass("white");
+            }
+        });
+
+        document.addEventListener( 'wpcf7submit', function( event ) {
+            $(".form_overlay").addClass("active")
+        }, false );
         initVueInstances()
     }
 

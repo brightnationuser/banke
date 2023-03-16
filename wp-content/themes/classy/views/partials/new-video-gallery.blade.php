@@ -14,7 +14,7 @@
 @endphp
 
 @if(!empty($videos))
-    <div class="video-gallery">
+    <div class="video-gallery"  style="background-image: url({{ content_url('themes/classy/images/bg/video_gallery_bg.jpg') }})">
         <div class="container">
             @if(!empty($title))
                 <h2 class="video-gallery__title">{{ $title }}</h2>

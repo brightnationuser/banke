@@ -6,61 +6,55 @@
 
         </div>
         <div class="carousel owl-carousel main-page-carousel" data-start="{{ !empty($start) ? $start : 4 }}">
-            <div class="item"
-                 style="background-image: url({{ content_url('themes/classy/images/main-page-fs-slide-1.jpg') }})">
-                <a href="#">E-PTO Systems: Learn More</a>
-            </div>
-            <div class="item"
-                 style="background-image: url({{ content_url('themes/classy/images/main-page-fs-slide-1.jpg') }})">
-                <a href="#">E-PTO Systems: Learn More</a>
-            </div>
-            <div class="item"
-                 style="background-image: url({{ content_url('themes/classy/images/main-page-fs-slide-1.jpg') }})">
-                <a href="#">E-PTO Systems: Learn More</a>
-            </div>
+            @foreach(get_field('main_slider') as $row)
+
+
+                <div class="item"
+                     style="background-image: url({{$row['image']['url']}})">
+                    @if(!empty($row['link']))
+                        <a href="{{$row['link']['url']}}">{{$row['link']['title']}}</a>
+                    @endif
+
+                </div>
+            @endforeach
+
         </div>
         <div class="static_content">
             <div class="container">
                 <div class="logo">
                     <img src="{{ content_url('themes/classy/images/main-page-logo.png') }}" alt="Banke logo">
                 </div>
-                <div class="subtitle">Electrifying Heavy Vehicles</div>
-                <div class="caption">We provide sustainable solutions <br> that improve the performance <br> of
-                    heavy-duty vehicles while <br> reducing their environmental impact
+                <div class="subtitle"> {{ $post->getAcfByKey('acf_header')['acf_header_title'] }}</div>
+                <div class="caption"> {{ $post->getAcfByKey('acf_header')['acf_header_caption'] }}
                 </div>
-                <a href="#">Learn More</a>
+                <a href="{{ $post->getAcfByKey('acf_header')['acf_header_button_link'] }}"> {{ $post->getAcfByKey('acf_header')['acf_header_button'] }}</a>
             </div>
         </div>
     </div>
     <div class="numbers">
         <div class="container">
             <div class="wrapper">
-                <div class="item">
-                    <div class="number">12</div>
-                    <div class="text">years <br> of experience
+                @foreach(get_field('numbers') as $row)
+
+                    <div class="item">
+                        <div class="number" data-number="{{$row['number']}}">0</div>
+                        <div class="text">{{$row['text']}}
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="number">18</div>
-                    <div class="text">European <br> countries</div>
-                </div>
-                <div class="item">
-                    <div class="number">500+</div>
-                    <div class="text">units <br> of products</div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
     <div class="our_products"
          style="background-image: url({{ content_url('themes/classy/images/product/our_products_bg.jpg') }})">
         <div class="container">
-            <div class="subtitle">Our Products</div>
-            <div class="title">E-PTO Systems</div>
-            <div class="caption">Power the on-board hydraulic systems on heavy vehicles such as refuse collection
-                vehicles <br> (RCVs) and cranes using electric power from a Banke E-PTO instead of diesel power
-            </div>
-            <div class="epto__bg">
-            </div>
+            @if(!empty(get_field('what_we_do_title')))
+                <div class="subtitle"> {{ get_field('what_we_do_title') }}</div>
+            @endif
+
+            <div class="title">{{ get_field('e-pto_title') }}</div>
+            <div class="caption">{{ get_field('e-pto_caption') }}</div>
+
 
             @php
                 $slides = get_field('acf_slide', 'option');
@@ -78,84 +72,32 @@
 
 
             </div>
+            @php
+                $principles = $post->getAcfByKey('acf_benefits');
+            @endphp
 
-            <div class="principles animated fadeInUp">
-                <div class="container">
-                    <div class="principles__list">
-                        <div class="principles__item">
-                            <div class="principles__image-wrap">
-                                <img class="principles__image"
-                                     src="{{ content_url('themes/classy/images/product/1.svg') }}">
-                            </div>
-                            <div class="principles__title">
-                                Less noise <br>
-                                and emissions
-                            </div>
-                        </div>
-                        <div class="principles__item">
-                            <div class="principles__image-wrap">
-                                <img class="principles__image"
-                                     src="{{ content_url('themes/classy/images/product/2.svg') }}">
-                            </div>
-                            <div class="principles__title">
-                                A full plug-in <br>
-                                system
-                            </div>
-                        </div>
-                        <div class="principles__item">
-                            <div class="principles__image-wrap">
-                                <img class="principles__image"
-                                     src="{{ content_url('themes/classy/images/product/3.svg') }}">
-                            </div>
-                            <div class="principles__title">
-                                Electrical<br>
-                                Cranes
-                            </div>
-                        </div>
-                        <div class="principles__item">
-                            <div class="principles__image-wrap">
-                                <img class="principles__image"
-                                     src="{{ content_url('themes/classy/images/product/4.svg') }}">
-                            </div>
-                            <div class="principles__title">
-                                Refrigeration <br>
-                                Vehicles
-                            </div>
-                        </div>
-                        <div class="principles__item">
-                            <div class="principles__image-wrap">
-                                <img class="principles__image"
-                                     src="{{ content_url('themes/classy/images/product/5.svg') }}">
-                            </div>
-                            <div class="principles__title">
-                                Concrete <br>
-                                Mixers
-                            </div>
-                        </div>
-                        <div class="principles__item">
-                            <div class="principles__image-wrap">
-                                <img class="principles__image"
-                                     src="{{ content_url('themes/classy/images/product/6.svg') }}">
-                            </div>
-                            <div class="principles__title">
-                                City <br>
-                                Distribution
-                            </div>
-                        </div>
-                        <div class="principles__item">
-                            <div class="principles__image-wrap">
-                                <img class="principles__image"
-                                     src="{{ content_url('themes/classy/images/product/7.svg') }}">
-                            </div>
-                            <div class="principles__title">
-                                Other <br>
-                                Applications
-                            </div>
+            @if(!empty($principles))
+                <div class="principles animated fadeInUp">
+                    <div class="container">
+                        <div class="principles__list">
+                            @foreach($principles as $key => $item)
+                                <div class="principles__item">
+                                    <div class="principles__image-wrap">
+                                        <img class="principles__image {{ pathinfo(basename($item['image']['url']), PATHINFO_FILENAME) }}"
+                                             src="{!! $item['image']['url'] !!}" alt="{{ strip_tags($item['title']) }}">
+                                    </div>
+                                    <div class="principles__title">
+                                        {!! $item['title'] !!}
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
-            </div>
-            <a href="#" class="button">Learn more about product</a>
+            @endif
+
+
+            <a href="{{ get_field('product_page', 'option')['url'] }}" class="button">{{ get_field('product_page', 'option')['title'] }}</a>
 
         </div>
         <div class="home-references">
@@ -201,29 +143,23 @@
     <div class="other_products"
          style="background-image: url({{ content_url('themes/classy/images/other-products-bg.jpg') }})">
         <div class="container">
-            <h2 class="title">Other Products</h2>
+            <h2 class="title">{{ get_field('products_title', 'option')}}</h2>
             <div class="wrapper">
 
-                <a href="#" class="item">
-                    <div class="image"
-                         style="background-image: url({{ content_url('themes/classy/images/main-page-our-products.jpg') }})"
-                         class="image"></div>
-                    <div class="title">Full-electric Powertrains</div>
-                    <div class="description">Banke can rebuild your used diesel/CNG vehicles for a second tour of duty
-                        with full-electric operation
-                    </div>
-                    <div class="read_more">Read More</div>
-                </a>
-                <a href="#" class="item">
-                    <div class="image"
-                         style="background-image: url({{ content_url('themes/classy/images/main-page-our-products.jpg') }})"
-                         class="image"></div>
-                    <div class="title">Electric chassis PTO</div>
-                    <div class="description">Banke offers first-generation electric chassis PTO (eC-PTO) solutions for
-                        battery-electric vehicles
-                    </div>
-                    <div class="read_more">Read More</div>
-                </a>
+                @foreach($post->getAcfByKey('what_we_do') as $row)
+
+                    <a href="{{ $row['link'] }}" class="item">
+                        <div class="image"
+                             style="background-image: url({!! \Helpers\General::getFlyWebpImage($row['image']['id'], [700, 700]); !!})"
+                             class="image"></div>
+                        <div class="title">{!! $row['title'] !!}</div>
+                        <div class="description">{!! $row['text'] !!}
+                        </div>
+                        <div class="read_more">{!! get_field('read_more', 'options') !!}</div>
+                    </a>
+                @endforeach
+
+
             </div>
         </div>
     </div>
