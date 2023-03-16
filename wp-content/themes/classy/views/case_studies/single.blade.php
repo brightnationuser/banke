@@ -13,13 +13,13 @@
     <article class="case case-{{apply_filters('the_id', get_the_ID())}}">
         <h2 class="case__title">{!! get_field('case_study_title', 'option') !!}</h2>
         <h1 class="case__item__title">{!!  get_the_title() !!}</h1>
-        @if(get_field('file')['url'] != "")
-            <a class="case__download" href="{!! get_field('file')['url'] !!}" target="_blank"
-               download="{!! get_field('file')['url'] !!}">
-                <i class="icon-down-arrow"></i> <span>Specification</span> </a>
+        @if(get_field('pdf')['url'] != "")
+            <a class="case__download" href="{!! get_field('pdf')['url'] !!}" target="_blank"
+               download="{!! get_field('pdf')['url'] !!}">
+                <i class="icon-down-arrow"></i> <span>Download pdf</span> </a>
         @else
             <a class="case__download" href="#">
-                <i class="icon-down-arrow"></i> <span>Specification</span> </a>
+                <i class="icon-down-arrow"></i> <span>Download pdf</span> </a>
         @endif
 
         <div class="case__content">{!!  get_the_content() !!}</div>
