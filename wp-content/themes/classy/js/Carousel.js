@@ -155,30 +155,28 @@ export default class Carousel {
 
                 }
             },
+            initMainPageCarousel: function () {
 
-            initMainPageVideoCarousel: function () {
-                $('.js-main-page-video-carousel').owlCarousel({
-                    loop: false,
-                    margin: 32,
-                    onInitialized: show,
+                let player;
+                let owl_gallery = $('.main-page-carousel');
+                let owl = owl_gallery.owlCarousel({
+                    loop: true,
                     nav: false,
                     dots: true,
-                    navText: ["<i class=\"icon-prev-thin\"></i>","<i class=\"icon-next-thin\"></i>"],
+                    center: true,
+                    onInitialized: show,
+                    startPosition: owl_gallery.data('start'),
+                    // rewind: true,
+                    video: true,
                     responsive: {
                         0: {
                             items: 1
-                        },
-                        769: {
-                            items: 2,
-                        },
-                        1025: {
-                            items: 3,
-                            nav: true,
-                            dots: false
                         }
                     }
-                });
+                })
+
             },
+
             initNewsCarousel: function () {
                 $('.b-news__carousel.owl-carousel, .js-related-slider.owl-carousel').owlCarousel({
                     loop: true,

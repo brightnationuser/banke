@@ -5,7 +5,15 @@
         <div class="left" style="background-image: url({{ content_url('themes/classy/images/main-page-fs-bg.png') }})">
 
         </div>
-        <div class="carousel owl-carouse">
+        <div class="carousel owl-carousel main-page-carousel" data-start="{{ !empty($start) ? $start : 4 }}">
+            <div class="item"
+                 style="background-image: url({{ content_url('themes/classy/images/main-page-fs-slide-1.jpg') }})">
+                <a href="#">E-PTO Systems: Learn More</a>
+            </div>
+            <div class="item"
+                 style="background-image: url({{ content_url('themes/classy/images/main-page-fs-slide-1.jpg') }})">
+                <a href="#">E-PTO Systems: Learn More</a>
+            </div>
             <div class="item"
                  style="background-image: url({{ content_url('themes/classy/images/main-page-fs-slide-1.jpg') }})">
                 <a href="#">E-PTO Systems: Learn More</a>
@@ -51,65 +59,26 @@
             <div class="caption">Power the on-board hydraulic systems on heavy vehicles such as refuse collection
                 vehicles <br> (RCVs) and cranes using electric power from a Banke E-PTO instead of diesel power
             </div>
-            <div class="product"
-                 style="background-image: url({{ content_url('themes/classy/images/product/product.png') }})">
-                <div class="info" style="top: 33%;left: 12%;">
-                    <div class="plus"><img src="{{ content_url('themes/classy/images/product/plus.svg') }}"></div>
-                    <div class="text">Available in 18, 36, 54 and 72 kWh capacity</div>
-                </div>
-                <div class="info" style="top: 64.5%;left: 12%;">
-                    <div class="plus"><img src="{{ content_url('themes/classy/images/product/plus.svg') }}"></div>
-                    <div class="text">Lithium Ion batteries ensure low weight of <br> the E-PTO. The chemistry used
-                        (LiFePO4) <br> ensures a slow aging of the batteries when <br> these are deeply discharged on a
-                        daily basis
-                    </div>
-                </div>
-                <div class="info" style="top: 62%;left: 19%;">
-                    <div class="plus"><img src="{{ content_url('themes/classy/images/product/plus.svg') }}"></div>
-                    <div class="text">Banke E-PTO systems have a generic design <br> and can be used with all body
-                        manufacturers
-                    </div>
-                </div>
-                <div class="info" style="top: 14%;left: 45.2%;">
-                    <div class="plus"><img src="{{ content_url('themes/classy/images/product/plus.svg') }}"></div>
-                    <div class="text">The battery pack is constructed in such way <br> that each cell can be
-                        individually exchanged
-                    </div>
-                </div>
-                <div class="info" style="top: 35%;left: 40%;">
-                    <div class="plus"><img src="{{ content_url('themes/classy/images/product/plus.svg') }}"></div>
-                    <div class="text">15-30 kW continuous30 - 60 kW peak</div>
-                </div>
-                <div class="info" style="top: 57%;left: 40%;">
-                    <div class="plus"><img src="{{ content_url('themes/classy/images/product/plus.svg') }}"></div>
-                    <div class="text">Available with CAN-bus or Analog <br> control interface</div>
-                </div>
-                <div class="info" style="top: 60%;left: 52%;">
-                    <div class="plus"><img src="{{ content_url('themes/classy/images/product/plus.svg') }}"></div>
-                    <div class="text">One package that contains all components. <br> No external high voltage cables
-                    </div>
-                </div>
-                <div class="info" style="top: 33%;left: 72%;">
-                    <div class="plus"><img src="{{ content_url('themes/classy/images/product/plus.svg') }}"></div>
-                    <div class="text">Every E-PTO can be delivered with a Load-Sense <br>variable piston pump or
-                        alternatively a single <br>or dual gear pump. Our gear pumps <br>are noiseless continuum pumps.
-                    </div>
-                </div>
-                <div class="info" style="top: 51%;left: 74%;">
-                    <div class="plus"><img src="{{ content_url('themes/classy/images/product/plus.svg') }}"></div>
-                    <div class="text">The on-board charger is connected to the mains <br> using an industrial standard
-                        CEE-16A connector. <br> You can recharge on any location where 400 Volt <br> 3 phase (16 Amp
-                        group) is available.
-                    </div>
-                </div>
-                <div class="info" style="top: 68%;left: 69%;">
-                    <div class="plus"><img src="{{ content_url('themes/classy/images/product/plus.svg') }}"></div>
-                    <div class="text">The on-board charger is connected to the mains <br> using an industrial standard
-                        CEE-16A connector. <br> You can recharge on any location where 400 Volt <br> 3 phase (16 Amp
-                        group) is available.
-                    </div>
-                </div>
+            <div class="epto__bg">
             </div>
+
+            @php
+                $slides = get_field('acf_slide', 'option');
+            @endphp
+
+            <div class="b-scene m-epto">
+
+                    <div class="scene__item">
+                        <img src="{{ $slides[0]['image']['url'] }}" class="epto__image preload" alt="{{ $slides[0]['image']['alt'] }}">
+
+                        @include ('partials.slider.partials.infobox', [
+                           'items' => $slides[0]['acf_item']
+                        ])
+                    </div>
+
+
+            </div>
+
             <div class="principles animated fadeInUp">
                 <div class="container">
                     <div class="principles__list">
@@ -260,103 +229,8 @@
     </div>
 
 
+    @include('partials.new-video-gallery')
 
-    <div class="video-carousel">
-        <div class="container">
-            <h2>
-                Video Gallery
-            </h2>
-            <div class="owl-carousel js-main-page-video-carousel">
-                <div class="item">
-                    1111
-                    <div class="popup popup--vacancy js-popup" id="popup-vacancy">
-                        <div class="popup__dialog">
-                            <div class="popup__overlay js-popup-close"></div>
-
-                            <div class="popup__content">
-                                <div class="popup__content-inner">
-                                    <h2 class="popup__title">{!! $title !!}</h2>
-
-                                    <div class="popup__text">
-                                        {!! $text !!}
-                                    </div>
-
-                                    <a class="button popup__button js-popup-close" href="{{ $button_link }}">{{ $button_text }}</a>
-                                </div>
-
-                                <button class="popup__close js-popup-close" type="button">&times;</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item__image">
-                        <a href="#">
-                            <picture>
-                                <img src="#" alt="{{ $row['title'] }}"/>
-                            </picture>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    1111
-                    <div class="popup popup--vacancy js-popup" id="popup-vacancy">
-                        <div class="popup__dialog">
-                            <div class="popup__overlay js-popup-close"></div>
-
-                            <div class="popup__content">
-                                <div class="popup__content-inner">
-                                    <h2 class="popup__title">{!! $title !!}</h2>
-
-                                    <div class="popup__text">
-                                        {!! $text !!}
-                                    </div>
-
-                                    <a class="button popup__button js-popup-close" href="{{ $button_link }}">{{ $button_text }}</a>
-                                </div>
-
-                                <button class="popup__close js-popup-close" type="button">&times;</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item__image">
-                        <a href="#">
-                            <picture>
-                                <img src="#" alt="{{ $row['title'] }}"/>
-                            </picture>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    1111
-                    <div class="popup popup--vacancy js-popup" id="popup-vacancy">
-                        <div class="popup__dialog">
-                            <div class="popup__overlay js-popup-close"></div>
-
-                            <div class="popup__content">
-                                <div class="popup__content-inner">
-                                    <h2 class="popup__title">{!! $title !!}</h2>
-
-                                    <div class="popup__text">
-                                        {!! $text !!}
-                                    </div>
-
-                                    <a class="button popup__button js-popup-close" href="{{ $button_link }}">{{ $button_text }}</a>
-                                </div>
-
-                                <button class="popup__close js-popup-close" type="button">&times;</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item__image">
-                        <a href="#">
-                            <picture>
-                                <img src="#" alt="{{ $row['title'] }}"/>
-                            </picture>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     @include('partials.new-contact-us', [
         'form' => $post->getAcfByKey('contact_form'),
         'title' => $post->getAcfByKey('form_title'),
