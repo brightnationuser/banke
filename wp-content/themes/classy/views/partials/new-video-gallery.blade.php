@@ -70,7 +70,7 @@
 
 
                 <div class="button_wrap">
-                    <a href="#" class="button">{{get_field('case_studies_learn_more_button','options')}}</a>
+                    <a href="#" class="button">{!! get_field('case_studies_learn_more_button','options') !!}</a>
                 </div>
         </div>
     </div>

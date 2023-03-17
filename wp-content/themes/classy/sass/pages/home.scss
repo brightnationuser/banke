@@ -541,11 +541,9 @@
             min-height: 325px;
             width: 100%;
             background-position: center;
-            @media screen and (max-width: 1200px) {
-              background-size: contain;
-              background-repeat: no-repeat;
-              background-color: #fff;
-            }
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-color: #fff;
           }
 
           .title {
