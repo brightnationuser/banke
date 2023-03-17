@@ -6,6 +6,9 @@
 
         <div class="contact-us__form aos-animation">
             <div class="form_overlay">
+                <div class="cross">
+                    &times;
+                </div>
                 <div class="icon">
                     <svg width="81" height="38" viewBox="0 0 81 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_418_4401)">

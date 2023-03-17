@@ -102,6 +102,9 @@ class App {
         document.addEventListener( 'wpcf7mailsent', function( event ) {
             $(".form_overlay").addClass("active")
         }, false );
+        $(".contact-us__form .cross").on("click",function(){
+            $(".form_overlay").removeClass("active")
+        })
         initVueInstances()
     }
 

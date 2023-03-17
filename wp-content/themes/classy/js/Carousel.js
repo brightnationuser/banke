@@ -29,7 +29,15 @@ export default class Carousel {
                         }
                     }
                 })
+                $('.video-gallery .custom-nav .owl-next').click(function() {
+                    console.log(1)
+                    owl.trigger('next.owl.carousel');
+                })
 
+                $('.video-gallery .custom-nav .owl-prev').click(function() {
+                    console.log(1)
+                    owl.trigger('prev.owl.carousel', [300]);
+                })
                 function loadPlayer() {
 
                     const closeVideo = $('.js-close-video') // Крестик для закрытия видео
@@ -199,7 +207,7 @@ export default class Carousel {
             },
 
             initReferencesThinCarousel: function () {
-                $('.js-references-slider').owlCarousel({
+                var owl = $('.js-references-slider').owlCarousel({
                     loop: true,
                     margin: 5,
                     onInitialized: show,
@@ -213,10 +221,11 @@ export default class Carousel {
                         $('.owl-item').removeClass('rounded-first').removeClass('rounded-last');
                     },
                     onTranslated: function () {
-                        $('.active:first').addClass('rounded-first');
-                        $('.active:last').addClass('rounded-last');
+                        $(document).find('.js-references-slider .active:first').addClass('rounded-first');
+                        $(document).find('.js-references-slider .active:last').addClass('rounded-last');
+
                     },
-                    nav: true,
+                    nav: false,
                     dots: false,
                     responsive: {
                         0: {
@@ -229,6 +238,13 @@ export default class Carousel {
                             items: 3
                         }
                     }
+                })
+                $('.home-references .custom-nav .owl-next').click(function() {
+                    owl.trigger('next.owl.carousel');
+                })
+
+                $('.home-references .custom-nav .owl-prev').click(function() {
+                    owl.trigger('prev.owl.carousel', [300]);
                 })
             },
 

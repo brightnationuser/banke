@@ -62,13 +62,14 @@
 
             <div class="b-scene m-epto">
 
-                    <div class="scene__item">
-                        <img src="{{ $slides[0]['image']['url'] }}" class="epto__image preload" alt="{{ $slides[0]['image']['alt'] }}">
+                <div class="scene__item">
+                    <img src="{{ $slides[0]['image']['url'] }}" class="epto__image preload"
+                         alt="{{ $slides[0]['image']['alt'] }}">
 
-                        @include ('partials.slider.partials.infobox', [
-                           'items' => $slides[0]['acf_item']
-                        ])
-                    </div>
+                    @include ('partials.slider.partials.infobox', [
+                       'items' => $slides[0]['acf_item']
+                    ])
+                </div>
 
 
             </div>
@@ -97,7 +98,8 @@
             @endif
 
 
-            <a href="{{ get_field('product_page', 'option')['url'] }}" class="button">{{ get_field('product_page', 'option')['title'] }}</a>
+            <a href="{{ get_field('product_page', 'option')['url'] }}"
+               class="button">{{ get_field('product_page', 'option')['title'] }}</a>
 
         </div>
         <div class="home-references">
@@ -136,6 +138,28 @@
                         </div>
                     @endforeach
 
+                </div>
+                <div class="custom-nav">
+                    <svg class="owl-prev" xmlns="http://www.w3.org/2000/svg" width="14" height="38" viewBox="0 0 14 38" fill="none">
+                        <g clip-path="url(#clip0_414_540)">
+                            <path d="M0.5 0.5L13.5 19L0.5 37.5" stroke="#9AAFC1" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_414_540">
+                                <rect width="14" height="38" fill="white"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <svg class="owl-next" xmlns="http://www.w3.org/2000/svg" width="14" height="38" viewBox="0 0 14 38" fill="none">
+                        <g clip-path="url(#clip0_414_540)">
+                            <path d="M0.5 0.5L13.5 19L0.5 37.5" stroke="#9AAFC1" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_414_540">
+                                <rect width="14" height="38" fill="white"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
                 </div>
             </div>
         </div>
