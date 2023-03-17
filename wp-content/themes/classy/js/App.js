@@ -99,9 +99,8 @@ class App {
             }
         });
 
-        document.addEventListener( 'wpcf7submit', function( event ) {
+        document.addEventListener( 'wpcf7mailsent', function( event ) {
             $(".form_overlay").addClass("active")
-            console.log(event)
         }, false );
         initVueInstances()
     }
