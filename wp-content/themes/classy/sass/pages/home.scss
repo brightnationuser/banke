@@ -185,6 +185,12 @@
           height: 100%;
           display: block;
           clip-path: polygon(60% 0px, 95% 0%, 40% 50%, 225px 100%, 150px 100%, 7px 50%);
+          @media screen and (min-width: 1900px) {
+            right: 40px;
+          }
+          @media screen and (min-width: 2250px) {
+            right: 80px;
+          }
           @media screen and (max-width: 1250px) {
             right: -40px
           }

@@ -24,8 +24,8 @@
                 <div class="logo">
                     <img src="{{ content_url('themes/classy/images/main-page-logo.png') }}" alt="Banke logo">
                 </div>
-                <div class="subtitle"> {{ $post->getAcfByKey('acf_header')['acf_header_title'] }}</div>
-                <div class="caption"> {{ $post->getAcfByKey('acf_header')['acf_header_caption'] }}
+                <div class="subtitle"> {!!$post->getAcfByKey('acf_header')['acf_header_title'] !!}</div>
+                <div class="caption"> {!!  $post->getAcfByKey('acf_header')['acf_header_caption'] !!}
                 </div>
                 <a href="{{ $post->getAcfByKey('acf_header')['acf_header_button_link'] }}"> {{ $post->getAcfByKey('acf_header')['acf_header_button'] }}</a>
             </div>
