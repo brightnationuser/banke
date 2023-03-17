@@ -101,6 +101,7 @@ class App {
 
         document.addEventListener( 'wpcf7submit', function( event ) {
             $(".form_overlay").addClass("active")
+            console.log(event)
         }, false );
         initVueInstances()
     }
