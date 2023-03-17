@@ -601,8 +601,8 @@
 
       @media only screen and (max-width: 768px){
         .container{
-          padding-left: 15px;
-          padding-right: 15px;
+          padding-left: 15px!important;
+          padding-right: 15px!important;
         }
         .owl-carousel {
           .owl-item .embed-youtube-video {
