@@ -38,7 +38,7 @@
 
                     <div class="item">
                         <div class="number" data-number="{{$row['number']}}">0</div>
-                        <div class="text">{{$row['text']}}
+                        <div class="text">{!!$row['text']!!}
                         </div>
                     </div>
                 @endforeach
