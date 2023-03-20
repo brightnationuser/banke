@@ -52,8 +52,8 @@
                 <div class="subtitle"> {{ get_field('what_we_do_title') }}</div>
             @endif
 
-            <div class="title">{{ get_field('e-pto_title') }}</div>
-            <div class="caption">{{ get_field('e-pto_caption') }}</div>
+            <div class="title">{!! get_field('main_page_product_title') !!}</div>
+            <div class="caption">{!! get_field('main_page_product_subtitle') !!}</div>
 
 
             @php
@@ -140,9 +140,11 @@
 
                 </div>
                 <div class="custom-nav">
-                    <svg class="owl-prev" xmlns="http://www.w3.org/2000/svg" width="14" height="38" viewBox="0 0 14 38" fill="none">
+                    <svg class="owl-prev" xmlns="http://www.w3.org/2000/svg" width="14" height="38" viewBox="0 0 14 38"
+                         fill="none">
                         <g clip-path="url(#clip0_414_540)">
-                            <path d="M0.5 0.5L13.5 19L0.5 37.5" stroke="#9AAFC1" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M0.5 0.5L13.5 19L0.5 37.5" stroke="#9AAFC1" stroke-linecap="round"
+                                  stroke-linejoin="round"/>
                         </g>
                         <defs>
                             <clipPath id="clip0_414_540">
@@ -150,9 +152,11 @@
                             </clipPath>
                         </defs>
                     </svg>
-                    <svg class="owl-next" xmlns="http://www.w3.org/2000/svg" width="14" height="38" viewBox="0 0 14 38" fill="none">
+                    <svg class="owl-next" xmlns="http://www.w3.org/2000/svg" width="14" height="38" viewBox="0 0 14 38"
+                         fill="none">
                         <g clip-path="url(#clip0_414_540)">
-                            <path d="M0.5 0.5L13.5 19L0.5 37.5" stroke="#9AAFC1" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M0.5 0.5L13.5 19L0.5 37.5" stroke="#9AAFC1" stroke-linecap="round"
+                                  stroke-linejoin="round"/>
                         </g>
                         <defs>
                             <clipPath id="clip0_414_540">
