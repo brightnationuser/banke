@@ -29,9 +29,15 @@
                 <div class="title">Your email has been <br> successfully sent</div>
                 <div class="text">We will contact you soon</div>
             </div>
-            <h2>
-                Let's Talk
-            </h2>
+            @if(!empty($title))
+                <h2>
+                    {!! $title !!}
+                </h2>
+            @else
+                <h2>
+                    {!! get_field('contact_us', 'options') !!}
+                </h2>
+            @endif
             @if(!empty($form))
                 {!! do_shortcode($form) !!}
             @else
