@@ -169,8 +169,8 @@
             .icon-arrow-down {
               color: #ffffff;
             }
-            .sign-in__dropdown +{
-              color: #003462;
+            .sign-in__dropdown *{
+              color: #003462!important;
             }
             .sign-in-profile__wrapper {
               & > i {
