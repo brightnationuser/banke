@@ -3,6 +3,27 @@
 
   .b-scene .scene__item {
     display: block;
+    position: relative;
+    img{
+      z-index: 1;
+      position: relative;
+    }
+    &:before{
+      content: "E-PTO";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 189px;
+      line-height: 257px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #f0f5fa;
+      position: absolute;
+      top: -125px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      z-index: 0;
+    }
   }
 
   .video-gallery .owl-carousel .owl-item.center .embed-youtube-video__overlay::after {
@@ -49,6 +70,9 @@
   @media screen and (max-width: 768px) {
     .principles__item{
       margin-bottom: 25px;
+    }
+    .principles__image-wrap{
+      margin-bottom: 10px;
     }
   }
   @media screen and (max-width: 576px){
@@ -317,7 +341,7 @@
           @media screen and (max-width: 1200px) {
             font-size: 20px;
             margin-top: 20px;
-            display: block;
+            display: inline-block;
           }
           @media screen and (max-width: 768px) {
             margin-top: 35px;
@@ -337,6 +361,10 @@
         }
         @media screen and (max-width: 768px) {
           padding: 20px 0;
+          max-width: 130px;
+          width: 100%;
+          display: block;
+          min-width: 130px;
         }
         .item {
           display: flex;
@@ -347,6 +375,8 @@
           }
           @media screen and (max-width: 768px) {
             margin: 15px 35px;
+            max-width: 290px;
+            width: 100%;
           }
           .number {
             font-weight: 600;
@@ -421,6 +451,11 @@
         text-align: center;
         color: #4A4A49;
         margin-bottom: 60px;
+        @media screen and (max-width: 1200px) {
+         br{
+           display: none;
+         }
+        }
       }
 
       .product {
@@ -503,7 +538,9 @@
 
     .other_products {
       padding: 72px 0;
-
+      @media screen and (max-width: 768px) {
+        padding: 72px 0 22px;
+      }
       .title {
         font-weight: 600;
         font-size: 32px;
@@ -543,6 +580,9 @@
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
+            @media screen and (max-width: 576px) {
+              min-height: 235px;
+            }
           }
 
           .title {
@@ -602,6 +642,7 @@
         .container{
           padding-left: 15px!important;
           padding-right: 15px!important;
+          margin-bottom: 58px;
         }
         .owl-carousel {
           .owl-item .embed-youtube-video {
@@ -647,6 +688,7 @@
           transform: translateY(-50%) rotate(180deg);
           @media screen and (max-width: 1200px) {
             transform: translateY(calc(-50% - 13px)) rotate(180deg);
+            left: 15px;
           }
         }
         .owl-next{
@@ -655,6 +697,7 @@
           transform: translateY(-50%);
           @media screen and (max-width: 1200px) {
             transform: translateY(calc(-50% - 13px));
+            right: 15px;
           }
         }
       }
@@ -711,7 +754,7 @@
         background-color: #005CA9;
         @media only screen and (max-width: 768px){
           margin-bottom: 20px;
-          margin-top: 20px;
+          margin-top: 40px;
         }
         &:after {
           display: none;
@@ -1038,14 +1081,16 @@
             padding: 8px 16px;
             color: #FFFFFF;
           }
+          @media screen and (min-width: 1200px) {
+            &:hover {
+              text-decoration: none;
 
-          &:hover {
-            text-decoration: none;
-
-            img {
-              transform: scale(1.1);
+              img {
+                transform: scale(1.1);
+              }
             }
           }
+
         }
 
         &__image {
@@ -1115,6 +1160,7 @@
         border-radius: 4px;
         .form_overlay{
           position: absolute;
+          border-radius: 4px;
           top: 0;
           left: 0;
           width: 100%;
@@ -1133,7 +1179,7 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            color: red;
+            color: #ABA7AF;
             font-size: 25px;
             line-height: 1;
             cursor: pointer;
