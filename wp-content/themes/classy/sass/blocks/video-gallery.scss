@@ -126,9 +126,18 @@ $video_height: 217px;
       position: relative;
       z-index: 1;
 
+      .embed-youtube-video__play{
+        backdrop-filter: blur(8px);
+        opacity: 1;
+        transition: all .5s ease;
+      }
       &:not(.center) {
         .embed-youtube-video:not(.is-loading) {
           cursor: pointer;
+        }
+        .embed-youtube-video__play{
+          opacity: 0;
+
         }
       }
 
@@ -180,13 +189,12 @@ $video_height: 217px;
           z-index: 2;
           background: #000;
 
-          .embed-youtube-video__play,
           .embed-youtube-video__text,
           .embed-youtube-video__title,
           .embed-youtube-video__overlay {
-            backdrop-filter: opacity(0) blur(0);
-            transition: all .5s ease;
+            opacity: 0;
             visibility: hidden;
+            transition: all .5s ease;
             animation: showOverlay .5s linear forwards;
           }
 
@@ -201,13 +209,14 @@ $video_height: 217px;
           &.is-play {
             width: $is_playing_video_width;
             height: $is_playing_video_height;
-
-            .embed-youtube-video__play,
+            .embed-youtube-video__play{
+              backdrop-filter: blur(8px);
+              opacity: 1;
+            }
             .embed-youtube-video__text,
             .embed-youtube-video__title,
             .embed-youtube-video__overlay {
-              backdrop-filter: opacity(1) blur(8px);
-              transition: all .5s ease;
+              opacity: 1;
               visibility: visible;
               animation: hideOverlay .5s linear forwards;
             }
@@ -244,12 +253,6 @@ $video_height: 217px;
           }
         }
 
-        &__play-wrap {
-          pointer-events: none;
-          visibility: hidden;
-          transition: all .5s linear;
-          opacity: 0;
-        }
       }
 
       &.center {
@@ -352,30 +355,30 @@ $video_height: 217px;
 
   @keyframes hideOverlay {
     0% {
-      backdrop-filter: opacity(1) blur(8px);
+      opacity: 1;
       visibility: visible;
     }
     80% {
-      backdrop-filter: opacity(1) blur(4px);
+      opacity: 1;
       visibility: visible;
     }
     100% {
-      backdrop-filter: opacity(0) blur(0px);
+      opacity: 0;
       visibility: hidden;
     }
   }
 
   @keyframes showOverlay {
     0% {
-      backdrop-filter: opacity(0) blur(0px);
+      opacity: 0;
       visibility: hidden;
     }
     30% {
-      backdrop-filter: opacity(1) blur(4px);
+      opacity: 1;
       visibility: visible;
     }
     100% {
-      backdrop-filter: opacity(1) blur(8px);
+      opacity: 1;
       visibility: visible;
     }
   }
