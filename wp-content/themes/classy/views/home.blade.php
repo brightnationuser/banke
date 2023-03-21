@@ -31,6 +31,7 @@
             </div>
         </div>
     </div>
+    @if(have_rows('numbers'))
     <div class="numbers">
         <div class="container">
             <div class="wrapper">
@@ -45,6 +46,7 @@
             </div>
         </div>
     </div>
+    @endif
     <div class="our_products"
          style="background-image: url({{ content_url('themes/classy/images/product/our_products_bg.jpg') }})">
         <div class="container">
