@@ -29,7 +29,7 @@
             </div>
         </div>
     </div>
-
+        @if(have_rows("numbers"))
         <div class="numbers">
             <div class="container">
                 <div class="wrapper">
@@ -44,6 +44,7 @@
                 </div>
             </div>
         </div>
+        @endif
         <div class="sections">
             @if(have_rows("sections"))
                 @while(have_rows("sections"))
