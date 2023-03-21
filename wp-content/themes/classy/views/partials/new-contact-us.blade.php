@@ -26,8 +26,7 @@
                     </svg>
 
                 </div>
-                <div class="title">Your email has been <br> successfully sent</div>
-                <div class="text">We will contact you soon</div>
+                {!! get_field('mail_success', 'options') !!}
             </div>
             @if(!empty($title))
                 <h2>

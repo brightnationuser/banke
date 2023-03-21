@@ -39,7 +39,7 @@ export default class Carousel {
                 function loadPlayer() {
 
                     const closeVideo = $('.js-close-video') // Крестик для закрытия видео
-                    const videoGalleryBlock = $('.js-video-show') // Класс отвечает за отображение видео по умолчанию display: none;
+                    const videoGalleryBlock = $('.js-video-show, .item__text') // Класс отвечает за отображение видео по умолчанию display: none;
                     const getVideoInfoSize = $('.owl-item.active.center .js-video-show') // Узнаем размеры блоков после загрузки под разные размеры
                     let clickedVideo = null // Состояние, которое отвечает за клик на видео и присвавивает ему данные
 
@@ -65,7 +65,10 @@ export default class Carousel {
                             return
                         }
                         player.stopVideo();
-                        const ths = $(this)
+                        var ths = $(this)
+                        if(ths.hasClass("item__text")){
+                            ths = ths.parent().find(".js-video-show")
+                        }
                         const getCenterClicked = ths.parent().parent().hasClass('owl-item active center')
                         let dataIdGallery = ths[0].attributes['data-id'].value // Узнаем Id видео
                         let dataIdVideo = ths[0].attributes['data-yt-id'].value // Узнаем линку на Ютуб

@@ -82,6 +82,7 @@ $video_height: 217px;
       bottom: 25px;
       width: 100%;
       transition: all .5s linear;
+      cursor: pointer;
 
       @media screen and (max-width: 1200px) {
         position: static;
@@ -219,6 +220,7 @@ $video_height: 217px;
               opacity: 1;
               visibility: visible;
               animation: hideOverlay .5s linear forwards;
+              cursor: pointer;
             }
           }
         }
