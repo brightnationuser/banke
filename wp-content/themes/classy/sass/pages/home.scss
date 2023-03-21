@@ -4,6 +4,9 @@
   .b-scene .scene__item {
     display: block;
     position: relative;
+    @media screen and (max-width: 768px) {
+      margin-top: 35px;
+    }
     img{
       z-index: 1;
       position: relative;
@@ -12,15 +15,15 @@
       content: "E-PTO";
       font-style: normal;
       font-weight: 700;
-      font-size: 189px;
-      line-height: 257px;
+      font-size: 14vw;
+      line-height: .8;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: #f0f5fa;
       position: absolute;
-      top: -125px;
+      top: 0;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translateX(-50%) translateY(-50%);
       white-space: nowrap;
       z-index: 0;
     }
@@ -689,7 +692,7 @@
           transform: translateY(-50%) rotate(180deg);
           @media screen and (max-width: 1200px) {
             transform: translateY(calc(-50% - 13px)) rotate(180deg);
-            left: 15px;
+            left: 0px;
           }
         }
         .owl-next{
@@ -698,7 +701,7 @@
           transform: translateY(-50%);
           @media screen and (max-width: 1200px) {
             transform: translateY(calc(-50% - 13px));
-            right: 15px;
+            right: 0px;
           }
         }
       }
@@ -1031,12 +1034,12 @@
 
 
         .owl-prev{
-          left: 0;
+          left: 15px;
           transform: translateY(-50%) rotate(180deg);
         }
         .owl-next{
           position: absolute;
-          right: 0;
+          right: 15px;
           transform: translateY(-50%);
         }
       }

@@ -30,12 +30,10 @@ export default class Carousel {
                     }
                 })
                 $('.video-gallery .custom-nav .owl-next').click(function() {
-                    console.log(1)
                     owl.trigger('next.owl.carousel');
                 })
 
                 $('.video-gallery .custom-nav .owl-prev').click(function() {
-                    console.log(1)
                     owl.trigger('prev.owl.carousel', [300]);
                 })
                 function loadPlayer() {
@@ -54,7 +52,7 @@ export default class Carousel {
                     let getCenterWidth = getVideoInfoSize.width() * 1.25 // Узнаем размер блока, которое увеличинно в центре
 
 
-                    $('.owl-nav button').on('click', function () { // Если нажимаем на данные, анулируем логику полностью и приводим в дефолтное состояние
+                    $('.owl-nav button, .custom-nav *').on('click', function () { // Если нажимаем на данные, анулируем логику полностью и приводим в дефолтное состояние
                         $(clickedVideo).css('width', '').css('height', '')
                         closeVideo.trigger( "click" )
                         clickedVideo = null
