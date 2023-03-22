@@ -1228,7 +1228,10 @@
         background-position: left;
         background-size: 180%;
       }
-
+      @media screen and (max-width: 768px) {
+        background-size: cover;
+        background-position: center;
+      }
       .wpcf7-response-output {
         display: none !important;
       }

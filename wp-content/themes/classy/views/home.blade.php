@@ -22,7 +22,7 @@
         <div class="static_content">
             <div class="container">
                 <div class="logo">
-                    <img src="{{ content_url('themes/classy/images/main-page-logo.png') }}" alt="Banke logo">
+                    <img src="{{ content_url('themes/classy/images/logo.svg') }}" alt="Banke logo">
                 </div>
                 <div class="subtitle"> {!!$post->getAcfByKey('acf_header')['acf_header_title'] !!}</div>
                 <div class="caption"> {!!  $post->getAcfByKey('acf_header')['acf_header_caption'] !!}
