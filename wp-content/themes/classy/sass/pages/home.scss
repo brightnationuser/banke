@@ -1353,6 +1353,11 @@
           background: linear-gradient(90deg, #005CA9 0%, #003462 122.6%);
           border-radius: 4px;
           padding: 12px 32px;
+          background-repeat: no-repeat;
+          background-color: #005CA9;
+          &:hover{
+            background-position: 200px;
+          }
           @media screen and (max-width: 482px) {
             font-size: 12px !important;
           }
