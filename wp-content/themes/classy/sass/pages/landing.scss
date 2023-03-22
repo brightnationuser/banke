@@ -1,5 +1,6 @@
 .content{
   padding-top: 0!important;
+  padding-bottom: 0!important;
 }
 .landing{
   .first_screen {
@@ -264,6 +265,9 @@
     align-items: center;
     .text{
       max-width: 544px;
+      @media screen and(max-width: 1400px){
+        max-width: 50%;
+      }
       @media screen and(max-width: 992px){
         max-width: 100%;
       }
@@ -308,6 +312,10 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+      @media screen and(max-width: 1400px){
+        position: static;
+        transform: none;
+      }
       @media screen and(max-width: 992px){
         max-width: 100%;
       }
@@ -397,6 +405,15 @@
           }
         }
       }
+    }
+  }
+  .contact-us{
+    background-image: url('/wp-content/themes/classy/images/landing/landing-contacts-bg.jpg');
+    background-size: cover;
+    background-position: center left;
+    @media screen and(max-width: 1200px){
+      background-image: url('/wp-content/themes/classy/images/landing/landing-contacts-bg-mobile.jpg');
+      background-position: center;
     }
   }
 }

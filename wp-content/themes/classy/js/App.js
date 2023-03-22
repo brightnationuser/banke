@@ -73,7 +73,7 @@ class App {
             }
         };
 
-        $(".home .numbers .number").each(function(){
+        $(".home .numbers .number, .landing .numbers .number").each(function(){
             const animate = () => {
                 const value = +parseInt($(this).data("number"));
                 var data = +parseInt($(this).text());

@@ -104,11 +104,11 @@
         </div>
 
 
-        @include('partials.contact-us', [
-        'form' => $post->getAcfByKey('contact_form'),
-        'title' => $post->getAcfByKey('form_title'),
-        'classes' => 'contact-us--light'
-    ])
+        @include('partials.new-contact-us', [
+            'form' => $post->getAcfByKey('contact_form'),
+            'title' => $post->getAcfByKey('form_title'),
+            'classes' => 'contact-us--light'
+        ])
     </div>
 
 @stop
