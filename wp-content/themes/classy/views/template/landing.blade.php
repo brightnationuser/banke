@@ -23,9 +23,8 @@
                     <div class="logo">
                         <img src="{{ content_url('themes/classy/images/logo.png') }}" alt="Banke logo">
                     </div>
-                    <div class="subtitle"> Electrifying Heavy Vehicles</div>
-                    <div class="caption"> Say goodbye to inefficient and inflexible energy solutions and hello to the
-                        XXX, the smart choice for cost-effective and adaptable energy storage.
+                    <div class="subtitle"> {!! get_field('first_screen_title') !!}</div>
+                    <div class="caption"> {!! get_field('first_screen_caption') !!}
                     </div>
                 </div>
             </div>

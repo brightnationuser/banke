@@ -203,6 +203,7 @@
 
   }
   .sections{
+    margin-top: 80px;
     .left,.right,.middle{
       margin-bottom: 80px;
       @media screen and(max-width: 1200px){
@@ -306,7 +307,7 @@
       min-height: 380px;
       height: 100%;
       width: 100%;
-      background-size: cover;
+      background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
       position: absolute;
