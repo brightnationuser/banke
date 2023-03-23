@@ -1,11 +1,8 @@
 <div class="contact-us {{ $classes }}">
     <div class="container">
 
-
-
-
         <div class="contact-us__form aos-animation">
-            <div class="form_overlay">
+            <div class="form_overlay js-form_overlay">
                 <div class="cross">
                     &times;
                 </div>

@@ -29,13 +29,14 @@ export default class Carousel {
                         }
                     }
                 })
-                $('.video-gallery .custom-nav .owl-next').click(function() {
+                $('.video-gallery .custom-nav .owl-next').click(function () {
                     owl.trigger('next.owl.carousel');
                 })
 
-                $('.video-gallery .custom-nav .owl-prev').click(function() {
+                $('.video-gallery .custom-nav .owl-prev').click(function () {
                     owl.trigger('prev.owl.carousel', [300]);
                 })
+
                 function loadPlayer() {
 
                     const closeVideo = $('.js-close-video') // Крестик для закрытия видео
@@ -52,9 +53,9 @@ export default class Carousel {
                     let getCenterWidth = getVideoInfoSize.width() * 1.25 // Узнаем размер блока, которое увеличинно в центре
 
 
-                    $('.owl-nav button, .custom-nav *').on('click', function () { // Если нажимаем на данные, анулируем логику полностью и приводим в дефолтное состояние
+                    $('.owl-nav button, .custom-nav > *').on('click', function () { // Если нажимаем на данные, анулируем логику полностью и приводим в дефолтное состояние
                         $(clickedVideo).css('width', '').css('height', '')
-                        closeVideo.trigger( "click" )
+                        closeVideo.trigger("click")
                         clickedVideo = null
                     })
 
@@ -66,7 +67,7 @@ export default class Carousel {
                         }
                         player.stopVideo();
                         var ths = $(this)
-                        if(ths.hasClass("item__text")){
+                        if (ths.hasClass("item__text")) {
                             ths = ths.parent().find(".js-video-show")
                         }
                         const getCenterClicked = ths.parent().parent().hasClass('owl-item active center')
@@ -240,11 +241,11 @@ export default class Carousel {
                         }
                     }
                 })
-                $('.home-references .custom-nav .owl-next').click(function() {
+                $('.home-references .custom-nav .owl-next').click(function () {
                     owl.trigger('next.owl.carousel');
                 })
 
-                $('.home-references .custom-nav .owl-prev').click(function() {
+                $('.home-references .custom-nav .owl-prev').click(function () {
                     owl.trigger('prev.owl.carousel', [300]);
                 })
             },
@@ -300,7 +301,7 @@ export default class Carousel {
                     onInitialized: show,
                     nav: false,
                     dots: true,
-                    navText: ["<i class=\"icon-prev-thin\"></i>","<i class=\"icon-next-thin\"></i>"],
+                    navText: ["<i class=\"icon-prev-thin\"></i>", "<i class=\"icon-next-thin\"></i>"],
                     responsive: {
                         0: {
                             items: 1
