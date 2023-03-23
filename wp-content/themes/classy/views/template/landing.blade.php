@@ -21,7 +21,7 @@
             <div class="static_content">
                 <div class="container">
                     <div class="logo">
-                        <img src="{{ content_url('themes/classy/images/logo.png') }}" alt="Banke logo">
+                        <img src="{{ content_url('themes/classy/images/landing/logo.svg') }}" alt="Banke logo">
                     </div>
                     <div class="subtitle"> {!! get_field('first_screen_title') !!}</div>
                     <div class="caption"> {!! get_field('first_screen_caption') !!}
@@ -30,7 +30,7 @@
             </div>
         </div>
         @if(have_rows("numbers"))
-            <div class="numbers">
+            <div class="numbers js-numbers">
                 <div class="container">
                     <div class="wrapper">
                         @foreach(get_field('numbers') as $row)

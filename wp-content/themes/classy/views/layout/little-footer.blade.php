@@ -45,7 +45,7 @@
             <a href="mailto:{!! get_field('email', 'options') !!}">{!! get_field('email', 'options') !!}</a>
         </div>
         <div class="footer__madeby">
-            made by <a href="https://dudka.agency">Dudka.Agency</a>
+            made by <a href="https://dudka.agency" target="_blank">Dudka.Agency</a>
         </div>
 
 
