@@ -54,7 +54,7 @@ $(document).ready(function () {
     textTrim('.js-intro-content', {show_block: true});
     tipsImage('.js-tips-image');
     counterBlock(".numbers .js-number");
-    contactFormOverlay(".form_overlay")
+    contactFormOverlay(".js-form_overlay")
     blockToggle();
 
     if($("body").hasClass("home")){
