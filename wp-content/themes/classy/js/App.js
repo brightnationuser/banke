@@ -72,7 +72,7 @@ class App {
                 window.location.reload();
             }
         };
-    
+
         initVueInstances()
     }
 
@@ -150,6 +150,7 @@ class App {
     initCarousels() {
         let carousel = new Carousel();
         carousel.init('News');
+        carousel.init('MainPage');
         carousel.init('References');
         carousel.init('ReferencesThin');
         carousel.init('Video')

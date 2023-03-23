@@ -1,115 +1,221 @@
-@extends('layout.default')
+@extends('layout.main-page')
 
 @section('content')
+    <div class="first_screen">
+        <div class="left"
+             style="background-image: url({{ content_url('themes/classy/images/main-page-fs-bg.png') }})"></div>
+        @php
+            $slides = get_field('main_slider')
+        @endphp
 
-    <div class="hero parallax-container">
-        {{--        <div class="parallax" id="js_hero_hero">
-                </div>--}}
+        @if(!empty($slides))
+            <div class="carousel owl-carousel main-page-carousel" data-start="{{ !empty($start) ? $start : 4 }}">
 
-        <div class="parallax">
-            <img src="/wp-content/themes/classy/images/bg/header-bg-2.jpg" alt="Banke bg" data-type="parallax"
-                 data-depth="2" data-shift="150">
-        </div>
+                @foreach(get_field('main_slider') as $row)
+                    <div class="item"
+                         style="background-image: url({{$row['image']['url']}})">
+                        @if(!empty($row['link']))
+                            <a href="{{$row['link']['url']}}">{{$row['link']['title']}}</a>
+                        @endif
 
-        <div class="container">
-            <div class="h1">
-                {{ $post->getAcfByKey('acf_header')['acf_header_title'] }}
+                    </div>
+                @endforeach
+
             </div>
+        @endif
 
-            <h1 class="hero__caption">
-                {{ $post->getAcfByKey('acf_header')['acf_header_caption'] }}
-            </h1>
-
-            <div class="hero__button">
-                <a href="{{ $post->getAcfByKey('acf_header')['acf_header_button_link'] }}" class="button">
-                    {{ $post->getAcfByKey('acf_header')['acf_header_button'] }}
-                </a>
+        <div class="static_content">
+            <div class="container">
+                <div class="logo">
+                    <img src="{{ content_url('themes/classy/images/logo.svg') }}" alt="Banke logo">
+                </div>
+                <div class="subtitle"> {!!$post->getAcfByKey('acf_header')['acf_header_title'] !!}</div>
+                <div class="caption"> {!!  $post->getAcfByKey('acf_header')['acf_header_caption'] !!}
+                </div>
+                <a href="{{ $post->getAcfByKey('acf_header')['acf_header_button_link'] }}"> {{ $post->getAcfByKey('acf_header')['acf_header_button'] }}</a>
             </div>
         </div>
     </div>
 
-    <div class="what-we-do">
-        <div class="container">
-            @if(!empty(get_field('what_we_do_title')))
-                <h2>
-                    {{ get_field('what_we_do_title') }}
-                </h2>
-            @endif
+    @if(have_rows('numbers'))
+        <div class="numbers js-numbers">
+            <div class="container">
+                <div class="wrapper">
+                    @foreach(get_field('numbers') as $row)
 
-            @if(!empty($post->getAcfByKey('what_we_do')))
-                <div class="owl-carousel js-what-we-do-slider what-we-do__list">
-                    @foreach($post->getAcfByKey('what_we_do') as $row)
-                        <div class="what-we-do__item item">
-                            <div class="item__image">
-                                <a href="{{ $row['link'] }}">
-                                    <picture>
-                                        <source srcset="{!! \Helpers\General::getFlyWebpImage($row['image']['id'], [700, 700]); !!}" type="image/webp">
-                                        <source srcset="{!! \Helpers\General::getFlyImage($row['image']['id'], [700, 700]); !!}" type="image/jpeg">
-                                        <img src="{!! \Helpers\General::getFlyImage($row['image']['id'], [700, 700]); !!}" alt="{{ $row['title'] }}"/>
-                                    </picture>
-                                </a>
-                            </div>
-                            <div class="item__content">
-                                <h3 class="item__title">
-                                    {!! $row['title'] !!}
-                                </h3>
-                                <div class="item__text">
-                                    {!! $row['text'] !!}
-                                </div>
-                                <a href="{{ $row['link'] }}" class="item__read-more read-more">
-                                    {!! get_field('read_more', 'options') !!}
-                                </a>
+                        <div class="item">
+                            <div class="number" data-number="{{$row['number']}}">0</div>
+                            <div class="text">{!!$row['text']!!}
                             </div>
                         </div>
                     @endforeach
                 </div>
-            @endif
+            </div>
         </div>
+    @endif
+
+    <div class="our_products"
+         style="background-image: url({{ content_url('themes/classy/images/product/our_products_bg.jpg') }})">
+        <div class="container">
+
+            @if(!empty(get_field('what_we_do_title')))
+                <div class="subtitle"> {{ get_field('what_we_do_title') }}</div>
+            @endif
+
+            @if(!empty(get_field('main_page_product_title')))
+                <div class="title">{!! get_field('main_page_product_title') !!}</div>
+            @endif
+
+            @if(!empty(get_field('main_page_product_subtitle')))
+                <div class="caption">{!! get_field('main_page_product_subtitle') !!}</div>
+            @endif
+
+            @php
+                $slides = get_field('acf_slide', 'option');
+            @endphp
+
+            @if(!empty($slides))
+                <div class="b-scene m-epto">
+                    <div class="scene__item">
+                        <img src="{{ $slides[0]['image']['url'] }}" class="epto__image preload"
+                             alt="{{ $slides[0]['image']['alt'] }}">
+
+                        @include ('partials.slider.partials.infobox', [
+                           'items' => $slides[0]['acf_item']
+                        ])
+                    </div>
+                </div>
+            @endif
+
+            @php
+                $principles = $post->getAcfByKey('acf_benefits');
+            @endphp
+            @if(!empty($principles))
+                <div class="principles animated fadeInUp">
+                    <div class="container">
+                        <div class="principles__list">
+                            @foreach($principles as $key => $item)
+                                <div class="principles__item">
+                                    <div class="principles__image-wrap">
+                                        <img class="principles__image {{ pathinfo(basename($item['image']['url']), PATHINFO_FILENAME) }}"
+                                             src="{!! $item['image']['url'] !!}" alt="{{ strip_tags($item['title']) }}">
+                                    </div>
+                                    <div class="principles__title">
+                                        {!! $item['title'] !!}
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            @endif
+
+            <a href="{{ get_field('product_page', 'option')['url'] }}"
+               class="button">{{ get_field('product_page', 'option')['title'] }}</a>
+        </div>
+
+        @if(!empty($case_studies))
+        <div class="home-references">
+            <div class="container">
+                <div class="references-slider owl-carousel js-references-slider">
+
+                    @foreach($case_studies as $case_study)
+                        <div class="reference-slide">
+                            <a href="{!! get_post_permalink($case_study->ID) !!}">
+
+                                @if($case_study->post_type=="page")
+                                    <div class="reference-slide__image">
+                                        <picture>
+                                            <img src="{!! \Helpers\General::getFlyImage($case_study->getAcfByKey('acf_image'), [600, 400]); !!}"
+                                                 alt="{!! $case_study->post_title !!}"/>
+                                        </picture>
+                                    </div>
+                                @else
+                                    <div class="reference-slide__image">
+                                        <picture>
+                                            <img class="item__image"
+                                                 src="{{ get_the_post_thumbnail_url($case_study->ID,'medium_large') }}"
+                                                 alt="{{ get_the_title($case_study->ID) }}"/>
+                                        </picture>
+                                        <div class="manufacturer">
+                                            CLIENT: {!!  get_field('subtitle',$case_study->ID) !!}
+                                        </div>
+                                    </div>
+                                @endif
+
+                                <div class="reference-slide__title">
+                                    {!! $case_study->post_title !!}
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
+
+                </div>
+
+                <div class="custom-nav">
+                    <svg class="owl-prev" xmlns="http://www.w3.org/2000/svg" width="14" height="38" viewBox="0 0 14 38"
+                         fill="none">
+                        <g clip-path="url(#clip0_414_540)">
+                            <path d="M0.5 0.5L13.5 19L0.5 37.5" stroke="#9AAFC1" stroke-linecap="round"
+                                  stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_414_540">
+                                <rect width="14" height="38" fill="white"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+
+                    <svg class="owl-next" xmlns="http://www.w3.org/2000/svg" width="14" height="38" viewBox="0 0 14 38"
+                         fill="none">
+                        <g clip-path="url(#clip0_414_540)">
+                            <path d="M0.5 0.5L13.5 19L0.5 37.5" stroke="#9AAFC1" stroke-linecap="round"
+                                  stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_414_540">
+                                <rect width="14" height="38" fill="white"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        @endif
     </div>
 
-    <div class="home-references">
+    @php
+    $products = $post->getAcfByKey('what_we_do');
+    @endphp
+
+    @if(!empty($products))
+    <div class="other_products"
+         style="background-image: url({{ content_url('themes/classy/images/other-products-bg.jpg') }})">
         <div class="container">
-            @if(!empty(get_field('case_study_title', 'options')))
-                <h2>
-                    {{ get_field('case_study_title', 'options') }}
-                </h2>
-                @if(!empty(get_field('references_about')))
-                    <p>{{ get_field('references_about') }}</p>
-                @endif
-            @endif
+            <h2 class="title">{{ get_field('products_title', 'option')}}</h2>
+            <div class="wrapper">
 
-            <div class="references-slider owl-carousel js-references-slider">
+                @foreach($post->getAcfByKey('what_we_do') as $row)
 
-                @foreach($case_studies as $case_study)
-                    <div class="reference-slide">
-                        <a href="{!! get_post_permalink($case_study->ID) !!}">
-                            @if($case_study->post_type=="page")
-                                <div class="reference-slide__image">
-                                    <picture>
-                                        <source srcset="{!! \Helpers\General::getFlyWebpImage($case_study->getAcfByKey('acf_image'), [600, 400]); !!}" type="image/webp">
-                                        <source srcset="{!! \Helpers\General::getFlyImage($case_study->getAcfByKey('acf_image'), [600, 400]); !!}" type="image/jpeg">
-                                        <img src="{!! \Helpers\General::getFlyImage($case_study->getAcfByKey('acf_image'), [600, 400]); !!}" alt="{!! $case_study->post_title !!}"/>
-                                    </picture>
-                                </div>
-                            @else
-                            <div class="reference-slide__image">
-                                <picture>
-                                    <img class="item__image" src="{{ get_the_post_thumbnail_url($case_study->ID,'medium_large') }}" alt="{{ get_the_title($case_study->ID) }}"/>
-                                </picture>
-                            </div>
-                            @endif
-                            <div class="reference-slide__title">
-                                {!! $case_study->post_title !!}
-                            </div>
-                        </a>
-                    </div>
+                    <a href="{{ $row['link'] }}" class="item">
+                        <div style="background-image: url({!! \Helpers\General::getFlyWebpImage($row['image']['id'], [700, 700]); !!})"
+                             class="image"></div>
+                        <div class="title">{!! $row['title'] !!}</div>
+                        <div class="description">{!! $row['text'] !!}
+                        </div>
+                        <div class="read_more">{!! get_field('read_more', 'options') !!}</div>
+                    </a>
+
                 @endforeach
 
             </div>
         </div>
     </div>
+    @endif
 
-    @include('partials.contact-us', [
+    @include('partials.new-video-gallery')
+
+    @include('partials.new-contact-us', [
         'form' => $post->getAcfByKey('contact_form'),
         'title' => $post->getAcfByKey('form_title'),
         'classes' => 'contact-us--light'

@@ -29,11 +29,18 @@ export default class Carousel {
                         }
                     }
                 })
+                $('.video-gallery .custom-nav .owl-next').click(function () {
+                    owl.trigger('next.owl.carousel');
+                })
+
+                $('.video-gallery .custom-nav .owl-prev').click(function () {
+                    owl.trigger('prev.owl.carousel', [300]);
+                })
 
                 function loadPlayer() {
 
                     const closeVideo = $('.js-close-video') // Крестик для закрытия видео
-                    const videoGalleryBlock = $('.js-video-show') // Класс отвечает за отображение видео по умолчанию display: none;
+                    const videoGalleryBlock = $('.js-video-show, .item__text') // Класс отвечает за отображение видео по умолчанию display: none;
                     const getVideoInfoSize = $('.owl-item.active.center .js-video-show') // Узнаем размеры блоков после загрузки под разные размеры
                     let clickedVideo = null // Состояние, которое отвечает за клик на видео и присвавивает ему данные
 
@@ -46,9 +53,9 @@ export default class Carousel {
                     let getCenterWidth = getVideoInfoSize.width() * 1.25 // Узнаем размер блока, которое увеличинно в центре
 
 
-                    $('.owl-nav button').on('click', function () { // Если нажимаем на данные, анулируем логику полностью и приводим в дефолтное состояние
+                    $('.owl-nav button, .custom-nav > *').on('click', function () { // Если нажимаем на данные, анулируем логику полностью и приводим в дефолтное состояние
                         $(clickedVideo).css('width', '').css('height', '')
-                        closeVideo.trigger( "click" )
+                        closeVideo.trigger("click")
                         clickedVideo = null
                     })
 
@@ -59,7 +66,10 @@ export default class Carousel {
                             return
                         }
                         player.stopVideo();
-                        const ths = $(this)
+                        var ths = $(this)
+                        if (ths.hasClass("item__text")) {
+                            ths = ths.parent().find(".js-video-show")
+                        }
                         const getCenterClicked = ths.parent().parent().hasClass('owl-item active center')
                         let dataIdGallery = ths[0].attributes['data-id'].value // Узнаем Id видео
                         let dataIdVideo = ths[0].attributes['data-yt-id'].value // Узнаем линку на Ютуб
@@ -155,6 +165,27 @@ export default class Carousel {
 
                 }
             },
+            initMainPageCarousel: function () {
+
+                let player;
+                let owl_gallery = $('.main-page-carousel');
+                let owl = owl_gallery.owlCarousel({
+                    loop: true,
+                    nav: false,
+                    dots: true,
+                    center: true,
+                    onInitialized: show,
+                    startPosition: owl_gallery.data('start'),
+                    // rewind: true,
+                    video: true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        }
+                    }
+                })
+
+            },
 
             initNewsCarousel: function () {
                 $('.b-news__carousel.owl-carousel, .js-related-slider.owl-carousel').owlCarousel({
@@ -178,7 +209,7 @@ export default class Carousel {
             },
 
             initReferencesThinCarousel: function () {
-                $('.js-references-slider').owlCarousel({
+                var owl = $('.js-references-slider').owlCarousel({
                     loop: true,
                     margin: 5,
                     onInitialized: show,
@@ -192,10 +223,11 @@ export default class Carousel {
                         $('.owl-item').removeClass('rounded-first').removeClass('rounded-last');
                     },
                     onTranslated: function () {
-                        $('.active:first').addClass('rounded-first');
-                        $('.active:last').addClass('rounded-last');
+                        $(document).find('.js-references-slider .active:first').addClass('rounded-first');
+                        $(document).find('.js-references-slider .active:last').addClass('rounded-last');
+
                     },
-                    nav: true,
+                    nav: false,
                     dots: false,
                     responsive: {
                         0: {
@@ -206,11 +238,15 @@ export default class Carousel {
                         },
                         768: {
                             items: 3
-                        },
-                        992: {
-                            items: 4
                         }
                     }
+                })
+                $('.home-references .custom-nav .owl-next').click(function () {
+                    owl.trigger('next.owl.carousel');
+                })
+
+                $('.home-references .custom-nav .owl-prev').click(function () {
+                    owl.trigger('prev.owl.carousel', [300]);
                 })
             },
 
@@ -265,7 +301,7 @@ export default class Carousel {
                     onInitialized: show,
                     nav: false,
                     dots: true,
-                    navText: ["<i class=\"icon-prev-thin\"></i>","<i class=\"icon-next-thin\"></i>"],
+                    navText: ["<i class=\"icon-prev-thin\"></i>", "<i class=\"icon-next-thin\"></i>"],
                     responsive: {
                         0: {
                             items: 1
@@ -280,7 +316,9 @@ export default class Carousel {
                         }
                     }
                 });
-            }
+            },
+
+
         }
 
 
