@@ -16,6 +16,9 @@ import popup from './popup';
 import video from './video';
 import openVideo from './openVideo';
 import tipsImage from './blocks/tips-image';
+import counterBlock from './blocks/counter-block';
+import stickyHeader from './blocks/sticky-header';
+import contactFormOverlay from './blocks/contact-form-overlay';
 import YtApiPlayer from './blocks/yt-api-player';
 import blockToggle from "./blocks/block-toggle";
 
@@ -50,7 +53,13 @@ $(document).ready(function () {
     textTrim('.js-trim-text');
     textTrim('.js-intro-content', {show_block: true});
     tipsImage('.js-tips-image');
+    counterBlock(".numbers .js-number");
+    contactFormOverlay(".form_overlay")
     blockToggle();
+
+    if($("body").hasClass("home")){
+        stickyHeader()
+    }
 
     setTimeout(function () {
         let window_height = $(window).height();
