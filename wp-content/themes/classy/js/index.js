@@ -53,7 +53,7 @@ $(document).ready(function () {
     textTrim('.js-trim-text');
     textTrim('.js-intro-content', {show_block: true});
     tipsImage('.js-tips-image');
-    counterBlock(".numbers .js-number");
+    counterBlock(".js-numbers");
     contactFormOverlay(".js-form_overlay")
     blockToggle();
 

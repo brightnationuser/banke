@@ -1,5 +1,5 @@
-const counterBlock = (items) => {
-    const $items = $(items);
+const counterBlock = (block) => {
+    const $items = $(block).find(".number");
 
     $items.each(function(){
         let ths = $(this);

@@ -38,13 +38,13 @@
     </div>
 
     @if(have_rows('numbers'))
-        <div class="numbers">
+        <div class="numbers js-numbers">
             <div class="container">
                 <div class="wrapper">
                     @foreach(get_field('numbers') as $row)
 
                         <div class="item">
-                            <div class="js-number number" data-number="{{$row['number']}}">0</div>
+                            <div class="number" data-number="{{$row['number']}}">0</div>
                             <div class="text">{!!$row['text']!!}
                             </div>
                         </div>
