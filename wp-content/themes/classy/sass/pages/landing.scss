@@ -463,7 +463,7 @@
     background-size: cover;
     background-position: center left;
     input, textarea{
-      font-size: 14px;
+      font-size: 14px!important;
     }
     @media screen and(max-width: 1200px){
       background-image: url('/wp-content/themes/classy/images/landing/landing-contacts-bg-mobile.jpg');
