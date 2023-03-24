@@ -198,8 +198,16 @@
       margin: 40px 0 10px;
       transition: all .5s ease;
 
-      @keyframes pulseAccentButton {
+
+      @media screen and (max-width: 992px) {
+        margin: 20px auto 10px;
+        &:hover {
+          filter: brightness(1.2);
+        }
+      }
+      @-webkit-keyframes pulseAccentButton {
         0% {
+          -webkit-transform: translateY(-25%) scaleY(1) scaleX(1);
           transform: translateY(-25%) scaleY(1) scaleX(1);
           opacity: 1
         }
@@ -209,31 +217,45 @@
         }
 
         to {
+          -webkit-transform: translateY(-25%) scaleY(1.5) scaleX(1.17);
           transform: translateY(-25%) scaleY(1.5) scaleX(1.17);
           opacity: 0
         }
       }
+      @keyframes pulseAccentButton {
+        0% {
+          -webkit-transform: translateY(-25%) scaleY(1) scaleX(1);
+          transform: translateY(-25%) scaleY(1) scaleX(1);
+          opacity: 1
+        }
 
-      @media screen and (max-width: 992px) {
-        margin: 20px auto 10px;
-        &:hover {
-          filter: brightness(1.2);
+        50% {
+          opacity: .192
+        }
+
+        to {
+          -webkit-transform: translateY(-25%) scaleY(1.5) scaleX(1.17);
+          transform: translateY(-25%) scaleY(1.5) scaleX(1.17);
+          opacity: 0
         }
       }
-
       &:before {
         content: "";
-        background: linear-gradient(90deg, #005CA9 0%, #003462 122.6%);
         opacity: 0.25;
+        background: linear-gradient(90deg, #005CA9 0%, #003462 122.6%);
         border-radius: 4px;
         position: absolute;
         width: 100%;
         height: 100%;
         z-index: -1;
         left: 0;
-      /*  transform: translateY(-50%) scaleY(1.35) scaleX(1.04);*/
-        transition: all .5s ease;
+        top: 25%;
+        transition: all 0.5s ease;
+        -webkit-transform: translateY(-25%) scaleY(1) scaleX(1);
+        transform: translateY(-25%) scaleY(1) scaleX(1);
+        -webkit-animation: pulseAccentButton 3s linear infinite;
         animation: pulseAccentButton 3s linear infinite;
+        -webkit-animation-delay: 1.5s;
         animation-delay: 1.5s;
         @media screen and (max-width: 992px) {
           display: none;
@@ -249,9 +271,12 @@
         width: 100%;
         height: 100%;
         z-index: -1;
+        top: 25%;
         left: 0;
-        transform: translateY(-25%);
-        transition: all .5s ease;
+        transition: all 0.5s ease;
+        -webkit-transform: translateY(-25%) scaleY(1) scaleX(1);
+        transform: translateY(-25%) scaleY(1) scaleX(1);
+        -webkit-animation: pulseAccentButton 3s linear infinite;
         animation: pulseAccentButton 3s linear infinite;
         @media screen and (max-width: 992px) {
           display: none;
