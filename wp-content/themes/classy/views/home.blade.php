@@ -13,7 +13,7 @@
 
                 @foreach(get_field('main_slider') as $row)
                     <div class="item"
-                         style="background-image: url({{$row['image']['url']}})">
+                         style="background-image: linear-gradient(180deg, rgba(0, 30, 56, 0.95) 0%, rgba(0, 52, 98, 0) 37.99%), linear-gradient(180deg, rgba(0, 52, 98, 0) 35.18%, rgba(0, 30, 56, 0.95) 100%), url({{$row['image']['url']}})">
                         @if(!empty($row['link']))
                             <a href="{{$row['link']['url']}}">{{$row['link']['title']}}</a>
                         @endif
