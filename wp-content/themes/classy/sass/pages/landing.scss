@@ -358,10 +358,23 @@
     background-position: center;
     background-repeat: no-repeat;
     &:nth-of-type(2n){
-      background-image: url("/wp-content/themes/classy/images/landing/blue-bg-1.jpg");
+      background-image: url("/wp-content/themes/classy/images/landing/blue-bg-2.jpg");
     }
     &:nth-of-type(2n+1){
-      background-image: url("/wp-content/themes/classy/images/landing/blue-bg-2.jpg");
+      position: relative;
+      &:before{
+        content: "";
+        background-image: url("/wp-content/themes/classy/images/landing/waves.png");
+        width: 56vw;
+        height: 53vw;
+        position: absolute;
+        background-position: center bottom;
+        background-size: 100%;
+        right: 0;
+        pointer-events: none;
+        background-repeat: no-repeat;
+        bottom: 0;
+      }
     }
     padding: 72px 0;
     .wrapper{
