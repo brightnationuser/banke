@@ -354,6 +354,15 @@
   }
   .middle{
     background-color: #005CA8;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    &:nth-of-type(2n){
+      background-image: url("/wp-content/themes/classy/images/landing/blue-bg-1.jpg");
+    }
+    &:nth-of-type(2n+1){
+      background-image: url("/wp-content/themes/classy/images/landing/blue-bg-2.jpg");
+    }
     padding: 72px 0;
     .wrapper{
       display: flex;
