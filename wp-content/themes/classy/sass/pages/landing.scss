@@ -253,7 +253,8 @@
         left: 0;
         @media screen and(max-width: 992px){
           margin-right: 0;
-          margin-bottom: 15px;
+          margin-bottom: 5px;
+          margin-top: 20px;
         }
       }
       @media screen and(max-width: 992px){
@@ -344,6 +345,7 @@
         max-width: 100%;
         min-height: 50vw;
         margin-top: 15px;
+        margin-bottom: 5px;
       }
     }
   }
