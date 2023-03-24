@@ -9,6 +9,7 @@
   .first_screen {
     position: relative;
     display: flex;
+    z-index: 1;
     background-size: cover;
     background-position: center;
     .left {
