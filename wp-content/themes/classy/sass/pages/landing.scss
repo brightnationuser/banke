@@ -332,11 +332,12 @@
       @media screen and(max-width: 1400px){
         position: static;
         transform: none;
-        min-height: 300px;
+        min-height: 400px;
       }
       @media screen and(max-width: 992px){
         max-width: 100%;
         min-height: 300px;
+        margin-top: 15px;
       }
     }
   }
