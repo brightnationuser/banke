@@ -226,7 +226,7 @@
         margin-bottom: 45px;
       }
       @media screen and(max-width: 992px){
-        margin-bottom: 0;
+        margin-bottom: 10px;
       }
     }
     .left{
@@ -268,7 +268,7 @@
     margin: 0 auto;
     position: relative;
     padding: 42px 0;
-    @media screen and(max-width: 992px){
+    @media screen and(max-width: 1400px){
       padding: 0;
     }
   }
@@ -342,7 +342,7 @@
       }
       @media screen and(max-width: 992px){
         max-width: 100%;
-        min-height: 300px;
+        min-height: 50vw;
         margin-top: 15px;
       }
     }
