@@ -375,6 +375,9 @@
         pointer-events: none;
         background-repeat: no-repeat;
         bottom: 0;
+        @media screen and(max-width: 992px){
+          display: none;
+        }
       }
     }
     padding: 72px 0;
