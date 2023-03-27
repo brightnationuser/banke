@@ -10,13 +10,9 @@
 
             </div>
             <div class="carousel">
-
-
                 <div class="item"
                      style="background-image: url({{ content_url('themes/classy/images/landing/landing_main_image.jpg') }})">
                 </div>
-
-
             </div>
             <div class="static_content">
                 <div class="container">
@@ -29,7 +25,9 @@
                 </div>
             </div>
         </div>
+
         @if(have_rows("numbers"))
+
             <div class="numbers js-numbers">
                 <div class="container">
                     <div class="wrapper">
@@ -44,15 +42,19 @@
                     </div>
                 </div>
             </div>
+
         @endif
+
         <div class="sections">
             @if(have_rows("sections"))
+
                 @while(have_rows("sections"))
                     @php
                         the_row();
                     @endphp
 
                     @if(get_row_layout() == "text_image")
+
                         <div class="left">
                             <div class="outer_container">
                                 <div class="container">
@@ -63,13 +65,14 @@
                                         </div>
                                         <div class="image"
                                              style="background-image: url({{ get_sub_field('image')['url'] }})">
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     @elseif(get_row_layout() == "image_text")
+
                         <div class="right">
                             <div class="outer_container">
                                 <div class="container">
@@ -86,28 +89,35 @@
                                 </div>
                             </div>
                         </div>
+
                     @elseif(get_row_layout() == "middle")
+
                         <div class="middle">
                             <div class="container">
                                 <div class="wrapper">
-                                    <div class="title">  {!! get_sub_field('title') !!}</div>
-                                    <a href="{!! get_sub_field('button')['url'] !!}"
-                                       class="button">  {!! get_sub_field('button')['title'] !!}</a>
+                                    <div class="title">{!! get_sub_field('title') !!}</div>
+
+                                    @if(!empty(get_sub_field('button')))
+                                        <a href="{!! get_sub_field('button')['url'] !!}"
+                                           class="button">  {!! get_sub_field('button')['title'] !!}</a>
+                                    @endif
+
                                 </div>
                             </div>
                         </div>
+
                     @endif
                 @endwhile
-
             @endif
-        </div>
 
+        </div>
 
         @include('partials.new-contact-us', [
             'form' => $post->getAcfByKey('contact_form'),
             'title' => $post->getAcfByKey('form_title'),
             'classes' => 'contact-us--light'
         ])
+
     </div>
 
 @stop
