@@ -1,3 +1,246 @@
+.page-template-classy-case-studies{
+  background-image: url("/wp-content/themes/classy/images/case-studies/CS.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  .case-studies-list{
+    @media screen and (max-width: 1200px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+  .case_study{
+    position: relative;
+    display: flex;
+    z-index: 1;
+    background-size: cover;
+    background: #FFFFFF;
+    border: 1px solid #D1DFF3;
+    border-radius: 6px;
+    margin-bottom: 40px;
+    background-image: url("/wp-content/themes/classy/images/case-studies/bg1.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    @media screen and (max-width: 1200px) {
+      max-width: 45%;
+      width: 100%;
+      margin: 10px;
+      flex-direction: column;
+    }
+    .client{
+      font-size: 18px;
+      line-height: 135%;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #005CA9;
+      @media screen and (max-width: 1200px) {
+        font-weight: 600;
+      }
+    }
+    .subtitle{
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 130%;
+      color: #4A4A49;
+    }
+    .tag{
+      background: #FFFFFF;
+      border: 1px solid rgba(102, 102, 163, 0.3);
+      border-radius: 2px;
+      margin-top: 32px;
+      padding: 10px 16px;
+      color: #003462;
+      font-size: 14px;
+      width: fit-content;
+      &:before{
+        content: "#";
+        margin-right: 4px;
+        color: #005CA9;
+      }
+    }
+    .left {
+      background-size: 100% auto;
+      max-width: 56%;
+      min-width: 56%;
+      width: 100%;
+      min-height: 398px;
+      background-position: center;
+      position: relative;
+      z-index: 1;
+      @media screen and (max-width: 1200px) {
+        display: none;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        right: -20%;
+        top: 0;
+        background: rgba(0, 92, 169, 0.7);
+        backdrop-filter: blur(10px);
+        min-width: 228px;
+        height: 100%;
+        display: block;
+        clip-path: polygon(60% 0px, 95% 0%, 40% 50%, 225px 100%, 150px 100%, 7px 50%);
+
+        @media screen and (max-width: 1200px) {
+          display: none;
+        }
+      }
+
+      @media screen and (max-width: 1200px) {
+        max-width: 100%;
+        background-size: 160%;
+        background-position: bottom;
+      }
+      @media screen and(max-width: 992px) {
+        min-height: 400px;
+      }
+      @media screen and (max-width: 768px) {
+        background-size: 200%;
+      }
+
+    }
+
+    .image {
+      height: 100%;
+      width: 579px;
+      position: absolute;
+      right: 0;
+      z-index: 0;
+      overflow: hidden;
+      border-radius: 6px;
+
+      @media screen and (max-width: 1200px) {
+        width: 100%;
+        height: 320px;
+        position: static;
+      }
+
+      .item {
+        height: 100%;
+        color: #ffffff;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        clip-path: polygon(140px 0px, 100% 0%, 100% 100%, 140px 100%, 0 50%);
+        @media screen and (max-width: 1200px) {
+          clip-path: none!important;
+        }
+
+        a {
+          margin-right: -225px;
+          margin-bottom: 82px;
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 130%;
+          color: #FFFFFF;
+          display: inline-block;
+        }
+
+      }
+    }
+
+    .static_content {
+      position: absolute;
+      top: 50%;
+      max-width: 436px;
+      width: 100%;
+      transform: translateY(-40%);
+      z-index: 1;
+      color: #ffffff;
+      margin-left: 72px;
+
+      @media screen and (max-width: 1200px) {
+        position: static;
+        transform: none;
+        margin-left: 0;
+        padding: 30px 20px;
+      }
+      @media screen and (max-width: 768px) {
+        br {
+          display: none;
+        }
+      }
+
+      .logo {
+        max-width: 235px;
+        pointer-events: auto;
+        @media screen and (max-width: 1200px) {
+          margin: auto;
+        }
+      }
+
+
+      .caption {
+        margin-top: 48px;
+        margin-bottom: 15px;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 160%;
+        color: #4A4A49;
+        max-width: 425px;
+
+        @media screen and(max-width: 1200px) {
+          margin: 48px auto 15px;
+        }
+        @media screen and(max-width: 992px) {
+          margin: 48px auto 15px;
+        }
+        @media screen and (max-width: 768px) {
+          font-size: 20px;
+        }
+
+      }
+
+      a {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        color: #75C0FF;
+        pointer-events: auto;
+
+        @media screen and (max-width: 1200px) {
+          font-size: 20px;
+          margin-top: 20px;
+          display: inline-block;
+        }
+        @media screen and (max-width: 768px) {
+          margin-top: 35px;
+        }
+
+      }
+    }
+
+    &:nth-of-type(2n){
+      background-image: url("/wp-content/themes/classy/images/case-studies/bg2.jpg");
+      background-position: right bottom;
+      .static_content{
+        max-width: 436px;
+        width: 100%;
+        right: 72px;
+      }
+      .left:before{
+          transform: rotate(180deg);
+          right: 3%;
+        }
+
+
+      .image{
+        right: auto;
+        left: 0;
+        .item{
+          clip-path: polygon(440px 0px, 0% 0%, 0% 100%, 440px 100%, 100% 50%);
+        }
+      }
+    }
+  }
+}
+
 .page-template-classy-vacancies {
   background: linear-gradient(0deg, rgba(242, 246, 252, 0.45), rgba(242, 246, 252, 0.45)), linear-gradient(0deg, #FFFFFF, #FFFFFF), #FFFFFF;
 }
