@@ -3,4 +3,4 @@
  * Theme footer.
  */
 $framework = get_theme_framework();
-$framework::render( 'layout.little-footer' );
+$framework::render( 'layout.footer-small' );

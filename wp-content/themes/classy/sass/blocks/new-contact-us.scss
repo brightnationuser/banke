@@ -6,6 +6,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
   @media screen and (max-width: 1200px) {
     background-position: left;
     background-size: 180%;
@@ -14,6 +15,7 @@
     background-size: cover;
     background-position: center;
   }
+
   .wpcf7-response-output {
     display: none !important;
   }
@@ -31,6 +33,7 @@
     max-width: 1280px !important;
     margin: 0 auto;
     padding: 0 40px;
+
     @media screen and (max-width: 482px) {
       padding: 0 20px;
     }
@@ -110,6 +113,7 @@
       padding: 11px 17px;
       border: 1px solid rgba(255, 255, 255, 0);
       transition: all .5s ease;
+
       @media screen and (max-width: 1200px) {
         font-size: 13px;
       }
@@ -137,9 +141,11 @@
       padding: 12px 32px;
       background-repeat: no-repeat;
       background-color: #005CA9;
-      &:hover{
+
+      &:hover {
         background-position: 200px;
       }
+
       @media screen and (max-width: 482px) {
         font-size: 12px !important;
       }
