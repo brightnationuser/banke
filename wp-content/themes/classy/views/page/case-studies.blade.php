@@ -18,7 +18,7 @@
                         <div class="image"
                         >
                             <div class="item"
-                                 style="background-image: url({{ get_the_post_thumbnail_url($case_study->ID,'medium_large') }})"></div>
+                                 style="background-image: url({{ get_the_post_thumbnail_url($case_studies_item->ID,'medium_large') }})"></div>
                         </div>
                         <div class="static_content">
 
