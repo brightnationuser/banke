@@ -5,7 +5,8 @@
 @section('content')
     <div class="container">
 
-        <h1 class="h2 h2--mt-0">{!! get_field('news_title', 'options') !!}</h1>
+        <h1 class="main_title">{!! get_field('case_studies_title', 'options') !!}</h1>
+        <p class="main_subtitle">{!! get_field('case_studies_subtitle', 'options') !!}</p>
 
         <div class="case-studies-list-wrapper">
             <div class="case-studies-list">

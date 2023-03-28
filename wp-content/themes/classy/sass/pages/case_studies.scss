@@ -10,6 +10,31 @@
       justify-content: space-between;
     }
   }
+  .navigation.pagination{
+    margin-top: 49px;
+    margin-bottom: 71px;
+  }
+  .main_title{
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 130%;
+    margin-top: 63px;
+    margin-bottom: 16px;
+    text-align: center;
+    background: linear-gradient(91.28deg, #003462 1.81%, #005CA9 133.12%), #003462;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+  .main_subtitle{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 170%;
+    text-align: center;
+    color: #4A4A49;
+    margin-bottom: 64px;
+  }
   .case_study{
     position: relative;
     display: flex;
