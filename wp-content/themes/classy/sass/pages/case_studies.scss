@@ -26,6 +26,12 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
+    @media screen and (max-width: 1200px) {
+      font-size: 34px;
+      margin-top: 80px;
+      margin-bottom: 30px;
+      margin-bottom: 5px;
+    }
   }
   .main_subtitle{
     font-weight: 400;
@@ -34,6 +40,10 @@
     text-align: center;
     color: #4A4A49;
     margin-bottom: 64px;
+    @media screen and (max-width: 1200px) {
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
   }
   .case_study{
     position: relative;
@@ -45,7 +55,7 @@
     border-radius: 6px;
     margin-bottom: 40px;
     background-image: url("/wp-content/themes/classy/images/case-studies/bg1.jpg");
-    background-size: 100%;
+    background-size: 105% 105%;
     background-repeat: no-repeat;
     background-position: left bottom;
     @media screen and (max-width: 1200px) {
@@ -54,12 +64,20 @@
       margin: 10px;
       flex-direction: column;
     }
+    @media screen and (max-width: 768px) {
+      max-width: 90%;
+      margin: 0 auto 20px;
+      background-image: none;
+      background-color: #fff;
+    }
     .client{
       font-size: 18px;
       line-height: 135%;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: #005CA9;
+      font-weight: 600;
+      margin-bottom: 16px;
       @media screen and (max-width: 1200px) {
         font-weight: 600;
       }
@@ -78,10 +96,10 @@
       padding: 10px 16px;
       color: #003462;
       font-size: 14px;
+      font-weight: 400;
       width: fit-content;
       &:before{
         content: "#";
-        margin-right: 4px;
         color: #005CA9;
       }
     }
@@ -142,7 +160,9 @@
         height: 320px;
         position: static;
       }
-
+      @media screen and (max-width: 480px) {
+        height: 220px;
+      }
       .item {
         height: 100%;
         color: #ffffff;
@@ -156,6 +176,7 @@
         @media screen and (max-width: 1200px) {
           clip-path: none!important;
         }
+
 
         a {
           margin-right: -225px;
@@ -273,7 +294,7 @@
 .case {
   max-width: 900px;
   padding-bottom: 60px;
-  margin: -50px auto 0;
+  margin: 50px auto 0;
 
   h2{
     margin-top: 30px;
