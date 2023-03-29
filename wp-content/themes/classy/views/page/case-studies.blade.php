@@ -4,9 +4,9 @@
 
 @php
     function max_title_length( $title ) {
-        $max = 100;
+        $max = 50;
         if( strlen( $title ) > $max ) {
-            return substr( $title, 0, $max ). " &hellip;";
+            return substr( $title, 0, $max ). "&hellip;";
         } else {
             return $title;
         }
@@ -39,7 +39,7 @@
                         </div>
                         <div class="static_content">
 
-                            <div class="client"> Client: {{get_field('subtitle',$case_studies_item->ID)}}NERU</div>
+                            <div class="client"> Client: {{get_field('subtitle',$case_studies_item->ID)}}</div>
                             <div class="subtitle"> {!!  max_title_length($case_studies_item->title()) !!}</div>
                             <div class="tag"> {!!  get_the_title($id) !!}
                             </div>

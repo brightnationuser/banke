@@ -44,6 +44,11 @@
       font-size: 14px;
       margin-bottom: 30px;
     }
+    @media screen and (max-width: 768px) {
+      br{
+        display: none;
+      }
+    }
   }
   .case_study{
     position: relative;
@@ -55,9 +60,9 @@
     border-radius: 6px;
     margin-bottom: 40px;
     background-image: url("/wp-content/themes/classy/images/case-studies/bg1.jpg");
-    background-size: 105% 105%;
+    background-size: 110% 110%;
     background-repeat: no-repeat;
-    background-position: left bottom;
+    background-position: 5% 5%;
     @media screen and (max-width: 1200px) {
       max-width: 45%;
       width: 100%;
@@ -264,7 +269,7 @@
 
     &:nth-of-type(2n){
       background-image: url("/wp-content/themes/classy/images/case-studies/bg2.jpg");
-      background-position: right bottom;
+      background-position: 5% 5%;
       .static_content{
         max-width: 436px;
         width: 100%;
