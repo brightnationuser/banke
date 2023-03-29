@@ -21,7 +21,10 @@
                     </div>
                     <div class="subtitle"> {!! get_field('first_screen_title') !!}</div>
                     <div class="caption"> {!! get_field('first_screen_caption') !!}
+
+
                     </div>
+                    <a href="{{  get_field('first_screen_link')['url'] }}" target="_blank"> Download PDF</a>
                 </div>
             </div>
         </div>
