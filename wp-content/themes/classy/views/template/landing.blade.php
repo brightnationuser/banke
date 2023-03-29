@@ -99,6 +99,7 @@
                             <div class="container">
                                 <div class="wrapper">
                                     <div class="title">{!! get_sub_field('title') !!}</div>
+                                    <div class="subtitle">{!! get_sub_field('subtitle') !!}</div>
 
                                     @if(!empty(get_sub_field('button')))
                                         <a href="{!! get_sub_field('button')['url'] !!}"
