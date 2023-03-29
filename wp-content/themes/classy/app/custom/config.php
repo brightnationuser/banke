@@ -73,7 +73,7 @@ $post_types = array(
                 'page-attributes',
             ),
             'show_in_nav_menus' => true,
-            'rewrite' => array('with_front' => false),
+            'rewrite' => array( 'slug' => 'case-studies','with_front' => false),
             // with_front по умолчанию стоит true, а значит если в настройках пермалинка поставить /blogs/ то все абсолютно ссылки будут
             // префикшены этим /blogs/. Поставив with_front на false мы говорим, что этому post_type не нужно смотреть на наши настройки пермалинка
             // Все последующие новые post_type аналогично нужно указывать с этим параметром на false
