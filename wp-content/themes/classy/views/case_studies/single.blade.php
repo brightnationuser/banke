@@ -77,7 +77,7 @@
                 </div>
                 <div class="text">
                     <h2 class="case__solution__title">
-                        {!!  get_the_title($id) !!}
+                        {!!  get_the_title(get_field('product')) !!}
                     </h2>
                     <div class="case__solution__text">{!!  get_field('case_studies_info', get_field('product')) !!}</div>
                     <a href="{!! get_permalink( get_field('product') ) !!}"
