@@ -1,13 +1,6 @@
 @extends('layout.default')
 
 @section('content')
-    @if( == 0)
-        @php($id = )
-    @elseif(get_field('product') == 1)
-        @php($id = 2301)
-    @else
-        @php($id = 809)
-    @endif
 
     <input type="hidden" id="remove_btn_src" value="{{get_template_directory_uri()}}/images/icons/icon_close_blue.svg">
     <article class="case case-{{apply_filters('the_id', get_the_ID())}}">
