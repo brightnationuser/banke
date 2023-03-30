@@ -21,7 +21,7 @@
         <div class="container">
             <h2 class="case__solution__title">Solution</h2>
             <div class="case__solution__text">{!! get_field('solution') !!}</div>
-            <a href="{!! get_permalink( $id ) !!}"
+            <a href="{!! get_permalink(get_field('product')) !!}"
                class="case__solution__button">{!! get_field('case_studies_learn_more_button', 'option') !!}</a>
         </div>
     </div>
