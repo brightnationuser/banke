@@ -21,7 +21,11 @@
                     </div>
                     <div class="subtitle"> {!! get_field('first_screen_title') !!}</div>
                     <div class="caption"> {!! get_field('first_screen_caption') !!}
+
+
                     </div>
+
+                    <a href="{{  get_field('first_screen_link')['url'] }}" target="_blank"> <i class="icon-down-arrow"></i> <span>Download PDF</span></a>
                 </div>
             </div>
         </div>
@@ -96,6 +100,7 @@
                             <div class="container">
                                 <div class="wrapper">
                                     <div class="title">{!! get_sub_field('title') !!}</div>
+                                    <div class="subtitle">{!! get_sub_field('subtitle') !!}</div>
 
                                     @if(!empty(get_sub_field('button')))
                                         <a href="{!! get_sub_field('button')['url'] !!}"
