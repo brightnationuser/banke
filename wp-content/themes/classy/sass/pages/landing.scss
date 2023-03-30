@@ -25,7 +25,9 @@
       background-position: center;
       position: relative;
       z-index: 1;
-
+      @media screen and (max-width: 1200px) {
+        display: none;
+      }
       &:before {
         content: "";
         position: absolute;
@@ -53,6 +55,7 @@
       }
       @media screen and (max-width: 768px) {
         background-size: 200%;
+        min-height: initial;
       }
 
     }
@@ -103,6 +106,9 @@
 
       @media screen and (max-width: 1200px) {
         text-align: center;
+        position: static;
+        transform: none;
+        padding-top: 45px;
       }
       @media screen and (max-width: 768px) {
         br {
@@ -194,7 +200,8 @@
           display: inline-block;
         }
         @media screen and (max-width: 768px) {
-          margin-bottom: 55px;
+          margin-top: 10px;
+          margin-bottom: 35px;
         }
 
       }
