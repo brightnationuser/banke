@@ -52,5 +52,9 @@
         {!! $pagination_layout !!}
 
     </div>
-
+    @include('partials.new-contact-us', [
+        'form' => get_field('contact_form', 'option'),
+        'title' => get_field('contact_form_title', 'option'),
+        'classes' => 'contact-us--light'
+    ])
 @stop
