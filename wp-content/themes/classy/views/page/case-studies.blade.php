@@ -27,14 +27,6 @@
 
                 @foreach($case_studies as $case_studies_item)
 
-                    @if(get_field('product',$case_studies_item->ID) == 0)
-                        @php($id = 115)
-                    @elseif(get_field('product',$case_studies_item->ID) == 1)
-                        @php($id = 2301)
-                    @else
-                        @php($id = 809)
-                    @endif
-
                     <a href="{{ apply_filters('wpml_permalink', $case_studies_item->permalink(), 'en') }}"
                        class="case_study">
 
@@ -48,7 +40,7 @@
                         <div class="static_content">
                             <div class="client"> Client: {{get_field('subtitle',$case_studies_item->ID)}}</div>
                             <div class="subtitle"> {!!  max_title_length($case_studies_item->title()) !!}</div>
-                            <div class="tag"> {!!  get_the_title($id) !!} </div>
+                            <div class="tag"> {!!  get_the_title(get_field('product',$case_studies_item->ID)) !!} </div>
                         </div>
 
                     </a>

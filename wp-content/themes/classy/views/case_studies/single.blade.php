@@ -1,8 +1,8 @@
 @extends('layout.default')
 
 @section('content')
-    @if(get_field('product') == 0)
-        @php($id = 115)
+    @if( == 0)
+        @php($id = )
     @elseif(get_field('product') == 1)
         @php($id = 2301)
     @else
@@ -73,9 +73,9 @@
             <div class="wrapper">
                 <div class="image">
 
-                    @if(get_field('product') == 0)
+                    @if(get_field('product') == 115)
                         <img src="/wp-content/themes/classy/images/case-test-image.png" alt="case icon">
-                    @elseif(get_field('product') == 1)
+                    @elseif(get_field('product') == 2301)
                         <img src="/wp-content/themes/classy/images/case-test-image-2.png" alt="case icon">
                     @else
                         <img src="/wp-content/themes/classy/images/case-test-image-3.png" alt="case icon">
@@ -86,8 +86,8 @@
                     <h2 class="case__solution__title">
                         {!!  get_the_title($id) !!}
                     </h2>
-                    <div class="case__solution__text">{!!  get_field('case_studies_info',$id) !!}</div>
-                    <a href="{!! get_permalink( $id ) !!}"
+                    <div class="case__solution__text">{!!  get_field('case_studies_info', get_field('product')) !!}</div>
+                    <a href="{!! get_permalink( get_field('product') ) !!}"
                        class="button button--primary disable_preloader">{!! get_field('case_studies_learn_more_button', 'option') !!}</a>
                 </div>
             </div>
