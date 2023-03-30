@@ -16,7 +16,6 @@ $_case_studies = new WP_Query([
     'post_type' => 'case_studies',
     'posts_per_page' => 4,
     'paged' => $current_page,
-    'suppress_filters' => true
 ]);
 
 $case_studies = [];
