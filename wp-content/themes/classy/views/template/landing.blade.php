@@ -24,7 +24,8 @@
 
 
                     </div>
-                    <a href="{{  get_field('first_screen_link')['url'] }}" target="_blank"> Download PDF</a>
+
+                    <a href="{{  get_field('first_screen_link')['url'] }}" target="_blank"> <i class="icon-down-arrow"></i> <span>Download PDF</span></a>
                 </div>
             </div>
         </div>
