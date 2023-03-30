@@ -110,7 +110,7 @@
         </section>
         @endif
 
-        @include('partials.contact-us', [
+        @include('partials.new-contact-us', [
             'form' => $post->getAcfByKey('contact_form'),
             'title' => $post->getAcfByKey('contact_title'),
             'classes' => 'contact-us--light'
