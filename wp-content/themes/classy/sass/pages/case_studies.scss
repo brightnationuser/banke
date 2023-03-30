@@ -65,6 +65,7 @@
     background-size: 110% 110%;
     background-repeat: no-repeat;
     background-position: 5% 5%;
+    text-decoration: none;
     @media screen and (max-width: 1200px) {
       max-width: 45%;
       width: 100%;
@@ -161,7 +162,7 @@
       right: 0;
       z-index: 0;
       overflow: hidden;
-      border-radius: 6px;
+      border-radius: 5px;
 
       @media screen and (max-width: 1200px) {
         width: 100%;
@@ -211,7 +212,6 @@
       z-index: 1;
       color: #ffffff;
       margin-left: 72px;
-
       @media screen and (max-width: 1200px) {
         position: static;
         transform: none;
