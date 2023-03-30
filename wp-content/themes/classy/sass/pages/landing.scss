@@ -25,9 +25,11 @@
       background-position: center;
       position: relative;
       z-index: 1;
+
       @media screen and (max-width: 1200px) {
         display: none;
       }
+
       &:before {
         content: "";
         position: absolute;
@@ -50,14 +52,15 @@
         background-size: 160%;
         background-position: bottom;
       }
+
       @media screen and(max-width: 992px) {
         min-height: 400px;
       }
+
       @media screen and (max-width: 768px) {
         background-size: 200%;
         min-height: initial;
       }
-
     }
 
     .carousel {
@@ -110,6 +113,7 @@
         transform: none;
         padding-top: 45px;
       }
+
       @media screen and (max-width: 768px) {
         br {
           display: none;
@@ -119,9 +123,10 @@
       .logo {
         max-width: 235px;
         pointer-events: auto;
+
         @media screen and (max-width: 1200px) {
           margin: auto;
-          img{
+          img {
             margin: auto;
           }
         }
@@ -147,13 +152,14 @@
         @media screen and(max-width: 1200px) {
           margin: 48px auto 15px;
         }
+
         @media screen and(max-width: 992px) {
           margin: 48px auto 15px;
         }
+
         @media screen and (max-width: 768px) {
           font-size: 20px;
         }
-
       }
 
       a {
@@ -168,9 +174,11 @@
         text-decoration: none !important;
         color: #005CA9;
         transition: all 0.5s ease;
+
         @media screen and (max-width: 1200px) {
           margin-left: -30px;
         }
+
         i {
           margin-right: 10px;
         }
@@ -189,8 +197,9 @@
             transition: all 0.5s ease;
           }
         }
-        &:hover{
-          span::before{
+
+        &:hover {
+          span::before {
             opacity: 0;
           }
         }
@@ -199,11 +208,11 @@
           margin-top: 20px;
           display: inline-block;
         }
+
         @media screen and (max-width: 768px) {
           margin-top: 10px;
           margin-bottom: 35px;
         }
-
       }
     }
   }
@@ -219,6 +228,7 @@
       @media screen and (max-width: 1200px) {
         flex-wrap: wrap;
       }
+
       @media screen and (max-width: 768px) {
         padding: 20px 0;
         max-width: 130px;
@@ -235,6 +245,7 @@
         @media screen and (max-width: 1200px) {
           margin: 32px 35px;
         }
+
         @media screen and (max-width: 768px) {
           margin: 15px 35px;
           max-width: 290px;
@@ -280,6 +291,7 @@
     @media screen and(max-width: 992px) {
       margin-top: 40px;
     }
+
     @media screen and(max-width: 482px) {
       margin-top: 10px;
     }
@@ -290,15 +302,18 @@
       @media screen and(max-width: 1400px) {
         margin-bottom: 30px;
       }
+
       @media screen and(max-width: 1200px) {
         margin-bottom: 45px;
       }
+
       @media screen and(max-width: 992px) {
         margin-bottom: 10px;
       }
     }
 
     .left {
+
       .image {
         margin-left: 15px;
         right: 0;
@@ -314,9 +329,11 @@
           flex-direction: column-reverse;
         }
       }
+
     }
 
     .right {
+
       .text {
         margin-left: auto;
       }
@@ -337,6 +354,7 @@
           flex-direction: column;
         }
       }
+
     }
   }
 
@@ -371,9 +389,11 @@
 
     .text {
       max-width: 544px;
+
       @media screen and(max-width: 1400px) {
         max-width: 50%;
       }
+
       @media screen and(max-width: 992px) {
         max-width: 100%;
       }
@@ -386,10 +406,12 @@
         text-align: left;
         margin-bottom: 24px;
         margin-top: 0;
+
         @media screen and(max-width: 1200px) {
           font-size: 28px;
           margin-bottom: 18px;
         }
+
         @media screen and(max-width: 992px) {
           text-align: center;
         }
@@ -405,6 +427,7 @@
         line-height: 160%;
         color: #4A4A49;
         margin-bottom: 20px;
+
         @media screen and(max-width: 1200px) {
           font-size: 16px;
         }
@@ -427,6 +450,7 @@
         transform: none;
         min-height: 400px;
       }
+
       @media screen and(max-width: 992px) {
         max-width: 100%;
         min-height: 50vw;
@@ -566,6 +590,7 @@
             opacity: 0
           }
         }
+
         @keyframes pulseLandingButton {
           0% {
             -webkit-transform: translateY(-25%) scaleY(1) scaleX(1);
@@ -600,6 +625,7 @@
       background-image: url('/wp-content/themes/classy/images/landing/landing-contacts-bg-mobile.jpg');
       background-position: center;
     }
+
     @media screen and(max-width: 768px) {
       .ajax-loader {
         bottom: 7px !important;
