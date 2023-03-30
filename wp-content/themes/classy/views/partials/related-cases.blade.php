@@ -28,8 +28,8 @@
                         <div class="item">
                             <a href="{{ get_permalink($item->ID)  }}" class="item">
                                 <img class="item__image"
-                                     src="{!! \Helpers\General::getFlyImage(get_field('acf_image',$item->ID), [600, 400]); !!}"
-                                     alt="{{ get_the_title($item->ID) }}"/>
+                                     src="{{ get_the_post_thumbnail_url($case_study->ID,'medium_large') }}"
+                                     alt="{{ get_the_title($case_study->ID) }}"/>
                                 <div class="item__content">
                                     <h3 class="item__title">
                                         {!!  get_field('subtitle',$item->ID) !!}
