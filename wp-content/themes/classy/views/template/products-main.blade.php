@@ -40,8 +40,8 @@
     </div>
 
     @include('partials.new-contact-us', [
-        'form' => $post->getAcfByKey('contact_form'),
-        'title' => $post->getAcfByKey('contact_title'),
+        'form' => get_field('contact_form', 'option'),
+        'title' => get_field('contact_form_title', 'option'),
         'classes' => 'contact-us--light',
     ])
 
