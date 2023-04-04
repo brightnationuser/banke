@@ -126,3 +126,17 @@
     }
   }
 }
+
+.related_cases{
+  .related__title {
+    margin-bottom: 71px;
+    margin-top: 69px;
+    &::after{
+      top: 55px;
+    }
+  }
+  .home-references{
+    border-top: 0;
+    padding-top: 6px;
+  }
+}

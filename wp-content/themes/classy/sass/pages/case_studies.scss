@@ -524,7 +524,8 @@
     &__button {
       padding: 12px 32px;
       display: block;
-      max-width: 353px;
+      max-width: fit-content;
+      white-space: nowrap;
       width: 100%;
       font-weight: 700;
       font-size: 16px;
