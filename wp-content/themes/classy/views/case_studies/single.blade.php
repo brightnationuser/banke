@@ -68,22 +68,14 @@
         <div class="case__specifications__container">
             <div class="wrapper">
                 <div class="image">
-
-                    @if(get_field('product') == 115)
-                        <img src="/wp-content/themes/classy/images/case-test-image.png" alt="case icon">
-                    @elseif(get_field('product') == 2301)
-                        <img src="/wp-content/themes/classy/images/case-test-image-2.png" alt="case icon">
-                    @else
-                        <img src="/wp-content/themes/classy/images/case-test-image-3.png" alt="case icon">
-                    @endif
-
+                        <img src="{!! get_field('product')['url'];!!}" alt="case icon">
                 </div>
                 <div class="text">
                     <h2 class="case__solution__title">
-                        {!!  get_the_title(get_field('product')) !!}
+                        {!!  get_field('product_post')->post_title !!}
                     </h2>
-                    <div class="case__solution__text">{!!  get_field('case_studies_info', get_field('product')) !!}</div>
-                    <a href="{!! get_permalink( get_field('product') ) !!}"
+                    <div class="case__solution__text">{!!  get_field('case_studies_info', get_field('product_post')->ID) !!}</div>
+                    <a href="{!! get_permalink( get_field('product_post')->ID ) !!}"
                        class="button button--primary disable_preloader">{!! get_field('case_studies_learn_more_button', 'option') !!}</a>
                 </div>
             </div>
