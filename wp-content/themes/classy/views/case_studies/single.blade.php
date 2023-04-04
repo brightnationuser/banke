@@ -17,19 +17,22 @@
 
         <div class="case__content">{!!  get_the_content() !!}</div>
     </article>
+
+    @if(!empty(get_field('solution')))
     <div class="case__solution" style="background-image: url(/wp-content/themes/classy/images/case-solutions-bg.jpg)">
         <div class="container">
-            <h2 class="case__solution__title">Solution</h2>
+            <h2 class="case__solution__title">{!! get_field('solutions_title', 'option') !!}</h2>
             <div class="case__solution__text">{!! get_field('solution') !!}</div>
             <a href="{!! get_permalink(get_field('product')) !!}"
                class="case__solution__button">{!! get_field('case_studies_learn_more_button', 'option') !!}</a>
         </div>
     </div>
+    @endif
 
     @if(get_field('specification_enabled'))
         <div class="case__specifications">
             <div class="case__specifications__container">
-                <h2 class="case__solution__title">Main Specification Facts</h2>
+                <h2 class="case__solution__title">{!! get_field('main_specification_facts_title', 'option') !!}</h2>
                 <div class="wrapper">
                     <div class="left">
                         <table>
@@ -50,10 +53,10 @@
                         @if(get_field('file')['url'] != "")
                             <a class="case__download" href="{!! get_field('file')['url']  !!}" target="_blank"
                                download="{!! get_field('file')['url']  !!}">
-                                <i class="icon-down-arrow"></i> <span>specification</span> </a>
+                                <i class="icon-down-arrow"></i> <span>{!! get_field('case_study_specification', 'option') !!}</span> </a>
                         @else
                             <a class="case__download" href="#" style="pointer-events: none">
-                                <i class="icon-down-arrow"></i> <span>specification</span> </a>
+                                <i class="icon-down-arrow"></i> <span>{!! get_field('case_study_specification', 'option') !!}</span> </a>
                         @endif
                     </div>
                 </div>
