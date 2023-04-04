@@ -40,7 +40,10 @@
                         <div class="static_content">
                             <div class="client"> Client: {{get_field('subtitle',$case_studies_item->ID)}}</div>
                             <div class="subtitle"> {!!  max_title_length($case_studies_item->title()) !!}</div>
+
+                            @if(!empty(get_field('product_post',$case_studies_item->ID)))
                             <div class="tag"> {!!  get_the_title(get_field('product_post',$case_studies_item->ID)->ID) !!} </div>
+                            @endif
                         </div>
 
                     </a>

@@ -64,6 +64,7 @@
         </div>
     @endif
 
+    @if(!empty(get_field('product_post',$case_studies_item->ID)))
     <div class="case__product">
         <div class="case__specifications__container">
             <div class="wrapper">
@@ -81,6 +82,7 @@
             </div>
         </div>
     </div>
+    @endif
 
     @include('partials.related-cases')
     @include('partials.new-contact-us', [
