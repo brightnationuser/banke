@@ -69,7 +69,7 @@
                 </div>
 
                 <div class="button_wrap">
-                    <a href="{!! get_field('case_studies_learn_more_button','options')['url'] !!}" class="button">{!! get_field('case_studies_learn_more_button','options')['title'] !!}</a>
+                    <a href="{!! get_field('case_study_main_page_button','options')['url'] !!}" class="button">{!! get_field('case_study_main_page_button','options')['title'] !!}</a>
                 </div>
         </div>
     </div>
