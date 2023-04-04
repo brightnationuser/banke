@@ -19,7 +19,9 @@
 
 
             <div class="references-slider owl-carousel js-references-slider">
+
                 @php
+
                     global $post;
 
                     $framework = get_theme_framework();
@@ -39,8 +41,11 @@
                         $case_studies = array_merge($case_studies, $references_filling);
 
                     }
+
                 @endphp
+
                 @foreach($case_studies as $case_study)
+
                     <div class="reference-slide">
                         <a href="{!! get_post_permalink($case_study->ID) !!}">
 
@@ -60,12 +65,15 @@
                                     </picture>
 
                                     @if(!empty(get_field('subtitle',$case_study->ID)))
-                                    <div class="manufacturer">
-                                        CLIENT: {!!  get_field('subtitle',$case_study->ID) !!}
-                                    </div>
+
+                                        <div class="manufacturer">
+                                            CLIENT: {!!  get_field('subtitle',$case_study->ID) !!}
+                                        </div>
+
                                     @endif
 
                                 </div>
+
                             @endif
 
                             <div class="reference-slide__title">
@@ -73,6 +81,7 @@
                             </div>
                         </a>
                     </div>
+
                 @endforeach
 
             </div>
@@ -104,6 +113,7 @@
                     </defs>
                 </svg>
             </div>
+
         </div>
     </div>
 </section>
