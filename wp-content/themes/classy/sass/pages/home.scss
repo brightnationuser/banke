@@ -1101,175 +1101,6 @@
       }
     }
 
-    .home-references {
-      padding-bottom: 80px;
-      padding-top: 72px;
-      border-top: 1px solid #eee;
-
-      h2 {
-        margin-top: 50px;
-        margin-bottom: 35px;
-      }
-
-      p {
-        font-size: 18px;
-        text-align: center;
-        margin-bottom: 40px;
-      }
-
-      .container {
-        padding: 0 57px;
-      }
-
-      .owl-stage-outer {
-        border-radius: 15px;
-      }
-
-      .owl-nav {
-        top: 85px;
-        display: none;
-
-        .owl-prev, .owl-next {
-          position: absolute;
-          width: 63px;
-          height: 63px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          &::before {
-            font-size: 19px;
-            color: #005CA9;
-          }
-        }
-
-        .owl-prev {
-          left: -50px;
-        }
-
-        .owl-next {
-          right: -50px;
-        }
-      }
-
-      .custom-nav {
-        & > * {
-          position: absolute;
-          top: 95px;
-          cursor: pointer;
-          transition: all .5s ease;
-
-        }
-
-        svg {
-          path {
-            transition: all .5s ease;
-          }
-
-          &:hover {
-            path {
-              stroke: #003462;
-            }
-          }
-        }
-
-
-        .owl-prev {
-          left: 15px;
-          transform: translateY(-50%) rotate(180deg);
-        }
-
-        .owl-next {
-          position: absolute;
-          right: 15px;
-          transform: translateY(-50%);
-        }
-      }
-
-      .rounded-first {
-        .reference-slide {
-          &__image, .manufacturer {
-            border-bottom-left-radius: 15px;
-          }
-        }
-      }
-
-      .rounded-last {
-        .reference-slide {
-          &__image, .manufacturer {
-            border-bottom-right-radius: 15px;
-          }
-        }
-      }
-
-      .reference-slide {
-
-        a {
-          text-decoration: none;
-
-          img {
-            transition: 0.5s all ease-in-out;
-          }
-
-          .manufacturer {
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background: linear-gradient(90.33deg, rgba(74, 74, 73, 0.2) 0.22%, rgba(255, 255, 255, 0.2) 100%);
-            box-shadow: inset 0px 4px 4px rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(8px);
-            font-weight: 600;
-            font-size: 14px;
-            line-height: 19px;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            padding: 8px 16px;
-            color: #FFFFFF;
-          }
-
-          @media screen and (min-width: 1200px) {
-            &:hover {
-              text-decoration: none;
-
-              img {
-                transform: scale(1.1);
-              }
-            }
-          }
-
-        }
-
-        &__image {
-          height: 190px;
-          overflow: hidden;
-          transition: all .1s ease;
-          position: relative;
-
-          img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            max-height: 190px;
-          }
-        }
-
-        &__title {
-          margin-top: 12px;
-          font-weight: 600;
-          font-size: 18px;
-          line-height: 25px;
-          color: #4A4A49;
-          text-align: left;
-
-          &:hover {
-            color: #005CA9;
-          }
-        }
-      }
-    }
-
     .contact-us {
       padding: 56px 0;
       margin-bottom: 0;
@@ -1458,6 +1289,174 @@
   }
 }
 
+.home-references {
+  padding-bottom: 80px;
+  padding-top: 72px;
+  border-top: 1px solid #eee;
+
+  h2 {
+    margin-top: 50px;
+    margin-bottom: 35px;
+  }
+
+  p {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .container {
+    padding: 0 57px;
+  }
+
+  .owl-stage-outer {
+    border-radius: 15px;
+  }
+
+  .owl-nav {
+    top: 85px;
+    display: none!important;
+
+    .owl-prev, .owl-next {
+      position: absolute;
+      width: 63px;
+      height: 63px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &::before {
+        font-size: 19px;
+        color: #005CA9;
+      }
+    }
+
+    .owl-prev {
+      left: -50px;
+    }
+
+    .owl-next {
+      right: -50px;
+    }
+  }
+
+  .custom-nav {
+    & > * {
+      position: absolute;
+      top: 95px;
+      cursor: pointer;
+      transition: all .5s ease;
+
+    }
+
+    svg {
+      path {
+        transition: all .5s ease;
+      }
+
+      &:hover {
+        path {
+          stroke: #003462;
+        }
+      }
+    }
+
+
+    .owl-prev {
+      left: 15px;
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    .owl-next {
+      position: absolute;
+      right: 15px;
+      transform: translateY(-50%);
+    }
+  }
+
+  .rounded-first {
+    .reference-slide {
+      &__image, .manufacturer {
+        border-bottom-left-radius: 15px;
+      }
+    }
+  }
+
+  .rounded-last {
+    .reference-slide {
+      &__image, .manufacturer {
+        border-bottom-right-radius: 15px;
+      }
+    }
+  }
+
+  .reference-slide {
+
+    a {
+      text-decoration: none;
+
+      img {
+        transition: 0.5s all ease-in-out;
+      }
+
+      .manufacturer {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background: linear-gradient(90.33deg, rgba(74, 74, 73, 0.2) 0.22%, rgba(255, 255, 255, 0.2) 100%);
+        box-shadow: inset 0px 4px 4px rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        padding: 8px 16px;
+        color: #FFFFFF;
+      }
+
+      @media screen and (min-width: 1200px) {
+        &:hover {
+          text-decoration: none;
+
+          img {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+    }
+
+    &__image {
+      height: 190px;
+      overflow: hidden;
+      transition: all .1s ease;
+      position: relative;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        max-height: 190px;
+      }
+    }
+
+    &__title {
+      margin-top: 12px;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 25px;
+      color: #4A4A49;
+      text-align: left;
+
+      &:hover {
+        color: #005CA9;
+      }
+    }
+  }
+}
 
 @media screen and (max-width: 1300px) {
   .home .content {
