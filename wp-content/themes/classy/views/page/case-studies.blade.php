@@ -27,7 +27,7 @@
 
                 @foreach($case_studies as $case_studies_item)
 
-                    <a href="{{ apply_filters('wpml_permalink', $case_studies_item->permalink(), 'en') }}"
+                    <a href="{{  $case_studies_item->permalink() }}"
                        class="case_study">
 
                         <div class="left"></div>
@@ -40,7 +40,10 @@
                         <div class="static_content">
                             <div class="client"> Client: {{get_field('subtitle',$case_studies_item->ID)}}</div>
                             <div class="subtitle"> {!!  max_title_length($case_studies_item->title()) !!}</div>
-                            <div class="tag"> {!!  get_the_title(get_field('product',$case_studies_item->ID)) !!} </div>
+
+                            @if(!empty(get_field('product_post',$case_studies_item->ID)))
+                            <div class="tag"> {!!  get_the_title(get_field('product_post',$case_studies_item->ID)->ID) !!} </div>
+                            @endif
                         </div>
 
                     </a>
