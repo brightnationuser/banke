@@ -1,5 +1,18 @@
 @extends('layout.main-page')
 
+@php
+
+    function max_title_length( $title ) {
+        $max = 50;
+        if( strlen( $title ) > $max ) {
+            return substr( $title, 0, $max ). "&hellip;";
+        } else {
+            return $title;
+        }
+    }
+
+@endphp
+
 @section('content')
     <div class="first_screen">
         <div class="left"
@@ -144,7 +157,7 @@
                                 @endif
 
                                 <div class="reference-slide__title">
-                                    {!! $case_study->post_title !!}
+                                    {!! max_title_length($case_study->post_title) !!}
                                 </div>
                             </a>
                         </div>
