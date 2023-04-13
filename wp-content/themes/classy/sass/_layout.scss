@@ -70,14 +70,34 @@ header.header {
   position: relative;
   z-index: 10;
   font-size: 16px;
+  .header__right.mobile {
+    display: none !important;
+  }
+  @media screen and (max-width: 1200px) {
+
+    .header__right:not(.mobile) {
+      display: none !important;
+    }
+
+    .header__right.mobile {
+      display: flex !important;
+    }
+
+  }
+  .header__menu{
+    margin-right: auto;
+    margin-left: 41px;
+    margin-top: -2px;
+  }
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    padding-left: 18px;
+    padding-right: 18px;
     .header__logo {
       img {
-        width: 128px;
+        width: 148px;
         image-rendering: -moz-crisp-edges; /* Firefox */
         image-rendering: -o-crisp-edges; /* Opera */
         image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
@@ -251,6 +271,7 @@ header.header {
           position: relative;
           font-weight: 600;
           margin: 0 13px;
+          margin-right: 8px;
 
           @media screen and (max-width: 1200px) {
             margin: 0;
