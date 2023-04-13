@@ -38,9 +38,9 @@
                 {!! do_shortcode($form) !!}
             @else
                 @if(ICL_LANGUAGE_CODE === 'en')
-                    {!! do_shortcode('[contact-form-7 id="5" title="Send Us A Message"]') !!}
+                    {!! do_shortcode('[contact-form-7 id="3321" title="New main page contact form"]') !!}
                 @elseif(ICL_LANGUAGE_CODE === 'de')
-                    {!! do_shortcode('[contact-form-7 id="1296" title="Contact form DE"]') !!}
+                    {!! do_shortcode('[contact-form-7 id="3377" title="New main page contact form DE"]') !!}
                 @else
                 @endif
             @endif
