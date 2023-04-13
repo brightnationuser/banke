@@ -1,6 +1,7 @@
 .single-news {
     .content {
         padding-bottom: 0;
+        padding-top: 75px;
     }
 
     .article-layout {
@@ -123,18 +124,54 @@
              font-size: 16px;
              line-height: 18px;
              color: #4A4A49;
+             margin-bottom: 10px;
          }
 
          &__title {
              margin-top: 10px;
-             font-weight: bold;
-             font-size: 28px;
-             line-height: 120%;
+             font-weight: 600;
+             font-size: 32px;
+             line-height: 140%;
              color: #003462;
          }
+        &__content{
+            font-family: 'Open Sans', sans-serif;
+            font-style: normal;
+            color: #4A4A49;
+            em{
+                font-style: normal;
+            }
+            strong{
+                font-weight: 700;
+                font-size: 18px!important;
+                line-height: 160% !important;
+            }
+            p{
+                font-weight: 300;
+                font-size: 18px!important;
+                line-height: 160% !important;
+            }
+        }
      }
 
     .content {
+        .related{
+            background-image: url("/wp-content/themes/classy/images/bg/latest_news_bg.jpg");
+            background-size: 100%;
+            padding-bottom: 60px;
+            h2{
+                margin-top: 55px;
+                margin-bottom: 16px;
+                font-size: 32px;
+                font-weight: 600;
+                &:after{
+                    display: none;
+                }
+            }
+            .owl-carousel:not(.owl-theme-banke):not(.owl-theme-related-insights) .owl-nav{
+                top: 115px;
+            }
+        }
         iframe {
             width: 100%;
             height: 350px;
@@ -169,7 +206,7 @@
         }
 
         &__img {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             width: 100%;
             border-radius: 4px;
 
@@ -203,6 +240,13 @@
         }
 
 
+    }
+    .contact-us {
+        padding: 50px 0;
+        .container{
+            max-width: 1215px;
+
+        }
     }
 
 }

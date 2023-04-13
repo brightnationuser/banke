@@ -7,22 +7,74 @@
     .history {
 
         .sidebar {
-            margin-top: 85px;
+            margin-top: 17px;
+            &__item{
+                box-shadow: none;
+                padding: 0;
+                position: relative;
+                &--download a::before{
+                    display: none;
+                }
+                .info{
+                    position: absolute;
+                    width: 100%;
+                    bottom: 6px;
+                    left: 0;
+                    h3{
+                        font-weight: 600;
+                        font-size: 18px;
+                        line-height: 25px;
+                        letter-spacing: 0.04em;
+                        text-transform: uppercase;
+                        text-align: center;
+                        color: #003462;
+                        margin-bottom: 18px;
+                    }
+                    .wrapper{
+                        display: flex;
+                        border-radius: 0 0 4px 4px ;
+                        overflow: hidden;
+                        div{
+                            width: 100%;
+                            border-left: none;
+                            &+div{
+
+                                border-left: 1px solid #fff;
+                            }
+                        }
+                        a{
+                            background-color: #005CA9;
+                            font-family: 'Open Sans', sans-serif;
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 18px;
+                            line-height: 25px;
+                            color: #FFFFFF;
+                            width: 100%;
+                            display: block;
+                            padding: 12px 0;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+
         }
 
         .h2 {
+            margin-top: 5px;
+            margin-bottom: 30px;
+            font-size: 32px;
+            font-weight: 600;
             text-align: left;
-            margin-top: 0;
-            margin-bottom: 35px;
-
-            &::after {
-                left: 0;
+            &:after{
+                display: none;
             }
         }
 
         .history__wrap {
             display: flex;
-
+            justify-content: space-between;
             .history__img {
                 display: none;
                 margin-right: 40px;
@@ -43,9 +95,11 @@
             .history__text {
                 max-width: 800px;
                 margin: 0 auto;
-                font-size: 16px;
-                line-height: 23px;
-                //flex-basis: 50%;
+                font-family: 'Open Sans', sans-serif;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 18px;
+                line-height: 160%;
 
                 sub {
                     font-size: 75%;
@@ -73,14 +127,21 @@
     }
 
     .team {
-        margin-top: 80px;
+        margin-top: -20px;
         background-color: $color-bg-light-blue;
-        background-image: url("/wp-content/themes/classy/images/pages/about/fon.png");
+        background-image: url("/wp-content/themes/classy/images/bg/our_team.jpg");
         background-size: cover;
-        padding: 60px 0 60px 0;
+        padding: 60px 0 85px 0;
 
         h2 {
-            margin-top: 0;
+            margin-top: 20px;
+            margin-bottom: 55px;
+            font-size: 32px;
+            font-weight: 600;
+            text-align: center;
+            &:after{
+                display: none;
+            }
         }
 
         &__members {
@@ -91,10 +152,12 @@
                 background: #fff;
                 border-radius: 8px;
                 overflow: hidden;
-                max-width: 318px;
+                max-width: 320px;
                 width: 100%;
-                margin-right: 30px;
-
+                margin-right: 47px;
+                &__content{
+                    padding: 21px 21px 12px 25px;
+                }
                 &:last-child {
                     margin-right: 0;
                 }
@@ -212,8 +275,15 @@
 }
 
 @media screen and (max-width: 768px) {
-
     .p-about {
+        .team{
+            margin-top: 20px;
+        }
+        .history .sidebar__item{
+            img{
+                display: none;
+            }
+        }
         .history__wrap {
             flex-direction: column;
 

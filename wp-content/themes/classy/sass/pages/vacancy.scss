@@ -1,3 +1,10 @@
+.single-vacancies{
+    background-image: url("/wp-content/themes/classy/images/bg/Vacancies.jpg");
+    background-size: 100%;
+    .content{
+        padding-top: 72px;
+    }
+}
 .vacancy {
     * {
         margin: 0;
@@ -9,10 +16,10 @@
     }
 
     &__title {
-        font-weight: 700;
         font-size: 32px;
         line-height: 44px;
-        color: #003462;
+        font-weight: 600;
+        color: #003462!important;
 
         @media screen and (max-width: 767px) {
             font-size: 24px;
@@ -165,7 +172,30 @@
         font-size: 16px;
         line-height: 21px;
         color: #4A4A49;
-
+        br{
+            display: none;
+        }
+        em{
+            font-style: normal;
+        }
+        strong{
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 33px;
+            color: #003462;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            display: block;
+            em{
+                font-size: 18px;
+                line-height: 160%
+            }
+        }
+        p,li{
+            font-weight: 300;
+            font-size: 18px!important;
+            line-height: 160% !important;
+        }
         @media screen and (max-width: 991px) {
             margin-top: 30px;
         }
@@ -252,19 +282,19 @@
     }
 
     &__btn {
-        background: #005CA9;
         border-radius: 4px;
         letter-spacing: 0.02em;
         text-transform: uppercase;
         font-weight: 700;
         font-size: 16px;
         color: #FFFFFF;
-        height: 36px;
         display: flex;
-        width: 161px;
         justify-content: center;
         align-items: center;
-
+        padding: 12px 32px !important;
+        background: linear-gradient(90deg, #005CA9 0%, #003462 122.6%);
+        background-repeat: no-repeat;
+        background-color: #005CA9;
         @media screen and (max-width: 767px) {
             order: 1;
         }
@@ -276,7 +306,7 @@
     }
 
     &__link {
-        font-size: 15px;
+        font-size: 18px;
         line-height: 20px;
         color: #026AC0;
         position: relative;

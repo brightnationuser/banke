@@ -1,18 +1,38 @@
-.page-template-classy-vacancies {
-    background: linear-gradient(0deg, rgba(242, 246, 252, 0.45), rgba(242, 246, 252, 0.45)), linear-gradient(0deg, #FFFFFF, #FFFFFF), #FFFFFF;
+.page-template-classy-vacancies{
+    background-image: url("/wp-content/themes/classy/images/bg/Vacancies.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    .content{
+        padding-top: 62px;
+    }
 }
-
 .vacancies {
     @media screen and (max-width: 575px) {
         padding-top: 20px;
     }
 
     &__title {
-        margin: 0;
+        margin-top: 10px;
+        margin-bottom: 16px;
+        font-size: 32px;
+        font-weight: 600;
+        &:after{
+            display: none;
+        }
+    }
+
+    &__content>p {
+        max-width: 765px;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 160%;
+        color: #4A4A49;
     }
 
     &__content {
-        margin-top: 30px;
+        margin-top: 15px;
         font-weight: 300;
         font-size: 16px;
         color: #4A4A49;
@@ -25,10 +45,11 @@
     &__row {
         margin-top: 40px;
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 374px));
-        grid-column-gap: 24px;
-        grid-row-gap: 20px;
-        justify-content: center;
+        grid-template-columns: repeat(3, minmax(0, 375px));
+        grid-column-gap: 11px;
+        padding-left: 15px;
+        grid-row-gap: 30px;
+        justify-content: space-between;
         align-items: flex-start;
 
         @media screen and (max-width: 1199px) {
@@ -37,8 +58,10 @@
         }
 
         @media screen and (max-width: 767px) {
-            grid-template-columns: minmax(0, 327px);
+            grid-template-columns: initial;
             grid-row-gap: 20px;
+            justify-content: space-around;
+            padding-left: 0;
         }
     }
 
@@ -47,11 +70,16 @@
         box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
         overflow: hidden;
-        height: 299px;
+        height: 290px;
         position: relative;
         display: flex;
         flex-direction: column;
-
+        @media screen and (max-width: 1200px) {
+            height: 320px;
+        }
+        @media screen and (max-width: 767px) {
+            height: auto;
+        }
         &:hover {
             .vacancies-card__footer a {
                 opacity: 1;
@@ -73,7 +101,7 @@
         }
 
         &__body {
-            padding: 40px 32px 30px;
+            padding: 33px 32px 25px;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -86,22 +114,23 @@
 
         &__block {
             position: absolute;
-            top: 12px;
-            right: 16px;
-            background: #F2F6FC;
-            border-radius: 2px;
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 16px;
+            top: 17px;
+            right: 20px;
             text-transform: uppercase;
-            color: #4A4A49;
             width: 70px;
             height: 25px;
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 1;
+            font-family: 'Open Sans', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 19px;
+            letter-spacing: 0.04em;
 
+            color: #005CA9;
             @media screen and (max-width: 1199px) {
                 right: 12px;
             }
@@ -201,16 +230,17 @@
         }
 
         &__title {
-            font-weight: 700;
             font-size: 20px;
             line-height: 27px;
-            color: #003462;
+            color: #003462!important;
             text-decoration: none !important;
             display: -webkit-box;
             -webkit-box-orient: vertical;
             overflow: hidden;
             -webkit-line-clamp: 2;
-
+            font-style: normal;
+            font-weight: 600;
+            min-height: 54px;
             &.closed {
                 color: rgba(39, 39, 39, 0.6);
             }

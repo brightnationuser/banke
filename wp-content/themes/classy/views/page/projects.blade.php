@@ -51,5 +51,11 @@
                 @endif
             </div>
         </section>
+
     </div>
+    @include('partials.new-contact-us', [
+'form' => $post->getAcfByKey('contact_form'),
+'title' => $post->getAcfByKey('form_title'),
+'classes' => 'contact-us--light contact-us--blue-bg'
+])
 @stop

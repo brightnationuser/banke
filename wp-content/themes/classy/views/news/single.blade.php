@@ -33,6 +33,11 @@
 		</div>
 
 		@include('partials.related-news', ['related' => $related])
+		@include('partials.new-contact-us', [
+    'form' => $post->getAcfByKey('contact_form'),
+    'title' => $post->getAcfByKey('form_title'),
+    'classes' => 'contact-us--light contact-us--blue-bg'
+])
 	</div>
 @stop
 
