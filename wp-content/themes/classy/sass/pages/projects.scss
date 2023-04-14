@@ -59,6 +59,7 @@
           line-height: 25px;
           transition: all .5s ease;
           text-decoration: none!important;
+          text-transform: capitalize;
           &:hover{
             color: #003462;
           }

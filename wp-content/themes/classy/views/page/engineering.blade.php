@@ -26,7 +26,7 @@
 
                 <div class="offers__list d-flex">
                     @foreach($offers as $row)
-                        <div class="offer d-flex aos-animation" data-aos-delay="{{ 200 * (1 + $loop->index) }}">
+                        <div class="offer d-flex aos-animation" data-aos-delay="{{ (1 + $loop->index) }}">
                             <div class="offer__image">
                                 <div class="offer__icon" style="top:{!! $row['icon']['top_px'] !!}px; right:{!! $row['icon']['right_px'] !!}px">
                                     <img src="{!! $row['icon']['image']['url'] !!}" alt="{!! $row['title'] !!} icon">
