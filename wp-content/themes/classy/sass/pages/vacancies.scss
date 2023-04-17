@@ -70,7 +70,7 @@
         box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
         overflow: hidden;
-        height: 290px;
+        height: 320px;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -101,7 +101,7 @@
         }
 
         &__body {
-            padding: 33px 32px 25px;
+            padding: 40px 32px 25px;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -114,7 +114,7 @@
 
         &__block {
             position: absolute;
-            top: 17px;
+            top: 13px;
             right: 20px;
             text-transform: uppercase;
             width: 70px;
@@ -201,7 +201,7 @@
             margin-top: 8px;
 
             p {
-                font-size: 16px;
+                font-size: 14px;
                 line-height: 16px;
                 color: #003462;
                 position: relative;
@@ -240,9 +240,8 @@
             -webkit-line-clamp: 2;
             font-style: normal;
             font-weight: 600;
-            min-height: 54px;
             &.closed {
-                color: rgba(39, 39, 39, 0.6);
+                color: #A5A5A5!important;
             }
         }
 

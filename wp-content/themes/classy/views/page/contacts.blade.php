@@ -1,3 +1,5 @@
+{{-- Template Name: New Contacts --}}
+
 @extends('layout.default')
 
 @section('content')
@@ -73,23 +75,7 @@
               </div>
             @endforeach
           </div>
-          <div class="contacts__sidebar sidebar animated fadeInRight">
-            <div class="sidebar__item sidebar__item--social">
-              <div class="d-flex">
-                <a href="{!! get_field('linkedin', 'option')['link'] !!}" class="linkedin disable_preloader" target="_blank">
-                  <i class="icon-linkedin"></i>
-                </a>
-                <a href="{!! get_field('youtube', 'option')['link'] !!}" class="youtube disable_preloader" target="_blank">
-                  <i class="icon-youtube"></i>
-                </a>
-                <a href="{!! get_field('facebook', 'option')['link'] !!}" class="facebook disable_preloader"
-                   target="_blank">
-                  <i class="icon-facebook"></i>
-                </a>
-              </div>
 
-            </div>
-          </div>
         </div>
         <div class="contact-us {{ $classes }}">
           <div class="container">
@@ -108,6 +94,26 @@
                 @else
                 @endif
               @endif
+                <div class="socials_block wrapper">
+                  <div class="title">
+                    {!! get_field('contact_us_social_title', 'options') !!}
+                  </div>
+                  <div class="socials_list wrapper">
+                    <a href="{!! get_field('linkedin', 'option')['link'] !!}" class="social linkedin disable_preloader"
+                       target="_blank">
+                      <i class="icon-linkedin"></i>
+                    </a>
+                    <a href="{!! get_field('facebook', 'option')['link'] !!}" class="social facebook disable_preloader"
+                       target="_blank">
+                      <i class="icon-facebook"></i>
+                    </a>
+                    <a href="{!! get_field('youtube', 'option')['link'] !!}" class="social youtube disable_preloader"
+                       target="_blank">
+                      <i class="icon-youtube"></i>
+                    </a>
+
+                  </div>
+                </div>
             </div>
           </div>
         </div>

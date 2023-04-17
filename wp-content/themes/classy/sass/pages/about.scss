@@ -283,6 +283,9 @@
             img{
                 display: none;
             }
+            .info{
+                position: static;
+            }
         }
         .history__wrap {
             flex-direction: column;

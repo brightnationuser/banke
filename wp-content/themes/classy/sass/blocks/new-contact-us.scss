@@ -1,11 +1,9 @@
 .contact-us {
   padding: 56px 0;
   margin-bottom: 0;
-  background-color: #F2F6FC;
-  background-image: url('/wp-content/themes/classy/images/new-contacts-bg-dark.jpg');
+  background-image: url('/wp-content/themes/classy/images/bg/contacts_bg.jpg');
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-size: contain;
 
   @media screen and (max-width: 1200px) {
     background-position: left;
@@ -106,14 +104,20 @@
       margin-top: 16px;
     }
 
-    input, textarea {
+    input:not([type="submit"]), textarea {
+      font-family: "Open Sans", sans-serif;
+      padding: 11px 17px;
+      background-color: #ffffff;
+      border: 1px solid #D1DFF3;
+      border-radius: 4px;
+      transition: all .5s ease;
+      color: #003462!important;
       font-weight: 300;
       font-size: 14px;
-      line-height: 18px;
-      padding: 11px 17px;
-      border: 1px solid rgba(255, 255, 255, 0);
-      transition: all .5s ease;
-
+      line-height: 19px;
+      &::placeholder{
+        color: #003462!important;
+      }
       @media screen and (max-width: 1200px) {
         font-size: 13px;
       }
