@@ -30,6 +30,10 @@
     background-repeat: no-repeat;
     h3{
       font-size: 23px;
+      @media screen and (max-width: 582px) {
+        font-size: 20px!important;
+      }
+
     }
 
     &__wrap {
@@ -67,10 +71,16 @@
           padding: 48px 49px 0px 48px;
           border-radius: 4px;
           max-width: 100% !important;
+          @media screen and (max-width: 582px) {
+            padding: 48px 25px 0px 25px;
+          }
           .wrapper{
             display: flex;
             align-items: center;
             justify-content: space-between;
+            @media screen and (max-width: 582px) {
+              justify-content: center;
+            }
           }
           .socials_block{
             width: calc(100% + 96px);
@@ -78,11 +88,19 @@
             margin: 38px -48px 0;
             border-top: 1px solid #D1DFF3;
 
+            @media screen and (max-width: 582px) {
+              width: calc(100% + 50px);
+              margin: 38px -25px 0;
+            }
+
             .title{
               font-weight: 400;
               font-size: 18px;
               line-height: 25px;
               margin-right: 17px;
+              @media screen and (max-width: 582px) {
+                display: none;
+              }
             }
 
             a{

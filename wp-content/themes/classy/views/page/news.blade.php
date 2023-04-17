@@ -10,7 +10,7 @@
         <div class="news-list-wrapper">
             <div class="news-list">
                 @foreach($news as $news_item)
-                    <a href="{{ apply_filters('wpml_permalink', $news_item->permalink(), 'en') }}" class="news">
+                    <a href="{{ $news_item->permalink() }}" class="news">
                         <div class="news__img">
                             <div class="img__inner b-lazy" data-src="{{ $news_item->getAcfImage()->src('large') }}">
                             </div>

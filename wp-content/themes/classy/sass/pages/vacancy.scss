@@ -296,13 +296,16 @@
         background: linear-gradient(90deg, #005CA9 0%, #003462 122.6%);
         background-repeat: no-repeat;
         background-color: #005CA9;
+        transition: all .5s ease;
         @media screen and (max-width: 767px) {
             order: 1;
         }
 
         &:hover {
             text-decoration: none;
-            background: #003670;
+            &:hover {
+                background-position: 320px;
+            }
         }
     }
 
