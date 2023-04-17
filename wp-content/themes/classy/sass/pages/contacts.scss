@@ -143,6 +143,28 @@
           padding: 12px 14px;
           -webkit-appearance: none;
         }
+        input:not([type="submit"]), textarea {
+          font-family: "Open Sans", sans-serif;
+          padding: 11px 17px;
+          background-color: #ffffff;
+          border: 1px solid #D1DFF3;
+          border-radius: 4px;
+          transition: all .5s ease;
+          color: #003462!important;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 19px;
+          &::placeholder{
+            color: #003462!important;
+          }
+          @media screen and (max-width: 1200px) {
+            font-size: 13px;
+          }
+
+          &:focus {
+            border: 1px solid rgba(0, 92, 169, 1);
+          }
+        }
       }
     }
 
