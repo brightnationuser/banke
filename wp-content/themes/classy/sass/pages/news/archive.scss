@@ -4,6 +4,17 @@
   background-repeat: no-repeat;
   .navigation.pagination{
     margin-top: 18px;
+    @media screen and (max-width: 482px){
+      .nav-links{
+        justify-content: space-between;
+      }
+      .prev, .next{
+        border: 1px solid #E5E5E5!important;
+        border-radius: 5px!important;
+        text-align: center;
+        white-space: nowrap;
+      }
+    }
     .nav-links .page-numbers{
       padding: 10px 16px !important;
       font-weight: 400;
@@ -17,9 +28,7 @@
         font-size: 16px;
       }
       @media screen and (max-width: 482px){
-        padding: 4px 8px !important;
-        font-size: 13px;
-        white-space: nowrap;
+        display: none;
       }
     }
     .nav-links .page-numbers:not(.dots){
@@ -42,14 +51,16 @@
         font-size: 16px;
       }
       @media screen and (max-width: 482px){
-        padding: 4px 10px !important;
-        font-size: 13px;
+        display: none;
       }
     }
     .next{
       font-weight: 400;
       font-size: 18px;
       line-height: 25px;
+      display: block!important;
+      max-width: 110px;
+      width: 110%;
       &:after{
         content: " ›";
       }
@@ -58,6 +69,9 @@
       font-weight: 400;
       font-size: 18px;
       line-height: 25px;
+      display: block!important;
+      max-width: 110px;
+      width: 110%;
       &:before{
         content: "‹ ";
       }
@@ -112,6 +126,7 @@
           margin: auto;
           max-width: 320px;
           width: 100% !important;
+          min-height: 100%;
         }
         @media screen and (max-width: 768px){
           margin: auto;
@@ -144,6 +159,14 @@
           line-height: 19px;
           color: #272727;
           margin-top: auto;
+          display: flex;
+          align-items: center;
+          @media screen and (max-width: 768px){
+            padding-left: 21px;
+          }
+          svg{
+            margin-right: 6px;
+          }
         }
         .news__content {
           padding: 20px 30px 10px 30px;
@@ -199,6 +222,9 @@
 .page-template-classy-stories {
   .content {
     .news {
+      &__content{
+        padding: 20px 30px 30px 30px;
+      }
       &-list {
         @media screen and (max-width: 575px) {
           flex-direction: column;

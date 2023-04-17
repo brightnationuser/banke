@@ -29,6 +29,11 @@
         font-weight: 300;
         line-height: 160%;
         color: #4A4A49;
+        @media screen and (max-width: 992px) {
+            br{
+                display: none;
+            }
+        }
     }
 
     &__content {
@@ -52,7 +57,7 @@
         justify-content: space-between;
         align-items: flex-start;
 
-        @media screen and (max-width: 1199px) {
+        @media screen and (max-width: 992px) {
             grid-template-columns: repeat(2, minmax(0, 336px));
             grid-gap: 24px;
         }
@@ -139,8 +144,8 @@
         &__footer {
             border-top: 1px solid #EAEAEA;
             padding: 16px 32px;
-            font-size: 16px;
-            line-height: 16px;
+            font-size: 14px;
+            line-height: 14px;
             color: #272727;
             display: flex;
             align-items: center;
@@ -199,6 +204,7 @@
             justify-content: flex-start;
             align-items: center;
             margin-top: 8px;
+            font-weight: 400;
 
             p {
                 font-size: 14px;

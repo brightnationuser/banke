@@ -64,7 +64,7 @@
         @endphp
 
         @if(!empty($principles))
-            <div class="principles animated fadeInUp">
+            <div class="principles animated aos-animation" data-aos="fade-in"  data-aos-delay="200">
                 <div class="container">
                     <div class="principles__list">
                         @foreach($principles as $key => $item)

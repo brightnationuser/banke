@@ -274,7 +274,7 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     .p-about {
         .team{
             margin-top: 20px;
@@ -285,11 +285,15 @@
             }
             .info{
                 position: static;
+                max-width: 768px;
+                margin: auto;
             }
         }
         .history__wrap {
             flex-direction: column;
-
+            .history__text{
+                max-width: initial!important;
+            }
             .sidebar {
                 margin-top: 40px;
                 margin-left: 0;

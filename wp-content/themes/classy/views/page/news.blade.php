@@ -36,7 +36,8 @@
                                 </defs>
                             </svg>
 
-                            {{ $news_item->getDate("d.m.Y") }}
+
+                            {{   date("d.m.Y",strtotime($news_item->post_date)) }}
                         </div>
                     </a>
                 @endforeach
