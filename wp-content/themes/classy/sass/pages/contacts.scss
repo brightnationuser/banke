@@ -71,6 +71,9 @@
           padding: 48px 49px 0px 48px;
           border-radius: 4px;
           max-width: 100% !important;
+          .form_overlay{
+            height: calc(100% - 106px);
+          }
           @media screen and (max-width: 582px) {
             padding: 48px 25px 0px 25px;
           }
