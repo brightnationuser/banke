@@ -4,9 +4,13 @@
   background-repeat: no-repeat;
   .navigation.pagination{
     margin-top: 18px;
+    white-space: nowrap;
     @media screen and (max-width: 482px){
       .nav-links{
-        justify-content: space-between;
+        justify-content: center;
+      }
+      .prev{
+        margin-right: auto;
       }
       .prev, .next{
         border: 1px solid #E5E5E5!important;
