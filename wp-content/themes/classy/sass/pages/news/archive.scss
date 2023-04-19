@@ -2,16 +2,21 @@
   background-image: url("/wp-content/themes/classy/images/bg/news_bg.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
+
   .navigation.pagination{
     margin-top: 18px;
     white-space: nowrap;
+
     @media screen and (max-width: 482px){
+
       .nav-links{
         justify-content: center;
       }
+
       .prev{
         margin-right: auto;
       }
+
       .prev, .next{
         border: 1px solid #E5E5E5!important;
         border-radius: 5px!important;
@@ -19,6 +24,7 @@
         white-space: nowrap;
       }
     }
+
     .nav-links .page-numbers{
       padding: 10px 16px !important;
       font-weight: 400;
@@ -27,20 +33,22 @@
       text-align: center;
       color: #4A4A49;
       transition: all .5s ease;
+
       @media screen and (max-width: 568px){
         padding: 7px 13px !important;
         font-size: 16px;
       }
+
       @media screen and (max-width: 482px){
         display: none;
       }
     }
     .nav-links .page-numbers:not(.dots){
+
       &:hover,&.current{
         background-color: initial;
         color: #005CA9;
       }
-
     }
 
     .page-numbers.dots{
@@ -50,10 +58,12 @@
       border-right: none;
       font-size: 16px;
       color: #4A4A49;
+
       @media screen and (max-width: 568px){
         padding: 7px 13px !important;
         font-size: 16px;
       }
+
       @media screen and (max-width: 482px){
         display: none;
       }
@@ -65,10 +75,12 @@
       display: block!important;
       max-width: 110px;
       width: 110%;
+
       &:after{
         content: " ›";
       }
     }
+
     .prev{
       font-weight: 400;
       font-size: 18px;
@@ -76,6 +88,7 @@
       display: block!important;
       max-width: 110px;
       width: 110%;
+
       &:before{
         content: "‹ ";
       }
@@ -87,9 +100,11 @@
     margin-bottom: 42px;
     font-size: 32px;
     font-weight: 600;
+
     @media screen and (max-width: 1200px){
       margin-top: 120px;
     }
+
     &:after {
       display: none;
     }
@@ -109,15 +124,18 @@
       grid-template-rows: repeat(2, 1fr);
       grid-column-gap: 30px;
       grid-row-gap: 40px;
+
       @media screen and (max-width: 992px){
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
       }
+
       @media screen and (max-width: 768px){
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(1, 1fr);
         grid-row-gap: 20px;
       }
+
       .news {
         width: 100%;
         border-radius: 8px;
@@ -126,17 +144,20 @@
         background-color: #ffffff;
         display: flex;
         flex-direction: column;
+
         @media screen and (max-width: 992px){
           margin: auto;
           max-width: 320px;
           width: 100% !important;
           min-height: 100%;
         }
+
         @media screen and (max-width: 768px){
           margin: auto;
           max-width: 482px;
           width: 100% !important;
         }
+
         &.m_fake {
           height: 0;
           overflow: hidden;
@@ -155,6 +176,7 @@
             height: 100%;
           }
         }
+
         .news__date {
           border-top: 1px solid #EAEAEA;;
           padding: 16px 32px;
@@ -165,19 +187,22 @@
           margin-top: auto;
           display: flex;
           align-items: center;
+
           @media screen and (max-width: 768px){
             padding-left: 21px;
           }
+
           svg{
             margin-right: 6px;
           }
         }
+
         .news__content {
           padding: 20px 30px 10px 30px;
+
           @media screen and (max-width: 992px){
             padding: 10px 20px;
           }
-
 
           .news__title {
             margin-top: 6px;
@@ -204,6 +229,7 @@
           text-decoration: none;
 
           .news__img {
+
             .img__inner {
               transform: scale(1.05);
             }
@@ -224,12 +250,25 @@
 }
 
 .page-template-classy-stories {
+
   .content {
+
+    .news-list-wrapper{
+      overflow: revert;
+    }
+
     .news {
+
       &__content{
         padding: 20px 30px 30px 30px;
+
+        .news__title{
+          font-size: 16px;
+        }
       }
+
       &-list {
+
         @media screen and (max-width: 575px) {
           flex-direction: column;
           row-gap: 30px;
@@ -237,6 +276,7 @@
         }
 
         .news {
+
           @media screen and (max-width: 575px) {
             width: 100%;
             margin: 0;
@@ -245,12 +285,4 @@
       }
     }
   }
-}
-
-.page-template-classy-stories .content .news-list .news .news__content .news__title {
-  font-size: 16px;
-}
-
-.page-template-classy-stories .content .news-list-wrapper {
-  overflow: revert;
 }

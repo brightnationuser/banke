@@ -91,11 +91,12 @@
                 @endforeach
             </div>
         </div>
-
     </div>
+
     @include('partials.new-contact-us', [
     'form' => get_field('contact_form',"option"),
     'title' => get_field('contact_form_title',"option"),
     'classes' => 'contact-us--light contact-us--blue-bg'
 ])
+
 @stop

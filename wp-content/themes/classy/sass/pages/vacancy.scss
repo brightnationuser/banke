@@ -1,11 +1,13 @@
 .single-vacancies{
     background-image: url("/wp-content/themes/classy/images/bg/Vacancies.jpg");
     background-size: 100%;
+
     .content{
         padding-top: 72px;
     }
 }
 .vacancy {
+
     * {
         margin: 0;
     }
@@ -45,6 +47,7 @@
         }
 
         p {
+
             &.box {
                 font-size: 18px;
                 line-height: 25px;
@@ -174,12 +177,15 @@
         font-size: 16px;
         line-height: 21px;
         color: #4A4A49;
+
         br{
             display: none;
         }
+
         em{
             font-style: normal;
         }
+
         strong{
             font-weight: 600;
             font-size: 24px;
@@ -188,16 +194,19 @@
             margin-top: 40px;
             margin-bottom: 16px;
             display: block;
+
             em{
                 font-size: 18px;
                 line-height: 160%
             }
         }
+
         p,li{
             font-weight: 300;
             font-size: 18px!important;
             line-height: 160% !important;
         }
+
         @media screen and (max-width: 991px) {
             margin-top: 30px;
         }
@@ -298,6 +307,7 @@
         background-repeat: no-repeat;
         background-color: #005CA9;
         transition: all .5s ease;
+
         @media screen and (max-width: 767px) {
             order: 1;
         }

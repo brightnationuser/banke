@@ -3,21 +3,23 @@
 @extends('layout.default')
 
 @section('content')
+
   <section class="contacts">
     <div class="container">
-
-
-
       <div class="contacts__wrap d-flex">
         <div class="contacts__columns d-flex">
           <h1 class="h2 h2--mt-0 h2--left">{!! $post->getAcfByKey('title') !!}</h1>
           <div class="contacts__left">
+
             @foreach($post->getAcfByKey('contact_info_left') as $row)
+
               <div class="contact animated fadeInUp" style="animation-delay: {{ 200 * (1 + $loop->index) }}">
                 <h3 class="contact__title">{!! $row['title'] !!}</h3>
+
                 @if(!empty($row['text']))
                   <div class="contact__text">{!! $row['text'] !!}</div>
                 @endif
+
                 @if(!empty($row['phone']))
                   <div class="contact__info">
                     <a class="disable_preloader" href="tel:{!! $row['phone'] !!}">
@@ -26,6 +28,7 @@
                     </a>
                   </div>
                 @endif
+
                 @if(!empty($row['email']))
                   <div class="contact__info">
                     <a class="disable_preloader" href="mailto:{{$row ['email'] }}">
@@ -34,22 +37,29 @@
                     </a>
                   </div>
                 @endif
+
                 @if(!empty($row['work_time']))
                   <div class="contact__info">
                     <i class="icon-clock"></i>
                     <span>{!! $row['work_time'] !!}</span>
                   </div>
                 @endif
+
               </div>
             @endforeach
+
           </div>
           <div class="contacts__right">
+
             @foreach($post->getAcfByKey('contact_info_right') as $row)
+
               <div class="contact animated fadeInUp" style="animation-delay: {{ 200 * (1 + $loop->index) * (1 + count($post->getAcfByKey('contact_info_left'))) }}ms">
                 <h3 class="contact__title">{!! $row['title'] !!}</h3>
+
                 @if(!empty($row['text']))
                   <div class="contact__text">{!! $row['text'] !!}</div>
                 @endif
+
                 @if(!empty($row['phone']))
                   <div class="contact__info">
                     <a class="disable_preloader" href="tel:{!! $row['phone'] !!}">
@@ -58,6 +68,7 @@
                     </a>
                   </div>
                 @endif
+
                 @if(!empty($row['email']))
                   <div class="contact__info">
                     <a class="disable_preloader" href="mailto:{{$row ['email'] }}">
@@ -66,23 +77,23 @@
                     </a>
                   </div>
                 @endif
+
                 @if(!empty($row['work_time']))
                   <div class="contact__info">
                     <i class="icon-clock"></i>
                     <span>{!! $row['work_time'] !!}</span>
                   </div>
                 @endif
-              </div>
-            @endforeach
-          </div>
 
+              </div>
+
+            @endforeach
+
+          </div>
         </div>
+
         <div class="contact-us {{ $classes }}">
           <div class="container">
-
-
-
-
             <div class="contact-us__form">
               <div class="form_overlay js-form_overlay">
                 <div class="cross">
@@ -107,16 +118,18 @@
                 </div>
                 {!! get_field('mail_success', 'options') !!}
               </div>
+
               @if(!empty($form))
                 {!! do_shortcode($form) !!}
               @else
+
                 @if(ICL_LANGUAGE_CODE === 'en')
                   {!! do_shortcode('[contact-form-7 id="3267" title="Contact page form EN with placeholders"]') !!}
                 @elseif(ICL_LANGUAGE_CODE === 'de')
                   {!! do_shortcode('[contact-form-7 id="3285" title="Contact page form DE with placeholders"]') !!}
-                @else
                 @endif
               @endif
+
                 <div class="socials_block wrapper">
                   <div class="title">
                     {!! get_field('contact_us_social_title', 'options') !!}
@@ -134,19 +147,19 @@
                        target="_blank">
                       <i class="icon-youtube"></i>
                     </a>
-
                   </div>
                 </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
+
   <div id="map"></div>
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgemEnSDgHmYiG0c3RHFD1s5h16yfS2ZE&amp;language=en"></script>
+
   <script>
     jQuery(document).ready(function(){
       var map; // Global declaration of the map

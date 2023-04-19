@@ -27,9 +27,11 @@
         text-align: center;
         min-width: 155px;
         margin-bottom: 15px;
+
         @media (max-width: 482px) {
             margin-bottom: 35px;
         }
+
     }
 
     &__image-wrap {

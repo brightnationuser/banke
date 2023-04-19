@@ -33,11 +33,13 @@
             <div class="header__right-text">
                 <div class="header__lng">
                     <div class="lng-w">
+
                         @foreach($languages as $language)
                             @if($language['active'])
                                 <a href="{{ $language['url'] }}">{!! $language['language_code'] !!}</a>
                             @endif
                         @endforeach
+
                         @if(count($languages) > 1)
                             <i class="icon-arrow-down"></i>
                             <div class="lng-dropdown">
@@ -48,8 +50,10 @@
                                 @endforeach
                             </div>
                         @endif
+
                     </div>
                 </div>
+
                 <span>|</span>
                 <div class="app-forms-wrapper js-disabled">
                     <div id="app-forms"></div>
@@ -73,19 +77,18 @@
                         @endif
                     </div>
                 </div>
+
                 <span>|</span>
                 <div class="header__phone">
                     <a href="tel:{!! get_field('number', 'options') !!}" class="disable_preloader">
                         <div class="icon">
                             <i class="icon-phone"></i>
                         </div>
-                        <span>
-                    {!! get_field('number', 'options') !!}
-                </span>
+                        <span>{!! get_field('number', 'options') !!}</span>
                     </a>
                 </div>
-            </div>
 
+            </div>
         </div>
 
         <div class="header__right mobile">
@@ -99,19 +102,20 @@
                                       fill="#005CA9" stroke="#005CA9" stroke-width="0.25"/>
                             </svg>
                         </div>
-                        <span>
-                    {!! get_field('number', 'options') !!}
-                </span>
+                        <span>{!! get_field('number', 'options') !!}</span>
                     </a>
                 </div>
+
                 <span>|</span>
                 <div class="header__lng">
                     <div class="lng-w">
+
                         @foreach($languages as $language)
                             @if($language['active'])
                                 <a href="{{ $language['url'] }}">{!! $language['language_code'] !!}</a>
                             @endif
                         @endforeach
+
                         @if(count($languages) > 1)
                             <i class="icon-arrow-down"></i>
                             <div class="lng-dropdown">
@@ -122,20 +126,22 @@
                                 @endforeach
                             </div>
                         @endif
+
                     </div>
                 </div>
+
                 <span>|</span>
             </div>
+
             <div class="app-forms-wrapper js-disabled">
                 <div id="app-forms"></div>
             </div>
 
             <div class="app-forms-placeholder js-disabled">
                 <div class="sign-in">
-                    <div class="sign-in-profile__wrapper">
-
-                    </div>
+                    <div class="sign-in-profile__wrapper"></div>
                     <i class="icon-account"></i>
+
                     @if(is_user_logged_in())
                         <a class="menu__elem menu__elem--active" href="#">
                             <div class="menu__elem menu__elem--active">
@@ -146,6 +152,7 @@
                     @else
                         <span>{{ get_field('account_titles', 'option')['sign_in'] }}</span>
                     @endif
+
                 </div>
             </div>
         </div>

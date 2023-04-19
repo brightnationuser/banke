@@ -2,11 +2,13 @@
     background-image: url("/wp-content/themes/classy/images/bg/Vacancies.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
+
     .content{
         padding-top: 62px;
     }
 }
 .vacancies {
+
     @media screen and (max-width: 575px) {
         padding-top: 20px;
     }
@@ -16,6 +18,7 @@
         margin-bottom: 16px;
         font-size: 32px;
         font-weight: 600;
+
         &:after{
             display: none;
         }
@@ -29,7 +32,9 @@
         font-weight: 300;
         line-height: 160%;
         color: #4A4A49;
+
         @media screen and (max-width: 992px) {
+
             br{
                 display: none;
             }
@@ -79,13 +84,17 @@
         position: relative;
         display: flex;
         flex-direction: column;
+
         @media screen and (max-width: 1200px) {
             height: 320px;
         }
+
         @media screen and (max-width: 767px) {
             height: auto;
         }
+
         &:hover {
+
             .vacancies-card__footer a {
                 opacity: 1;
             }
@@ -134,8 +143,8 @@
             font-size: 14px;
             line-height: 19px;
             letter-spacing: 0.04em;
-
             color: #005CA9;
+
             @media screen and (max-width: 1199px) {
                 right: 12px;
             }
