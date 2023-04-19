@@ -71,14 +71,10 @@ header.header {
   z-index: 10;
   font-size: 16px;
 
-  &__right{
-
-    &.mobile {
-      display: none !important;
-    }
-
-
+  .header__right.mobile{
+    display: none !important;
   }
+
   @media screen and (max-width: 1200px) {
 
     .header__right:not(.mobile) {
