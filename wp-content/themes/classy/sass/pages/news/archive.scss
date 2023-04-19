@@ -3,29 +3,29 @@
   background-size: 100%;
   background-repeat: no-repeat;
 
-  .navigation.pagination{
+  .navigation.pagination {
     margin-top: 18px;
     white-space: nowrap;
 
-    @media screen and (max-width: 482px){
+    @media screen and (max-width: 482px) {
 
-      .nav-links{
+      .nav-links {
         justify-content: center;
       }
 
-      .prev{
+      .prev {
         margin-right: auto;
       }
 
-      .prev, .next{
-        border: 1px solid #E5E5E5!important;
-        border-radius: 5px!important;
+      .prev, .next {
+        border: 1px solid #E5E5E5 !important;
+        border-radius: 5px !important;
         text-align: center;
         white-space: nowrap;
       }
     }
 
-    .nav-links .page-numbers{
+    .nav-links .page-numbers {
       padding: 10px 16px !important;
       font-weight: 400;
       font-size: 18px;
@@ -34,24 +34,25 @@
       color: #4A4A49;
       transition: all .5s ease;
 
-      @media screen and (max-width: 568px){
+      @media screen and (max-width: 568px) {
         padding: 7px 13px !important;
         font-size: 16px;
       }
 
-      @media screen and (max-width: 482px){
+      @media screen and (max-width: 482px) {
         display: none;
       }
     }
-    .nav-links .page-numbers:not(.dots){
 
-      &:hover,&.current{
+    .nav-links .page-numbers:not(.dots) {
+
+      &:hover, &.current {
         background-color: initial;
         color: #005CA9;
       }
     }
 
-    .page-numbers.dots{
+    .page-numbers.dots {
       text-align: center;
       padding: 10px 16px !important;
       border: 1px solid #E5E5E5;
@@ -59,37 +60,38 @@
       font-size: 16px;
       color: #4A4A49;
 
-      @media screen and (max-width: 568px){
+      @media screen and (max-width: 568px) {
         padding: 7px 13px !important;
         font-size: 16px;
       }
 
-      @media screen and (max-width: 482px){
+      @media screen and (max-width: 482px) {
         display: none;
       }
     }
-    .next{
+
+    .next {
       font-weight: 400;
       font-size: 18px;
       line-height: 25px;
-      display: block!important;
+      display: block !important;
       max-width: 110px;
       width: 110%;
 
-      &:after{
+      &:after {
         content: " ›";
       }
     }
 
-    .prev{
+    .prev {
       font-weight: 400;
       font-size: 18px;
       line-height: 25px;
-      display: block!important;
+      display: block !important;
       max-width: 110px;
       width: 110%;
 
-      &:before{
+      &:before {
         content: "‹ ";
       }
     }
@@ -101,7 +103,7 @@
     font-size: 32px;
     font-weight: 600;
 
-    @media screen and (max-width: 1200px){
+    @media screen and (max-width: 1200px) {
       margin-top: 120px;
     }
 
@@ -125,12 +127,12 @@
       grid-column-gap: 30px;
       grid-row-gap: 40px;
 
-      @media screen and (max-width: 992px){
+      @media screen and (max-width: 992px) {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
       }
 
-      @media screen and (max-width: 768px){
+      @media screen and (max-width: 768px) {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(1, 1fr);
         grid-row-gap: 20px;
@@ -145,14 +147,14 @@
         display: flex;
         flex-direction: column;
 
-        @media screen and (max-width: 992px){
+        @media screen and (max-width: 992px) {
           margin: auto;
           max-width: 320px;
           width: 100% !important;
           min-height: 100%;
         }
 
-        @media screen and (max-width: 768px){
+        @media screen and (max-width: 768px) {
           margin: auto;
           max-width: 482px;
           width: 100% !important;
@@ -188,11 +190,11 @@
           display: flex;
           align-items: center;
 
-          @media screen and (max-width: 768px){
+          @media screen and (max-width: 768px) {
             padding-left: 21px;
           }
 
-          svg{
+          svg {
             margin-right: 6px;
           }
         }
@@ -200,7 +202,7 @@
         .news__content {
           padding: 20px 30px 10px 30px;
 
-          @media screen and (max-width: 992px){
+          @media screen and (max-width: 992px) {
             padding: 10px 20px;
           }
 
@@ -253,16 +255,16 @@
 
   .content {
 
-    .news-list-wrapper{
+    .news-list-wrapper {
       overflow: revert;
     }
 
     .news {
 
-      &__content{
+      &__content {
         padding: 20px 30px 30px 30px;
 
-        .news__title{
+        .news__title {
           font-size: 16px;
         }
       }
