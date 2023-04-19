@@ -79,8 +79,7 @@ header.header {
 
 
   }
-  @me
-  dia screen and (max-width: 1200px) {
+  @media screen and (max-width: 1200px) {
 
     .header__right:not(.mobile) {
       display: none !important;
