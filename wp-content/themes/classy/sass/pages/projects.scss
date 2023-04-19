@@ -1,52 +1,107 @@
+.p-projects {
+  background-image: url("/wp-content/themes/classy/images/bg/projects_bg.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  .content {
+    padding: 15px 0 0px !important;
+  }
+}
+
 .page-projects {
+
+  @media screen and (max-width: 1200px) {
+    margin-top: 120px;
+  }
+
+  .h2 {
+    margin-top: 54px;
+    margin-bottom: 42px;
+    font-size: 32px;
+    font-weight: 600;
+
+    &:after {
+      display: none;
+    }
+  }
+
   .projects-intro {
     padding-bottom: 40px;
 
     @media (min-width: 768px) {
-      padding-bottom: 80px;
+      padding-bottom: 72px;
     }
 
     &__title {
-      margin-bottom: 30px;
+      margin-bottom: 15px;
     }
 
     &__undertitle {
-      max-width: 550px;
+      max-width: 610px;
       margin: 0 auto;
       text-align: center;
-      font-size: 16px;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 160%;
     }
 
     &__list {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 40px auto 0 auto;
 
       .project {
-        background: #FFFFFF;
         border: 1px solid #EEEEEE;
         box-sizing: border-box;
         border-radius: 8px;
-        padding: 35px 55px 40px 45px;
+        padding: 43px 40px 40px 46px;
         margin-bottom: 26px;
+        background-image: url("/wp-content/themes/classy/images/bg/project_bg.jpg");
+        background-position: bottom right;
+        background-repeat: no-repeat;
+
+        @media screen and (max-width: 768px) {
+          padding: 35px 35px 40px 35px;
+        }
+
+        .read-more {
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 25px;
+          transition: all .5s ease;
+          text-decoration: none !important;
+          text-transform: capitalize;
+
+          &:hover {
+            color: #003462;
+          }
+        }
 
         &__title {
           font-style: normal;
-          font-weight: bold;
-          font-size: 22px;
-          line-height: 30px;
           color: #003462;
           text-align: left;
-          margin: 0 0 10px 0;
+          margin: 0 0 13px 0;
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 33px;
+
+          @media screen and (max-width: 1200px) {
+            font-size: 22px;
+          }
         }
 
         &__text {
           font-style: normal;
-          font-weight: 300;
-          font-size: 16px;
-          line-height: 21px;
           color: #4A4A49;
           opacity: 0.9;
-          margin-bottom: 10px;
+          margin-bottom: 20px;
+          font-weight: 300;
+          font-size: 18px;
+          line-height: 160%;
+
+          @media screen and (max-width: 768px) {
+            font-size: 16px;
+          }
         }
 
         &:last-child {
@@ -55,12 +110,14 @@
       }
     }
   }
-  
+
   .partners {
     background-color: #F2F6FC;
-    margin-bottom: -80px;
     padding-top: 40px;
-    padding-bottom: 95px;
+    padding-bottom: 80px;
+    background-image: url("/wp-content/themes/classy/images/bg/partners_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
 
     @media (min-width: 768px) {
       padding-top: 80px;
@@ -68,6 +125,13 @@
 
     &__title {
       margin-top: 0;
+      margin-bottom: 35px;
+      font-size: 32px;
+      font-weight: 600;
+
+      &:after {
+        display: none;
+      }
     }
 
     &__list {
@@ -78,7 +142,7 @@
         max-width: 370px;
         width: 100%;
         height: 100%;
-        min-height: 254px;
+        min-height: 325px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -88,6 +152,12 @@
         border-radius: 8px;
         text-align: center;
         transition: all .5s ease;
+
+        @media (max-width: 768px) {
+          align-items: center;
+          justify-content: center;
+          padding: 20px;
+        }
 
         &__link {
           display: block;
@@ -111,7 +181,7 @@
 
         &__text {
           font-weight: 300;
-          font-size: 16px;
+          font-size: 18px;
           line-height: 21px;
           text-align: center;
           color: #4A4A49;
@@ -124,38 +194,27 @@
   }
 }
 
-
 @media screen and (max-width: 992px) {
+
   .page-projects {
+
     .partners {
+
       &__list {
         flex-direction: column;
         align-items: center;
 
-        .partner {
-          &__link {
-            margin-right: 0;
-            margin-bottom: 30px;
+        .partner__link {
+          margin-right: 0;
+          margin-bottom: 30px;
 
-            &:last-child {
-              margin-bottom: 0;
-            }
+          &:last-child {
+            margin-bottom: 0;
           }
-
         }
       }
     }
   }
 }
 
-@media screen and (max-width: 768px) {
-  .page-projects {
-    .projects-intro {
-      &__list {
-        .project {
-          padding: 35px 35px 40px 35px;
-        }
-      }
-    }
-  }
-}
+

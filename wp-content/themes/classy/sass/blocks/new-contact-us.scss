@@ -1,19 +1,18 @@
 .contact-us {
   padding: 56px 0;
   margin-bottom: 0;
-  background-color: #F2F6FC;
   background-image: url('/wp-content/themes/classy/images/new-contacts-bg-dark.jpg');
   background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
 
   @media screen and (max-width: 1200px) {
     background-position: left;
     background-size: 180%;
   }
-  @media screen and (max-width: 768px) {
+
+  @media screen and (max-width: 992px) {
     background-size: cover;
-    background-position: center;
+    background-position: left;
   }
 
   .wpcf7-response-output {
