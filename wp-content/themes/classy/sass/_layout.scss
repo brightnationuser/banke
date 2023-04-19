@@ -77,19 +77,19 @@ header.header {
       display: none !important;
     }
 
-    @media screen and (max-width: 1200px) {
 
-      &:not(.mobile) {
-        display: none !important;
-      }
+  }
+  @me
+  dia screen and (max-width: 1200px) {
 
-      &.mobile {
-        display: flex !important;
-      }
+    .header__right:not(.mobile) {
+      display: none !important;
+    }
+
+    .header__right.mobile {
+      display: flex !important;
     }
   }
-
-
 
   .header__menu {
     margin-right: auto;
