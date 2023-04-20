@@ -33,6 +33,11 @@
 		</div>
 
 		@include('partials.related-news', ['related' => $related])
+		@include('partials.new-contact-us', [
+    'form' => get_field('contact_form',"option"),
+    'title' => get_field('contact_form_title',"option"),
+    'classes' => 'contact-us--light contact-us--blue-bg'
+])
 	</div>
 @stop
 

@@ -14,7 +14,7 @@ $query = [
 
 $_news = new WP_Query([
     'post_type' => 'news',
-    'posts_per_page' => 8,
+    'posts_per_page' => 9,
     'paged' => $current_page,
     'orderby' => 'acf_date',
     'order' => 'DESC',

@@ -1,14 +1,35 @@
-.engineering-page {
-  .offers {
-    padding-bottom: 45px;
+.page-template-classy-engineering {
+  background-image: url("/wp-content/themes/classy/images/bg/customised_solutions_bg.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
 
-    @media (min-width: 768px) {
-      padding-bottom: 95px;
+.engineering-page {
+  margin-top: 70px;
+
+  @media screen and (max-width: 1200px) {
+    margin-top: 120px;
+  }
+
+  .offers {
+    padding-bottom: 53px;
+
+    @media screen and (max-width: 1200px) {
+
+      br {
+        display: none;
+      }
     }
 
     &__title {
       margin-top: 10px;
-      margin-bottom: 30px;
+      margin-bottom: 16px;
+      font-size: 32px;
+      font-weight: 600;
+
+      &:after {
+        display: none;
+      }
     }
 
     &__under-title {
@@ -19,33 +40,45 @@
     }
 
     &__list {
-      flex-wrap: wrap;
-      justify-content: space-between;
-      margin-right: -20px;
-      margin-left: -20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, 1fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+      border: 1px solid #DFDFDF;
+      border-radius: 8px;
+      margin: 45px auto 0;
+      max-width: 970px;
     }
 
     .offer {
-      max-width: 50%;
+      max-width: 100%;
       width: 100%;
-      margin-top: 35px;
-      padding-left: 20px;
-      padding-right: 20px;
+      padding: 0px 20px 0px 40px;
       align-items: center;
 
-      @media (min-width: 993px) {
-        margin-top: 70px;
-        align-items: flex-start;
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        display: flex;
+        padding: 0 15px;
+      }
+
+      & + .offer {
+        border-top: 1px solid #DFDFDF;
       }
 
       &__image {
-        max-width: 235px;
-        margin-right: 23px;
+        max-width: 275px;
+        margin-right: 37px;
         width: 100%;
         position: relative;
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: flex-start;
+
+        @media screen and (max-width: 768px) {
+          margin-right: 0;
+        }
 
         img {
           width: 100%;
@@ -78,7 +111,15 @@
         font-size: 18px;
         line-height: 25px;
         text-align: left;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+
+        @media screen and (max-width: 768px) {
+          font-size: 16px;
+        }
+
+        br {
+          display: none;
+        }
       }
 
       &__points {
@@ -90,20 +131,32 @@
           font-weight: 300;
           font-size: 16px;
           line-height: 21px;
-          margin-bottom: 5px;
+          margin-bottom: 16px;
           position: relative;
+
+          @media screen and (max-width: 768px) {
+            font-size: 14px;
+            margin-bottom: 10px;
+          }
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+
+          br {
+            display: none;
+          }
 
           &::before {
             content: '';
             position: absolute;
-            left: -10px;
+            left: -12px;
             width: 4px;
             height: 4px;
             background-color: #005CA9;
             top: 9px;
             border-radius: 51%;
           }
-
         }
       }
     }
@@ -111,88 +164,140 @@
     &__description {
       text-align: center;
       font-weight: 300;
-      font-size: 16px;
-      line-height: 21px;
-      max-width: 960px;
-      margin: 35px auto 0 auto;
+      font-size: 18px;
+      line-height: 160%;
+      max-width: 982px;
+      margin: 56px auto 0 auto;
 
-      @media (min-width: 768px) {
-        margin: 75px auto 0 auto;
+      @media screen and (max-width: 768px) {
+        font-size: 16px;
+        line-height: 140%;
       }
     }
   }
 
   .benefits {
-    background-color: #F2F6FC;
     padding-top: 26px;
-    padding-bottom: 64px;
+    padding-bottom: 55px;
+    background-image: url("/wp-content/themes/classy/images/bg/benefits.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    h2 {
+      margin-top: 54px;
+      margin-bottom: 42px;
+      font-size: 32px;
+      font-weight: 600;
+
+      &:after {
+        display: none;
+      }
+    }
 
     &__list {
       display: flex;
-      margin-left: -15px;
-      margin-right: -15px;
+      width: 100%;
 
       .benefit {
         background: #FFFFFF;
         box-shadow: 0 12px 20px rgba(0, 0, 0, 0.04);
         border-radius: 8px;
-        padding: 45px 40px 52px 40px;
+        padding: 39px 40px 52px 40px;
         width: 100%;
 
+        &:last-child {
+          margin-right: 15px;
+        }
+
         &__title {
-          margin-bottom: 5px;
+          margin-bottom: 10px;
+          margin-top: 7px;
+          color: #003462;
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 27px;
+
+          @media screen and (max-width: 1200px) {
+            font-size: 18px;
+          }
         }
 
         &__text {
           font-weight: 300;
-          font-size: 16px;
-          line-height: 21px;
+          font-size: 18px;
+          line-height: 29px;
           text-align: center;
           color: #4A4A49;
+
+          @media screen and (max-width: 1200px) {
+            font-size: 16px;
+
+            br {
+              display: none;
+            }
+          }
         }
       }
     }
   }
-}
 
-@media screen and (max-width: 1200px) {
-  .engineering-page {
-    .offers {
-      .offer {
-        &__image {
-          max-width: 190px;
-        }
-      }
+  .principles {
+    padding: 67px 0;
+    margin-bottom: -15px;
 
-      br {
-        display: none;
+    @media (max-width: 482px) {
+      padding: 35px 0;
+      margin-bottom: -35px;
+    }
+
+    &__title {
+      font-weight: 400;
+    }
+
+    .container {
+      max-width: 1100px;
+    }
+
+    &__image-wrap {
+      margin-bottom: 30px;
+
+      @media (max-width: 482px) {
+        margin-bottom: 20px;
       }
+    }
+  }
+
+  .contact-us {
+    padding: 80px 0;
+
+    .container {
+      max-width: 1215px !important;
     }
   }
 }
 
 @media screen and (max-width: 992px) {
+
   .engineering-page {
+
     .offers {
+
       &__list {
         flex-direction: column;
         align-items: center;
-
-        .offer {
-          max-width: 600px;
-        }
       }
     }
 
     .benefits {
+
       &__list {
         margin-left: 0;
         margin-right: 0;
         flex-direction: column;
 
         .benefit {
-          margin-left: auto;
-          margin-right: auto;
+          margin-left: auto !important;
+          margin-right: auto !important;
           max-width: 768px;
         }
       }
@@ -201,13 +306,15 @@
 }
 
 @media screen and (max-width: 480px) {
+
   .engineering-page {
+
     .offers {
+
       &__list {
 
         .offer {
           flex-direction: column;
-          max-width: 350px;
           text-align: center;
 
           &__image {
@@ -219,7 +326,9 @@
           }
 
           &__points {
+
             li {
+
               &::before {
                 display: none;
               }

@@ -1,12 +1,20 @@
 .service-page {
+
     .service-intro {
-        //padding: 75px 0 120px 0;
+        background-image: url("/wp-content/themes/classy/images/bg/service_bg.jpg");
+        background-position: bottom right;
+        background-repeat: no-repeat;
 
         @media (min-width: 993px) and (max-width: 1200px) {
-            padding: 35px 0 120px 0;
+            padding: 35px 0 80px 0;
         }
+
         @media (min-width: 1201px) {
-            padding: 0 0 120px 0;
+            padding: 0 0 80px 0;
+        }
+
+        @media (max-width: 992px) {
+            padding-bottom: 40px!important;
         }
 
         h3, h1 {
@@ -20,20 +28,35 @@
             color: $color-blue;
         }
 
+        h1{
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 44px;
+
+            margin-bottom: 33px;
+        }
+
         p {
-            font-size: 16px;
-            line-height: 21px;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 160%;
             margin-bottom: 13px;
         }
 
         &__content {
-            max-width: 550px;
-            margin-right: 53px;
+            max-width: 900px;
+            margin: auto;
         }
 
         &__image {
-            max-width: 570px;
+            max-width: 900px;
             width: 100%;
+            margin-bottom: 32px;
+            border-radius: 4px;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 160%;
+            overflow: hidden;
 
             img {
                 display: block;
@@ -53,14 +76,26 @@
         }
     }
 
-    .contact-us {
+    .case__download{
+        margin-top: 25px;
+    }
+
+    .contact-us{
         margin-bottom: -80px;
+        padding: 80px 0;
+
+        .container{
+            max-width: 1215px!important;
+        }
     }
 }
 
 @media screen and (max-width: 992px) {
+
     .service-page {
+
         .service-intro {
+
             &__wrap {
                 flex-direction: column-reverse;
             }
@@ -80,6 +115,7 @@
 
 @media screen and (max-width: 768px) {
     .service-page {
+
         .service-intro {
             padding: 50px 0 40px 0;
 
@@ -90,8 +126,11 @@
     }
 
     .logged-in {
+
         .service-page {
+
             .service-intro {
+
                 padding: 0 0 40px 0;
 
                 @media (min-width: 768px) {

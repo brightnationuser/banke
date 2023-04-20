@@ -20,17 +20,22 @@
 
                 <div class="history__sidebar sidebar animated fadeInRight">
                     <div class="sidebar__item sidebar__item--download">
-                        @if(!empty(get_field('downloads_title')))
-                            <h3>{{ get_field('downloads_title') }}</h3>
-                        @endif
+                        <img src="/wp-content/themes/classy/images/about_us.jpg">
+                        <div class="info">
+                            @if(!empty(get_field('downloads_title')))
+                                <h3>{{ get_field('downloads_title') }}</h3>
+                            @endif
 
-
-                        @foreach(get_field('downloads') as $download)
-                            <div>
-                                <a href="{!! $download['link'] !!}" class="disable_preloader" target="_blank"
-                                   download>{!! $download['text'] !!}</a>
+                            <div class="wrapper">
+                                @foreach(get_field('downloads') as $download)
+                                    <div>
+                                        <a href="{!! $download['link'] !!}" class="disable_preloader" target="_blank"
+                                           download>{!! $download['text'] !!}</a>
+                                    </div>
+                                @endforeach
                             </div>
-                        @endforeach
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -87,4 +92,11 @@
             </div>
         </div>
     </div>
+
+    @include('partials.new-contact-us', [
+    'form' => get_field('contact_form',"option"),
+    'title' => get_field('contact_form_title',"option"),
+    'classes' => 'contact-us--light contact-us--blue-bg'
+])
+
 @stop
