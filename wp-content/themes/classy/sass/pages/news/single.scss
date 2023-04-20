@@ -3,6 +3,11 @@
   .content {
     padding-bottom: 0;
     padding-top: 75px;
+
+    .wp-caption {
+      max-width: 100%;
+      margin: 0;
+    }
   }
 
   .article-layout {
