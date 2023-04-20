@@ -11,6 +11,7 @@
             </div>
             <div class="carousel">
                 <div class="item"
+                     title="BES-86 is system that enable energy to be stored and then released when customers need power most"
                      style="background-image: url({{ content_url('themes/classy/images/landing/landing_main_image.jpg') }})">
                 </div>
             </div>
@@ -68,6 +69,7 @@
                                             {!! get_sub_field('text') !!}
                                         </div>
                                         <div class="image"
+                                             title="{{ get_sub_field('image')['title'] }}"
                                              style="background-image: url({{ get_sub_field('image')['url'] }})">
                                         </div>
                                     </div>
@@ -82,6 +84,7 @@
                                 <div class="container">
                                     <div class="wrapper">
                                         <div class="image"
+                                             title="{{ get_sub_field('image')['title'] }}"
                                              style="background-image: url({{ get_sub_field('image')['url'] }})">
 
                                         </div>

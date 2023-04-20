@@ -26,7 +26,8 @@
       min-height: 553px;
       background-position: center;
       position: relative;
-      z-index: 1;
+      z-index: 3;
+      pointer-events: none;
 
       @media screen and (max-width: 1200px) {
         display: none;
@@ -70,7 +71,7 @@
       width: calc(44% + 225px);
       position: absolute;
       right: 0;
-      z-index: 0;
+      z-index: 2;
       overflow: hidden;
 
       @media screen and (max-width: 1200px) {
