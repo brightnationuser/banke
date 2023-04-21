@@ -11,6 +11,7 @@
             </div>
             <div class="carousel">
                 <div class="item"
+                     title="BES-86 is system that enable energy to be stored and then released when customers need power most"
                      style="background-image: url({{ content_url('themes/classy/images/landing/landing_main_image.jpg') }})">
                 </div>
             </div>
@@ -20,11 +21,7 @@
                         <img src="{{ content_url('themes/classy/images/landing/logo.svg') }}" alt="Banke logo">
                     </div>
                     <div class="subtitle"> {!! get_field('first_screen_title') !!}</div>
-                    <div class="caption"> {!! get_field('first_screen_caption') !!}
-
-
-                    </div>
-
+                    <h1 class="caption"> {!! get_field('first_screen_caption') !!}</h1>
                     <a href="{{  get_field('first_screen_link')['url'] }}" target="_blank"> <i class="icon-down-arrow"></i> <span>Download PDF</span></a>
                 </div>
             </div>
@@ -68,6 +65,7 @@
                                             {!! get_sub_field('text') !!}
                                         </div>
                                         <div class="image"
+                                             title="{{ get_sub_field('image')['title'] }}"
                                              style="background-image: url({{ get_sub_field('image')['url'] }})">
                                         </div>
                                     </div>
@@ -82,6 +80,7 @@
                                 <div class="container">
                                     <div class="wrapper">
                                         <div class="image"
+                                             title="{{ get_sub_field('image')['title'] }}"
                                              style="background-image: url({{ get_sub_field('image')['url'] }})">
 
                                         </div>
@@ -116,13 +115,13 @@
             @endif
 
         </div>
-
+        <div id="contacts">
         @include('partials.new-contact-us', [
             'form' => $post->getAcfByKey('contact_form'),
             'title' => $post->getAcfByKey('form_title'),
             'classes' => 'contact-us--light'
         ])
-
+        </div>
     </div>
 
 @stop
