@@ -21,11 +21,7 @@
                         <img src="{{ content_url('themes/classy/images/landing/logo.svg') }}" alt="Banke logo">
                     </div>
                     <div class="subtitle"> {!! get_field('first_screen_title') !!}</div>
-                    <h1 class="caption"> {!! get_field('first_screen_caption') !!}
-
-
-                    </h1>
-
+                    <h1 class="caption"> {!! get_field('first_screen_caption') !!}</h1>
                     <a href="{{  get_field('first_screen_link')['url'] }}" target="_blank"> <i class="icon-down-arrow"></i> <span>Download PDF</span></a>
                 </div>
             </div>
