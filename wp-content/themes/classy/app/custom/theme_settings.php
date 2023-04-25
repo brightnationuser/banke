@@ -184,3 +184,11 @@ add_action('wp_enqueue_scripts', 'kd_load_styles');
 add_action( 'admin_enqueue_scripts', function (){
     wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/dist/admin.css', false, '1.0.0' );
 } );
+
+
+//** *Enable upload for webp image files.*/
+function webp_upload_mimes($existing_mimes) {
+    $existing_mimes['webp'] = 'image/webp';
+    return $existing_mimes;
+}
+add_filter('mime_types', 'webp_upload_mimes');
