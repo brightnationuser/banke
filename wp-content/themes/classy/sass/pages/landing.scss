@@ -616,7 +616,7 @@
   }
 
   .contact-us {
-    background-image: url('/wp-content/themes/classy/images/landing/landing-contacts-bg.jpg');
+    background-image: url('/wp-content/themes/classy/images/landing/landing-contacts-bg.webp');
     background-size: cover;
     background-position: center left;
 
@@ -625,7 +625,7 @@
     }
 
     @media screen and(max-width: 1200px) {
-      background-image: url('/wp-content/themes/classy/images/landing/landing-contacts-bg-mobile.jpg');
+      background-image: url('/wp-content/themes/classy/images/landing/landing-contacts-bg-mobile.webp');
       background-position: center;
     }
 

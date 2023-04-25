@@ -5,14 +5,14 @@
 @section('content')
     <div class="landing">
         <div class="first_screen"
-             style="background-image: url({{ content_url('themes/classy/images/landing/landing_waves.jpg') }})">
+             style="background-image: url({{ content_url('themes/classy/images/landing/landing_waves.webp') }})">
             <div class="left">
 
             </div>
             <div class="carousel">
                 <div class="item"
                      title="BES-86 is system that enable energy to be stored and then released when customers need power most"
-                     style="background-image: url({{ content_url('themes/classy/images/landing/landing_main_image.jpg') }})">
+                     style="background-image: url({{ content_url('themes/classy/images/landing/landing_main_image.webp') }})">
                 </div>
             </div>
             <div class="static_content">
