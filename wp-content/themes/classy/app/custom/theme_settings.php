@@ -172,8 +172,15 @@ add_action('wp_enqueue_scripts', 'kd_load_scripts');
 
 function kd_load_styles()
 {
-    $file = '/dist/style.css';
-    wp_enqueue_style('webpack_styles', get_template_directory_uri().$file, [], filemtime(get_theme_file_path().$file));
+
+    if (is_page('bes-86')) {
+        $file = '/dist/landing.css';
+        wp_enqueue_style('landing', get_template_directory_uri().$file, [], filemtime(get_theme_file_path().$file));
+    } else {
+        $file = '/dist/style.css';
+        wp_enqueue_style('webpack_styles', get_template_directory_uri().$file, [], filemtime(get_theme_file_path().$file));
+    }
+
 
 //    wp_enqueue_style('custom-scrollbar', get_template_directory_uri() . '/css/custom-scrollbar.css');
 //не добавил    wp_enqueue_style('jquery-ui-datepicker-style', '//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css');

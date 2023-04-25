@@ -28,7 +28,7 @@ mix.js(resources_path + 'js/index.js', resources_path + 'dist').js(resources_pat
 
 // SASS
 .sass(resources_path + 'sass/style.scss', resources_path + 'dist')
-
+.sass(resources_path + 'sass/landing.scss', resources_path + 'dist')
 .sass(resources_path + 'sass/admin/admin.scss', resources_path + 'dist')
 
 // Generate sourceMaps

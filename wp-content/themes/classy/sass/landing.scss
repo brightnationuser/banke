@@ -1,0 +1,19 @@
+// GENERAL
+@import "fonts";
+@import "variables";
+@import 'forms';
+@import 'layout';
+@import "mixins";
+@import "additionally";
+
+// LIBS
+@import '~aos/dist/aos.css';
+@import '~animate.css';
+
+// PAGES
+@import "pages/landing.scss";
+
+// ICOMOON
+@import "vendor/icomoon/style.css";
+@import "vendor/cookieconsent";
+
