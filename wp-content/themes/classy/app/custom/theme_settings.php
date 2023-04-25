@@ -158,8 +158,14 @@ add_action( 'init', 'disable_wp_emojicons' );
 /*-- Подгрузить js-скрипты и стили --*/
 function kd_load_scripts()
 {
-    $file = '/dist/index.js';
-    wp_enqueue_script('webpack_bundle', get_template_directory_uri().$file, [], filemtime(get_theme_file_path().$file), true);
+    if (is_page('bes-86')) {
+        $file = '/dist/landing.js';
+        wp_enqueue_script('landing', get_template_directory_uri() . $file, [], filemtime(get_theme_file_path().$file), true);
+    } else {
+        $file = '/dist/index.js';
+        wp_enqueue_script('webpack_bundle', get_template_directory_uri().$file, [], filemtime(get_theme_file_path().$file), true);
+    }
+
 }
 add_action('wp_enqueue_scripts', 'kd_load_scripts');
 

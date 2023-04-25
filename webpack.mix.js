@@ -22,7 +22,7 @@ mix.options({
 });
 
 // JS
-mix.js(resources_path + 'js/index.js', resources_path + 'dist').autoload({
+mix.js(resources_path + 'js/index.js', resources_path + 'dist').js(resources_path + 'js/landing.js', resources_path + 'dist').autoload({
     jquery: ['$', 'window.jQuery', 'jQuery']
 })
 
