@@ -24,8 +24,13 @@
             <div class="container">
                 <h2 class="case__solution__title">{!! get_field('solutions_title', 'option') !!}</h2>
                 <div class="case__solution__text">{!! get_field('solution') !!}</div>
-                <a href="{!! get_permalink(get_field('product')) !!}"
-                   class="case__solution__button">{!! get_field('case_studies_learn_more_button', 'option') !!}</a>
+                @php
+                    $product_link = get_field('product_link');
+                @endphp
+                @if($product_link)
+                    <a target="{!! $product_link['target'] ?: '_self' !!}" href="{!! $product_link['url'] !!}"
+                       class="case__solution__button">{!! get_field('case_studies_learn_more_button', 'option') !!}</a>
+                @endif
             </div>
         </div>
     @endif
