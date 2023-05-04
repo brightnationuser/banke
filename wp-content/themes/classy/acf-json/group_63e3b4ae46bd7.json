@@ -1,0 +1,58 @@
+{
+    "key": "group_63e3b4ae46bd7",
+    "title": "Product info for case studies",
+    "fields": [
+        {
+            "key": "field_63e3b4b1e7cd5",
+            "label": "Product info for case studies",
+            "name": "case_studies_info",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0,
+            "wpml_cf_preferences": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "115"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "809"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "2301"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1675867357
+}
