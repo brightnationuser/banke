@@ -6,27 +6,31 @@
     <article class="case case-{{apply_filters('the_id', get_the_ID())}}">
         <h2 class="case__title">{!! get_field('case_study_title', 'option') !!}</h2>
         <h1 class="case__item__title">{!!  get_the_title() !!}</h1>
-        @if(get_field('pdf')['url'] != "")
+        @php
+            $pdf = get_field('pdf');
+        @endphp
+        @if($pdf)
             <a class="case__download" href="{!! get_field('pdf')['url'] !!}" target="_blank"
                download="{!! get_field('pdf')['url'] !!}">
-                <i class="icon-down-arrow"></i> <span>Download pdf</span> </a>
-        @else
-            <a class="case__download" href="#">
                 <i class="icon-down-arrow"></i> <span>Download pdf</span> </a>
         @endif
 
         <div class="case__content">{!!  get_the_content() !!}</div>
     </article>
 
-    @if(!empty(get_field('solution')))
+    @php
+        $solutions = get_field('solution');
+        $product_link = get_field('product_link');
+    @endphp
+
+    @if($solutions || $product_link)
         <div class="case__solution"
              style="background-image: url(/wp-content/themes/classy/images/case-solutions-bg.jpg)">
             <div class="container">
                 <h2 class="case__solution__title">{!! get_field('solutions_title', 'option') !!}</h2>
+                @if($solutions)
                 <div class="case__solution__text">{!! get_field('solution') !!}</div>
-                @php
-                    $product_link = get_field('product_link');
-                @endphp
+                @endif
                 @if($product_link)
                     <a target="{!! $product_link['target'] ?: '_self' !!}" href="{!! $product_link['url'] !!}"
                        class="case__solution__button">{!! get_field('case_studies_learn_more_button', 'option') !!}</a>
@@ -41,28 +45,30 @@
                 <h2 class="case__solution__title">{!! get_field('main_specification_facts_title', 'option') !!}</h2>
                 <div class="wrapper">
                     <div class="left">
+                        @php
+                            $specifications = get_field('specifications');
+                        @endphp
+                        @if($specifications)
                         <table>
-
-                            @foreach(get_field('specifications') as $item)
+                            @foreach($specifications as $specification)
                                 <tr>
-                                    <td>{!! $item['title'] !!}</td>
-                                    <td>{!! $item['text'] !!}</td>
+                                    <td>{!! $specification['title'] !!}</td>
+                                    <td>{!! $specification['text'] !!}</td>
                                 </tr>
                             @endforeach
-
                         </table>
+                        @endif
                     </div>
                     <div class="right">
                         <div class="image">
                             <img src="/wp-content/themes/classy/images/case-icon.jpg" alt="case icon">
                         </div>
-                        @if(get_field('file')['url'] != "")
+                        @php
+                            $file = get_field('file');
+                        @endphp
+                        @if($file)
                             <a class="case__download" href="{!! get_field('file')['url']  !!}" target="_blank"
                                download="{!! get_field('file')['url']  !!}">
-                                <i class="icon-down-arrow"></i>
-                                <span>{!! get_field('case_study_specification', 'option') !!}</span> </a>
-                        @else
-                            <a class="case__download" href="#" style="pointer-events: none">
                                 <i class="icon-down-arrow"></i>
                                 <span>{!! get_field('case_study_specification', 'option') !!}</span> </a>
                         @endif
