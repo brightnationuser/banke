@@ -127,6 +127,16 @@
             'classes' => 'contact-us--light'
         ])
 
+        <section>
+            @if(!empty($products))
+                <ul>
+                @foreach($products as $product)
+                    <li><a href="{{get_permalink($product->ID) }}">{{$product->post_title}}</a></li>
+                @endforeach
+                </ul>
+                @endif
+        </section>
+
     </div>
 
 @stop

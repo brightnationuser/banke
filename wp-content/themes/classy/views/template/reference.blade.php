@@ -10,7 +10,7 @@
             <div class="breadcrumbs">
                 <ul class="breadcrumbs__list">
                     <li class="breadcrumb">
-                        <a href="{{ get_permalink( get_page_by_path( 'epto-systems' ) )  }}">E-PTO Systems</a>
+                        <a href="{{ get_permalink( get_page_by_path( 'products/epto-systems' ) )  }}">E-PTO Systems</a>
                     </li>
                     <li class="breadcrumb">
                         <span>{!! $post->post_title !!}</span>

@@ -4,6 +4,14 @@ $framework = get_theme_framework();
 
 $post = $framework::get_post();
 
+//Products
+
+$products = $framework::get_posts([
+    'post_type'      => 'page',
+    'posts_per_page' => -1,
+    'post_parent' => $post->ID,
+]);
+
 $references = $framework::get_posts([
     'post_type' => 'page',
     'post_parent' => 214,
@@ -38,5 +46,6 @@ $related_insights = array(
 $data = compact(
     'post',
     'references',
-    'related_insights'
+    'related_insights',
+    'products'
 );
