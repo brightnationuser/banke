@@ -46,6 +46,7 @@
 
         @if($specifications)
             <div class="product-specifications custom-tabs">
+                @if(sizeof($specifications) > 1)
                 <ul class="product-specifications__nav-tabs nav-tabs">
                     @foreach($specifications as $specification)
                         <li class="product-specifications__nav-tabs-item">
@@ -54,6 +55,7 @@
                         </li>
                     @endforeach
                 </ul>
+                @endif
                 <div class="product-specifications__tab-content tab-content">
                     @foreach($specifications as $specification)
                         <div id="tab-{{ $loop->index }}"
