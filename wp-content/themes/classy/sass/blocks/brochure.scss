@@ -1,90 +1,100 @@
-.brochure {
-  background-color: #f9fafc;
-  padding: 55px 0;
+.brochures-section {
+  padding-top: 72px;
+  padding-bottom: 72px;
+  background-color: #F2F6FC;
+  background-image: url('/wp-content/themes/classy/images/brochures-section-bg-waves.svg');
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: auto 100%;
+}
 
-  &__wrapper {
-    display: flex;
-    max-width: 810px;
-    margin: 0 auto;
-    align-items: center;
-  }
+.brochures-section__title {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.3;
+  text-align: center;
+  color: #003462;
+  margin-bottom: 48px;
+}
 
-  &__image {
-    max-width: 305px;
-    width: 100%;
+.brochures-section__brochures {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 60px;
 
-    img {
-      width: 100%;
-    }
-  }
-
-  &__content {
-    margin-left: 43px;
-  }
-
-  &__title {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 120%;
-    color: #003462;
-    text-align: left;
-    margin-bottom: 11px;
-  }
-
-  &__text {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 163.42%;
-    color: #333333;
-    margin-bottom: 25px;
-    margin-top: 0;
-  }
-
-  &__button {
-    .button {
-      font-weight: 600;
-      padding: 9px 18px;
-
-      &:hover, &:focus {
-        padding: 9px 18px;
-      }
-    }
-
-    i {
-      font-size: 10px;
-      margin-left: 3px;
-    }
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
+.brochures-section__brochure {
 
-@media only screen and (max-width: 768px) {
-  .brochure {
-    &__wrapper {
-      flex-direction: column;
-      text-align: center;
-    }
+}
 
-    &__content {
-      margin-left: 0;
-    }
+.brochures-section-brochure {
 
-    &__title,
-    &__text {
-      text-align: center;
-    }
+}
 
-    &__title {
-      margin-top: 10px;
-      font-size: 18px;
-    }
+.brochures-section-brochure__image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  max-width: 340px;
+  width: 100%;
+  height: auto;
+}
 
-    &__button {
-      .button {
-        font-size: 16px;
-      }
+.brochures-section-brochure__title {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.5;
+  text-align: center;
+  color: #003462;
+  margin-bottom: 12px;
+}
+
+.brochures-section-brochure__text {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+  color: #4A4A49;
+  max-width: 582px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 16px;
+}
+
+.brochures-section-brochure__link-holder {
+  text-align: center;
+}
+
+.brochures-section-brochure__link {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  color: #005CA9;
+
+  i {
+    font-size: 16px;
+    margin-right: 5px;
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    span {
+      text-decoration: underline;
     }
   }
 }
