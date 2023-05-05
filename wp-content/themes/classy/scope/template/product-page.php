@@ -35,8 +35,15 @@ $related_insights = array(
     'insights' => $related_insights_formatted
 );
 
+$products = $framework::get_posts([
+    'post_type'      => 'page',
+    'posts_per_page' => -1,
+    'post_parent' => $post->ID,
+]);
+
 $data = compact(
     'post',
     'references',
-    'related_insights'
+    'related_insights',
+    'products'
 );

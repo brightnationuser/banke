@@ -25,7 +25,7 @@
         'template.product-page.benefits' => [],
         'partials.video-gallery' => [],
         'template.product-page.present' => [],
-        'template.product-page.products' => [],
+        'template.product-page.products' => $products,
         'partials.brochure' => $brochure_data,
         'template.product-page.references' => [],
         'template.product-page.specification' => [],
