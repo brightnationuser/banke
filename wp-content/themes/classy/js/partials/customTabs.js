@@ -14,7 +14,7 @@ export default function customTabs(userOptions) {
     for (let i = 0; i < customTabsWrappers.length; i++) {
 
         const customTabs = customTabsWrappers[i].querySelectorAll(
-            `ul${mergedOptions.navTabsClass} > li`
+            `ul${mergedOptions.navTabsClass} > li > a`
         );
 
         function tabClick(tabClickEvent) {

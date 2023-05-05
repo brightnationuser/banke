@@ -3,6 +3,46 @@
     "title": "Page - Product",
     "fields": [
         {
+            "key": "field_6453f1c65366a",
+            "label": "Pre title",
+            "name": "product_pre_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_64540e412c982",
+            "label": "Short description",
+            "name": "short_description",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_6452a7bd58125",
             "label": "Illustration",
             "name": "",
@@ -264,6 +304,26 @@
                     "wpml_cf_preferences": 0
                 },
                 {
+                    "key": "field_6452c3edbd2a8",
+                    "label": "PDF button text",
+                    "name": "pdf_button_text",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "wpml_cf_preferences": 0
+                },
+                {
                     "key": "field_6452a8ff58132",
                     "label": "PDF",
                     "name": "pdf",
@@ -344,22 +404,6 @@
                             "maxlength": ""
                         }
                     ]
-                },
-                {
-                    "key": "field_6452c3edbd2a8",
-                    "label": "PDF",
-                    "name": "pdf_link",
-                    "type": "link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "wpml_cf_preferences": 0
                 }
             ]
         }
@@ -381,5 +425,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1683145736
+    "modified": 1683230297
 }
