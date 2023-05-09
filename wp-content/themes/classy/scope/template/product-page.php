@@ -50,5 +50,6 @@ $data = compact(
     'references',
     'related_insights',
     'products_title',
+    'read_more',
     'products'
 );
