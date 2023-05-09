@@ -369,6 +369,26 @@
             ]
         },
         {
+            "key": "field_645a6f6ae44c5",
+            "label": "Read more",
+            "name": "product_read_more",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_6078b681eb352",
             "label": "Brochure",
             "name": "",
@@ -580,5 +600,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1662069885
+    "modified": 1683648414
 }
