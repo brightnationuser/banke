@@ -37,6 +37,8 @@ $related_insights = array(
 
 $products_title = get_field('acf_title_main', $post->ID);
 
+$read_more = get_field('product_read_more', $post->ID);
+
 $products = $framework::get_posts([
     'post_type'      => 'page',
     'posts_per_page' => -1,

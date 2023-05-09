@@ -245,6 +245,26 @@
             "endpoint": 0
         },
         {
+            "key": "field_645a5914bef66",
+            "label": "Read more",
+            "name": "products_read_more",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_60af7498eef33",
             "label": "Products Title",
             "name": "acf_title_main",
@@ -1173,5 +1193,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1674216206
+    "modified": 1683642665
 }
