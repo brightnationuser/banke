@@ -247,7 +247,7 @@
         {
             "key": "field_645a5914bef66",
             "label": "Read more",
-            "name": "products_read_more",
+            "name": "product_read_more",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -1193,5 +1193,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1683642665
+    "modified": 1683649133
 }
