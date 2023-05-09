@@ -6,6 +6,8 @@ $post = $framework::get_post();
 
 //Products
 
+$products_title = get_field('acf_title_main', $post->ID);
+
 $products = $framework::get_posts([
     'post_type'      => 'page',
     'posts_per_page' => -1,
@@ -47,5 +49,6 @@ $data = compact(
     'post',
     'references',
     'related_insights',
+    'products_title',
     'products'
 );
