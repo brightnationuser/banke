@@ -27,3 +27,20 @@ function my_acf_fields_post_object_query( $args, $field, $post_id ) {
     $args['posts_per_page'] = -1;
     return $args;
 }
+
+//disable feed
+
+function disable_feed() {
+    wp_die( __( 'No feed available, please visit the <a href="'. esc_url( home_url( '/' ) ) .'">homepage</a>!' ) );
+}
+
+add_action('do_feed', 'disable_feed', 1);
+add_action('do_feed_rdf', 'disable_feed', 1);
+add_action('do_feed_rss', 'disable_feed', 1);
+add_action('do_feed_rss2', 'disable_feed', 1);
+add_action('do_feed_atom', 'disable_feed', 1);
+add_action('do_feed_rss2_comments', 'disable_feed', 1);
+add_action('do_feed_atom_comments', 'disable_feed', 1);
+
+remove_action( 'wp_head', 'feed_links_extra', 3 );
+remove_action( 'wp_head', 'feed_links', 2 );
