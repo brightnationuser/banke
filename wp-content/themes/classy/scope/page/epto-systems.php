@@ -35,8 +35,15 @@ $related_insights = array(
     'insights' => $related_insights_formatted
 );
 
+//Brochures
+
+$brochures_title = get_field("brochures_title", $post->post_id);
+$brochures_brochures = get_field("brochures_brochures", $post->post_id);
+
 $data = compact(
     'post',
     'references',
-    'related_insights'
+    'related_insights',
+    'brochures_title',
+    'brochures_brochures'
 );

@@ -85,13 +85,9 @@
 
         @include('template.product-page.products')
 
-        @php($brochure = get_field('brochure'))
         @include('partials.brochure', [
-            'image' => $brochure['image'],
-            'title' => $brochure['title'],
-            'text' => $brochure['text'],
-            'file' => $brochure['file'],
-            'button_text' => $brochure['button_text']
+            'title'     => $brochures_title,
+            'brochures' => $brochures_brochures
         ])
 
         <section class="references-sect">

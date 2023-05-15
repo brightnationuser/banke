@@ -386,10 +386,10 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_6078b6a0eb353",
-            "label": "Brochure",
-            "name": "brochure",
-            "type": "group",
+            "key": "field_6455014dceb47",
+            "label": "Title",
+            "name": "brochures_title",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -398,11 +398,35 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
+            "wpml_cf_preferences": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_645500eaceb41",
+            "label": "Brochures",
+            "name": "brochures_brochures",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
             "wpml_cf_preferences": 0,
             "sub_fields": [
                 {
-                    "key": "field_6078b6beeb354",
+                    "key": "field_6455010bceb42",
                     "label": "Title",
                     "name": "title",
                     "type": "text",
@@ -422,7 +446,7 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_6078b6c4eb355",
+                    "key": "field_64550110ceb43",
                     "label": "Image",
                     "name": "image",
                     "type": "image",
@@ -447,7 +471,7 @@
                     "wpml_cf_preferences": 0
                 },
                 {
-                    "key": "field_6078b6d7eb356",
+                    "key": "field_64550120ceb44",
                     "label": "Text",
                     "name": "text",
                     "type": "textarea",
@@ -462,12 +486,12 @@
                     "default_value": "",
                     "placeholder": "",
                     "maxlength": "",
-                    "rows": 5,
+                    "rows": "",
                     "new_lines": "",
                     "wpml_cf_preferences": 0
                 },
                 {
-                    "key": "field_6078b6e4eb357",
+                    "key": "field_6455012aceb45",
                     "label": "File",
                     "name": "file",
                     "type": "file",
@@ -487,7 +511,7 @@
                     "wpml_cf_preferences": 0
                 },
                 {
-                    "key": "field_6078b6f1eb358",
+                    "key": "field_6455013cceb46",
                     "label": "Button text",
                     "name": "button_text",
                     "type": "text",
@@ -580,5 +604,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1662069885
+    "modified": 1683297060
 }
