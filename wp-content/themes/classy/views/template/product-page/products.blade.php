@@ -22,7 +22,7 @@
                                     @endif                                    <div class="product-list-card__specifications">
                                         @foreach($specifications as $key => $specification)
                                             <a class="product-list-card__specification-link"
-                                               href="{{ get_permalink($product->ID) }}{{ (count($specifications) > 1 && $key > 0) ? '#tab-' . $key : '' }}">{{$specification['name']}}</a>
+                                               href="{{ get_permalink($product->ID) }}{{ (count($specifications) > 1 && $key > 0) ? '?tab=' . $key : '' }}">{{$specification['name']}}</a>
                                         @endforeach
                                     </div>
                                 @endif
