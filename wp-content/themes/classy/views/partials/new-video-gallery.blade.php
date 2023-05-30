@@ -67,10 +67,14 @@
                         </svg>
                     </div>
                 </div>
-
+                @php
+                    $button = get_field('case_study_main_page_button','options');
+                @endphp
+                @if($button)
                 <div class="button_wrap">
-                    <a href="{!! get_field('case_study_main_page_button','options')['url'] !!}" class="button">{!! get_field('case_study_main_page_button','options')['title'] !!}</a>
+                    <a target="{{ $button['target'] ?: '_self' }}" href="{!! $button['url'] !!}" class="button">{!! $button['title'] !!}</a>
                 </div>
+                @endif
         </div>
     </div>
 @endif
