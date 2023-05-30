@@ -8,13 +8,19 @@ $post = $framework::get_post();
 
 $products_title = get_field('acf_title_main', $post->ID);
 
-$read_more = get_field('product_read_more', $post->ID);
+$specifications_title = get_field('specifications_title', $post->ID);
+$specifications_button = get_field('specifications_button', $post->ID);
 
 $products = $framework::get_posts([
-    'post_type'      => 'page',
+    'post_type' => 'page',
     'posts_per_page' => -1,
     'post_parent' => $post->ID,
 ]);
+
+//add ACF fields to post objects
+foreach ($products as $product) {
+    $product->sepcifications = get_field('product_specifications', $product->ID);
+}
 
 $references = $framework::get_posts([
     'post_type' => 'page',
@@ -52,6 +58,7 @@ $data = compact(
     'references',
     'related_insights',
     'products_title',
-    'read_more',
+    'specifications_title',
+    'specifications_button',
     'products'
 );

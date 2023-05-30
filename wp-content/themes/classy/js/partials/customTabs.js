@@ -50,4 +50,43 @@ export default function customTabs(userOptions) {
             customTabs[i].addEventListener("click", tabClick);
         }
     }
+
+    function setActiveTab(activeTabId) {
+        for (let i = 0; i < customTabsWrappers.length; i++) {
+
+            let activeTab = null;
+
+            const customTabs = customTabsWrappers[i].querySelectorAll(
+                `ul${mergedOptions.navTabsClass} > li > a`
+            );
+
+            for (let i = 0; i < customTabs.length; i++) {
+                customTabs[i].classList.remove("active");
+
+                if (customTabs[i].getAttribute("href") === activeTabId) {
+                    activeTab = customTabs[i];
+                }
+            }
+
+            activeTab.classList.add("active");
+
+            const customTabsContentPanes = customTabsWrappers[i].querySelectorAll(
+                mergedOptions.tabContentClass
+            );
+
+            for (let i = 0; i < customTabsContentPanes.length; i++) {
+                customTabsContentPanes[i].classList.remove("active");
+            }
+
+            const activePaneId = activeTab.getAttribute("href");
+
+            const activePane = customTabsWrappers[i].querySelector(activePaneId);
+
+            activePane.classList.add("active");
+        }
+    }
+
+    return {
+        setActiveTab: setActiveTab
+    }
 }

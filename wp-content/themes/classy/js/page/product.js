@@ -1,5 +1,10 @@
 import customTabs from "../partials/customTabs";
 
 window.addEventListener("load", function () {
-    customTabs();
+    const tabs = customTabs();
+    const hash = new URL(document.URL).hash;
+
+    if (hash) {
+        tabs.setActiveTab(hash)
+    }
 });
