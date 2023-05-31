@@ -229,6 +229,22 @@
             "delay": 0
         },
         {
+            "key": "field_64750a678d5c2",
+            "label": "Specifications button",
+            "name": "specifications_button",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "wpml_cf_preferences": 0
+        },
+        {
             "key": "field_60af7498edfd2",
             "label": "Products",
             "name": "",
@@ -243,6 +259,26 @@
             },
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_645a5914bef66",
+            "label": "Specifications title",
+            "name": "specifications_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_60af7498eef33",
@@ -1173,5 +1209,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1674216206
+    "modified": 1685392096
 }

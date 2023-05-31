@@ -4,6 +4,24 @@ $framework = get_theme_framework();
 
 $post = $framework::get_post();
 
+//Products
+
+$products_title = get_field('acf_title_main', $post->ID);
+
+$specifications_title = get_field('specifications_title', $post->ID);
+$specifications_button = get_field('specifications_button', $post->ID);
+
+$products = $framework::get_posts([
+    'post_type' => 'page',
+    'posts_per_page' => -1,
+    'post_parent' => $post->ID,
+]);
+
+//add ACF fields to post objects
+foreach ($products as $product) {
+    $product->sepcifications = get_field('product_specifications', $product->ID);
+}
+
 $references = $framework::get_posts([
     'post_type' => 'page',
     'post_parent' => 214,
@@ -45,5 +63,8 @@ $data = compact(
     'references',
     'related_insights',
     'brochures_title',
-    'brochures_brochures'
+    'brochures_brochures',
+    'specifications_title',
+    'specifications_button',
+    'products'
 );

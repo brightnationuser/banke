@@ -35,8 +35,23 @@ $related_insights = array(
     'insights' => $related_insights_formatted
 );
 
+$products_title = get_field('acf_title_main', $post->ID);
+
+$specifications_title = get_field('specifications_title', $post->ID);
+$specifications_button = get_field('specifications_button', $post->ID);
+
+$products = $framework::get_posts([
+    'post_type'      => 'page',
+    'posts_per_page' => -1,
+    'post_parent' => $post->ID,
+]);
+
 $data = compact(
     'post',
     'references',
-    'related_insights'
+    'related_insights',
+    'products_title',
+    'specifications_title',
+    'specifications_button',
+    'products'
 );

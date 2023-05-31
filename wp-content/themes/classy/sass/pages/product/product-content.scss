@@ -1,0 +1,45 @@
+.product-content {
+  margin-bottom: 35px;
+}
+
+.product-content__pre-title {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.375;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #005CA9;
+  margin-bottom: 8px;
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+  }
+}
+
+.product-content__title {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1.3;
+  color: #4A4949;
+
+  @media (min-width: 768px) {
+    font-size: 56px;
+  }
+}
+
+.product-content__text {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4A4A49;
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+}

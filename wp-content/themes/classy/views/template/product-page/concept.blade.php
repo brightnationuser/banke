@@ -36,5 +36,12 @@
                 </article>
             </div>
         </div>
+
+        @if($specifications_button)
+            <div class="concept__specifications">
+                <a class="concept__specifications-button"
+                   href="{{$specifications_button['url']}}">{{$specifications_button['title']}}</a>
+            </div>
+        @endif
     </div>
 </section>

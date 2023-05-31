@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 a {
     text-decoration: none;
     
@@ -21,24 +25,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2, .h2 {
+    font-family: 'Open Sans';
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: $color-blue;
+
     position: relative;
     margin-top: 60px;
     margin-bottom: 50px;
-    font-weight: bold;
-    font-size: 32px;
     text-align: center;
-    color: $color-blue;
     
-    &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 50px;
-        height: 0;
-        left: calc(50% - 50px/2);
-        top: 58px;
-        border-top: 2px solid $color-light-blue;
-    }
+    //&::after {
+    //    content: '';
+    //    display: block;
+    //    position: absolute;
+    //    width: 50px;
+    //    height: 0;
+    //    left: calc(50% - 50px/2);
+    //    top: 58px;
+    //    border-top: 2px solid $color-light-blue;
+    //}
 
     &--left {
         text-align: left;

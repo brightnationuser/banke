@@ -40,10 +40,63 @@
                         </article>
                     </div>
                 </div>
+                @if($specifications_button)
+                    <div class="concept__specifications">
+                        <a class="concept__specifications-button"
+                           href="{{$specifications_button['url']}}">{{$specifications_button['title']}}</a>
+                    </div>
+                @endif
             </div>
         </section>
 
         @include('partials.related-insights', $related_insights)
+
+        <section class="present">
+            <div class="container">
+                <h2 class="present__title">
+                    {{ $post->getAcfByKey('acf_title_main') }}
+                </h2>
+
+                <div class="present__slider-outer thin-nav">
+                    @include('partials.slider.epto-slider', ['nav' => 'thin'])
+                </div>
+            </div>
+        </section>
+
+        @if($products)
+            <section id="specifications" class="products-list-section">
+                <div class="container">
+                    <div class="products-list">
+                        @foreach($products as $product)
+                            <div class="products-list__item">
+                                <div class="product-list-card">
+                                    <div class="product-list-card__content">
+                                        {!! wp_get_attachment_image(get_post_thumbnail_id($product), 'full', false, array('class' => 'product-list-card__image')) !!}
+                                        <div class="product-list-card__title">{{$product->post_title}}</div>
+                                        <div class="product-list-card__description">{{ get_field('short_description', $product->ID) }}</div>
+                                        @php
+                                            $specifications = $product->getAcfByKey('product_specifications');
+                                        @endphp
+
+                                        @if(!empty($specifications))
+                                            @if($specifications_title)
+                                                <div class="product-list-card__specifications-title">{{$specifications_title}}</div>
+                                            @endif
+                                            <div class="product-list-card__specifications">
+                                                @foreach($specifications as $key => $specification)
+                                                    <a class="product-list-card__specification-link"
+                                                       href="{{ get_permalink($product->ID) }}{{ (count($specifications) > 1 && $key > 0) ? '?tab=' . $key : '' }}">{{$specification['name']}}</a>
+                                                @endforeach
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </section>
+        @endif
 
         @php
             $principles = $post->getAcfByKey('acf_benefits');
@@ -71,19 +124,6 @@
 
         @include('partials.video-gallery')
 
-        <section class="present">
-            <div class="container">
-                <h2 class="present__title">
-                    {{ $post->getAcfByKey('acf_title_main') }}
-                </h2>
-
-                <div class="present__slider-outer thin-nav">
-                    @include('partials.slider.epto-slider', ['nav' => 'thin'])
-                </div>
-            </div>
-        </section>
-
-        @include('template.product-page.products')
 
         @include('partials.brochure', [
             'title'     => $brochures_title,
@@ -122,7 +162,6 @@
             'title' => $post->getAcfByKey('contact_title'),
             'classes' => 'contact-us--light'
         ])
-
     </div>
 
 @stop

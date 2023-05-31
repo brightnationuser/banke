@@ -166,6 +166,11 @@ function kd_load_scripts()
         wp_enqueue_script('webpack_bundle', get_template_directory_uri().$file, [], filemtime(get_theme_file_path().$file), true);
     }
 
+    if (is_page_template('classy-product')) {
+        $file = '/dist/product.js';
+        wp_enqueue_script('product', get_template_directory_uri() . $file, [], filemtime(get_theme_file_path().$file), true);
+    }
+
 }
 add_action('wp_enqueue_scripts', 'kd_load_scripts');
 
