@@ -613,14 +613,13 @@
 
   color: #FFFFFF;
 
-  text-decoration: underline;
-  text-decoration-color: rgba(255, 255, 255, .8);
-  text-underline-offset: 2px;
+  text-decoration: none !important;
 
   transition: all 0.5s ease;
 
   &:hover {
     background-position: 200px;
+    text-decoration: none !important;
   }
 
   &:first-child {
