@@ -4,7 +4,7 @@
 <header class="header">
     <div class="container">
         @php($lng_code = ICL_LANGUAGE_CODE === 'en' ? '' : ICL_LANGUAGE_CODE)
-        <a href="{{WP_HOME}}/{{$lng_code}}/" class="header__logo">
+        <a href="{{WP_HOME}}/{{$lng_code}}{{$lng_code ? '/' : ''}}" class="header__logo">
             <img src="{{ content_url('themes/classy/images/logo.png') }}" alt="Banke logo">
         </a>
 
