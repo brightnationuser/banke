@@ -30,17 +30,21 @@ function my_acf_fields_post_object_query( $args, $field, $post_id ) {
 
 //disable feed
 
-function disable_feed() {
-    wp_die( __( 'No feed available, please visit the <a href="'. esc_url( home_url( '/' ) ) .'">homepage</a>!' ) );
+function wp_disable_feeds() {
+    wp_die( __('No feeds available!') );
 }
 
-add_action('do_feed', 'disable_feed', 1);
-add_action('do_feed_rdf', 'disable_feed', 1);
-add_action('do_feed_rss', 'disable_feed', 1);
-add_action('do_feed_rss2', 'disable_feed', 1);
-add_action('do_feed_atom', 'disable_feed', 1);
-add_action('do_feed_rss2_comments', 'disable_feed', 1);
-add_action('do_feed_atom_comments', 'disable_feed', 1);
+add_action('do_feed', 'wp_disable_feeds', 1);
+add_action('do_feed_rdf', 'wp_disable_feeds', 1);
+add_action('do_feed_rss', 'wp_disable_feeds', 1);
+add_action('do_feed_rss2', 'wp_disable_feeds', 1);
+add_action('do_feed_atom', 'wp_disable_feeds', 1);
+add_action('do_feed_rss2_comments', 'wp_disable_feeds', 1);
+add_action('do_feed_atom_comments', 'wp_disable_feeds', 1);
 
-remove_action( 'wp_head', 'feed_links_extra', 3 );
-remove_action( 'wp_head', 'feed_links', 2 );
+
+remove_action('wp_head', 'feed_links', 2 );
+remove_action('wp_head', 'feed_links_extra', 3 );
+add_filter( 'feed_links_show_comments_feed', '__return_false' );
+add_filter( 'xmlrpc_enabled', '__return_false' );
+
