@@ -65,7 +65,7 @@
                                  data-aos-delay="{!! 200 * ($loop->index + 1) !!}">
                                 <div class="benefit__content">
                                     <div class="benefit__icon">
-                                        <img src="{{ $row['icon']['url'] }}" alt="{!! $row['title'] !!}">
+                                        <img src="{{ $row['icon']['url'] }}" alt="{!! wp_strip_all_tags($row['title'], true) !!}">
                                     </div>
                                     <h4 class="benefit__title">
                                         {!! $row['title'] !!}
