@@ -67,7 +67,7 @@ remove_action( 'load-update-core.php', 'wp_update_plugins' );
 add_filter( 'pre_site_transient_update_plugins', create_function( '$a', "return null;" ) );
 wp_clear_scheduled_hook( 'wp_update_plugins' );
 define( 'AUTOMATIC_UPDATER_DISABLED', true );
-define( 'DISALLOW_FILE_MODS', true );
+//define( 'DISALLOW_FILE_MODS', true );
 
 
 //убрать иконку обновления из хедера
