@@ -29,13 +29,13 @@
                         <div class="offer d-flex aos-animation" data-aos-delay="{{ (1 + $loop->index) }}">
                             <div class="offer__image">
                                 <div class="offer__icon" style="top:{!! $row['icon']['top_px'] !!}px; right:{!! $row['icon']['right_px'] !!}px">
-                                    <img src="{!! $row['icon']['image']['url'] !!}" alt="{!! $row['title'] !!} icon">
+                                    <img src="{!! $row['icon']['image']['url'] !!}" alt="{!! $row['title'] !!}">
                                 </div>
                                 @if(!empty($row['image']['max_width']))
                                     <img style="max-width: {!! $row['image']['max_width'] !!}px"
-                                         src="{!! $row['image']['image']['url'] !!}" alt="{!! $row['title'] !!} image">
+                                         src="{!! $row['image']['image']['url'] !!}" alt="{!! $row['title'] !!}">
                                 @else
-                                    <img src="{!! $row['image']['image']['url'] !!}" alt="{!! $row['title'] !!} image">
+                                    <img src="{!! $row['image']['image']['url'] !!}" alt="{!! $row['title'] !!}">
                                 @endif
                             </div>
 
