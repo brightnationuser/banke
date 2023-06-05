@@ -58,3 +58,11 @@ function disable_wp_oembeds() {
 }
 add_action('init', 'disable_wp_oembeds');
 
+
+function remove_shortlink() {
+    remove_action('wp_head', 'wp_shortlink_wp_head', 10);
+    remove_action( 'template_redirect', 'wp_shortlink_header', 11);
+}
+
+add_filter('after_setup_theme', 'remove_shortlink');
+
