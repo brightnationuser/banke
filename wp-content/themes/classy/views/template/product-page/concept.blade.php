@@ -16,11 +16,15 @@
                     <div class="concept-carousel owl-carousel owl-theme-banke">
                         @foreach($slider as $slide)
                             @if($slide['type_of_media'] === 'image')
-                                <img src="{!! $slide['image']['url'] !!}"
-                                     alt="{!! $slide['image']['alt'] !!}">
+                                <div>
+                                    <img src="{!! $slide['image']['url'] !!}"
+                                         alt="{!! $slide['image']['alt'] !!}">
+                                </div>
                             @endif
                             @if($slide['type_of_media'] === 'video')
-                                <video src="{!! $slide['video']['url'] !!}" muted controls></video>
+                                <div>
+                                    <video src="{!! $slide['video']['url'] !!}" muted controls></video>
+                                </div>
                             @endif
                         @endforeach
                     </div>
