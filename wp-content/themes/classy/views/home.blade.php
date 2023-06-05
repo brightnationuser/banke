@@ -26,9 +26,9 @@
 
                 @foreach(get_field('main_slider') as $row)
                     <div class="item"
-                         style="background-image: linear-gradient(180deg, rgba(0, 30, 56, 0.95) 0%, rgba(0, 52, 98, 0) 37.99%), linear-gradient(180deg, rgba(0, 52, 98, 0) 35.18%, rgba(0, 30, 56, 0.95) 100%), url({{$row['image']['url']}})">
+                         style="background-image: linear-gradient(180deg, rgba(0, 30, 56, 0.95) 0%, rgba(0, 52, 98, 0) 37.99%), linear-gradient(180deg, rgba(0, 52, 98, 0) 35.18%, rgba(0, 30, 56, 0.95) 100%), url({{ wp_get_attachment_image_src($row['image']['ID'], 'large')[0] }})">
                         @if(!empty($row['link']))
-                            <a href="{{$row['link']['url']}}">{{$row['link']['title']}}</a>
+                            <a href="{{ $row['link']['url']}}">{{$row['link']['title']}}</a>
                         @endif
 
                     </div>
@@ -128,102 +128,104 @@
         </div>
 
         @if(!empty($case_studies))
-        <div class="home-references">
-            <div class="container">
-                <div class="references-slider owl-carousel js-references-slider">
+            <div class="home-references">
+                <div class="container">
+                    <div class="references-slider owl-carousel js-references-slider">
 
-                    @foreach($case_studies as $case_study)
-                        <div class="reference-slide">
-                            <a href="{!! get_post_permalink($case_study->ID) !!}">
+                        @foreach($case_studies as $case_study)
+                            <div class="reference-slide">
+                                <a href="{!! get_post_permalink($case_study->ID) !!}">
 
-                                @if($case_study->post_type=="page")
-                                    <div class="reference-slide__image">
-                                        <picture>
-                                            <img src="{!! \Helpers\General::getFlyImage($case_study->getAcfByKey('acf_image'), [600, 400]); !!}"
-                                                 alt="{!! $case_study->post_title !!}"/>
-                                        </picture>
-                                    </div>
-                                @else
-                                    <div class="reference-slide__image">
-                                        <picture>
-                                            <img class="item__image"
-                                                 src="{{ get_the_post_thumbnail_url($case_study->ID,'medium_large') }}"
-                                                 alt="{{ get_the_title($case_study->ID) }}"/>
-                                        </picture>
-                                        <div class="manufacturer">
-                                            CLIENT: {!!  get_field('subtitle',$case_study->ID) !!}
+                                    @if($case_study->post_type=="page")
+                                        <div class="reference-slide__image">
+                                            <picture>
+                                                <img src="{!! \Helpers\General::getFlyImage($case_study->getAcfByKey('acf_image'), [600, 400]); !!}"
+                                                     alt="{!! $case_study->post_title !!}"/>
+                                            </picture>
                                         </div>
+                                    @else
+                                        <div class="reference-slide__image">
+                                            <picture>
+                                                <img class="item__image"
+                                                     src="{{ get_the_post_thumbnail_url($case_study->ID,'medium_large') }}"
+                                                     alt="{{ get_the_title($case_study->ID) }}"/>
+                                            </picture>
+                                            <div class="manufacturer">
+                                                CLIENT: {!!  get_field('subtitle',$case_study->ID) !!}
+                                            </div>
+                                        </div>
+                                    @endif
+
+                                    <div class="reference-slide__title">
+                                        {!! max_title_length($case_study->post_title) !!}
                                     </div>
-                                @endif
+                                </a>
+                            </div>
+                        @endforeach
 
-                                <div class="reference-slide__title">
-                                    {!! max_title_length($case_study->post_title) !!}
-                                </div>
-                            </a>
-                        </div>
-                    @endforeach
+                    </div>
 
-                </div>
+                    <div class="custom-nav">
+                        <svg class="owl-prev" xmlns="http://www.w3.org/2000/svg" width="14" height="38"
+                             viewBox="0 0 14 38"
+                             fill="none">
+                            <g clip-path="url(#clip0_414_540)">
+                                <path d="M0.5 0.5L13.5 19L0.5 37.5" stroke="#9AAFC1" stroke-linecap="round"
+                                      stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_414_540">
+                                    <rect width="14" height="38" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
 
-                <div class="custom-nav">
-                    <svg class="owl-prev" xmlns="http://www.w3.org/2000/svg" width="14" height="38" viewBox="0 0 14 38"
-                         fill="none">
-                        <g clip-path="url(#clip0_414_540)">
-                            <path d="M0.5 0.5L13.5 19L0.5 37.5" stroke="#9AAFC1" stroke-linecap="round"
-                                  stroke-linejoin="round"/>
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_414_540">
-                                <rect width="14" height="38" fill="white"/>
-                            </clipPath>
-                        </defs>
-                    </svg>
-
-                    <svg class="owl-next" xmlns="http://www.w3.org/2000/svg" width="14" height="38" viewBox="0 0 14 38"
-                         fill="none">
-                        <g clip-path="url(#clip0_414_540)">
-                            <path d="M0.5 0.5L13.5 19L0.5 37.5" stroke="#9AAFC1" stroke-linecap="round"
-                                  stroke-linejoin="round"/>
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_414_540">
-                                <rect width="14" height="38" fill="white"/>
-                            </clipPath>
-                        </defs>
-                    </svg>
+                        <svg class="owl-next" xmlns="http://www.w3.org/2000/svg" width="14" height="38"
+                             viewBox="0 0 14 38"
+                             fill="none">
+                            <g clip-path="url(#clip0_414_540)">
+                                <path d="M0.5 0.5L13.5 19L0.5 37.5" stroke="#9AAFC1" stroke-linecap="round"
+                                      stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_414_540">
+                                    <rect width="14" height="38" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
                 </div>
             </div>
-        </div>
         @endif
     </div>
 
     @php
-    $products = $post->getAcfByKey('what_we_do');
+        $products = $post->getAcfByKey('what_we_do');
     @endphp
 
     @if(!empty($products))
-    <div class="other_products"
-         style="background-image: url({{ content_url('themes/classy/images/other-products-bg.jpg') }})">
-        <div class="container">
-            <h2 class="title">{{ get_field('products_title', 'option')}}</h2>
-            <div class="wrapper">
+        <div class="other_products"
+             style="background-image: url({{ content_url('themes/classy/images/other-products-bg.jpg') }})">
+            <div class="container">
+                <h2 class="title">{{ get_field('products_title', 'option')}}</h2>
+                <div class="wrapper">
 
-                @foreach($post->getAcfByKey('what_we_do') as $row)
+                    @foreach($post->getAcfByKey('what_we_do') as $row)
 
-                    <a href="{{ $row['link'] }}" class="item">
-                        <div style="background-image: url({!! \Helpers\General::getFlyWebpImage($row['image']['id'], [700, 700]); !!})"
-                             class="image"></div>
-                        <div class="title">{!! $row['title'] !!}</div>
-                        <div class="description">{!! $row['text'] !!}
-                        </div>
-                        <div class="read_more">{!! get_field('read_more', 'options') !!}</div>
-                    </a>
+                        <a href="{{ $row['link'] }}" class="item">
+                            <div style="background-image: url({!! \Helpers\General::getFlyWebpImage($row['image']['id'], [700, 700]); !!})"
+                                 class="image"></div>
+                            <div class="title">{!! $row['title'] !!}</div>
+                            <div class="description">{!! $row['text'] !!}
+                            </div>
+                            <div class="read_more">{!! get_field('read_more', 'options') !!}</div>
+                        </a>
 
-                @endforeach
+                    @endforeach
 
+                </div>
             </div>
         </div>
-    </div>
     @endif
 
     @include('partials.new-video-gallery')
