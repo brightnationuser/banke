@@ -25,8 +25,10 @@
                         <div class="concept__image animated fadeInLeft">
                             <div class="epto-systems-carousel owl-carousel owl-theme-banke">
                                 @foreach($slider as $slide)
-                                    <img src="{!! $slide['image']['url'] !!}"
-                                         alt="{!! $slide['image']['alt'] !!}">
+                                    <div>
+                                        <img src="{!! $slide['image']['url'] !!}"
+                                             alt="{!! $slide['image']['alt'] !!}">
+                                    </div>
                                 @endforeach
                             </div>
                         </div>
