@@ -164,15 +164,15 @@ function kd_load_scripts()
 
     if (is_page('bes-86')) {
         $file = '/dist/landing.js';
-        wp_enqueue_script('landing', get_template_directory_uri() . $file, [], filemtime(get_theme_file_path().$file), true);
+        wp_enqueue_script('landing', get_template_directory_uri() . $file, array('jquery'), filemtime(get_theme_file_path().$file), true);
     } else {
         $file = '/dist/index.js';
-        wp_enqueue_script('webpack_bundle', get_template_directory_uri().$file, [], filemtime(get_theme_file_path().$file), true);
+        wp_enqueue_script('webpack_bundle', get_template_directory_uri().$file, array('jquery'), filemtime(get_theme_file_path().$file), true);
     }
 
     if (is_page_template('classy-product')) {
         $file = '/dist/product.js';
-        wp_enqueue_script('product', get_template_directory_uri() . $file, [], filemtime(get_theme_file_path().$file), true);
+        wp_enqueue_script('product', get_template_directory_uri() . $file, array('jquery'), filemtime(get_theme_file_path().$file), true);
     }
 
 }

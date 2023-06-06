@@ -13,7 +13,10 @@ mix.setResourceRoot('/wp-content/themes/classy/dist');
 mix.webpackConfig((options) => {
     return {
         module: { rules: [ { test: /\.scss$/, loader: 'import-glob-loader' }, ] },
-        plugins: [new LiveReloadPlugin()]
+        plugins: [new LiveReloadPlugin()],
+        externals: {
+            jquery: 'jQuery'
+        }
     }
 });
 
