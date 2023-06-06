@@ -1,4 +1,4 @@
-<div class="contact-us {{ $classes }}">
+<div class="contact-us {{ $classes }}" style="background-image: url('{{get_template_directory_uri()}}/images/new-contacts-bg-dark.webp')">
     <div class="container">
 
         <div class="contact-us__form aos-animation">

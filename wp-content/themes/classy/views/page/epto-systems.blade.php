@@ -53,7 +53,7 @@
 
         @include('partials.related-insights', $related_insights)
 
-        <section class="present">
+        <section class="present" style="background-image: url('{{get_template_directory_uri()}}/images/bg-waves.webp')">
             <div class="container">
                 <h2 class="present__title">
                     {{ $post->getAcfByKey('acf_title_main') }}

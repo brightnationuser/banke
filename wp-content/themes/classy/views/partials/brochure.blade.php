@@ -1,5 +1,5 @@
 @if($brochures)
-    <section class="brochures-section">
+    <section class="brochures-section" style="background-image: url('{{get_template_directory_uri()}}/images/waves.webp')">
         <div class="container">
             @if($title)
                 <div class="brochures-section__title">{{ $title }}</div>

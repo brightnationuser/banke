@@ -68,7 +68,7 @@
     @endif
 
     <div class="our_products"
-         style="background-image: url({{ content_url('themes/classy/images/product/our_products_bg.jpg') }})">
+         style="background-image: url({{ content_url('themes/classy/images/product/our_products_bg.webp') }})">
         <div class="container">
 
             @if(!empty(get_field('what_we_do_title')))
@@ -205,7 +205,7 @@
 
     @if(!empty($products))
         <div class="other_products"
-             style="background-image: url({{ content_url('themes/classy/images/other-products-bg.jpg') }})">
+             style="background-image: url({{ content_url('themes/classy/images/other-products-bg.webp') }})">
             <div class="container">
                 <h2 class="title">{{ get_field('products_title', 'option')}}</h2>
                 <div class="wrapper">
