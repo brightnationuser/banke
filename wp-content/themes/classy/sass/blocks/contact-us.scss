@@ -1,6 +1,6 @@
 .contact-us {
   background-color: $color-bg-light-blue;
-  background-image: url("/wp-content/themes/classy/images/bg/contact-us-bg.png");
+  //background-image: url("/wp-content/themes/classy/images/bg/contact-us-bg.png");
   background-size: cover;
   padding: 1px 0 80px 0;
 
@@ -40,7 +40,7 @@
     background-color: #ffffff;
     background-position: bottom center;
     position: relative;
-    background-image: url(/wp-content/themes/classy/images/pages/engineering/engineering_fon.jpg);
+    //background-image: url(/wp-content/themes/classy/images/pages/engineering/engineering_fon.jpg);
 
     &::before {
       content: '';

@@ -1,5 +1,5 @@
 @if($products)
-    <section id="specifications" class="products-list-section products-list-section--product-template">
+    <section id="specifications" class="products-list-section products-list-section--product-template" style="background-image: url('{{get_template_directory_uri()}}/images/bg-waves.webp')">
         <div class="container">
             @if($products_title)
                 <div class="products-list-section__title">{{$products_title}}</div>
