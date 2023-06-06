@@ -20,7 +20,7 @@
 
                 <div class="history__sidebar sidebar animated fadeInRight">
                     <div class="sidebar__item sidebar__item--download">
-                        <img src="/wp-content/themes/classy/images/about_us.jpg">
+                        <img src="/wp-content/themes/classy/images/about_us.jpg" alt="{{ get_bloginfo( 'name' ) }}">
                         <div class="info">
                             @if(!empty(get_field('downloads_title')))
                                 <h3>{{ get_field('downloads_title') }}</h3>
