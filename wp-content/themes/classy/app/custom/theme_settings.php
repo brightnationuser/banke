@@ -158,9 +158,12 @@ add_action( 'init', 'disable_wp_emojicons' );
 /*-- Подгрузить js-скрипты и стили --*/
 function kd_load_scripts()
 {
-    wp_dequeue_style( 'wp-block-library' );
-    wp_dequeue_style( 'wp-block-library-theme' );
-    wp_dequeue_style( 'wc-blocks-style' );
+
+    if (is_front_page()) {
+        wp_dequeue_style( 'wp-block-library' );
+        wp_dequeue_style( 'wp-block-library-theme' );
+        wp_dequeue_style( 'wc-blocks-style' );
+    }
 
     if (is_page('bes-86')) {
         $file = '/dist/landing.js';
