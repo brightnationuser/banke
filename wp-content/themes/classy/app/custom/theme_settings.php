@@ -214,3 +214,41 @@ function webp_upload_mimes($existing_mimes) {
     return $existing_mimes;
 }
 add_filter('mime_types', 'webp_upload_mimes');
+
+//disable feed
+
+function wp_disable_feeds() {
+    wp_die( __('No feeds available!') );
+}
+
+add_action('do_feed', 'wp_disable_feeds', 1);
+add_action('do_feed_rdf', 'wp_disable_feeds', 1);
+add_action('do_feed_rss', 'wp_disable_feeds', 1);
+add_action('do_feed_rss2', 'wp_disable_feeds', 1);
+add_action('do_feed_atom', 'wp_disable_feeds', 1);
+add_action('do_feed_rss2_comments', 'wp_disable_feeds', 1);
+add_action('do_feed_atom_comments', 'wp_disable_feeds', 1);
+
+function disable_wp_oembeds() {
+    remove_action('rest_api_init', 'wp_oembed_register_route');
+    add_filter('embed_oembed_discover', '__return_false');
+    remove_filter('oembed_dataparse', 'wp_filter_oembed_result', 10);
+    remove_action('wp_head', 'wp_oembed_add_discovery_links');
+    remove_action('wp_head', 'wp_oembed_add_host_js');
+
+    remove_action('wp_head', 'feed_links', 2 );
+    remove_action('wp_head', 'feed_links_extra', 3 );
+    add_filter( 'feed_links_show_comments_feed', '__return_false' );
+    add_filter( 'xmlrpc_enabled', '__return_false' );
+    remove_action('wp_head', 'wlwmanifest_link');
+    remove_action('wp_head', 'rsd_link');
+}
+add_action('init', 'disable_wp_oembeds');
+
+
+function remove_shortlink() {
+    remove_action('wp_head', 'wp_shortlink_wp_head', 10);
+    remove_action( 'template_redirect', 'wp_shortlink_header', 11);
+}
+
+add_filter('after_setup_theme', 'remove_shortlink');
