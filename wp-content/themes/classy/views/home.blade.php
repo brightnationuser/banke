@@ -16,6 +16,7 @@
 @section('content')
     <div class="first_screen">
         <div class="left"
+             data-no-lazy="1"
              style="background-image: url({{ content_url('themes/classy/images/main-page-fs-bg.png') }})"></div>
         @php
             $slides = get_field('main_slider')
@@ -26,6 +27,7 @@
 
                 @foreach(get_field('main_slider') as $row)
                     <div class="item"
+                         data-no-lazy="1"
                          style="background-image: linear-gradient(180deg, rgba(0, 30, 56, 0.95) 0%, rgba(0, 52, 98, 0) 37.99%), linear-gradient(180deg, rgba(0, 52, 98, 0) 35.18%, rgba(0, 30, 56, 0.95) 100%), url({{ wp_get_attachment_image_src($row['image']['ID'], 'large')[0] }})">
                         @if(!empty($row['link']))
                             <a href="{{ $row['link']['url']}}">{{$row['link']['title']}}</a>
