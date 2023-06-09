@@ -165,6 +165,27 @@ $post_types = array(
         'singular' => __( '3D model', 'textdomain' ),
         'multiple' => __( '3D models', 'textdomain' ),
     ),
+    'team' => array(
+        'config' => array(
+            'public' => true,
+            'has_archive' => false,
+            'supports' => array(
+                'title',
+                'editor',
+                'page-attributes',
+            ),
+            'show_in_nav_menus' => true,
+            'rewrite' => array('with_front' => false, 'slug' => 'meet-banke-team'),
+            // with_front по умолчанию стоит true, а значит если в настройках пермалинка поставить /blogs/ то все абсолютно ссылки будут
+            // префикшены этим /blogs/. Поставив with_front на false мы говорим, что этому post_type не нужно смотреть на наши настройки пермалинка
+            // Все последующие новые post_type аналогично нужно указывать с этим параметром на false
+            // Если понадобится здесь же можно и указать параметр 'slug' => 'что-то' если нужно кастомный url для post_type
+            'show_in_rest' => true,
+        ),
+        'singular' => __( 'Team member', 'textdomain' ),
+        'multiple' => __( 'Team members', 'textdomain' ),
+    ),
+
 );
 
 /**
@@ -246,3 +267,10 @@ $include = array(
     'functions.php',
     './api/index.php',
 );
+
+
+function add_my_rule() {
+    add_rewrite_rule('meet-banke-team/page/([0-9]+)','index.php?pagename=meet-banke-team&paged=$matches[1]','top');
+
+}
+add_action('init', 'add_my_rule');

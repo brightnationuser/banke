@@ -38,6 +38,10 @@
     top: 50%;
     height: 0;
 
+    &.disabled {
+      display: none;
+    }
+
     .owl-prev {
       margin-left: -30px;
       margin-top: -15px;
