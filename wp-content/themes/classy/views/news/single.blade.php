@@ -17,7 +17,9 @@
 
 					<div class="news__content">
 						@if(!$two_columns_layout)
-							<img class="content__img" src="{{ $post->getAcfImage()->src('large') }}" alt="{!! $post->title() !!}">
+							<a href="{{ $post->getAcfImage()->src('large') }}" data-fancybox data-caption="{!! $post->title() !!}">
+								<img class="content__img" src="{{ $post->getAcfImage()->src('large') }}" alt="{!! $post->title() !!}">
+							</a>
 						@endif
 
 						<div class="content__text text__content">
