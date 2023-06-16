@@ -255,3 +255,17 @@ function remove_shortlink() {
 }
 
 add_filter('after_setup_theme', 'remove_shortlink');
+
+//setting target blank to be checked by default
+function default_target_blank() {
+    ?>
+    <script>
+        jQuery(document).on( 'wplink-open', function( wrap ) {
+            if ( jQuery( 'input#wp-link-url' ).val() <= 0 )
+                jQuery( 'input#wp-link-target' ).prop('checked', true );
+        });
+    </script>
+    <?php
+}
+add_action( 'admin_footer-post-new.php', 'default_target_blank', 10, 0 );
+add_action( 'admin_footer-post.php', 'default_target_blank', 10, 0 );
