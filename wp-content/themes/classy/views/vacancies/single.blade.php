@@ -13,6 +13,20 @@
 
     <article class="vacancy vacancy-{{$page->ID}}">
         <div class="container">
+
+            @php
+                $parent_id = get_page_by_path( 'vacancies' );
+                $translated_parent_id = apply_filters( 'wpml_object_id', $parent_id->ID, 'page' );
+            @endphp
+            <ul class="breadcrumbs breadcrumbs--vacancies">
+                <li class="breadcrumbs__item">
+                    <a class="breadcrumb breadcrumb--link" href="{{ get_permalink($translated_parent_id) }}">{!! get_the_title($translated_parent_id) !!}</a>
+                </li>
+                <li class="breadcrumb">
+                    <span>{!! get_the_title($post) !!}</span>
+                </li>
+            </ul>
+
             <h1 class="vacancy__title {{$acf_group['vacancy_closed'] ? 'closed' : ''}}">{{$page->post_title}}</h1>
 
             <div class="vacancy__top">

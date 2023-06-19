@@ -6,6 +6,22 @@
     <div class="engineering-page">
 
         @php
+            $parent_id = wp_get_post_parent_id($post);
+        @endphp
+        <section class="breadcrumbs-section">
+            <div class="breadcrumbs-section__container">
+                <ul class="breadcrumbs">
+                    <li class="breadcrumbs__item">
+                        <a class="breadcrumb breadcrumb--link" href="{{get_permalink($parent_id)}}">{{ get_the_title($parent_id) }}</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <span class="breadcrumb">{{get_the_title($post)}}</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        @php
             $offers = $post->getAcfByKey('offers');
             $under_title = $post->getAcfByKey('offers_under_title');
         @endphp

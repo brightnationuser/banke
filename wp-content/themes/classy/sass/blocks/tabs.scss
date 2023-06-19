@@ -26,11 +26,11 @@
 .page-tabs {
 
     @media screen and (max-width: $width-l) {
-        margin: 80px 0 40px 0;
+        margin: 30px 0 40px 0;
     }
 
     @media screen and (max-width: 500px) {
-        margin: 70px 0 20px 0;
+        margin: 20px 0 20px 0;
         flex-direction: column;
     }
 

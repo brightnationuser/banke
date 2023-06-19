@@ -4,6 +4,20 @@
 
     <input type="hidden" id="remove_btn_src" value="{{get_template_directory_uri()}}/images/icons/icon_close_blue.svg">
     <article class="case case-{{apply_filters('the_id', get_the_ID())}}">
+
+        @php
+            $parent_id = get_page_by_path( 'case-studies' );
+            $translated_parent_id = apply_filters( 'wpml_object_id', $parent_id->ID, 'page' );
+        @endphp
+        <ul class="breadcrumbs">
+            <li class="breadcrumbs__item">
+                <a class="breadcrumb breadcrumb--link" href="{{ get_permalink($translated_parent_id) }}">{!! get_the_title($translated_parent_id) !!}</a>
+            </li>
+            <li class="breadcrumb">
+                <span>{!! get_the_title($post) !!}</span>
+            </li>
+        </ul>
+
         <h2 class="case__title">{!! get_field('case_study_title', 'option') !!}</h2>
         <h1 class="case__item__title">{!!  get_the_title() !!}</h1>
         @php

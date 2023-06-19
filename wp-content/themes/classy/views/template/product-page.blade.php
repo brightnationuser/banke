@@ -44,6 +44,22 @@
 
     <div class="product-template">
 
+        @php
+            $parent_id = wp_get_post_parent_id($post);
+        @endphp
+        <section class="breadcrumbs-section">
+            <div class="breadcrumbs-section__container">
+                <ul class="breadcrumbs">
+                    <li class="breadcrumbs__item">
+                        <a class="breadcrumb breadcrumb--link" href="{{get_permalink($parent_id)}}">{{ get_the_title($parent_id) }}</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <span class="breadcrumb">{{get_the_title($post)}}</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
         @if(!empty(get_field('acf_tabs', get_the_ID())))
             @include('partials.tabs', ['parent_id' => get_the_ID()])
         @endif

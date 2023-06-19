@@ -1,18 +1,43 @@
-.breadcrumbs {
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    margin-top: -30px;
-    margin-bottom: 30px;
+.breadcrumbs-section {
+  padding-top: 92px;
+
+  @media (min-width: 1201px) {
+    padding-top: 50px;
   }
 
-  .breadcrumb {
-    list-style-type: none;
+  &__container {
+    max-width: 1180px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
 
+    @media (min-width: 577px) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 0px;
+  margin-top: 0px;
+
+  &--news, &--vacancies, &--product {
+    margin-bottom: 24px !important;
+  }
+
+  &__item {
     &::after {
-      content: '>';
-      margin: 0 .5em 0 .5em;
+      margin-left: 11px;
+      margin-right: 11px;
+      display: inline-block;
+      vertical-align: middle;
+      content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDcgMTQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIG9wYWNpdHk9IjAuMyIgZD0iTTEgMTNMNiA3LjJMMSAwLjk5OTk5OSIgc3Ryb2tlPSJibGFjayIvPgo8L3N2Zz4K');
     }
 
     &:last-child {
@@ -23,18 +48,21 @@
   }
 }
 
-@media screen and (max-width: 992px) {
-  .logged-in {
-    .breadcrumbs {
-      &__list {
-        margin-top: -30px;
-      }
-    }
-  }
+.breadcrumb {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4A4A49;
+  font-weight: 300;
 
-  .breadcrumbs {
-    &__list {
-      margin-top: 20px;
+  &--link {
+    font-weight: 400;
+    color: #4A4A49;
+
+    &:hover {
+      color: #4A4A49;
+      text-decoration: underline;
     }
   }
 }
