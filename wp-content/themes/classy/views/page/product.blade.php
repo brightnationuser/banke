@@ -11,15 +11,15 @@
             $parent_id = wp_get_post_parent_id($post);
             $parent_of_a_parent = wp_get_post_parent_id($parent_id);
         @endphp
-        <ul class="breadcrumbs breadcrumbs--product">
+        <ul class="breadcrumbs breadcrumbs--multiline breadcrumbs--product">
             <li class="breadcrumbs__item">
                 <a class="breadcrumb breadcrumb--link" href="{{ get_permalink($parent_of_a_parent) }}">{!! get_the_title($parent_of_a_parent) !!}</a>
             </li>
             <li class="breadcrumbs__item">
                 <a class="breadcrumb breadcrumb--link" href="{{ get_permalink($parent_id) }}">{!! get_the_title($parent_id) !!}</a>
             </li>
-            <li class="breadcrumb">
-                <span>{!! get_the_title($post) !!}</span>
+            <li class="breadcrumbs__item">
+                <span class="breadcrumb">{!! get_the_title($post) !!}</span>
             </li>
         </ul>
 

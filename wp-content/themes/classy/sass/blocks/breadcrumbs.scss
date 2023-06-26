@@ -30,6 +30,10 @@
     margin-bottom: 24px !important;
   }
 
+  &--multiline {
+    flex-wrap: wrap;
+  }
+
   &__item {
     overflow: hidden;
     flex: 0 1 auto;
