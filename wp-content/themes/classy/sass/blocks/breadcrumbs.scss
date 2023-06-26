@@ -21,28 +21,33 @@
 
 .breadcrumbs {
   display: flex;
-  flex-wrap: wrap;
   padding: 0;
   list-style: none;
   margin-bottom: 0px;
   margin-top: 0px;
 
-  &--news, &--vacancies, &--product {
+  &--news, &--vacancies, &--product, &--references {
     margin-bottom: 24px !important;
   }
 
   &__item {
-    &::after {
-      margin-left: 11px;
-      margin-right: 11px;
-      display: inline-block;
-      vertical-align: middle;
-      content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDcgMTQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIG9wYWNpdHk9IjAuMyIgZD0iTTEgMTNMNiA3LjJMMSAwLjk5OTk5OSIgc3Ryb2tlPSJibGFjayIvPgo8L3N2Zz4K');
+    overflow: hidden;
+    flex: 0 1 auto;
+
+    &:first-child {
+      flex: 0 0 auto;
     }
 
-    &:last-child {
+    &:not(:last-child) {
+      position: relative;
+      padding-right: 33px;
+
       &::after {
-        display: none;
+        position: absolute;
+        right: 11px;
+        top: 3px;
+        display: block;
+        content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDcgMTQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIG9wYWNpdHk9IjAuMyIgZD0iTTEgMTNMNiA3LjJMMSAwLjk5OTk5OSIgc3Ryb2tlPSJibGFjayIvPgo8L3N2Zz4K');
       }
     }
   }
@@ -55,6 +60,10 @@
   line-height: 1.6;
   color: #4A4A49;
   font-weight: 300;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   &--link {
     font-weight: 400;
