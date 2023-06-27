@@ -1,4 +1,4 @@
-.page-template-classy-news, .page-template-classy-stories, .page-template-classy-meet-banke-team {
+.page-template-classy-news, .page-template-classy-stories {
   background-image: url("/wp-content/themes/classy/images/bg/news_bg.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
@@ -122,17 +122,19 @@
 
     .news-list {
       display: grid;
-      grid-auto-flow: row;
       grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
       grid-column-gap: 30px;
       grid-row-gap: 40px;
 
       @media screen and (max-width: 992px) {
         grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
       }
 
       @media screen and (max-width: 768px) {
         grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
         grid-row-gap: 20px;
       }
 

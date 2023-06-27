@@ -189,7 +189,7 @@ export default class Carousel {
 
             initNewsCarousel: function () {
                 $('.b-news__carousel.owl-carousel, .js-related-slider.owl-carousel').owlCarousel({
-                    loop: true,
+                    loop: $('.js-related-slider.owl-carousel .owl-item').size() > 1 ? true : false,
                     margin: 30,
                     onInitialized: show,
                     nav: true,
