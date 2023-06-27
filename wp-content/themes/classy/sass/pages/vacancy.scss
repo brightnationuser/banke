@@ -3,7 +3,11 @@
   background-size: 100%;
 
   .content {
-    padding-top: 72px;
+    padding-top: 92px;
+
+    @media (min-width: 1201px) {
+      padding-top: 42px;
+    }
   }
 }
 

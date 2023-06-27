@@ -1,40 +1,81 @@
-.breadcrumbs {
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    margin-top: -30px;
-    margin-bottom: 30px;
+.breadcrumbs-section {
+  padding-top: 92px;
+
+  @media (min-width: 1201px) {
+    padding-top: 50px;
   }
 
-  .breadcrumb {
-    list-style-type: none;
+  &__container {
+    max-width: 1180px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
 
-    &::after {
-      content: '>';
-      margin: 0 .5em 0 .5em;
+    @media (min-width: 577px) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+}
+
+.breadcrumbs {
+  display: flex;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 0px;
+  margin-top: 0px;
+
+  &--news, &--vacancies, &--product, &--references {
+    margin-bottom: 24px !important;
+  }
+
+  &--multiline {
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    overflow: hidden;
+    flex: 0 1 auto;
+
+    &:first-child {
+      flex: 0 0 auto;
     }
 
-    &:last-child {
+    &:not(:last-child) {
+      position: relative;
+      padding-right: 33px;
+
       &::after {
-        display: none;
+        position: absolute;
+        right: 11px;
+        top: 3px;
+        display: block;
+        content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDcgMTQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIG9wYWNpdHk9IjAuMyIgZD0iTTEgMTNMNiA3LjJMMSAwLjk5OTk5OSIgc3Ryb2tlPSJibGFjayIvPgo8L3N2Zz4K');
       }
     }
   }
 }
 
-@media screen and (max-width: 992px) {
-  .logged-in {
-    .breadcrumbs {
-      &__list {
-        margin-top: -30px;
-      }
-    }
-  }
+.breadcrumb {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4A4A49;
+  font-weight: 300;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
-  .breadcrumbs {
-    &__list {
-      margin-top: 20px;
+  &--link {
+    font-weight: 400;
+    color: #4A4A49;
+
+    &:hover {
+      color: #4A4A49;
+      text-decoration: underline;
     }
   }
 }

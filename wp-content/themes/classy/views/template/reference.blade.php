@@ -7,16 +7,22 @@
     <div class="p-reference">
 
         <div class="container">
-            <div class="breadcrumbs">
-                <ul class="breadcrumbs__list">
-                    <li class="breadcrumb">
-                        <a href="{{ get_permalink( get_page_by_path( 'products/epto-systems' ) )  }}">E-PTO Systems</a>
-                    </li>
-                    <li class="breadcrumb">
-                        <span>{!! $post->post_title !!}</span>
-                    </li>
-                </ul>
-            </div>
+
+            @php
+                $parent_id = get_page_by_path( 'references' );
+                $translated_parent_id = apply_filters( 'wpml_object_id', $parent_id->ID, 'page' );
+            @endphp
+            <ul class="breadcrumbs breadcrumbs--references">
+                <li class="breadcrumbs__item">
+                    <a class="breadcrumb breadcrumb--link"
+                       href="{{ get_permalink($translated_parent_id) }}">{!! get_the_title($translated_parent_id) !!}</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <span class="breadcrumb">
+                        {!! get_the_title($post) !!}
+                    </span>
+                </li>
+            </ul>
         </div>
 
         <div class="container">

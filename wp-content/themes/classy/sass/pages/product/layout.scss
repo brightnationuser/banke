@@ -4,7 +4,7 @@
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
-  padding-top: 25px;
+  padding-top: 24px;
 
   @media (min-width: 1200px) {
     padding-top: 0;
@@ -13,6 +13,12 @@
 
 .page-template-classy-product {
   .content {
+    padding-top: 67px !important;
+
+    @media (min-width: 1201px) {
+      padding-top: 42px !important;
+    }
+
     background-position: right bottom;
     background-repeat: no-repeat;
     background-image: url('/wp-content/themes/classy/images/product-specification-bg.svg');
