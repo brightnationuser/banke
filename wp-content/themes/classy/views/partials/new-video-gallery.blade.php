@@ -24,7 +24,7 @@
                 <div id="open-video"></div>
             </div>
                 <div class="gallery_wrap">
-                    <div class="owl-carousel owl-video_gallery" data-start="{{ !empty($start) ? $start : 4 }}">
+                    <div class="owl-carousel owl-theme-new-banke owl-theme-new-banke--video-gallery owl-video_gallery" data-start="{{ !empty($start) ? $start : 4 }}">
                         @foreach($videos as $key => $video)
                             <div class="video-gallery__item">
                                 <div class="embed-youtube-video is-loading js-video-show"
@@ -44,28 +44,28 @@
                             </div>
                         @endforeach
                     </div>
-                    <div class="custom-nav">
-                        <svg class="owl-prev" xmlns="http://www.w3.org/2000/svg" width="14" height="38" viewBox="0 0 14 38" fill="none">
-                            <g clip-path="url(#clip0_414_540)">
-                                <path d="M0.5 0.5L13.5 19L0.5 37.5" stroke="#9AAFC1" stroke-linecap="round" stroke-linejoin="round"/>
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_414_540">
-                                    <rect width="14" height="38" fill="white"/>
-                                </clipPath>
-                            </defs>
-                        </svg>
-                        <svg class="owl-next" xmlns="http://www.w3.org/2000/svg" width="14" height="38" viewBox="0 0 14 38" fill="none">
-                            <g clip-path="url(#clip0_414_540)">
-                                <path d="M0.5 0.5L13.5 19L0.5 37.5" stroke="#9AAFC1" stroke-linecap="round" stroke-linejoin="round"/>
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_414_540">
-                                    <rect width="14" height="38" fill="white"/>
-                                </clipPath>
-                            </defs>
-                        </svg>
-                    </div>
+{{--                    <div class="custom-nav">--}}
+{{--                        <svg class="owl-prev" xmlns="http://www.w3.org/2000/svg" width="14" height="38" viewBox="0 0 14 38" fill="none">--}}
+{{--                            <g clip-path="url(#clip0_414_540)">--}}
+{{--                                <path d="M0.5 0.5L13.5 19L0.5 37.5" stroke="#9AAFC1" stroke-linecap="round" stroke-linejoin="round"/>--}}
+{{--                            </g>--}}
+{{--                            <defs>--}}
+{{--                                <clipPath id="clip0_414_540">--}}
+{{--                                    <rect width="14" height="38" fill="white"/>--}}
+{{--                                </clipPath>--}}
+{{--                            </defs>--}}
+{{--                        </svg>--}}
+{{--                        <svg class="owl-next" xmlns="http://www.w3.org/2000/svg" width="14" height="38" viewBox="0 0 14 38" fill="none">--}}
+{{--                            <g clip-path="url(#clip0_414_540)">--}}
+{{--                                <path d="M0.5 0.5L13.5 19L0.5 37.5" stroke="#9AAFC1" stroke-linecap="round" stroke-linejoin="round"/>--}}
+{{--                            </g>--}}
+{{--                            <defs>--}}
+{{--                                <clipPath id="clip0_414_540">--}}
+{{--                                    <rect width="14" height="38" fill="white"/>--}}
+{{--                                </clipPath>--}}
+{{--                            </defs>--}}
+{{--                        </svg>--}}
+{{--                    </div>--}}
                 </div>
                 @php
                     $button = get_field('case_study_main_page_button','options');

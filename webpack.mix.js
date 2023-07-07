@@ -12,7 +12,7 @@ mix.setResourceRoot('/wp-content/themes/classy/dist');
 // Для маски - @import "blocks/**/*.scss"
 mix.webpackConfig((options) => {
     return {
-        module: { rules: [ { test: /\.scss$/, loader: 'import-glob-loader' }, ] },
+        module: {rules: [{test: /\.scss$/, loader: 'import-glob-loader'},]},
         plugins: [new LiveReloadPlugin()],
         externals: {
             jquery: 'jQuery'
@@ -24,24 +24,28 @@ mix.options({
     processCssUrls: false,
 });
 
+mix.copy(resources_path + '/sass/vendor/icomoon/fonts', resources_path + 'dist/fonts');
+
 // JS
 mix.js(resources_path + 'js/index.js', resources_path + 'dist')
     .js(resources_path + 'js/landing.js', resources_path + 'dist')
     .js(resources_path + 'js/page/product.js', resources_path + 'dist')
+    .js(resources_path + 'js/page/customized-solutions.js', resources_path + 'dist')
+    .js(resources_path + 'js/page/projects.js', resources_path + 'dist')
     .autoload({
-    jquery: ['$', 'window.jQuery', 'jQuery']
-})
+        jquery: ['$', 'window.jQuery', 'jQuery']
+    })
 
-// SASS
-.sass(resources_path + 'sass/style.scss', resources_path + 'dist')
-.sass(resources_path + 'sass/landing.scss', resources_path + 'dist')
-.sass(resources_path + 'sass/admin/admin.scss', resources_path + 'dist')
+    // SASS
+    .sass(resources_path + 'sass/style.scss', resources_path + 'dist')
+    .sass(resources_path + 'sass/landing.scss', resources_path + 'dist')
+    .sass(resources_path + 'sass/admin/admin.scss', resources_path + 'dist')
 
-// Generate sourceMaps
-.sourceMaps(true,'source-map')
+    // Generate sourceMaps
+    .sourceMaps(true, 'source-map')
 
-// Add hash version to file {{ mix('/css/app.css') }}
-.version()
+    // Add hash version to file {{ mix('/css/app.css') }}
+    .version()
 
 if (mix.inProduction()) {
     // mix.version();

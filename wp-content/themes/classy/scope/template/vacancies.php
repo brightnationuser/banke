@@ -7,7 +7,7 @@ $current_page = $_GET['cpage'];
 
 $_posts = new WP_Query([
     'post_type' => 'vacancies',
-    'posts_per_page' => 12,
+    'posts_per_page' => 6,
     'paged' => $current_page,
     'order' => 'DESC'
 ]);

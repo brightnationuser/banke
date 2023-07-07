@@ -1,12 +1,12 @@
 <template>
   <div  class="sign-in-wrapper">
     <div class="sign-in" @click="setForm('SignIn')" v-if="!loggedIn">
-      <i class="icon-account"></i>
+      <i class="icon-user"></i>
       <span>{{ translations.titles.sign_in }}</span>
     </div>
     <div class="sign-in" v-else>
       <div class="sign-in-profile__wrapper">
-        <i class="icon-account"></i>
+        <i class="icon-user"></i>
         <span>
           <a class="menu__elem menu__elem--active" href="/account/specification">
             <div class="menu__elem menu__elem--active">
@@ -123,10 +123,21 @@ export default {
     display: flex;
     align-items: center;
     color: #003462;
-    margin-bottom: -3px;
+    //margin-bottom: -3px;
     position: relative;
+    font-size: 16px;
+    font-weight: 600;
 
     @media (min-width: 1201px) {
+
+      .home &:after {
+          border-top-color: #ffffff;
+      }
+
+      .home .white &:after {
+          border-top-color: #005CA9;
+      }
+
       &:after {
         content: "";
         position: absolute;
@@ -153,13 +164,37 @@ export default {
       align-items: center;
     }
 
-    span, a {
+    .menu__elem, .icon-user {
       color: #003462;
+
+        .home & {
+            @media (min-width: 1201px) {
+                color: #ffffff;
+            }
+        }
+
+        .home .white & {
+            @media (min-width: 1201px) {
+                color: #003462;
+            }
+        }
     }
 
     i {
       margin-right: 4px;
       color: #005ca9;
+
+        .home & {
+            @media (min-width: 1201px) {
+                color: #ffffff;
+            }
+        }
+
+        .home .white & {
+            @media (min-width: 1201px) {
+                color: #003462;
+            }
+        }
     }
 
     .menu__elem {
@@ -217,7 +252,7 @@ export default {
 
   @media (max-width: 1200px) {
     .sign-in {
-      margin-top: 16px;
+      //margin-top: 16px;
 
       &-profile__wrapper {
         display: none;

@@ -19,7 +19,8 @@
                                 <div class="project__text">
                                     {!! $row['text']; !!}
                                 </div>
-                                <a href="{{ $row['link'] }}" target="_blank" class="read-more project__read-more disable_preloader">
+                                <a href="{{ $row['link'] }}" target="_blank"
+                                   class="read-more project__read-more disable_preloader">
                                     {{ get_field('read_more', 'option') }}
                                 </a>
                             </div>
@@ -34,14 +35,15 @@
                 <h2 class="partners__title">{!! $post->getAcfByKey('partners_title') !!}</h2>
 
                 @if(!empty($post->getAcfByKey('partners')))
-                    <div class="partners__list d-flex" data-aos="fade-in">
+                    <div class="partners-list owl-carousel owl-theme-new-banke owl-theme-new-banke--with-spacing-for-shadow" data-aos="fade-in">
                         @foreach($post->getAcfByKey('partners') as $row)
-                            <a class="partner__link disable_preloader" href="{{ $row['link'] }}" target="_blank">
-                                <div class="partner">
-                                    <div class="partner__logo">
+                            <a class="partners-list__item partners-list-item disable_preloader"
+                               href="{{ $row['link'] }}" target="_blank">
+                                <div class="partners-list-item__inner">
+                                    <div class="partners-list-item__logo">
                                         <img src="{!! $row['image']['url']; !!}" alt="{!! $row['image']['alt']; !!}">
                                     </div>
-                                    <div class="partner__text">
+                                    <div class="partners-list-item__text">
                                         {!! $row['text']; !!}
                                     </div>
                                 </div>

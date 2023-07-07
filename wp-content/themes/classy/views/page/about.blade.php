@@ -82,9 +82,11 @@
                                 </div>
                             @endif
 
-                            <div class="member__text">
-                                {{ $member['acf_team_text'] }}
-                            </div>
+                            @if($member['acf_team_text'])
+                                <div class="member__text">
+                                    {{ $member['acf_team_text'] }}
+                                </div>
+                            @endif
                         </div>
                     </div>
 

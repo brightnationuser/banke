@@ -1,0 +1,167 @@
+/*
+ * 	New Banke theme - Owl Carousel CSS File
+ */
+
+//nav
+
+$nav-color: #005CA9;
+$nav-color-hover: #005CA9;
+$nav-font-size: 19px !default;
+$nav-rounded: 3px !default;
+$nav-margin: 5px !default;
+$nav-padding: 4px 7px !default;
+$nav-background: #005CA9;
+$nav-background-hover: #005CA9;
+$nav-disabled-opacity: 0.5 !default;
+
+//dots
+
+$dot-width: 10px !default;
+$dot-height: 10px !default;
+$dot-rounded: 9999px !default;
+$dot-margin: 0px 6px !default;
+$dot-background: rgba(0, 92, 169, 0.15);
+$dot-background-active: #005CA9;
+
+
+.owl-theme-new-banke {
+  // Styling Next and Prev buttons
+  position: relative;
+
+  &.owl-theme-new-banke--with-spacing-for-shadow {
+    .owl-prev {
+      left: -12px !important;
+    }
+
+    .owl-next {
+      right: -12px !important;
+    }
+  }
+
+  &.owl-theme-new-banke--video-gallery {
+    .owl-prev,
+    .owl-next {
+      transform: none !important;
+      top: 68px !important;
+
+      [class*='icon-'] {
+        @media (min-width: 1201px) {
+          font-size: 24px;
+        }
+      }
+
+      @media (min-width: 1201px) {
+        top: 45% !important;
+      }
+    }
+
+    .owl-prev {
+
+      @media (min-width: 1201px) {
+        left: 10px !important;
+      }
+    }
+
+    .owl-next {
+      @media (min-width: 1201px) {
+        right: 10px !important;
+      }
+    }
+  }
+
+  .owl-nav {
+    [class*='owl-'] {
+      position: absolute;
+      top: 50%;
+      transform: translateY(calc(-50% - 20px));
+      width: 10px;
+      height: 20px;
+      color: $nav-color !important;
+      font-size: $nav-font-size !important;
+      margin: 0px;
+      padding: 0px;
+      background: transparent !important;
+      cursor: pointer;
+
+      [class*='icon-'] {
+        position: relative;
+      }
+
+      &.owl-prev {
+        left: -22px;
+
+        .owl-theme-new-banke--with-spacing-for-shadow & {
+          left: -12px !important;
+        }
+
+        [class*='icon-'] {
+          top: -2px;
+        }
+      }
+
+      &.owl-next {
+        right: -22px;
+
+        .owl-theme-new-banke--with-spacing-for-shadow & {
+          right: -12px !important;
+        }
+
+        [class*='icon-'] {
+          top: -2px;
+        }
+      }
+
+      &:hover {
+        background: $nav-background-hover;
+        color: $nav-color-hover;
+        text-decoration: none;
+      }
+    }
+
+    .disabled {
+      opacity: $nav-disabled-opacity;
+      cursor: default;
+    }
+  }
+
+  // Styling dots
+  .owl-nav.disabled + .owl-dots {
+    margin-top: 10px;
+  }
+
+  .owl-dots {
+    margin-top: 15px;
+    position: static !important;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+
+    @media (min-width: 758px) {
+      margin-top: 20px;
+    }
+
+    .owl-dot {
+      display: inline-block;
+      zoom: 1;
+      *display: inline;
+
+      span {
+        width: $dot-width;
+        height: $dot-height;
+        margin: $dot-margin;
+        background: $dot-background;
+        display: block;
+        -webkit-backface-visibility: visible;
+        transition: opacity 200ms ease;
+        border-radius: $dot-rounded;
+      }
+
+      &.active,
+      &:hover {
+        span {
+          background: $dot-background-active;
+        }
+      }
+    }
+  }
+}
+

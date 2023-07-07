@@ -107,20 +107,18 @@
             @endphp
             @if(!empty($principles))
                 <div class="principles animated fadeInUp">
-                    <div class="container">
-                        <div class="principles__list">
-                            @foreach($principles as $key => $item)
-                                <div class="principles__item">
-                                    <div class="principles__image-wrap">
-                                        <img class="principles__image {{ pathinfo(basename($item['image']['url']), PATHINFO_FILENAME) }}"
+                    <div class="principles__list">
+                        @foreach($principles as $key => $item)
+                            <div class="principles__item">
+                                <div class="principles__image-wrap">
+                                    <img class="principles__image {{ pathinfo(basename($item['image']['url']), PATHINFO_FILENAME) }}"
                                              src="{!! $item['image']['url'] !!}" alt="{{ strip_tags($item['title']) }}">
                                     </div>
                                     <div class="principles__title">
                                         {!! $item['title'] !!}
                                     </div>
-                                </div>
-                            @endforeach
-                        </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             @endif
@@ -132,7 +130,7 @@
         @if(!empty($case_studies))
             <div class="home-references">
                 <div class="container">
-                    <div class="references-slider owl-carousel js-references-slider">
+                    <div class="references-slider owl-carousel owl-theme-new-banke js-references-slider">
 
                         @foreach($case_studies as $case_study)
                             <div class="reference-slide">
@@ -167,35 +165,35 @@
 
                     </div>
 
-                    <div class="custom-nav">
-                        <svg class="owl-prev" xmlns="http://www.w3.org/2000/svg" width="14" height="38"
-                             viewBox="0 0 14 38"
-                             fill="none">
-                            <g clip-path="url(#clip0_414_540)">
-                                <path d="M0.5 0.5L13.5 19L0.5 37.5" stroke="#9AAFC1" stroke-linecap="round"
-                                      stroke-linejoin="round"/>
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_414_540">
-                                    <rect width="14" height="38" fill="white"/>
-                                </clipPath>
-                            </defs>
-                        </svg>
+{{--                    <div class="custom-nav">--}}
+{{--                        <svg class="owl-prev" xmlns="http://www.w3.org/2000/svg" width="14" height="38"--}}
+{{--                             viewBox="0 0 14 38"--}}
+{{--                             fill="none">--}}
+{{--                            <g clip-path="url(#clip0_414_540)">--}}
+{{--                                <path d="M0.5 0.5L13.5 19L0.5 37.5" stroke="#9AAFC1" stroke-linecap="round"--}}
+{{--                                      stroke-linejoin="round"/>--}}
+{{--                            </g>--}}
+{{--                            <defs>--}}
+{{--                                <clipPath id="clip0_414_540">--}}
+{{--                                    <rect width="14" height="38" fill="white"/>--}}
+{{--                                </clipPath>--}}
+{{--                            </defs>--}}
+{{--                        </svg>--}}
 
-                        <svg class="owl-next" xmlns="http://www.w3.org/2000/svg" width="14" height="38"
-                             viewBox="0 0 14 38"
-                             fill="none">
-                            <g clip-path="url(#clip0_414_540)">
-                                <path d="M0.5 0.5L13.5 19L0.5 37.5" stroke="#9AAFC1" stroke-linecap="round"
-                                      stroke-linejoin="round"/>
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_414_540">
-                                    <rect width="14" height="38" fill="white"/>
-                                </clipPath>
-                            </defs>
-                        </svg>
-                    </div>
+{{--                        <svg class="owl-next" xmlns="http://www.w3.org/2000/svg" width="14" height="38"--}}
+{{--                             viewBox="0 0 14 38"--}}
+{{--                             fill="none">--}}
+{{--                            <g clip-path="url(#clip0_414_540)">--}}
+{{--                                <path d="M0.5 0.5L13.5 19L0.5 37.5" stroke="#9AAFC1" stroke-linecap="round"--}}
+{{--                                      stroke-linejoin="round"/>--}}
+{{--                            </g>--}}
+{{--                            <defs>--}}
+{{--                                <clipPath id="clip0_414_540">--}}
+{{--                                    <rect width="14" height="38" fill="white"/>--}}
+{{--                                </clipPath>--}}
+{{--                            </defs>--}}
+{{--                        </svg>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         @endif

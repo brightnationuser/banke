@@ -106,6 +106,7 @@ class App {
         $('.hamburger').click(function() {
             $(this).toggleClass('is-active');
             $('.header').toggleClass('m_opened');
+            $('body').toggleClass('overflow-hidden');
         });
     }
 
@@ -148,6 +149,7 @@ class App {
     }
 
     initCarousels() {
+        console.log('init carousels')
         let carousel = new Carousel();
         carousel.init('News');
         carousel.init('MainPage');

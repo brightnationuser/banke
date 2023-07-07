@@ -4,7 +4,7 @@
             <h2 class="related__title">{{ get_field('latest_news', 'options') }}</h2>
 
             <div class="related__content">
-                <div class="related__slider js-related-slider owl-carousel">
+                <div class="related__slider js-related-slider owl-carousel owl-theme-new-banke">
                     @foreach($related as $key => $item)
                         <div class="carousel__item">
                             <div class="item">

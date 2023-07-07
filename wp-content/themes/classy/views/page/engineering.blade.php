@@ -107,16 +107,16 @@
             <div class="container">
                 <h2>{!! $post->getAcfByKey('benefits_title'); !!}</h2>
 
-                <div class="benefits__list">
+                <div class="benefits-list owl-carousel owl-theme-new-banke owl-theme-new-banke--with-spacing-for-shadow">
                     @foreach($benefits as $row)
-                        <div class="benefit aos-animation" data-aos="fade-in">
-                            <div class="benefit__image">
+                        <div class="benefits-list__item benefits-list-item aos-animation" data-aos="fade-in">
+                            <div class="benefits-list-item__image">
                                 <img src="{!! $row['icon']['url'] !!}" alt="{!! $row['title'] !!}">
                             </div>
-                            <div class="benefit__title">
+                            <div class="benefits-list-item__title">
                                 {!! $row['title'] !!}
                             </div>
-                            <div class="benefit__text">
+                            <div class="benefits-list-item__text">
                                 {!! $row['text'] !!}
                             </div>
                         </div>

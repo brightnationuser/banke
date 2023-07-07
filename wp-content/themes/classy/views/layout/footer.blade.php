@@ -32,10 +32,10 @@
             <div class="footer__socials">
                 <div class="footer__logo">
                     <a href="/">
-                    <img src="{{ content_url('themes/classy/images/logo.png') }}" alt="Banke logo">
+                        <img src="{{ content_url('themes/classy/images/logo.png') }}" alt="Banke logo">
                     </a>
                 </div>
-                <div class="d-flex">
+                <div class="footer__socials-socials">
                     <a href="{!! get_field('linkedin', 'option')['link'] !!}" class="social linkedin disable_preloader"
                        target="_blank">
                         <i class="icon-linkedin"></i>
@@ -65,10 +65,12 @@
             © Banke {{ date('Y') }}
         </div>
         <div class="footer__adress">
-            {!! get_field('address', 'options') !!} <a
-                    href="tel:{!! get_field('number', 'options') !!}">{!! get_field('number', 'options') !!}</a>
+            <span class="footer__address-address">{!! get_field('address', 'options') !!}</span>
+            <a class="footer__address-phone"
+               href="tel:{!! get_field('number', 'options') !!}">{!! get_field('number', 'options') !!}</a>
             <span> | </span>
-            <a href="mailto:{!! get_field('email', 'options') !!}">{!! get_field('email', 'options') !!}</a>
+            <a class="footer__address-email"
+               href="mailto:{!! get_field('email', 'options') !!}">{!! get_field('email', 'options') !!}</a>
         </div>
         <div class="footer__madeby">
             made by <a href="https://dudka.agency">Dudka.Agency</a>

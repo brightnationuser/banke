@@ -13,10 +13,12 @@
         @endphp
         <ul class="breadcrumbs breadcrumbs--multiline breadcrumbs--product">
             <li class="breadcrumbs__item">
-                <a class="breadcrumb breadcrumb--link" href="{{ get_permalink($parent_of_a_parent) }}">{!! get_the_title($parent_of_a_parent) !!}</a>
+                <a class="breadcrumb breadcrumb--link"
+                   href="{{ get_permalink($parent_of_a_parent) }}">{!! get_the_title($parent_of_a_parent) !!}</a>
             </li>
             <li class="breadcrumbs__item">
-                <a class="breadcrumb breadcrumb--link" href="{{ get_permalink($parent_id) }}">{!! get_the_title($parent_id) !!}</a>
+                <a class="breadcrumb breadcrumb--link"
+                   href="{{ get_permalink($parent_id) }}">{!! get_the_title($parent_id) !!}</a>
             </li>
             <li class="breadcrumbs__item">
                 <span class="breadcrumb">{!! get_the_title($post) !!}</span>
@@ -65,14 +67,14 @@
         @if($specifications)
             <div class="product-specifications custom-tabs">
                 @if(sizeof($specifications) > 1)
-                <ul class="product-specifications__nav-tabs nav-tabs">
-                    @foreach($specifications as $specification)
-                        <li class="product-specifications__nav-tabs-item">
-                            <a class="product-specifications__nav-tabs-button  {{ $loop->first ? 'active' : null }}"
-                               href="#tab-{{ $loop->index }}">{{ $specification['name'] }}</a>
-                        </li>
-                    @endforeach
-                </ul>
+                    <ul class="product-specifications__nav-tabs nav-tabs">
+                        @foreach($specifications as $specification)
+                            <li class="product-specifications__nav-tabs-item">
+                                <a class="product-specifications__nav-tabs-button  {{ $loop->first ? 'active' : null }}"
+                                   href="#tab-{{ $loop->index }}">{{ $specification['name'] }}</a>
+                            </li>
+                        @endforeach
+                    </ul>
                 @endif
                 <div class="product-specifications__tab-content tab-content">
                     @foreach($specifications as $specification)
@@ -124,5 +126,10 @@
                 </div>
             </div>
         @endif
+        <div class="product-back">
+            <a class="product-back__link" href="{{ get_permalink($parent_id) }}">
+                <i class="icon-chevron-left product-back__icon"></i>{{ $back_button_text }}
+            </a>
+        </div>
     </div>
 @stop

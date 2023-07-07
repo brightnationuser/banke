@@ -24,6 +24,7 @@
 
                     <div class="article__heading">
                         <div class="news__date">
+                            <i class="icon-calendar news__date-icon"></i>
                             {!! $post->getDate() !!}
                         </div>
 
@@ -44,6 +45,10 @@
                         <div class="content__text text__content">
                             {!! $post->content() !!}
                         </div>
+                    </div>
+                    
+                    <div class="news__back">
+                        <a class="news__back-link" href="{{ get_permalink($translated_parent_id) }}"><i class="icon-chevron-left news__back-icon"></i>{{ $back_button_text }}</a>
                     </div>
                 </div>
 

@@ -17,6 +17,16 @@
 
   &__carousel-wrapper {
 
+    max-width: 290px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: 426px) {
+      max-width: none;
+      padding-left: 46px;
+      padding-right: 46px;
+    }
+
     @media (min-width: 769px) {
       //padding-left: 46px;
       //padding-right: 46px;
@@ -62,6 +72,12 @@
   }
 
   &__content {
+    text-align: center;
+
+    @media (min-width: 1201px) {
+      text-align: left;
+    }
+
     @media (min-width: 426px) {
       flex: 1 1 0;
     }
@@ -78,11 +94,12 @@
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
     line-height: var(--lh);
     color: #005CA9;
 
     @media (min-width: 769px) {
+      font-size: 16px;
       max-height: calc(var(--lh) * var(--max-lines));
       overflow: hidden;
     }

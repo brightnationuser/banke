@@ -7,7 +7,7 @@
 
         {!! get_field('acf_body_code', 'option') !!}
 
-        {{ get_header() }}
+        {{ get_header('main') }}
 
         <div class="content">
             @yield('content')

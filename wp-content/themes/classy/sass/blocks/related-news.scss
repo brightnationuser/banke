@@ -1,7 +1,16 @@
 .related {
   background-color: #F2F6FC;
-  padding-top: 16px;
   padding-bottom: 64px;
+  padding-top: 48px;
+
+  @media (min-width: 1021px) {
+    padding-top: 16px;
+
+  }
+
+  @media screen and (max-width: 576px) {
+    padding-bottom: 30px;
+  }
 
   &__title {
     margin-bottom: 64px;
@@ -67,63 +76,56 @@
     margin: 35px auto 0 auto;
     max-width: 1170px;
 
+    @media screen and (max-width: 576px) {
+      max-width: 290px;
+    }
+
     .owl-stage {
       padding-top: 5px;
     }
 
-    &.owl-carousel {
-      .owl-nav {
-        .owl-prev {
-          &::before {
-            content: '\e912';
-          }
-        }
-
-        .owl-next {
-          &::before {
-            content: '\e911';
-          }
-        }
-      }
-
-      .owl-nav {
-        .owl-prev, .owl-next {
-          height: 30px;
-          opacity: 0.4;
-          transition: all .3s ease;
-
-          &::before, &::after {
-            font-size: 38px;
-            color: #003462;
-          }
-
-          &:hover {
-            opacity: 1;
-          }
-        }
-
-        .owl-prev {
-          left: -10px;
-          position: relative;
-        }
-
-        .owl-next {
-          right: -10px;
-          position: relative;
-        }
-      }
-    }
-  }
-}
-
-
-@media screen and (max-width: 576px) {
-  .related {
-    padding-bottom: 30px;
-
-    &__slider {
-      max-width: 85%;
-    }
+    //&.owl-carousel {
+    //  .owl-nav {
+    //    .owl-prev {
+    //      &::before {
+    //        content: '\e912';
+    //      }
+    //    }
+    //
+    //    .owl-next {
+    //      &::before {
+    //        content: '\e911';
+    //      }
+    //    }
+    //  }
+    //
+    //  .owl-nav {
+    //    .owl-prev, .owl-next {
+    //      height: 30px;
+    //      opacity: 0.4;
+    //      transition: all .3s ease;
+    //
+    //      &::before, &::after {
+    //        font-size: 38px;
+    //        color: #003462;
+    //      }
+    //
+    //      &:hover {
+    //        opacity: 1;
+    //      }
+    //    }
+    //
+    //    .owl-prev {
+    //      left: -10px;
+    //      position: relative;
+    //    }
+    //
+    //    .owl-next {
+    //      right: -10px;
+    //      position: relative;
+    //    }
+    //  }
+    //}
   }
 }
 

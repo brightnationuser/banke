@@ -5,7 +5,7 @@
                 <div class="related-insights__title">{{$title}}</div>
             @endif
             <div class="related-insights__carousel-wrapper">
-                <div class="related-insights__carousel related-insights-carousel owl-carousel owl-theme-related-insights js-related-insights-carousel">
+                <div class="related-insights__carousel related-insights-carousel owl-carousel owl-theme-new-banke js-related-insights-carousel">
                     @foreach ($insights as $insight)
                         <div class="related-insights-carousel__slide related-insights-carousel-slide">
                             <div class="related-insights-carousel-slide__picture-wrapper">

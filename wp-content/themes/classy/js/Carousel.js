@@ -12,6 +12,9 @@ export default class Carousel {
                 let owl = owl_gallery.owlCarousel({
                     loop: true,
                     nav: true,
+                    navText: ["<i class='icon-chevron-left'></i>", "<i class='icon-chevron-right'></i>"],
+                    autoHeight: true,
+                    dots: true,
                     center: true,
                     margin: 2,
                     mouseDrag: false,
@@ -25,7 +28,8 @@ export default class Carousel {
                             items: 1
                         },
                         1200: {
-                            items: 3
+                            items: 3,
+                            dots: false,
                         }
                     }
                 })
@@ -186,14 +190,14 @@ export default class Carousel {
                 })
 
             },
-
             initNewsCarousel: function () {
                 $('.b-news__carousel.owl-carousel, .js-related-slider.owl-carousel').owlCarousel({
                     loop: $('.js-related-slider.owl-carousel .owl-item').size() > 1 ? true : false,
                     margin: 30,
                     onInitialized: show,
                     nav: true,
-                    dots: false,
+                    dots: true,
+                    navText: ["<i class='icon-chevron-left'></i>", "<i class='icon-chevron-right'></i>"],
                     responsive: {
                         0: {
                             items: 1
@@ -207,11 +211,12 @@ export default class Carousel {
                     }
                 });
             },
-
             initReferencesThinCarousel: function () {
                 var owl = $('.js-references-slider').owlCarousel({
                     loop: true,
                     margin: 5,
+                    autoHeight: true,
+                    navText: ["<i class='icon-chevron-left'></i>", "<i class='icon-chevron-right'></i>"],
                     onInitialized: show,
                     onTranslate: function () {
                         $('.owl-item').removeClass('rounded-first').removeClass('rounded-last');
@@ -227,8 +232,8 @@ export default class Carousel {
                         $(document).find('.js-references-slider .active:last').addClass('rounded-last');
 
                     },
-                    nav: false,
-                    dots: false,
+                    nav: true,
+                    dots: true,
                     responsive: {
                         0: {
                             items: 1
@@ -251,18 +256,22 @@ export default class Carousel {
             },
 
             initReferencesCarousel: function () {
-                $('.references.owl-carousel').owlCarousel({
+                $('.references-list').owlCarousel({
                     loop: true,
-                    margin: 30,
+                    // margin: 30,
                     onInitialized: show,
                     nav: true,
-                    dots: false,
+                    dots: true,
+                    navText: ["<i class='icon-chevron-left'></i>", "<i class='icon-chevron-right'></i>"],
+                    autoHeight: true,
                     responsive: {
                         0: {
-                            items: 1
+                            items: 1,
                         },
                         630: {
-                            items: 2
+                            items: 2,
+                            nav: false,
+                            dots: false,
                         },
                         1000: {
                             items: 3
@@ -299,12 +308,13 @@ export default class Carousel {
                     loop: false,
                     margin: 32,
                     onInitialized: show,
-                    nav: false,
+                    nav: true,
                     dots: true,
                     navText: ["<i class=\"icon-prev-thin\"></i>", "<i class=\"icon-next-thin\"></i>"],
                     responsive: {
                         0: {
-                            items: 1
+                            items: 1,
+                            autoHeight: true
                         },
                         769: {
                             items: 2,

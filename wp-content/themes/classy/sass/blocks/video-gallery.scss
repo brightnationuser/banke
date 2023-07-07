@@ -120,12 +120,15 @@ $video_height: 217px;
     }
 
     .owl-item {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
       position: relative;
       z-index: 1;
+
+      @media (min-width: 993px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
 
       .embed-youtube-video__play{
         backdrop-filter: blur(8px);
@@ -300,59 +303,59 @@ $video_height: 217px;
       }
     }
 
-    .owl-dots {
-      display: none;
-    }
+    //.owl-dots {
+    //  display: none;
+    //}
 
-    .owl-nav {
-      height: 63px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1;
-
-      @media screen and (max-width: 576px) {
-        top: initial;
-        bottom: -100px;
-      }
-
-      .owl-prev, .owl-next {
-        position: absolute;
-        top: 15px;
-        background: #F2F6FC;
-        color: #005CA9;
-        width: 63px;
-        height: 63px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 51%;
-
-        &:before {
-          font-size: 19px;
-        }
-
-        &.disabled {
-          filter: grayscale(100%);
-          opacity: .7;
-        }
-      }
-
-      .owl-prev {
-        left: -45px;
-
-        @media screen and (max-width: 576px) {
-          left: calc(50% - 40px);
-        }
-      }
-
-      .owl-next {
-        right: -45px;
-
-        @media screen and (max-width: 576px) {
-          right: calc(50% - 40px);
-        }
-      }
-    }
+    //.owl-nav {
+    //  height: 63px;
+    //  top: 50%;
+    //  transform: translateY(-50%);
+    //  z-index: 1;
+    //
+    //  @media screen and (max-width: 576px) {
+    //    top: initial;
+    //    bottom: -100px;
+    //  }
+    //
+    //  .owl-prev, .owl-next {
+    //    position: absolute;
+    //    top: 15px;
+    //    background: #F2F6FC;
+    //    color: #005CA9;
+    //    width: 63px;
+    //    height: 63px;
+    //    display: flex;
+    //    justify-content: center;
+    //    align-items: center;
+    //    border-radius: 51%;
+    //
+    //    &:before {
+    //      font-size: 19px;
+    //    }
+    //
+    //    &.disabled {
+    //      filter: grayscale(100%);
+    //      opacity: .7;
+    //    }
+    //  }
+    //
+    //  .owl-prev {
+    //    left: -45px;
+    //
+    //    @media screen and (max-width: 576px) {
+    //      left: calc(50% - 40px);
+    //    }
+    //  }
+    //
+    //  .owl-next {
+    //    right: -45px;
+    //
+    //    @media screen and (max-width: 576px) {
+    //      right: calc(50% - 40px);
+    //    }
+    //  }
+    //}
   }
 
   @keyframes hideOverlay {

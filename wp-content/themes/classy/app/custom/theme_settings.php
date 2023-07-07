@@ -178,6 +178,16 @@ function kd_load_scripts()
         wp_enqueue_script('product', get_template_directory_uri() . $file, array('jquery'), filemtime(get_theme_file_path().$file), true);
     }
 
+    if (is_page('customized-solutions')) {
+        $file = '/dist/customized-solutions.js';
+        wp_enqueue_script('customized-solutions', get_template_directory_uri() . $file, array('jquery'), filemtime(get_theme_file_path().$file), true);
+    }
+
+    if (is_page('projects')) {
+        $file = '/dist/projects.js';
+        wp_enqueue_script('projects', get_template_directory_uri() . $file, array('jquery'), filemtime(get_theme_file_path().$file), true);
+    }
+
 }
 add_action('wp_enqueue_scripts', 'kd_load_scripts');
 

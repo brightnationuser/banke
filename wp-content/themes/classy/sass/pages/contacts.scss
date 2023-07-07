@@ -16,8 +16,12 @@
   }
 
   .content {
-    padding-top: 39px;
+    padding-top: 0;
     padding-bottom: 0;
+
+    @media (min-width: 769px) {
+      padding-top: 39px;
+    }
   }
 
   div.wpcf7 .ajax-loader {
@@ -27,11 +31,19 @@
   }
 
   .contacts {
-    padding-bottom: 80px;
-    padding-top: 57px;
+    padding-top: 48px;
+    padding-bottom: 0px;
     background-image: url("/wp-content/themes/classy/images/bg/form_bg.jpg");
     background-position: right bottom;
     background-repeat: no-repeat;
+
+    @media (min-width: 1201px) {
+      padding-bottom: 80px;
+    }
+
+    @media (min-width: 769px) {
+      padding-top: 57px;
+    }
 
     h3 {
       font-size: 23px;
@@ -49,16 +61,27 @@
         padding: 0;
         margin-bottom: 0;
         margin-top: -23px;
-        max-width: 482px;
-        width: 100%;
+        margin-left: -20px;
+        margin-right: -20px;
+
+        @media (min-width: 769px) {
+          width: 100%;
+          max-width: 482px;
+          margin-left: 0;
+          margin-right: 0;
+        }
 
         .container {
           padding: 0;
         }
 
         .wpcf7-submit {
-          display: block;
-          width: 100%;
+
+
+          @media (min-width: 1201px) {
+            display: block;
+            width: 100%;
+          }
         }
 
         h3 {
@@ -73,7 +96,7 @@
 
         &__form {
           box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
-          padding: 48px 49px 0px 48px;
+          padding: 40px 24px 0px 24px;
           border-radius: 4px;
           max-width: 100% !important;
 
@@ -82,7 +105,11 @@
           }
 
           @media screen and (max-width: 582px) {
-            padding: 48px 25px 0px 25px;
+            padding: 40px 24px 0px 24px;
+          }
+
+          @media (min-width: 769px) {
+            padding: 48px 49px 0 48px;
           }
 
           .wrapper {
@@ -148,12 +175,15 @@
             margin-top: 16px;
           }
 
-          .form__button input {
-            font-weight: 700 !important;
-            font-size: 16px !important;
-            line-height: 22px !important;
-            letter-spacing: 0.02em;
-            padding: 13px 14px;
+          .form__button {
+
+            input {
+              font-weight: 700 !important;
+              font-size: 16px !important;
+              line-height: 22px !important;
+              letter-spacing: 0.02em;
+              padding: 13px 14px;
+            }
           }
         }
 
@@ -173,7 +203,7 @@
         }
 
         input {
-          font-size: 14px !important;
+          font-size: 16px !important;
           padding: 12px 14px;
           -webkit-appearance: none;
         }
@@ -208,13 +238,22 @@
     .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 0 34px;
+      padding: 0 20px;
+
+      @media (min-width: 769px) {
+        padding: 0 34px;
+      }
 
       h1 {
         margin-top: 0px;
 
+        @media (max-width: 768px) {
+          font-size: 28px;
+          margin-bottom: 24px;
+        }
+
         @media (max-width: 992px) {
-          margin-top: 30px;
+          //margin-top: 30px;
         }
 
       }
@@ -223,6 +262,11 @@
     &__columns {
       flex-direction: column;
       margin-right: 20px;
+      margin-bottom: 40px;
+
+      @media (min-width: 1201px) {
+        margin-bottom: 0;
+      }
 
       @media screen and (max-width: 992px) {
         margin-right: 0;
@@ -247,10 +291,21 @@
 
     &__right {
       max-width: 482px;
-      margin-top: 11px;
+
+      @media (min-width: 1201px) {
+        margin-top: 11px;
+
+      }
 
       .contact {
-        margin-bottom: 32px;
+
+        &:not(:last-child) {
+          margin-bottom: 24px;
+
+          @media (min-width: 1201px) {
+            margin-bottom: 32px;
+          }
+        }
 
         &:last-of-type {
           h3 {
@@ -262,6 +317,14 @@
 
     .contact {
 
+      &__title {
+        font-weight: 600;
+
+        @media (min-width: 769px) {
+          font-weight: bold;
+        }
+      }
+
       &__text {
         margin-bottom: 16px;
         font-weight: 400;
@@ -271,13 +334,17 @@
       }
 
       &__info {
-        margin-bottom: 8px;
+
         padding-left: 21px;
         position: relative;
         font-weight: 400;
         font-size: 18px;
         line-height: 149.8%;
         color: #4A4A49;
+
+        &:not(:last-child) {
+          margin-bottom: 8px;
+        }
 
         i {
           top: 6px !important;
@@ -361,14 +428,14 @@
 
 @media screen and (max-width: 576px) {
   .p-contacts .contacts {
-    padding-bottom: 70px;
+    //padding-bottom: 70px;
 
     &__columns {
       flex-direction: column;
     }
 
     &__left {
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
   }
 

@@ -1,5 +1,5 @@
 .breadcrumbs-section {
-  padding-top: 92px;
+  padding-top: 24px;
 
   @media (min-width: 1201px) {
     padding-top: 50px;
@@ -26,7 +26,15 @@
   margin-bottom: 0px;
   margin-top: 0px;
 
-  &--news, &--vacancies, &--product, &--references {
+  &--news {
+    margin-bottom: 16px !important;
+
+    @media (min-width: 1201px) {
+      margin-bottom: 24px !important;
+    }
+  }
+
+  &--vacancies, &--product, &--references {
     margin-bottom: 24px !important;
   }
 

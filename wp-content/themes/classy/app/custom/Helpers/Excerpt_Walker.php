@@ -14,6 +14,7 @@ class Excerpt_Walker extends \Walker_Nav_Menu {
      */
     function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 )
     {
+
         $classes     = empty ( $item->classes ) ? array () : (array) $item->classes;
 
         $class_names = join(
@@ -47,6 +48,10 @@ class Excerpt_Walker extends \Walker_Nav_Menu {
 
         $title = apply_filters( 'the_title', $item->title, $item->ID );
 
+        $drop_down = '<span class="menu-item-dropdown"></span>';
+
+        $show_drop_down = ($this->has_children && $depth == 0) ? $drop_down : '';
+
         $item_output = $args->before
             . "<a $attributes>"
             . $args->link_before
@@ -54,6 +59,7 @@ class Excerpt_Walker extends \Walker_Nav_Menu {
             . '</a> '
             . $args->link_after
             . $description
+            . $show_drop_down
             . $args->after;
 
         // Since $output is called by reference we don't need to return anything.

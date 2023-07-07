@@ -140,7 +140,7 @@
             </div>
         @endif
 
-        @include('partials.video-gallery')
+        @include('partials.new-video-gallery')
 
 
         @include('partials.brochure', [
@@ -157,17 +157,16 @@
                     <p>{{ get_field('references_about') }}</p>
                 @endif
             @endif
-            <div class="container thin-nav">
-                <div class="references owl-carousel">
-
+            <div class="container">
+                <div class="references-list owl-theme-new-banke owl-theme-new-banke--with-spacing-for-shadow owl-carousel">
                     @foreach ($references as $reference)
-                        <a href="{{ $reference->permalink() }}" class="references__card disable_preloader aos-animation"
+                        <a href="{{ $reference->permalink() }}" class="references-list__item references-list-item disable_preloader aos-animation"
                            data-aos="fade-in">
-                            <div class="card__image"
+                            <div class="references-list-item__image"
                                  style="background-image: url({{ $reference->getAcfImage()->src('large') }});"></div>
-                            <div class="card__info">
-                                <div class="card__title">{{ $reference->get_title() }}</div>
-                                <div class="card__text">{!! $reference->getAcfByKey('acf_references_short_text') !!}</div>
+                            <div class="references-list-item__info">
+                                <div class="references-list-item__title">{{ $reference->get_title() }}</div>
+                                <div class="references-list-item__text">{!! $reference->getAcfByKey('acf_references_short_text') !!}</div>
                             </div>
                         </a>
                     @endforeach
