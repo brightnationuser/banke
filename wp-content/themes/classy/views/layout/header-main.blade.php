@@ -36,7 +36,7 @@
                             <div class="lng-w">
                                 @foreach($languages as $language)
                                     @if($language['active'])
-                                        <a href="{{ $language['url'] }}">{!! $language['language_code'] !!}</a>
+                                        <a class="active-language" href="{{ $language['url'] }}">{!! $language['language_code'] !!}</a>
                                     @endif
                                 @endforeach
                                 @if(count($languages) > 1)

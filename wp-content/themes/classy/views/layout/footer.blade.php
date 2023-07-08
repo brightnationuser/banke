@@ -68,7 +68,7 @@
             <span class="footer__address-address">{!! get_field('address', 'options') !!}</span>
             <a class="footer__address-phone"
                href="tel:{!! get_field('number', 'options') !!}">{!! get_field('number', 'options') !!}</a>
-            <span> | </span>
+            <span class="footer__address-spacer"> | </span>
             <a class="footer__address-email"
                href="mailto:{!! get_field('email', 'options') !!}">{!! get_field('email', 'options') !!}</a>
         </div>
@@ -82,4 +82,7 @@
 
 <div class="preloader-container">
     <div class="cssload-whirlpool"></div>
+</div>
+
+<div id="vueModalsPortalDestination">
 </div>

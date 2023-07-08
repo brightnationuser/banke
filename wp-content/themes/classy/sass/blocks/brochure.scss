@@ -51,11 +51,15 @@
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 600;
-  font-size: 28px;
+  font-size: 24px;
   line-height: 1.5;
   text-align: center;
   color: #003462;
   margin-bottom: 12px;
+
+  @media (min-width: 1201px) {
+    font-size: 28px;
+  }
 }
 
 .brochures-section-brochure__text {

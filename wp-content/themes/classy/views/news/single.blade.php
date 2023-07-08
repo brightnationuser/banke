@@ -25,7 +25,7 @@
                     <div class="article__heading">
                         <div class="news__date">
                             <i class="icon-calendar news__date-icon"></i>
-                            {!! $post->getDate() !!}
+                            {!! $post->getDate('d.m.Y') !!}
                         </div>
 
                         <h1 class="news__title">

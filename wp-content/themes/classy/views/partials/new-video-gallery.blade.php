@@ -25,7 +25,7 @@
             </div>
                 <div class="gallery_wrap">
                     <div class="owl-carousel owl-theme-new-banke owl-theme-new-banke--video-gallery owl-video_gallery" data-start="{{ !empty($start) ? $start : 4 }}">
-                        @foreach($videos as $key => $video)
+                        @foreach(array_slice($videos, 0, 5) as $key => $video)
                             <div class="video-gallery__item">
                                 <div class="embed-youtube-video is-loading js-video-show"
                                      data-yt-id="{{ !empty($video['video_id']) ? $video['video_id'] : 'sDsknFlke9U' }}"

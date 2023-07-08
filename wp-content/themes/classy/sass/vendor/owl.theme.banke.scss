@@ -28,6 +28,20 @@ $dot-background-active: #005CA9;
   // Styling Next and Prev buttons
   position: relative;
 
+  &--concept-carousel {
+    .owl-prev {
+      @media (max-width: 1200px) {
+        left: -4px !important;
+      }
+    }
+
+    .owl-next {
+      @media (max-width: 1200px) {
+        right: -4px !important;
+      }
+    }
+  }
+
   .owl-nav {
     [class*='owl-'] {
       position: absolute;

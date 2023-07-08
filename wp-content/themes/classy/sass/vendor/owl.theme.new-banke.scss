@@ -28,6 +28,13 @@ $dot-background-active: #005CA9;
   // Styling Next and Prev buttons
   position: relative;
 
+  &.owl-theme-new-banke--related {
+    .owl-prev, .owl-next {
+      top: 100px !important;
+      transform: none !important;
+    }
+  }
+
   &.owl-theme-new-banke--with-spacing-for-shadow {
     .owl-prev {
       left: -12px !important;

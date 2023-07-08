@@ -66,6 +66,9 @@
 
                 <a class="vacancy__link phone" href="tel:+{{preg_replace("/\D/", "", $phone)}}">+{{str_replace('+', '', $phone)}}</a>
             </div>
+            <div class="vacancy__back">
+                <a class="vacancy__back-link" href="{{ get_permalink($translated_parent_id) }}"><i class="icon-chevron-left vacancy__back-icon"></i>{{ $back_button_text }}</a>
+            </div>
         </div>
     </article>
 

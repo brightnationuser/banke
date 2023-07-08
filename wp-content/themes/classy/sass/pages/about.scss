@@ -63,6 +63,15 @@
               display: block;
               padding: 12px 0;
               text-align: center;
+              text-decoration: underline;
+
+              &:hover {
+                text-decoration: none;
+              }
+              
+              @media (min-width: 1201px) {
+                text-decoration: none;
+              }
             }
           }
         }

@@ -16,7 +16,9 @@ import getTranslations from "./helpers/getTranslations";
 
 import './sass/main.scss'
 
+import PortalVue from 'portal-vue'
 
+Vue.use(PortalVue)
 Vue.use(VueYoutube)
 
 //indexVue.js is detected on this page - выкл для прода

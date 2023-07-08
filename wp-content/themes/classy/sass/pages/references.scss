@@ -214,16 +214,26 @@
 
   &__title {
     font-size: 18px;
-    color: #4a4a49;
-    font-weight: 700;
+    color: #272727;
+    font-weight: 600;
     margin: 10px 0;
+
+    @media (min-width: 1201px) {
+      color: #4a4a49;
+      font-weight: 700;
+    }
   }
 
   &__text {
     font-weight: 300;
     font-size: 16px;
-    line-height: 21px;
-    color: #4a4a49;
+    line-height: 1.5;
     margin-bottom: 25px;
+    color: #272727;
+
+    @media (min-width: 1201px) {
+      color: #4a4a49;
+      line-height: 21px;
+    }
   }
 }

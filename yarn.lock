@@ -4874,6 +4874,11 @@
   dependencies:
     "find-up" "^3.0.0"
 
+"portal-vue@^2.1.7":
+  "integrity" "sha512-+yCno2oB3xA7irTt0EU5Ezw22L2J51uKAacE/6hMPMoO/mx3h4rXFkkBkT4GFsMDv/vEe8TNKC3ujJJ0PTwb6g=="
+  "resolved" "https://registry.npmjs.org/portal-vue/-/portal-vue-2.1.7.tgz"
+  "version" "2.1.7"
+
 "portfinder@^1.0.17", "portfinder@^1.0.20":
   "integrity" "sha512-Yxe4mTyDzTd59PZJY4ojZR8F+E5e97iq2ZOHPz3HDgSvYC5siNad2tLooQ5y5QHyQhc3xVqvyk/eNA3wuoa7Sw=="
   "resolved" "https://registry.npmjs.org/portfinder/-/portfinder-1.0.20.tgz"
@@ -6647,7 +6652,7 @@
     "get-youtube-id" "^1.0.0"
     "youtube-player" "^5.4.0"
 
-"vue@^2.0.0", "vue@^2.3.0", "vue@>=3.0.0", "vue@2.6.8", "vue@2.x":
+"vue@^2.0.0", "vue@^2.3.0", "vue@^2.5.18", "vue@>=3.0.0", "vue@2.6.8", "vue@2.x":
   "integrity" "sha512-+vp9lEC2Kt3yom673pzg1J7T1NVGuGzO9j8Wxno+rQN2WYVBX2pyo/RGQ3fXCLh2Pk76Skw/laAPCuBuEQ4diw=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-2.6.8.tgz"
   "version" "2.6.8"

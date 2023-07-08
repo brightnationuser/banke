@@ -167,7 +167,7 @@ $(document).ready(function () {
         window.cookieconsent.initialise({
             type: 'opt-in',
             position: 'bottom',
-            revokable: true,
+            revokable: false,
             content: {
                 message: trans.cookieconsent_message,
                 dismiss: trans.cookieconsent_dismiss,

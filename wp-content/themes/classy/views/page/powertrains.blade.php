@@ -62,7 +62,7 @@
 
         @include('partials.related-insights', $related_insights)
 
-        @include('partials.video-gallery')
+        @include('partials.new-video-gallery')
 
         @include ('template.product-page.specification')
 

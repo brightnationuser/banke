@@ -13,7 +13,7 @@
 
             @if(!empty($slider))
                 <div class="concept__image animated fadeInLeft">
-                    <div class="concept-carousel owl-carousel owl-theme-banke">
+                    <div class="concept-carousel owl-carousel owl-theme-banke owl-theme-banke--concept-carousel">
                         @foreach($slider as $slide)
                             @if($slide['type_of_media'] === 'image')
                                 <div>

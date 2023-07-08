@@ -224,6 +224,22 @@
     padding-top: 16px;
     padding-bottom: 16px;
 
+    &.current_page_item > a {
+      @media (max-width: 1200px) {
+        color: #005CA9;
+      }
+    }
+
+    &:last-child {
+      a {
+        @media (max-width: 1200px) {
+          background: linear-gradient(356deg, rgba(5, 117, 230, 1) 0%, rgba(0, 92, 168, 1) 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+    }
+
     @media (min-width: 1201px) {
       padding-top: 0px;
       padding-bottom: 0px;
@@ -386,6 +402,10 @@
     li {
       margin-top: 10px;
 
+      &.current_page_item > a {
+        color: #005CA9;
+      }
+
       @media (min-width: 1201px) {
         margin-top: 0;
       }
@@ -394,6 +414,11 @@
         color: #272727;
         font-size: 16px;
         font-family: Open Sans;
+        font-weight: 400;
+
+        @media (min-width: 1201px) {
+          font-weight: 600;
+        }
 
         &:hover {
           @media (min-width: 1201px) {
@@ -565,9 +590,12 @@
     color: $color-blue;
     display: inline-flex;
     align-items: center;
-    cursor: pointer;
     text-align: left;
     text-transform: uppercase;
+
+    @media (min-width: 1201px) {
+      cursor: pointer;
+    }
 
     .home & {
       @media (min-width: 1201px) {
@@ -585,6 +613,14 @@
       color: inherit;
       font-size: 16px;
       font-weight: 600;
+
+      &.active-language {
+        @media (max-width: 1200px) {
+          color: #333333;
+          cursor: default;
+          pointer-events: none;
+        }
+      }
 
       &:hover {
         text-decoration: none;

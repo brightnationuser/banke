@@ -85,6 +85,7 @@ $video_height: 217px;
       cursor: pointer;
 
       @media screen and (max-width: 1200px) {
+        font-size: 18px;
         position: static;
         margin-top: 5px;
       }
@@ -264,8 +265,12 @@ $video_height: 217px;
         z-index: 3;
 
         .item__text {
-          color: #005CA9;
+          color: #272727;
           bottom: 0;
+
+          @media (min-width: 1201px) {
+            color: #005CA9;
+          }
         }
 
         .embed-youtube-video {
