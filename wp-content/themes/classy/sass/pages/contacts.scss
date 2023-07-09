@@ -333,8 +333,12 @@
         margin-bottom: 16px;
         font-weight: 400;
         font-size: 18px;
-        line-height: 149.8%;
-        color: #4A4A49;
+        line-height: 1.5;
+        color: #272727;
+
+        @media (min-width: 1201px) {
+          color: #4A4A49;
+        }
       }
 
       &__info {
@@ -344,7 +348,11 @@
         font-weight: 400;
         font-size: 18px;
         line-height: 149.8%;
-        color: #4A4A49;
+        color: #272727;
+
+        @media (min-width: 1201px) {
+          color: #4A4A49;
+        }
 
         &:not(:last-child) {
           margin-bottom: 8px;

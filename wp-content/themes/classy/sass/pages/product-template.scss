@@ -396,7 +396,7 @@
       margin-top: 0;
       margin-bottom: 32px;
 
-      @media (min-width: 1200px) {
+      @media (max-width: 1200px) {
         color: #003462;
         font-size: 28px;
         line-height: 1.3;

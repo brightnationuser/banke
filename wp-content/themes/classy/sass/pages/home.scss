@@ -41,6 +41,13 @@
 
   .content {
     .video-gallery {
+
+      &__title {
+        @media (max-width: 1200px) {
+          font-size: 28px;
+        }
+      }
+
       background-size: cover;
       background-position: center;
       padding-top: 48px;
@@ -952,8 +959,12 @@
             font-size: 16px;
             line-height: 21px;
             text-align: center;
-            color: #4A4A49;
-            opacity: 0.9;
+            color: #272727;
+
+            @media (min-width: 1201px) {
+              color: #4A4A49;
+              opacity: 0.9;
+            }
           }
 
           &__read-more {

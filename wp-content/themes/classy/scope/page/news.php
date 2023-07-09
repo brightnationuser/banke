@@ -34,13 +34,43 @@ foreach ($_news->posts as $item) {
 
 $links = paginate_links([
     'format' => '?cpage=%#%',
-    'current' => max( 1, get_query_var('cpage') ),
+    'current' => max(1, get_query_var('cpage')),
     'total' => $_news->max_num_pages,
-    'prev_text' => _x( 'Previous', 'previous set of posts' ),
-    'next_text' => _x( 'Next', 'next set of posts' ),
+    'prev_text' => _x('Previous', 'previous set of posts'),
+    'next_text' => _x('Next', 'next set of posts'),
+//    'type' => 'array',
+    'end_size' => 0,
+    'mid_size' => get_query_var('cpage') > 1 ? 0 : 1,
 ]);
 
-$pagination_layout = _navigation_markup( $links, 'pagination', '');
+//var_dump($links);
+
+//$current = $links['current'];
+//
+//$allowed = [
+//    ' current',
+//    'prev ',
+//    'next ',
+//    ' dots',
+//    '/news/',
+//    sprintf('/news/?cpage=%d/', $current - 1),
+//    sprintf('/news/?cpage=%d/', $current + 1)
+//];
+
+//$paginate_links = array_filter(
+//    $links,
+//    function ($value) use ($allowed) {
+//        foreach ($allowed as $tag) {
+//            if (false !== strpos($value, $tag))
+//                return true;
+//        }
+//        return false;
+//    }
+//);
+
+$pagination_layout = _navigation_markup($links, 'pagination', '');
+
+//$pagination_layout = sprintf("<ul class='page-numbers'>\n\t<li>%s</li>\n</ul>\n", join("</li>\n\t<li>", $paginate_links));
 
 $data = compact(
     'page',

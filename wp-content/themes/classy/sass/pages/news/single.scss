@@ -156,6 +156,7 @@
       line-height: 1.5;
       color: #272727;
       order: 2;
+      font-weight: 400;
 
       @media (min-width: 1201px) {
         margin-bottom: 10px;
@@ -237,7 +238,7 @@
 
     .related {
       background-image: url("/wp-content/themes/classy/images/bg/latest_news_bg.jpg");
-      background-size: 100%;
+      background-size: cover;
       padding-bottom: 60px;
 
       h2 {

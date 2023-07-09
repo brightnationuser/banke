@@ -119,11 +119,18 @@
 
       p {
         font-weight: 300;
-        font-size: 16px;
-        line-height: 163.42%;
-        color: #4A4A49;
+        font-size: 18px;
+        line-height: 1.5;
         margin-top: 0;
-        margin-bottom: 10px;
+        margin-bottom: .7em;
+        color: #272727;
+
+        @media (min-width: 1201px) {
+          font-size: 16px;
+          line-height: 165%;
+          color: #4A4A49;
+          margin-bottom: 10px;
+        }
 
         &:last-child {
           margin-bottom: 0;

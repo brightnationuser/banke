@@ -333,7 +333,6 @@
         order: 1;
         margin-bottom: 50px;
         align-items: flex-start;
-        opacity: .5;
       }
 
       .social {
@@ -373,6 +372,11 @@
     &__socials-socials {
       display: flex;
       gap: 10px;
+      opacity: .5;
+
+      @media (min-width: 12001px) {
+        opacity: 1;
+      }
     }
   }
 
