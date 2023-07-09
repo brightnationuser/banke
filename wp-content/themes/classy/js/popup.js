@@ -50,11 +50,11 @@ const popup = () => {
         }*/
     });
 
-    if (body.hasClass('page-template-classy-powertrains') && Cookies.get('popup-powertrains') !== 'closed') {
-        setTimeout(() => {
-            $('#youtube-video').addClass(activeClass);
-        }, 2000);
-    }
+    // if (body.hasClass('page-template-classy-powertrains') && Cookies.get('popup-powertrains') !== 'closed') {
+    //     setTimeout(() => {
+    //         $('#youtube-video').addClass(activeClass);
+    //     }, 2000);
+    // }
     
     if (body.hasClass('home') && localStorage.getItem('popup-vacancy') !== '1') {
         setTimeout(() => {

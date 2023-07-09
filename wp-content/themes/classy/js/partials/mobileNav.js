@@ -1,2 +1,0 @@
-const menuHeader = $('#menu-header');
-

@@ -254,7 +254,6 @@ export default class Carousel {
                     owl.trigger('prev.owl.carousel', [300]);
                 })
             },
-
             initReferencesCarousel: function () {
                 $('.references-list').owlCarousel({
                     loop: true,
@@ -279,7 +278,6 @@ export default class Carousel {
                     }
                 });
             },
-
             initWhatWeDoCarousel: function () {
                 $('.js-what-we-do-slider.owl-carousel').owlCarousel({
                     loop: false,
@@ -302,7 +300,6 @@ export default class Carousel {
                     }
                 });
             },
-
             initRelatedInsightsCarousel: function () {
                 $('.js-related-insights-carousel').owlCarousel({
                     loop: false,
@@ -327,10 +324,7 @@ export default class Carousel {
                     }
                 });
             },
-
-
         }
-
 
         function show(event) {
             $(event.target).addClass('m_loaded');
