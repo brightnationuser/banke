@@ -27,9 +27,9 @@
         <section class="concept">
             <div class="container">
 
-                <h1 class="concept__title h2">
+                <div class="concept__title h2">
                     {{ $post->getAcfByKey('acf_title_concept') }}
-                </h1>
+                </div>
 
                 <div class="concept__description d-flex">
 
@@ -71,9 +71,9 @@
 
         <section class="present" style="background-image: url('{{get_template_directory_uri()}}/images/bg-waves.webp')">
             <div class="container">
-                <h2 class="present__title">
+                <h1 class="present__title">
                     {{ $post->getAcfByKey('acf_title_main') }}
-                </h2>
+                </h1>
 
                 <div class="present__slider-outer thin-nav">
                     @include('partials.slider.epto-slider', ['nav' => 'thin'])

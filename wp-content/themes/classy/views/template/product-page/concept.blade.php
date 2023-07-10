@@ -1,9 +1,9 @@
 <section class="concept">
     <div class="container">
 
-        <h1 class="concept__title h2">
+        <div class="concept__title h2">
             {{ $post->getAcfByKey('acf_title_concept') }}
-        </h1>
+        </div>
 
         <div class="concept__description d-flex">
 
