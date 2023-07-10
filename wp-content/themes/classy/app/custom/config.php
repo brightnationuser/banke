@@ -271,6 +271,6 @@ $include = array(
 
 function add_my_rule() {
     add_rewrite_rule('meet-banke-team/page/([0-9]+)','index.php?pagename=meet-banke-team&paged=$matches[1]','top');
-
+    add_rewrite_rule('de/meet-banke-team/page/([0-9]+)','index.php?pagename=meet-banke-team&paged=$matches[1]&wpml_lang=de','top');
 }
 add_action('init', 'add_my_rule');
