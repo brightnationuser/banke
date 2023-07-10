@@ -21,12 +21,13 @@ $_news = new WP_Query([
     'meta_query' => $query,
 ]);
 
-
-if ($paged > $_news->max_num_pages) {
-    global $wp_query;
-    $wp_query->set_404();
-    status_header( 404 );
-    wp_redirect( '/404' );
+if ($_news->have_posts()) {
+    if ($paged > $_news->max_num_pages) {
+        global $wp_query;
+        $wp_query->set_404();
+        status_header( 404 );
+        wp_redirect( '/404' );
+    }
 }
 
 $news = [];
