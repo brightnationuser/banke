@@ -7,29 +7,19 @@
                     <img src="{{ content_url('themes/classy/images/logo.png') }}" alt="Banke logo">
                 </a>
             </div>
-            <div class="footer__socials">
-
-                <div class="d-flex">
-                    <a href="{!! get_field('linkedin', 'option')['link'] !!}" class="social linkedin disable_preloader"
-                       target="_blank">
-                        <i class="icon-linkedin"></i>
-                    </a>
-                    <a href="{!! get_field('youtube', 'option')['link'] !!}" class="social youtube disable_preloader"
-                       target="_blank">
-                        <i class="icon-youtube"></i>
-                    </a>
-                    <a href="{!! get_field('facebook', 'option')['link'] !!}" class="social facebook disable_preloader"
-                       target="_blank">
-                        <i class="icon-facebook"></i>
-                    </a>
-
-                    {{--                    <a href="{!! get_field('twitter', 'option')['link'] !!}" class="social twitter disable_preloader" target="_blank">--}}
-                    {{--                        <i class="icon-twitter"></i>--}}
-                    {{--                    </a>--}}
-                    {{--                    <a href="{!! get_field('xing', 'option')['link'] !!}" class="social xing disable_preloader" target="_blank">--}}
-                    {{--                        <i class="icon-xing"></i>--}}
-                    {{--                    </a>--}}
-                </div>
+            <div class="footer__socials-socials">
+                <a href="{!! get_field('linkedin', 'option')['link'] !!}" class="social linkedin disable_preloader"
+                   target="_blank">
+                    <i class="icon-linkedin"></i>
+                </a>
+                <a href="{!! get_field('youtube', 'option')['link'] !!}" class="social youtube disable_preloader"
+                   target="_blank">
+                    <i class="icon-youtube"></i>
+                </a>
+                <a href="{!! get_field('facebook', 'option')['link'] !!}" class="social facebook disable_preloader"
+                   target="_blank">
+                    <i class="icon-facebook"></i>
+                </a>
             </div>
         </div>
     </div>
