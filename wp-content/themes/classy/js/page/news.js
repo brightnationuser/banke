@@ -3,7 +3,7 @@ import Blazy from 'blazy';
 
 const content = document.getElementById('pageContent');
 const tagsForm = document.getElementById('tagsForm');
-const newsTags = tagsForm.querySelectorAll('.news-tag .news-tags');
+const newsTags = document.querySelectorAll('.news-tag .news-tags');
 const showMore = document.getElementById('showMore');
 const showLess = document.getElementById('showLess');
 
