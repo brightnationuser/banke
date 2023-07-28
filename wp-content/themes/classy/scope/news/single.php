@@ -16,6 +16,8 @@ function get_back_button_translation($language) {
 
 $back_button_text = get_back_button_translation($current_language);
 
+$tags = get_the_terms($post,'news-tag');
+
 // News carousel
 $query = [
     'acf_date' => array(
@@ -42,5 +44,6 @@ $data = compact(
     'related',
     'slider',
     'two_columns_layout',
-    'back_button_text'
+    'back_button_text',
+    'tags'
 );

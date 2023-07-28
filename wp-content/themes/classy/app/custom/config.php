@@ -225,6 +225,16 @@ $taxonomies = array(
         'singular'	=> 'Models type',
         'multiple'	=> 'Models types',
     ),
+    'news-tag' => array(
+        'for'		=> array( 'news' ),
+        'config'  	=> array(
+            'sort' 			=> true,
+            'args' 			=> array( 'orderby' => 'term_order' ),
+            'hierarchical' 	=> false,
+        ),
+        'singular'	=> 'News tag',
+        'multiple'	=> 'News tags',
+    )
 );
 
 /**
@@ -266,6 +276,7 @@ $include = array(
     'spam.php',
     'functions.php',
     './api/index.php',
+    'ajax/news.php'
 );
 
 

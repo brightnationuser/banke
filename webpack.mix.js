@@ -32,6 +32,7 @@ mix.js(resources_path + 'js/index.js', resources_path + 'dist')
     .js(resources_path + 'js/page/product.js', resources_path + 'dist')
     .js(resources_path + 'js/page/customized-solutions.js', resources_path + 'dist')
     .js(resources_path + 'js/page/projects.js', resources_path + 'dist')
+    .js(resources_path + 'js/page/news.js', resources_path + 'dist')
     .autoload({
         jquery: ['$', 'window.jQuery', 'jQuery']
     })

@@ -5,7 +5,6 @@
         <div class="container">
             <div class="article">
                 <div class="article__content">
-
                     @php
                         $parent_id = get_page_by_path( 'news' );
                         $translated_parent_id = apply_filters( 'wpml_object_id', $parent_id->ID, 'page' );
@@ -31,6 +30,16 @@
                         <h1 class="news__title">
                             {!! $post->title() !!}
                         </h1>
+
+                        @if($tags)
+                            <ul class="news__tags-list">
+                                @foreach($tags as $tag)
+                                    <li class="news__tags-list-item">
+                                        <div class="news__tag">{{ $tag->name }}</div>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @endif
                     </div>
 
                     <div class="news__content">
@@ -46,9 +55,10 @@
                             {!! $post->content() !!}
                         </div>
                     </div>
-                    
+
                     <div class="news__back">
-                        <a class="news__back-link" href="{{ get_permalink($translated_parent_id) }}"><i class="icon-chevron-left news__back-icon"></i>{{ $back_button_text }}</a>
+                        <a class="news__back-link" href="{{ get_permalink($translated_parent_id) }}"><i
+                                    class="icon-chevron-left news__back-icon"></i>{{ $back_button_text }}</a>
                     </div>
                 </div>
 

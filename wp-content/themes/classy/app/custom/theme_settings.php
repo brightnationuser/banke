@@ -158,6 +158,19 @@ add_action( 'init', 'disable_wp_emojicons' );
 /*-- Подгрузить js-скрипты и стили --*/
 function kd_load_scripts()
 {
+    global $wp_query;
+
+    if (is_page('news')) {
+        $file = '/dist/news.js';
+        wp_enqueue_script('news', get_template_directory_uri() . $file, array('jquery'), filemtime(get_theme_file_path().$file), true);
+
+        wp_localize_script( 'news', 'frontend_ajax_object',
+            array(
+                'ajaxurl' => admin_url( 'admin-ajax.php' ),
+                'page_id' => $wp_query->post->ID,
+            )
+        );
+    }
 
     if (is_front_page()) {
         wp_dequeue_style( 'wp-block-library' );
@@ -279,3 +292,41 @@ function default_target_blank() {
 }
 add_action( 'admin_footer-post-new.php', 'default_target_blank', 10, 0 );
 add_action( 'admin_footer-post.php', 'default_target_blank', 10, 0 );
+
+
+
+
+//function get_news_by_tag() {
+//
+//    $term_slug = $_POST['term_slug'];
+//
+//    $posts = get_posts(
+//        array(
+//            'posts_per_page' => 9,
+//            'post_type' => 'news',
+//            'tax_query' => array(
+//                array(
+//                    'taxonomy' => 'news-tag',
+//                    'field' => 'slug',
+//                    'terms' => $term_slug,
+//                )
+//            )
+//        )
+//    );
+//
+//    ob_start();
+//
+//    foreach ($posts as $post) {
+//        set_query_var( 'news_item', $post );
+//        get_template_part('views/partials/news-card');
+//    }
+//
+//    $content = ob_get_clean();
+//
+//    echo json_encode( $content ) ;
+//
+//    wp_die();
+//}
+//
+//add_action('wp_ajax_get_news_by_tag', 'get_news_by_tag' );
+//add_action('wp_ajax_nopriv_get_news_by_tag', 'get_news_by_tag' );

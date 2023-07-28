@@ -3,7 +3,16 @@ $framework = get_theme_framework();
 
 $page = $framework::get_post();
 
-$current_page = $_GET['cpage'];
+$current_page = $_GET['page'];
+
+$current_language = apply_filters( 'wpml_current_language', null );
+
+
+$tags_text = $current_language == 'en' ? 'tags' : 'stichworte';
+
+$show_less_tags_text = $current_language == 'en' ? 'show less' : 'zeige weniger';
+
+$tags = get_terms('news-tag');
 
 $query = [
     'acf_date' => array(
@@ -33,14 +42,14 @@ foreach ($_news->posts as $item) {
 }
 
 $links = paginate_links([
-    'format' => '?cpage=%#%',
-    'current' => max(1, get_query_var('cpage')),
+    'format' => '?page=%#%',
+    'current' => max(1, get_query_var('page')),
     'total' => $_news->max_num_pages,
     'prev_text' => _x('Previous', 'previous set of posts'),
     'next_text' => _x('Next', 'next set of posts'),
 //    'type' => 'array',
     'end_size' => 0,
-    'mid_size' => get_query_var('cpage') > 1 ? 0 : 1,
+    'mid_size' => get_query_var('page') > 1 ? 0 : 1,
 ]);
 
 //var_dump($links);
@@ -76,5 +85,8 @@ $data = compact(
     'page',
     '_news',
     'news',
-    'pagination_layout'
+    'pagination_layout',
+    'tags',
+    'tags_text',
+    'show_less_tags_text'
 );
