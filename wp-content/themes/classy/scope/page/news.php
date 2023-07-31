@@ -8,7 +8,8 @@ $current_page = $_GET['page'];
 $current_language = apply_filters( 'wpml_current_language', null );
 
 
-$tags_text = $current_language == 'en' ? 'tags' : 'stichworte';
+$tags_text_singular = $current_language == 'en' ? 'tag' : 'schild';
+$tags_text_plural = $current_language == 'en' ? 'tags' : 'stichworte';
 
 $show_less_tags_text = $current_language == 'en' ? 'show less' : 'zeige weniger';
 
@@ -87,6 +88,7 @@ $data = compact(
     'news',
     'pagination_layout',
     'tags',
-    'tags_text',
+    'tags_text_singular',
+    'tags_text_plural',
     'show_less_tags_text'
 );

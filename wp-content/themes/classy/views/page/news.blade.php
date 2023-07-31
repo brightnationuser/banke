@@ -24,7 +24,7 @@
                     @if(count($tags) > 5)
                         <div class="tags-control">
                             <button class="tags-control-button" id="showMore">
-                                + {{ count($tags) - 5 - 1 }} {{$tags_text}}</button>
+                                + {{ count($tags) - 5 - 1 }} {{ (count($tags) - 5 - 1 > 1) ? $tags_text_plural : $tags_text_singular }}</button>
                             <button class="tags-control-button hidden" id="showLess">{{$show_less_tags_text}}</button>
                         </div>
                     @endif
