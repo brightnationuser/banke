@@ -21,7 +21,7 @@
                             </li>
                         @endforeach
                     </ul>
-                    @if(count($tags) > 5)
+                    @if(count($tags) > 6)
                         <div class="tags-control">
                             <button class="tags-control-button" id="showMore">
                                 + {{ count($tags) - 5 - 1 }} {{ (count($tags) - 5 - 1 > 1) ? $tags_text_plural : $tags_text_singular }}</button>
