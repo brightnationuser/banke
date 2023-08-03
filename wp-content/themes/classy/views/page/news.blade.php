@@ -16,7 +16,17 @@
                             <li class="news-tag {{ $index > 5 ? 'hidden' : null }}">
                                 <label class="news-tag-checkbox">
                                     <input type="checkbox" name="tags[]" value="{{ $tag->slug }}">
-                                    <span>{{ $tag->name }}</span>
+                                    <span>{{ $tag->name }}
+                                        <svg class="news-tag-checkbox-cross" width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M0.15621 0.15621C0.364489 -0.0520699 0.702177 -0.0520699 0.910457 0.15621L7.84379 7.08954C8.05207 7.29782 8.05207 7.63551 7.84379 7.84379C7.63551 8.05207 7.29782 8.05207 7.08954 7.84379L0.15621 0.910457C-0.0520699 0.702177 -0.0520699 0.364489 0.15621 0.15621Z"
+                                              fill="white"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M7.84379 0.15621C7.63551 -0.0520699 7.29782 -0.0520699 7.08954 0.15621L0.156209 7.08954C-0.0520706 7.29782 -0.0520706 7.63551 0.156209 7.84379C0.364489 8.05207 0.702177 8.05207 0.910457 7.84379L7.84379 0.910457C8.05207 0.702177 8.05207 0.364489 7.84379 0.15621Z"
+                                              fill="white"/>
+                                    </svg>
+                                    </span>
                                 </label>
                             </li>
                         @endforeach
