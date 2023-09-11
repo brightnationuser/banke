@@ -19,10 +19,7 @@
         }
 
         .info {
-          position: absolute;
-          width: 100%;
-          bottom: 6px;
-          left: 0;
+          margin-top: -100px;
 
           h3 {
             font-weight: 600;
@@ -37,18 +34,21 @@
 
           .wrapper {
             display: flex;
+            flex-wrap: wrap;
             border-radius: 0 0 4px 4px;
             overflow: hidden;
 
             div {
-              width: 100%;
-              border-left: none;
+              width: calc(100% / 3);
 
-              & + div {
-
+              &:nth-child(4n+2),
+              &:nth-child(4n+3) {
                 border-left: 1px solid #fff;
               }
 
+              &:not(:nth-child(-n+3)) {
+                border-top: 1px solid #fff;
+              }
             }
 
             a {
