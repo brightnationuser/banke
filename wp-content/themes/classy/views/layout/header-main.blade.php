@@ -59,13 +59,15 @@
                     </div>
                     <div class="header-right-items__item header-right-items__item--phone">
                         <div class="header__phone">
-                            <a href="tel:{!! get_field('number', 'options') !!}" class="disable_preloader">
-                                <div class="icon">
-                                    <i class="icon-phone-call"></i>
-                                </div>
-                                <span>
-                    {!! get_field('number', 'options') !!}
-                </span>
+                            <a href="tel:{!! str_replace(' ', '', get_field('number', 'options')) !!}" class="disable_preloader">
+                                <span>{!! get_field('number', 'options') !!}</span>
+                                <span class="header__phone-type">{!! get_field('number_type', 'options') !!}</span>
+                            </a>
+                        </div>
+                        <div class="header__phone">
+                            <a href="tel:{!! str_replace(' ', '', get_field('number_second', 'options')) !!}" class="disable_preloader">
+                                <span>{!! get_field('number_second', 'options') !!}</span>
+                                <span class="header__phone-type">{!! get_field('number_second_type', 'options') !!}</span>
                             </a>
                         </div>
                     </div>

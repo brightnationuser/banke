@@ -3,6 +3,43 @@
     "title": "Theme Settings - Socials",
     "fields": [
         {
+            "key": "field_650ad594d342d",
+            "label": "Socials",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "wpml_cf_preferences": 0
+        },
+        {
+            "key": "field_643fd78964ebf",
+            "label": "Socials title",
+            "name": "contact_us_social_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5eaa871f0ae7c",
             "label": "Linkedin",
             "name": "linkedin",
@@ -281,6 +318,23 @@
             ]
         },
         {
+            "key": "field_650ad5b7d342e",
+            "label": "Address",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "wpml_cf_preferences": 0
+        },
+        {
             "key": "field_5ffc418351877",
             "label": "Address",
             "name": "address",
@@ -300,10 +354,10 @@
             "maxlength": ""
         },
         {
-            "key": "field_5ffc418e51878",
-            "label": "Number",
-            "name": "number",
-            "type": "text",
+            "key": "field_650ad5e6f1b6f",
+            "label": "Email",
+            "name": "",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -312,11 +366,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "placement": "top",
+            "endpoint": 0,
+            "wpml_cf_preferences": 0
         },
         {
             "key": "field_5ffc41a8ae5c0",
@@ -338,9 +390,85 @@
             "maxlength": ""
         },
         {
-            "key": "field_643cf8ca71fa6",
-            "label": "Title",
-            "name": "contact_us_social_title",
+            "key": "field_650ad52ce3cc3",
+            "label": "Phones",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "wpml_cf_preferences": 0
+        },
+        {
+            "key": "field_5ffc418e51878",
+            "label": "Number",
+            "name": "number",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_650ad539e3cc4",
+            "label": "Number Type",
+            "name": "number_type",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_650ad54ce3cc5",
+            "label": "Number Second",
+            "name": "number_second",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_650ad568e3cc6",
+            "label": "Number Second Type",
+            "name": "number_second_type",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -375,5 +503,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1681717471
+    "modified": 1695209222
 }

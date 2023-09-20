@@ -460,9 +460,15 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 
   @media (min-width: 1021px) {
     justify-content: start;
+    gap: 30px;
+  }
+
+  @media (min-width: 1201px) {
+    gap: 0px;
   }
 }
 
@@ -473,6 +479,7 @@
 
     @media (min-width: 1201px) {
       order: 0;
+      padding-right: 10px;
     }
   }
 
@@ -525,29 +532,47 @@
 }
 
 .header__phone {
+
+  & + & {
+    margin-top: 2px;
+  }
   .icon {
     margin-right: 5px;
     transform: translateY(2px);
   }
 
   a {
-    display: flex;
-    align-items: center;
     color: #003462;
     text-decoration: none;
     position: relative;
     font-size: 16px;
     font-weight: 600;
 
+    .header__phone-type {
+        color: #005CA9;
+    }
+
     .home & {
       @media (min-width: 1201px) {
         color: #ffffff;
+      }
+
+      .header__phone-type {
+        @media (min-width: 1201px) {
+          color: #ffffffcc;
+        }
       }
     }
 
     .home .white & {
       @media (min-width: 1201px) {
         color: #003462;
+      }
+
+      .header__phone-type {
+        @media (min-width: 1201px) {
+          color: #005CA9;
+        }
       }
     }
 
@@ -560,27 +585,35 @@
         border-top-color: #005CA9;
       }
 
-      &::before {
-        content: '';
-        position: absolute;
-        width: 0;
-        border-top: 2px solid #005CA9;
-        top: 30px;
-        display: block;
-        left: 50%;
-        transform: translateX(-50%);
-        opacity: 0;
-        transition: all .35s ease;
-      }
+      //&::before {
+      //  content: '';
+      //  position: absolute;
+      //  width: 0;
+      //  border-top: 2px solid #005CA9;
+      //  top: 30px;
+      //  display: block;
+      //  left: 50%;
+      //  transform: translateX(-50%);
+      //  opacity: 0;
+      //  transition: all .35s ease;
+      //}
 
       &:hover {
         &::before {
-          opacity: 1;
-          width: 100%;
+          //opacity: 1;
+          //width: 100%;
         }
       }
     }
   }
+}
+
+.header__phone-type {
+  font-family: Open Sans;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 5px;
 }
 
 .header__lng {
