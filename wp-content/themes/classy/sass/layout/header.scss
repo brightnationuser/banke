@@ -169,7 +169,7 @@
     justify-content: space-between;
     align-items: center;
     flex: 1 1 auto;
-    margin-left: 41px;
+    margin-left: 26px;
     transform: translateY(0);
     background-color: transparent;
   }
@@ -501,12 +501,12 @@
 
   &:not(:last-child) {
     @media (min-width: 1201px) {
-      margin-right: 23px;
+      margin-right: 40px;
       position: relative;
 
       &:after {
-        top: -1px;
-        right: -15px;
+        top: -2px;
+        right: -23px;
         position: absolute;
         content: '|';
         display: inline-block;
@@ -514,10 +514,12 @@
 
         .home & {
           color: #ffffff;
+          opacity: 0.2;
         }
 
         .home .white & {
-          color: $color-blue;
+          color: #003462;
+          opacity: 0.5;
         }
       }
     }
@@ -559,7 +561,7 @@
 
       .header__phone-type {
         @media (min-width: 1201px) {
-          color: #ffffffcc;
+          color: #75C0FF;
         }
       }
     }

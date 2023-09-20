@@ -1,12 +1,12 @@
 <template>
     <div class="sign-in-wrapper">
         <div class="sign-in" @click="setForm('SignIn')" v-if="!loggedIn">
-            <i class="icon-user"></i>
+            <i class="icon-user-fill"></i>
             <span>{{ translations.titles.sign_in }}</span>
         </div>
         <div class="sign-in" v-else>
             <div class="sign-in-profile__wrapper">
-                <i class="icon-user"></i>
+                <i class="icon-user-fill"></i>
                 <span>
           <a class="menu__elem menu__elem--active" href="/account/specification">
             <div class="menu__elem menu__elem--active">
@@ -186,7 +186,7 @@ export default {
     }
 
     i {
-        margin-right: 4px;
+        margin-right: 7px;
         color: #005ca9;
 
         .home & {
