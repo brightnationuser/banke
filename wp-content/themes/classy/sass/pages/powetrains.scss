@@ -95,6 +95,26 @@
         margin-bottom: 0;
       }
 
+      .owl-item {
+        overflow: hidden;
+
+        &.active {
+          z-index: 1;
+        }
+      }
+
+      .owl-nav {
+        button {
+          background-color: rgba(#fff, .9) !important;
+          color: #005CA9 !important;
+
+          &.disabled {
+            opacity: 1;
+            color: rgba(#005CA9, .5) !important;
+          }
+        }
+      }
+
       img {
         max-width: 100%;
         display: block;

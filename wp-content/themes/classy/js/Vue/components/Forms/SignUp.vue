@@ -317,7 +317,7 @@ export default {
     align-items: center;
 }
 
-@media screen and(max-width: 767px) {
+@media screen and (max-width: 767px) {
     .account-form {
         max-width: 500px;
 
@@ -327,7 +327,7 @@ export default {
     }
 }
 
-@media screen and(max-width: 480px) {
+@media screen and (max-width: 480px) {
     .account-form {
         padding: 30px;
 
@@ -341,7 +341,7 @@ export default {
     }
 }
 
-@media screen and(max-width: 350px) {
+@media screen and (max-width: 350px) {
 
     .account-form {
         &__column {

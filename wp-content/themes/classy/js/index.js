@@ -283,12 +283,19 @@ $(function () {
         autoHeight: true,
         navText: ["<i class='icon-prev'></i>", "<i class='icon-next'></i>"]
     });
-    $('.tips-carousel').owlCarousel({
+
+    let tipsCarousel = $('.tips-carousel');
+
+    tipsCarousel.owlCarousel({
         items: 1,
         nav: true,
         autoHeight: true,
         navText: ["<i class='icon-prev'></i>", "<i class='icon-next'></i>"]
     });
+
+    tipsCarousel.on('translated.owl.carousel', function(event) {
+        tipsCarousel.trigger('refresh.owl.carousel')
+    })
 
     $('.concept-carousel').owlCarousel({
         items: 1,
